@@ -1,217 +1,272 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-03T14:44",
+ "atualizadoEm": "2026-11-03T14:47",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
    "id": "ig-iamvictoriamenezes",
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
-   "joinedAt": 1793726004884
+   "joinedAt": 1793726004884,
+   "sexo": "?"
   },
   {
    "id": "ig-dudabrisolaa_",
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "joinedAt": 1793726244884
+   "joinedAt": 1793726244884,
+   "sexo": "f"
   },
   {
    "id": "ig-glautiumgabriel",
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "joinedAt": 1793726484884
+   "joinedAt": 1793726484884,
+   "sexo": "m"
   },
   {
    "id": "ig-adriana.g.santana",
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "joinedAt": 1793726724884
+   "joinedAt": 1793726724884,
+   "sexo": "f"
   },
   {
    "id": "ig-_iagodiaas",
    "nome": "@_iagodiaas",
    "profissao": "cozinheiro",
-   "joinedAt": 1793727899544
+   "joinedAt": 1793727899544,
+   "sexo": "?"
   },
   {
    "id": "ig-_williamg10",
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "joinedAt": 1793727900544
+   "joinedAt": 1793727900544,
+   "sexo": "?"
   },
   {
    "id": "ig-alison_barbearia",
    "nome": "@alison_barbearia",
    "profissao": "pastor",
-   "joinedAt": 1793727902544
-  },
-  {
-   "id": "ig-andycajaiba",
-   "nome": "@andycajaiba",
-   "profissao": "cavaleiro",
-   "joinedAt": 1793727903544
-  },
-  {
-   "id": "ig-bianca_almeidaa",
-   "nome": "@bianca_almeidaa",
-   "profissao": "cavaleiro",
-   "joinedAt": 1793727904544
-  },
-  {
-   "id": "ig-devidwilliamalmeida",
-   "nome": "@devidwilliamalmeida",
-   "profissao": "cavaleiro",
-   "joinedAt": 1793727905544
-  },
-  {
-   "id": "ig-dr.alailsonjr",
-   "nome": "@dr.alailsonjr",
-   "profissao": "arqueiro",
-   "joinedAt": 1793727906544
+   "joinedAt": 1793727902544,
+   "sexo": "m"
   },
   {
    "id": "ig-dra.jessicalopees",
    "nome": "@dra.jessicalopees",
    "profissao": "cavaleiro",
-   "joinedAt": 1793727907544
+   "joinedAt": 1793727907544,
+   "sexo": "f"
   },
   {
    "id": "ig-dudabsl_",
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "joinedAt": 1793727909544
-  },
-  {
-   "id": "ig-fabiannanery",
-   "nome": "@fabiannanery",
-   "profissao": "pastor",
-   "joinedAt": 1793727910544
-  },
-  {
-   "id": "ig-fil.brito",
-   "nome": "@fil.brito",
-   "profissao": "construtor",
-   "joinedAt": 1793727911544
+   "joinedAt": 1793727909544,
+   "sexo": "?"
   },
   {
    "id": "ig-joao19xx",
    "nome": "@joao19xx",
    "profissao": "alquimista",
-   "joinedAt": 1793727914544
+   "joinedAt": 1793727914544,
+   "sexo": "m"
   },
   {
    "id": "ig-joaomarcelojm1_",
    "nome": "@joaomarcelojm1_",
    "profissao": "padeiro",
-   "joinedAt": 1793727915544
-  },
-  {
-   "id": "ig-jonathan_paiva_17",
-   "nome": "@jonathan_paiva_17",
-   "profissao": "curandeiro",
-   "joinedAt": 1793727916544
-  },
-  {
-   "id": "ig-junior_maldyne",
-   "nome": "@junior_maldyne",
-   "profissao": "comerciante",
-   "joinedAt": 1793727917544
-  },
-  {
-   "id": "ig-laidocio",
-   "nome": "@laidocio",
-   "profissao": "explorador",
-   "joinedAt": 1793727918544
-  },
-  {
-   "id": "ig-lanesilva1",
-   "nome": "@lanesilva1",
-   "profissao": "explorador",
-   "joinedAt": 1793727919544
+   "joinedAt": 1793727915544,
+   "sexo": "?"
   },
   {
    "id": "ig-laryssapsouza",
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
-   "joinedAt": 1793727920544
-  },
-  {
-   "id": "ig-marcialima_95_",
-   "nome": "@marcialima_95_",
-   "profissao": "cacador",
-   "joinedAt": 1793727921544
+   "joinedAt": 1793727920544,
+   "nomeCompleto": "·",
+   "sexo": "?"
   },
   {
    "id": "ig-martinha.ba",
    "nome": "@martinha.ba",
    "profissao": "mineiro",
-   "joinedAt": 1793727922544
-  },
-  {
-   "id": "ig-meira_le",
-   "nome": "@meira_le",
-   "profissao": "cacador",
-   "joinedAt": 1793727923544
-  },
-  {
-   "id": "ig-millacaracas",
-   "nome": "@millacaracas",
-   "profissao": "explorador",
-   "joinedAt": 1793727924544
-  },
-  {
-   "id": "ig-necolaylla",
-   "nome": "@necolaylla",
-   "profissao": "mago",
-   "joinedAt": 1793727925544
-  },
-  {
-   "id": "ig-netiinho12",
-   "nome": "@netiinho12",
-   "profissao": "soldado",
-   "joinedAt": 1793727926544
-  },
-  {
-   "id": "ig-pirouupo",
-   "nome": "@pirouupo",
-   "profissao": "pastor",
-   "joinedAt": 1793727927544
+   "joinedAt": 1793727922544,
+   "sexo": "f"
   },
   {
    "id": "ig-reinodocalcado",
    "nome": "@reinodocalcado",
    "profissao": "arqueiro",
-   "joinedAt": 1793727928544
-  },
-  {
-   "id": "ig-rlenecosta",
-   "nome": "@rlenecosta",
-   "profissao": "padeiro",
-   "joinedAt": 1793727929544
-  },
-  {
-   "id": "ig-sampaiojaiane",
-   "nome": "@sampaiojaiane",
-   "profissao": "fazendeiro",
-   "joinedAt": 1793727930544
-  },
-  {
-   "id": "ig-samuca.cb",
-   "nome": "@samuca.cb",
-   "profissao": "pastor",
-   "joinedAt": 1793727931544
+   "joinedAt": 1793727928544,
+   "sexo": "m"
   },
   {
    "id": "ig-sillas_almeida",
    "nome": "@sillas_almeida",
    "profissao": "cacador",
-   "joinedAt": 1793727932544
+   "joinedAt": 1793727932544,
+   "sexo": "m"
   },
   {
    "id": "ig-thai_nery",
    "nome": "@thai_nery",
    "profissao": "bardo",
-   "joinedAt": 1793727933544
+   "joinedAt": 1793727933544,
+   "sexo": "f"
+  },
+  {
+   "id": "ig-_cibele_torres_",
+   "nome": "@_cibele_torres_",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "curandeiro",
+   "joinedAt": 1793728032905
+  },
+  {
+   "id": "ig-anatorregrossa",
+   "nome": "@anatorregrossa",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "padeiro",
+   "joinedAt": 1793728037905
+  },
+  {
+   "id": "ig-ancaosampaio10",
+   "nome": "@ancaosampaio10",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "cozinheiro",
+   "joinedAt": 1793728038905
+  },
+  {
+   "id": "ig-brunacamposom_",
+   "nome": "@brunacamposom_",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "mineiro",
+   "joinedAt": 1793728039905
+  },
+  {
+   "id": "ig-digo_gadelha",
+   "nome": "@digo_gadelha",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "mago",
+   "joinedAt": 1793728040905
+  },
+  {
+   "id": "ig-dinycruz",
+   "nome": "@dinycruz",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "arqueiro",
+   "joinedAt": 1793728041905
+  },
+  {
+   "id": "ig-dr.hudsondias",
+   "nome": "@dr.hudsondias",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "pastor",
+   "joinedAt": 1793728042905
+  },
+  {
+   "id": "ig-elizeu.silva.35728",
+   "nome": "@elizeu.silva.35728",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "pastor",
+   "joinedAt": 1793728046905
+  },
+  {
+   "id": "ig-felipe_c_mais",
+   "nome": "@felipe_c_mais",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "explorador",
+   "joinedAt": 1793728047905
+  },
+  {
+   "id": "ig-jhulygabyvictor",
+   "nome": "@jhulygabyvictor",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "alquimista",
+   "joinedAt": 1793728050905
+  },
+  {
+   "id": "ig-jon_almeida181",
+   "nome": "@jon_almeida181",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "construtor",
+   "joinedAt": 1793728053905
+  },
+  {
+   "id": "ig-lanne8820",
+   "nome": "@lanne8820",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "mineiro",
+   "joinedAt": 1793728054905
+  },
+  {
+   "id": "ig-mara__samp",
+   "nome": "@mara__samp",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "arqueiro",
+   "joinedAt": 1793728056905
+  },
+  {
+   "id": "ig-maricosta0712",
+   "nome": "@maricosta0712",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "explorador",
+   "joinedAt": 1793728057905
+  },
+  {
+   "id": "ig-nogueira_jessica",
+   "nome": "@nogueira_jessica",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "cacador",
+   "joinedAt": 1793728059905
+  },
+  {
+   "id": "ig-sablinasa",
+   "nome": "@sablinasa",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "cozinheiro",
+   "joinedAt": 1793728061905
+  },
+  {
+   "id": "ig-sarah.pacheco",
+   "nome": "@sarah.pacheco",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "comerciante",
+   "joinedAt": 1793728062905
+  },
+  {
+   "id": "ig-taay_lisboa",
+   "nome": "@taay_lisboa",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "cavaleiro",
+   "joinedAt": 1793728064905
+  },
+  {
+   "id": "ig-tiagooliveira1109",
+   "nome": "@tiagooliveira1109",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "comerciante",
+   "joinedAt": 1793728066905
   }
  ]
 }
