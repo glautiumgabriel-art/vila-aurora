@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-03T14:30:00-03:00",
+ "atualizadoEm": "2026-11-03T14:44",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -26,6 +26,192 @@
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
    "joinedAt": 1793726724884
+  },
+  {
+   "id": "ig-_iagodiaas",
+   "nome": "@_iagodiaas",
+   "profissao": "cozinheiro",
+   "joinedAt": 1793727899544
+  },
+  {
+   "id": "ig-_williamg10",
+   "nome": "@_williamg10",
+   "profissao": "bardo",
+   "joinedAt": 1793727900544
+  },
+  {
+   "id": "ig-alison_barbearia",
+   "nome": "@alison_barbearia",
+   "profissao": "pastor",
+   "joinedAt": 1793727902544
+  },
+  {
+   "id": "ig-andycajaiba",
+   "nome": "@andycajaiba",
+   "profissao": "cavaleiro",
+   "joinedAt": 1793727903544
+  },
+  {
+   "id": "ig-bianca_almeidaa",
+   "nome": "@bianca_almeidaa",
+   "profissao": "cavaleiro",
+   "joinedAt": 1793727904544
+  },
+  {
+   "id": "ig-devidwilliamalmeida",
+   "nome": "@devidwilliamalmeida",
+   "profissao": "cavaleiro",
+   "joinedAt": 1793727905544
+  },
+  {
+   "id": "ig-dr.alailsonjr",
+   "nome": "@dr.alailsonjr",
+   "profissao": "arqueiro",
+   "joinedAt": 1793727906544
+  },
+  {
+   "id": "ig-dra.jessicalopees",
+   "nome": "@dra.jessicalopees",
+   "profissao": "cavaleiro",
+   "joinedAt": 1793727907544
+  },
+  {
+   "id": "ig-dudabsl_",
+   "nome": "@dudabsl_",
+   "profissao": "curandeiro",
+   "joinedAt": 1793727909544
+  },
+  {
+   "id": "ig-fabiannanery",
+   "nome": "@fabiannanery",
+   "profissao": "pastor",
+   "joinedAt": 1793727910544
+  },
+  {
+   "id": "ig-fil.brito",
+   "nome": "@fil.brito",
+   "profissao": "construtor",
+   "joinedAt": 1793727911544
+  },
+  {
+   "id": "ig-joao19xx",
+   "nome": "@joao19xx",
+   "profissao": "alquimista",
+   "joinedAt": 1793727914544
+  },
+  {
+   "id": "ig-joaomarcelojm1_",
+   "nome": "@joaomarcelojm1_",
+   "profissao": "padeiro",
+   "joinedAt": 1793727915544
+  },
+  {
+   "id": "ig-jonathan_paiva_17",
+   "nome": "@jonathan_paiva_17",
+   "profissao": "curandeiro",
+   "joinedAt": 1793727916544
+  },
+  {
+   "id": "ig-junior_maldyne",
+   "nome": "@junior_maldyne",
+   "profissao": "comerciante",
+   "joinedAt": 1793727917544
+  },
+  {
+   "id": "ig-laidocio",
+   "nome": "@laidocio",
+   "profissao": "explorador",
+   "joinedAt": 1793727918544
+  },
+  {
+   "id": "ig-lanesilva1",
+   "nome": "@lanesilva1",
+   "profissao": "explorador",
+   "joinedAt": 1793727919544
+  },
+  {
+   "id": "ig-laryssapsouza",
+   "nome": "@laryssapsouza",
+   "profissao": "ferreiro",
+   "joinedAt": 1793727920544
+  },
+  {
+   "id": "ig-marcialima_95_",
+   "nome": "@marcialima_95_",
+   "profissao": "cacador",
+   "joinedAt": 1793727921544
+  },
+  {
+   "id": "ig-martinha.ba",
+   "nome": "@martinha.ba",
+   "profissao": "mineiro",
+   "joinedAt": 1793727922544
+  },
+  {
+   "id": "ig-meira_le",
+   "nome": "@meira_le",
+   "profissao": "cacador",
+   "joinedAt": 1793727923544
+  },
+  {
+   "id": "ig-millacaracas",
+   "nome": "@millacaracas",
+   "profissao": "explorador",
+   "joinedAt": 1793727924544
+  },
+  {
+   "id": "ig-necolaylla",
+   "nome": "@necolaylla",
+   "profissao": "mago",
+   "joinedAt": 1793727925544
+  },
+  {
+   "id": "ig-netiinho12",
+   "nome": "@netiinho12",
+   "profissao": "soldado",
+   "joinedAt": 1793727926544
+  },
+  {
+   "id": "ig-pirouupo",
+   "nome": "@pirouupo",
+   "profissao": "pastor",
+   "joinedAt": 1793727927544
+  },
+  {
+   "id": "ig-reinodocalcado",
+   "nome": "@reinodocalcado",
+   "profissao": "arqueiro",
+   "joinedAt": 1793727928544
+  },
+  {
+   "id": "ig-rlenecosta",
+   "nome": "@rlenecosta",
+   "profissao": "padeiro",
+   "joinedAt": 1793727929544
+  },
+  {
+   "id": "ig-sampaiojaiane",
+   "nome": "@sampaiojaiane",
+   "profissao": "fazendeiro",
+   "joinedAt": 1793727930544
+  },
+  {
+   "id": "ig-samuca.cb",
+   "nome": "@samuca.cb",
+   "profissao": "pastor",
+   "joinedAt": 1793727931544
+  },
+  {
+   "id": "ig-sillas_almeida",
+   "nome": "@sillas_almeida",
+   "profissao": "cacador",
+   "joinedAt": 1793727932544
+  },
+  {
+   "id": "ig-thai_nery",
+   "nome": "@thai_nery",
+   "profissao": "bardo",
+   "joinedAt": 1793727933544
   }
  ]
 }
