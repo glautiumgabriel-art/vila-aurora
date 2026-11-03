@@ -192,7 +192,7 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
   <div class="map" id="mapBox">
     <canvas id="cena"></canvas>
     <div class="carregando" id="carregando">Construindo a vila…</div>
-    <div class="dica">Arraste para girar · role para aproximar · toque num morador para acompanhar</div>
+    <div class="dica" id="dica">Arraste para girar · role para aproximar · toque num morador para acompanhar</div>
     <div class="narr" id="narr"></div>
     <div class="abertura-txt" id="aberturaTxt"></div>
     <div class="abertura-logo">@vilaauroraoficial · vila.ihfc.com.br</div>
@@ -593,6 +593,7 @@ const _rp=new THREE.Vector3(); let _rotQuadro=0;
 function desempilhaRotulos(prioridadeId){ if((_rotQuadro++%2)!==0) return; const itens=[]; const inv=camera.matrixWorldInverse; const asp=camera.aspect||1;
   for(const s of ROTULOS_3D){ if(!s.parent){ continue; } let o=s, vis=true; while(o){ if(!o.visible){ vis=false; break; } o=o.parent; } if(!vis){ s.material.visible=true; continue; }
     _rp.setFromMatrixPosition(s.matrixWorld); const d=_rp.distanceTo(camera.position); _rp.project(camera); if(_rp.z>1||Math.abs(_rp.x)>1.3||Math.abs(_rp.y)>1.3){ s.material.visible=true; continue; }
+    { const rr=s.userData.rotulo; const hwB=s.scale.x*rr.w*0.5, hhB=s.scale.y*0.5*asp; if(Math.abs(_rp.x)+hwB>0.98||Math.abs(_rp.y)+hhB>0.98){ s.material.visible=false; continue; } }
     const r=s.userData.rotulo; const hw=s.scale.x*r.w*0.85, hh=s.scale.y*0.6*asp; const prio=(s.userData.prioridade||0)+(prioridadeId&&s.userData.id===prioridadeId?10:0);
     itens.push({s,x:_rp.x,y:_rp.y,hw,hh,d:d-prio*1000}); }
   itens.sort((a,b)=>a.d-b.d); const fica=[];
@@ -948,9 +949,9 @@ function ehCabeca(o){ return /head/i.test(o.name)||(o.parent&&/head/i.test(o.par
 function itemNaMao(nomeItem,rar){ const g=KAYKIT.clone(nomeItem); if(rar&&COR_RARIDADE[rar.k]){ const cor=new THREE.Color(COR_RARIDADE[rar.k]); g.traverse(o=>{ if(o.isMesh){ o.material=o.material.clone(); o.material.emissive=cor; o.material.emissiveIntensity=rar.k==="lendario"?0.55:0.3; } }); } g.traverse(o=>{ if(o.isMesh) o.castShadow=true; }); return g; }
 // capa: pano caindo das costas até o joelho, com volume e gola nos ombros, presa ao osso do peito (acompanha andar, sentar, deitar)
 const capaGeoCache=new Map();
-function capaDeVerdade(corpo,cor){ const osso=corpo.getObjectByName("chest")||corpo.getObjectByName("spine")||corpo; let geoC=capaGeoCache.get("capa"); if(!geoC){ geoC=new THREE.PlaneGeometry(0.72,1.08,8,12); const pos=geoC.attributes.position; for(let i=0;i<pos.count;i++){ const x=pos.getX(i), y=pos.getY(i); const v=(y+0.54)/1.08; const flare=1+0.35*(1-v); pos.setX(i,x*flare); pos.setZ(i,-0.05-0.16*Math.pow(x/0.36,2)*(0.4+0.6*v)-(1-v)*0.08*Math.sin((x/0.36)*3.1)*0); } geoC.computeVertexNormals(); capaGeoCache.set("capa",geoC); }
-  const mc=new THREE.MeshStandardMaterial({color:cor,roughness:0.9,side:THREE.DoubleSide}); const capa=new THREE.Mesh(geoC,mc); capa.castShadow=true; capa.position.set(0,-0.36,-0.2); capa.rotation.x=0.12; osso.add(capa);
-  const gola=new THREE.Mesh(geo("Cylinder",[0.34,0.3,0.1,10,1,true]),new THREE.MeshStandardMaterial({color:new THREE.Color(cor).multiplyScalar(0.75),roughness:0.85,side:THREE.DoubleSide})); gola.position.set(0,0.24,-0.02); gola.castShadow=false; osso.add(gola); return capa; }
+function capaDeVerdade(corpo,cor){ const osso=corpo.getObjectByName("chest")||corpo.getObjectByName("spine")||corpo; let geoC=capaGeoCache.get("capa"); if(!geoC){ geoC=new THREE.PlaneGeometry(0.8,1.12,8,12); const pos=geoC.attributes.position; for(let i=0;i<pos.count;i++){ const x=pos.getX(i), y=pos.getY(i); const v=(y+0.56)/1.12; const flare=1+0.4*(1-v); const u=x/0.4; pos.setX(i,x*flare); pos.setZ(i,-0.24*(1-u*u)-(1-v)*0.14+0.03*Math.sin(u*6.3)*(1-v)); } geoC.computeVertexNormals(); capaGeoCache.set("capa",geoC); }
+  const mc=new THREE.MeshStandardMaterial({color:new THREE.Color(cor).multiplyScalar(0.92),roughness:0.95,side:THREE.DoubleSide}); const capa=new THREE.Mesh(geoC,mc); capa.castShadow=true; capa.position.set(0,-0.34,-0.30); capa.rotation.x=0.1; osso.add(capa);
+  const gola=new THREE.Mesh(geo("Cylinder",[0.4,0.36,0.14,12,1,true]),new THREE.MeshStandardMaterial({color:new THREE.Color(cor).multiplyScalar(0.7),roughness:0.9,side:THREE.DoubleSide})); gola.position.set(0,0.2,-0.08); gola.castShadow=false; osso.add(gola); return capa; }
 function boneco(m){ const p=PROF[m.profissao]||PROF.bardo; const r=rnd("look:"+m.id); const x=xpDe(m); const g=new THREE.Group(); const hue=hash(m.nome)%360;
   const fem=m.sexo==="f"||(m.sexo!=="m"&&m.npc&&["Ema","Dona Zefa","Nina","Lia"].includes(m.nome));
   let modelo=MODELO_PROF[m.profissao]||"Rogue"; if(fem&&modelo==="Barbarian") modelo="Rogue"; if(fem&&modelo==="Rogue_Hooded"&&r()<0.5) modelo="Rogue";
@@ -1171,6 +1172,7 @@ function atualizaCard(forca){
   atualizaHistoria(m,x);
   if(document.body.classList.contains("cinema")){ $("narr").innerHTML="<span></span><small></small>"; $("narr").firstChild.textContent=m.nome+" está "+e.acao; $("narr").lastChild.textContent=x.titulo+" "+p.nome+(eq.principal?" · "+eq.principal.nome:" · ainda sem equipamento")+(eq.escudo?" · "+eq.escudo.nome:""); }
 }
+(function(){ const d=$("dica"); if(!d) return; if(MOBILE) d.textContent="Arraste para girar · pinça para aproximar · toque num morador ou prédio"; const some=()=>{ d.style.transition="opacity .6s"; d.style.opacity="0"; setTimeout(()=>{ d.hidden=true; },700); }; setTimeout(some,5000); canvas.addEventListener("pointerdown",some,{once:true}); })();
 $("lugarFechar").addEventListener("click",()=>{ $("lugarBox").hidden=true; if(realce) realce.visible=false; });
 $("btnSeguir").addEventListener("click",()=>{ seguindo=true; fixado=true; orb.r=Math.min(orb.r,22); });
 function botaoMorador(m){ const b=document.createElement("button"); b.type="button"; const p=PROF[m.profissao]||PROF.bardo; const x=xpDe(m); b.innerHTML="<span></span> <span>· "+p.nome+" · nv "+x.nivel+(m.npc?" · NPC":"")+"</span>"; b.firstChild.textContent=m.nome; b.firstChild.style.color="inherit"; b.addEventListener("click",()=>selecionar(m.id,true)); return b; }
