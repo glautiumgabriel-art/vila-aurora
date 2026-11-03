@@ -1,63 +1,64 @@
 {
- "geradoEm": "2026-11-03T16:59",
+ "geradoEm": "2026-11-03T18:00",
  "relogioVila": {
-  "dia": 15,
-  "hora": 22
+  "dia": 18,
+  "hora": 11
  },
- "moradores": 6,
+ "moradores": 7,
  "novosDoDia": [
   "@adriana.g.santana",
   "@dudabrisolaa_",
   "@dudabsl_",
   "@glautiumgabriel",
   "@iamvictoriamenezes",
-  "@laryssapsouza"
+  "@laryssapsouza",
+  "@_williamg10"
  ],
- "nivelMaisAlto": 4,
+ "nivelMaisAlto": 5,
  "maisAltos": [
   {
    "nome": "@laryssapsouza",
-   "nivel": 4,
-   "xp": 779,
+   "nivel": 5,
+   "xp": 1030,
    "titulo": "Oficial"
   },
   {
    "nome": "@dudabrisolaa_",
-   "nivel": 4,
-   "xp": 639,
+   "nivel": 5,
+   "xp": 911,
    "titulo": "Oficial"
   },
   {
    "nome": "@iamvictoriamenezes",
+   "nivel": 5,
+   "xp": 830,
+   "titulo": "Oficial"
+  },
+  {
+   "nome": "@glautiumgabriel",
    "nivel": 4,
-   "xp": 559,
+   "xp": 781,
    "titulo": "Oficial"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 4,
-   "xp": 519,
-   "titulo": "Oficial"
-  },
-  {
-   "nome": "@dudabsl_",
-   "nivel": 4,
-   "xp": 519,
+   "xp": 771,
    "titulo": "Oficial"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@adriana.g.santana",
-    "@dudabrisolaa_"
+    "@_williamg10",
+    "@laryssapsouza"
    ],
    "forca": 2
   },
   {
    "entre": [
     "@adriana.g.santana",
-    "@glautiumgabriel"
+    "@dudabrisolaa_"
    ],
    "forca": 2
   },
@@ -71,14 +72,14 @@
   {
    "entre": [
     "@dudabrisolaa_",
-    "@iamvictoriamenezes"
+    "@dudabsl_"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@dudabsl_",
-    "@glautiumgabriel"
+    "@dudabrisolaa_",
+    "@laryssapsouza"
    ],
    "forca": 2
   }
@@ -88,6 +89,20 @@
    "entre": [
     "@glautiumgabriel",
     "Seu Abel"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
+    "@glautiumgabriel",
+    "Velho Bento"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
+    "@iamvictoriamenezes",
+    "Teo"
    ],
    "forca": 1
   },
@@ -103,7 +118,7 @@
   "@laryssapsouza"
  ],
  "porProfissao": {
-  "bardo": 1,
+  "bardo": 2,
   "cavaleiro": 1,
   "curandeiro": 1,
   "mineiro": 1,
@@ -112,6 +127,36 @@
  },
  "vilas": 2,
  "eventosUltimas24h": [
+  {
+   "quando": 1793738235112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "vitoria",
+   "texto": "@iamvictoriamenezes e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793738234112,
+   "quem": "@glautiumgabriel",
+   "tipo": "briga_vitoria",
+   "texto": "@glautiumgabriel encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793736795112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "briga_derrota",
+   "texto": "@iamvictoriamenezes foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793736793112,
+   "quem": "@dudabsl_",
+   "tipo": "queda",
+   "texto": "@dudabsl_ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793736792112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "vitoria",
+   "texto": "@dudabrisolaa_ venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
   {
    "quando": 1793735356112,
    "quem": "@laryssapsouza",
