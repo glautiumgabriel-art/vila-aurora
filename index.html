@@ -114,6 +114,7 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
   <span class="stat">Vilas: <b id="nvilas">1</b></span>
   <span class="spacer"></span>
   <span class="hint">A vila anda sozinha. Você só assiste.</span>
+  <button class="ghost" id="btnMusica" type="button" title="Música medieval">🎵 Música</button>
   <button class="ghost" id="btnCinema" type="button">Modo cinema</button>
 </header>
 
@@ -160,7 +161,7 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
     <section class="box">
       <h2>Crônica da vila</h2>
       <ul class="chron" id="cronica"></ul>
-      <div class="small">Novidade toda hora. Siga @vilaauroraoficial e seu @ vira morador.</div>
+      <div class="small">Novidade toda hora. Siga @vilaauroraoficial e seu @ vira morador.<br>Música: Kevin MacLeod (incompetech.com), CC BY 4.0.</div>
     </section>
   </aside>
 </div>
@@ -943,6 +944,17 @@ let retratoBoneco=null; function desenhaRetrato(m){ if(retratoBoneco) retratoS.r
 
 // ---------- UI ----------
 const $=id=>document.getElementById(id);
+// ---------- música medieval (toca depois do 1º toque; escolha fica salva no aparelho) ----------
+const MUSICA={dia:["musica/minstrel_guild.mp3","musica/folk_round.mp3"],noite:["musica/teller_of_the_tales.mp3"],batalha:["musica/lord_of_the_land.mp3"]};
+const audio=new Audio(); audio.loop=false; audio.volume=0; let musicaLigada=false, faixaAtual="", fadeAlvo=0;
+try{ musicaLigada=localStorage.getItem("vila.musica")!=="off"; }catch(e){}
+function faixaCerta(){ if(MODO_SEGREDO) return MUSICA.batalha[0]; const w=mundo(); const noite=w.hora>=20||w.hora<6; const lista=noite?MUSICA.noite:MUSICA.dia; return lista[Math.floor(w.t/24)%lista.length]; }
+function tocaMusica(){ if(!musicaLigada) return; const f=faixaCerta(); if(f!==faixaAtual){ faixaAtual=f; audio.src=f; } audio.play().then(()=>{ fadeAlvo=0.35; }).catch(()=>{}); }
+audio.addEventListener("ended",()=>{ faixaAtual=""; tocaMusica(); });
+setInterval(()=>{ if(musicaLigada&&!audio.paused&&faixaCerta()!==faixaAtual) fadeAlvo=0; if(fadeAlvo===0&&audio.volume<0.02&&musicaLigada&&faixaCerta()!==faixaAtual){ tocaMusica(); } audio.volume+= (fadeAlvo-audio.volume)*0.08; },200);
+function atualizaBotaoMusica(){ $("btnMusica").textContent=musicaLigada?"🎵 Música: ligada":"🔇 Música: desligada"; }
+$("btnMusica").addEventListener("click",()=>{ musicaLigada=!musicaLigada; try{ localStorage.setItem("vila.musica",musicaLigada?"on":"off"); }catch(e){} if(musicaLigada) tocaMusica(); else { fadeAlvo=0; setTimeout(()=>{ if(!musicaLigada) audio.pause(); },1500); } atualizaBotaoMusica(); });
+["pointerdown","keydown","touchstart"].forEach(ev=>window.addEventListener(ev,()=>{ if(musicaLigada&&audio.paused) tocaMusica(); },{passive:true})); atualizaBotaoMusica();
 let fixado=false;
 function selecionar(id,manual){ selecionado=id; seguindo=true; if(manual) fixado=true; orb.r=Math.min(orb.r,26); visiveis.add(id); const li=todos(); const ii=li.findIndex(m=>m.id===id); if(ii>=0){ const e=estado(li[ii],ii,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.target.copy(orb.alvo); } } atualizaCard(true); }
 let cardId=null;
