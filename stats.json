@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-03T18:00",
+ "geradoEm": "2026-11-03T19:08",
  "relogioVila": {
-  "dia": 18,
-  "hora": 11
+  "dia": 21,
+  "hora": 7
  },
  "moradores": 7,
  "novosDoDia": [
@@ -14,36 +14,36 @@
   "@laryssapsouza",
   "@_williamg10"
  ],
- "nivelMaisAlto": 5,
+ "nivelMaisAlto": 6,
  "maisAltos": [
   {
-   "nome": "@laryssapsouza",
-   "nivel": 5,
-   "xp": 1030,
-   "titulo": "Oficial"
+   "nome": "@dudabrisolaa_",
+   "nivel": 6,
+   "xp": 1416,
+   "titulo": "Mestre"
   },
   {
-   "nome": "@dudabrisolaa_",
-   "nivel": 5,
-   "xp": 911,
-   "titulo": "Oficial"
+   "nome": "@laryssapsouza",
+   "nivel": 6,
+   "xp": 1316,
+   "titulo": "Mestre"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 5,
-   "xp": 830,
+   "xp": 1116,
    "titulo": "Oficial"
   },
   {
    "nome": "@glautiumgabriel",
-   "nivel": 4,
-   "xp": 781,
+   "nivel": 5,
+   "xp": 1066,
    "titulo": "Oficial"
   },
   {
    "nome": "@adriana.g.santana",
-   "nivel": 4,
-   "xp": 771,
+   "nivel": 5,
+   "xp": 1056,
    "titulo": "Oficial"
   }
  ],
@@ -115,6 +115,7 @@
   }
  ],
  "montados": [
+  "@dudabrisolaa_",
   "@laryssapsouza"
  ],
  "porProfissao": {
@@ -127,6 +128,30 @@
  },
  "vilas": 2,
  "eventosUltimas24h": [
+  {
+   "quando": 1793741113112,
+   "quem": "@dudabsl_",
+   "tipo": "derrota",
+   "texto": "@dudabsl_ encostou sozinho em um urso da floresta e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793741112112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "vitoria",
+   "texto": "@dudabrisolaa_ e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1793740696642,
+   "quem": "@_williamg10",
+   "tipo": "queda",
+   "texto": "@_williamg10 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793739672112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "doma",
+   "texto": "@dudabrisolaa_ e os amigos cercaram um cavalo selvagem e domaram! Agora @dudabrisolaa_ anda montado."
+  },
   {
    "quando": 1793738235112,
    "quem": "@iamvictoriamenezes",
