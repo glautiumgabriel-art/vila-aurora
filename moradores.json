@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-03T14:47",
+ "atualizadoEm": "2026-11-03T14:48",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -74,26 +74,12 @@
    "sexo": "m"
   },
   {
-   "id": "ig-joaomarcelojm1_",
-   "nome": "@joaomarcelojm1_",
-   "profissao": "padeiro",
-   "joinedAt": 1793727915544,
-   "sexo": "?"
-  },
-  {
    "id": "ig-laryssapsouza",
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
    "joinedAt": 1793727920544,
    "nomeCompleto": "·",
    "sexo": "?"
-  },
-  {
-   "id": "ig-martinha.ba",
-   "nome": "@martinha.ba",
-   "profissao": "mineiro",
-   "joinedAt": 1793727922544,
-   "sexo": "f"
   },
   {
    "id": "ig-reinodocalcado",
@@ -117,14 +103,6 @@
    "sexo": "f"
   },
   {
-   "id": "ig-_cibele_torres_",
-   "nome": "@_cibele_torres_",
-   "nomeCompleto": "",
-   "sexo": "?",
-   "profissao": "curandeiro",
-   "joinedAt": 1793728032905
-  },
-  {
    "id": "ig-anatorregrossa",
    "nome": "@anatorregrossa",
    "nomeCompleto": "",
@@ -139,22 +117,6 @@
    "sexo": "m",
    "profissao": "cozinheiro",
    "joinedAt": 1793728038905
-  },
-  {
-   "id": "ig-brunacamposom_",
-   "nome": "@brunacamposom_",
-   "nomeCompleto": "",
-   "sexo": "?",
-   "profissao": "mineiro",
-   "joinedAt": 1793728039905
-  },
-  {
-   "id": "ig-digo_gadelha",
-   "nome": "@digo_gadelha",
-   "nomeCompleto": "",
-   "sexo": "m",
-   "profissao": "mago",
-   "joinedAt": 1793728040905
   },
   {
    "id": "ig-dinycruz",
@@ -181,28 +143,12 @@
    "joinedAt": 1793728046905
   },
   {
-   "id": "ig-felipe_c_mais",
-   "nome": "@felipe_c_mais",
-   "nomeCompleto": "",
-   "sexo": "m",
-   "profissao": "explorador",
-   "joinedAt": 1793728047905
-  },
-  {
    "id": "ig-jhulygabyvictor",
    "nome": "@jhulygabyvictor",
    "nomeCompleto": "",
    "sexo": "m",
    "profissao": "alquimista",
    "joinedAt": 1793728050905
-  },
-  {
-   "id": "ig-jon_almeida181",
-   "nome": "@jon_almeida181",
-   "nomeCompleto": "",
-   "sexo": "m",
-   "profissao": "construtor",
-   "joinedAt": 1793728053905
   },
   {
    "id": "ig-lanne8820",
@@ -229,14 +175,6 @@
    "joinedAt": 1793728057905
   },
   {
-   "id": "ig-nogueira_jessica",
-   "nome": "@nogueira_jessica",
-   "nomeCompleto": "",
-   "sexo": "f",
-   "profissao": "cacador",
-   "joinedAt": 1793728059905
-  },
-  {
    "id": "ig-sablinasa",
    "nome": "@sablinasa",
    "nomeCompleto": "",
@@ -253,20 +191,84 @@
    "joinedAt": 1793728062905
   },
   {
-   "id": "ig-taay_lisboa",
-   "nome": "@taay_lisboa",
+   "id": "ig-amorenaflor",
+   "nome": "@amorenaflor",
    "nomeCompleto": "",
-   "sexo": "?",
-   "profissao": "cavaleiro",
-   "joinedAt": 1793728064905
+   "sexo": "m",
+   "profissao": "construtor",
+   "joinedAt": 1793728136374
   },
   {
-   "id": "ig-tiagooliveira1109",
-   "nome": "@tiagooliveira1109",
+   "id": "ig-bnovaiss_",
+   "nome": "@bnovaiss_",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "pastor",
+   "joinedAt": 1793728139374
+  },
+  {
+   "id": "ig-igorpina.eng",
+   "nome": "@igorpina.eng",
    "nomeCompleto": "",
    "sexo": "f",
-   "profissao": "comerciante",
-   "joinedAt": 1793728066905
+   "profissao": "pastor",
+   "joinedAt": 1793728148374
+  },
+  {
+   "id": "ig-laidocio",
+   "nome": "@laidocio",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "explorador",
+   "joinedAt": 1793728151374
+  },
+  {
+   "id": "ig-marcialima_95_",
+   "nome": "@marcialima_95_",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "cacador",
+   "joinedAt": 1793728155374
+  },
+  {
+   "id": "ig-mary_marrtins13",
+   "nome": "@mary_marrtins13",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "mago",
+   "joinedAt": 1793728157374
+  },
+  {
+   "id": "ig-queirozramiz",
+   "nome": "@queirozramiz",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "cozinheiro",
+   "joinedAt": 1793728158374
+  },
+  {
+   "id": "ig-raianaasantoos",
+   "nome": "@raianaasantoos",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "explorador",
+   "joinedAt": 1793728159374
+  },
+  {
+   "id": "ig-tarcisioalmeidaoficial",
+   "nome": "@tarcisioalmeidaoficial",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "pescador",
+   "joinedAt": 1793728164374
+  },
+  {
+   "id": "ig-vitor_reale",
+   "nome": "@vitor_reale",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "alquimista",
+   "joinedAt": 1793728166374
   }
  ]
 }
