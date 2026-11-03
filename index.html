@@ -58,6 +58,12 @@ body.cinema .map{aspect-ratio:auto;height:calc(100vh - 90px)}
 .map .narr small{display:block;font-size:.6em;font-weight:400;opacity:.85}
 .map .dica{position:absolute;left:10px;top:10px;font-size:12px;color:#fff;background:rgba(0,0,0,.4);padding:4px 8px;border-radius:6px;pointer-events:none}
 body.cinema .map .narr{display:block}
+body.abertura .top,body.abertura .side,body.abertura .map .dica,body.abertura .map .narr{display:none!important}
+body.abertura{padding:0!important} body.abertura .wrap{display:block;padding:0} body.abertura .map{border:0;border-radius:0;aspect-ratio:auto;height:100vh;max-width:none}
+.abertura-txt{position:absolute;left:0;right:0;top:9%;padding:0 6%;text-align:center;font-family:var(--display);font-weight:700;color:#fff;text-shadow:0 4px 0 #3a2210,0 10px 30px rgba(0,0,0,.7);font-size:clamp(34px,8vw,92px);line-height:1.05;opacity:0;transition:opacity .5s;pointer-events:none;text-wrap:balance}
+.abertura-txt.on{opacity:1} .abertura-txt small{display:block;font-size:.45em;font-weight:600;margin-top:.5em;opacity:.95}
+.abertura-logo{position:absolute;left:0;right:0;bottom:7%;text-align:center;font-family:var(--display);font-weight:700;font-size:clamp(22px,4.5vw,40px);color:#ffe9b0;text-shadow:0 3px 0 #3a2210,0 8px 24px rgba(0,0,0,.6);pointer-events:none;display:none}
+body.abertura .abertura-logo{display:block}
 body.cinema .map .dica{display:none}
 body.cinema .side,body.cinema .top .stat,body.cinema .top .hint{display:none}
 body.cinema .wrap{grid-template-columns:minmax(0,1fr)}
@@ -115,6 +121,8 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
     <canvas id="cena"></canvas>
     <div class="dica">Arraste para girar · role para aproximar · toque num morador para acompanhar</div>
     <div class="narr" id="narr"></div>
+    <div class="abertura-txt" id="aberturaTxt"></div>
+    <div class="abertura-logo">@vilaauroraoficial · vila.ihfc.com.br</div>
   </div>
 
   <aside class="side">
@@ -539,7 +547,8 @@ function construirVila(V){ if(vilasConstruidas.has(V.i)) return; vilasConstruida
   (function(){ const g=grupo("ferraria"); const Lx=L.ferraria; casa(Lx.x,Lx.z,Lx.w,Lx.h,2.8,M.pedra,M.escuro,0,true,g); box(0.9,0.5,0.5,M.escuro,Lx.x-1.5,0.85,Lx.z+Lx.h/2+1.3,g); box(0.5,0.6,0.5,M.madeiraEsc,Lx.x-1.5,0.3,Lx.z+Lx.h/2+1.3,g);
     const forja=new THREE.PointLight(0xff6a1a,0.8,8,2); forja.position.set(Lx.x+1.5,1.2,Lx.z+Lx.h/2+0.5); g.add(forja); rotuloEm(g,"Ferraria",Lx.x,4.8,Lx.z,6); const lm=new THREE.MeshStandardMaterial({color:0xffd27a,emissive:0xffb347,emissiveIntensity:1.2}); box(0.22,0.3,0.22,lm,Lx.x-1.2,1.9,Lx.z+Lx.h/2+0.2,g).castShadow=false; })();
   // casa de cura
-  (function(){ const g=grupo("capela"); const Lx=L.capela; casa(Lx.x,Lx.z,Lx.w,Lx.h,3,M.branco,M.verdeClaro,0,false,g); box(0.9,0.25,0.25,M.vermelho,Lx.x,4.9,Lx.z,g); box(0.25,0.9,0.25,M.vermelho,Lx.x,4.9,Lx.z,g); rotuloEm(g,"Casa de Cura",Lx.x,6.2,Lx.z,6.5); })();
+  (function(){ const g=grupo("capela"); const Lx=L.capela; casa(Lx.x,Lx.z,Lx.w,Lx.h,3,M.branco,M.verdeClaro,0,false,g);
+    for(let i=0;i<6;i++){ const x=Lx.x-2.5+i*1, z=Lx.z-Lx.h/2-2.2-(i%2)*1.2; box(0.5,0.9,0.15,M.pedra,x,0.45,z,g); box(0.5,0.25,0.15,M.pedra,x,0.95,z,g); box(0.8,0.1,1.2,mat(0x6b5a3a),x,0.05,z+0.7,g); } for(let i=0;i<9;i++) cyl(0.06,0.06,0.8,M.madeiraEsc,Lx.x-3.3+i*0.8,0.4,Lx.z-Lx.h/2-4.2,g,4); box(7,0.06,0.06,M.madeiraEsc,Lx.x-0.1,0.7,Lx.z-Lx.h/2-4.2,g); box(0.9,0.25,0.25,M.vermelho,Lx.x,4.9,Lx.z,g); box(0.25,0.9,0.25,M.vermelho,Lx.x,4.9,Lx.z,g); rotuloEm(g,"Casa de Cura",Lx.x,6.2,Lx.z,6.5); })();
   // mercado (+ caixas e carroça)
   (function(){ const g=grupo("mercado"); const Lx=L.mercado; for(let i=-1;i<=1;i++){ const bg=new THREE.Group(); bg.position.set(Lx.x+i*2.4,0,Lx.z); box(2,0.9,1.2,M.madeira,0,0.45,0,bg); for(const s of [-0.9,0.9]) for(const t of [-0.5,0.5]) cyl(0.06,0.06,2.4,M.madeiraEsc,s,1.2,t,bg,5);
       const aw=cone(1.6,0.7,i===0?M.vermelho:M.branco,0,2.6,0,bg,4); aw.rotation.y=Math.PI/4; aw.scale.set(1,1,0.75); g.add(bg); } rotuloEm(g,"Mercado",Lx.x,4.4,Lx.z,5.5);
@@ -651,19 +660,54 @@ function bicho(tipo,V){ const g=new THREE.Group(); const r=rnd(tipo+V.i+BICHOS.l
   if(tipo==="galinha"){ const b=esfera(0.22,M.branco,0,0.32,0,g,8,6); b.scale.set(1.3,1,1); esfera(0.12,M.branco,0.25,0.5,0,g,6,5); cone(0.05,0.12,mat(0xf0c030),0.38,0.5,0,g,4).rotation.z=-Math.PI/2; box(0.06,0.1,0.04,mat(0xd94040),0.25,0.62,0,g); for(const s of [-0.07,0.07]) box(0.04,0.22,0.04,mat(0xf0c030),s,0.11,0,g); }
   else if(tipo==="javali"){ const b=box(0.9,0.5,0.45,mat(0x5a3a22),0,0.5,0,g); box(0.45,0.35,0.35,mat(0x4a2e1a),0.6,0.5,0,g); for(const s of [-0.12,0.12]) cone(0.03,0.2,M.branco,0.8,0.42,s,g,4).rotation.z=-Math.PI/2; for(const s of [-0.3,0.3]) for(const t of [-0.15,0.15]) box(0.1,0.3,0.1,mat(0x4a2e1a),s,0.15,t,g); box(0.5,0.12,0.12,mat(0x2b1b0e),0,0.78,0,g); }
   else if(tipo==="goblin"){ const verde=mat(0x6fa34a); box(0.2,0.4,0.2,verde,-0.12,0.2,0,g); box(0.2,0.4,0.2,verde,0.12,0.2,0,g); box(0.5,0.5,0.35,mat(0x5a4a2a),0,0.65,0,g); esfera(0.3,verde,0,1.1,0,g); cone(0.12,0.4,verde,-0.3,1.3,0,g,4).rotation.z=0.6; cone(0.12,0.4,verde,0.3,1.3,0,g,4).rotation.z=-0.6; box(0.08,0.7,0.08,M.madeiraEsc,0.32,0.8,0,g); }
+  else if(tipo==="aranha"){ const preto=mat(0x2a2a2a); const c=esfera(0.45,preto,0,0.5,0,g,8,6); c.scale.set(1.2,0.8,1.4); esfera(0.25,preto,0.55,0.45,0,g,7,5); for(let i=0;i<4;i++) for(const sd of [-1,1]){ const pr=box(0.06,0.06,0.9,preto,(-0.3+i*0.2),0.55,sd*0.6,g); pr.rotation.x=sd*0.9; pr.rotation.y=(i-1.5)*0.25; } box(0.07,0.07,0.07,mat(0xff3030),0.75,0.5,0.1,g); box(0.07,0.07,0.07,mat(0xff3030),0.75,0.5,-0.1,g); }
+  else if(tipo==="fantasma"){ const mf=new THREE.MeshStandardMaterial({color:0xdfe8ff,transparent:true,opacity:0.55,emissive:0x8fa8ff,emissiveIntensity:0.5}); const c=esfera(0.45,mf,0,1.5,0,g,8,6); const corpo=cone(0.5,1.3,mf,0,0.75,0,g,8); corpo.rotation.x=Math.PI; box(0.1,0.12,0.05,mat(0x1a1a2a),-0.15,1.55,0.42,g); box(0.1,0.12,0.05,mat(0x1a1a2a),0.15,1.55,0.42,g); g.traverse(o=>{ if(o.isMesh) o.castShadow=false; }); }
+  else if(tipo==="morcego"){ const m2=mat(0x2a2030); box(0.2,0.15,0.1,m2,0,0,0,g); const aE=box(0.5,0.03,0.25,m2,-0.35,0,0,g), aD=box(0.5,0.03,0.25,m2,0.35,0,0,g); g.userData.asas=[aE,aD]; g.traverse(o=>{ if(o.isMesh) o.castShadow=false; }); }
   else if(tipo==="lobo"){ const cinza=mat(0x7a7f87); box(1,0.42,0.4,cinza,0,0.55,0,g); box(0.4,0.32,0.32,cinza,0.65,0.62,0,g); cone(0.08,0.2,cinza,0.6,0.85,-0.1,g,4); cone(0.08,0.2,cinza,0.6,0.85,0.1,g,4); for(const s of [-0.35,0.35]) for(const t of [-0.14,0.14]) box(0.1,0.35,0.1,cinza,s,0.18,t,g); box(0.5,0.1,0.1,cinza,-0.7,0.6,0,g).rotation.z=0.5; box(0.05,0.05,0.05,mat(0xffd24a),0.86,0.68,0.1,g); box(0.05,0.05,0.05,mat(0xffd24a),0.86,0.68,-0.1,g); }
   else if(tipo==="dragao"){ const verde=mat(0x3fa34d), esc=mat(0x2f7a3a); const corpo=box(4,1.4,1.4,verde,0,0,0,g); box(1.6,1,1,verde,2.6,0.3,0,g); cone(0.3,1.2,esc,3.2,0.9,-0.3,g,4); cone(0.3,1.2,esc,3.2,0.9,0.3,g,4); const cauda=cone(0.6,3,verde,-3.2,0,0,g,5); cauda.rotation.z=Math.PI/2;
     const aE=box(4,0.12,2.2,esc,0,0.6,-2.2,g), aD=box(4,0.12,2.2,esc,0,0.6,2.2,g); g.userData.asas=[aE,aD]; for(let i=0;i<4;i++) cone(0.2,0.5,esc,-1.5+i*1,0.9,0,g,4); box(0.15,0.15,0.15,mat(0xff5c5c),3.3,0.5,0.35,g); box(0.15,0.15,0.15,mat(0xff5c5c),3.3,0.5,-0.35,g); g.traverse(o=>{ if(o.isMesh) o.castShadow=true; }); }
   g.userData.tipo=tipo; g.userData.V=V; g.userData.fase=r()*6; g.userData.r=r; scene.add(g); BICHOS.push(g); return g; }
-function povoaBichos(V){ for(let k=0;k<4;k++) bicho("galinha",V); for(let k=0;k<2;k++) bicho("javali",V); for(let k=0;k<2;k++) bicho("goblin",V); bicho("lobo",V); }
+function povoaBichos(V){ for(let k=0;k<4;k++) bicho("galinha",V); for(let k=0;k<2;k++) bicho("javali",V); for(let k=0;k<3;k++) bicho("goblin",V); bicho("lobo",V); for(let k=0;k<2;k++) bicho("aranha",V); for(let k=0;k<3;k++) bicho("fantasma",V); for(let k=0;k<5;k++) bicho("morcego",V); }
 const DRAGAO=bicho("dragao",{i:-1,cx:0,cz:0,L:{}}); DRAGAO.visible=false; const sombraDragao=new THREE.Mesh(geo("Circle",[2.5,12]),new THREE.MeshBasicMaterial({color:0x000000,transparent:true,opacity:0.3})); sombraDragao.rotation.x=-Math.PI/2; sombraDragao.visible=false; scene.add(sombraDragao);
 function animaBichos(tsec,w){ BICHOS.forEach(b=>{ const V=b.userData.V, f=b.userData.fase, t=b.userData.tipo; if(t==="dragao") return; const L=V.L;
     if(t==="galinha"){ const C=L.campo; b.position.set(C.x+C.w/2+3.5+Math.sin(tsec*0.5+f)*2.2, 0, C.z+Math.cos(tsec*0.37+f)*3); b.rotation.y=tsec*0.5+f+Math.PI/2; b.position.y=Math.abs(Math.sin(tsec*6+f))*0.05; }
     else if(t==="javali"){ const F=L.floresta; b.position.set(F.x+F.w/2+4+Math.sin(tsec*0.25+f)*4, 0, F.z+Math.cos(tsec*0.2+f)*8); b.rotation.y=Math.atan2(Math.cos(tsec*0.25+f)*0.25*4, -Math.sin(tsec*0.2+f)*0.2*8); }
-    else if(t==="goblin"){ const ativo=hash("vil"+Math.floor(w.t)+V.i)%4===0 && w.hora>=6 && w.hora<=22; b.visible=ativo; if(ativo){ const F=L.floresta; b.position.set(F.x+F.w/2+2+Math.sin(tsec*1.2+f)*1.5, 0, F.z-F.h/2+Math.cos(tsec*0.8+f)*2+f); b.rotation.y=tsec*0.8+f; } }
+    else if(t==="goblin"){ const ativo=w.hora>=6 && w.hora<=23; b.visible=ativo; if(ativo){ const F=L.floresta; const k=Math.floor(f); b.position.set(F.x+F.w/2+3+k*2+Math.sin(tsec*0.9+f)*2.5, Math.abs(Math.sin(tsec*7+f))*0.08, F.z-F.h/2-2+Math.cos(tsec*0.6+f)*5+f); b.rotation.y=Math.atan2(Math.cos(tsec*0.9+f)*2.2,-Math.sin(tsec*0.6+f)*3); } }
+    else if(t==="aranha"){ const F=L.floresta; b.visible=w.hora>=6&&w.hora<=19; b.position.set(F.x+(Math.sin(tsec*0.3+f)*F.w*0.4), 0, F.z+Math.cos(tsec*0.23+f)*F.h*0.4); b.rotation.y=tsec*0.3+f+Math.PI/2; }
+    else if(t==="fantasma"){ const noite=w.hora>=21||w.hora<5; b.visible=noite; if(noite){ const C=L.capela; const r0=f; b.position.set(C.x+Math.sin(tsec*0.35+r0)*3.5, 0.3+Math.sin(tsec*1.4+r0)*0.4, C.z-C.h/2-2.5+Math.cos(tsec*0.28+r0)*2.5); b.rotation.y=tsec*0.35+r0; } }
+    else if(t==="morcego"){ const noite=w.hora>=19||w.hora<6; b.visible=noite; if(noite){ b.position.set(V.cx+Math.cos(tsec*1.1+f)*7, 6+Math.sin(tsec*2+f)*1.5, V.cz+Math.sin(tsec*1.1+f)*7); b.rotation.y=-(tsec*1.1+f); b.userData.asas.forEach((a,i)=>{ a.rotation.z=(i?-1:1)*Math.sin(tsec*18+f)*0.7; }); } }
     else if(t==="lobo"){ const noite=w.hora>=20||w.hora<5; b.visible=noite; if(noite){ const C=L.campo; b.position.set(C.x-C.w/2-3+Math.sin(tsec*0.4+f)*3, 0, C.z+Math.cos(tsec*0.3+f)*5); b.rotation.y=Math.atan2(Math.cos(tsec*0.4+f)*1.2, -Math.sin(tsec*0.3+f)*1.5); } } });
   // dragão: passa por cima das vilas a cada 10 minutos reais
   const ciclo=600, u=(Date.now()/1000)%ciclo; const voa=u<70; DRAGAO.visible=voa; sombraDragao.visible=voa; if(voa){ const nv=nVilas(); const A=vila(Math.floor(Date.now()/1000/ciclo)%nv); const ang=(u/70)*Math.PI*2; const R=48; const x=A.cx+Math.cos(ang)*R, z=A.cz+Math.sin(ang)*R; DRAGAO.position.set(x,22+Math.sin(tsec*0.8)*2,z); DRAGAO.rotation.y=-ang+Math.PI/2; DRAGAO.userData.asas.forEach((a,i)=>{ a.rotation.x=(i?-1:1)*Math.sin(tsec*4)*0.5; }); sombraDragao.position.set(x,0.08,z); } }
+// ---------- batalha secreta: o Dragão das Cinzas pousa na praça da Vila Aurora ----------
+const BATALHA={T:46, lutadores:["npc-rufo","npc-teo","npc-olavo","npc-juca","npc-bras","npc-tiao"], fogo:null, luzFogo:null, hpFundo:null, hpBarra:null, titulo:null, flechas:[], bolas:[], ativa:false};
+(function(){ const f=cone(1.2,6,new THREE.MeshBasicMaterial({color:0xff7a1a,transparent:true,opacity:0.75}),0,0,0); f.castShadow=false; f.visible=false; BATALHA.fogo=f; const l=new THREE.PointLight(0xff6a1a,0,18,2); scene.add(l); BATALHA.luzFogo=l;
+  const mk=(c,w)=>{ const sp=new THREE.Sprite(new THREE.SpriteMaterial({color:c,depthTest:false})); sp.scale.set(w,0.5,1); sp.visible=false; scene.add(sp); return sp; }; BATALHA.hpFundo=mk(0x2b1b1b,8.2); BATALHA.hpBarra=mk(0xe03030,8); BATALHA.titulo=rotulo("DRAGÃO DAS CINZAS",0,0,0,9,"#ffb3a0"); BATALHA.titulo.visible=false;
+  for(let i=0;i<10;i++){ const a=box(0.06,0.06,1.1,mat(0x5e3a1b),0,0,0); const p2=cone(0.08,0.25,mat(0xc9ced6,{metalness:0.6}),0,0,0.6,a,4); p2.rotation.x=Math.PI/2; a.castShadow=false; a.visible=false; BATALHA.flechas.push({m:a,t0:-1,de:null,para:null}); }
+  for(let i=0;i<6;i++){ const b=new THREE.Mesh(geo("Sphere",[0.28,8,6]),new THREE.MeshBasicMaterial({color:0x9f7cff})); b.visible=false; scene.add(b); BATALHA.bolas.push({m:b,t0:-1,de:null,para:null}); } })();
+function batalha(tsec,w){ if(!MODO_SEGREDO) return; const V=vila(0); const cx=V.cx, cz=V.cz; const u=tsec%BATALHA.T; const D=DRAGAO; BATALHA.ativa=true;
+  // fases: 0-4 pousa · 4-32 luta · 32-38 foge · 38-46 calma
+  let y, hp; if(u<4){ y=30-(u/4)*29; hp=100; } else if(u<32){ y=1+Math.sin(tsec*2)*0.15; hp=Math.max(0,100-((u-4)/28)*100); } else if(u<38){ y=1+((u-32)/6)*42; hp=0; } else { y=60; hp=0; }
+  D.visible=u<38; sombraDragao.visible=D.visible&&u<34; D.position.set(cx,y,cz); D.rotation.y=u<4?0:u<32?Math.sin(tsec*0.5)*0.6:0; D.scale.setScalar(1.3); D.userData.asas.forEach((a,i)=>{ a.rotation.x=(i?-1:1)*Math.sin(tsec*(u<4||u>=32?6:2.5))*0.6; }); sombraDragao.position.set(cx,0.08,cz); sombraDragao.scale.setScalar(1.3+y*0.02);
+  const mostraHp=u>=3&&u<34; BATALHA.hpFundo.visible=BATALHA.hpBarra.visible=BATALHA.titulo.visible=mostraHp; if(mostraHp){ BATALHA.hpFundo.position.set(cx,y+4.2,cz); BATALHA.hpBarra.position.set(cx-(8-8*hp/100)/2,y+4.2,cz); BATALHA.hpBarra.scale.set(Math.max(0.01,8*hp/100),0.5,1); BATALHA.titulo.position.set(cx,y+5.6,cz); }
+  // fogo do dragão a cada 7 s, por 1,5 s, para um lutador
+  const ciclo=(u-4)%7; const cuspindo=u>=6&&u<32&&ciclo<1.5; BATALHA.fogo.visible=cuspindo; BATALHA.luzFogo.intensity=cuspindo?3:0; const alvoIdx=Math.floor((u-4)/7)%BATALHA.lutadores.length;
+  // lutadores em anel
+  const lista=todos(); BATALHA.lutadores.forEach((id,k)=>{ const i=lista.findIndex(m=>m.id===id); if(i<0) return; const m=lista[i]; const b=bonecos.get(id); if(!b) return; const ang=k/BATALHA.lutadores.length*Math.PI*2+0.3; const longe=m.profissao==="arqueiro"||m.profissao==="mago"; const R=longe?9:5.2;
+    let px=cx+Math.cos(ang)*R, pz=cz+Math.sin(ang)*R; const uu=b.userData; b.visible=u<44; if(u<4){ px=cx+Math.cos(ang)*14; pz=cz+Math.sin(ang)*14; }
+    if(u>=32&&u<38){ uu.bracoD.rotation.x=-2.6; uu.bracoE.rotation.x=-2.6; b.position.y=Math.abs(Math.sin(tsec*6+k))*0.35; } else if(u>=4&&u<32){ const golpe=Math.sin(tsec*5+k)>0.3; uu.bracoD.rotation.x=longe?-1.5:(golpe?-2.2:-0.4); uu.bracoE.rotation.x=longe?-1.4:-0.3; b.position.y=0;
+      if(cuspindo&&k===alvoIdx){ const rec=ciclo/1.5; px+= (px-cx)/R*rec*3; pz+=(pz-cz)/R*rec*3; b.position.y=Math.sin(rec*Math.PI)*0.8; b.rotation.z=rec*0.6; } else b.rotation.z=0; } else { uu.bracoD.rotation.x=-0.2; uu.bracoE.rotation.x=0; b.rotation.z=0; }
+    b.position.x=px; b.position.z=pz; b.rotation.y=Math.atan2(cx-px,cz-pz); if(uu.cavalo) uu.cavalo.visible=false; if(uu.magia){ uu.magia.visible=(m.profissao==="mago"&&u>=4&&u<32); }
+    if(cuspindo&&k===alvoIdx){ BATALHA.fogo.position.set(cx+Math.cos(ang)*3.5,2.2,cz+Math.sin(ang)*3.5); BATALHA.fogo.lookAt(px,1,pz); BATALHA.fogo.rotateX(Math.PI/2); BATALHA.fogo.scale.set(1+Math.sin(tsec*20)*0.2,1,1+Math.cos(tsec*17)*0.2); BATALHA.luzFogo.position.set(cx+Math.cos(ang)*4,2,cz+Math.sin(ang)*4); }
+    // projéteis
+    if(u>=4&&u<32&&longe){ const pool=m.profissao==="mago"?BATALHA.bolas:BATALHA.flechas; const periodo=m.profissao==="mago"?1.6:1.1; const fase=Math.floor((tsec+k)/periodo); const livre=pool.find(q=>q.t0<0||tsec-q.t0>0.6); if(livre&&(livre.fase!==fase)){ livre.fase=fase; livre.t0=tsec; livre.de={x:px,y:1.6,z:pz}; livre.para={x:cx+(Math.random()-.5),y:y+1.5,z:cz+(Math.random()-.5)}; } } });
+  [...BATALHA.flechas,...BATALHA.bolas].forEach(q=>{ if(q.t0<0){ q.m.visible=false; return; } const f=(tsec-q.t0)/0.55; if(f>1){ q.m.visible=false; q.t0=-1; return; } q.m.visible=true; q.m.position.set(q.de.x+(q.para.x-q.de.x)*f, q.de.y+(q.para.y-q.de.y)*f+Math.sin(f*Math.PI)*1.2, q.de.z+(q.para.z-q.de.z)*f); q.m.lookAt(q.para.x,q.para.y,q.para.z); });
+  // câmera orbitando a praça
+  if(!arrastando){ orb.alvo.set(cx,2.5,cz); orb.theta=0.6+tsec*0.1; orb.phi=1.02; orb.r=u<4?26:17; }
+  const nomeAlvo=(()=>{ const id=BATALHA.lutadores[alvoIdx]; const m=lista.find(z=>z.id===id); return m?m.nome:"um morador"; })();
+  const fala=u<4?"Alerta! O Dragão das Cinzas pousa na praça da Vila Aurora.":u<32?(cuspindo?"O dragão cospe fogo em "+nomeAlvo+"!":"Capitão Rufo, Teo, Mestre Olavo, Juca, Brás e Tião atacam o dragão."):u<38?"O Dragão das Cinzas foge! Ninguém morreu. A vila venceu.":"A praça respira. Até a próxima.";
+  $("narr").innerHTML="<span></span><small></small>"; $("narr").firstChild.textContent=fala; $("narr").lastChild.textContent="Vida do dragão: "+Math.round(hp)+"%";
+}
 // chuva (determinística por dia e hora), pássaros, fumaça
 const CHUVA=(function(){ const g=new THREE.InstancedMesh(geo("Box",[0.03,0.9,0.03]),new THREE.MeshBasicMaterial({color:0xbfd8ff,transparent:true,opacity:0.55}),700); g.frustumCulled=false; g.visible=false; scene.add(g); const r=rnd("chuva"); g.userData.seeds=[]; for(let i=0;i<700;i++) g.userData.seeds.push({x:(r()-.5)*90,z:(r()-.5)*70,f:r()*20}); return g; })();
 function chovendo(w){ return hash("chuva"+w.dia)%3===0 && w.hora>=14 && w.hora<=17; }
@@ -820,7 +864,7 @@ canvas.addEventListener("touchstart",e=>{ if(e.touches.length===2){ pinch=Math.h
 canvas.addEventListener("touchmove",e=>{ if(e.touches.length===2){ const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY); orb.r=Math.min(110,Math.max(10,orb.r*(pinch/d))); pinch=d; arrastando=false; } },{passive:true});
 const ray=new THREE.Raycaster(), ptr=new THREE.Vector2();
 function clique(e){ const r=canvas.getBoundingClientRect(); ptr.x=((e.clientX-r.left)/r.width)*2-1; ptr.y=-((e.clientY-r.top)/r.height)*2+1; ray.setFromCamera(ptr,camera);
-  const alvos=[]; bonecos.forEach(b=>{ if(b.visible) alvos.push(b); }); const hit=ray.intersectObjects(alvos,true)[0]; if(hit&&hit.object.userData.id){ selecionar(hit.object.userData.id); } }
+  const alvos=[]; bonecos.forEach(b=>{ if(b.visible) alvos.push(b); }); const hit=ray.intersectObjects(alvos,true)[0]; if(hit&&hit.object.userData.id){ selecionar(hit.object.userData.id,true); } }
 function redimensiona(){ const w=mapBox.clientWidth, h=mapBox.clientHeight; if(!w||!h) return; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
 window.addEventListener("resize",redimensiona); redimensiona();
 
@@ -837,7 +881,7 @@ function anima(){
   if(alt>0.35) corCeu.copy(corDia); else if(alt>0){ corCeu.copy(corTarde).lerp(corDia,alt/0.35); } else { corCeu.copy(corNoite).lerp(corTarde,Math.max(0,1+alt*4)); }
   scene.background.copy(corCeu); scene.fog.color.copy(corCeu); scene.fog.near=luz>0.3?120:50; scene.fog.far=luz>0.3?300:150;
   M.janela.emissiveIntensity=luz<0.3?1.4*(1-luz/0.3):0;
-  animaTochas(tsec,luz<0.25); animaVagalumes(tsec,luz<0.15); animaBichos(tsec,w); animaChuva(tsec,w); animaPassaros(tsec); animaFumaca(tsec); if(chovendo(w)){ scene.background.multiplyScalar(0.6); scene.fog.color.copy(scene.background); sol.intensity*=0.5; }
+  animaTochas(tsec,luz<0.25); animaVagalumes(tsec,luz<0.15); if(!MODO_SEGREDO) animaBichos(tsec,w); animaChuva(tsec,w); animaPassaros(tsec); animaFumaca(tsec); if(chovendo(w)){ scene.background.multiplyScalar(0.6); scene.fog.color.copy(scene.background); sol.intensity*=0.5; }
   fogueiras.forEach(f=>{ f.luz.intensity=(luz<0.25?1.6:0.9)+Math.sin(tsec*9+f.fase)*0.25+Math.sin(tsec*23)*0.12; f.chama.scale.y=0.9+Math.sin(tsec*11+f.fase)*0.2; f.chama2.scale.y=0.9+Math.cos(tsec*13)*0.25; f.chama.rotation.y=tsec*2; });
   if(rio){ const pos=rio.geometry.attributes.position; for(let i=0;i<pos.count;i++){ pos.setZ(i, Math.sin(tsec*1.5+pos.getY(i)*0.4)*0.08); } pos.needsUpdate=true; }
   const acordados=[];
@@ -847,7 +891,7 @@ function anima(){
       if(eco.proxima&&eco.progresso>0.08){ const Lx=V.L[eco.proxima[0]]; V.andaime.visible=true; V.andaime.position.set(Lx.x,0,Lx.z); V.andaime.scale.set(Lx.w/4,1,Lx.h/4); } else V.andaime.visible=false;
       const nLogs=Math.min(V.pilhaLogs.length,Math.floor(eco.madeira/4)); V.pilhaLogs.forEach((l,k)=>l.visible=k<nLogs); } }
   if(now-ultimoCulling>1500||visiveis.size===0){ ultimoCulling=now; const t=orb.target; const arr=lista.map((m,i)=>{ const c=casaDe(i); const L=c.vila.L[LUGAR_DE[m.profissao]||"praca"]; const dd=Math.min((c.x-t.x)**2+(c.z-t.z)**2,(L.x-t.x)**2+(L.z-t.z)**2); return {m,i,dd}; }).sort((a,b)=>a.dd-b.dd);
-    const novo=new Set(arr.slice(0,MAX_VISIVEIS).map(o=>o.m.id)); if(selecionado) novo.add(selecionado); bonecos.forEach((b,id)=>{ if(!novo.has(id)){ scene.remove(b); bonecos.delete(id); } }); cabRot.forEach((s,id)=>{ if(!novo.has(id)){ scene.remove(s); cabRot.delete(id); } }); visiveis=novo; }
+    const novo=new Set(arr.slice(0,MAX_VISIVEIS).map(o=>o.m.id)); if(selecionado) novo.add(selecionado); if(MODO_SEGREDO) BATALHA.lutadores.forEach(id=>novo.add(id)); bonecos.forEach((b,id)=>{ if(!novo.has(id)){ scene.remove(b); bonecos.delete(id); } }); cabRot.forEach((s,id)=>{ if(!novo.has(id)){ scene.remove(s); cabRot.delete(id); } }); visiveis=novo; }
   posSel=null; let selDentro=null; let arvoreBalanca=null; let nomesMostrados=0;
   lista.forEach((m,i)=>{ if(!visiveis.has(m.id)) return; rotuloCabana(m,i); const b=garanteBoneco(m); const e=estado(m,i,w); const u=b.userData; const sel=m.id===selecionado;
     const c0=casaDe(i); const perto=((e.x-orb.target.x)**2+(e.z-orb.target.z)**2<420 && nomesMostrados<18) || sel; u.nome.visible=perto&&!e.dentro; if(u.nome.visible) nomesMostrados++; const rc=cabRot.get(m.id); if(rc) rc.visible=orb.r<40 && (c0.x-orb.target.x)**2+(c0.z-orb.target.z)**2<900;
@@ -855,6 +899,7 @@ function anima(){
     if(u.magia){ const on=e.modo==="magia"; u.magia.visible=on; if(on){ u.magia.children.forEach(o=>{ const t=(tsec*0.6+o.userData.k/7)%1; o.position.set(Math.cos(o.userData.k*0.9+tsec*2)*0.45, 1.9+t*1.6, Math.sin(o.userData.k*0.9+tsec*2)*0.45); o.scale.setScalar(1-t*0.8); o.rotation.y=tsec*3; }); } }
     if(!e.dentro&&(e.chave==="lazer"||e.chave==="fogueira"||e.chave==="visita")) acordados.push({x:e.x,z:e.z,vi:e.vila.i,visita:!!e.visita});
     const s=Math.sin(tsec*9+u.fase); const zera=()=>{ u.pernaE.rotation.x=u.pernaD.rotation.x=0; u.bracoE.rotation.x=0; u.bracoD.rotation.x=-0.2; b.rotation.x=0; };
+    if(MODO_SEGREDO&&BATALHA.lutadores.includes(m.id)){ e.dentro=null; }
     if(e.dentro){ if(sel){ const I=INTERIORES[e.dentro.tipo==="tenda"?"casa":e.dentro.tipo]||INTERIORES.casa;
         if(I===INTERIORES.casa&&I.personalizado!==m.id){ I.personalizado=m.id; const hue=(hash(m.nome)%360)/360; I.mp.color.setHSL(hue,0.22,0.82); I.tapete.color.setHSL((hue+0.5)%1,0.5,0.42); const eqI=equipamentoDe(m); while(I.ferramenta.children.length) I.ferramenta.remove(I.ferramenta.children[0]); if(eqI.principal){ const t=eqI.principal.g.clone(); t.scale.setScalar(1.6); I.ferramenta.add(t); } while(I.escudo.children.length) I.escudo.remove(I.escudo.children[0]); if(eqI.escudo){ const t=eqI.escudo.g.clone(); t.scale.setScalar(1.5); I.escudo.add(t); } I.trofeu.visible=xpDe(m).nivel>=6; } const sp=I.spots[e.dentro.spot]||I.spots.mesa||I.spots.cama; b.visible=true; zera(); b.position.set(I.cx+sp.x,(sp.y||0),I.cz+sp.z); b.rotation.set(0,sp.ang||0,0);
         if(sp.deitado){ b.rotation.x=-Math.PI/2; b.position.y=(sp.y||0)+0.15; } else if(e.dentro.modo==="sentado"){ u.pernaE.rotation.x=u.pernaD.rotation.x=-1.4; b.position.y=-0.3; u.bracoD.rotation.x=-0.9; u.bracoE.rotation.x=-0.9; } else { u.bracoD.rotation.x=-1.5+Math.max(0,Math.sin(tsec*5+u.fase))*1.1; u.bracoE.rotation.x=-0.6; }
@@ -874,6 +919,7 @@ function anima(){
   });
   if(arvoreBalancaAnt&&arvoreBalancaAnt!==arvoreBalanca) arvoreBalancaAnt.rotation.z=0; if(arvoreBalanca) arvoreBalanca.rotation.z=Math.sin(tsec*6)*0.04; arvoreBalancaAnt=arvoreBalanca;
   ovelhas.forEach(o=>{ const L=o.userData.V.L.campo; const f=o.userData.fase; o.position.set(L.x+Math.cos(tsec*0.12+f)*L.w*0.38, 0, L.z+Math.sin(tsec*0.19+f)*L.h*0.38); o.rotation.y=Math.atan2(-Math.sin(tsec*0.12+f)*0.12*L.w, Math.cos(tsec*0.19+f)*0.19*L.h); });
+  batalha(tsec,w);
   if(selDentro&&seguindo){ const I=selDentro.I; if(dentroAtual!==I){ if(!dentroAtual) rAntes=orb.r; dentroAtual=I; orb.r=6.5; orb.phi=1.15; orb.theta=0.5; orb.alvo.set(I.cx,0.9,I.cz-1); orb.target.copy(orb.alvo); } else { orb.alvo.set(I.cx,0.9,I.cz-1); orb.target.copy(orb.alvo); } orb.r=Math.min(Math.max(orb.r,4.5),8.5); orb.phi=Math.min(Math.max(orb.phi,0.95),1.3); }
   else if(dentroAtual){ dentroAtual=null; orb.r=Math.max(rAntes||18,16); if(posSel){ orb.alvo.set(posSel.x,1,posSel.z); orb.target.copy(orb.alvo); } }
   // coraçõezinhos: quem está junto na praça, taverna ou visita
@@ -885,7 +931,7 @@ function anima(){
   else if(!selDentro) marcador.visible=false;
   const vilaoAtivo = hash("vil"+Math.floor(w.t))%5===0 && w.hora>=6 && w.hora<=22; goblin.visible=vilaoAtivo;
   if(vilaoAtivo){ const F=LUG.floresta; goblin.position.set(F.x+F.w/2+1.5+Math.sin(tsec*1.2)*1.5, 0, F.z+Math.cos(tsec*0.8)*2); goblin.rotation.y=tsec*0.8; }
-  if(document.body.classList.contains("cinema")){ if(!arrastando) orb.theta+=0.0015; if(now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); orb.r=16; } } }
+  if(document.body.classList.contains("cinema")&&!MODO_SEGREDO){ if(!arrastando) orb.theta+=0.0015; if(!fixado&&now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); orb.r=16; } } }
   posicionaCamera(); renderer.render(scene,camera);
 }
 
@@ -896,7 +942,8 @@ let retratoBoneco=null; function desenhaRetrato(m){ if(retratoBoneco) retratoS.r
 
 // ---------- UI ----------
 const $=id=>document.getElementById(id);
-function selecionar(id){ selecionado=id; seguindo=true; orb.r=Math.min(orb.r,26); visiveis.add(id); const li=todos(); const ii=li.findIndex(m=>m.id===id); if(ii>=0){ const e=estado(li[ii],ii,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.target.copy(orb.alvo); } } atualizaCard(true); }
+let fixado=false;
+function selecionar(id,manual){ selecionado=id; seguindo=true; if(manual) fixado=true; orb.r=Math.min(orb.r,26); visiveis.add(id); const li=todos(); const ii=li.findIndex(m=>m.id===id); if(ii>=0){ const e=estado(li[ii],ii,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.target.copy(orb.alvo); } } atualizaCard(true); }
 let cardId=null;
 function atualizaCard(forca){
   const lista=todos(); const i=lista.findIndex(m=>m.id===selecionado); const box=$("meuBox");
@@ -915,8 +962,8 @@ function atualizaCard(forca){
   if(forca||cardId!==m.id+":"+x.nivel){ cardId=m.id+":"+x.nivel; desenhaRetrato(m); }
   if(document.body.classList.contains("cinema")){ $("narr").innerHTML="<span></span><small></small>"; $("narr").firstChild.textContent=m.nome+" está "+e.acao; $("narr").lastChild.textContent=x.titulo+" "+p.nome+(eq.principal?" · "+eq.principal.nome:" · ainda sem equipamento")+(eq.escudo?" · "+eq.escudo.nome:""); }
 }
-$("btnSeguir").addEventListener("click",()=>{ seguindo=true; orb.r=Math.min(orb.r,22); });
-function botaoMorador(m){ const b=document.createElement("button"); b.type="button"; const p=PROF[m.profissao]||PROF.bardo; const x=xpDe(m); b.innerHTML="<span></span> <span>· "+p.nome+" · nv "+x.nivel+(m.npc?" · NPC":"")+"</span>"; b.firstChild.textContent=m.nome; b.firstChild.style.color="inherit"; b.addEventListener("click",()=>selecionar(m.id)); return b; }
+$("btnSeguir").addEventListener("click",()=>{ seguindo=true; fixado=true; orb.r=Math.min(orb.r,22); });
+function botaoMorador(m){ const b=document.createElement("button"); b.type="button"; const p=PROF[m.profissao]||PROF.bardo; const x=xpDe(m); b.innerHTML="<span></span> <span>· "+p.nome+" · nv "+x.nivel+(m.npc?" · NPC":"")+"</span>"; b.firstChild.textContent=m.nome; b.firstChild.style.color="inherit"; b.addEventListener("click",()=>selecionar(m.id,true)); return b; }
 function renderLista(){ const r=$("listaMoradores"); r.innerHTML=""; const l=todos().filter(m=>!m.npc); l.slice(-40).reverse().forEach(m=>r.appendChild(botaoMorador(m))); $("listaNota").textContent=(l.length>40?"Mostrando os 40 mais recentes de "+l.length+". ":"")+"Cada @ que segue a página vira um morador, sozinho. Ninguém cria nem controla bonequinho."; }
 $("busca").addEventListener("input",()=>{
   const q=$("busca").value.trim().toLowerCase().replace(/^@/,""); const r=$("resultados"); r.innerHTML="";
@@ -934,11 +981,16 @@ function renderCronica(){
 }
 
 // ---------- lista de moradores: arquivo estático (CDN), atualizado pelo robô de seguidores ----------
-const MODO_TESTE=/[?&]teste=1/.test(location.search);
+const MODO_TESTE=/[?&]teste=1/.test(location.search); const MODO_ABERTURA=/[?&]abertura=1/.test(location.search); const MODO_SEGREDO=/[?&]segredo=1/.test(location.search);
+const ROTEIRO_ABERTURA=[[0,"Esta é a <b>Vila Aurora</b>.<small>Um mundo que anda sozinho.</small>"],[5,"Cada @ que segue a página<small>vira um morador.</small>"],[10,"Ninguém controla nada.<small>Eles trabalham, brigam, dormem… sozinhos.</small>"],[16,"Seu boneco já pode estar aqui.<small>Procure seu @ no link da bio.</small>"],[22,"Siga e entre na vila.<small>@vilaauroraoficial</small>"]];
+function iniciaAbertura(){ document.body.classList.add("abertura"); redimensiona(); orb.phi=1.05; orb.r=34; orb.alvo.set(0,0,2); orb.target.copy(orb.alvo); seguindo=false; const t0=performance.now(); const el=$("aberturaTxt"); let atual=-1;
+  (function passo(){ const t=(performance.now()-t0)/1000; orb.theta=0.4+t*0.09; orb.r=34-Math.min(14,t*0.8); let k=-1; ROTEIRO_ABERTURA.forEach((r,i)=>{ if(t>=r[0]) k=i; }); if(k!==atual){ atual=k; el.classList.remove("on"); setTimeout(()=>{ el.innerHTML=k>=0?ROTEIRO_ABERTURA[k][1]:""; el.classList.add("on"); },300); }
+    if(t>=12&&t<16){ const V=vila(1); orb.alvo.set(V.cx,0,V.cz+2); } if(t>=16&&t<22){ const l=todos().filter(m=>!m.npc); if(l.length){ const i=todos().findIndex(m=>m.id===l[Math.floor(t/2)%l.length].id); const e=estado(todos()[i],i,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.r=12; } } } if(t>=22){ orb.alvo.set(0,0,2); orb.r=30; }
+    requestAnimationFrame(passo); })(); }
 async function carregaMoradores(){ try{ const r=await fetch(MODO_TESTE?"moradores-teste.json":"moradores.json",{cache:"no-cache"}); if(!r.ok) throw 0; const j=await r.json();
     MORADORES=j.moradores.filter(m=>!m.fundador).map(m=>({id:m.id, nome:m.nome, nomeCompleto:m.nomeCompleto||"", sexo:m.sexo||"?", profissao:m.profissao, joinedAt:m.joinedAt||D(m.dia||1,m.hora), exemplo:!!m.exemplo})); }catch(e){ MORADORES=[]; } todosCache=null; ecoCache.clear(); xpCache.clear(); equipCache.clear();
   reconstroiCasas(); renderLista(); renderCronica(); const sel=todos().filter(m=>!m.npc); if(sel.length&&!selecionado){ selecionado=sel[sel.length-1].id; const li=todos(); const ii=li.findIndex(m=>m.id===selecionado); if(ii>=0){ const c=casaDe(ii); orb.alvo.set(c.vila.cx,0,c.vila.cz+2); orb.target.copy(orb.alvo); } atualizaCard(true); } }
-function iniciar(){ anima(); renderCronica(); carregaMoradores().then(()=>{ const h=decodeURIComponent(location.hash||"").replace(/^#/,"").replace(/^@/,"").toLowerCase(); if(h){ const m=todos().find(x=>x.nome.toLowerCase().replace(/^@/,"")===h); if(m){ selecionar(m.id); } } }); setInterval(()=>{renderCronica(); renderLista(); atualizaCard();},5000); setInterval(carregaMoradores,10*60000); }
+function iniciar(){ anima(); renderCronica(); if(MODO_ABERTURA) setTimeout(iniciaAbertura,800); if(MODO_SEGREDO){ document.body.classList.add("cinema"); seguindo=false; } carregaMoradores().then(()=>{ const h=decodeURIComponent(location.hash||"").replace(/^#/,"").replace(/^@/,"").toLowerCase(); if(h){ const m=todos().find(x=>x.nome.toLowerCase().replace(/^@/,"")===h); if(m){ selecionar(m.id,true); } } }).then(()=>{ if(MODO_SEGREDO){ selecionado=null; seguindo=false; $("meuBox").hidden=true; } }); setInterval(()=>{renderCronica(); renderLista(); atualizaCard();},5000); setInterval(carregaMoradores,10*60000); }
 iniciar();
 })();
 </script>
