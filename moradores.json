@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-03T14:48",
+ "atualizadoEm": "2026-11-03T14:50",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -8,70 +8,85 @@
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
    "joinedAt": 1793726004884,
-   "sexo": "?"
+   "sexo": "f",
+   "nomeCompleto": "Victória",
+   "faltas": 0
   },
   {
    "id": "ig-dudabrisolaa_",
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
    "joinedAt": 1793726244884,
-   "sexo": "f"
+   "sexo": "f",
+   "nomeCompleto": "Maria Eduarda Brisola | Limpeza de pele•Peeling•Microagulhamento",
+   "faltas": 0
   },
   {
    "id": "ig-glautiumgabriel",
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
    "joinedAt": 1793726484884,
-   "sexo": "m"
+   "sexo": "m",
+   "nomeCompleto": "Glautium Gabriel",
+   "faltas": 0
   },
   {
    "id": "ig-adriana.g.santana",
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
    "joinedAt": 1793726724884,
-   "sexo": "f"
+   "sexo": "f",
+   "nomeCompleto": "Dri Santana",
+   "faltas": 0
   },
   {
    "id": "ig-_iagodiaas",
    "nome": "@_iagodiaas",
    "profissao": "cozinheiro",
    "joinedAt": 1793727899544,
-   "sexo": "?"
+   "sexo": "?",
+   "faltas": 1
   },
   {
    "id": "ig-_williamg10",
    "nome": "@_williamg10",
    "profissao": "bardo",
    "joinedAt": 1793727900544,
-   "sexo": "?"
+   "sexo": "?",
+   "faltas": 1
   },
   {
    "id": "ig-alison_barbearia",
    "nome": "@alison_barbearia",
    "profissao": "pastor",
    "joinedAt": 1793727902544,
-   "sexo": "m"
+   "sexo": "m",
+   "faltas": 1
   },
   {
    "id": "ig-dra.jessicalopees",
    "nome": "@dra.jessicalopees",
    "profissao": "cavaleiro",
    "joinedAt": 1793727907544,
-   "sexo": "f"
+   "sexo": "f",
+   "nomeCompleto": "Dra. Jessica Lopes | Botox • Bioestimulador • Microvasos",
+   "faltas": 0
   },
   {
    "id": "ig-dudabsl_",
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
    "joinedAt": 1793727909544,
-   "sexo": "?"
+   "sexo": "?",
+   "faltas": 0
   },
   {
    "id": "ig-joao19xx",
    "nome": "@joao19xx",
    "profissao": "alquimista",
    "joinedAt": 1793727914544,
-   "sexo": "m"
+   "sexo": "m",
+   "faltas": 1
   },
   {
    "id": "ig-laryssapsouza",
@@ -79,28 +94,35 @@
    "profissao": "ferreiro",
    "joinedAt": 1793727920544,
    "nomeCompleto": "·",
-   "sexo": "?"
+   "sexo": "f",
+   "faltas": 0
   },
   {
    "id": "ig-reinodocalcado",
    "nome": "@reinodocalcado",
    "profissao": "arqueiro",
    "joinedAt": 1793727928544,
-   "sexo": "m"
+   "sexo": "m",
+   "nomeCompleto": "Reino dos Calçados/ calçados",
+   "faltas": 0
   },
   {
    "id": "ig-sillas_almeida",
    "nome": "@sillas_almeida",
    "profissao": "cacador",
    "joinedAt": 1793727932544,
-   "sexo": "m"
+   "sexo": "m",
+   "nomeCompleto": "Silas Almeida",
+   "faltas": 0
   },
   {
    "id": "ig-thai_nery",
    "nome": "@thai_nery",
    "profissao": "bardo",
    "joinedAt": 1793727933544,
-   "sexo": "f"
+   "sexo": "f",
+   "nomeCompleto": "Thaiana Nery",
+   "faltas": 0
   },
   {
    "id": "ig-anatorregrossa",
@@ -108,7 +130,8 @@
    "nomeCompleto": "",
    "sexo": "f",
    "profissao": "padeiro",
-   "joinedAt": 1793728037905
+   "joinedAt": 1793728037905,
+   "faltas": 1
   },
   {
    "id": "ig-ancaosampaio10",
@@ -116,7 +139,8 @@
    "nomeCompleto": "",
    "sexo": "m",
    "profissao": "cozinheiro",
-   "joinedAt": 1793728038905
+   "joinedAt": 1793728038905,
+   "faltas": 1
   },
   {
    "id": "ig-dinycruz",
@@ -124,7 +148,8 @@
    "nomeCompleto": "",
    "sexo": "?",
    "profissao": "arqueiro",
-   "joinedAt": 1793728041905
+   "joinedAt": 1793728041905,
+   "faltas": 1
   },
   {
    "id": "ig-dr.hudsondias",
@@ -132,7 +157,8 @@
    "nomeCompleto": "",
    "sexo": "m",
    "profissao": "pastor",
-   "joinedAt": 1793728042905
+   "joinedAt": 1793728042905,
+   "faltas": 1
   },
   {
    "id": "ig-elizeu.silva.35728",
@@ -140,7 +166,8 @@
    "nomeCompleto": "",
    "sexo": "?",
    "profissao": "pastor",
-   "joinedAt": 1793728046905
+   "joinedAt": 1793728046905,
+   "faltas": 1
   },
   {
    "id": "ig-jhulygabyvictor",
@@ -148,7 +175,8 @@
    "nomeCompleto": "",
    "sexo": "m",
    "profissao": "alquimista",
-   "joinedAt": 1793728050905
+   "joinedAt": 1793728050905,
+   "faltas": 1
   },
   {
    "id": "ig-lanne8820",
@@ -156,7 +184,8 @@
    "nomeCompleto": "",
    "sexo": "?",
    "profissao": "mineiro",
-   "joinedAt": 1793728054905
+   "joinedAt": 1793728054905,
+   "faltas": 1
   },
   {
    "id": "ig-mara__samp",
@@ -164,7 +193,8 @@
    "nomeCompleto": "",
    "sexo": "f",
    "profissao": "arqueiro",
-   "joinedAt": 1793728056905
+   "joinedAt": 1793728056905,
+   "faltas": 1
   },
   {
    "id": "ig-maricosta0712",
@@ -172,7 +202,8 @@
    "nomeCompleto": "",
    "sexo": "f",
    "profissao": "explorador",
-   "joinedAt": 1793728057905
+   "joinedAt": 1793728057905,
+   "faltas": 1
   },
   {
    "id": "ig-sablinasa",
@@ -180,7 +211,8 @@
    "nomeCompleto": "",
    "sexo": "f",
    "profissao": "cozinheiro",
-   "joinedAt": 1793728061905
+   "joinedAt": 1793728061905,
+   "faltas": 1
   },
   {
    "id": "ig-sarah.pacheco",
@@ -188,7 +220,8 @@
    "nomeCompleto": "",
    "sexo": "?",
    "profissao": "comerciante",
-   "joinedAt": 1793728062905
+   "joinedAt": 1793728062905,
+   "faltas": 1
   },
   {
    "id": "ig-amorenaflor",
@@ -196,7 +229,8 @@
    "nomeCompleto": "",
    "sexo": "m",
    "profissao": "construtor",
-   "joinedAt": 1793728136374
+   "joinedAt": 1793728136374,
+   "faltas": 1
   },
   {
    "id": "ig-bnovaiss_",
@@ -204,7 +238,8 @@
    "nomeCompleto": "",
    "sexo": "?",
    "profissao": "pastor",
-   "joinedAt": 1793728139374
+   "joinedAt": 1793728139374,
+   "faltas": 1
   },
   {
    "id": "ig-igorpina.eng",
@@ -212,7 +247,8 @@
    "nomeCompleto": "",
    "sexo": "f",
    "profissao": "pastor",
-   "joinedAt": 1793728148374
+   "joinedAt": 1793728148374,
+   "faltas": 1
   },
   {
    "id": "ig-laidocio",
@@ -220,7 +256,8 @@
    "nomeCompleto": "",
    "sexo": "m",
    "profissao": "explorador",
-   "joinedAt": 1793728151374
+   "joinedAt": 1793728151374,
+   "faltas": 1
   },
   {
    "id": "ig-marcialima_95_",
@@ -228,7 +265,8 @@
    "nomeCompleto": "",
    "sexo": "f",
    "profissao": "cacador",
-   "joinedAt": 1793728155374
+   "joinedAt": 1793728155374,
+   "faltas": 1
   },
   {
    "id": "ig-mary_marrtins13",
@@ -236,7 +274,8 @@
    "nomeCompleto": "",
    "sexo": "?",
    "profissao": "mago",
-   "joinedAt": 1793728157374
+   "joinedAt": 1793728157374,
+   "faltas": 1
   },
   {
    "id": "ig-queirozramiz",
@@ -244,7 +283,8 @@
    "nomeCompleto": "",
    "sexo": "?",
    "profissao": "cozinheiro",
-   "joinedAt": 1793728158374
+   "joinedAt": 1793728158374,
+   "faltas": 1
   },
   {
    "id": "ig-raianaasantoos",
@@ -252,7 +292,8 @@
    "nomeCompleto": "",
    "sexo": "?",
    "profissao": "explorador",
-   "joinedAt": 1793728159374
+   "joinedAt": 1793728159374,
+   "faltas": 1
   },
   {
    "id": "ig-tarcisioalmeidaoficial",
@@ -260,7 +301,8 @@
    "nomeCompleto": "",
    "sexo": "?",
    "profissao": "pescador",
-   "joinedAt": 1793728164374
+   "joinedAt": 1793728164374,
+   "faltas": 1
   },
   {
    "id": "ig-vitor_reale",
@@ -268,7 +310,233 @@
    "nomeCompleto": "",
    "sexo": "m",
    "profissao": "alquimista",
-   "joinedAt": 1793728166374
+   "joinedAt": 1793728166374,
+   "faltas": 1
+  },
+  {
+   "id": "ig-_evelyn_costaa",
+   "nome": "@_evelyn_costaa",
+   "nomeCompleto": "Evelyn Costa",
+   "sexo": "?",
+   "profissao": "mineiro",
+   "joinedAt": 1793728210304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-bianca_almeidaa",
+   "nome": "@bianca_almeidaa",
+   "nomeCompleto": "Bianca Silva",
+   "sexo": "f",
+   "profissao": "cavaleiro",
+   "joinedAt": 1793728212304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-brunacamposom_",
+   "nome": "@brunacamposom_",
+   "nomeCompleto": "Bruna",
+   "sexo": "f",
+   "profissao": "mineiro",
+   "joinedAt": 1793728213304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-carvalho_mirela",
+   "nome": "@carvalho_mirela",
+   "nomeCompleto": "Mirela Carvalho",
+   "sexo": "f",
+   "profissao": "explorador",
+   "joinedAt": 1793728214304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-dr.alailsonjr",
+   "nome": "@dr.alailsonjr",
+   "nomeCompleto": "Dr. Alailson Junior | Cirurgião Dentista",
+   "sexo": "m",
+   "profissao": "arqueiro",
+   "joinedAt": 1793728215304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-espacosoraiacosta",
+   "nome": "@espacosoraiacosta",
+   "nomeCompleto": "Soraia Costa",
+   "sexo": "f",
+   "profissao": "fazendeiro",
+   "joinedAt": 1793728219304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-ezequieloliveira",
+   "nome": "@ezequieloliveira",
+   "nomeCompleto": "Ezequiel Oliveira",
+   "sexo": "m",
+   "profissao": "lenhador",
+   "joinedAt": 1793728220304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-fabiannanery",
+   "nome": "@fabiannanery",
+   "nomeCompleto": "Fabiana Nery",
+   "sexo": "f",
+   "profissao": "pastor",
+   "joinedAt": 1793728221304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-felipe_c_mais",
+   "nome": "@felipe_c_mais",
+   "nomeCompleto": "Felipe (c+) Móveis Planejados",
+   "sexo": "m",
+   "profissao": "explorador",
+   "joinedAt": 1793728222304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-jhemesonoliveiraofficial",
+   "nome": "@jhemesonoliveiraofficial",
+   "nomeCompleto": "JHEMESON OLIVEIRA",
+   "sexo": "m",
+   "profissao": "pescador",
+   "joinedAt": 1793728225304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-joaomarcelojm1_",
+   "nome": "@joaomarcelojm1_",
+   "nomeCompleto": "João Marcelo Menezes",
+   "sexo": "m",
+   "profissao": "padeiro",
+   "joinedAt": 1793728226304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-jon_almeida181",
+   "nome": "@jon_almeida181",
+   "nomeCompleto": "Jon Almeida",
+   "sexo": "m",
+   "profissao": "construtor",
+   "joinedAt": 1793728227304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-junior_maldyne",
+   "nome": "@junior_maldyne",
+   "nomeCompleto": "Junior Maldyne",
+   "sexo": "m",
+   "profissao": "comerciante",
+   "joinedAt": 1793728228304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-martinha.ba",
+   "nome": "@martinha.ba",
+   "nomeCompleto": "Martinha Barbosa",
+   "sexo": "f",
+   "profissao": "mineiro",
+   "joinedAt": 1793728230304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-matheuslealb",
+   "nome": "@matheuslealb",
+   "nomeCompleto": "Matheus Leal",
+   "sexo": "m",
+   "profissao": "curandeiro",
+   "joinedAt": 1793728231304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-meira_le",
+   "nome": "@meira_le",
+   "nomeCompleto": "Alessandra Meira",
+   "sexo": "f",
+   "profissao": "cacador",
+   "joinedAt": 1793728232304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-myllamedeirosfotografias",
+   "nome": "@myllamedeirosfotografias",
+   "nomeCompleto": "Mylla Medeiros Fotografias",
+   "sexo": "f",
+   "profissao": "fazendeiro",
+   "joinedAt": 1793728233304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-necolaylla",
+   "nome": "@necolaylla",
+   "nomeCompleto": "Laylla Neco",
+   "sexo": "f",
+   "profissao": "mago",
+   "joinedAt": 1793728234304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-nogueira_jessica",
+   "nome": "@nogueira_jessica",
+   "nomeCompleto": "Jessica Nogueira",
+   "sexo": "f",
+   "profissao": "cacador",
+   "joinedAt": 1793728235304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-pirouupo",
+   "nome": "@pirouupo",
+   "nomeCompleto": "Victor Piroupo",
+   "sexo": "m",
+   "profissao": "pastor",
+   "joinedAt": 1793728236304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-pixuito18",
+   "nome": "@pixuito18",
+   "nomeCompleto": "Paulo Sergio Sergio",
+   "sexo": "m",
+   "profissao": "comerciante",
+   "joinedAt": 1793728237304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-rlenecosta",
+   "nome": "@rlenecosta",
+   "nomeCompleto": "Roselene Costa",
+   "sexo": "?",
+   "profissao": "padeiro",
+   "joinedAt": 1793728239304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-teu.rick",
+   "nome": "@teu.rick",
+   "nomeCompleto": "Matheus Henrique",
+   "sexo": "m",
+   "profissao": "arqueiro",
+   "joinedAt": 1793728241304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-tiagooliveira1109",
+   "nome": "@tiagooliveira1109",
+   "nomeCompleto": "Tiago Oliveira",
+   "sexo": "m",
+   "profissao": "comerciante",
+   "joinedAt": 1793728243304,
+   "faltas": 0
+  },
+  {
+   "id": "ig-vanilesamara",
+   "nome": "@vanilesamara",
+   "nomeCompleto": "Vanile Samara",
+   "sexo": "?",
+   "profissao": "mago",
+   "joinedAt": 1793728244304,
+   "faltas": 0
   }
  ]
 }
