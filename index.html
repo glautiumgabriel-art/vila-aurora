@@ -165,28 +165,28 @@ function pick(r,arr){ return arr[Math.floor(r()*arr.length)%arr.length]; }
 
 // ---------- lugares ----------
 const LUG_REL = {
-  praca:   {x:0,  z:0,   w:9, h:9,  nome:"Praça da Fogueira"},
-  taverna: {x:-11,z:-8,  w:7, h:4.5,nome:"Taverna"},
-  ferraria:{x:11, z:-8,  w:6, h:4.5,nome:"Ferraria"},
-  capela:  {x:-20,z:-13, w:5, h:5,  nome:"Casa de Cura"},
-  mina:    {x:22, z:-15, w:6, h:5,  nome:"Mina do Morro"},
-  torre:   {x:16, z:5,   w:4, h:4,  nome:"Torre do Mago"},
-  mercado: {x:6,  z:11,  w:7, h:4,  nome:"Mercado"},
-  campo:   {x:-17,z:9,   w:11,h:7,  nome:"Campo de trigo"},
-  muralha: {x:18, z:15,  w:8, h:3,  nome:"Posto de Guarda"},
-  rio:     {x:36, z:0,   w:4, h:30, nome:"Rio Claro"},
-  floresta:{x:-25,z:-5,  w:7, h:8,  nome:"Floresta Velha"},
+  praca:   {x:0,    z:0,    w:9, h:9,  nome:"Praça da Fogueira"},
+  taverna: {x:-10.5,z:-10.5,w:5, h:4.5,nome:"Taverna"},
+  ferraria:{x:10.5, z:-10.5,w:5, h:4.5,nome:"Ferraria"},
+  capela:  {x:-10.5,z:10.5, w:5, h:5,  nome:"Casa de Cura"},
+  mercado: {x:10.5, z:10.5, w:5, h:4,  nome:"Mercado"},
+  torre:   {x:17.5, z:3.5,  w:4, h:4,  nome:"Torre do Mago"},
+  campo:   {x:-21,  z:10.5, w:12,h:5,  nome:"Campo de trigo"},
+  muralha: {x:24.5, z:-3.5, w:5, h:3,  nome:"Posto de Guarda"},
+  mina:    {x:10.5, z:-44,  w:6, h:5,  nome:"Mina do Morro"},
+  floresta:{x:-43,  z:0,    w:7, h:12, nome:"Floresta Velha"},
+  rio:     {x:46,   z:0,    w:4, h:30, nome:"Rio Claro"},
 };
 // Várias vilas: quando uma enche, a próxima nasce ao lado. Posições em espiral, nomes fixos.
 const VILAS_NOMES=["Vila Aurora","Pinheiral","Pedra Alta","Vale das Brumas","Porto do Rio","Serra do Sol","Campo Dourado","Lagoa Azul","Colina do Vento","Bosque Velho","Ponte Nova","Monte Claro"];
-const VILAS_POS=[[0,0],[0,-92],[-104,0],[0,92],[104,0],[-104,-92],[104,-92],[-104,92],[104,92],[0,-184],[-208,0],[0,184],[208,0],[-208,-92],[208,-92],[-208,92],[208,92],[-104,-184],[104,-184],[-104,184],[104,184]];
+const VILAS_POS=[[0,0],[0,-110],[-118,0],[0,110],[118,0],[-118,-110],[118,-110],[-118,110],[118,110],[0,-220],[-236,0],[0,220],[236,0],[-236,-110],[236,-110],[-236,110],[236,110],[-118,-220],[118,-220],[-118,220],[118,220]];
 const vilasCache=[];
-function vila(v){ let c=vilasCache[v]; if(c) return c; const pos=VILAS_POS[v%VILAS_POS.length], volta=Math.floor(v/VILAS_POS.length); const cx=pos[0]+volta*416, cz=pos[1]; const L={};
+function vila(v){ let c=vilasCache[v]; if(c) return c; const pos=VILAS_POS[v%VILAS_POS.length], volta=Math.floor(v/VILAS_POS.length); const cx=pos[0]+volta*472, cz=pos[1]; const L={};
   for(const k in LUG_REL){ const o=LUG_REL[k]; L[k]=Object.assign({},o,{x:o.x+cx,z:o.z+cz}); }
-  if(v>0){ L.rio={x:cx+30,z:cz+9,w:6,h:6,nome:"Lagoa"}; }
+  if(v>0){ L.rio={x:cx+44,z:cz+10,w:6,h:6,nome:"Lagoa"}; }
   c={i:v,cx,cz,nome:VILAS_NOMES[v%VILAS_NOMES.length]+(v>=VILAS_NOMES.length?" "+(Math.floor(v/VILAS_NOMES.length)+1):""),L}; vilasCache[v]=c; return c; }
 const LUG=vila(0).L;
-function nVilas(){ return Math.max(1,Math.ceil(todos().length/VILA_CAP)); }
+function nVilas(){ const n=todos().filter(m=>!m.npc).length; return 1+Math.max(1,Math.ceil(n/VILA_CAP)); }
 const PROF = {
   fazendeiro:{nome:"Fazendeiro", lugar:"campo", hat:0xd9b24c, hatTipo:"aba", arma:"enxada", desc:"Planta e colhe. Alimenta a vila inteira.",
     acoes:["arando a terra","semeando trigo","colhendo milho","espantando corvos","regando a horta"], feitos:["colheu 12 sacas de trigo","achou uma abóbora gigante","plantou a primeira macieira"]},
@@ -241,84 +241,130 @@ const VILOES = [
   {nome:"Bruxa do Pântano", texto:"A Bruxa do Pântano tentou azedar o leite. O mago desfez o feitiço antes do café."},
   {nome:"Ladrão Mascarado", texto:"Um ladrão mascarado levou três pães. O padeiro deixou um bilhete: 'da próxima, peça'."},
 ];
-const MORADORES_BASE = [
-  {id:"ema",  nome:"Ema",  profissao:"fazendeiro", joinedAt:D(1,7), fundador:true},
-  {id:"tiao", nome:"Tião", profissao:"ferreiro",   joinedAt:D(1,7), fundador:true},
-];
-let MORADORES=MORADORES_BASE.slice();
-function todos(){ const now=Date.now(); return MORADORES.filter(m=>m.joinedAt<=now); }
+// NPCs da Vila Aurora (vila central, pública, já construída). Quem segue a página nasce nas vilas ao redor.
+const NPCS = [
+  {id:"npc-ema",nome:"Ema",profissao:"fazendeiro"},{id:"npc-tiao",nome:"Tião",profissao:"ferreiro"},{id:"npc-bento",nome:"Velho Bento",profissao:"bardo"},{id:"npc-zefa",nome:"Dona Zefa",profissao:"curandeiro"},
+  {id:"npc-rufo",nome:"Capitão Rufo",profissao:"cavaleiro"},{id:"npc-olavo",nome:"Mestre Olavo",profissao:"mago"},{id:"npc-nina",nome:"Nina",profissao:"pescador"},{id:"npc-juca",nome:"Juca",profissao:"lenhador"},
+  {id:"npc-bras",nome:"Brás",profissao:"mineiro"},{id:"npc-lia",nome:"Lia",profissao:"cozinheiro"},{id:"npc-abel",nome:"Seu Abel",profissao:"comerciante"},{id:"npc-teo",nome:"Teo",profissao:"arqueiro"},
+].map((n,i)=>Object.assign({joinedAt:EPOCH-30*24*HORA_MS,npc:true,fundador:true},n));
+let MORADORES=[];
+let todosCache=null, todosCacheT=0;
+function todos(){ const now=Date.now(); if(todosCache&&now-todosCacheT<3000) return todosCache; const reais=MORADORES.filter(m=>m.joinedAt<=now).sort((a,b)=>a.joinedAt-b.joinedAt);
+  const lista=NPCS.map((m,i)=>Object.assign({},m,{vi:0,slot:i})).concat(reais.map((m,k)=>Object.assign({},m,{vi:1+Math.floor(k/VILA_CAP),slot:k%VILA_CAP}))); todosCache=lista; todosCacheT=now; return lista; }
 
 // ---------- casas em anéis (cresce sem limite) ----------
 const ocupadasRel=Object.values(LUG_REL).map(l=>({x:l.x,z:l.z,w:l.w+4,h:l.h+4})).concat([{x:30,z:9,w:10,h:10}]);
 function livreRel(x,z,folga){ const f=folga||0; if(Math.abs(z)<3+f||Math.abs(x)<3+f) return false; if(x>30&&x<42) return false; return !ocupadasRel.some(o=>Math.abs(x-o.x)<o.w/2+f&&Math.abs(z-o.z)<o.h/2+f); }
-const CASAS=[]; (function(){ for(let anel=0;anel<7;anel++){ const R=10+anel*4.6; const n=Math.max(8,Math.floor(2*Math.PI*R/4.4)); for(let k=0;k<n;k++){ const a=k/n*Math.PI*2+anel*0.37; const x=Math.cos(a)*R, z=Math.sin(a)*R*0.82; if(!livreRel(x,z)) continue; CASAS.push([Math.round(x*10)/10,Math.round(z*10)/10]); } } })();
+const CASAS=[]; (function(){ const pred=["taverna","ferraria","capela","mercado","torre","campo","muralha"].map(k=>LUG_REL[k]);
+  for(let i=-5;i<5;i++) for(let j=-5;j<5;j++){ const cx=7*i+3.5, cz=7*j+3.5; if(Math.hypot(cx,cz)<9) continue; if(pred.some(o=>Math.abs(cx-o.x)<o.w/2+3.6&&Math.abs(cz-o.z)<o.h/2+3.6)) continue;
+    CASAS.push([cx-1.45,cz]); CASAS.push([cx+1.45,cz]); }
+  CASAS.sort((a,b)=>(Math.hypot(a[0],a[1])-Math.hypot(b[0],b[1]))); })();
 const VILA_CAP=CASAS.length;            // moradores por vila; a próxima vila nasce quando esta enche
-function vilaDe(i){ return vila(Math.floor(i/VILA_CAP)); }
-function casaDe(i){ const V=vilaDe(i); const c=CASAS[i%VILA_CAP]; return {x:c[0]+V.cx, z:c[1]+V.cz, w:2.6, h:2.6, vila:V}; }
-function livre(x,z,folga){ for(let v=0;v<VILAS_POS.length;v++){ const V=vila(v); if(V.i===0){ if(!livreRel(x-V.cx,z-V.cz,folga)) return false; } else if(Math.hypot(x-V.cx,z-V.cz)<44) return false; } return true; }
+function vilaDe(i){ const l=todos(); return vila(l[i]?l[i].vi:0); }
+function casaDe(i){ const l=todos(); const m=l[i]; const V=vila(m?m.vi:0); const slot=m?m.slot:0; const c=CASAS[slot%CASAS.length]; return {x:c[0]+V.cx, z:c[1]+V.cz, w:2.4, h:2.6, vila:V, slot}; }
+function livre(x,z,folga){ for(let v=0;v<VILAS_POS.length;v++){ const V=vila(v); if(Math.abs(x-V.cx)<50&&Math.abs(z-V.cz)<50) return false; } return true; }
 function noite(h){ return h<6||h>=20; }
 
 // ---------- estado do morador (determinístico pela hora) ----------
-// ---------- ciclos de trabalho: cada profissão faz coisas de verdade, em sequência ----------
-// t em segundos; modo: andar | parado | pescar | cortar | martelar | colher | mirar | tocar | magia | dentro
+// ---------- economia da vila: tudo determinístico pelo relógio ----------
+// Vila Aurora (vila 0) já nasce completa e pública. As outras começam só com a fogueira e crescem com o que os moradores juntam.
+const OBRAS=[["campo",120,"Campo de trigo"],["taverna",600,"Taverna"],["mina",900,"entrada da Mina"],["ferraria",1400,"Ferraria"],["capela",2000,"Casa de Cura"],["mercado",2600,"Mercado"],["muralha",3400,"Posto de Guarda"],["torre",4400,"Torre do Mago"]];
+const TAXA_OBRA={lenhador:3,mineiro:3,construtor:3,explorador:1.5,cacador:1.2}; const ALIMENTA=new Set(["fazendeiro","pescador","pastor","padeiro","cozinheiro","cacador"]);
+const ecoCache=new Map();
+function horasTrab(m,now){ return Math.max(0,(now-m.joinedAt)/HORA_MS)*10/24; }
+function economiaDe(V){ const now=Date.now(); const k=V.i+":"+Math.floor(now/15000); let e=ecoCache.get(k); if(e) return e;
+  const lista=todos(); const meus=[]; lista.forEach((m,i)=>{ if(vilaDe(i).i===V.i) meus.push(m); });
+  if(V.i===0){ e={obra:1e9,madeira:1e9,comida:1e9,n:meus.length,construido:k2=>true,casas:meus.length,fase:OBRAS.length,progresso:1,proxima:null,bonus:1}; ecoCache.set(k,e); return e; }
+  const alim=meus.filter(m=>ALIMENTA.has(m.profissao)).length; const bonus=1+0.6*Math.min(1,(3*alim)/Math.max(1,meus.length));
+  let obra=0, madeira=0, comida=0; meus.forEach(m=>{ const h=horasTrab(m,now); obra+=h*(TAXA_OBRA[m.profissao]||1)*bonus; madeira+=h*(m.profissao==="lenhador"?4:0.6); comida+=h*(ALIMENTA.has(m.profissao)?3:0); });
+  let fase=0; while(fase<OBRAS.length&&obra>=OBRAS[fase][1]) fase++; const ant=fase>0?OBRAS[fase-1][1]:0; const prox=fase<OBRAS.length?OBRAS[fase]:null; const progresso=prox?(obra-ant)/(prox[1]-ant):1;
+  const casas=Math.floor(madeira/20);
+  e={obra:Math.floor(obra),madeira:Math.floor(madeira),comida:Math.floor(comida),n:meus.length,fase,progresso,proxima:prox,casas,bonus,construido:k2=>OBRAS.findIndex(o=>o[0]===k2)<fase}; ecoCache.set(k,e); return e; }
+function temCasa(V,slot){ return V.i===0 || slot<economiaDe(V).casas; }
+// ---------- ruas em grade e caminhos (ninguém atravessa casa) ----------
+const RUA=7, RUAS=[]; for(let r=-35;r<=35;r+=7) RUAS.push(r);
+function ruaPerto(v){ let b=RUAS[0]; for(const r of RUAS) if(Math.abs(r-v)<Math.abs(b-v)) b=r; return b; }
+function rota(V,a,b){ const ax=a.x-V.cx, az=a.z-V.cz, bx=b.x-V.cx, bz=b.z-V.cz; const za=ruaPerto(az), xb=ruaPerto(bx), zb=ruaPerto(bz);
+  const pts=[[ax,az],[ax,za],[xb,za],[xb,zb],[bx,zb],[bx,bz]]; const out=[]; pts.forEach(p=>{ const q={x:p[0]+V.cx,z:p[1]+V.cz}; if(!out.length||Math.abs(out[out.length-1].x-q.x)+Math.abs(out[out.length-1].z-q.z)>0.05) out.push(q); });
+  let len=0; for(let i=1;i<out.length;i++) len+=Math.hypot(out[i].x-out[i-1].x,out[i].z-out[i-1].z); return {pts:out,len}; }
+function rotaEntreVilas(A,B){ // praça → beira da grade → reta → beira da outra → praça
+  const dx=B.cx-A.cx, dz=B.cz-A.cz; const horiz=Math.abs(dx)>=Math.abs(dz); const sa={x:A.cx+(horiz?Math.sign(dx)*36:0),z:A.cz+(horiz?0:Math.sign(dz)*36)}; const sb={x:B.cx-(horiz?Math.sign(dx)*36:0),z:B.cz-(horiz?0:Math.sign(dz)*36)};
+  const pts=[{x:A.cx,z:A.cz},sa,sb,{x:B.cx,z:B.cz}]; let len=0; for(let i=1;i<pts.length;i++) len+=Math.hypot(pts[i].x-pts[i-1].x,pts[i].z-pts[i-1].z); return {pts,len}; }
+function aoLongo(rt,f){ let d=f*rt.len; const p=rt.pts; for(let i=1;i<p.length;i++){ const seg=Math.hypot(p[i].x-p[i-1].x,p[i].z-p[i-1].z); if(d<=seg||i===p.length-1){ const t=seg>0?Math.min(1,d/seg):1; return {x:p[i-1].x+(p[i].x-p[i-1].x)*t,z:p[i-1].z+(p[i].z-p[i-1].z)*t,ang:Math.atan2(p[i].x-p[i-1].x,p[i].z-p[i-1].z)}; } d-=seg; } const q=p[p.length-1]; return {x:q.x,z:q.z,ang:0}; }
+const VEL=3.4; // metros por segundo
+// ---------- ciclos de trabalho: cada profissão faz coisas de verdade ----------
+// modo: andar | parado | pescar | cortar | martelar | colher | mirar | tocar | magia | dentro
 const CICLOS = {
-  pescador:  [{t:7,modo:"andar",para:"pier",acao:"indo para o cais"},{t:26,modo:"pescar",em:"pier",acao:"jogando a linha na água"},{t:4,modo:"parado",em:"pier",acao:"puxando um peixe!"},{t:7,modo:"andar",para:"cesto",acao:"levando o peixe"},{t:5,modo:"parado",em:"cesto",acao:"guardando o peixe no cesto"}],
-  lenhador:  [{t:8,modo:"andar",para:"arvore",acao:"indo até a árvore"},{t:20,modo:"cortar",em:"arvore",acao:"cortando a árvore"},{t:8,modo:"andar",para:"pilha",acao:"carregando toras"},{t:5,modo:"parado",em:"pilha",acao:"empilhando lenha"}],
-  mineiro:   [{t:6,modo:"andar",para:"minaEnt",acao:"entrando na mina"},{t:30,modo:"dentro",dentro:"mina",spot:"rocha",em:"minaEnt",acao:"picando a rocha lá dentro da mina"},{t:5,modo:"andar",para:"carrinho",acao:"saindo da mina com minério"},{t:6,modo:"parado",em:"carrinho",acao:"despejando o minério no carrinho"}],
-  ferreiro:  [{t:24,modo:"martelar",em:"bigorna",acao:"batendo o martelo na bigorna"},{t:4,modo:"andar",para:"forja",acao:"levando a peça à forja"},{t:10,modo:"parado",em:"forja",acao:"esquentando o aço na forja"},{t:4,modo:"andar",para:"bigorna",acao:"voltando à bigorna"}],
-  fazendeiro:[{t:6,modo:"andar",para:"filaA",acao:"indo para a plantação"},{t:16,modo:"colher",em:"filaA",acao:"colhendo trigo"},{t:6,modo:"andar",para:"filaB",acao:"mudando de fileira"},{t:16,modo:"colher",em:"filaB",acao:"arrancando ervas daninhas"}],
-  pastor:    [{t:8,modo:"andar",para:"filaA",acao:"indo ver o rebanho"},{t:10,modo:"parado",em:"filaA",acao:"contando as ovelhas"},{t:8,modo:"andar",para:"filaB",acao:"correndo atrás de um bode"},{t:10,modo:"tocar",em:"filaB",acao:"tocando flauta para as ovelhas"}],
-  soldado:   [{t:9,modo:"andar",para:"muralhaA",acao:"patrulhando a paliçada"},{t:5,modo:"parado",em:"muralhaA",acao:"vigiando a estrada"},{t:9,modo:"andar",para:"muralhaB",acao:"patrulhando a paliçada"},{t:5,modo:"mirar",em:"muralhaB",acao:"treinando com a espada"}],
-  cavaleiro: [{t:12,modo:"parado",em:"portao",acao:"montando guarda no portão"},{t:7,modo:"andar",para:"muralhaA",acao:"fazendo a ronda"},{t:9,modo:"andar",para:"muralhaB",acao:"fazendo a ronda"},{t:7,modo:"andar",para:"portao",acao:"voltando ao portão"}],
-  arqueiro:  [{t:5,modo:"andar",para:"torreBase",acao:"subindo na torre de guarda"},{t:25,modo:"mirar",em:"torreTopo",acao:"treinando pontaria do alto da torre"},{t:5,modo:"andar",para:"torreBase",acao:"descendo da torre"},{t:6,modo:"parado",em:"torreBase",acao:"contando as flechas da aljava"}],
-  mago:      [{t:26,modo:"dentro",dentro:"torre",spot:"mesa",em:"torreFrente",acao:"lendo um grimório na torre"},{t:4,modo:"andar",para:"torreFrente",acao:"saindo da torre"},{t:20,modo:"magia",em:"torreFrente",acao:"praticando um feitiço de luz"},{t:4,modo:"andar",para:"torreFrente",acao:"entrando na torre"}],
-  alquimista:[{t:30,modo:"dentro",dentro:"torre",spot:"caldeirao",em:"torreFrente",acao:"mexendo o caldeirão na torre"},{t:4,modo:"andar",para:"torreFrente",acao:"saindo para tomar ar"},{t:14,modo:"magia",em:"torreFrente",acao:"testando uma poção ao ar livre"},{t:4,modo:"andar",para:"torreFrente",acao:"voltando para dentro"}],
-  padeiro:   [{t:30,modo:"dentro",dentro:"taverna",spot:"balcao",em:"tavernaFrente",acao:"amassando o pão na taverna"},{t:5,modo:"andar",para:"tavernaFrente",acao:"saindo com a cesta de pães"},{t:8,modo:"parado",em:"tavernaFrente",acao:"entregando pães na porta"},{t:5,modo:"andar",para:"tavernaFrente",acao:"voltando para o forno"}],
-  cozinheiro:[{t:30,modo:"dentro",dentro:"taverna",spot:"balcao",em:"tavernaFrente",acao:"mexendo o ensopado na taverna"},{t:5,modo:"andar",para:"tavernaFrente",acao:"indo buscar lenha"},{t:8,modo:"parado",em:"tavernaFrente",acao:"picando cebola na porta, chorando"},{t:5,modo:"andar",para:"tavernaFrente",acao:"voltando para a panela"}],
-  curandeiro:[{t:24,modo:"dentro",dentro:"capela",spot:"mesa",em:"capelaFrente",acao:"preparando chá de cura"},{t:9,modo:"andar",para:"ervas",acao:"indo colher ervas"},{t:12,modo:"colher",em:"ervas",acao:"colhendo ervas"},{t:9,modo:"andar",para:"capelaFrente",acao:"voltando com as ervas"}],
-  comerciante:[{t:20,modo:"parado",em:"barraca",acao:"anunciando as ofertas"},{t:8,modo:"andar",para:"pracaPt",acao:"indo buscar um cliente"},{t:6,modo:"parado",em:"pracaPt",acao:"negociando com um viajante"},{t:8,modo:"andar",para:"barraca",acao:"voltando para a barraca"}],
-  bardo:     [{t:24,modo:"tocar",em:"pracaPt",acao:"tocando alaúde na praça"},{t:6,modo:"andar",para:"pracaPt2",acao:"procurando plateia"},{t:20,modo:"tocar",em:"pracaPt2",acao:"cantando a lenda do dragão"},{t:6,modo:"andar",para:"pracaPt",acao:"dando a volta na fogueira"}],
-  cacador:   [{t:9,modo:"andar",para:"arvore",acao:"seguindo pegadas"},{t:12,modo:"mirar",em:"arvore",acao:"mirando num coelho"},{t:9,modo:"andar",para:"pilha",acao:"voltando da trilha"},{t:6,modo:"parado",em:"pilha",acao:"armando uma armadilha"}],
-  construtor:[{t:24,modo:"martelar",em:"obra",acao:"pregando tábuas na cabana nova"},{t:9,modo:"andar",para:"barraca",acao:"buscando madeira no mercado"},{t:9,modo:"andar",para:"obra",acao:"carregando as tábuas"}],
-  explorador:[{t:14,modo:"andar",para:"estradaFora",acao:"saindo pela estrada"},{t:8,modo:"parado",em:"estradaFora",acao:"desenhando o mapa"},{t:14,modo:"andar",para:"pracaPt",acao:"voltando com uma história"},{t:6,modo:"parado",em:"pracaPt",acao:"contando o que viu lá longe"}],
+  pescador:  [{modo:"andar",para:"pier",acao:"indo para o cais"},{t:26,modo:"pescar",em:"pier",acao:"jogando a linha na água"},{t:4,modo:"parado",em:"pier",acao:"puxando um peixe!"},{modo:"andar",para:"cesto",acao:"levando o peixe"},{t:5,modo:"parado",em:"cesto",acao:"guardando o peixe no cesto"}],
+  lenhador:  [{modo:"andar",para:"arvore",acao:"indo até a árvore"},{t:20,modo:"cortar",em:"arvore",acao:"cortando a árvore"},{modo:"andar",para:"pilha",acao:"carregando toras"},{t:5,modo:"parado",em:"pilha",acao:"empilhando lenha na praça"}],
+  mineiro:   [{modo:"andar",para:"minaEnt",acao:"entrando na mina"},{t:30,modo:"dentro",dentro:"mina",spot:"rocha",em:"minaEnt",acao:"picando a rocha lá dentro da mina"},{modo:"andar",para:"carrinho",acao:"saindo da mina com minério"},{t:6,modo:"parado",em:"carrinho",acao:"despejando o minério no carrinho"}],
+  ferreiro:  [{t:24,modo:"martelar",em:"bigorna",acao:"batendo o martelo na bigorna"},{modo:"andar",para:"forja",acao:"levando a peça à forja"},{t:10,modo:"parado",em:"forja",acao:"esquentando o aço na forja"},{modo:"andar",para:"bigorna",acao:"voltando à bigorna"}],
+  fazendeiro:[{modo:"andar",para:"filaA",acao:"indo para a plantação"},{t:16,modo:"colher",em:"filaA",acao:"colhendo trigo"},{modo:"andar",para:"filaB",acao:"mudando de fileira"},{t:16,modo:"colher",em:"filaB",acao:"arrancando ervas daninhas"}],
+  pastor:    [{modo:"andar",para:"filaA",acao:"indo ver o rebanho"},{t:10,modo:"parado",em:"filaA",acao:"contando as ovelhas"},{modo:"andar",para:"filaB",acao:"correndo atrás de um bode"},{t:10,modo:"tocar",em:"filaB",acao:"tocando flauta para as ovelhas"}],
+  soldado:   [{modo:"andar",para:"muralhaA",acao:"patrulhando a paliçada"},{t:5,modo:"parado",em:"muralhaA",acao:"vigiando a estrada"},{modo:"andar",para:"muralhaB",acao:"patrulhando a paliçada"},{t:5,modo:"mirar",em:"muralhaB",acao:"treinando com a espada"}],
+  cavaleiro: [{t:12,modo:"parado",em:"portao",acao:"montando guarda no portão"},{modo:"andar",para:"muralhaA",acao:"fazendo a ronda"},{modo:"andar",para:"muralhaB",acao:"fazendo a ronda"},{modo:"andar",para:"portao",acao:"voltando ao portão"}],
+  arqueiro:  [{modo:"andar",para:"torreBase",acao:"subindo na torre de guarda"},{t:25,modo:"mirar",em:"torreTopo",acao:"treinando pontaria do alto da torre"},{modo:"andar",para:"torreBase",acao:"descendo da torre"},{t:6,modo:"parado",em:"torreBase",acao:"contando as flechas da aljava"}],
+  mago:      [{t:26,modo:"dentro",dentro:"torre",spot:"mesa",em:"torreFrente",acao:"lendo um grimório na torre"},{t:4,modo:"parado",em:"torreFrente",acao:"saindo da torre"},{t:20,modo:"magia",em:"torreFrente",acao:"praticando um feitiço de luz"},{t:4,modo:"parado",em:"torreFrente",acao:"entrando na torre"}],
+  alquimista:[{t:30,modo:"dentro",dentro:"torre",spot:"caldeirao",em:"torreFrente",acao:"mexendo o caldeirão na torre"},{t:4,modo:"parado",em:"torreFrente",acao:"saindo para tomar ar"},{t:14,modo:"magia",em:"torreFrente",acao:"testando uma poção ao ar livre"},{t:4,modo:"parado",em:"torreFrente",acao:"voltando para dentro"}],
+  padeiro:   [{t:30,modo:"dentro",dentro:"taverna",spot:"balcao",em:"tavernaFrente",acao:"amassando o pão na taverna"},{t:5,modo:"parado",em:"tavernaFrente",acao:"saindo com a cesta de pães"},{modo:"andar",para:"pracaPt",acao:"distribuindo pão na praça"},{t:8,modo:"parado",em:"pracaPt",acao:"entregando pão quente para a vila"},{modo:"andar",para:"tavernaFrente",acao:"voltando para o forno"}],
+  cozinheiro:[{t:30,modo:"dentro",dentro:"taverna",spot:"balcao",em:"tavernaFrente",acao:"mexendo o ensopado na taverna"},{t:5,modo:"parado",em:"tavernaFrente",acao:"indo buscar lenha"},{t:8,modo:"parado",em:"tavernaFrente",acao:"picando cebola na porta, chorando"},{t:5,modo:"parado",em:"tavernaFrente",acao:"voltando para a panela"}],
+  curandeiro:[{t:24,modo:"dentro",dentro:"capela",spot:"mesa",em:"capelaFrente",acao:"preparando chá de cura"},{modo:"andar",para:"ervas",acao:"indo colher ervas"},{t:12,modo:"colher",em:"ervas",acao:"colhendo ervas"},{modo:"andar",para:"capelaFrente",acao:"voltando com as ervas"}],
+  comerciante:[{t:20,modo:"parado",em:"barraca",acao:"anunciando as ofertas"},{modo:"andar",para:"pracaPt",acao:"indo buscar um cliente"},{t:6,modo:"parado",em:"pracaPt",acao:"negociando com um viajante"},{modo:"andar",para:"barraca",acao:"voltando para a barraca"}],
+  bardo:     [{t:24,modo:"tocar",em:"pracaPt",acao:"tocando alaúde na praça"},{modo:"andar",para:"pracaPt2",acao:"procurando plateia"},{t:20,modo:"tocar",em:"pracaPt2",acao:"cantando a lenda do dragão"},{modo:"andar",para:"pracaPt",acao:"dando a volta na fogueira"}],
+  cacador:   [{modo:"andar",para:"arvore",acao:"seguindo pegadas"},{t:12,modo:"mirar",em:"arvore",acao:"mirando num coelho"},{modo:"andar",para:"pilha",acao:"voltando da trilha com caça"},{t:6,modo:"parado",em:"pilha",acao:"deixando a caça para a vila"}],
+  construtor:[{t:24,modo:"martelar",em:"obra",acao:"pregando tábuas na obra"},{modo:"andar",para:"pilha",acao:"buscando madeira na pilha"},{modo:"andar",para:"obra",acao:"carregando as tábuas"}],
+  explorador:[{modo:"andar",para:"estradaFora",acao:"saindo pela estrada"},{t:8,modo:"parado",em:"estradaFora",acao:"desenhando o mapa"},{modo:"andar",para:"pracaPt",acao:"voltando com uma história"},{t:6,modo:"parado",em:"pracaPt",acao:"contando o que viu lá longe"}],
 };
+// sem oficina ainda: todo mundo ajuda a vila a crescer
+const CICLO_COLETA=[{modo:"andar",para:"arvore",acao:"indo buscar madeira para a vila"},{t:14,modo:"cortar",em:"arvore",acao:"juntando madeira para a vila"},{modo:"andar",para:"pilha",acao:"trazendo madeira para a praça"},{t:4,modo:"parado",em:"pilha",acao:"deixando a madeira na pilha"}];
+const CICLO_PEDRA=[{modo:"andar",para:"minaEnt",acao:"indo catar pedras no morro"},{t:14,modo:"martelar",em:"minaEnt",acao:"quebrando pedras no morro"},{modo:"andar",para:"pilha",acao:"trazendo pedra para a praça"},{t:4,modo:"parado",em:"pilha",acao:"deixando as pedras na pilha"}];
+const CICLO_OBRA=[{t:18,modo:"martelar",em:"obra",acao:"trabalhando na obra da vila"},{modo:"andar",para:"pilha",acao:"buscando material na pilha"},{modo:"andar",para:"obra",acao:"levando material para a obra"}];
+const CICLO_PRACA=[{modo:"andar",para:"pracaPt",acao:"passeando pela vila"},{t:10,modo:"parado",em:"pracaPt",acao:"conversando na praça"},{modo:"andar",para:"pracaPt2",acao:"passeando pela vila"},{t:10,modo:"parado",em:"pracaPt2",acao:"olhando o movimento"}];
+const LUGAR_DE={pescador:"rio",lenhador:"floresta",mineiro:"mina",ferreiro:"ferraria",fazendeiro:"campo",pastor:"campo",soldado:"muralha",cavaleiro:"muralha",arqueiro:"muralha",mago:"torre",alquimista:"torre",padeiro:"taverna",cozinheiro:"taverna",curandeiro:"capela",comerciante:"mercado",bardo:"praca",cacador:"floresta",construtor:"praca",explorador:"praca"};
 const pontosCache=new Map();
 function pontos(V,m,idx){ const k=m.id+":"+V.i; let P=pontosCache.get(k); if(P) return P; const L=V.L, r=rnd("pt:"+k), c=casaDe(idx); P={};
   if(V.i===0){ P.pier={x:L.rio.x-2.5,z:-6+(r()-.5)*2}; P.cesto={x:L.rio.x-6.5,z:-4+(r()-.5)*2}; } else { P.pier={x:L.rio.x-3.6,z:L.rio.z+(r()-.5)*2}; P.cesto={x:L.rio.x-7.5,z:L.rio.z-2}; }
-  P.arvore={x:L.floresta.x+(r()-.5)*L.floresta.w*0.9,z:L.floresta.z+L.floresta.h/2+1.2}; P.pilha={x:L.floresta.x+L.floresta.w/2+3,z:L.floresta.z+L.floresta.h/2+2+(r()-.5)*2};
+  P.arvore={x:L.floresta.x+L.floresta.w/2+1.5,z:L.floresta.z+(r()-.5)*L.floresta.h*0.9}; P.pilha={x:V.cx+6+(r()-.5)*1.5,z:V.cz-6.8+(r()-.5)*1.2};
   P.minaEnt={x:L.mina.x+(r()-.5)*1.2,z:L.mina.z+4.2}; P.carrinho={x:L.mina.x+3.2,z:L.mina.z+5.6};
   P.bigorna={x:L.ferraria.x-1.5+(r()-.5),z:L.ferraria.z+L.ferraria.h/2+2.3}; P.forja={x:L.ferraria.x+1.6,z:L.ferraria.z+L.ferraria.h/2+1.6};
   const fa=Math.floor(r()*6), fb=(fa+2+Math.floor(r()*3))%6; const fila=k2=>({x:L.campo.x-L.campo.w/2+1+k2*(L.campo.w-2)/5, z:L.campo.z+(r()-.5)*L.campo.h*0.8}); P.filaA=fila(fa); P.filaB=fila(fb);
   P.muralhaA={x:L.muralha.x-L.muralha.w/2+0.5,z:L.muralha.z+L.muralha.h/2+1.3}; P.muralhaB={x:L.muralha.x+L.muralha.w/2-0.5,z:L.muralha.z+L.muralha.h/2+1.3}; P.portao={x:L.muralha.x,z:L.muralha.z+L.muralha.h/2+1.6+(r()-.5)};
   P.torreBase={x:L.muralha.x-L.muralha.w/2-0.5,z:L.muralha.z+2.2}; P.torreTopo={x:L.muralha.x-L.muralha.w/2-0.5,z:L.muralha.z,y:4.45};
   P.torreFrente={x:L.torre.x+(r()-.5)*2,z:L.torre.z+3.2}; P.tavernaFrente={x:L.taverna.x+(r()-.5)*3,z:L.taverna.z+L.taverna.h/2+1.6}; P.capelaFrente={x:L.capela.x+(r()-.5)*2,z:L.capela.z+L.capela.h/2+1.6};
-  P.ervas={x:L.capela.x+(r()-.5)*6,z:L.capela.z+L.capela.h/2+6}; P.barraca={x:L.mercado.x+(Math.floor(r()*3)-1)*2.4,z:L.mercado.z+1.5};
-  P.pracaPt={x:V.cx+(r()-.5)*7,z:V.cz+(r()-.5)*7}; P.pracaPt2={x:V.cx+(r()-.5)*7,z:V.cz+(r()-.5)*7}; P.estradaFora={x:V.cx-26,z:V.cz+(r()-.5)*1.5};
-  P.obra={x:c.x,z:c.z+2.3}; P.casaFrente={x:c.x,z:c.z+2.3};
+  P.ervas={x:L.capela.x+(r()-.5)*3,z:L.capela.z+L.capela.h/2+4.5}; P.barraca={x:L.mercado.x+(Math.floor(r()*3)-1)*2.4,z:L.mercado.z+1.5};
+  P.pracaPt={x:V.cx+(r()-.5)*7,z:V.cz+(r()-.5)*7}; P.pracaPt2={x:V.cx+(r()-.5)*7,z:V.cz+(r()-.5)*7}; P.estradaFora={x:V.cx-40,z:V.cz+(r()-.5)*1.5};
+  P.casaFrente={x:c.x,z:c.z+1.9}; P.obra=P.pracaPt;
   pontosCache.set(k,P); return P; }
-const CICLO_PADRAO=[{t:10,modo:"andar",para:"pracaPt",acao:"passeando"},{t:10,modo:"parado",em:"pracaPt",acao:"conversando"},{t:10,modo:"andar",para:"pracaPt2",acao:"passeando"},{t:10,modo:"parado",em:"pracaPt2",acao:"olhando o movimento"}];
-function passoCiclo(m,V,idx){ const ciclo=CICLOS[m.profissao]||CICLO_PADRAO; const T=ciclo.reduce((a,s2)=>a+s2.t,0); const P=pontos(V,m,idx); let u=(Date.now()/1000+hash(m.id)%997)%T;
-  for(let k=0;k<ciclo.length;k++){ const s2=ciclo[k]; if(u<s2.t){ const f=u/s2.t; const ant=ciclo[(k-1+ciclo.length)%ciclo.length]; const from=P[ant.em||ant.para]||P.pracaPt; const to=P[s2.em||s2.para]||P.pracaPt;
-      if(s2.modo==="andar"){ const e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; return {s:s2,x:from.x+(to.x-from.x)*e,z:from.z+(to.z-from.z)*e,y:(from.y||0)+((to.y||0)-(from.y||0))*e,ang:Math.atan2(to.x-from.x,to.z-from.z),andando:true}; }
-      let ang=0; if(s2.modo==="pescar") ang=V.i===0?Math.PI/2:Math.atan2(V.L.rio.x-to.x,V.L.rio.z-to.z); else if(s2.modo==="cortar"||s2.modo==="martelar"||s2.modo==="colher"||s2.modo==="mirar") ang=Math.atan2(V.cx-to.x,V.cz-to.z)+Math.PI; else ang=Math.atan2(V.cx-to.x,V.cz-to.z);
+const cicloCache=new Map();
+function cicloDe(m,V,idx,nome,base){ const k=m.id+":"+V.i+":"+nome; let c=cicloCache.get(k); if(c) return c; const P=pontos(V,m,idx); const passos=base.map(s=>Object.assign({},s)); let T=0;
+  passos.forEach((s,i)=>{ if(s.modo==="andar"){ const ant=passos[(i-1+passos.length)%passos.length]; const from=P[ant.em||ant.para]||P.pracaPt; const to=P[s.para]||P.pracaPt; s.rota=rota(V,from,to); s.t=Math.max(2,Math.min(60,s.rota.len/VEL)); } T+=s.t; });
+  c={passos,T}; cicloCache.set(k,c); return c; }
+function passoCiclo(m,V,idx,nome,base,obra){ const C=cicloDe(m,V,idx,nome,base); const P=pontos(V,m,idx); let u=(Date.now()/1000+hash(m.id)%997)%C.T;
+  for(let k=0;k<C.passos.length;k++){ const s2=C.passos[k]; if(u<s2.t){ const f=u/s2.t;
+      if(s2.modo==="andar"){ const e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; const q=aoLongo(s2.rota,e); return {s:s2,x:q.x,z:q.z,y:0,ang:q.ang,andando:true}; }
+      let to=P[s2.em]||P.pracaPt; if(s2.em==="obra"&&obra) to=obra; let ang; if(s2.modo==="pescar") ang=V.i===0?Math.PI/2:Math.atan2(V.L.rio.x-to.x,V.L.rio.z-to.z); else if(s2.modo==="cortar"||s2.modo==="martelar"||s2.modo==="colher"||s2.modo==="mirar") ang=Math.atan2(V.cx-to.x,V.cz-to.z)+Math.PI; else ang=Math.atan2(V.cx-to.x,V.cz-to.z);
       return {s:s2,x:to.x,z:to.z,y:to.y||0,ang,andando:false}; }
     u-=s2.t; } }
-
 function estado(m, idx, w){
-  const p=PROF[m.profissao]||PROF.bardo, casa=casaDe(idx), V=casa.vila, LUG=V.L, h=w.hora;
+  const p=PROF[m.profissao]||PROF.bardo, casa=casaDe(idx), V=casa.vila, LUG=V.L, h=w.hora; const eco=economiaDe(V); const comCasa=temCasa(V,casa.slot);
   let lugar, acao, chave, visita=null, dentro=null, modo="parado", x, z, y=0, ang=0, andando=false;
-  const casaFrente={x:casa.x,z:casa.z+2.3};
-  if(h<6||h>=22){ lugar=casa; acao=h>=22?"indo dormir":"dormindo na cabana"; chave="dorme"; dentro={tipo:"casa",spot:"cama",modo:"dormir"}; x=casa.x; z=casa.z; }
-  else if(h===6){ lugar=casa; acao="tomando café na porta de casa"; chave="cafe"; x=casaFrente.x; z=casaFrente.z; ang=0; }
-  else if(h===12){ lugar=LUG.taverna; acao="almoçando na taverna"; chave="almoco"; dentro={tipo:"taverna",spot:(hash(m.id)%2)?"mesa":"mesa2",modo:"sentado"}; x=LUG.taverna.x; z=LUG.taverna.z; }
-  else if(h>=18&&h<20){ const praca=(hash(m.id+h)%2)===1; lugar=praca?LUG.praca:LUG.taverna; chave="lazer"; if(praca){ acao="conversando na praça"; } else { acao="jogando dados na taverna"; dentro={tipo:"taverna",spot:(hash(m.id)%2)?"mesa":"mesa2",modo:"sentado"}; x=LUG.taverna.x; z=LUG.taverna.z; } }
-  else if(h>=20){ lugar=LUG.praca; acao="ao redor da fogueira ouvindo o bardo"; chave="fogueira"; }
-  else { lugar=LUG[p.lugar]; chave="trab"; }
-  if((m.profissao==="soldado"||m.profissao==="cavaleiro") && (h>=20||h<6) && hash(m.id+"ronda"+w.dia)%3===0){ lugar=LUG.muralha; acao="de ronda noturna com a tocha"; chave="ronda"; dentro=null; }
-  const nv=nVilas(); if(nv>1 && h>=13 && h<18 && hash(m.id+"visita"+w.dia)%4===0){ const outra=vila((V.i+1+hash(m.id+w.dia)%(nv-1))%nv); lugar=(h<16)?outra.L.praca:outra.L.taverna; acao=(h<16?"visitando a praça de ":"na taverna de ")+outra.nome; chave="visita"; visita=outra; dentro=h<16?null:{tipo:"taverna",spot:"mesa",modo:"sentado"}; if(dentro){ x=outra.L.taverna.x; z=outra.L.taverna.z; } }
-  if(chave==="trab"){ const ps=passoCiclo(m,V,idx); x=ps.x; z=ps.z; y=ps.y; ang=ps.ang; andando=ps.andando; modo=ps.s.modo; acao=ps.s.acao; if(modo==="dentro"){ dentro={tipo:ps.s.dentro,spot:ps.s.spot,modo:"trabalhar"}; } }
-  else if(x==null){ // passeio dentro do lugar (praça, fogueira, ronda, visita à praça)
-    const s2=Math.floor(Date.now()/6000), f=(Date.now()%6000)/6000; const lw=lugar===LUG.praca||(visita&&!dentro)?7:Math.max(2.5,lugar.w+2), lh=lugar===LUG.praca||(visita&&!dentro)?7:Math.max(2.5,lugar.h+2);
+  const frente={x:casa.x,z:casa.z+1.9};
+  if(h<6||h>=22){ lugar=casa; chave="dorme"; if(comCasa){ acao=h>=22?"indo dormir":"dormindo na cabana"; dentro={tipo:"casa",spot:"cama",modo:"dormir"}; x=casa.x; z=casa.z; } else { acao=h>=22?"se enrolando na manta perto da tenda":"dormindo na tenda"; x=casa.x; z=casa.z; dentro={tipo:"tenda",spot:"cama",modo:"dormir"}; } }
+  else if(h===6){ lugar=casa; acao=comCasa?"tomando café na porta de casa":"esquentando as mãos na fogueira da tenda"; chave="cafe"; x=frente.x; z=frente.z; ang=0; }
+  else if(h===12){ chave="almoco"; if(eco.construido("taverna")){ lugar=LUG.taverna; acao="almoçando na taverna"; dentro={tipo:"taverna",spot:(hash(m.id)%2)?"mesa":"mesa2",modo:"sentado"}; x=LUG.taverna.x; z=LUG.taverna.z; } else { lugar=LUG.praca; acao="almoçando ao redor da fogueira"; } }
+  else if(h>=18&&h<20){ chave="lazer"; const praca=(hash(m.id+h)%2)===1||!eco.construido("taverna"); lugar=praca?LUG.praca:LUG.taverna; if(praca){ acao="conversando na praça"; } else { acao="jogando dados na taverna"; dentro={tipo:"taverna",spot:(hash(m.id)%2)?"mesa":"mesa2",modo:"sentado"}; x=LUG.taverna.x; z=LUG.taverna.z; } }
+  else if(h>=20){ lugar=LUG.praca; acao="ao redor da fogueira ouvindo histórias"; chave="fogueira"; }
+  else { lugar=LUG[LUGAR_DE[m.profissao]||"praca"]; chave="trab"; }
+  if((m.profissao==="soldado"||m.profissao==="cavaleiro") && (h>=20||h<6) && eco.construido("muralha") && hash(m.id+"ronda"+w.dia)%3===0){ lugar=LUG.muralha; acao="de ronda noturna com a tocha"; chave="ronda"; dentro=null; x=null; }
+  const nv=nVilas(); if(nv>1 && h>=13 && h<18 && hash(m.id+"visita"+w.dia)%4===0){ const outra=vila((V.i+1+hash(m.id+w.dia)%(nv-1))%nv); visita=outra; chave="visita"; const rt=rotaEntreVilas(V,outra); const seg=w.frac*60; const tv=Math.min(55,rt.len/VEL);
+    if(h===13&&seg<tv){ const q=aoLongo(rt,seg/tv); x=q.x; z=q.z; ang=q.ang; andando=true; modo="andar"; acao="a caminho de "+outra.nome; lugar=outra.L.praca; }
+    else if(h===17&&seg>60-tv){ const q=aoLongo(rt,1-(seg-(60-tv))/tv); x=q.x; z=q.z; ang=q.ang+Math.PI; andando=true; modo="andar"; acao="voltando de "+outra.nome; lugar=V.L.praca; }
+    else { lugar=(h<16||!economiaDe(outra).construido("taverna"))?outra.L.praca:outra.L.taverna; acao=(lugar===outra.L.praca?"visitando a praça de ":"na taverna de ")+outra.nome; dentro=lugar===outra.L.taverna?{tipo:"taverna",spot:"mesa",modo:"sentado"}:null; if(dentro){ x=lugar.x; z=lugar.z; } } }
+  if(chave==="trab"){ const pl=LUGAR_DE[m.profissao]||"praca"; const natural=pl==="rio"||pl==="floresta"||pl==="praca"; let ps;
+    if(natural||eco.construido(pl)){ ps=passoCiclo(m,V,idx,m.profissao,CICLOS[m.profissao]||CICLO_PRACA,eco.proxima?V.L[eco.proxima[0]]:null); }
+    else { const sit=eco.proxima?V.L[eco.proxima[0]]:null; const tipo=(m.profissao==="mineiro"||m.profissao==="ferreiro")?"pedra":(m.profissao==="construtor"||hash(m.id+"ajuda"+w.dia)%3===0)?"obra":"coleta"; ps=passoCiclo(m,V,idx,tipo,tipo==="pedra"?CICLO_PEDRA:tipo==="obra"?CICLO_OBRA:CICLO_COLETA,sit?{x:sit.x,z:sit.z+sit.h/2+2}:null); }
+    x=ps.x; z=ps.z; y=ps.y; ang=ps.ang; andando=ps.andando; modo=ps.s.modo; acao=ps.s.acao; if(modo==="dentro"){ dentro={tipo:ps.s.dentro,spot:ps.s.spot,modo:"trabalhar"}; } }
+  else if(x==null){ const s2=Math.floor(Date.now()/6000), f=(Date.now()%6000)/6000; const lw=lugar===LUG.muralha?Math.max(2.5,lugar.w+2):7, lh=lugar===LUG.muralha?Math.max(2.5,lugar.h+2):7;
     const front=lugar===LUG.muralha; function off(k){ const r=rnd(m.id+"p"+k); return {x:(r()-.5)*lw, z: front ? lugar.h/2+1+r()*2.5 : (r()-.5)*lh}; }
     const a=off(s2), b=off(s2+1), e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; x=lugar.x+a.x+(b.x-a.x)*e; z=lugar.z+a.z+(b.z-a.z)*e; const dx=b.x-a.x, dz=b.z-a.z; andando=Math.abs(dx)+Math.abs(dz)>0.8; ang=Math.atan2(dx,dz); modo=andando?"andar":"parado"; }
   return {x,z,y,acao,lugar,chave,visita,dentro,modo,andando,ang,vila:V};
@@ -335,11 +381,12 @@ function cronica(w){
     let texto, vil=false;
     if(h>=6&&h<=22 && r()<.18){ const v=pick(r,VILOES); texto=v.texto; vil=true; }
     else if(h<6){ texto=pick(r,["A vila dorme. Só a fogueira estala.","Corujas na Floresta Velha.","O rio corre em silêncio."]); }
+    else if(h===7&&lista.some(m=>!m.npc)){ const reais=lista.filter(m=>!m.npc); const m=pick(r,reais); texto="Morador do dia: "+m.nome+". Hoje a vila inteira fica de olho nele."; }
     else if(nVilas()>1 && r()<.3){ const ia=Math.floor(r()*lista.length), a=lista[ia]; const va=vilaDe(ia); let ib=Math.floor(r()*lista.length); if(vilaDe(ib).i===va.i) ib=(ib+VILA_CAP)%lista.length; const b=lista[ib]; const vb=vilaDe(ib); const en=pick(r,ENCONTROS); texto=en.t.replace(/{a}/g,a.nome).replace(/{b}/g,b.nome).replace(/{va}/g,va.nome).replace(/{vb}/g,vb.nome); vil=!!en.briga; }
     else { const m=pick(r,lista); const p=PROF[m.profissao]||PROF.bardo; const eq=equipamentoDe(m); texto=m.nome+" "+pick(r,p.feitos)+(r()<.3&&eq.principal?" empunhando "+eq.principal.nome.toLowerCase()+".":"."); }
     out.push({d,h,texto,vil});
   }
-  const chegadas=lista.map((m,i)=>({m,i})).filter(o=>!o.m.fundador).map(o=>({ts:o.m.joinedAt,texto:o.m.nome+" chegou a "+vilaDe(o.i).nome+" e armou uma tenda. Profissão: "+(PROF[o.m.profissao]||PROF.bardo).nome+". Ainda sem equipamento."}));
+  const chegadas=lista.map((m,i)=>({m,i})).filter(o=>!o.m.npc).map(o=>({ts:o.m.joinedAt,texto:o.m.nome+" chegou a "+vilaDe(o.i).nome+" e armou uma tenda perto da fogueira. Profissão: "+(PROF[o.m.profissao]||PROF.bardo).nome+". Ainda sem equipamento."}));
   const DROPS=["expulsou um goblin da estrada","acertou o Lobo Cinzento com uma pedra","encontrou um baú na Floresta Velha","venceu um javali teimoso","ajudou a Bruxa do Pântano a achar o gato dela"];
   const agora=Date.now(); lista.forEach((m,i)=>{ const eq=equipamentoDe(m); const p=PROF[m.profissao]||PROF.bardo; [[2,"trocou a tenda por uma cabana"+(ARMAS.has(p.arma)&&eq.principal?" e o ferreiro forjou "+eq.futuro.principal.nome.toLowerCase():"")],[4,(eq.secundario?"ganhou "+eq.futuro.secundario.nome.toLowerCase():"")],[3,(eq.escudo&&p.escudo?"recebeu do ferreiro "+eq.futuro.escudo.nome.toLowerCase():"")],[5,(eq.escudo&&!p.escudo?"ganhou "+eq.futuro.escudo.nome.toLowerCase():"")],[6,"recebeu a capa e o título de Mestre"]].forEach(([n,t])=>{ if(!t) return; const ts=m.joinedAt+12*(n-1)*(n-1)*HORA_MS; if(ts<=agora&&agora-ts<30*24*HORA_MS) chegadas.push({ts,texto:m.nome+" "+pick(rnd(m.id+"drop"+n),DROPS)+" e "+t+"."}); }); });
   return {horas:out, chegadas};
@@ -381,60 +428,126 @@ function cone(r,h,m,x,y,z,parent,seg){ const c=new THREE.Mesh(geo("Cone",[r,h,se
 function esfera(r,m,x,y,z,parent,ws,hs){ const c=new THREE.Mesh(geo("Sphere",[r,ws||8,hs||6]),m); c.position.set(x,y,z); return add(c,parent); }
 
 // chão
-const chao=new THREE.Mesh(new THREE.PlaneGeometry(900,900,1,1),M.grama); chao.material=mat(0x5f9e3f); chao.rotation.x=-Math.PI/2; chao.receiveShadow=true; scene.add(chao);
+const chao=new THREE.Mesh(new THREE.PlaneGeometry(900,900,1,1),mat(0x5f9e3f)); chao.rotation.x=-Math.PI/2; chao.receiveShadow=true; scene.add(chao);
 const rBase=rnd("chao");
 for(let i=0;i<400;i++){ const p=new THREE.Mesh(new THREE.CircleGeometry(1+rBase()*2.5,7),rBase()<.5?M.grama2:mat(0x6aa845)); p.rotation.x=-Math.PI/2; p.position.set((rBase()-.5)*500,0.01,(rBase()-.5)*500); p.receiveShadow=true; scene.add(p); }
-function faixa(w,d,x,z,m){ const f=new THREE.Mesh(new THREE.PlaneGeometry(w,d),m||M.terra); f.rotation.x=-Math.PI/2; f.position.set(x,0.02,z); f.receiveShadow=true; scene.add(f); }
-function casa(x,z,w,d,h,m,mTelhado,rot,chamine){ const g=new THREE.Group(); g.position.set(x,0,z); g.rotation.y=rot||0;
+function faixa(w,d,x,z,m,parent){ const f=new THREE.Mesh(new THREE.PlaneGeometry(w,d),m||M.terra); f.rotation.x=-Math.PI/2; f.position.set(x,0.02,z); f.receiveShadow=true; (parent||scene).add(f); return f; }
+function casa(x,z,w,d,h,m,mTelhado,rot,chamine,parent){ const g=new THREE.Group(); g.position.set(x,0,z); g.rotation.y=rot||0;
   box(w,h,d,m,0,h/2,0,g);
   const roof=cone(Math.max(w,d)/Math.SQRT2*1.18,h*0.75,mTelhado||M.telhado,0,h+h*0.375,0,g,4); roof.rotation.y=Math.PI/4; roof.scale.set(w/Math.max(w,d),1,d/Math.max(w,d));
   box(0.7,1.1,0.1,M.madeiraEsc,0,0.55,d/2+0.02,g);
   box(0.6,0.6,0.08,M.janela,-w/3,h*0.55,d/2+0.03,g); box(0.6,0.6,0.08,M.janela,w/3,h*0.55,d/2+0.03,g);
   if(chamine) box(0.5,1.2,0.5,M.pedra,w/3,h+0.8,0,g);
-  scene.add(g); return g; }
+  (parent||scene).add(g); return g; }
 function rotulo(texto,x,y,z,escala,cor){ const c=document.createElement("canvas"); c.width=512; c.height=128; const g=c.getContext("2d"); g.font="700 62px Fredoka, Nunito, sans-serif"; g.textAlign="center"; g.textBaseline="middle";
   const tw=Math.min(500,g.measureText(texto).width+44); g.fillStyle="rgba(10,14,20,.62)"; g.beginPath(); g.moveTo(256-tw/2+22,20); g.arcTo(256+tw/2,20,256+tw/2,108,22); g.arcTo(256+tw/2,108,256-tw/2,108,22); g.arcTo(256-tw/2,108,256-tw/2,20,22); g.arcTo(256-tw/2,20,256+tw/2,20,22); g.closePath(); g.fill();
   g.fillStyle=cor||"#fff"; g.fillText(texto,256,64);
   const t=new THREE.CanvasTexture(c); t.minFilter=THREE.LinearFilter; const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthTest:false,sizeAttenuation:false})); const e=(escala||5)*0.03; s.scale.set(e,e/4,1); s.position.set(x,y,z); scene.add(s); return s; }
+function rotuloEm(parent,texto,x,y,z,escala,cor){ const s=rotulo(texto,x,y,z,escala,cor); scene.remove(s); parent.add(s); return s; }
+// ---------- decoração instanciada do mundo ----------
+function instancia(geometria,material,lista,parent){ if(!lista.length) return null; const im=new THREE.InstancedMesh(geometria,material,lista.length); const d=new THREE.Object3D(); const col=new THREE.Color();
+  lista.forEach((p,i)=>{ d.position.set(p.x,p.y||0,p.z); d.rotation.set(p.rx||0,p.ry||0,p.rz||0); const s=p.s||1; d.scale.set(p.sx||s,p.sy||s,s); d.updateMatrix(); im.setMatrixAt(i,d.matrix); if(p.c!=null) im.setColorAt(i,col.set(p.c)); });
+  if(im.instanceColor) im.instanceColor.needsUpdate=true; im.castShadow=true; im.receiveShadow=true; (parent||scene).add(im); return im; }
+function foraDeTudo(x,z){ return livre(x,z,0.5) && !CASAS.some(c=>Math.abs(c[0]-x)<2.2&&Math.abs(c[1]-z)<2.2); }
+(function decoraMundo(){ const r=rnd("decor");
+  const tufos=[], flores=[], pedras=[], cogus=[], cogus2=[];
+  for(let i=0;i<2600;i++){ const x=(r()-.5)*380, z=(r()-.5)*320; if(Math.abs(x)<=36&&Math.abs(z)<=36&&(Math.abs(((x%7)+7)%7-0)<1.2||Math.abs(((z%7)+7)%7-0)<1.2)) continue; if(x>LUG.rio.x-3.5&&x<LUG.rio.x+3.5) continue; tufos.push({x,z,y:0.45*(0.7+r()*0.8),ry:r()*6,s:0.7+r()*0.8,c:r()<.5?0x5a9c38:0x6fb24a}); }
+  for(let i=0;i<500;i++){ const x=(r()-.5)*300, z=(r()-.5)*260; if(!foraDeTudo(x,z)) continue; flores.push({x,z,y:0.25,s:0.8+r()*0.6,c:[0xffd36a,0xff8ab0,0xffffff,0xff6a5a,0xc58cff][Math.floor(r()*5)]}); }
+  for(let i=0;i<160;i++){ const x=(r()-.5)*360, z=(r()-.5)*300; if(!foraDeTudo(x,z)) continue; pedras.push({x,z,y:0.1,ry:r()*6,s:0.4+r()*1.1,c:r()<.5?0x8d8a82:0x6f6c66}); }
+  for(let i=0;i<120;i++){ const x=(r()-.5)*340, z=(r()-.5)*300; if(!foraDeTudo(x,z)) continue; const s=0.5+r()*0.7; cogus.push({x,z,y:0.21*s,s,sy:s}); cogus2.push({x,z,y:0.42*s,s,c:r()<.6?0xd93a4a:0xf0c030}); }
+  instancia(geo("Cone",[0.22,0.9,4]),mat(0xffffff),tufos); instancia(geo("Dodecahedron",[0.22,0]),mat(0xffffff),flores); instancia(geo("Dodecahedron",[0.6,0]),mat(0xffffff),pedras);
+  instancia(geo("Cylinder",[0.08,0.1,0.42,6]),mat(0xf1e4c8),cogus); instancia(geo("Cone",[0.3,0.28,8]),mat(0xffffff),cogus2);
+})();
+const VAGALUMES=(function(){ const g=new THREE.InstancedMesh(geo("Sphere",[0.07,5,4]),new THREE.MeshBasicMaterial({color:0xcfff6a}),90); g.frustumCulled=false; scene.add(g); g.userData.seeds=[]; const r=rnd("vaga"); for(let i=0;i<90;i++) g.userData.seeds.push({x:(r()-.5)*70,z:(r()-.5)*60,f:r()*6,v:0.3+r()*0.7}); return g; })();
+function animaVagalumes(tsec,noite){ VAGALUMES.visible=noite; if(!noite) return; const d=new THREE.Object3D(); VAGALUMES.userData.seeds.forEach((s,i)=>{ d.position.set(s.x+Math.sin(tsec*s.v+s.f)*2.5, 1.2+Math.sin(tsec*1.7+s.f)*0.8, s.z+Math.cos(tsec*s.v*0.8+s.f)*2.5); const on=Math.sin(tsec*3+s.f*4)>0.2; d.scale.setScalar(on?1:0.001); d.updateMatrix(); VAGALUMES.setMatrixAt(i,d.matrix); }); VAGALUMES.instanceMatrix.needsUpdate=true; }
+const TOCHAS=[];
+function tocha(x,z,comLuz,parent){ const g=new THREE.Group(); g.position.set(x,0,z); (parent||scene).add(g); cyl(0.07,0.09,2.2,M.madeiraEsc,0,1.1,0,g,5); cyl(0.14,0.1,0.25,M.pedraEsc,0,2.25,0,g,6);
+  const f=cone(0.16,0.5,M.fogo,0,2.6,0,g,5); f.castShadow=false; const f2=cone(0.09,0.35,M.fogo2,0,2.6,0,g,5); f2.castShadow=false; let luz=null; if(comLuz){ luz=new THREE.PointLight(0xffa040,0.9,9,2); luz.position.set(0,2.7,0); g.add(luz); } TOCHAS.push({f,f2,luz,fase:x*0.3+z*0.7,g}); return g; }
+function bandeira(x,z,cor,alt,parent){ const g=new THREE.Group(); g.position.set(x,0,z); (parent||scene).add(g); cyl(0.07,0.09,alt||5,M.madeiraEsc,0,(alt||5)/2,0,g,5); const pano=box(1.4,0.9,0.05,mat(cor),0.75,(alt||5)-0.6,0,g); pano.castShadow=false; esfera(0.12,mat(0xf0c030,{metalness:0.6,roughness:0.3}),0,(alt||5)+0.1,0,g); return g; }
+function caveira(x,y,z,parent,s){ const g=new THREE.Group(); g.position.set(x,y,z); g.scale.setScalar(s||1); (parent||scene).add(g); esfera(0.22,M.branco,0,0,0,g,8,6); box(0.3,0.14,0.2,M.branco,0,-0.2,0.02,g); box(0.07,0.07,0.05,M.escuro,-0.08,0.02,0.2,g); box(0.07,0.07,0.05,M.escuro,0.08,0.02,0.2,g); box(0.05,0.06,0.04,M.escuro,0,-0.08,0.21,g); return g; }
+function animaTochas(tsec,noite){ TOCHAS.forEach(t=>{ if(!t.g.visible) return; const s=0.85+Math.sin(tsec*12+t.fase)*0.15; t.f.scale.set(s,1+Math.sin(tsec*9+t.fase)*0.2,s); t.f2.rotation.y=tsec*4; if(t.luz) t.luz.intensity=noite?0.8+Math.sin(tsec*11+t.fase)*0.2:0.15; }); }
+// ---------- construção da vila: cada prédio é um grupo que só aparece quando a vila junta material ----------
 const fogueiras=[]; let rio=null; const vilasConstruidas=new Set();
-function construirVila(V){ if(vilasConstruidas.has(V.i)) return; vilasConstruidas.add(V.i); const L=V.L, cx=V.cx, cz=V.cz;
-  faixa(76,3,cx+6,cz); faixa(3,52,cx,cz);
-  const praca=new THREE.Mesh(new THREE.CircleGeometry(5.5,24),mat(0xd8c49a)); praca.rotation.x=-Math.PI/2; praca.position.set(cx,0.03,cz); praca.receiveShadow=true; scene.add(praca);
-  const fg=new THREE.Group(); fg.position.set(cx,0,cz); scene.add(fg);
+function andaime(x,z,w,d,parent){ const g=new THREE.Group(); g.position.set(x,0,z); (parent||scene).add(g); for(const sx of [-1,1]) for(const sz of [-1,1]) cyl(0.09,0.11,3,M.madeira,sx*w/2,1.5,sz*d/2,g,5);
+  for(const y of [1.2,2.9]){ box(w,0.1,0.1,M.madeiraEsc,0,y,d/2,g); box(w,0.1,0.1,M.madeiraEsc,0,y,-d/2,g); box(0.1,0.1,d,M.madeiraEsc,w/2,y,0,g); box(0.1,0.1,d,M.madeiraEsc,-w/2,y,0,g); }
+  for(let i=0;i<4;i++) box(0.5,0.5,0.5,M.madeira,-w/2+0.5+i*0.6,0.25,d/2+0.8,g); cyl(0.5,0.5,0.5,M.pedra,w/2-0.5,0.25,d/2+0.9,g,7); return g; }
+function construirVila(V){ if(vilasConstruidas.has(V.i)) return; vilasConstruidas.add(V.i); const L=V.L, cx=V.cx, cz=V.cz; const P=V.pred={}; const corVila=[0xd94040,0x3b7dd8,0x3fa34d,0xf0c030,0x8a4fd6,0xf08a2a,0x2fb5b0,0xe35c99][V.i%8];
+  function grupo(k){ const g=new THREE.Group(); scene.add(g); P[k]=g; return g; }
+  // ruas em grade (sempre existem; vão ganhando tochas depois)
+  const ruas=grupo("ruas"); RUAS.forEach(r0=>{ faixa(72,1.6,cx,cz+r0,mat(0xbf9a5e),ruas); faixa(1.6,72,cx+r0,cz,mat(0xbf9a5e),ruas); }); faixa(90,3,cx+9,cz,M.terra,ruas); faixa(3,88,cx,cz,M.terra,ruas);
+  // praça + fogueira (estágio 0: sempre)
+  const pr=grupo("praca"); const praca=new THREE.Mesh(new THREE.CircleGeometry(5.5,24),mat(0xd8c49a)); praca.rotation.x=-Math.PI/2; praca.position.set(cx,0.03,cz); praca.receiveShadow=true; pr.add(praca);
+  const fg=new THREE.Group(); fg.position.set(cx,0,cz); pr.add(fg);
   for(let i=0;i<4;i++){ const l=cyl(0.12,0.12,1.4,M.madeiraEsc,0,0.12,0,fg,6); l.rotation.z=Math.PI/2; l.rotation.y=i*Math.PI/4; }
   for(let i=0;i<8;i++){ cyl(0.18,0.18,0.3,M.pedraEsc,Math.cos(i/8*Math.PI*2)*1.1,0.15,Math.sin(i/8*Math.PI*2)*1.1,fg,6); }
   const chama=cone(0.45,1.3,M.fogo,0,0.8,0,fg,6), chama2=cone(0.25,0.9,M.fogo2,0,0.75,0,fg,6); chama.castShadow=false; chama2.castShadow=false;
   const luz=new THREE.PointLight(0xff9a3a,1.2,22,2); luz.position.set(0,1.6,0); fg.add(luz); fogueiras.push({chama,chama2,luz,fase:V.i});
-  for(let i=0;i<5;i++){ const b=box(1.6,0.3,0.5,M.madeira,cx+Math.cos(i/5*Math.PI*2+.3)*3.6,0.35,cz+Math.sin(i/5*Math.PI*2+.3)*3.6); b.rotation.y=-(i/5*Math.PI*2+.3); }
-  rotulo(V.nome,cx,9,cz-6,9,"#ffe9b0");
-  (function(){ const Lx=L.taverna; casa(Lx.x,Lx.z,Lx.w,Lx.h,3.2,M.parede,M.telhado2,0,true); const g=new THREE.Group(); g.position.set(Lx.x+Lx.w/2+0.8,0,Lx.z+Lx.h/2); cyl(0.08,0.08,2.6,M.madeiraEsc,0,1.3,0,g); box(1.3,0.7,0.1,M.madeira,0.6,2.2,0,g); scene.add(g); rotulo("Taverna",Lx.x,5.2,Lx.z,6); })();
-  (function(){ const Lx=L.ferraria; casa(Lx.x,Lx.z,Lx.w,Lx.h,2.8,M.pedra,M.escuro,0,true); box(0.9,0.5,0.5,M.escuro,Lx.x-1.5,0.85,Lx.z+Lx.h/2+1.3); box(0.5,0.6,0.5,M.madeiraEsc,Lx.x-1.5,0.3,Lx.z+Lx.h/2+1.3);
-    const forja=new THREE.PointLight(0xff6a1a,0.8,8,2); forja.position.set(Lx.x+1.5,1.2,Lx.z+Lx.h/2+0.5); scene.add(forja); rotulo("Ferraria",Lx.x,4.8,Lx.z,6); })();
-  (function(){ const Lx=L.capela; casa(Lx.x,Lx.z,Lx.w,Lx.h,3,M.branco,M.verdeClaro,0,false); box(0.9,0.25,0.25,M.vermelho,Lx.x,4.9,Lx.z); box(0.25,0.9,0.25,M.vermelho,Lx.x,4.9,Lx.z); rotulo("Casa de Cura",Lx.x,6.2,Lx.z,6.5); })();
-  (function(){ const Lx=L.torre; cyl(1.6,1.9,7,M.pedra,Lx.x,3.5,Lx.z,null,10); cone(2.2,3,M.roxo,Lx.x,8.5,Lx.z,null,10); box(0.6,0.8,0.1,M.janela,Lx.x,5,Lx.z+1.75); box(0.6,0.8,0.1,M.janela,Lx.x,3,Lx.z+1.75); box(0.7,1.1,0.1,M.madeiraEsc,Lx.x,0.55,Lx.z+1.9);
-    const lm=new THREE.PointLight(0xb08cff,0.6,10,2); lm.position.set(Lx.x,6,Lx.z+2); scene.add(lm); rotulo("Torre do Mago",Lx.x,11,Lx.z,6.5); })();
-  (function(){ const Lx=L.mercado; for(let i=-1;i<=1;i++){ const g=new THREE.Group(); g.position.set(Lx.x+i*2.4,0,Lx.z); box(2,0.9,1.2,M.madeira,0,0.45,0,g); for(const s of [-0.9,0.9]) for(const t of [-0.5,0.5]) cyl(0.06,0.06,2.4,M.madeiraEsc,s,1.2,t,g,5);
-      const aw=cone(1.6,0.7,i===0?M.vermelho:M.branco,0,2.6,0,g,4); aw.rotation.y=Math.PI/4; aw.scale.set(1,1,0.75); scene.add(g); } rotulo("Mercado",Lx.x,4.4,Lx.z,5.5); })();
-  (function(){ const Lx=L.campo; const base=new THREE.Mesh(new THREE.PlaneGeometry(Lx.w,Lx.h),mat(0xa8773a)); base.rotation.x=-Math.PI/2; base.position.set(Lx.x,0.02,Lx.z); base.receiveShadow=true; scene.add(base);
-    const inst=new THREE.InstancedMesh(geo("Box",[0.35,0.9,0.35]),M.trigo,180); const d=new THREE.Object3D(); let n=0; const r=rnd("trigo"+V.i);
-    for(let i=0;i<12;i++)for(let j=0;j<15;j++){ d.position.set(Lx.x-Lx.w/2+0.6+j*(Lx.w-1.2)/14, 0.45+r()*0.15, Lx.z-Lx.h/2+0.6+i*(Lx.h-1.2)/11); d.rotation.y=r(); d.updateMatrix(); inst.setMatrixAt(n++,d.matrix); }
-    inst.castShadow=true; scene.add(inst); rotulo("Campo",Lx.x,3.4,Lx.z,5); })();
-  (function(){ const Lx=L.muralha; for(let i=0;i<11;i++){ cyl(0.3,0.3,2.2+(i%2)*0.4,M.madeira,Lx.x-Lx.w/2+i*0.8,1.1,Lx.z+Lx.h/2,null,6); } box(2,2,2,M.madeiraEsc,Lx.x-Lx.w/2-0.5,3.4,Lx.z); for(let i=0;i<4;i++) cyl(0.12,0.12,3.2,M.madeiraEsc,Lx.x-Lx.w/2-0.5+(i%2?0.8:-0.8),1.5,Lx.z+(i<2?0.8:-0.8),null,5);
-    const roof=cone(1.9,1.2,M.telhado2,Lx.x-Lx.w/2-0.5,5,Lx.z,null,4); roof.rotation.y=Math.PI/4; const tocha=new THREE.PointLight(0xffa040,0.7,9,2); tocha.position.set(Lx.x+1,2.8,Lx.z+1); scene.add(tocha); rotulo("Posto de Guarda",Lx.x,6,Lx.z,6.5); })();
+  for(let i=0;i<5;i++){ const b=box(1.6,0.3,0.5,M.madeira,cx+Math.cos(i/5*Math.PI*2+.3)*3.6,0.35,cz+Math.sin(i/5*Math.PI*2+.3)*3.6,pr); b.rotation.y=-(i/5*Math.PI*2+.3); }
+  rotuloEm(pr,V.nome,cx,9,cz-6,9,"#ffe9b0");
+  const r=rnd("decorV"+V.i); const ped=[]; for(let i=0;i<70;i++){ const a=r()*6.28, d=1.9+r()*3.3; ped.push({x:cx+Math.cos(a)*d,z:cz+Math.sin(a)*d,y:0.03,ry:r()*6,s:0.5+r()*0.5,c:r()<.5?0xc9b58e:0xb8a27a}); } instancia(geo("Cylinder",[0.5,0.5,0.08,6]),mat(0xffffff),ped,pr);
+  // pilha de material da vila (cresce com a madeira juntada)
+  const pil=grupo("pilha"); V.pilhaLogs=[]; for(let i=0;i<12;i++){ const l=cyl(0.22,0.22,1.6,M.madeiraEsc,cx+6.5+(i%4)*0.5,0.25+Math.floor(i/4)*0.45,cz-5.5+(i%2)*0.3,pil,6); l.rotation.z=Math.PI/2; V.pilhaLogs.push(l); } for(let i=0;i<6;i++){ const p2=new THREE.Mesh(geo("Dodecahedron",[0.4,0]),M.pedra); p2.position.set(cx+8.5+(i%3)*0.7,0.3+Math.floor(i/3)*0.5,cz-5.5+(i%2)*0.6); pil.add(p2); V.pilhaLogs.push(p2); }
+  // campo
+  (function(){ const g=grupo("campo"); const Lx=L.campo; const base=new THREE.Mesh(new THREE.PlaneGeometry(Lx.w,Lx.h),mat(0xa8773a)); base.rotation.x=-Math.PI/2; base.position.set(Lx.x,0.02,Lx.z); base.receiveShadow=true; g.add(base);
+    const inst=new THREE.InstancedMesh(geo("Box",[0.35,0.9,0.35]),M.trigo,180); const d=new THREE.Object3D(); let n=0; const r2=rnd("trigo"+V.i);
+    for(let i=0;i<12;i++)for(let j=0;j<15;j++){ d.position.set(Lx.x-Lx.w/2+0.6+j*(Lx.w-1.2)/14, 0.45+r2()*0.15, Lx.z-Lx.h/2+0.6+i*(Lx.h-1.2)/11); d.rotation.y=r2(); d.updateMatrix(); inst.setMatrixAt(n++,d.matrix); }
+    inst.castShadow=true; g.add(inst); rotuloEm(g,"Campo",Lx.x,3.4,Lx.z,5);
+    const posts=[], rails=[]; const w=Lx.w+1.6, h=Lx.h+1.6; const n1=Math.round(w/1.6), n2=Math.round(h/1.6);
+    for(let i=0;i<=n1;i++) for(const sz of [-1,1]) posts.push({x:Lx.x-w/2+i*w/n1,z:Lx.z+sz*h/2,y:0.45}); for(let i=0;i<=n2;i++) for(const sx of [-1,1]) posts.push({x:Lx.x+sx*w/2,z:Lx.z-h/2+i*h/n2,y:0.45});
+    for(let i=0;i<n1;i++) for(const sz of [-1,1]) for(const y of [0.35,0.7]) rails.push({x:Lx.x-w/2+(i+0.5)*w/n1,z:Lx.z+sz*h/2,y,ry:0,sx:w/n1,s:1}); for(let i=0;i<n2;i++) for(const sx of [-1,1]) for(const y of [0.35,0.7]) rails.push({x:Lx.x+sx*w/2,z:Lx.z-h/2+(i+0.5)*h/n2,y,ry:Math.PI/2,sx:h/n2,s:1});
+    instancia(geo("Box",[0.18,0.9,0.18]),M.madeiraEsc,posts,g); const im=new THREE.InstancedMesh(geo("Box",[1,0.08,0.08]),M.madeira,rails.length); const d2=new THREE.Object3D(); rails.forEach((p,i)=>{ d2.position.set(p.x,p.y,p.z); d2.rotation.set(0,p.ry,0); d2.scale.set(p.sx,1,1); d2.updateMatrix(); im.setMatrixAt(i,d2.matrix); }); im.castShadow=true; g.add(im);
+    for(let i=0;i<3;i++){ const c=cyl(0.6,0.6,1.1,mat(0xe3c35a),Lx.x+Lx.w/2+2.2,0.6,Lx.z-2+i*1.4,g,8); c.rotation.z=Math.PI/2; } })();
+  // taverna (+ tochas, poço, bandeira da praça, barris, placa)
+  (function(){ const g=grupo("taverna"); const Lx=L.taverna; casa(Lx.x,Lx.z,Lx.w,Lx.h,3.2,M.parede,M.telhado2,0,true,g); const sg=new THREE.Group(); sg.position.set(Lx.x+Lx.w/2+0.8,0,Lx.z+Lx.h/2); cyl(0.08,0.08,2.6,M.madeiraEsc,0,1.3,0,sg); box(1.3,0.7,0.1,M.madeira,0.6,2.2,0,sg); g.add(sg); rotuloEm(g,"Taverna",Lx.x,5.2,Lx.z,6);
+    for(let i=0;i<4;i++) cyl(0.45,0.45,0.9,M.madeira,Lx.x+Lx.w/2+1.2+(i%2)*1,0.45,Lx.z-1+Math.floor(i/2)*1,g,8);
+    [[5.2,5.2],[-5.2,5.2],[5.2,-5.2],[-5.2,-5.2]].forEach((p,i)=>tocha(cx+p[0],cz+p[1],i<2,g)); for(let d=14;d<=28;d+=7){ tocha(cx+d,cz+2.2,false,g); tocha(cx-d,cz-2.2,false,g); tocha(cx+2.2,cz+d,false,g); tocha(cx-2.2,cz-d,false,g); }
+    const pg=new THREE.Group(); pg.position.set(cx+4.2,0,cz-4.2); g.add(pg); cyl(0.9,1,1,M.pedra,0,0.5,0,pg,10); cyl(0.7,0.7,1.05,M.escuro,0,0.5,0,pg,10); for(const s of [-0.8,0.8]) cyl(0.07,0.07,2.2,M.madeiraEsc,s,1.6,0,pg,5); const t=cone(1.3,0.8,M.telhado2,0,2.9,0,pg,4); t.rotation.y=Math.PI/4; cyl(0.06,0.06,1.6,M.madeiraEsc,0,2.3,0,pg,5).rotation.z=Math.PI/2;
+    bandeira(cx-4.4,cz+4.4,corVila,5.5,g); bandeira(Lx.x-Lx.w/2-1,Lx.z+Lx.h/2,corVila,4,g);
+    const plg=new THREE.Group(); plg.position.set(cx-3,0,cz+6.5); g.add(plg); cyl(0.08,0.1,2,M.madeiraEsc,0,1,0,plg,5); box(2.2,0.7,0.1,M.madeira,0,1.7,0,plg);
+    const lm=new THREE.MeshStandardMaterial({color:0xffd27a,emissive:0xffb347,emissiveIntensity:1.2}); box(0.22,0.3,0.22,lm,Lx.x+1.2,1.9,Lx.z+Lx.h/2+0.2,g).castShadow=false; })();
+  // mina (entrada no morro; o morro existe sempre)
   (function(){ const Lx=L.mina; const m=new THREE.Mesh(new THREE.SphereGeometry(6,10,6,0,Math.PI*2,0,Math.PI/2),M.pedra); m.position.set(Lx.x,0,Lx.z-2); m.scale.set(1.2,0.7,1); m.castShadow=true; m.receiveShadow=true; scene.add(m);
-    box(2.2,2.2,1.2,M.escuro,Lx.x,1.1,Lx.z+2.6); box(2.8,0.4,1.4,M.madeira,Lx.x,2.4,Lx.z+2.6); box(0.3,2.2,0.3,M.madeira,Lx.x-1.3,1.1,Lx.z+2.9); box(0.3,2.2,0.3,M.madeira,Lx.x+1.3,1.1,Lx.z+2.9);
-    box(1.2,0.7,0.8,M.madeiraEsc,Lx.x+3,0.5,Lx.z+3.5); rotulo("Mina",Lx.x,5.6,Lx.z,5); })();
+    const g=grupo("mina"); box(2.2,2.2,1.2,M.escuro,Lx.x,1.1,Lx.z+2.6,g); box(2.8,0.4,1.4,M.madeira,Lx.x,2.4,Lx.z+2.6,g); box(0.3,2.2,0.3,M.madeira,Lx.x-1.3,1.1,Lx.z+2.9,g); box(0.3,2.2,0.3,M.madeira,Lx.x+1.3,1.1,Lx.z+2.9,g);
+    box(1.2,0.7,0.8,M.madeiraEsc,Lx.x+3,0.5,Lx.z+3.5,g); rotuloEm(g,"Mina",Lx.x,5.6,Lx.z,5); })();
+  // ferraria
+  (function(){ const g=grupo("ferraria"); const Lx=L.ferraria; casa(Lx.x,Lx.z,Lx.w,Lx.h,2.8,M.pedra,M.escuro,0,true,g); box(0.9,0.5,0.5,M.escuro,Lx.x-1.5,0.85,Lx.z+Lx.h/2+1.3,g); box(0.5,0.6,0.5,M.madeiraEsc,Lx.x-1.5,0.3,Lx.z+Lx.h/2+1.3,g);
+    const forja=new THREE.PointLight(0xff6a1a,0.8,8,2); forja.position.set(Lx.x+1.5,1.2,Lx.z+Lx.h/2+0.5); g.add(forja); rotuloEm(g,"Ferraria",Lx.x,4.8,Lx.z,6); const lm=new THREE.MeshStandardMaterial({color:0xffd27a,emissive:0xffb347,emissiveIntensity:1.2}); box(0.22,0.3,0.22,lm,Lx.x-1.2,1.9,Lx.z+Lx.h/2+0.2,g).castShadow=false; })();
+  // casa de cura
+  (function(){ const g=grupo("capela"); const Lx=L.capela; casa(Lx.x,Lx.z,Lx.w,Lx.h,3,M.branco,M.verdeClaro,0,false,g); box(0.9,0.25,0.25,M.vermelho,Lx.x,4.9,Lx.z,g); box(0.25,0.9,0.25,M.vermelho,Lx.x,4.9,Lx.z,g); rotuloEm(g,"Casa de Cura",Lx.x,6.2,Lx.z,6.5); })();
+  // mercado (+ caixas e carroça)
+  (function(){ const g=grupo("mercado"); const Lx=L.mercado; for(let i=-1;i<=1;i++){ const bg=new THREE.Group(); bg.position.set(Lx.x+i*2.4,0,Lx.z); box(2,0.9,1.2,M.madeira,0,0.45,0,bg); for(const s of [-0.9,0.9]) for(const t of [-0.5,0.5]) cyl(0.06,0.06,2.4,M.madeiraEsc,s,1.2,t,bg,5);
+      const aw=cone(1.6,0.7,i===0?M.vermelho:M.branco,0,2.6,0,bg,4); aw.rotation.y=Math.PI/4; aw.scale.set(1,1,0.75); g.add(bg); } rotuloEm(g,"Mercado",Lx.x,4.4,Lx.z,5.5);
+    for(let i=0;i<3;i++) box(0.8,0.8,0.8,M.madeira,Lx.x+Lx.w/2+1.2,0.4,Lx.z-1.5+i*0.9,g);
+    const cg=new THREE.Group(); cg.position.set(cx-8,0,cz+3.6); cg.rotation.y=0.3; g.add(cg); box(2.4,0.6,1.3,M.madeira,0,0.75,0,cg); for(const s of [-0.9,0.9]){ const rd=cyl(0.45,0.45,0.12,M.madeiraEsc,s,0.45,0.75,cg,8); rd.rotation.x=Math.PI/2; const rd2=cyl(0.45,0.45,0.12,M.madeiraEsc,s,0.45,-0.75,cg,8); rd2.rotation.x=Math.PI/2; } for(let i=0;i<4;i++) box(0.5,0.5,0.5,mat(0xe3c35a),-0.6+i*0.4,1.3,(i%2)*0.4-0.2,cg); })();
+  // posto de guarda (+ caveiras, bandeira)
+  (function(){ const g=grupo("muralha"); const Lx=L.muralha; for(let i=0;i<7;i++){ cyl(0.3,0.3,2.2+(i%2)*0.4,M.madeira,Lx.x-Lx.w/2+i*0.8,1.1,Lx.z+Lx.h/2,g,6); } box(2,2,2,M.madeiraEsc,Lx.x-Lx.w/2-0.5,3.4,Lx.z,g); for(let i=0;i<4;i++) cyl(0.12,0.12,3.2,M.madeiraEsc,Lx.x-Lx.w/2-0.5+(i%2?0.8:-0.8),1.5,Lx.z+(i<2?0.8:-0.8),g,5);
+    const roof=cone(1.9,1.2,M.telhado2,Lx.x-Lx.w/2-0.5,5,Lx.z,g,4); roof.rotation.y=Math.PI/4; const tch=new THREE.PointLight(0xffa040,0.7,9,2); tch.position.set(Lx.x+1,2.8,Lx.z+1); g.add(tch); rotuloEm(g,"Posto de Guarda",Lx.x,6,Lx.z,6.5);
+    bandeira(Lx.x+Lx.w/2+1,Lx.z,corVila,4.5,g); for(let i=0;i<3;i++){ const x=Lx.x-Lx.w/2+0.8+i*1.8, z=Lx.z+Lx.h/2+0.6; cyl(0.05,0.06,2.8,M.madeiraEsc,x,1.4,z,g,5); caveira(x,2.95,z,g,0.9); } })();
+  // torre do mago
+  (function(){ const g=grupo("torre"); const Lx=L.torre; cyl(1.6,1.9,7,M.pedra,Lx.x,3.5,Lx.z,g,10); cone(2.2,3,M.roxo,Lx.x,8.5,Lx.z,g,10); box(0.6,0.8,0.1,M.janela,Lx.x,5,Lx.z+1.75,g); box(0.6,0.8,0.1,M.janela,Lx.x,3,Lx.z+1.75,g); box(0.7,1.1,0.1,M.madeiraEsc,Lx.x,0.55,Lx.z+1.9,g);
+    const lm=new THREE.PointLight(0xb08cff,0.6,10,2); lm.position.set(Lx.x,6,Lx.z+2); g.add(lm); rotuloEm(g,"Torre do Mago",Lx.x,11,Lx.z,6.5); })();
+  // rio / lagoa (natureza: sempre)
   if(V.i===0){ const Lx=L.rio; const w=new THREE.Mesh(new THREE.PlaneGeometry(Lx.w+1,200,2,60),M.agua); w.rotation.x=-Math.PI/2; w.position.set(Lx.x,0.05,0); w.receiveShadow=true; scene.add(w); rio=w;
     const margem=new THREE.Mesh(new THREE.PlaneGeometry(Lx.w+3.5,200),mat(0xcdb57e)); margem.rotation.x=-Math.PI/2; margem.position.set(Lx.x,0.015,0); scene.add(margem);
     box(7.5,0.35,3.2,M.madeira,Lx.x,0.4,0); for(const s of [-1.4,1.4]) box(7.5,0.12,0.12,M.madeiraEsc,Lx.x,1,s); for(const s of [-1.4,1.4]) for(const t of [-3.3,0,3.3]) cyl(0.1,0.1,0.8,M.madeiraEsc,Lx.x+t,0.7,s,null,5);
     box(1.2,0.25,3.5,M.madeira,Lx.x-2.6,0.35,-6); box(2.2,0.6,1,M.madeiraEsc,Lx.x+0.4,0.35,-6); rotulo("Rio Claro",Lx.x,3.6,-13,5.5,"#dff3ff");
     for(const s of [-1,1]){ const esp=new THREE.Mesh(new THREE.PlaneGeometry(0.5,200),mat(0xdff3ff,{transparent:true,opacity:0.35})); esp.rotation.x=-Math.PI/2; esp.position.set(Lx.x+s*(Lx.w/2+0.3),0.06,0); scene.add(esp); }
     const rl=rnd("lirio"); for(let i=0;i<24;i++){ const l=new THREE.Mesh(geo("Circle",[0.35,7]),mat(0x4ea647)); l.rotation.x=-Math.PI/2; l.position.set(Lx.x+(rl()-.5)*Lx.w*0.8,0.07,(rl()-.5)*160); scene.add(l); } }
-  else { const Lx=L.rio; const lago=new THREE.Mesh(new THREE.CircleGeometry(3.6,14),M.agua); lago.rotation.x=-Math.PI/2; lago.position.set(Lx.x,0.05,Lx.z); scene.add(lago); const margem=new THREE.Mesh(new THREE.CircleGeometry(4.4,14),mat(0xd9c38a)); margem.rotation.x=-Math.PI/2; margem.position.set(Lx.x,0.015,Lx.z); scene.add(margem); box(1.2,0.25,2.5,M.madeira,Lx.x-3.2,0.35,Lx.z,null); rotulo("Lagoa",Lx.x,3,Lx.z,5,"#dff3ff"); }
+  else { const Lx=L.rio; const lago=new THREE.Mesh(new THREE.CircleGeometry(3.6,14),M.agua); lago.rotation.x=-Math.PI/2; lago.position.set(Lx.x,0.05,Lx.z); scene.add(lago); const margem=new THREE.Mesh(new THREE.CircleGeometry(4.4,14),mat(0xcdb57e)); margem.rotation.x=-Math.PI/2; margem.position.set(Lx.x,0.015,Lx.z); scene.add(margem); box(1.2,0.25,2.5,M.madeira,Lx.x-3.2,0.35,Lx.z,null); rotulo("Lagoa",Lx.x,3,Lx.z,5,"#dff3ff"); }
   if(V.i>0){ const ang=Math.atan2(cz,cx); const d=Math.hypot(cx,cz); const f=new THREE.Mesh(new THREE.PlaneGeometry(d,2.4),M.terra); f.rotation.x=-Math.PI/2; f.rotation.z=-ang; f.position.set(cx/2,0.018,cz/2); f.receiveShadow=true; scene.add(f); }
-  const r=rnd("arv"+V.i); const F=L.floresta; V.arvores=[]; for(let i=0;i<16;i++) V.arvores.push(arvore(F.x+(r()-.5)*F.w, F.z+(r()-.5)*F.h, r()<.7?"pinho":"redonda", 0.9+r()*0.6));
+  // floresta desta vila (natureza) + ossos
+  const r3=rnd("arv"+V.i); const F=L.floresta; V.arvores=[]; for(let i=0;i<18;i++) V.arvores.push(arvore(F.x+(r3()-.5)*F.w, F.z+(r3()-.5)*F.h, r3()<.7?"pinho":"redonda", 0.9+r3()*0.6));
+  for(let i=0;i<5;i++){ const x=F.x+F.w/2+1+r3()*3, z=F.z-F.h/2+r3()*8; const o=cyl(0.06,0.08,0.9,M.branco,x,0.06,z,null,5); o.rotation.z=Math.PI/2; o.rotation.y=r3()*6; } caveira(F.x+F.w/2+2,0.22,F.z+1,null,1);
   for(let k=0;k<3;k++) ovelha(V,k);
-  decoraVila(V);
+  if(V.i===0){ const g=grupo("castelo"); const R=39.5; const mPed=mat(0x9a948a), mTop=mat(0x7c7670);
+    for(const lado of [[0,-R,79,1.4,0],[0,R,79,1.4,0],[-R,0,1.4,79,1],[R,0,1.4,79,1]]){ const horiz=lado[4]===0; for(const seg of [-1,1]){ const len=(79-7)/2; const px=horiz?cx+lado[0]+seg*(3.5+len/2):cx+lado[0], pz=horiz?cz+lado[1]:cz+lado[1]+seg*(3.5+len/2);
+        box(horiz?len:1.4,4.5,horiz?1.4:len,mPed,px,2.25,pz,g); box(horiz?len:1.8,0.5,horiz?1.8:len,mTop,px,4.75,pz,g); for(let k=0;k<Math.floor(len/2.2);k++){ box(horiz?1.1:1.8,0.8,horiz?1.8:1.1,mTop,horiz?px-len/2+1.1+k*2.2:px,5.4,horiz?pz:pz-len/2+1.1+k*2.2,g); } }
+      // portão com duas torrinhas
+      for(const seg of [-1,1]){ const px=horiz?cx+lado[0]+seg*3.5:cx+lado[0]+seg*3.5*0+ (horiz?0:0), pz=horiz?cz+lado[1]:cz+lado[1]+seg*3.5; const tx=horiz?px:cx+lado[0], tz=horiz?cz+lado[1]:pz; cyl(1.4,1.6,7,mPed,tx,3.5,tz,g,10); cone(1.9,2.2,M.telhado2,tx,8.1,tz,g,10); bandeira(tx,tz,0xf0c030,10,g); } }
+    for(const sx of [-1,1]) for(const sz of [-1,1]){ const tx=cx+sx*R, tz=cz+sz*R; cyl(2.6,2.9,9,mPed,tx,4.5,tz,g,12); cyl(3.1,3.1,0.6,mTop,tx,9.3,tz,g,12); for(let k=0;k<10;k++) box(0.9,0.9,0.9,mTop,tx+Math.cos(k/10*6.28)*2.8,10,tz+Math.sin(k/10*6.28)*2.8,g); box(0.6,1,0.1,M.janela,tx,6,tz+2.95,g); }
+    const fosso=new THREE.Mesh(new THREE.RingGeometry(0,1,4),M.agua); fosso.visible=false; g.add(fosso); }
+  V.andaime=andaime(0,0,4,4); V.andaime.visible=false;
+  V.pilhaLogs.forEach(l=>l.visible=false);
 }
 function arvore(x,z,tipo,escala){ const g=new THREE.Group(); g.position.set(x,0,z); const s=escala||1; g.scale.set(s,s,s);
   cyl(0.25,0.35,1.4,M.tronco,0,0.7,0,g,6);
@@ -442,14 +555,18 @@ function arvore(x,z,tipo,escala){ const g=new THREE.Group(); g.position.set(x,0,
   else { const c=new THREE.Mesh(geo("Dodecahedron",[1.5,0]),M.folha2); c.position.y=2.4; add(c,g); const c2=new THREE.Mesh(geo("Dodecahedron",[1.1,0]),M.folha); c2.position.set(0.6,3.1,0.3); add(c2,g); }
   scene.add(g); return g; }
 const arvores=[];
+// montanhas no horizonte
+(function(){ const r=rnd("montanha"); for(let i=0;i<44;i++){ const a=i/44*Math.PI*2+r()*0.1, d=330+r()*120, h=40+r()*70; const m=cone(h*0.75,h,mat(0x6f7f8f),Math.cos(a)*d,h/2-2,Math.sin(a)*d,null,6); m.rotation.y=r()*6; m.castShadow=false; const neve=cone(h*0.75*0.32,h*0.33,mat(0xf4f6fb),Math.cos(a)*d,h-h*0.165,Math.sin(a)*d,null,6); neve.rotation.y=m.rotation.y; neve.castShadow=false; } })();
 // ---------- interiores: cômodos construídos longe do mapa; o morador acompanhado aparece lá dentro ----------
 const INT_BASE_X=3000; const INTERIORES={};
 function sala(tipo,k,corChao,corParede){ const g=new THREE.Group(); const cx=INT_BASE_X+k*80, cz=0; g.position.set(cx,0,cz); scene.add(g);
   const chao=new THREE.Mesh(geo("Box",[14,0.2,14]),mat(corChao)); chao.position.y=-0.1; chao.receiveShadow=true; g.add(chao);
-  const mp=mat(corParede); [[0,2.6,-7,14,5.2,0.3],[0,2.6,7,14,5.2,0.3],[-7,2.6,0,0.3,5.2,14],[7,2.6,0,0.3,5.2,14]].forEach(w=>{ const m=new THREE.Mesh(geo("Box",[w[3],w[4],w[5]]),mp); m.position.set(w[0],w[1],w[2]); m.receiveShadow=true; g.add(m); });
+  const mp=new THREE.MeshStandardMaterial({color:corParede,roughness:0.95}); const paredes=[]; [[0,2.6,-7,14,5.2,0.3],[0,2.6,7,14,5.2,0.3],[-7,2.6,0,0.3,5.2,14],[7,2.6,0,0.3,5.2,14]].forEach(w=>{ const m=new THREE.Mesh(geo("Box",[w[3],w[4],w[5]]),mp); m.position.set(w[0],w[1],w[2]); m.receiveShadow=true; g.add(m); paredes.push(m); });
+  for(let i=0;i<6;i++){ const v=new THREE.Mesh(geo("Box",[0.16,5.2,0.16]),M.madeiraEsc); v.position.set(-6.9+i*2.76,2.6,-6.85); g.add(v); const v2=v.clone(); v2.position.z=6.85; g.add(v2); } for(let i=0;i<6;i++){ const v=new THREE.Mesh(geo("Box",[0.16,5.2,0.16]),M.madeiraEsc); v.position.set(-6.85,2.6,-6.9+i*2.76); g.add(v); const v2=v.clone(); v2.position.x=6.85; g.add(v2); }
+  const viga=new THREE.Mesh(geo("Box",[14,0.25,0.25]),M.madeiraEsc); viga.position.set(0,5.05,-3.5); g.add(viga); const viga2=viga.clone(); viga2.position.z=3.5; g.add(viga2);
   const teto=new THREE.Mesh(geo("Box",[14,0.3,14]),mp); teto.position.y=5.3; g.add(teto);
   const luz=new THREE.PointLight(0xffd9a0,1.8,26,1.4); luz.position.set(0,4.2,0); g.add(luz); const amb=new THREE.PointLight(0xa0b8ff,0.8,26,1); amb.position.set(0,2.5,4); g.add(amb); const amb2=new THREE.PointLight(0xffe0c0,0.7,26,1); amb2.position.set(0,2.5,-4); g.add(amb2);
-  const I={g,cx,cz,spots:{}}; INTERIORES[tipo]=I; return I; }
+  const I={g,cx,cz,spots:{},mp,paredes}; INTERIORES[tipo]=I; return I; }
 function vela(g,x,y,z){ cyl(0.06,0.06,0.3,M.branco,x,y+0.15,z,g,6); const l=new THREE.PointLight(0xffb060,0.5,6,2); l.position.set(x,y+0.5,z); g.add(l); const f=cone(0.06,0.18,M.fogo2,x,y+0.4,z,g,5); f.castShadow=false; }
 (function(){
   // CASA: cama, mesa, lareira
@@ -459,7 +576,17 @@ function vela(g,x,y,z){ cyl(0.06,0.06,0.3,M.branco,x,y+0.15,z,g,6); const l=new 
   box(3,3.2,0.8,M.pedra,0,1.6,-6.5,g); box(1.6,1.2,0.5,M.escuro,0,0.7,-6.3,g); const ch=cone(0.4,1,M.fogo,0,0.9,-6.2,g,6); ch.castShadow=false; const fl=new THREE.PointLight(0xff8a3a,1,10,2); fl.position.set(0,1.5,-5.6,g); g.add(fl);
   box(3,0.15,0.8,M.madeira,5.5,2,-6.4,g); box(0.5,0.6,0.5,mat(0x3b7dd8),4.6,2.4,-6.4,g); box(0.5,0.6,0.5,mat(0xd94040),5.4,2.4,-6.4,g); box(0.5,0.6,0.5,mat(0x3fa34d),6.2,2.4,-6.4,g);
   box(1.4,1.4,0.1,mat(0x9ad7ff,{emissive:0x9ad7ff,emissiveIntensity:0.5}),-6.8,2.8,2,g); box(1.4,1.4,0.1,mat(0x9ad7ff,{emissive:0x9ad7ff,emissiveIntensity:0.5}),6.8,2.8,2,g);
-  const tap=new THREE.Mesh(geo("Circle",[2.2,10]),mat(0xb8432e)); tap.rotation.x=-Math.PI/2; tap.position.set(0.5,0.01,2); g.add(tap);
+  const tapM=new THREE.MeshStandardMaterial({color:0xb8432e,roughness:1}); const tap=new THREE.Mesh(geo("Circle",[2.2,10]),tapM); tap.rotation.x=-Math.PI/2; tap.position.set(0.5,0.01,2); g.add(tap); I.tapete=tapM;
+  // cadeira, baú, cortinas, quadro, ervas, barril, vassoura, balde, velas, prateleira com potes
+  box(0.8,0.1,0.8,M.madeira,4.2,0.55,1.6,g); box(0.8,0.9,0.1,M.madeira,4.2,1.0,2.0,g); for(const sx of [-0.3,0.3]) for(const sz of [-0.3,0.3]) cyl(0.05,0.05,0.5,M.madeiraEsc,4.2+sx,0.25,1.6+sz,g,5);
+  box(1.4,0.8,0.9,M.madeiraEsc,-4.5,0.4,-1.6,g); box(1.45,0.2,0.95,M.madeira,-4.5,0.9,-1.6,g); box(0.2,0.25,0.1,mat(0xf0c030,{metalness:0.6}),-4.5,0.8,-1.1,g);
+  for(const x of [-6.75,6.75]){ box(0.08,1.8,0.5,mat(0xd94040),x,2.8,1.1,g); box(0.08,1.8,0.5,mat(0xd94040),x,2.8,2.9,g); }
+  box(1.4,1.1,0.08,M.madeiraEsc,-3,3,-6.8,g); box(1.2,0.9,0.05,mat(0x3b7dd8),-3,3,-6.75,g); box(0.5,0.3,0.06,mat(0x3fa34d),-3,2.75,-6.72,g); cone(0.25,0.3,mat(0xf0c030),-3.3,3.2,-6.72,g,5);
+  for(let i=0;i<4;i++){ const h=cone(0.14,0.5,mat(i%2?0x3fa34d:0x5fc490),2.2+i*0.5,3.6,-6.5,g,5); h.rotation.x=Math.PI; } cyl(0.03,0.03,2,M.madeiraEsc,3,3.9,-6.5,g,4).rotation.z=Math.PI/2;
+  cyl(0.45,0.45,0.9,M.madeira,6,0.45,-5.5,g,8); cyl(0.3,0.25,0.4,mat(0x8a8a8a,{metalness:0.5}),5.2,0.2,-5.8,g,8); cyl(0.03,0.03,1.6,M.madeira,6.5,0.8,-4.6,g,4); box(0.25,0.4,0.1,mat(0xe3c35a),6.5,0.2,-4.6,g);
+  vela(g,2.6,1.08,0.3); vela(g,5.3,2.08,-6.4); for(let i=0;i<3;i++) cyl(0.18,0.15,0.3,mat([0x3b7dd8,0xd94040,0x3fa34d][i]),4.7+i*0.4,2.23,-6.4,g,7);
+  I.ferramenta=new THREE.Group(); I.ferramenta.position.set(3.5,3.0,-6.7); I.ferramenta.rotation.z=-0.5; g.add(I.ferramenta);
+  I.trofeu=caveira(0,4.3,-6.6,g,1.1); I.trofeu.visible=false; I.escudo=new THREE.Group(); I.escudo.position.set(-5.5,3.3,-6.7); g.add(I.escudo);
   I.spots.cama={x:-4.5,z:-3.6,y:0.8,deitado:true}; I.spots.mesa={x:2,z:1.4,ang:Math.PI};
   // MINA: rocha, cristais, trilhos, carrinho, tochas
   const Mn=sala("mina",1,0x4a4640,0x5f5c56); const gm=Mn.g; const rocha=M.pedraEsc;
@@ -497,65 +624,9 @@ const ovelhas=[];
 function ovelha(V,k){ const g=new THREE.Group(); const L=V.L.campo; const corpo=esfera(0.45,M.branco,0,0.6,0,g,8,6); corpo.scale.set(1.3,1,1); esfera(0.22,mat(0x2b2b2b),0.6,0.75,0,g,8,6); for(const s of [-0.25,0.25]) for(const t of [-0.2,0.2]) box(0.12,0.4,0.12,mat(0x2b2b2b),s*1.4,0.2,t,g);
   g.userData={V,k,fase:k*2.1}; scene.add(g); ovelhas.push(g); return g; }
 
-// ---------- decoração do mundo (instanciada, barata) ----------
-function instancia(geometria,material,lista,escalaFn){ if(!lista.length) return null; const im=new THREE.InstancedMesh(geometria,material,lista.length); const d=new THREE.Object3D(); const col=new THREE.Color();
-  lista.forEach((p,i)=>{ d.position.set(p.x,p.y||0,p.z); d.rotation.set(p.rx||0,p.ry||0,p.rz||0); const s=p.s||1; d.scale.set(s,p.sy||s,s); d.updateMatrix(); im.setMatrixAt(i,d.matrix); if(p.c!=null) im.setColorAt(i,col.set(p.c)); });
-  if(im.instanceColor) im.instanceColor.needsUpdate=true; im.castShadow=true; im.receiveShadow=true; scene.add(im); return im; }
-function foraDeTudo(x,z){ return livre(x,z,0.5) && !CASAS.some(c=>Math.abs(c[0]-x)<2.2&&Math.abs(c[1]-z)<2.2); }
-(function decoraMundo(){ const r=rnd("decor");
-  const tufos=[], flores=[], pedras=[], cogus=[], cogus2=[];
-  for(let i=0;i<2600;i++){ const x=(r()-.5)*380, z=(r()-.5)*320; if(Math.abs(z)<2.2&&Math.abs(x)<40) continue; if(Math.abs(x)<2.2&&Math.abs(z)<40) continue; if(x>LUG.rio.x-3.5&&x<LUG.rio.x+3.5) continue; tufos.push({x,z,ry:r()*6,s:0.7+r()*0.8,c:r()<.5?0x5a9c38:0x6fb24a}); }
-  for(let i=0;i<500;i++){ const x=(r()-.5)*300, z=(r()-.5)*260; if(!foraDeTudo(x,z)) continue; flores.push({x,z,y:0.25,s:0.8+r()*0.6,c:[0xffd36a,0xff8ab0,0xffffff,0xff6a5a,0xc58cff][Math.floor(r()*5)]}); }
-  for(let i=0;i<160;i++){ const x=(r()-.5)*360, z=(r()-.5)*300; if(!foraDeTudo(x,z)) continue; pedras.push({x,z,y:0.1,ry:r()*6,s:0.4+r()*1.1,c:r()<.5?0x8d8a82:0x6f6c66}); }
-  for(let i=0;i<120;i++){ const x=(r()-.5)*340, z=(r()-.5)*300; if(!foraDeTudo(x,z)) continue; const s=0.5+r()*0.7; cogus.push({x,z,s,sy:s}); cogus2.push({x,z,y:0.42*s,s,c:r()<.6?0xd93a4a:0xf0c030}); }
-  instancia(geo("Cone",[0.22,0.9,4]),mat(0xffffff),tufos.map(t=>Object.assign({y:0.45*t.s},t)));
-  instancia(geo("Dodecahedron",[0.22,0]),mat(0xffffff),flores);
-  instancia(geo("Dodecahedron",[0.6,0]),mat(0xffffff),pedras);
-  instancia(geo("Cylinder",[0.08,0.1,0.42,6]),mat(0xf1e4c8),cogus.map(c=>Object.assign({y:0.21*c.s},c)));
-  instancia(geo("Cone",[0.3,0.28,8]),mat(0xffffff),cogus2);
-})();
-// vagalumes (só à noite)
-const VAGALUMES=(function(){ const g=new THREE.InstancedMesh(geo("Sphere",[0.07,5,4]),new THREE.MeshBasicMaterial({color:0xcfff6a}),90); g.frustumCulled=false; scene.add(g); g.userData.seeds=[]; const r=rnd("vaga"); for(let i=0;i<90;i++) g.userData.seeds.push({x:(r()-.5)*70,z:(r()-.5)*60,f:r()*6,v:0.3+r()*0.7}); return g; })();
-function animaVagalumes(tsec,noite){ VAGALUMES.visible=noite; if(!noite) return; const d=new THREE.Object3D(); VAGALUMES.userData.seeds.forEach((s,i)=>{ d.position.set(s.x+Math.sin(tsec*s.v+s.f)*2.5, 1.2+Math.sin(tsec*1.7+s.f)*0.8, s.z+Math.cos(tsec*s.v*0.8+s.f)*2.5); const on=Math.sin(tsec*3+s.f*4)>0.2; d.scale.setScalar(on?1:0.001); d.updateMatrix(); VAGALUMES.setMatrixAt(i,d.matrix); }); VAGALUMES.instanceMatrix.needsUpdate=true; }
-// peças de decoração por vila
-const TOCHAS=[];
-function tocha(x,z,comLuz,parent){ const g=new THREE.Group(); g.position.set(x,0,z); (parent||scene).add(g); cyl(0.07,0.09,2.2,M.madeiraEsc,0,1.1,0,g,5); cyl(0.14,0.1,0.25,M.pedraEsc,0,2.25,0,g,6);
-  const f=cone(0.16,0.5,M.fogo,0,2.6,0,g,5); f.castShadow=false; const f2=cone(0.09,0.35,M.fogo2,0,2.6,0,g,5); f2.castShadow=false; let luz=null; if(comLuz){ luz=new THREE.PointLight(0xffa040,0.9,9,2); luz.position.set(0,2.7,0); g.add(luz); } TOCHAS.push({f,f2,luz,fase:x*0.3+z*0.7}); return g; }
-function bandeira(x,z,cor,alt){ const g=new THREE.Group(); g.position.set(x,0,z); scene.add(g); cyl(0.07,0.09,alt||5,M.madeiraEsc,0,(alt||5)/2,0,g,5); const pano=box(1.4,0.9,0.05,mat(cor),0.75,(alt||5)-0.6,0,g); pano.castShadow=false; esfera(0.12,mat(0xf0c030,{metalness:0.6,roughness:0.3}),0,(alt||5)+0.1,0,g); return g; }
-function caveira(x,y,z,parent,s){ const g=new THREE.Group(); g.position.set(x,y,z); g.scale.setScalar(s||1); (parent||scene).add(g); esfera(0.22,M.branco,0,0,0,g,8,6); box(0.3,0.14,0.2,M.branco,0,-0.2,0.02,g); box(0.07,0.07,0.05,M.escuro,-0.08,0.02,0.2,g); box(0.07,0.07,0.05,M.escuro,0.08,0.02,0.2,g); box(0.05,0.06,0.04,M.escuro,0,-0.08,0.21,g); return g; }
-function decoraVila(V){ const L=V.L, cx=V.cx, cz=V.cz, r=rnd("decorV"+V.i); const corVila=[0xd94040,0x3b7dd8,0x3fa34d,0xf0c030,0x8a4fd6,0xf08a2a,0x2fb5b0,0xe35c99][V.i%8];
-  // pedras da praça
-  const ped=[]; for(let i=0;i<70;i++){ const a=r()*6.28, d=1.9+r()*3.3; ped.push({x:cx+Math.cos(a)*d,z:cz+Math.sin(a)*d,y:0.03,ry:r()*6,s:0.5+r()*0.5,c:r()<.5?0xc9b58e:0xb8a27a}); } instancia(geo("Cylinder",[0.5,0.5,0.08,6]),mat(0xffffff),ped);
-  // tochas nas quatro entradas da praça (com luz) e ao longo das estradas (sem luz)
-  [[5.2,5.2],[-5.2,5.2],[5.2,-5.2],[-5.2,-5.2]].forEach((p,i)=>tocha(cx+p[0],cz+p[1],i<2));
-  for(let d=12;d<=24;d+=6){ tocha(cx+d,cz+2.4,false); tocha(cx-d,cz-2.4,false); tocha(cx+2.4,cz+d,false); tocha(cx-2.4,cz-d,false); }
-  // poço
-  (function(){ const g=new THREE.Group(); g.position.set(cx+4.2,0,cz-4.2); scene.add(g); cyl(0.9,1,1,M.pedra,0,0.5,0,g,10); cyl(0.7,0.7,1.05,M.escuro,0,0.5,0,g,10); for(const s of [-0.8,0.8]) cyl(0.07,0.07,2.2,M.madeiraEsc,s,1.6,0,g,5); const t=cone(1.3,0.8,M.telhado2,0,2.9,0,g,4); t.rotation.y=Math.PI/4; cyl(0.06,0.06,1.6,M.madeiraEsc,0,2.3,0,g,5).rotation.z=Math.PI/2; })();
-  // bandeiras da vila: praça e posto de guarda
-  bandeira(cx-4.4,cz+4.4,corVila,5.5); bandeira(L.muralha.x+L.muralha.w/2+1,L.muralha.z,corVila,4.5); bandeira(L.taverna.x-L.taverna.w/2-1,L.taverna.z+L.taverna.h/2,corVila,4);
-  // caveiras nas estacas do posto de guarda e ossos perto da floresta
-  for(let i=0;i<3;i++){ const x=L.muralha.x-L.muralha.w/2+1.6+i*2.4, z=L.muralha.z+L.muralha.h/2+0.6; cyl(0.05,0.06,2.8,M.madeiraEsc,x,1.4,z,null,5); caveira(x,2.95,z,null,0.9); }
-  for(let i=0;i<5;i++){ const x=L.floresta.x+L.floresta.w/2+2+r()*5, z=L.floresta.z-L.floresta.h/2+r()*8; const o=cyl(0.06,0.08,0.9,M.branco,x,0.06,z,null,5); o.rotation.z=Math.PI/2; o.rotation.y=r()*6; } caveira(L.floresta.x+L.floresta.w/2+3,0.22,L.floresta.z+1,null,1);
-  // cerca do campo
-  (function(){ const Lc=L.campo; const posts=[], rails=[]; const w=Lc.w+1.6, h=Lc.h+1.6; const n1=Math.round(w/1.6), n2=Math.round(h/1.6);
-    for(let i=0;i<=n1;i++){ for(const sz of [-1,1]){ posts.push({x:Lc.x-w/2+i*w/n1,z:Lc.z+sz*h/2,y:0.45}); } } for(let i=0;i<=n2;i++){ for(const sx of [-1,1]){ posts.push({x:Lc.x+sx*w/2,z:Lc.z-h/2+i*h/n2,y:0.45}); } }
-    for(let i=0;i<n1;i++){ for(const sz of [-1,1]) for(const y of [0.35,0.7]) rails.push({x:Lc.x-w/2+(i+0.5)*w/n1,z:Lc.z+sz*h/2,y,ry:0,s:1,sx:w/n1}); } for(let i=0;i<n2;i++){ for(const sx of [-1,1]) for(const y of [0.35,0.7]) rails.push({x:Lc.x+sx*w/2,z:Lc.z-h/2+(i+0.5)*h/n2,y,ry:Math.PI/2,s:1,sx:h/n2}); }
-    instancia(geo("Box",[0.18,0.9,0.18]),M.madeiraEsc,posts); const im=new THREE.InstancedMesh(geo("Box",[1,0.08,0.08]),M.madeira,rails.length); const d=new THREE.Object3D(); rails.forEach((p,i)=>{ d.position.set(p.x,p.y,p.z); d.rotation.set(0,p.ry,0); d.scale.set(p.sx,1,1); d.updateMatrix(); im.setMatrixAt(i,d.matrix); }); im.castShadow=true; scene.add(im); })();
-  // barris, caixas, feno e carroça
-  for(let i=0;i<4;i++) cyl(0.45,0.45,0.9,M.madeira,L.taverna.x+L.taverna.w/2+1.2+(i%2)*1,0.45,L.taverna.z-1+Math.floor(i/2)*1,null,8);
-  for(let i=0;i<3;i++) box(0.8,0.8,0.8,M.madeira,L.mercado.x+L.mercado.w/2+1.2,0.4,L.mercado.z-1.5+i*0.9);
-  for(let i=0;i<3;i++){ const c=cyl(0.6,0.6,1.1,mat(0xe3c35a),L.campo.x+L.campo.w/2+2.2,0.6,L.campo.z-2+i*1.4,null,8); c.rotation.z=Math.PI/2; }
-  (function(){ const g=new THREE.Group(); g.position.set(cx-8,0,cz+3.6); g.rotation.y=0.3; scene.add(g); box(2.4,0.6,1.3,M.madeira,0,0.75,0,g); for(const s of [-0.9,0.9]){ const rd=cyl(0.45,0.45,0.12,M.madeiraEsc,s,0.45,0.75,g,8); rd.rotation.x=Math.PI/2; const rd2=cyl(0.45,0.45,0.12,M.madeiraEsc,s,0.45,-0.75,g,8); rd2.rotation.x=Math.PI/2; } cyl(0.05,0.05,2,M.madeiraEsc,-1.8,0.6,0,g,5).rotation.z=Math.PI/2; for(let i=0;i<4;i++) box(0.5,0.5,0.5,mat(0xe3c35a),-0.6+i*0.4,1.3,(i%2)*0.4-0.2,g); })();
-  // placa da vila
-  (function(){ const g=new THREE.Group(); g.position.set(cx-3,0,cz+6.5); scene.add(g); cyl(0.08,0.1,2,M.madeiraEsc,0,1,0,g,5); box(2.2,0.7,0.1,M.madeira,0,1.7,0,g); })();
-  // lanternas nas portas dos prédios principais (emissivas, sem luz)
-  const lm=new THREE.MeshStandardMaterial({color:0xffd27a,emissive:0xffb347,emissiveIntensity:1.2}); [[L.taverna.x+1.2,L.taverna.z+L.taverna.h/2+0.2],[L.ferraria.x-1.2,L.ferraria.z+L.ferraria.h/2+0.2],[L.capela.x+1,L.capela.z+L.capela.h/2+0.2],[L.mercado.x,L.mercado.z+2.2]].forEach(p=>{ const b=box(0.22,0.3,0.22,lm,p[0],1.9,p[1]); b.castShadow=false; });
-}
-function animaTochas(tsec,noite){ TOCHAS.forEach(t=>{ const s=0.85+Math.sin(tsec*12+t.fase)*0.15; t.f.scale.set(s,1+Math.sin(tsec*9+t.fase)*0.2,s); t.f2.rotation.y=tsec*4; if(t.luz) t.luz.intensity=noite?0.8+Math.sin(tsec*11+t.fase)*0.2:0.15; }); }
-
 construirVila(vila(0));
 (function(){ const r=rnd("arv");
-  let n=0, tent=0; while(n<420&&tent<6000){ tent++; const x=(r()-.5)*420, z=(r()-.5)*360; if(x>LUG.rio.x-4&&x<LUG.rio.x+4) continue; if(!livre(x,z,1)) continue; if(CASAS.some(c=>Math.abs(c[0]-x)<2.6&&Math.abs(c[1]-z)<2.6)) continue; if(Math.abs(x)<30&&Math.abs(z)<24&&r()<.7) continue; arvore(x,z,r()<.55?"pinho":"redonda",0.9+r()*1.1); n++; }
+  let n=0, tent=0; while(n<700&&tent<9000){ tent++; const x=(r()-.5)*640, z=(r()-.5)*560; if(x>LUG.rio.x-4&&x<LUG.rio.x+4) continue; if(!livre(x,z,1)) continue; arvore(x,z,r()<.55?"pinho":"redonda",0.9+r()*1.3); n++; }
   for(let i=0;i<40;i++){ const x=(r()-.5)*70, z=(r()-.5)*50; if(!livre(x,z)) continue; const p=new THREE.Mesh(geo("Dodecahedron",[0.25,0]),r()<.5?mat(0xffd36a):mat(0xff8ab0)); p.position.set(x,0.2,z); scene.add(p); }
 })();
 
@@ -618,7 +689,7 @@ function arco(r,nivel){ const rar=raridade(r,nivel); const cabo=pick(r,MADEIRAS)
 function arma(tipo,r,nivel){ switch(tipo){ case "arco": return arco(r,nivel); case "espada": return espada(r,nivel); case "adaga": return espada(r,nivel,true); case "machado": return machado(r,nivel); case "martelo": return martelo(r,nivel); case "cajado": return cajado(r,nivel); case "picareta": return picareta(r,nivel); case "vara": return vara(r,nivel); case "enxada": return enxada(r,nivel); case "rolo": return rolo(r,nivel); case "alaude": return alaude(r,nivel); case "saco": return saco(r,nivel); } return espada(r,nivel); }
 const equipCache=new Map();
 const ARMAS=new Set(["espada","adaga","arco","machado"]);
-function vilaTemFerreiro(m){ const l=todos(); const i=l.findIndex(z=>z.id===m.id); if(i<0) return false; const v=Math.floor(i/VILA_CAP); return l.some((z,j)=>Math.floor(j/VILA_CAP)===v && z.profissao==="ferreiro" && xpDe(z).nivel>=2); }
+function vilaTemFerreiro(m){ const l=todos(); const me=l.find(z=>z.id===m.id); if(!me) return false; if(me.vi===0) return true; return economiaDe(vila(me.vi)).construido("ferraria") && l.some(z=>z.vi===me.vi && z.profissao==="ferreiro" && xpDe(z).nivel>=2); }
 function equipamentoDe(m){ const x=xpDe(m); const ferr=vilaTemFerreiro(m); const k=m.id+":"+x.nivel+":"+(ferr?1:0); let e=equipCache.get(k); if(e) return e;
   const p=PROF[m.profissao]||PROF.bardo; const r=rnd("eq:"+m.id); const principalTodo=arma(p.arma,r,x.nivel); const escTodo=escudo(r,x.nivel); const secTodo=espada(r,x.nivel,r()<0.5); const capaTodo=nomeCor(r);
   const ehArma=ARMAS.has(p.arma); const principal=(!ehArma||(ferr&&x.nivel>=2))?principalTodo:null; const esc=ferr&&((p.escudo&&x.nivel>=3)||(x.nivel>=5&&hash(m.id+"esc")%2===0))?escTodo:null; const secund=ferr&&!p.escudo&&x.nivel>=4&&hash(m.id+"sec")%5<3?secTodo:null; const capa=x.nivel>=6?capaTodo:null;
@@ -655,14 +726,19 @@ function garanteBoneco(m){ let b=bonecos.get(m.id); const x=xpDe(m); if(b&&b.use
 
 // ---------- cabanas: instanciadas (milhares sem pesar) ----------
 let casasInst=null, casasN=0, casasNiveis=""; const cabRot=new Map();
+const TELHADO=(function(){ const sh=new THREE.Shape(); sh.moveTo(-1.55,0); sh.lineTo(1.55,0); sh.lineTo(0,1.15); sh.closePath(); const g=new THREE.ExtrudeGeometry(sh,{depth:3.1,bevelEnabled:false}); g.translate(0,0,-1.55); return g; })();
 function reconstroiCasas(){ const lista=todos(); if(casasInst){ casasInst.forEach(i=>scene.remove(i)); } casasInst=[]; casasN=lista.length; if(!casasN) return;
-  for(let v=0;v<=Math.floor((lista.length-1)/VILA_CAP);v++) construirVila(vila(v));
-  const partes=[{geo:geo("Box",[2.6,2.2,2.6]),y:1.1,cor:true},{geo:geo("Cone",[2.6/Math.SQRT2*1.18,1.65,4]),y:2.2+0.82,roof:true},{geo:geo("Box",[0.7,1.1,0.1]),y:0.55,z:1.32,m:M.madeiraEsc},{geo:geo("Box",[0.6,0.6,0.08]),y:1.2,z:1.33,x:-0.85,m:M.janela},{geo:geo("Box",[0.6,0.6,0.08]),y:1.2,z:1.33,x:0.85,m:M.janela},{geo:geo("Box",[0.5,1.1,0.5]),y:2.9,x:0.8,z:-0.4,m:M.pedra,soPedra:true}];
-  const d=new THREE.Object3D(); const col=new THREE.Color(); const niveis=lista.map(m=>xpDe(m).nivel); casasNiveis=niveis.join(",");
-  const casas=[], tendas=[]; lista.forEach((m,i)=>{ (niveis[i]<2&&!m.fundador?tendas:casas).push(i); });
-  partes.forEach(pt=>{ const idx=pt.soPedra?casas.filter(i=>niveis[i]>=6):casas; if(!idx.length) return; const im=new THREE.InstancedMesh(pt.geo, pt.m||mat(0xffffff), idx.length); im.castShadow=true; im.receiveShadow=true;
-    idx.forEach((i,k)=>{ const m=lista[i]; const c=casaDe(i); const pedra=niveis[i]>=6; d.position.set(c.x+(pt.x||0),pt.y,c.z+(pt.z||0)); d.rotation.set(0,pt.roof?Math.PI/4:0,0); d.updateMatrix(); im.setMatrixAt(k,d.matrix);
-      if(pt.cor){ im.setColorAt(k, m.fundador?col.set(0xf1e4c8):pedra?col.set(0x9a958c):col.setHSL((hash(m.nome)%360)/360,0.45,0.62)); } if(pt.roof){ im.setColorAt(k, m.fundador?col.set(0xb8432e):pedra?col.set(0x4a5668):col.setHSL((hash(m.nome)%360)/360,0.5,0.35)); } });
+  for(let v=0;v<nVilas();v++) construirVila(vila(v));
+  const partes=[{geo:geo("Box",[2.4,0.5,2.6]),y:0.25,m:M.pedra},{geo:geo("Box",[2.4,1.8,2.6]),y:1.4,cor:true},{geo:TELHADO,y:2.3,roof:true},{geo:geo("Box",[0.12,0.12,3.2]),y:3.42,m:M.madeiraEsc},
+    {geo:geo("Box",[0.1,1.8,0.12]),y:1.4,x:-1.15,z:1.31,m:M.madeiraEsc},{geo:geo("Box",[0.1,1.8,0.12]),y:1.4,x:1.15,z:1.31,m:M.madeiraEsc},{geo:geo("Box",[2.4,0.1,0.12]),y:2.25,z:1.31,m:M.madeiraEsc},
+    {geo:geo("Box",[0.7,1.1,0.1]),y:0.55,z:1.32,m:M.madeiraEsc},{geo:geo("Box",[0.55,0.55,0.08]),y:1.5,z:1.33,x:-0.7,m:M.janela},{geo:geo("Box",[0.55,0.55,0.08]),y:1.5,z:1.33,x:0.7,m:M.janela},
+    {geo:geo("Box",[0.7,0.18,0.22]),y:1.18,z:1.42,x:-0.7,m:mat(0x3fa34d)},{geo:geo("Box",[0.7,0.18,0.22]),y:1.18,z:1.42,x:0.7,m:mat(0xd94040)},
+    {geo:geo("Box",[0.45,1.1,0.45]),y:3.1,x:0.75,z:-0.5,m:M.pedra},{geo:geo("Box",[1.3,0.12,0.9]),y:0.06,x:1.9,z:0.2,m:mat(0x7a5230)},{geo:geo("Box",[1.1,0.3,0.14]),y:0.2,x:1.9,z:-0.1,m:mat(0x4ea647)},{geo:geo("Box",[1.1,0.3,0.14]),y:0.2,x:1.9,z:0.4,m:mat(0x5fc490)}];
+  const d=new THREE.Object3D(); const col=new THREE.Color(); const niveis=lista.map(m=>xpDe(m).nivel); casasNiveis=niveis.join(",")+"|"+lista.map((m,i)=>temCasa(casaDe(i).vila,casaDe(i).slot)?1:0).join("");
+  const casas=[], tendas=[]; lista.forEach((m,i)=>{ const c=casaDe(i); ((niveis[i]<2&&!m.fundador)||!temCasa(c.vila,c.slot)?tendas:casas).push(i); });
+  partes.forEach(pt=>{ const idx=casas; if(!idx.length) return; const im=new THREE.InstancedMesh(pt.geo, pt.m||mat(0xffffff), idx.length); im.castShadow=true; im.receiveShadow=true;
+    idx.forEach((i,k)=>{ const m=lista[i]; const c=casaDe(i); const pedra=niveis[i]>=6; d.position.set(c.x+(pt.x||0),pt.y,c.z+(pt.z||0)); d.rotation.set(0,0,0); d.updateMatrix(); im.setMatrixAt(k,d.matrix);
+      if(pt.cor){ im.setColorAt(k, pedra?col.set(0xa8a39a):col.setHSL((hash(m.nome)%360)/360,0.35,0.78)); } if(pt.roof){ im.setColorAt(k, pedra?col.set(0x4a5668):col.setHSL(0.02+((hash(m.nome)%5)*0.012),0.6,0.42)); } });
     if(im.instanceColor) im.instanceColor.needsUpdate=true; scene.add(im); casasInst.push(im); });
   // tendas (chegou hoje): cone de pano + estaca; vira cabana no nível 2
   if(tendas.length){ const tg=geo("Cone",[1.7,1.9,6]); const im=new THREE.InstancedMesh(tg,mat(0xffffff),tendas.length); const im2=new THREE.InstancedMesh(geo("Cylinder",[0.05,0.07,2.3,5]),M.madeiraEsc,tendas.length); const im3=new THREE.InstancedMesh(geo("Box",[0.9,1.2,0.06]),mat(0x3a2a1a),tendas.length);
@@ -693,15 +769,15 @@ function redimensiona(){ const w=mapBox.clientWidth, h=mapBox.clientHeight; if(!
 window.addEventListener("resize",redimensiona); redimensiona();
 
 // ---------- laço ----------
-const corDia=new THREE.Color(0x7fc4ef), corTarde=new THREE.Color(0xf08a5a), corNoite=new THREE.Color(0x070d22), corCeu=new THREE.Color();
-const MAX_VISIVEIS=160; let ultimoMinutoCasas=-1, visiveis=new Set(), ultimoCulling=0, ultimoDesenho=0, ultimaTroca=0, posSel=null, dentroAtual=null, rAntes=0, arvoreBalancaAnt=null;
+const corDia=new THREE.Color(0x79c0f0), corTarde=new THREE.Color(0xff8c3a), corNoite=new THREE.Color(0x050a1c), corCeu=new THREE.Color(); const corSolDia=new THREE.Color(0xffe8c0), corSolTarde=new THREE.Color(0xff9a50), corSol=new THREE.Color();
+const MAX_VISIVEIS=160; let ultimoMinutoCasas=-1, ultimoSegundoObras=-1, visiveis=new Set(), ultimoCulling=0, ultimoDesenho=0, ultimaTroca=0, posSel=null, dentroAtual=null, rAntes=0, arvoreBalancaAnt=null;
 const peixe=box(0.32,0.14,0.08,mat(0xcfd8e0,{metalness:0.5,roughness:0.3}),0,0,0); peixe.visible=false; peixe.castShadow=false;
 let selecionado=null, seguindo=false;
 function anima(){
   requestAnimationFrame(anima); const now=performance.now(); if(now-ultimoDesenho<1000/60) return; ultimoDesenho=now;
   const w=mundo(); const hf=w.hora+w.frac; const tsec=now/1000; const lista=todos();
   const ang=(hf-6)/12*Math.PI; const alt=Math.sin(ang); const luz=Math.max(0,alt);
-  sol.position.set(Math.cos(ang)*60, Math.max(4,alt*60), 25); sol.intensity=0.25+luz*1.1; hemi.intensity=0.25+luz*0.6; lua.intensity=0.35*(1-luz); lua.position.set(-30,40,-20);
+  sol.position.set(Math.cos(ang)*60, Math.max(4,alt*60), 25); sol.intensity=0.15+luz*1.25; corSol.copy(corSolTarde).lerp(corSolDia,Math.min(1,alt/0.4)); sol.color.copy(corSol); hemi.intensity=0.18+luz*0.65; lua.intensity=0.5*(1-luz); lua.position.set(-30,40,-20); renderer.toneMappingExposure=0.95+luz*0.25;
   if(alt>0.35) corCeu.copy(corDia); else if(alt>0){ corCeu.copy(corTarde).lerp(corDia,alt/0.35); } else { corCeu.copy(corNoite).lerp(corTarde,Math.max(0,1+alt*4)); }
   scene.background.copy(corCeu); scene.fog.color.copy(corCeu); scene.fog.near=luz>0.3?80:40; scene.fog.far=luz>0.3?190:130;
   M.janela.emissiveIntensity=luz<0.3?1.4*(1-luz/0.3):0;
@@ -710,8 +786,11 @@ function anima(){
   if(rio){ const pos=rio.geometry.attributes.position; for(let i=0;i<pos.count;i++){ pos.setZ(i, Math.sin(tsec*1.5+pos.getY(i)*0.4)*0.08); } pos.needsUpdate=true; }
   const acordados=[];
   // quem desenhar: os mais perto da câmera (limite fixo, não importa quantos moradores existam)
-  if(lista.length!==casasN) reconstroiCasas(); else if(Math.floor(now/60000)!==ultimoMinutoCasas){ ultimoMinutoCasas=Math.floor(now/60000); if(lista.map(m=>xpDe(m).nivel).join(",")!==casasNiveis) reconstroiCasas(); }
-  if(now-ultimoCulling>1500||visiveis.size===0){ ultimoCulling=now; const t=orb.target; const arr=lista.map((m,i)=>{ const c=casaDe(i); const L=c.vila.L[(PROF[m.profissao]||PROF.bardo).lugar]; const dd=Math.min((c.x-t.x)**2+(c.z-t.z)**2,(L.x-t.x)**2+(L.z-t.z)**2); return {m,i,dd}; }).sort((a,b)=>a.dd-b.dd);
+  if(lista.length!==casasN) reconstroiCasas(); else if(Math.floor(now/20000)!==ultimoMinutoCasas){ ultimoMinutoCasas=Math.floor(now/20000); const chave=lista.map(m=>xpDe(m).nivel).join(",")+"|"+lista.map((m,i)=>temCasa(casaDe(i).vila,casaDe(i).slot)?1:0).join(""); if(chave!==casasNiveis) reconstroiCasas(); }
+  if(Math.floor(now/1000)!==ultimoSegundoObras){ ultimoSegundoObras=Math.floor(now/1000); for(let v=0;v<nVilas();v++){ const V=vila(v); if(!V.pred) continue; const eco=economiaDe(V); OBRAS.forEach(o=>{ if(V.pred[o[0]]) V.pred[o[0]].visible=eco.construido(o[0]); });
+      if(eco.proxima&&eco.progresso>0.08){ const Lx=V.L[eco.proxima[0]]; V.andaime.visible=true; V.andaime.position.set(Lx.x,0,Lx.z); V.andaime.scale.set(Lx.w/4,1,Lx.h/4); } else V.andaime.visible=false;
+      const nLogs=Math.min(V.pilhaLogs.length,Math.floor(eco.madeira/4)); V.pilhaLogs.forEach((l,k)=>l.visible=k<nLogs); } }
+  if(now-ultimoCulling>1500||visiveis.size===0){ ultimoCulling=now; const t=orb.target; const arr=lista.map((m,i)=>{ const c=casaDe(i); const L=c.vila.L[LUGAR_DE[m.profissao]||"praca"]; const dd=Math.min((c.x-t.x)**2+(c.z-t.z)**2,(L.x-t.x)**2+(L.z-t.z)**2); return {m,i,dd}; }).sort((a,b)=>a.dd-b.dd);
     const novo=new Set(arr.slice(0,MAX_VISIVEIS).map(o=>o.m.id)); if(selecionado) novo.add(selecionado); bonecos.forEach((b,id)=>{ if(!novo.has(id)){ scene.remove(b); bonecos.delete(id); } }); cabRot.forEach((s,id)=>{ if(!novo.has(id)){ scene.remove(s); cabRot.delete(id); } }); visiveis=novo; }
   posSel=null; let selDentro=null; let arvoreBalanca=null;
   lista.forEach((m,i)=>{ if(!visiveis.has(m.id)) return; rotuloCabana(m,i); const b=garanteBoneco(m); const e=estado(m,i,w); const u=b.userData; const sel=m.id===selecionado;
@@ -720,7 +799,8 @@ function anima(){
     if(u.magia){ const on=e.modo==="magia"; u.magia.visible=on; if(on){ u.magia.children.forEach(o=>{ const t=(tsec*0.6+o.userData.k/7)%1; o.position.set(Math.cos(o.userData.k*0.9+tsec*2)*0.45, 1.9+t*1.6, Math.sin(o.userData.k*0.9+tsec*2)*0.45); o.scale.setScalar(1-t*0.8); o.rotation.y=tsec*3; }); } }
     if(!e.dentro&&(e.chave==="lazer"||e.chave==="fogueira"||e.chave==="visita")) acordados.push({x:e.x,z:e.z});
     const s=Math.sin(tsec*9+u.fase); const zera=()=>{ u.pernaE.rotation.x=u.pernaD.rotation.x=0; u.bracoE.rotation.x=0; u.bracoD.rotation.x=-0.2; b.rotation.x=0; };
-    if(e.dentro){ if(sel){ const I=INTERIORES[e.dentro.tipo]||INTERIORES.casa; const sp=I.spots[e.dentro.spot]||I.spots.mesa||I.spots.cama; b.visible=true; zera(); b.position.set(I.cx+sp.x,(sp.y||0),I.cz+sp.z); b.rotation.set(0,sp.ang||0,0);
+    if(e.dentro){ if(sel){ const I=INTERIORES[e.dentro.tipo==="tenda"?"casa":e.dentro.tipo]||INTERIORES.casa;
+        if(I===INTERIORES.casa&&I.personalizado!==m.id){ I.personalizado=m.id; const hue=(hash(m.nome)%360)/360; I.mp.color.setHSL(hue,0.22,0.82); I.tapete.color.setHSL((hue+0.5)%1,0.5,0.42); const eqI=equipamentoDe(m); while(I.ferramenta.children.length) I.ferramenta.remove(I.ferramenta.children[0]); if(eqI.principal){ const t=eqI.principal.g.clone(); t.scale.setScalar(1.6); I.ferramenta.add(t); } while(I.escudo.children.length) I.escudo.remove(I.escudo.children[0]); if(eqI.escudo){ const t=eqI.escudo.g.clone(); t.scale.setScalar(1.5); I.escudo.add(t); } I.trofeu.visible=xpDe(m).nivel>=6; } const sp=I.spots[e.dentro.spot]||I.spots.mesa||I.spots.cama; b.visible=true; zera(); b.position.set(I.cx+sp.x,(sp.y||0),I.cz+sp.z); b.rotation.set(0,sp.ang||0,0);
         if(sp.deitado){ b.rotation.x=-Math.PI/2; b.position.y=(sp.y||0)+0.15; } else if(e.dentro.modo==="sentado"){ u.pernaE.rotation.x=u.pernaD.rotation.x=-1.4; b.position.y=-0.3; u.bracoD.rotation.x=-0.9; u.bracoE.rotation.x=-0.9; } else { u.bracoD.rotation.x=-1.5+Math.max(0,Math.sin(tsec*5+u.fase))*1.1; u.bracoE.rotation.x=-0.6; }
         selDentro={I,e}; } else b.visible=false; }
     else { b.visible=true; b.position.set(e.x,e.y||0,e.z); b.rotation.set(0,e.ang,0); zera();
@@ -746,7 +826,7 @@ function anima(){
   else if(!selDentro) marcador.visible=false;
   const vilaoAtivo = hash("vil"+Math.floor(w.t))%5===0 && w.hora>=6 && w.hora<=22; goblin.visible=vilaoAtivo;
   if(vilaoAtivo){ const F=LUG.floresta; goblin.position.set(F.x+F.w/2+1.5+Math.sin(tsec*1.2)*1.5, 0, F.z+Math.cos(tsec*0.8)*2); goblin.rotation.y=tsec*0.8; }
-  if(document.body.classList.contains("cinema")){ if(!arrastando) orb.theta+=0.0015; if(now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); orb.r=16; } } }
+  if(document.body.classList.contains("cinema")){ if(!arrastando) orb.theta+=0.0015; if(now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); orb.r=16; } } }
   posicionaCamera(); renderer.render(scene,camera);
 }
 
@@ -763,19 +843,20 @@ function atualizaCard(forca){
   const lista=todos(); const i=lista.findIndex(m=>m.id===selecionado); const box=$("meuBox");
   if(i<0){ box.hidden=true; return; } box.hidden=false;
   const m=lista[i], w=mundo(), e=estado(m,i,w), p=PROF[m.profissao]||PROF.bardo, x=xpDe(m), eq=equipamentoDe(m);
-  $("selNome").textContent=m.nome; $("selProf").textContent=x.titulo+" "+p.nome+(m.fundador?" · fundador":"")+(m.exemplo?" · exemplo":"");
+  $("selNome").textContent=m.nome; $("selProf").textContent=x.titulo+" "+p.nome+(m.npc?" · NPC da Vila Aurora":"")+(m.exemplo?" · exemplo":"");
   $("selAgora").innerHTML="<b>Agora:</b> "+e.acao+(e.visita?"":" · "+(e.dentro?"dentro de: "+({casa:"sua cabana",mina:"Mina do Morro",taverna:"Taverna",torre:"Torre do Mago",capela:"Casa de Cura"}[e.dentro.tipo]||e.dentro.tipo):(e.lugar.nome||"cabana")));
   const eqEl=$("selEquip"); eqEl.innerHTML=""; if(!eq.principal&&!eq.escudo){ const s0=document.createElement("span"); s0.innerHTML='<i class="r-comum">Nível 1</i><span></span>'; s0.lastChild.textContent=ARMAS.has(p.arma)?"Roupa básica, sem arma. Arma só quando a vila tiver ferreiro e o morador subir de nível.":"Roupa básica, sem equipamento ainda."; eqEl.appendChild(s0); } [eq.principal,eq.escudo,eq.secundario].filter(Boolean).forEach(it=>{ const s=document.createElement("span"); s.innerHTML='<i class="r-'+it.rar.k+'">'+it.rar.n+'</i><span></span>'; s.lastChild.textContent=it.nome; eqEl.appendChild(s); });
   if(eq.capa){ const s=document.createElement("span"); s.innerHTML='<i class="r-raro">Capa</i><span></span>'; s.lastChild.textContent="Capa "+eq.capa.n+" (nível 6+)"; eqEl.appendChild(s); }
   $("selNivel").textContent="Nível "+x.nivel; $("selXp").textContent=x.xp+" / "+x.prox+" XP"; $("selMeter").style.width=Math.round(x.pct*100)+"%";
-  $("selCasa").textContent=vilaDe(i).nome+" · "+(x.nivel<2&&!m.fundador?"tenda (vira cabana no nível 2)":x.nivel>=6?"casa de pedra":"cabana")+" "+((i%VILA_CAP)+1)+" de "+VILA_CAP+" · "+p.desc;
-  $("selDesde").textContent="Na vila desde o dia "+(Math.floor((m.joinedAt-EPOCH)/HORA_MS/24)+1);
+  const Vx=vilaDe(i), ecoX=economiaDe(Vx), cX=casaDe(i); const moradia=(x.nivel<2&&!m.fundador)||!temCasa(Vx,cX.slot)?"tenda (a vila ainda está juntando madeira para a cabana)":x.nivel>=6?"casa de pedra":"cabana";
+  $("selCasa").textContent=Vx.nome+(Vx.i===0?" (vila central)":"")+" · "+moradia+" · "+p.desc+(Vx.i>0?" · Vila: "+ecoX.n+" moradores, madeira "+ecoX.madeira+", comida "+ecoX.comida+(ecoX.proxima?", construindo "+ecoX.proxima[2]+" ("+Math.round(ecoX.progresso*100)+"%)":", tudo construído"):"");
+  $("selDesde").textContent=m.npc?"Mora na Vila Aurora desde sempre":"Na vila desde o dia "+(Math.floor((m.joinedAt-EPOCH)/HORA_MS/24)+1);
   if(forca||cardId!==m.id+":"+x.nivel){ cardId=m.id+":"+x.nivel; desenhaRetrato(m); }
   if(document.body.classList.contains("cinema")){ $("narr").innerHTML="<span></span><small></small>"; $("narr").firstChild.textContent=m.nome+" está "+e.acao; $("narr").lastChild.textContent=x.titulo+" "+p.nome+(eq.principal?" · "+eq.principal.nome:" · ainda sem equipamento")+(eq.escudo?" · "+eq.escudo.nome:""); }
 }
 $("btnSeguir").addEventListener("click",()=>{ seguindo=true; orb.r=Math.min(orb.r,22); });
-function botaoMorador(m){ const b=document.createElement("button"); b.type="button"; const p=PROF[m.profissao]||PROF.bardo; const x=xpDe(m); b.innerHTML="<span></span> <span>· "+p.nome+" · nv "+x.nivel+(m.fundador?" · fundador":"")+"</span>"; b.firstChild.textContent=m.nome; b.firstChild.style.color="inherit"; b.addEventListener("click",()=>selecionar(m.id)); return b; }
-function renderLista(){ const r=$("listaMoradores"); r.innerHTML=""; const l=todos(); l.slice(-40).reverse().forEach(m=>r.appendChild(botaoMorador(m))); $("listaNota").textContent=(l.length>40?"Mostrando os 40 mais recentes de "+l.length+". ":"")+"Cada @ que segue a página vira um morador, sozinho. Ninguém cria nem controla bonequinho."; }
+function botaoMorador(m){ const b=document.createElement("button"); b.type="button"; const p=PROF[m.profissao]||PROF.bardo; const x=xpDe(m); b.innerHTML="<span></span> <span>· "+p.nome+" · nv "+x.nivel+(m.npc?" · NPC":"")+"</span>"; b.firstChild.textContent=m.nome; b.firstChild.style.color="inherit"; b.addEventListener("click",()=>selecionar(m.id)); return b; }
+function renderLista(){ const r=$("listaMoradores"); r.innerHTML=""; const l=todos().filter(m=>!m.npc); l.slice(-40).reverse().forEach(m=>r.appendChild(botaoMorador(m))); $("listaNota").textContent=(l.length>40?"Mostrando os 40 mais recentes de "+l.length+". ":"")+"Cada @ que segue a página vira um morador, sozinho. Ninguém cria nem controla bonequinho."; }
 $("busca").addEventListener("input",()=>{
   const q=$("busca").value.trim().toLowerCase().replace(/^@/,""); const r=$("resultados"); r.innerHTML="";
   if(!q) return; todos().filter(m=>m.nome.toLowerCase().replace(/^@/,"").includes(q)).slice(0,8).forEach(m=>{ const b=botaoMorador(m); b.addEventListener("click",()=>{ r.innerHTML=""; $("busca").value=m.nome; }); r.appendChild(b); });
@@ -788,13 +869,13 @@ function renderCronica(){
     .concat(c.chegadas.map(ch=>({k:(ch.ts-EPOCH)/HORA_MS+7.5, t:"D"+(Math.floor(((ch.ts-EPOCH)/HORA_MS+7)/24)+1), texto:ch.texto, vil:false})))
     .sort((a,b)=>b.k-a.k).slice(0,16);
   itens.forEach(it=>{ const li=document.createElement("li"); if(it.vil) li.className="vil"; li.innerHTML="<time>"+it.t+"</time><span></span>"; li.lastChild.textContent=it.texto; ul.appendChild(li); });
-  $("dia").textContent=w.dia; $("hora").textContent=String(w.hora).padStart(2,"0")+"h"; $("pop").textContent=todos().length; $("nvilas").textContent=nVilas();
+  $("dia").textContent=w.dia; $("hora").textContent=String(w.hora).padStart(2,"0")+"h"; $("pop").textContent=todos().filter(m=>!m.npc).length; $("nvilas").textContent=nVilas();
 }
 
 // ---------- lista de moradores: arquivo estático (CDN), atualizado pelo robô de seguidores ----------
 async function carregaMoradores(){ try{ const r=await fetch("moradores.json",{cache:"no-cache"}); if(!r.ok) throw 0; const j=await r.json();
-    MORADORES=j.moradores.map(m=>({id:m.id, nome:m.nome, profissao:m.profissao, joinedAt:m.joinedAt||D(m.dia||1,m.hora), fundador:!!m.fundador, exemplo:!!m.exemplo})); }catch(e){ MORADORES=MORADORES_BASE.slice(); }
-  reconstroiCasas(); renderLista(); renderCronica(); const sel=todos(); if(sel.length&&!selecionado){ selecionado=sel[sel.length-1].id; atualizaCard(true); } }
+    MORADORES=j.moradores.filter(m=>!m.fundador).map(m=>({id:m.id, nome:m.nome, profissao:m.profissao, joinedAt:m.joinedAt||D(m.dia||1,m.hora), exemplo:!!m.exemplo})); }catch(e){ MORADORES=[]; } todosCache=null;
+  reconstroiCasas(); renderLista(); renderCronica(); const sel=todos().filter(m=>!m.npc); if(sel.length&&!selecionado){ selecionado=sel[sel.length-1].id; const li=todos(); const ii=li.findIndex(m=>m.id===selecionado); if(ii>=0){ const c=casaDe(ii); orb.alvo.set(c.vila.cx,0,c.vila.cz+2); orb.target.copy(orb.alvo); } atualizaCard(true); } }
 function iniciar(){ anima(); renderCronica(); carregaMoradores().then(()=>{ const h=decodeURIComponent(location.hash||"").replace(/^#/,"").replace(/^@/,"").toLowerCase(); if(h){ const m=todos().find(x=>x.nome.toLowerCase().replace(/^@/,"")===h); if(m){ selecionar(m.id); } } }); setInterval(()=>{renderCronica(); renderLista(); atualizaCard();},5000); setInterval(carregaMoradores,10*60000); }
 iniciar();
 })();
