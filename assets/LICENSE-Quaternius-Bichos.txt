@@ -1,0 +1,6 @@
+Modelos CC0 (public domain) do Quaternius via poly.pizza:
+- lobo_quaternius.glb  https://poly.pizza/m/P1gU3Qkr9r
+- javali_quaternius.glb https://poly.pizza/m/a8PIIYwF7r
+- cavalo_quaternius.glb https://poly.pizza/m/bEdE4rmZy9
+- golem_quaternius.glb https://poly.pizza/m/iHEuXiH6Aj
+- fantasma_quaternius.glb https://poly.pizza/m/TX8r9WBXpe
