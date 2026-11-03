@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <meta name="description" content="Vila Aurora: cada @ que segue a página vira um morador. Tudo acontece sozinho. Ache seu bonequinho.">
 <meta property="og:title" content="Vila Aurora">
 <meta property="og:description" content="Cada @ que segue vira um morador. Tudo acontece sozinho. Ache seu bonequinho.">
@@ -102,7 +102,14 @@ h2{font-size:19px;color:var(--accent)}
 .top .stat b{color:var(--fg);font-variant-numeric:tabular-nums}
 .top .spacer{flex:1}
 .wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;padding-block:14px 24px}
-@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr);gap:12px;padding-block:8px 20px}
+  .map{aspect-ratio:auto;height:66svh;min-height:380px;position:sticky;top:0;z-index:5;border-width:2px}
+  body.cinema .map{height:calc(100svh - 70px)}
+  .top{padding:8px 0 6px;gap:6px 12px} h1{font-size:24px} .top .stat{font-size:14px} .top .hint{display:none}
+  button{min-height:44px} button.ghost{min-height:40px;padding:8px 14px}
+  input,select{font-size:16px;min-height:44px}
+  .card .name{font-size:20px} .results button{min-height:44px;font-size:15px} .map .dica{font-size:11px;max-width:70%}
+}
 .map{position:relative;min-width:0;align-self:start;background:#0b1530;border:3px solid var(--line);border-radius:10px;overflow:hidden;aspect-ratio:16/10;max-width:100%}
 body.cinema .map{aspect-ratio:auto;height:calc(100vh - 90px)}
 .map canvas{display:block;width:100%;height:100%;touch-action:none}
@@ -539,7 +546,7 @@ function predio(nome,x,z,s,ry,parent){ const g=KAYKIT.clone(nome); g.position.se
 function instModelo(nome,lista,opts){ opts=opts||{}; const md=KAYKIT.modelo(nome); if(!md||!lista.length) return []; const root=md.scene; root.updateMatrixWorld(true); const out=[]; const d=new THREE.Object3D(); const col=new THREE.Color(); const temCor=lista.some(p=>p.c!=null);
   root.traverse(o=>{ if(!o.isMesh) return; const im=new THREE.InstancedMesh(o.geometry,o.material,lista.length);
     lista.forEach((p,i)=>{ d.position.set(p.x,p.y||0,p.z); d.rotation.set(p.rx||0,p.ry||0,p.rz||0); const s=p.s||1; d.scale.set(p.sx||s,p.sy||s,p.sz||s); d.updateMatrix(); d.matrix.multiply(o.matrixWorld); im.setMatrixAt(i,d.matrix); if(temCor) im.setColorAt(i,col.set(p.c!=null?p.c:0xffffff)); });
-    if(im.instanceColor) im.instanceColor.needsUpdate=true; im.castShadow=opts.cast!==false; im.receiveShadow=opts.receive!==false; im.frustumCulled=opts.cull!==false; (opts.parent||scene).add(im); out.push(im); }); return out; }
+    if(im.instanceColor) im.instanceColor.needsUpdate=true; im.castShadow=opts.cast!==false; im.receiveShadow=opts.receive!==false; im.frustumCulled=false; (opts.parent||scene).add(im); out.push(im); }); return out; }
 
 // ---------- chão: tapete de hexágonos KayKit (grama com variação de tom) ----------
 const HEX_S=3.5, HEX_W=2*HEX_S, HEX_H=2.31*HEX_S*0.75;
@@ -552,7 +559,7 @@ function casa(x,z,w,d,h,m,mTelhado,rot,chamine,parent){ const g=new THREE.Group(
 function rotulo(texto,x,y,z,escala,cor){ const c=document.createElement("canvas"); c.width=512; c.height=128; const g=c.getContext("2d"); g.font="700 "+(texto.length>14?Math.max(30,Math.floor(880/texto.length)):62)+"px Fredoka, Nunito, sans-serif"; g.textAlign="center"; g.textBaseline="middle";
   const tw=Math.min(500,g.measureText(texto).width+44); g.fillStyle="rgba(10,14,20,.62)"; g.beginPath(); g.moveTo(256-tw/2+22,20); g.arcTo(256+tw/2,20,256+tw/2,108,22); g.arcTo(256+tw/2,108,256-tw/2,108,22); g.arcTo(256-tw/2,108,256-tw/2,20,22); g.arcTo(256-tw/2,20,256+tw/2,20,22); g.closePath(); g.fill();
   g.fillStyle=cor||"#fff"; g.fillText(texto,256,64);
-  const t=new THREE.CanvasTexture(c); t.minFilter=THREE.LinearFilter; const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthTest:false,sizeAttenuation:false})); const e=(escala||5)*0.03; s.scale.set(e,e/4,1); s.position.set(x,y,z); scene.add(s); s.userData.rotulo={w:tw/512,texto}; ROTULOS_3D.push(s); return s; }
+  const t=new THREE.CanvasTexture(c); t.minFilter=THREE.LinearFilter; const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthTest:false,sizeAttenuation:false})); const e=(escala||5)*0.03*(MOBILE?((escala||5)>=9?1.05:1.4):1); s.scale.set(e,e/4,1); s.position.set(x,y,z); scene.add(s); s.userData.rotulo={w:tw/512,texto}; ROTULOS_3D.push(s); return s; }
 const ROTULOS_3D=[];
 // rótulos não se empilham: por quadro, projeta cada um na tela e só mostra o mais perto da câmera quando dois colidem
 const _rp=new THREE.Vector3(); let _rotQuadro=0;
@@ -566,7 +573,7 @@ function desempilhaRotulos(prioridadeId){ if((_rotQuadro++%2)!==0) return; const
 function rotuloEm(parent,texto,x,y,z,escala,cor){ const s=rotulo(texto,x,y,z,escala,cor); scene.remove(s); parent.add(s); return s; }
 function instancia(geometria,material,lista,parent){ if(!lista.length) return null; const im=new THREE.InstancedMesh(geometria,material,lista.length); const d=new THREE.Object3D(); const col=new THREE.Color();
   lista.forEach((p,i)=>{ d.position.set(p.x,p.y||0,p.z); d.rotation.set(p.rx||0,p.ry||0,p.rz||0); const s=p.s||1; d.scale.set(p.sx||s,p.sy||s,s); d.updateMatrix(); im.setMatrixAt(i,d.matrix); if(p.c!=null) im.setColorAt(i,col.set(p.c)); });
-  if(im.instanceColor) im.instanceColor.needsUpdate=true; im.castShadow=true; im.receiveShadow=true; (parent||scene).add(im); return im; }
+  if(im.instanceColor) im.instanceColor.needsUpdate=true; im.castShadow=true; im.receiveShadow=true; im.frustumCulled=false; (parent||scene).add(im); return im; }
 function foraDeTudo(x,z){ return livre(x,z,0.5) && !CASAS.some(c=>Math.abs(c[0]-x)<2.2&&Math.abs(c[1]-z)<2.2); }
 // pedras e moitas espalhadas pelo mundo (fora das vilas)
 (function decoraMundo(){ const r=rnd("decor"); const pedras=[[],[],[]], moitas=[];
@@ -1002,7 +1009,7 @@ function anima(){
     const novo=new Set(arr.slice(0,MAX_VISIVEIS).map(o=>o.m.id)); if(selecionado) novo.add(selecionado); if(MODO_SEGREDO) BATALHA.lutadores.forEach(id=>novo.add(id)); bonecos.forEach((b,id)=>{ if(!novo.has(id)){ scene.remove(b); bonecos.delete(id); } }); cabRot.forEach((s,id)=>{ if(!novo.has(id)){ scene.remove(s); cabRot.delete(id); } }); visiveis=novo; }
   posSel=null; let selDentro=null; let arvoreBalanca=null; let nomesMostrados=0;
   lista.forEach((m,i)=>{ if(!visiveis.has(m.id)) return; rotuloCabana(m,i); const b=garanteBoneco(m); const e=estado(m,i,w); const u=b.userData; const sel=m.id===selecionado;
-    const c0=casaDe(i); const perto=((e.x-orb.target.x)**2+(e.z-orb.target.z)**2<420 && nomesMostrados<18) || sel; u.nome.visible=perto&&!e.dentro; if(u.nome.visible) nomesMostrados++; const rc=cabRot.get(m.id); if(rc) rc.visible=orb.r<40 && (c0.x-orb.target.x)**2+(c0.z-orb.target.z)**2<900;
+    const c0=casaDe(i); const perto=(orb.r<36 && (e.x-orb.target.x)**2+(e.z-orb.target.z)**2<340 && nomesMostrados<(MOBILE?8:14)) || sel; u.nome.visible=perto&&!e.dentro; if(u.nome.visible) nomesMostrados++; const rc=cabRot.get(m.id); if(rc) rc.visible=orb.r<24 && (c0.x-orb.target.x)**2+(c0.z-orb.target.z)**2<400;
     u.vis.visible=!!e.visita&&!e.dentro; if(u.vis.visible) u.vis.position.y=2.95+Math.sin(tsec*5)*0.1;
     if(u.magia){ const on=e.modo==="magia"; u.magia.visible=on; if(on){ u.magia.children.forEach(o=>{ const t=(tsec*0.6+o.userData.k/7)%1; o.position.set(Math.cos(o.userData.k*0.9+tsec*2)*0.45, 1.9+t*1.6, Math.sin(o.userData.k*0.9+tsec*2)*0.45); o.scale.setScalar(1-t*0.8); o.rotation.y=tsec*3; }); } }
     if(!e.dentro&&(e.chave==="lazer"||e.chave==="fogueira"||e.chave==="visita")) acordados.push({x:e.x,z:e.z,vi:e.vila.i,visita:!!e.visita});
