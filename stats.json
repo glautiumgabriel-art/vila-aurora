@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-03T19:08",
+ "geradoEm": "2026-11-03T19:59",
  "relogioVila": {
-  "dia": 21,
-  "hora": 7
+  "dia": 23,
+  "hora": 10
  },
  "moradores": 7,
  "novosDoDia": [
@@ -19,32 +19,32 @@
   {
    "nome": "@dudabrisolaa_",
    "nivel": 6,
-   "xp": 1416,
+   "xp": 1628,
    "titulo": "Mestre"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 6,
-   "xp": 1316,
+   "xp": 1528,
    "titulo": "Mestre"
   },
   {
    "nome": "@iamvictoriamenezes",
-   "nivel": 5,
-   "xp": 1116,
-   "titulo": "Oficial"
+   "nivel": 6,
+   "xp": 1388,
+   "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
-   "nivel": 5,
-   "xp": 1066,
-   "titulo": "Oficial"
+   "nivel": 6,
+   "xp": 1278,
+   "titulo": "Mestre"
   },
   {
-   "nome": "@adriana.g.santana",
-   "nivel": 5,
-   "xp": 1056,
-   "titulo": "Oficial"
+   "nome": "@dudabsl_",
+   "nivel": 6,
+   "xp": 1268,
+   "titulo": "Mestre"
   }
  ],
  "maioresAfinidades": [
@@ -85,6 +85,13 @@
   }
  ],
  "maioresDesafetos": [
+  {
+   "entre": [
+    "@adriana.g.santana",
+    "Velho Bento"
+   ],
+   "forca": 1
+  },
   {
    "entre": [
     "@glautiumgabriel",
@@ -128,6 +135,30 @@
  },
  "vilas": 2,
  "eventosUltimas24h": [
+  {
+   "quando": 1793745433112,
+   "quem": "@dudabsl_",
+   "tipo": "vitoria",
+   "texto": "@dudabsl_ e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1793745431112,
+   "quem": "@adriana.g.santana",
+   "tipo": "briga_derrota",
+   "texto": "@adriana.g.santana foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793745016642,
+   "quem": "@_williamg10",
+   "tipo": "queda",
+   "texto": "@_williamg10 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793743995112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "vitoria",
+   "texto": "@iamvictoriamenezes venceram um javali teimoso e ganharam uma presa de javali."
+  },
   {
    "quando": 1793741113112,
    "quem": "@dudabsl_",
