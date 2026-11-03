@@ -1,0 +1,47 @@
+﻿=== CHATGPT (, 24s) ===
+1. **Direção:** “diorama medieval ao entardecer”. Verde `#344C40`, pedra `#858581`, madeira `#72503B`, telhas `#A95743`, âmbar `#FFCB80`. Base: HemisphereLight 0,65; sol quente 2,2; sombras suaves; ACES, exposure 1,05; fog `#A5B6AC`, 50–140. FOV 35°, câmera elevada a 40°, distância 40–65. Bloom discreto só em emissivos; sem DOF durante navegação. Ajuste após conferir escala e materiais.
+
+2. **Vila:** praça deslocada, três caminhos curvos, bairros separados por hortas. Rio contorna; floresta enquadra. Hexágonos estruturam o terreno; rotações e recuos quebram alinhamentos. Cresça em núcleos de 8–12 casas, preservando clareiras.
+
+3. **Moradores:** profissão = acessório + cor secundária + ferramenta. Distribua as 19 em famílias visuais. Quatro corpos não representam dois sexos convincentemente: ofereça apresentações variadas. Reaproveite animações existentes com ferramentas sincronizadas; dormir exige pose adequada.
+
+4. **Dragão:** 0–5s sombra; 5–12s pouso; 12–23s defesa coletiva; 23–30s retirada e comemoração. Fogo estilizado, câmera baixa pontual, barra de “ímpeto”; moradores ficam atordoados.
+
+5. **Dez ganchos:** sino diário; eleição; colheita gigante; rivalidade; aprendiz promovido; visita misteriosa; ponte coletiva; festival; objeto perdido; crônica do morador.
+
+6. **Evite:** nomes permanentes, sombras por luz, transparências excessivas, clones e saturação uniforme.
+
+**Recomendação:** priorize composição, luz e silhuetas: dão identidade, leitura e bons Reels. **Risco principal:** relógio sozinho não registra seguidores nem garante persistência confiável.
+
+[conversa ChatGPT: 01a1a2df-4aac-7882-8ce6-3eb4ea0e17fd | para responder, rode de novo com -Continuar]
+
+=== GEMINI (0s) ===
+**Recomendação Direta:** O visual "de ponta" no Three.js low-poly depende de **iluminação dramática e tom de cor**, não de mais polígonos.
+
+**1. Direção de Arte (Valores Concretos):**
+* **Luz/Cor:** Iluminação de Pôr do Sol/Crepúsculo. `DirectionalLight` (`#ffaa44`, int: 1.6, sombras `PCFSoftShadowMap`), `AmbientLight` (`#202b48`, int: 0.5), `FogExp2` (`#140f26`, densidade: 0.012). Pontos de luz quente (`#ff7700`, int: 2.0) nas fogueiras/janelas.
+* **Câmera & Tom:** FOV 35° (efeito teleobjetiva vertical para Reels), ângulo 45° de cima. ToneMapping: `ACESFilmicToneMapping` (exposure: 1.1).
+
+**2. Vila Orgânica:**
+* Crescimento em espiral (Fibonacci) a partir da fogueira. Aplique um offset aleatório suave ($\pm 0.3$ no eixo X/Z) nas posições dos tiles para quebrar a grade rígida. Intercale 30% de tiles de floresta/rochas entre as casas.
+
+**3. Personagens (19 Profissões):**
+* Mude dinamicamente a cor do `MeshStandardMaterial` das roupas/chapéus + 1 prop único na mão (machado, picareta, livro, enxada). 
+* **Animações KayKit:** `Idle`, `Walking`, `Interact` (trabalhar), `Cheer` (comemorar), `Emote_Rest` (dormir).
+
+**4. Evento do Dragão (30s):**
+* **0-5s:** Sombra gigante passa no chão; câmera treme (`shake`). **5-15s:** Dragão pousa no centro + emissão de partículas de fogo (`InstancedMesh` com textura de chama). **15-25s:** Moradores ativam animação `Attack`/`Defend`; barra de vida do dragão cai. **25-30s:** Dragão decola derrotado (sem mortes).
+
+**5. Ideias Estilo Krynthal:**
+1. Cartões pretos em pixel art ("DIA 42: O ATAQUE DA NÉVOA").
+2. "Morador do Dia" em destaque com aura dourada.
+3. Ritual noturno onde todos correm para a fogueira às 21h.
+4. Construção coletiva da muralha liberada por meta de seguidores.
+
+**6. Erros a Evitar:**
+* **Performance:** Não use pós-processamento pesado (Bloom/SSAO) no mobile. Use `InstancedMesh` para árvores/props.
+* **Textos:** Nomes de 1M de seguidores travam a tela; renderize nomes via `CSS2DRenderer` apenas para os moradores visíveis na câmera (distância < 15m).
+
+**Principal Risco:** O determinismo por relógio dessincronizar entre aparelhos se a lógica usar `Math.random()` em vez de uma função de *random com seed* (PRNG) baseada na data/hora UTC.
+
+=== PARA O CLAUDE: junte em CONCORDÂNCIAS / DISCORDÂNCIAS / RECOMENDAÇÃO (a sua, dizendo onde discorda dos dois). ===
