@@ -99,6 +99,8 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
 .chron li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px;font-size:13.5px;padding:4px 0;border-bottom:1px dashed var(--line)}
 .chron time{font-family:var(--display);color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .chron li.vil{color:var(--danger)}
+.chron.hist{max-height:340px} .chron.hist li.ruim{color:var(--danger)} .chron.hist li.ruim time{color:var(--danger)} .chron.hist li.bom{color:#2f7a22}
+.chron.hist li{grid-template-columns:62px minmax(0,1fr)}
 .chron li.vil time{color:var(--danger)}
 .results{display:flex;flex-direction:column;gap:4px;max-height:260px;overflow:auto}
 .results button{text-align:left;font-family:var(--body);font-weight:600;font-size:14px;padding:6px 10px;word-break:break-all}
@@ -158,8 +160,14 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
       <div class="small" id="listaNota">Cada @ que segue a página vira um morador, sozinho. Ninguém cria nem controla bonequinho.</div>
     </section>
 
+    <section class="box" id="histBox" hidden>
+      <h2 id="histTitulo">História</h2>
+      <ul class="chron hist" id="histLista"></ul>
+      <div class="small" id="histNota"></div>
+    </section>
+
     <section class="box">
-      <h2>Crônica da vila</h2>
+      <h2>Crônica geral da vila</h2>
       <ul class="chron" id="cronica"></ul>
       <div class="small">Novidade toda hora. Siga @vilaauroraoficial e seu @ vira morador.<br>Música: Kevin MacLeod (incompetech.com), CC BY 4.0.</div>
     </section>
@@ -961,11 +969,22 @@ function aplicaRotulos(){ const manter=new Set(); if(BATALHA&&BATALHA.titulo) ma
   const selB=selecionado?bonecos.get(selecionado):null; const nomeSel=selB&&selB.userData.nome;
   scene.children.forEach(o=>{ if(o.isSprite&&o.material&&o.material.map&&!manter.has(o)&&(ROTULOS==="0"||ROTULOS==="foco")){ o.visible=false; } });
   if(ROTULOS==="foco"){ bonecos.forEach(b=>{ if(b.userData.nome) b.userData.nome.visible=(b.userData.nome===nomeSel); }); } }
-function selecionar(id,manual){ selecionado=id; seguindo=true; if(manual) fixado=true; if(!camFixa) orb.r=Math.min(orb.r,26); visiveis.add(id); const li=todos(); const ii=li.findIndex(m=>m.id===id); if(ii>=0){ const e=estado(li[ii],ii,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.target.copy(orb.alvo); } } atualizaCard(true); }
-let cardId=null;
+function selecionar(id,manual){ if(selecionado!==id) histSig=""; selecionado=id; seguindo=true; if(manual) fixado=true; if(!camFixa) orb.r=Math.min(orb.r,26); visiveis.add(id); const li=todos(); const ii=li.findIndex(m=>m.id===id); if(ii>=0){ const e=estado(li[ii],ii,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.target.copy(orb.alvo); } } atualizaCard(true); }
+let cardId=null, histSig="";
+function tsVila(ts){ const t=(ts-EPOCH)/HORA_MS+7; return "D"+(Math.floor(t/24)+1)+" "+String(Math.floor(t)%24).padStart(2,"0")+"h"; }
+function atualizaHistoria(m,x){
+  const box=$("histBox"); if(!m){ box.hidden=true; return; } box.hidden=false; $("histTitulo").textContent="História de "+m.nome;
+  const now=Date.now(); const itens=[];
+  if(!m.npc){ eventosDe(m).lista.filter(e=>e.ts<=now).forEach(e=>itens.push({ts:e.ts,texto:e.texto,ruim:!!e.ruim,bom:!e.ruim})); itens.push({ts:m.joinedAt,texto:m.nome+" começou a seguir @vilaauroraoficial e virou morador da Vila Aurora.",bom:true}); }
+  itens.sort((a,b)=>b.ts-a.ts);
+  const sig=m.id+":"+itens.length+":"+x.nivel; if(sig===histSig) return; histSig=sig;
+  const ul=$("histLista"); ul.innerHTML="";
+  itens.slice(0,40).forEach(it=>{ const li=document.createElement("li"); li.className=it.ruim?"ruim":(it.bom?"bom":""); li.innerHTML="<time>"+tsVila(it.ts)+"</time><span></span>"; li.lastChild.textContent=it.texto; ul.appendChild(li); });
+  $("histNota").textContent=m.npc?"Os moradores originais da Vila Aurora não têm histórico registrado. As histórias começam quando um @ entra.":(itens.length>40?"Mostrando as 40 mais recentes de "+itens.length+". ":"")+"Tudo acontece sozinho, ninguém controla o bonequinho.";
+}
 function atualizaCard(forca){
   const lista=todos(); const i=lista.findIndex(m=>m.id===selecionado); const box=$("meuBox");
-  if(i<0){ box.hidden=true; return; } box.hidden=false;
+  if(i<0){ box.hidden=true; atualizaHistoria(null); return; } box.hidden=false;
   const m=lista[i], w=mundo(), e=estado(m,i,w), p=PROF[m.profissao]||PROF.bardo, x=xpDe(m), eq=equipamentoDe(m);
   $("selNome").textContent=m.nome; $("selProf").textContent=x.titulo+" "+p.nome+(m.npc?" · NPC da Vila Aurora":"")+(m.exemplo?" · exemplo":"");
   $("selAgora").innerHTML="<b>Agora:</b> "+e.acao+(e.visita?"":" · "+(e.dentro?"dentro de: "+({casa:"sua cabana",mina:"Mina do Morro",taverna:"Taverna",torre:"Torre do Mago",capela:"Casa de Cura"}[e.dentro.tipo]||e.dentro.tipo):(e.lugar.nome||"cabana")));
@@ -978,6 +997,7 @@ function atualizaCard(forca){
   $("selCasa").textContent=Vx.nome+(Vx.i===0?" (vila central)":"")+" · "+moradia+" · "+p.desc+(Vx.i>0?" · Vila: "+ecoX.n+" moradores, madeira "+ecoX.madeira+", comida "+ecoX.comida+(ecoX.proxima?", construindo "+ecoX.proxima[2]+" ("+Math.round(ecoX.progresso*100)+"%)":", tudo construído"):"");
   $("selDesde").textContent=m.npc?"Mora na Vila Aurora desde sempre":"Na vila desde o dia "+(Math.floor((m.joinedAt-EPOCH)/HORA_MS/24)+1);
   if(forca||cardId!==m.id+":"+x.nivel){ cardId=m.id+":"+x.nivel; desenhaRetrato(m); }
+  atualizaHistoria(m,x);
   if(document.body.classList.contains("cinema")){ $("narr").innerHTML="<span></span><small></small>"; $("narr").firstChild.textContent=m.nome+" está "+e.acao; $("narr").lastChild.textContent=x.titulo+" "+p.nome+(eq.principal?" · "+eq.principal.nome:" · ainda sem equipamento")+(eq.escudo?" · "+eq.escudo.nome:""); }
 }
 $("btnSeguir").addEventListener("click",()=>{ seguindo=true; fixado=true; orb.r=Math.min(orb.r,22); });
