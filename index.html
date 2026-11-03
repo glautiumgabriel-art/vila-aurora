@@ -112,7 +112,7 @@ h2{font-size:19px;color:var(--accent)}
 }
 .map{position:relative;min-width:0;align-self:start;background:#0b1530;border:3px solid var(--line);border-radius:10px;overflow:hidden;aspect-ratio:16/10;max-width:100%}
 body.cinema .map{aspect-ratio:auto;height:calc(100vh - 90px)}
-.map canvas{display:block;width:100%;height:100%;touch-action:none}
+.map canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
 .map .narr{position:absolute;left:0;right:0;bottom:0;padding:18px 20px 16px;font-family:var(--display);font-weight:600;font-size:clamp(16px,2.4vw,28px);
   color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72));text-shadow:0 2px 4px #000;pointer-events:none;display:none}
 .map .narr small{display:block;font-size:.6em;font-weight:400;opacity:.85}
@@ -225,6 +225,13 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
       <div class="small" id="listaNota">Cada @ que segue a página vira um morador, sozinho. Ninguém cria nem controla bonequinho.</div>
     </section>
 
+    <section class="box" id="lugarBox" hidden>
+      <h2 id="lugarTitulo">Lugar</h2>
+      <div class="small" id="lugarDesc"></div>
+      <div class="now" id="lugarAgora"></div>
+      <div class="results" id="lugarLista"></div>
+      <div class="small" id="lugarObra"></div>
+    </section>
     <section class="box" id="histBox" hidden>
       <h2 id="histTitulo">História</h2>
       <ul class="chron hist" id="histLista"></ul>
@@ -350,6 +357,14 @@ const CASAS=[]; (function(){ const pred=["taverna","ferraria","capela","mercado"
 const VILA_CAP=CASAS.length;            // moradores por vila; a próxima vila nasce quando esta enche
 function vilaDe(i){ const l=todos(); return vila(l[i]?l[i].vi:0); }
 function casaDe(i){ const l=todos(); const m=l[i]; const V=vila(m?m.vi:0); const slot=m?m.slot:0; const c=CASAS[slot%CASAS.length]; return {x:c[0]+V.cx, z:c[1]+V.cz, w:2.4, h:2.6, vila:V, slot}; }
+// ---------- mapa de ocupação: ninguém (morador parado, bicho, goblin) fica em cima de prédio, cabana, poço ou castelo ----------
+const footCache=new Map();
+function footprints(V){ let F=footCache.get(V.i); if(F) return F; F=[]; ["taverna","ferraria","capela","mercado","torre","muralha"].forEach(k=>{ const L=V.L[k]; F.push({x:L.x,z:L.z,w:L.w/2+0.35,h:L.h/2+0.35}); });
+  F.push({x:V.L.mina.x,z:V.L.mina.z-2.5,w:5.6,h:4.2}); F.push({x:V.cx+4.4,z:V.cz-4.4,w:1.5,h:1.5}); if(V.i===0) F.push({x:V.cx+30,z:V.cz+9,w:5.2,h:5.6}); footCache.set(V.i,F); return F; }
+const cabCache=new Map();
+function cabanasDe(V){ const l=todos(); const k=V.i+":"+l.length; let C=cabCache.get(k); if(C) return C; C=[]; l.forEach(m=>{ if(m.vi===V.i){ const c=CASAS[m.slot%CASAS.length]; C.push({x:c[0]+V.cx,z:c[1]+V.cz,w:1.35,h:1.45}); } }); cabCache.set(k,C); return C; }
+function ocupado(V,x,z){ const bs=footprints(V).concat(cabanasDe(V)); for(const b of bs){ if(Math.abs(x-b.x)<b.w&&Math.abs(z-b.z)<b.h) return b; } return null; }
+function desvia(V,x,z){ for(let it=0;it<4;it++){ const b=ocupado(V,x,z); if(!b) break; const dx=x-b.x, dz=z-b.z; const px=b.w-Math.abs(dx), pz=b.h-Math.abs(dz); if(px<pz) x=b.x+(dx<0?-1:1)*(b.w+0.05); else z=b.z+(dz<0?-1:1)*(b.h+0.05); } return {x,z}; }
 function livre(x,z,folga){ for(let v=0;v<VILAS_POS.length;v++){ const V=vila(v); if(Math.abs(x-V.cx)<50&&Math.abs(z-V.cz)<50) return false; } return true; }
 function noite(h){ return h<6||h>=20; }
 
@@ -420,7 +435,7 @@ function pontos(V,m,idx){ const k=m.id+":"+V.i; let P=pontosCache.get(k); if(P) 
   P.muralhaA={x:L.muralha.x-L.muralha.w/2+0.5,z:L.muralha.z+L.muralha.h/2+1.3}; P.muralhaB={x:L.muralha.x+L.muralha.w/2-0.5,z:L.muralha.z+L.muralha.h/2+1.3}; P.portao={x:L.muralha.x,z:L.muralha.z+L.muralha.h/2+1.6+(r()-.5)};
   P.torreBase={x:L.muralha.x-L.muralha.w/2-0.5,z:L.muralha.z+2.2}; P.torreTopo={x:L.muralha.x-L.muralha.w/2-0.5,z:L.muralha.z,y:4.45};
   P.torreFrente={x:L.torre.x+(r()-.5)*2,z:L.torre.z+3.2}; P.tavernaFrente={x:L.taverna.x+(r()-.5)*3,z:L.taverna.z+L.taverna.h/2+1.6}; P.capelaFrente={x:L.capela.x+(r()-.5)*2,z:L.capela.z+L.capela.h/2+1.6};
-  P.ervas={x:L.capela.x+(r()-.5)*3,z:L.capela.z+L.capela.h/2+4.5}; P.barraca={x:L.mercado.x+(Math.floor(r()*3)-1)*2.4,z:L.mercado.z+1.5};
+  P.ervas={x:L.capela.x+(r()-.5)*3,z:L.capela.z+L.capela.h/2+2.7}; P.barraca={x:L.mercado.x+(Math.floor(r()*3)-1)*2.0,z:L.mercado.z+L.mercado.h/2+1.3};
   P.pracaPt={x:V.cx+(r()-.5)*7,z:V.cz+(r()-.5)*7}; P.pracaPt2={x:V.cx+(r()-.5)*7,z:V.cz+(r()-.5)*7}; P.estradaFora={x:V.cx-40,z:V.cz+(r()-.5)*1.5};
   P.casaFrente={x:c.x,z:c.z+1.9}; P.obra=P.pracaPt;
   pontosCache.set(k,P); return P; }
@@ -455,7 +470,7 @@ function estado(m, idx, w){
     x=ps.x; z=ps.z; y=ps.y; ang=ps.ang; andando=ps.andando; modo=ps.s.modo; acao=ps.s.acao; if(modo==="dentro"){ dentro={tipo:ps.s.dentro,spot:ps.s.spot,modo:"trabalhar"}; } }
   else if(x==null){ const s2=Math.floor(Date.now()/6000), f=(Date.now()%6000)/6000; const lw=lugar===LUG.muralha?Math.max(2.5,lugar.w+2):7, lh=lugar===LUG.muralha?Math.max(2.5,lugar.h+2):7;
     const front=lugar===LUG.muralha; function off(k){ const r=rnd(m.id+"p"+k); return {x:(r()-.5)*lw, z: front ? lugar.h/2+1+r()*2.5 : (r()-.5)*lh}; }
-    const a=off(s2), b=off(s2+1), e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; x=lugar.x+a.x+(b.x-a.x)*e; z=lugar.z+a.z+(b.z-a.z)*e; const dx=b.x-a.x, dz=b.z-a.z; andando=Math.abs(dx)+Math.abs(dz)>0.8; ang=Math.atan2(dx,dz); modo=andando?"andar":"parado"; }
+    const a=off(s2), b=off(s2+1), e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; x=lugar.x+a.x+(b.x-a.x)*e; z=lugar.z+a.z+(b.z-a.z)*e; { const dv=desvia(V,x,z); x=dv.x; z=dv.z; } const dx=b.x-a.x, dz=b.z-a.z; andando=Math.abs(dx)+Math.abs(dz)>0.8; ang=Math.atan2(dx,dz); modo=andando?"andar":"parado"; }
   return {x,z,y,acao,lugar,chave,visita,dentro,modo,andando,ang,vila:V};
 }
 const CLASSE={soldado:{forca:3,alc:"perto"},cavaleiro:{forca:4,alc:"perto"},arqueiro:{forca:2,alc:"longe"},mago:{forca:2,alc:"longe"},alquimista:{forca:1,alc:"longe"},cacador:{forca:2,alc:"longe"},lenhador:{forca:2,alc:"perto"},ferreiro:{forca:2,alc:"perto"},mineiro:{forca:2,alc:"perto"},explorador:{forca:1,alc:"perto"}};
@@ -771,13 +786,13 @@ const DRAGAO=(function(){ const g=new THREE.Group(); const corpo=KAYKIT.cloneAni
   else g.userData={play(){},mats:[]}; g.visible=false; scene.add(g); return g; })();
 const sombraDragao=new THREE.Mesh(geo("Circle",[2.5,12]),new THREE.MeshBasicMaterial({color:0x000000,transparent:true,opacity:0.3})); sombraDragao.rotation.x=-Math.PI/2; sombraDragao.visible=false; scene.add(sombraDragao);
 function animaBichos(tsec,w){ BICHOS.forEach(b=>{ const V=b.userData.V, f=b.userData.fase, t=b.userData.tipo; if(t==="dragao") return; const L=V.L;
-    if(t==="galinha"){ const C=L.campo; b.position.set(C.x+C.w/2+3.5+Math.sin(tsec*0.5+f)*2.2, 0, C.z+Math.cos(tsec*0.37+f)*3); b.rotation.y=tsec*0.5+f+Math.PI/2; b.position.y=Math.abs(Math.sin(tsec*6+f))*0.05; }
-    else if(t==="javali"){ const F=L.floresta; b.position.set(F.x+F.w/2+4+Math.sin(tsec*0.25+f)*4, 0, F.z+Math.cos(tsec*0.2+f)*8); b.rotation.y=Math.atan2(Math.cos(tsec*0.25+f)*0.25*4, -Math.sin(tsec*0.2+f)*0.2*8); }
-    else if(t==="goblin"){ const ativo=w.hora>=6 && w.hora<=23; b.visible=ativo; if(ativo){ const F=L.floresta; const k=Math.floor(f); b.position.set(F.x+F.w/2+3+k*2+Math.sin(tsec*0.9+f)*2.5, Math.abs(Math.sin(tsec*7+f))*0.08, F.z-F.h/2-2+Math.cos(tsec*0.6+f)*5+f); b.rotation.y=Math.atan2(Math.cos(tsec*0.9+f)*2.2,-Math.sin(tsec*0.6+f)*3); } }
-    else if(t==="aranha"){ const F=L.floresta; b.visible=w.hora>=6&&w.hora<=19; b.position.set(F.x+(Math.sin(tsec*0.3+f)*F.w*0.4), 0, F.z+Math.cos(tsec*0.23+f)*F.h*0.4); b.rotation.y=tsec*0.3+f+Math.PI/2; }
-    else if(t==="fantasma"){ const noite=w.hora>=21||w.hora<5; b.visible=noite; if(noite){ const C=L.capela; const r0=f; b.position.set(C.x+Math.sin(tsec*0.35+r0)*3.5, 0.3+Math.sin(tsec*1.4+r0)*0.4, C.z-C.h/2-2.5+Math.cos(tsec*0.28+r0)*2.5); b.rotation.y=tsec*0.35+r0; } }
+    if(t==="galinha"){ const C=L.campo; const dv=desvia(V,C.x+C.w/2+3.5+Math.sin(tsec*0.5+f)*2.2, C.z+Math.cos(tsec*0.37+f)*3); b.position.set(dv.x, 0, dv.z); b.rotation.y=tsec*0.5+f+Math.PI/2; b.position.y=Math.abs(Math.sin(tsec*6+f))*0.05; }
+    else if(t==="javali"){ const F=L.floresta; const dv=desvia(V,F.x+F.w/2+4+Math.sin(tsec*0.25+f)*4, F.z+Math.cos(tsec*0.2+f)*8); b.position.set(dv.x, 0, dv.z); b.rotation.y=Math.atan2(Math.cos(tsec*0.25+f)*0.25*4, -Math.sin(tsec*0.2+f)*0.2*8); }
+    else if(t==="goblin"){ const ativo=w.hora>=6 && w.hora<=23; b.visible=ativo; if(ativo){ const F=L.floresta; const k=Math.floor(f); const dv=desvia(V,F.x+F.w/2+3+k*2+Math.sin(tsec*0.9+f)*2.5, F.z-F.h/2-2+Math.cos(tsec*0.6+f)*5+f); b.position.set(dv.x, Math.abs(Math.sin(tsec*7+f))*0.08, dv.z); b.rotation.y=Math.atan2(Math.cos(tsec*0.9+f)*2.2,-Math.sin(tsec*0.6+f)*3); } }
+    else if(t==="aranha"){ const F=L.floresta; b.visible=w.hora>=6&&w.hora<=19; const dv=desvia(V,F.x+(Math.sin(tsec*0.3+f)*F.w*0.4), F.z+Math.cos(tsec*0.23+f)*F.h*0.4); b.position.set(dv.x, 0, dv.z); b.rotation.y=tsec*0.3+f+Math.PI/2; }
+    else if(t==="fantasma"){ const noite=w.hora>=21||w.hora<5; b.visible=noite; if(noite){ const C=L.capela; const r0=f; const dv=desvia(V,C.x+Math.sin(tsec*0.35+r0)*3.5, C.z-C.h/2-2.5+Math.cos(tsec*0.28+r0)*2.5); b.position.set(dv.x, 0.3+Math.sin(tsec*1.4+r0)*0.4, dv.z); b.rotation.y=tsec*0.35+r0; } }
     else if(t==="morcego"){ const noite=w.hora>=19||w.hora<6; b.visible=noite; if(noite){ b.position.set(V.cx+Math.cos(tsec*1.1+f)*7, 6+Math.sin(tsec*2+f)*1.5, V.cz+Math.sin(tsec*1.1+f)*7); b.rotation.y=-(tsec*1.1+f); b.userData.asas.forEach((a,i)=>{ a.rotation.z=(i?-1:1)*Math.sin(tsec*18+f)*0.7; }); } }
-    else if(t==="lobo"){ const noite=w.hora>=20||w.hora<5; b.visible=noite; if(noite){ const C=L.campo; b.position.set(C.x-C.w/2-3+Math.sin(tsec*0.4+f)*3, 0, C.z+Math.cos(tsec*0.3+f)*5); b.rotation.y=Math.atan2(Math.cos(tsec*0.4+f)*1.2, -Math.sin(tsec*0.3+f)*1.5); } } });
+    else if(t==="lobo"){ const noite=w.hora>=20||w.hora<5; b.visible=noite; if(noite){ const C=L.campo; const dv=desvia(V,C.x-C.w/2-3+Math.sin(tsec*0.4+f)*3, C.z+Math.cos(tsec*0.3+f)*5); b.position.set(dv.x, 0, dv.z); b.rotation.y=Math.atan2(Math.cos(tsec*0.4+f)*1.2, -Math.sin(tsec*0.3+f)*1.5); } } });
   // dragão: passa por cima das vilas a cada 10 minutos reais
   const ciclo=600, u=(Date.now()/1000)%ciclo; const voa=u<70&&!MODO_SEGREDO; DRAGAO.visible=voa; sombraDragao.visible=voa; if(voa){ const nv=nVilas(); const A=vila(Math.floor(Date.now()/1000/ciclo)%nv); const ang=(u/70)*Math.PI*2; const R=62; const x=A.cx+Math.cos(ang)*R, z=A.cz+Math.sin(ang)*R; DRAGAO.position.set(x,34+Math.sin(tsec*0.8)*2,z); DRAGAO.rotation.y=-ang+Math.PI/2; DRAGAO.userData.play("Dragon_Flying",1); sombraDragao.position.set(x,0.08,z); } }
 // ---------- batalha secreta (v14): o Dragão das Cinzas (modelo real) pousa na praça da Vila Aurora — só com ?segredo=1 ----------
@@ -929,10 +944,11 @@ function boneco(m){ const p=PROF[m.profissao]||PROF.bardo; const r=rnd("look:"+m
   function play(nome,escala){ let a=acoes[nome]||acoes.Idle; if(!a) return; if(a.timeScale!==(escala||1)) a.timeScale=escala||1; if(atual===a) return; if(atual){ atual.fadeOut(0.18); } a.reset().fadeIn(0.18).play(); atual=a; }
   // itens na mão (ferramenta ou arma pelo nível e pelo ferreiro) e escudo
   const eq=equipamentoDe(m); const slotD=corpo.getObjectByName("handslot.r"), slotE=corpo.getObjectByName("handslot.l");
-  const itemP=eq.principal?ITEM_ARMA[p.arma]:null; const itemChave=itemP&&(p.arma==="espada"&&x.nivel>=5?"it_sword2":p.arma==="cajado"&&x.nivel<3&&m.profissao!=="pastor"?"it_wand":itemP);
-  if(itemChave&&slotD){ slotD.add(itemNaMao(itemChave,eq.principal.rar)); }
-  if(eq.escudo&&slotE){ slotE.add(itemNaMao(ITEM_ESCUDO[eq.escudo.rar.k]||"it_shield_round",eq.escudo.rar)); }
-  if(eq.secundario&&!eq.escudo&&slotE&&m.profissao!=="mago"&&m.profissao!=="alquimista"){ const s=itemNaMao("it_dagger",eq.secundario.rar); s.scale.setScalar(0.8); slotE.add(s); }
+  // texto e visual vêm do MESMO gerador (equipamentoDe → espada/escudo/machado/picareta/alaúde...): a cor e a forma da ficha são as da mão
+  function naMao(item,slot,escala,rotZ){ if(!item||!slot) return; const g=item.g.clone(); g.scale.setScalar(escala||1.2); g.rotation.set(0,0,rotZ||0); g.traverse(o=>{ if(o.isMesh){ o.castShadow=true; o.userData.id=m.id; } }); slot.add(g); return g; }
+  naMao(eq.principal,slotD,1.25);
+  if(eq.escudo) naMao(eq.escudo,slotE,1.15);
+  else if(eq.secundario&&m.profissao!=="mago"&&m.profissao!=="alquimista") naMao(eq.secundario,slotE,1.0);
   if(eq.capa){ const c=box(0.7,1.0,0.06,mat(eq.capa.c),0,0.95,-0.3,g); c.castShadow=false; }
   // peças "fantasmas" que o laço antigo ainda mexe (pernas e braços): grupos vazios, sem efeito visual
   const pernaE=new THREE.Group(), pernaD=new THREE.Group(), bracoE=new THREE.Group(), bracoD=new THREE.Group(); g.add(pernaE,pernaD,bracoE,bracoD);
@@ -956,9 +972,9 @@ function reconstroiCasas(){ const lista=todos(); if(casasInst){ casasInst.forEac
   for(let v=0;v<nVilas();v++) construirVila(vila(v));
   const col=new THREE.Color(); const niveis=lista.map(m=>xpDe(m).nivel); casasNiveis=niveis.join(",")+"|"+lista.map((m,i)=>temCasa(casaDe(i).vila,casaDe(i).slot)?1:0).join("");
   const madeira=[], pedra=[], tendas=[], cercas=[];
-  lista.forEach((m,i)=>{ const c=casaDe(i); const h=(hash(m.nome)%360)/360; if((niveis[i]<2&&!m.fundador)||!temCasa(c.vila,c.slot)){ tendas.push({x:c.x,z:c.z+0.2,ry:0.5,s:4.2,c:col.setHSL(h,0.5,0.75).getHex()}); return; }
-    const tom=col.setHSL(h,0.35,0.86).lerp(new THREE.Color(0xffffff),0.4).getHex(); if(niveis[i]>=6) pedra.push({x:c.x,z:c.z,ry:CASA_RY,s:3.0,c:tom}); else madeira.push({x:c.x,z:c.z,ry:CASA_RY,s:3.2,c:tom}); });
-  casasInst.push(...instModelo("home_A",madeira), ...instModelo("home_B",pedra), ...instModelo("tent",tendas));
+  lista.forEach((m,i)=>{ const c=casaDe(i); const h=(hash(m.nome)%360)/360; if((niveis[i]<2&&!m.fundador)||!temCasa(c.vila,c.slot)){ tendas.push({x:c.x,z:c.z+0.2,ry:0.5,s:4.2,c:col.setHSL(h,0.5,0.75).getHex(),idx:i}); return; }
+    const tom=col.setHSL(h,0.35,0.86).lerp(new THREE.Color(0xffffff),0.4).getHex(); if(niveis[i]>=6) pedra.push({x:c.x,z:c.z,ry:CASA_RY,s:3.0,c:tom,idx:i}); else madeira.push({x:c.x,z:c.z,ry:CASA_RY,s:3.2,c:tom,idx:i}); });
+  [["home_A",madeira],["home_B",pedra],["tent",tendas]].forEach(([nome,lst])=>{ instModelo(nome,lst).forEach(im=>{ im.userData.moradores=lst.map(p=>lista[p.idx].id); casasInst.push(im); }); });
   cabRot.forEach(s=>scene.remove(s)); cabRot.clear(); }
 function rotuloCabana(m,i){ let s=cabRot.get(m.id); if(!s){ const c=casaDe(i); s=rotulo(m.nome,c.x,3.9,c.z,3.4); cabRot.set(m.id,s); } return s; }
 const marcador=cone(0.45,0.9,M.fogo2,0,0,0); marcador.rotation.x=Math.PI; marcador.visible=false; marcador.castShadow=false;
@@ -979,7 +995,29 @@ canvas.addEventListener("touchstart",e=>{ if(e.touches.length===2){ pinch=Math.h
 canvas.addEventListener("touchmove",e=>{ if(e.touches.length===2){ const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY); orb.r=Math.min(110,Math.max(10,orb.r*(pinch/d))); pinch=d; arrastando=false; } },{passive:true});
 const ray=new THREE.Raycaster(), ptr=new THREE.Vector2();
 function clique(e){ const r=canvas.getBoundingClientRect(); ptr.x=((e.clientX-r.left)/r.width)*2-1; ptr.y=-((e.clientY-r.top)/r.height)*2+1; ray.setFromCamera(ptr,camera);
-  const alvos=[]; bonecos.forEach(b=>{ if(b.visible) alvos.push(b); }); const hit=ray.intersectObjects(alvos,true)[0]; if(hit&&hit.object.userData.id){ selecionar(hit.object.userData.id,true); } }
+  const alvos=[]; bonecos.forEach(b=>{ if(b.visible) alvos.push(b); }); const hit=ray.intersectObjects(alvos,true)[0]; if(hit&&hit.object.userData.id){ selecionar(hit.object.userData.id,true); return; }
+  const h2=ray.intersectObjects(alvosEstruturas(),true)[0]; if(h2) cliqueEstrutura(h2); }
+// ---------- estruturas clicáveis: prédio, casa ou bicho mostra o card "Lugar" ----------
+const LUGAR_INFO={praca:["Praça da Fogueira","Coração da vila: café da manhã, conversa no fim da tarde e histórias na fogueira à noite."],taverna:["Taverna","Almoço de todos ao meio-dia, pão e ensopado; à noite, dados e caneca."],ferraria:["Ferraria","Forja armas, escudos e ferramentas; sem ferreiro a vila não tem armas."],capela:["Casa de Cura","Chá de cura, ervas e camas para quem se machuca."],mercado:["Mercado","Barracas, caixotes e a carroça: compra, venda e novidades de fora."],torre:["Torre do Mago","Grimórios, caldeirão e feitiços de luz."],campo:["Campo de trigo","Lavoura e pasto: alimenta a vila inteira."],muralha:["Posto de Guarda","Paliçada, torre de vigia e ronda noturna."],mina:["Mina do Morro","Ferro e pedra para a muralha e a ferraria."],castelo:["Castelo da Vila Aurora","Muralha de pedra, torres e o estandarte da vila central."],pilha:["Pilha de material","Madeira e pedra que a vila junta para a próxima obra."]};
+const _grupoLugar=new Map(); let realce=null, realceAte=0;
+function alvosEstruturas(){ const out=[]; for(let v=0;v<nVilas();v++){ const V=vila(v); if(!V.pred) continue; for(const k in V.pred){ if(k==="ruas"||!V.pred[k].visible) continue; _grupoLugar.set(V.pred[k],{V,k}); out.push(V.pred[k]); } } if(casasInst) casasInst.forEach(im=>out.push(im)); BICHOS.forEach(b=>{ if(b.visible) out.push(b); }); return out; }
+function donoDoHit(o){ while(o){ if(_grupoLugar.has(o)) return _grupoLugar.get(o); if(o.isInstancedMesh&&o.userData.moradores) return {casa:o}; if(o.userData&&o.userData.tipo&&BICHOS.includes(o)) return {bicho:o}; o=o.parent; } return null; }
+const BICHO_NOME={galinha:"Galinha",javali:"Javali",goblin:"Goblin da estrada",aranha:"Aranha da floresta",fantasma:"Fantasma do cemitério",morcego:"Morcego",lobo:"Lobo Cinzento",dragao:"Dragão das Cinzas"};
+const BICHO_DESC={galinha:"Cisca perto do campo o dia todo.",javali:"Fuça na beira da floresta; os caçadores vivem atrás dele.",goblin:"Ronda a estrada de dia; os soldados o enxotam.",aranha:"Sai de dia na Floresta Velha.",fantasma:"Aparece à noite perto da Casa de Cura. Não faz mal a ninguém.",morcego:"Voa em volta da praça depois do pôr do sol.",lobo:"Uiva perto do campo à noite; a fazendeira bate panela.",dragao:"Sobrevoa as vilas de tempos em tempos."};
+function cliqueEstrutura(hit){ const d=donoDoHit(hit.object); if(!d) return;
+  if(d.casa){ const id=d.casa.userData.moradores[hit.instanceId]; if(id){ selecionar(id,true); const m=todos().find(x=>x.id===id); if(m) mostraLugar(null,"casa",m); } return; }
+  if(d.bicho){ const b=d.bicho; const t=b.userData.tipo; $("lugarBox").hidden=false; $("lugarTitulo").textContent=BICHO_NOME[t]||t; $("lugarDesc").textContent=(b.userData.V&&b.userData.V.nome?"Bicho de "+b.userData.V.nome+". ":"")+(BICHO_DESC[t]||""); $("lugarAgora").innerHTML=""; $("lugarLista").innerHTML=""; $("lugarObra").textContent=""; realcaEm(b.position.x,b.position.z,1.2); return; }
+  mostraLugar(d.V,d.k); }
+function mostraLugar(V,k,m){ const box=$("lugarBox"); box.hidden=false; const w=mundo(); const lista=todos();
+  if(k==="casa"&&m){ const i=lista.findIndex(x=>x.id===m.id); const e=estado(m,i,w); const c=casaDe(i); const x=xpDe(m); $("lugarTitulo").textContent=(x.nivel>=6?"Casa de pedra de ":(x.nivel<2&&!m.fundador)?"Tenda de ":"Cabana de ")+m.nome; $("lugarDesc").textContent=c.vila.nome+" · "+(PROF[m.profissao]||PROF.bardo).nome+" nível "+x.nivel; $("lugarAgora").innerHTML="<b>Agora:</b> "+e.acao; const ul=$("lugarLista"); ul.innerHTML=""; ul.appendChild(botaoMorador(m)); $("lugarObra").textContent="Toque no nome para acompanhar."; realcaEm(c.x,c.z,2.2); return; }
+  const info=LUGAR_INFO[k]||[k,""]; const L=V.L[k]||V.L.praca; const eco=economiaDe(V); $("lugarTitulo").textContent=info[0]+" · "+V.nome; $("lugarDesc").textContent=info[1];
+  const aqui=[]; lista.forEach((mm,i)=>{ const e=estado(mm,i,w); const dentroAqui=!!(e.dentro&&e.dentro.tipo===k&&e.vila.i===V.i); const lugarAqui=!!(e.lugar&&V.L[k]&&e.lugar===V.L[k]); const trabAqui=k==="campo"&&LUGAR_DE[mm.profissao]==="campo"&&e.vila.i===V.i&&e.chave==="trab"; if(dentroAqui||lugarAqui||trabAqui) aqui.push({m:mm,e}); });
+  $("lugarAgora").innerHTML=aqui.length?"<b>Agora aqui:</b> "+aqui.length+(aqui.length>1?" moradores":" morador"):"<b>Agora:</b> ninguém por aqui neste momento.";
+  const ul=$("lugarLista"); ul.innerHTML=""; aqui.slice(0,12).forEach(({m:mm,e})=>{ const b=botaoMorador(mm); b.lastChild.textContent+=" · "+e.acao; ul.appendChild(b); });
+  $("lugarObra").textContent=(V.i===0?"Vila central: tudo construído.":(eco.construido(k)||k==="praca"||k==="pilha"?"Construído.":(eco.proxima&&eco.proxima[0]===k?"Em obra: "+Math.round(eco.progresso*100)+"% (madeira "+eco.madeira+").":"Ainda não construído.")))+(k==="campo"&&V.i>0?" Comida da vila: "+eco.comida+".":"");
+  realcaEm(L.x,L.z,Math.max(L.w,L.h)*0.75+1); }
+function realcaEm(x,z,r){ if(!realce){ realce=new THREE.Mesh(new THREE.RingGeometry(0.85,1,40),new THREE.MeshBasicMaterial({color:0xffd24a,transparent:true,opacity:0.85,depthTest:false})); realce.rotation.x=-Math.PI/2; realce.renderOrder=5; scene.add(realce); } realce.position.set(x,0.12,z); realce.scale.setScalar(r); realce.visible=true; realceAte=performance.now()+4000; }
+let _ultimoHover=0; canvas.addEventListener("pointermove",e=>{ if(arrastando||MOBILE) return; const now=performance.now(); if(now-_ultimoHover<160) return; _ultimoHover=now; const r=canvas.getBoundingClientRect(); ptr.x=((e.clientX-r.left)/r.width)*2-1; ptr.y=-((e.clientY-r.top)/r.height)*2+1; ray.setFromCamera(ptr,camera); const alvos=[]; bonecos.forEach(b=>{ if(b.visible) alvos.push(b); }); const hit=ray.intersectObjects(alvos.concat(alvosEstruturas()),true)[0]; canvas.style.cursor=hit?"pointer":"grab"; });
 function redimensiona(){ const w=mapBox.clientWidth, h=mapBox.clientHeight; if(!w||!h) return; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
 window.addEventListener("resize",redimensiona); redimensiona();
 
@@ -1046,9 +1084,9 @@ function anima(){
   if(selDentro){ marcador.visible=false; } else if(posSel){ marcador.visible=true; marcador.position.set(posSel.x,posSel.y+Math.sin(tsec*4)*0.15,posSel.z); marcador.rotation.y=tsec*2; if(seguindo){ orb.alvo.set(posSel.x,1,posSel.z); } }
   else if(!selDentro) marcador.visible=false;
   const vilaoAtivo = hash("vil"+Math.floor(w.t))%5===0 && w.hora>=6 && w.hora<=22; goblin.visible=vilaoAtivo;
-  if(vilaoAtivo){ const F=LUG.floresta; goblin.position.set(F.x+F.w/2+1.5+Math.sin(tsec*1.2)*1.5, 0, F.z+Math.cos(tsec*0.8)*2); goblin.rotation.y=tsec*0.8; }
+  if(vilaoAtivo){ const F=LUG.floresta; { const dv=desvia(vila(0),F.x+F.w/2+1.5+Math.sin(tsec*1.2)*1.5, F.z+Math.cos(tsec*0.8)*2); goblin.position.set(dv.x, 0, dv.z); } goblin.rotation.y=tsec*0.8; }
   if(document.body.classList.contains("cinema")&&!MODO_SEGREDO){ if(!arrastando&&!camFixa) orb.theta+=0.0015; if(!fixado&&now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); orb.r=16; } } }
-  if(ROTULOS) aplicaRotulos(); animaIntroCam(); atualizaMixers(now); posicionaCamera(); camera.updateMatrixWorld(); desempilhaRotulos(selecionado); renderer.render(scene,camera);
+  if(ROTULOS) aplicaRotulos(); animaIntroCam(); if(realce&&realce.visible){ realce.material.opacity=0.5+Math.sin(now/150)*0.35; if(now>realceAte) realce.visible=false; } atualizaMixers(now); posicionaCamera(); camera.updateMatrixWorld(); desempilhaRotulos(selecionado); renderer.render(scene,camera);
 }
 
 // ---------- retrato (câmera própria, só quando muda) ----------
@@ -1128,7 +1166,8 @@ function renderCronica(){
 const MODO_TESTE=/[?&]teste=1/.test(location.search); const MODO_LUZ=(function(){ const m=/[?&]luz=([0-9.]+)/.exec(location.search); return m?parseFloat(m[1]):null; })(); const MODO_CINEMA=/[?&]cinema=1/.test(location.search); const ROTULOS=(location.search.match(/[?&]rotulos=([^&]+)/)||[])[1]||""; const PARAM_CAM=(location.search.match(/[?&]cam=([^&]+)/)||[])[1]; let camFixa=false;
 // câmera por URL/script (gravação de vídeo): ?cam=20,0.85,1.2 → r, phi, theta; window.vilaCam.set(r,phi,theta) / .seguir("@nome"|id) / .solta()
 function aplicaCam(r,phi,theta){ if(isFinite(r)) orb.r=Math.min(110,Math.max(4,r)); if(isFinite(phi)) orb.phi=Math.min(1.5,Math.max(0.2,phi)); if(isFinite(theta)) orb.theta=theta; camFixa=true; }
-window.vilaCam={ set:aplicaCam, seguir(id){ const k=String(id).replace(/^@/,"").replace(/^ig-/,"").toLowerCase(); const m=todos().find(x=>String(x.id).replace(/^ig-/,"").toLowerCase()===k||String(x.nome||"").replace(/^@/,"").toLowerCase()===k); if(m) selecionar(m.id,true); return !!m; }, lista(){ return todos().map(x=>({id:x.id,nome:x.nome,npc:!!x.npc})); }, solta(){ camFixa=false; }, get orb(){ return orb; } };
+window.vilaCam={ testeItens(n){ const l=todos().filter(m=>!m.npc).slice(-(n||30)); return l.map(m=>{ const eq=equipamentoDe(m); const cores=it=>{ if(!it) return null; const cs=new Set(); it.g.traverse(o=>{ if(o.isMesh&&o.material&&o.material.color) cs.add('#'+o.material.color.getHexString()); }); return [...cs].slice(0,6); }; return {nome:m.nome,prof:m.profissao,nivel:xpDe(m).nivel,principal:eq.principal&&eq.principal.nome,coresPrincipal:cores(eq.principal),escudo:eq.escudo&&eq.escudo.nome,coresEscudo:cores(eq.escudo),capa:eq.capa&&eq.capa.n}; }); }, testeColisoes(){ const det={}; const l=todos(); let pessoas=0, amostras=0; const w0=mundo(); for(let h=0;h<24;h++){ for(let q=0;q<4;q++){ const w={t:w0.t,hora:h,dia:w0.dia,frac:q/4}; l.forEach((m,i)=>{ const e=estado(m,i,w); if(e.dentro||e.x==null||(e.y||0)>0.5) return; amostras++; const oc=ocupado(e.vila,e.x,e.z); if(oc){ pessoas++; const k=m.profissao+'/'+e.chave+'/'+e.modo+'/'+(oc.w<2?'cabana':'predio'); det[k]=(det[k]||0)+1; } }); } }
+    let bichos=0, amostrasB=0; const w1=mundo(); for(let k=0;k<12;k++){ animaBichos(k*37.3,w1); BICHOS.forEach(b=>{ if(!b.visible||b.userData.tipo==='morcego'||b.userData.tipo==='dragao') return; amostrasB++; const oc=ocupado(b.userData.V,b.position.x,b.position.z); if(oc){ bichos++; const k='bicho:'+b.userData.tipo+'/'+(oc.w<2?'cabana':'predio'); det[k]=(det[k]||0)+1; } }); } return {pessoasEmCima:pessoas,amostrasPessoas:amostras,bichosEmCima:bichos,amostrasBichos:amostrasB,detalhe:det}; }, set:aplicaCam, seguir(id){ const k=String(id).replace(/^@/,"").replace(/^ig-/,"").toLowerCase(); const m=todos().find(x=>String(x.id).replace(/^ig-/,"").toLowerCase()===k||String(x.nome||"").replace(/^@/,"").toLowerCase()===k); if(m) selecionar(m.id,true); return !!m; }, lista(){ return todos().map(x=>({id:x.id,nome:x.nome,npc:!!x.npc})); }, solta(){ camFixa=false; }, get orb(){ return orb; } };
 // abertura da câmera (Reforma A, etapa 1): mostra a Vila Aurora central (castelo) e desce até a vila do morador mais novo
 let INTRO=null; function iniciaIntroCam(V){ if(location.hash||PARAM_CAM||MODO_ABERTURA||MODO_SEGREDO||MODO_CINEMA||V.i===0){ orb.alvo.set(V.cx,0,V.cz+2); orb.target.copy(orb.alvo); return; } orb.alvo.set(14,0,4); orb.target.copy(orb.alvo); orb.r=96; orb.phi=0.9; orb.theta=0.75; INTRO={t0:performance.now(),V}; }
 function animaIntroCam(){ if(!INTRO) return; const t=(performance.now()-INTRO.t0)/1000; if(arrastando||camFixa||seguindo||t>11){ INTRO=null; return; } orb.theta=0.75+t*0.04; if(t<4){ orb.r=96-t*4; } else { const k=Math.min(1,(t-4)/5.5); const e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2; orb.alvo.set(14+(INTRO.V.cx-14)*e,0,4+(INTRO.V.cz+2-4)*e); orb.r=80-(80-44)*e; orb.phi=0.9+0.12*e; } }
