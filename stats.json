@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-03T16:43",
+ "geradoEm": "2026-11-03T16:59",
  "relogioVila": {
   "dia": 15,
-  "hora": 6
+  "hora": 22
  },
  "moradores": 6,
  "novosDoDia": [
@@ -18,31 +18,31 @@
   {
    "nome": "@laryssapsouza",
    "nivel": 4,
-   "xp": 649,
+   "xp": 779,
    "titulo": "Oficial"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 4,
-   "xp": 510,
+   "xp": 639,
    "titulo": "Oficial"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 4,
-   "xp": 489,
+   "xp": 559,
    "titulo": "Oficial"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 4,
-   "xp": 450,
+   "xp": 519,
    "titulo": "Oficial"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 4,
-   "xp": 450,
+   "xp": 519,
    "titulo": "Oficial"
   }
  ],
@@ -112,6 +112,18 @@
  },
  "vilas": 2,
  "eventosUltimas24h": [
+  {
+   "quando": 1793735356112,
+   "quem": "@laryssapsouza",
+   "tipo": "vitoria",
+   "texto": "@laryssapsouza e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793735352112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "vitoria",
+   "texto": "@dudabrisolaa_ e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
   {
    "quando": 1793733916112,
    "quem": "@laryssapsouza",
