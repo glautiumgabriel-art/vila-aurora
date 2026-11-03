@@ -1,0 +1,158 @@
+{
+ "geradoEm": "2026-11-03T16:43",
+ "relogioVila": {
+  "dia": 15,
+  "hora": 6
+ },
+ "moradores": 6,
+ "novosDoDia": [
+  "@adriana.g.santana",
+  "@dudabrisolaa_",
+  "@dudabsl_",
+  "@glautiumgabriel",
+  "@iamvictoriamenezes",
+  "@laryssapsouza"
+ ],
+ "nivelMaisAlto": 4,
+ "maisAltos": [
+  {
+   "nome": "@laryssapsouza",
+   "nivel": 4,
+   "xp": 649,
+   "titulo": "Oficial"
+  },
+  {
+   "nome": "@dudabrisolaa_",
+   "nivel": 4,
+   "xp": 510,
+   "titulo": "Oficial"
+  },
+  {
+   "nome": "@iamvictoriamenezes",
+   "nivel": 4,
+   "xp": 489,
+   "titulo": "Oficial"
+  },
+  {
+   "nome": "@adriana.g.santana",
+   "nivel": 4,
+   "xp": 450,
+   "titulo": "Oficial"
+  },
+  {
+   "nome": "@dudabsl_",
+   "nivel": 4,
+   "xp": 450,
+   "titulo": "Oficial"
+  }
+ ],
+ "maioresAfinidades": [
+  {
+   "entre": [
+    "@adriana.g.santana",
+    "@dudabrisolaa_"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@adriana.g.santana",
+    "@glautiumgabriel"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@adriana.g.santana",
+    "@iamvictoriamenezes"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@dudabrisolaa_",
+    "@iamvictoriamenezes"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@dudabsl_",
+    "@glautiumgabriel"
+   ],
+   "forca": 2
+  }
+ ],
+ "maioresDesafetos": [
+  {
+   "entre": [
+    "@glautiumgabriel",
+    "Seu Abel"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
+    "@iamvictoriamenezes",
+    "Tião"
+   ],
+   "forca": 1
+  }
+ ],
+ "montados": [
+  "@laryssapsouza"
+ ],
+ "porProfissao": {
+  "bardo": 1,
+  "cavaleiro": 1,
+  "curandeiro": 1,
+  "mineiro": 1,
+  "explorador": 1,
+  "ferreiro": 1
+ },
+ "vilas": 2,
+ "eventosUltimas24h": [
+  {
+   "quando": 1793733916112,
+   "quem": "@laryssapsouza",
+   "tipo": "vitoria",
+   "texto": "@laryssapsouza e os amigos venceram um cavalo selvagem."
+  },
+  {
+   "quando": 1793733915112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "derrota",
+   "texto": "@iamvictoriamenezes encostou sozinho em um urso da floresta e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793732475112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "briga_vitoria",
+   "texto": "@iamvictoriamenezes encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793732474112,
+   "quem": "@glautiumgabriel",
+   "tipo": "briga_derrota",
+   "texto": "@glautiumgabriel foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793731036112,
+   "quem": "@laryssapsouza",
+   "tipo": "doma",
+   "texto": "@laryssapsouza e os amigos cercaram um cavalo selvagem e domaram! Agora @laryssapsouza anda montado."
+  },
+  {
+   "quando": 1793729595112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "vitoria",
+   "texto": "@iamvictoriamenezes e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793729592112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "vitoria",
+   "texto": "@dudabrisolaa_ venceram um javali teimoso e ganharam uma presa de javali."
+  }
+ ]
+}
