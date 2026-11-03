@@ -339,7 +339,9 @@ function cronica(w){
     else { const m=pick(r,lista); const p=PROF[m.profissao]||PROF.bardo; const eq=equipamentoDe(m); texto=m.nome+" "+pick(r,p.feitos)+(r()<.3&&eq.principal?" empunhando "+eq.principal.nome.toLowerCase()+".":"."); }
     out.push({d,h,texto,vil});
   }
-  const chegadas=lista.map((m,i)=>({m,i})).filter(o=>!o.m.fundador).map(o=>({ts:o.m.joinedAt,texto:o.m.nome+" chegou a "+vilaDe(o.i).nome+" e ganhou uma cabana. Profissão: "+(PROF[o.m.profissao]||PROF.bardo).nome+"."}));
+  const chegadas=lista.map((m,i)=>({m,i})).filter(o=>!o.m.fundador).map(o=>({ts:o.m.joinedAt,texto:o.m.nome+" chegou a "+vilaDe(o.i).nome+" e armou uma tenda. Profissão: "+(PROF[o.m.profissao]||PROF.bardo).nome+". Ainda sem equipamento."}));
+  const DROPS=["expulsou um goblin da estrada","acertou o Lobo Cinzento com uma pedra","encontrou um baú na Floresta Velha","venceu um javali teimoso","ajudou a Bruxa do Pântano a achar o gato dela"];
+  const agora=Date.now(); lista.forEach((m,i)=>{ const eq=equipamentoDe(m); const p=PROF[m.profissao]||PROF.bardo; [[2,"ganhou "+(eq.futuro.principal?eq.futuro.principal.nome.toLowerCase():"a primeira ferramenta")+" e trocou a tenda por uma cabana"],[3,(p.escudo?"":"ganhou "+eq.futuro.secundario.nome.toLowerCase())],[4,(eq.escudo||p.escudo?"ganhou "+eq.futuro.escudo.nome.toLowerCase():"")],[6,"recebeu a capa e o título de Mestre"]].forEach(([n,t])=>{ if(!t) return; const ts=m.joinedAt+12*(n-1)*(n-1)*HORA_MS; if(ts<=agora&&agora-ts<30*24*HORA_MS) chegadas.push({ts,texto:m.nome+" "+pick(rnd(m.id+"drop"+n),DROPS)+" e "+t+"."}); }); });
   return {horas:out, chegadas};
 }
 
@@ -616,11 +618,9 @@ function arco(r,nivel){ const rar=raridade(r,nivel); const cabo=pick(r,MADEIRAS)
 function arma(tipo,r,nivel){ switch(tipo){ case "arco": return arco(r,nivel); case "espada": return espada(r,nivel); case "adaga": return espada(r,nivel,true); case "machado": return machado(r,nivel); case "martelo": return martelo(r,nivel); case "cajado": return cajado(r,nivel); case "picareta": return picareta(r,nivel); case "vara": return vara(r,nivel); case "enxada": return enxada(r,nivel); case "rolo": return rolo(r,nivel); case "alaude": return alaude(r,nivel); case "saco": return saco(r,nivel); } return espada(r,nivel); }
 const equipCache=new Map();
 function equipamentoDe(m){ const x=xpDe(m); const k=m.id+":"+x.nivel; let e=equipCache.get(k); if(e) return e;
-  const p=PROF[m.profissao]||PROF.bardo; const r=rnd("eq:"+m.id); const principal=arma(p.arma,r,x.nivel); let esc=null, secund=null, capa=null;
-  if(p.escudo||(x.nivel>=4&&r()<0.5)) esc=escudo(r,x.nivel);
-  if(!p.escudo&&x.nivel>=3&&r()<0.6) secund=espada(r,x.nivel,r()<0.5);
-  if(x.nivel>=6) capa=nomeCor(r);
-  e={principal,escudo:esc,secundario:secund,capa}; equipCache.set(k,e); return e; }
+  const p=PROF[m.profissao]||PROF.bardo; const r=rnd("eq:"+m.id); const principalTodo=arma(p.arma,r,x.nivel); const escTodo=escudo(r,x.nivel); const secTodo=espada(r,x.nivel,r()<0.5); const capaTodo=nomeCor(r);
+  const principal=x.nivel>=2?principalTodo:null; const esc=(p.escudo&&x.nivel>=2)||(x.nivel>=4&&hash(m.id+"esc")%2===0)?escTodo:null; const secund=(!p.escudo&&x.nivel>=3&&hash(m.id+"sec")%5<3)?secTodo:null; const capa=x.nivel>=6?capaTodo:null;
+  e={principal,escudo:esc,secundario:secund,capa,futuro:{principal:principalTodo,escudo:escTodo,secundario:secTodo}}; equipCache.set(k,e); return e; }
 
 // ---------- bonequinhos ----------
 const PELES=[0xf1c9a0,0xe0ac7e,0xc68642,0x8d5524,0x5c3a1e,0xffdbc4]; const CABELOS=[0x2b1b0e,0x5a3a1a,0xd9a441,0xb0b0b0,0xe3542b,0x111111,0xf5e6c8];
@@ -639,9 +639,9 @@ function boneco(m){ const p=PROF[m.profissao]||PROF.bardo; const r=rnd("look:"+m
   else if(p.hatTipo==="elmo"){ const e=new THREE.Mesh(new THREE.SphereGeometry(0.37,10,6,0,Math.PI*2,0,Math.PI/2),hm); e.position.y=1.52; add(e,g); if(v===1) box(0.08,0.3,0.4,mat(0xd94040),0,1.95,-0.05,g); if(v===2){ const c=cone(0.06,0.3,hm,-0.25,1.9,0,g,4); c.rotation.z=0.6; const d=cone(0.06,0.3,hm,0.25,1.9,0,g,4); d.rotation.z=-0.6; } }
   else if(p.hatTipo==="toque"){ cyl(0.36,0.3,0.45+v*0.1,hm,0,1.95,0,g,10); } else { cyl(0.38,0.3,0.14,hm,0,1.8,0,g,10); if(v) box(0.06,0.3,0.06,mat(0xd94040),0.25,1.95,0,g); }
   const eq=equipamentoDe(m);
-  const ga=eq.principal.g.clone(); ga.position.set(0,-0.55,0.05); ga.rotation.x=-0.2; bracoD.add(ga);
-  if(eq.escudo){ const ge=eq.escudo.g.clone(); ge.position.set(-0.1,-0.4,0.15); ge.rotation.y=-0.3; bracoE.add(ge); }
-  if(eq.secundario){ const gs=eq.secundario.g.clone(); gs.position.set(0.2,0.55,-0.25); gs.rotation.z=Math.PI*0.9; g.add(gs); }
+  if(eq.principal){ const ga=eq.principal.g.clone(); ga.position.set(0,-0.55,0.05); ga.rotation.x=-0.2; ga.scale.setScalar(1.25); bracoD.add(ga); }
+  if(eq.escudo){ const ge=eq.escudo.g.clone(); ge.position.set(-0.12,-0.4,0.18); ge.rotation.y=-0.3; ge.scale.setScalar(1.2); bracoE.add(ge); }
+  if(eq.secundario){ const gs=eq.secundario.g.clone(); gs.position.set(0.22,0.5,-0.28); gs.rotation.z=Math.PI*0.9; gs.rotation.x=0.15; gs.scale.setScalar(1.2); g.add(gs); }
   if(eq.capa){ const c=box(0.68,0.95,0.06,mat(eq.capa.c),0,0.85,-0.25,g); c.castShadow=false; }
   const nome=rotulo(m.nome,0,2.75,0,4.4); scene.remove(nome); g.add(nome);
   g.traverse(o=>{ if(o.isMesh){ o.userData.id=m.id; } });
@@ -679,7 +679,7 @@ const goblin=(function(){ const g=new THREE.Group(); const verde=mat(0x6fa34a); 
 // ---------- câmera ----------
 let arrastando=false, lx=0, ly=0, moveu=0, pinch=0;
 canvas.addEventListener("pointerdown",e=>{ arrastando=true; moveu=0; lx=e.clientX; ly=e.clientY; canvas.setPointerCapture(e.pointerId); });
-canvas.addEventListener("pointermove",e=>{ if(!arrastando) return; const dx=e.clientX-lx, dy=e.clientY-ly; moveu+=Math.abs(dx)+Math.abs(dy); lx=e.clientX; ly=e.clientY; orb.theta-=dx*0.006; orb.phi=Math.min(1.35,Math.max(0.35,orb.phi-dy*0.005)); if(moveu>30) seguindo=false; });
+canvas.addEventListener("pointermove",e=>{ if(!arrastando) return; const dx=e.clientX-lx, dy=e.clientY-ly; moveu+=Math.abs(dx)+Math.abs(dy); lx=e.clientX; ly=e.clientY; orb.theta-=dx*0.006; orb.phi=Math.min(1.35,Math.max(0.35,orb.phi-dy*0.005)); if(moveu>30&&!dentroAtual) seguindo=false; });
 canvas.addEventListener("pointerup",e=>{ arrastando=false; if(moveu<6) clique(e); });
 canvas.addEventListener("wheel",e=>{ e.preventDefault(); orb.r=Math.min(110,Math.max(10,orb.r*(1+Math.sign(e.deltaY)*0.08))); },{passive:false});
 canvas.addEventListener("touchstart",e=>{ if(e.touches.length===2){ pinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY); } },{passive:true});
@@ -735,8 +735,8 @@ function anima(){
   });
   if(arvoreBalancaAnt&&arvoreBalancaAnt!==arvoreBalanca) arvoreBalancaAnt.rotation.z=0; if(arvoreBalanca) arvoreBalanca.rotation.z=Math.sin(tsec*6)*0.04; arvoreBalancaAnt=arvoreBalanca;
   ovelhas.forEach(o=>{ const L=o.userData.V.L.campo; const f=o.userData.fase; o.position.set(L.x+Math.cos(tsec*0.12+f)*L.w*0.38, 0, L.z+Math.sin(tsec*0.19+f)*L.h*0.38); o.rotation.y=Math.atan2(-Math.sin(tsec*0.12+f)*0.12*L.w, Math.cos(tsec*0.19+f)*0.19*L.h); });
-  if(selDentro&&seguindo){ const I=selDentro.I; if(dentroAtual!==I){ if(!dentroAtual) rAntes=orb.r; dentroAtual=I; orb.r=6.5; orb.phi=1.2; orb.theta=0.5; orb.alvo.set(I.cx,0.9,I.cz-1); orb.target.copy(orb.alvo); } else { orb.alvo.set(I.cx,0.9,I.cz-1); } orb.r=Math.min(Math.max(orb.r,4),9); orb.phi=Math.min(orb.phi,1.3); }
-  else if(dentroAtual){ dentroAtual=null; orb.r=Math.max(rAntes||18,16); }
+  if(selDentro&&seguindo){ const I=selDentro.I; if(dentroAtual!==I){ if(!dentroAtual) rAntes=orb.r; dentroAtual=I; orb.r=6.5; orb.phi=1.15; orb.theta=0.5; orb.alvo.set(I.cx,0.9,I.cz-1); orb.target.copy(orb.alvo); } else { orb.alvo.set(I.cx,0.9,I.cz-1); orb.target.copy(orb.alvo); } orb.r=Math.min(Math.max(orb.r,4.5),8.5); orb.phi=Math.min(Math.max(orb.phi,0.95),1.3); }
+  else if(dentroAtual){ dentroAtual=null; orb.r=Math.max(rAntes||18,16); if(posSel){ orb.alvo.set(posSel.x,1,posSel.z); orb.target.copy(orb.alvo); } }
   // coraçõezinhos: quem está junto na praça, taverna ou visita
   let nc=0; for(let a=0;a<acordados.length&&nc<CORACOES.length;a++) for(let b2=a+1;b2<acordados.length&&nc<CORACOES.length;b2++){ const dx=acordados[a].x-acordados[b2].x, dz=acordados[a].z-acordados[b2].z; if(dx*dx+dz*dz<2.2){ const h=CORACOES[nc++]; h.visible=true; h.position.set((acordados[a].x+acordados[b2].x)/2, 2.9+Math.sin(tsec*3+a)*0.15, (acordados[a].z+acordados[b2].z)/2); } }
   for(let k=nc;k<CORACOES.length;k++) CORACOES[k].visible=false;
@@ -755,7 +755,7 @@ let retratoBoneco=null; function desenhaRetrato(m){ if(retratoBoneco) retratoS.r
 
 // ---------- UI ----------
 const $=id=>document.getElementById(id);
-function selecionar(id){ selecionado=id; seguindo=true; orb.r=Math.min(orb.r,26); visiveis.add(id); atualizaCard(true); }
+function selecionar(id){ selecionado=id; seguindo=true; orb.r=Math.min(orb.r,26); visiveis.add(id); const li=todos(); const ii=li.findIndex(m=>m.id===id); if(ii>=0){ const e=estado(li[ii],ii,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.target.copy(orb.alvo); } } atualizaCard(true); }
 let cardId=null;
 function atualizaCard(forca){
   const lista=todos(); const i=lista.findIndex(m=>m.id===selecionado); const box=$("meuBox");
@@ -763,13 +763,13 @@ function atualizaCard(forca){
   const m=lista[i], w=mundo(), e=estado(m,i,w), p=PROF[m.profissao]||PROF.bardo, x=xpDe(m), eq=equipamentoDe(m);
   $("selNome").textContent=m.nome; $("selProf").textContent=x.titulo+" "+p.nome+(m.fundador?" · fundador":"")+(m.exemplo?" · exemplo":"");
   $("selAgora").innerHTML="<b>Agora:</b> "+e.acao+(e.visita?"":" · "+(e.dentro?"dentro de: "+({casa:"sua cabana",mina:"Mina do Morro",taverna:"Taverna",torre:"Torre do Mago",capela:"Casa de Cura"}[e.dentro.tipo]||e.dentro.tipo):(e.lugar.nome||"cabana")));
-  const eqEl=$("selEquip"); eqEl.innerHTML=""; [eq.principal,eq.escudo,eq.secundario].filter(Boolean).forEach(it=>{ const s=document.createElement("span"); s.innerHTML='<i class="r-'+it.rar.k+'">'+it.rar.n+'</i><span></span>'; s.lastChild.textContent=it.nome; eqEl.appendChild(s); });
+  const eqEl=$("selEquip"); eqEl.innerHTML=""; if(!eq.principal&&!eq.escudo){ const s0=document.createElement("span"); s0.innerHTML='<i class="r-comum">Nível 1</i><span></span>'; s0.lastChild.textContent="Roupa básica, sem equipamento. A primeira ferramenta vem no nível 2 (um dia na vila)."; eqEl.appendChild(s0); } [eq.principal,eq.escudo,eq.secundario].filter(Boolean).forEach(it=>{ const s=document.createElement("span"); s.innerHTML='<i class="r-'+it.rar.k+'">'+it.rar.n+'</i><span></span>'; s.lastChild.textContent=it.nome; eqEl.appendChild(s); });
   if(eq.capa){ const s=document.createElement("span"); s.innerHTML='<i class="r-raro">Capa</i><span></span>'; s.lastChild.textContent="Capa "+eq.capa.n+" (nível 6+)"; eqEl.appendChild(s); }
   $("selNivel").textContent="Nível "+x.nivel; $("selXp").textContent=x.xp+" / "+x.prox+" XP"; $("selMeter").style.width=Math.round(x.pct*100)+"%";
   $("selCasa").textContent=vilaDe(i).nome+" · "+(x.nivel<2&&!m.fundador?"tenda (vira cabana no nível 2)":x.nivel>=6?"casa de pedra":"cabana")+" "+((i%VILA_CAP)+1)+" de "+VILA_CAP+" · "+p.desc;
   $("selDesde").textContent="Na vila desde o dia "+(Math.floor((m.joinedAt-EPOCH)/HORA_MS/24)+1);
   if(forca||cardId!==m.id+":"+x.nivel){ cardId=m.id+":"+x.nivel; desenhaRetrato(m); }
-  if(document.body.classList.contains("cinema")){ $("narr").innerHTML="<span></span><small></small>"; $("narr").firstChild.textContent=m.nome+" está "+e.acao; $("narr").lastChild.textContent=x.titulo+" "+p.nome+" · "+eq.principal.nome+(eq.escudo?" · "+eq.escudo.nome:""); }
+  if(document.body.classList.contains("cinema")){ $("narr").innerHTML="<span></span><small></small>"; $("narr").firstChild.textContent=m.nome+" está "+e.acao; $("narr").lastChild.textContent=x.titulo+" "+p.nome+(eq.principal?" · "+eq.principal.nome:" · ainda sem equipamento")+(eq.escudo?" · "+eq.escudo.nome:""); }
 }
 $("btnSeguir").addEventListener("click",()=>{ seguindo=true; orb.r=Math.min(orb.r,22); });
 function botaoMorador(m){ const b=document.createElement("button"); b.type="button"; const p=PROF[m.profissao]||PROF.bardo; const x=xpDe(m); b.innerHTML="<span></span> <span>· "+p.nome+" · nv "+x.nivel+(m.fundador?" · fundador":"")+"</span>"; b.firstChild.textContent=m.nome; b.firstChild.style.color="inherit"; b.addEventListener("click",()=>selecionar(m.id)); return b; }
