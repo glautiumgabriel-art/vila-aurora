@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-03T23:00",
+ "geradoEm": "2026-11-03T23:02",
  "relogioVila": {
-  "dia": 30,
-  "hora": 22
+  "dia": 31,
+  "hora": 1
  },
  "moradores": 8,
  "novosDoDia": [
@@ -12,39 +12,38 @@
   "@glautiumgabriel",
   "@iamvictoriamenezes",
   "@laryssapsouza",
-  "@_williamg10",
-  "@dr.glautiumgabriel"
+  "@_williamg10"
  ],
- "nivelMaisAlto": 7,
+ "nivelMaisAlto": 8,
  "maisAltos": [
   {
    "nome": "@laryssapsouza",
-   "nivel": 7,
-   "xp": 2439,
+   "nivel": 8,
+   "xp": 2450,
    "titulo": "Mestre"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 7,
-   "xp": 2379,
+   "xp": 2390,
    "titulo": "Mestre"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 7,
-   "xp": 2104,
+   "xp": 2115,
    "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 7,
-   "xp": 2069,
+   "xp": 2080,
    "titulo": "Mestre"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 7,
-   "xp": 1939,
+   "xp": 1950,
    "titulo": "Mestre"
   }
  ],
@@ -137,12 +136,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@dr.glautiumgabriel",
-  "nomeCompleto": "Dr Glautium Gabriel",
-  "profissao": "cozinheiro",
+  "nome": "@_williamg10",
+  "nomeCompleto": "William Gomes",
+  "profissao": "bardo",
   "sexo": "m",
-  "chegouEm": "2026-11-03T22:25",
-  "chegouEmMs": 1793755542967
+  "chegouEm": "2026-11-03T18:00",
+  "chegouEmMs": 1793739616642
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -152,136 +151,7 @@
    "vila": "Pinheiral"
   }
  ],
- "combate": {
-  "@adriana.g.santana": {
-   "nome": "@adriana.g.santana",
-   "profissao": "bardo",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 23,
-   "def": 11,
-   "bArma": 2,
-   "bSec": 1,
-   "bEsc": 2,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@dudabrisolaa_": {
-   "nome": "@dudabrisolaa_",
-   "profissao": "cavaleiro",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 22,
-   "def": 12,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 2,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": true,
-   "mana": null
-  },
-  "@dudabsl_": {
-   "nome": "@dudabsl_",
-   "profissao": "curandeiro",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 20,
-   "def": 8,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@glautiumgabriel": {
-   "nome": "@glautiumgabriel",
-   "profissao": "mineiro",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 25,
-   "def": 9,
-   "bArma": 2,
-   "bSec": 3,
-   "bEsc": 0,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@iamvictoriamenezes": {
-   "nome": "@iamvictoriamenezes",
-   "profissao": "explorador",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 22,
-   "def": 11,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 2,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@laryssapsouza": {
-   "nome": "@laryssapsouza",
-   "profissao": "ferreiro",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 22,
-   "def": 11,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 2,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@_williamg10": {
-   "nome": "@_williamg10",
-   "profissao": "bardo",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 20,
-   "def": 8,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@dr.glautiumgabriel": {
-   "nome": "@dr.glautiumgabriel",
-   "profissao": "cozinheiro",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 12,
-   "def": 2,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 0,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  }
- },
+ "combate": {},
  "eventosUltimas24h": [
   {
    "quando": 1793756954112,

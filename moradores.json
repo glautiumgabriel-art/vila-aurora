@@ -85,7 +85,8 @@
    "profissao": "cozinheiro",
    "joinedAt": 1793755542967,
    "faltas": 0,
-   "motivoProfissao": "vila sem produtor de comida"
+   "motivoProfissao": "vila sem produtor de comida",
+   "discreto": true
   }
  ]
 }
