@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-04T04:59",
+ "geradoEm": "2026-11-04T05:08",
  "relogioVila": {
   "dia": 2,
-  "hora": 4
+  "hora": 5
  },
- "moradores": 9,
+ "moradores": 10,
  "novosDoDia": [
   "@adriana.g.santana",
   "@dudabrisolaa_",
@@ -13,38 +13,39 @@
   "@iamvictoriamenezes",
   "@laryssapsouza",
   "@_williamg10",
-  "@tataicintra"
+  "@tataicintra",
+  "@menor.k01_de_itz"
  ],
  "nivelMaisAlto": 9,
  "maisAltos": [
   {
    "nome": "@laryssapsouza",
    "nivel": 9,
-   "xp": 3652,
+   "xp": 3688,
    "titulo": "Mestre"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 9,
-   "xp": 3642,
+   "xp": 3678,
    "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 9,
-   "xp": 3627,
+   "xp": 3663,
    "titulo": "Mestre"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 9,
-   "xp": 3087,
+   "xp": 3123,
    "titulo": "Mestre"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 8,
-   "xp": 3557,
+   "xp": 3593,
    "titulo": "Mestre"
   }
  ],
@@ -130,22 +131,22 @@
  ],
  "porProfissao": {
   "bardo": 2,
+  "explorador": 2,
   "cavaleiro": 1,
   "curandeiro": 1,
   "mineiro": 1,
-  "explorador": 1,
   "ferreiro": 1,
   "cozinheiro": 1,
   "comerciante": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@tataicintra",
-  "nomeCompleto": "Thais Cintra",
-  "profissao": "comerciante",
-  "sexo": "f",
-  "chegouEm": "2026-11-04T03:52",
-  "chegouEmMs": 1793775136034
+  "nome": "@menor.k01_de_itz",
+  "nomeCompleto": "",
+  "profissao": "explorador",
+  "sexo": "?",
+  "chegouEm": "2026-11-04T05:08",
+  "chegouEmMs": 1793779692956
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -299,7 +300,8 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
-  }
+  },
+  "@menor.k01_de_itz": null
  },
  "eventosUltimas24h": [
   {

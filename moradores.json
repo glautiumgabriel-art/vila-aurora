@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T04:59",
+ "atualizadoEm": "2026-11-04T05:08",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -95,6 +95,15 @@
    "sexo": "f",
    "profissao": "comerciante",
    "joinedAt": 1793775136034,
+   "faltas": 0
+  },
+  {
+   "id": "ig-menor.k01_de_itz",
+   "nome": "@menor.k01_de_itz",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "explorador",
+   "joinedAt": 1793779692956,
    "faltas": 0
   }
  ]
