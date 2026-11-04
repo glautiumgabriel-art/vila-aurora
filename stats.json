@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-04T06:53",
+ "geradoEm": "2026-11-04T06:59",
  "relogioVila": {
   "dia": 2,
   "hora": 6
@@ -23,31 +23,31 @@
   {
    "nome": "@dudabsl_",
    "nivel": 9,
-   "xp": 4231,
+   "xp": 4257,
    "titulo": "Lenda"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 9,
-   "xp": 4136,
+   "xp": 4162,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 9,
-   "xp": 4126,
+   "xp": 4152,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 9,
-   "xp": 3876,
+   "xp": 3902,
    "titulo": "Mestre"
   },
   {
-   "nome": "@adriana.g.santana",
+   "nome": "@dudabrisolaa_",
    "nivel": 9,
-   "xp": 3522,
+   "xp": 3562,
    "titulo": "Mestre"
   }
  ],
@@ -61,20 +61,6 @@
   },
   {
    "entre": [
-    "@_williamg10",
-    "@iamvictoriamenezes"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@_williamg10",
-    "@isaac.jmy"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
     "@adriana.g.santana",
     "@tataicintra"
    ],
@@ -82,8 +68,22 @@
   },
   {
    "entre": [
-    "@dr.glautiumgabriel",
-    "@isaac.jmy"
+    "@dudabrisolaa_",
+    "@tataicintra"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@dudabsl_",
+    "@glautiumgabriel"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@glautiumgabriel",
+    "@tataicintra"
    ],
    "forca": 2
   }
@@ -322,14 +322,14 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 12,
-   "def": 2,
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 6,
    "bArma": 2,
    "bSec": 0,
-   "bEsc": 0,
+   "bEsc": 2,
    "bCapa": 0,
    "longe": false,
    "guerreiro": true,
@@ -353,6 +353,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793785752112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "vitoria",
+   "texto": "@dudabrisolaa_ e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
   {
    "quando": 1793784314112,
    "quem": "@glautiumgabriel",
@@ -526,12 +532,6 @@
    "quem": "@glautiumgabriel",
    "tipo": "vitoria",
    "texto": "@glautiumgabriel venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1793769913112,
-   "quem": "@dudabsl_",
-   "tipo": "vitoria",
-   "texto": "@dudabsl_ venceram um urso da floresta e ganharam uma garra de urso."
   }
  ]
 }
