@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-03T19:59",
+ "geradoEm": "2026-11-03T21:09",
  "relogioVila": {
-  "dia": 23,
-  "hora": 10
+  "dia": 26,
+  "hora": 8
  },
  "moradores": 7,
  "novosDoDia": [
@@ -14,36 +14,36 @@
   "@laryssapsouza",
   "@_williamg10"
  ],
- "nivelMaisAlto": 6,
+ "nivelMaisAlto": 7,
  "maisAltos": [
   {
    "nome": "@dudabrisolaa_",
-   "nivel": 6,
-   "xp": 1628,
+   "nivel": 7,
+   "xp": 1918,
    "titulo": "Mestre"
   },
   {
    "nome": "@laryssapsouza",
-   "nivel": 6,
-   "xp": 1528,
+   "nivel": 7,
+   "xp": 1818,
    "titulo": "Mestre"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 6,
-   "xp": 1388,
+   "xp": 1738,
    "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 6,
-   "xp": 1278,
+   "xp": 1568,
    "titulo": "Mestre"
   },
   {
-   "nome": "@dudabsl_",
+   "nome": "@adriana.g.santana",
    "nivel": 6,
-   "xp": 1268,
+   "xp": 1528,
    "titulo": "Mestre"
   }
  ],
@@ -87,8 +87,22 @@
  "maioresDesafetos": [
   {
    "entre": [
+    "@_williamg10",
+    "Mestre Olavo"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
     "@adriana.g.santana",
     "Velho Bento"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
+    "@dudabsl_",
+    "Capitão Rufo"
    ],
    "forca": 1
   },
@@ -103,20 +117,6 @@
    "entre": [
     "@glautiumgabriel",
     "Velho Bento"
-   ],
-   "forca": 1
-  },
-  {
-   "entre": [
-    "@iamvictoriamenezes",
-    "Teo"
-   ],
-   "forca": 1
-  },
-  {
-   "entre": [
-    "@iamvictoriamenezes",
-    "Tião"
    ],
    "forca": 1
   }
@@ -135,6 +135,30 @@
  },
  "vilas": 2,
  "eventosUltimas24h": [
+  {
+   "quando": 1793749336642,
+   "quem": "@_williamg10",
+   "tipo": "briga_derrota",
+   "texto": "@_williamg10 foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793748313112,
+   "quem": "@dudabsl_",
+   "tipo": "briga_derrota",
+   "texto": "@dudabsl_ foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793746875112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "vitoria",
+   "texto": "@iamvictoriamenezes e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793746871112,
+   "quem": "@adriana.g.santana",
+   "tipo": "vitoria",
+   "texto": "@adriana.g.santana e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
   {
    "quando": 1793745433112,
    "quem": "@dudabsl_",
