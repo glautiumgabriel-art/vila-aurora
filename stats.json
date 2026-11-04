@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-04T12:41",
+ "geradoEm": "2026-11-04T12:59",
  "relogioVila": {
   "dia": 2,
   "hora": 12
@@ -28,69 +28,69 @@
   {
    "nome": "@dudabsl_",
    "nivel": 11,
-   "xp": 5919,
+   "xp": 5997,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@iamvictoriamenezes",
+   "nivel": 11,
+   "xp": 5972,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 11,
-   "xp": 5784,
+   "xp": 5862,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@_williamg10",
+   "nivel": 11,
+   "xp": 5096,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 11,
-   "xp": 4979,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 10,
-   "xp": 5893,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@laryssapsouza",
-   "nivel": 10,
-   "xp": 5358,
+   "xp": 5057,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@dudabsl_",
-    "@menor.k01_de_itz"
+    "@_williamg10",
+    "@sampaiojaiane"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@gabrielcamuzzatonegretti",
-    "@thayl_ermatheus"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@iamvictoriamenezes",
+    "@adailtton_santos",
     "@laryssapsouza"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@_williamg10",
-    "@dr.glautiumgabriel"
+    "@dr.glautiumgabriel",
+    "@gbx.ws"
    ],
-   "forca": 1
+   "forca": 2
   },
   {
    "entre": [
-    "@_williamg10",
-    "@gabrielcamuzzatonegretti"
+    "@dudabsl_",
+    "@isaac.jmy"
    ],
-   "forca": 1
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@glautiumgabriel",
+    "@iamvictoriamenezes"
+   ],
+   "forca": 2
   }
  ],
  "maioresDesafetos": [
@@ -235,11 +235,11 @@
   "@iamvictoriamenezes": {
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
-   "nivel": 10,
-   "hp": 104,
-   "hpMax": 140,
-   "atq": 28,
-   "def": 14,
+   "nivel": 11,
+   "hp": 150,
+   "hpMax": 150,
+   "atq": 30,
+   "def": 15,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -252,7 +252,7 @@
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
    "nivel": 10,
-   "hp": 104,
+   "hp": 140,
    "hpMax": 140,
    "atq": 28,
    "def": 14,
@@ -267,11 +267,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 10,
-   "hp": 140,
-   "hpMax": 140,
-   "atq": 28,
-   "def": 12,
+   "nivel": 11,
+   "hp": 150,
+   "hpMax": 150,
+   "atq": 30,
+   "def": 13,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -284,7 +284,7 @@
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
    "nivel": 9,
-   "hp": 114,
+   "hp": 130,
    "hpMax": 130,
    "atq": 27,
    "def": 11,
@@ -332,7 +332,7 @@
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
    "nivel": 6,
-   "hp": 100,
+   "hp": 54,
    "hpMax": 100,
    "atq": 20,
    "def": 11,
@@ -363,15 +363,15 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "explorador",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 24,
-   "def": 12,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 26,
+   "def": 15,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 7,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
@@ -396,7 +396,7 @@
    "nome": "@adailtton_santos",
    "profissao": "bardo",
    "nivel": 4,
-   "hp": 80,
+   "hp": 58,
    "hpMax": 80,
    "atq": 21,
    "def": 4,
@@ -411,6 +411,22 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 3,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@sampaiojaiane": {
+   "nome": "@sampaiojaiane",
+   "profissao": "fazendeiro",
    "nivel": 2,
    "hp": 60,
    "hpMax": 60,
@@ -423,25 +439,33 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
-  },
-  "@sampaiojaiane": {
-   "nome": "@sampaiojaiane",
-   "profissao": "fazendeiro",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 10,
-   "def": 1,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 0,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793807532333,
+   "quem": "@isaac.jmy",
+   "tipo": "queda",
+   "texto": "@isaac.jmy escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793807356112,
+   "quem": "@laryssapsouza",
+   "tipo": "vitoria",
+   "texto": "@laryssapsouza e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793807083390,
+   "quem": "@adailtton_santos",
+   "tipo": "queda",
+   "texto": "@adailtton_santos escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793806936642,
+   "quem": "@_williamg10",
+   "tipo": "briga_vitoria",
+   "texto": "@_williamg10 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1793806456034,
    "quem": "@tataicintra",
@@ -597,30 +621,6 @@
    "quem": "@laryssapsouza",
    "tipo": "briga_derrota",
    "texto": "@laryssapsouza foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793800153112,
-   "quem": "@dudabsl_",
-   "tipo": "vitoria",
-   "texto": "@dudabsl_ e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1793799822967,
-   "quem": "@dr.glautiumgabriel",
-   "tipo": "briga_derrota",
-   "texto": "@dr.glautiumgabriel foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793799492956,
-   "quem": "@menor.k01_de_itz",
-   "tipo": "derrota",
-   "texto": "@menor.k01_de_itz encostou sozinho em um urso da floresta e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793798937813,
-   "quem": "@thayl_ermatheus",
-   "tipo": "vitoria",
-   "texto": "@thayl_ermatheus e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }
