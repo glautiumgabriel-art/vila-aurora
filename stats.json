@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-04T03:59",
+ "geradoEm": "2026-11-04T04:59",
  "relogioVila": {
   "dia": 2,
-  "hora": 3
+  "hora": 4
  },
  "moradores": 9,
  "novosDoDia": [
@@ -18,33 +18,33 @@
  "nivelMaisAlto": 9,
  "maisAltos": [
   {
-   "nome": "@iamvictoriamenezes",
+   "nome": "@laryssapsouza",
    "nivel": 9,
-   "xp": 3192,
+   "xp": 3652,
    "titulo": "Mestre"
   },
   {
-   "nome": "@laryssapsouza",
-   "nivel": 8,
-   "xp": 3402,
+   "nome": "@iamvictoriamenezes",
+   "nivel": 9,
+   "xp": 3642,
    "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
-   "nivel": 8,
-   "xp": 3377,
+   "nivel": 9,
+   "xp": 3627,
+   "titulo": "Mestre"
+  },
+  {
+   "nome": "@dudabrisolaa_",
+   "nivel": 9,
+   "xp": 3087,
    "titulo": "Mestre"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 8,
-   "xp": 3307,
-   "titulo": "Mestre"
-  },
-  {
-   "nome": "@adriana.g.santana",
-   "nivel": 8,
-   "xp": 3122,
+   "xp": 3557,
    "titulo": "Mestre"
   }
  ],
@@ -175,11 +175,11 @@
   "@dudabrisolaa_": {
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "nivel": 8,
-   "hp": 109,
-   "hpMax": 120,
-   "atq": 24,
-   "def": 13,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 26,
+   "def": 14,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -207,11 +207,11 @@
   "@glautiumgabriel": {
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 27,
-   "def": 10,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 29,
+   "def": 11,
    "bArma": 2,
    "bSec": 3,
    "bEsc": 0,
@@ -224,7 +224,7 @@
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
    "nivel": 9,
-   "hp": 118,
+   "hp": 130,
    "hpMax": 130,
    "atq": 26,
    "def": 13,
@@ -239,11 +239,11 @@
   "@laryssapsouza": {
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 24,
-   "def": 12,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 26,
+   "def": 13,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -287,12 +287,12 @@
   "@tataicintra": {
    "nome": "@tataicintra",
    "profissao": "comerciante",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 8,
-   "def": 1,
-   "bArma": 0,
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 3,
+   "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
    "bCapa": 0,
@@ -302,6 +302,60 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793778552112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "queda",
+   "texto": "@dudabrisolaa_ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793778551112,
+   "quem": "@adriana.g.santana",
+   "tipo": "queda",
+   "texto": "@adriana.g.santana escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793777115112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "briga_vitoria",
+   "texto": "@iamvictoriamenezes encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793777111112,
+   "quem": "@adriana.g.santana",
+   "tipo": "queda",
+   "texto": "@adriana.g.santana escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793776782967,
+   "quem": "@dr.glautiumgabriel",
+   "tipo": "derrota",
+   "texto": "@dr.glautiumgabriel encostou sozinho em um urso da floresta e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793776696642,
+   "quem": "@_williamg10",
+   "tipo": "briga_vitoria",
+   "texto": "@_williamg10 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793775675112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "vitoria",
+   "texto": "@iamvictoriamenezes e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1793775671112,
+   "quem": "@adriana.g.santana",
+   "tipo": "vitoria",
+   "texto": "@adriana.g.santana e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1793775342967,
+   "quem": "@dr.glautiumgabriel",
+   "tipo": "queda",
+   "texto": "@dr.glautiumgabriel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1793774235112,
    "quem": "@iamvictoriamenezes",
@@ -427,60 +481,6 @@
    "quem": "@glautiumgabriel",
    "tipo": "briga_derrota",
    "texto": "@glautiumgabriel foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793764151112,
-   "quem": "@adriana.g.santana",
-   "tipo": "vitoria",
-   "texto": "@adriana.g.santana venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1793763736642,
-   "quem": "@_williamg10",
-   "tipo": "briga_vitoria",
-   "texto": "@_williamg10 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793762716112,
-   "quem": "@laryssapsouza",
-   "tipo": "queda",
-   "texto": "@laryssapsouza escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793762714112,
-   "quem": "@glautiumgabriel",
-   "tipo": "queda",
-   "texto": "@glautiumgabriel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793762713112,
-   "quem": "@dudabsl_",
-   "tipo": "vitoria",
-   "texto": "@dudabsl_ e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1793761275112,
-   "quem": "@iamvictoriamenezes",
-   "tipo": "queda",
-   "texto": "@iamvictoriamenezes escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793761274112,
-   "quem": "@glautiumgabriel",
-   "tipo": "briga_derrota",
-   "texto": "@glautiumgabriel foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793759834112,
-   "quem": "@glautiumgabriel",
-   "tipo": "doma",
-   "texto": "@glautiumgabriel cercaram um cavalo selvagem e domaram! Agora @glautiumgabriel anda montado."
-  },
-  {
-   "quando": 1793759831112,
-   "quem": "@adriana.g.santana",
-   "tipo": "vitoria",
-   "texto": "@adriana.g.santana venceram uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }
