@@ -156,8 +156,8 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
 .r-comum{color:var(--muted)} .r-raro{color:var(--raro)} .r-epico{color:var(--epico)} .r-lendario{color:var(--lendario)}
 .meter{height:10px;background:var(--panel2);border:1px solid var(--line);border-radius:5px;overflow:hidden}
 .meter i{display:block;height:100%;background:var(--accent2);width:0}
-.barra{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:6px;align-items:center;font-size:12px;color:var(--muted);margin-top:4px}
-.barra .meter i.hp{background:#e05a5a} .barra .meter i.mana{background:#5a8de0}
+.barra{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:6px;align-items:center;font-size:12px;color:var(--muted);margin-top:4px}
+.barra>span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap} .barra .meter i.hp{background:#e05a5a} .barra .meter i.mana{background:#5a8de0}
 .lacos b{color:var(--fg)}
 .small{font-size:12px;color:var(--muted)}
 .chron{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;max-height:300px;overflow:auto}
