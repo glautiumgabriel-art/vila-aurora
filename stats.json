@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-04T17:00",
+ "geradoEm": "2026-11-04T18:00",
  "relogioVila": {
   "dia": 2,
-  "hora": 16
+  "hora": 17
  },
  "moradores": 18,
  "novosDoDia": [
@@ -23,31 +23,31 @@
   {
    "nome": "@dudabsl_",
    "nivel": 12,
-   "xp": 7037,
+   "xp": 7327,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@laryssapsouza",
+   "nivel": 12,
+   "xp": 7147,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@glautiumgabriel",
+   "nivel": 12,
+   "xp": 6852,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 12,
-   "xp": 6236,
+   "xp": 6486,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 12,
-   "xp": 6187,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@laryssapsouza",
-   "nivel": 11,
-   "xp": 6837,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 11,
-   "xp": 6812,
+   "xp": 6317,
    "titulo": "Lenda"
   }
  ],
@@ -113,14 +113,14 @@
   {
    "entre": [
     "@adailtton_santos",
-    "Dona Zefa"
+    "Brás"
    ],
    "forca": 1
   },
   {
    "entre": [
     "@adailtton_santos",
-    "Teo"
+    "Dona Zefa"
    ],
    "forca": 1
   }
@@ -217,11 +217,11 @@
   "@glautiumgabriel": {
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 33,
-   "def": 13,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 35,
+   "def": 14,
    "bArma": 2,
    "bSec": 3,
    "bEsc": 0,
@@ -249,11 +249,11 @@
   "@laryssapsouza": {
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 30,
-   "def": 15,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 32,
+   "def": 16,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -297,11 +297,11 @@
   "@tataicintra": {
    "nome": "@tataicintra",
    "profissao": "comerciante",
-   "nivel": 8,
-   "hp": 119,
-   "hpMax": 120,
-   "atq": 24,
-   "def": 10,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 26,
+   "def": 11,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -314,7 +314,7 @@
    "nome": "@menor.k01_de_itz",
    "profissao": "explorador",
    "nivel": 8,
-   "hp": 120,
+   "hp": 71,
    "hpMax": 120,
    "atq": 29,
    "def": 12,
@@ -330,7 +330,7 @@
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
    "nivel": 7,
-   "hp": 110,
+   "hp": 92,
    "hpMax": 110,
    "atq": 22,
    "def": 12,
@@ -345,12 +345,12 @@
   "@gabrielcamuzzatonegretti": {
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "comerciante",
-   "nivel": 7,
-   "hp": 73,
-   "hpMax": 110,
-   "atq": 27,
-   "def": 9,
-   "bArma": 7,
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 24,
+   "def": 10,
+   "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
    "bCapa": 2,
@@ -378,7 +378,7 @@
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
    "nivel": 7,
-   "hp": 110,
+   "hp": 95,
    "hpMax": 110,
    "atq": 27,
    "def": 12,
@@ -409,15 +409,15 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 5,
-   "hp": 83,
-   "hpMax": 90,
-   "atq": 18,
-   "def": 7,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 20,
+   "def": 10,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
@@ -425,15 +425,15 @@
   "@sampaiojaiane": {
    "nome": "@sampaiojaiane",
    "profissao": "fazendeiro",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 18,
-   "def": 5,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 20,
+   "def": 8,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
@@ -456,6 +456,72 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793825412956,
+   "quem": "@menor.k01_de_itz",
+   "tipo": "briga_derrota",
+   "texto": "@menor.k01_de_itz foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793824812333,
+   "quem": "@isaac.jmy",
+   "tipo": "briga_derrota",
+   "texto": "@isaac.jmy foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793824747129,
+   "quem": "@joelma_alvarez",
+   "tipo": "queda",
+   "texto": "@joelma_alvarez escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793824633112,
+   "quem": "@dudabsl_",
+   "tipo": "briga_vitoria",
+   "texto": "@dudabsl_ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793824363390,
+   "quem": "@adailtton_santos",
+   "tipo": "briga_vitoria",
+   "texto": "@adailtton_santos encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793823899328,
+   "quem": "@gbx.ws",
+   "tipo": "queda",
+   "texto": "@gbx.ws escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793823770045,
+   "quem": "@sampaiojaiane",
+   "tipo": "vitoria",
+   "texto": "@sampaiojaiane venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793823196112,
+   "quem": "@laryssapsouza",
+   "tipo": "vitoria",
+   "texto": "@laryssapsouza e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793823192112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "briga_derrota",
+   "texto": "@dudabrisolaa_ foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793823191112,
+   "quem": "@adriana.g.santana",
+   "tipo": "queda",
+   "texto": "@adriana.g.santana escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793822459328,
+   "quem": "@gbx.ws",
+   "tipo": "vitoria",
+   "texto": "@gbx.ws e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
   {
    "quando": 1793821755112,
    "quem": "@iamvictoriamenezes",
@@ -569,72 +635,6 @@
    "quem": "@isaac.jmy",
    "tipo": "briga_derrota",
    "texto": "@isaac.jmy foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793817547129,
-   "quem": "@joelma_alvarez",
-   "tipo": "doma",
-   "texto": "@joelma_alvarez e os amigos cercaram um cavalo selvagem e domaram! Agora @joelma_alvarez anda montado."
-  },
-  {
-   "quando": 1793817432112,
-   "quem": "@dudabrisolaa_",
-   "tipo": "briga_derrota",
-   "texto": "@dudabrisolaa_ foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793817016642,
-   "quem": "@_williamg10",
-   "tipo": "vitoria",
-   "texto": "@_williamg10 e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1793816107129,
-   "quem": "@joelma_alvarez",
-   "tipo": "briga_vitoria",
-   "texto": "@joelma_alvarez encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793815996112,
-   "quem": "@laryssapsouza",
-   "tipo": "briga_vitoria",
-   "texto": "@laryssapsouza encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793815995112,
-   "quem": "@iamvictoriamenezes",
-   "tipo": "briga_derrota",
-   "texto": "@iamvictoriamenezes foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793815991112,
-   "quem": "@adriana.g.santana",
-   "tipo": "vitoria",
-   "texto": "@adriana.g.santana venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1793815723390,
-   "quem": "@adailtton_santos",
-   "tipo": "briga_derrota",
-   "texto": "@adailtton_santos foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793815662967,
-   "quem": "@dr.glautiumgabriel",
-   "tipo": "briga_derrota",
-   "texto": "@dr.glautiumgabriel foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793815231505,
-   "quem": "@saviob._santos",
-   "tipo": "vitoria",
-   "texto": "@saviob._santos e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1793815130045,
-   "quem": "@sampaiojaiane",
-   "tipo": "briga_derrota",
-   "texto": "@sampaiojaiane foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
   }
  ]
 }
