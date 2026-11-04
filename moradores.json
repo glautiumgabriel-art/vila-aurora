@@ -7,12 +7,21 @@
    "id": "ig-adriana.g.santana",
    "nome": "@adriana.g.santana",
    "nomeCompleto": "Dri Santana",
-   "sexo": "m",
+   "sexo": "f",
    "profissao": "bardo",
    "joinedAt": 1793728511112,
    "faltas": 0,
    "fundadorVila": true,
-   "vilaFundada": "Pinheiral"
+   "vilaFundada": "Pinheiral",
+   "correcoes": [
+    {
+     "campo": "sexo",
+     "de": "m",
+     "para": "f",
+     "em": "2026-11-03T22:06",
+     "motivo": "\"Dri\" lido como \"Dr.\" (corrigido no robô)"
+    }
+   ]
   },
   {
    "id": "ig-dudabrisolaa_",
