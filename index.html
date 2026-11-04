@@ -1149,7 +1149,7 @@ function boneco(m){ const p=PROF[m.profissao]||PROF.bardo; const r=rnd("look:"+m
   else if(eq.capa&&!provisorio){ capaDeVerdade(corpo,eq.capa.c); }
   // peças "fantasmas" que o laço antigo ainda mexe (pernas e braços): grupos vazios, sem efeito visual
   const pernaE=new THREE.Group(), pernaD=new THREE.Group(), bracoE=new THREE.Group(), bracoD=new THREE.Group(); g.add(pernaE,pernaD,bracoE,bracoD);
-  const nome=rotulo(m.nome,0,m.realeza?3.05:2.75,0,m.realeza?5.2:4.4,m.realeza?"#ffd24a":undefined); scene.remove(nome); g.add(nome); nome.userData.id=m.id; nome.userData.prioridade=m.realeza?3:2;
+  const nome=rotulo(m.nome,0,m.realeza?3.05:2.75,0,m.realeza?5.2:4.4,m.realeza?"#ffd24a":undefined); scene.remove(nome); g.add(nome); nome.userData.id=m.id; nome.userData.prioridade=m.realeza?3:2; if(m.discreto){ nome.visible=false; nome.userData.prioridade=-9; }
   g.traverse(o=>{ if(o.isMesh){ o.userData.id=m.id; } });
   let magia=null; if(p.magia){ magia=new THREE.Group(); const mg=new THREE.MeshBasicMaterial({color:p.hat,transparent:true,opacity:0.9}); for(let k=0;k<7;k++){ const e=new THREE.Mesh(geo("Octahedron",[0.07,0]),mg); e.castShadow=false; e.userData.k=k; magia.add(e); } g.add(magia); magia.visible=false; }
   const vis=cone(0.22,0.4,mat(0xff4040),0,2.95,0,g,5); vis.rotation.x=Math.PI; vis.castShadow=false; vis.visible=false;
@@ -1197,7 +1197,7 @@ function reconstroiCasas(){ const lista=todos(); placasFundador(lista); criaReal
     const tom=col.setHSL(h,0.35,0.86).lerp(new THREE.Color(0xffffff),0.4).getHex(); if(niveis[i]>=6) pedra.push({x:c.x,z:c.z,ry:CASA_RY,s:3.0,c:tom,idx:i}); else madeira.push({x:c.x,z:c.z,ry:CASA_RY,s:3.2,c:tom,idx:i}); });
   [["home_A",madeira],["home_B",pedra],["tent",tendas]].forEach(([nome,lst])=>{ instModelo(nome,lst).forEach(im=>{ im.userData.moradores=lst.map(p=>lista[p.idx].id); casasInst.push(im); }); });
   cabRot.forEach(s=>scene.remove(s)); cabRot.clear(); }
-function rotuloCabana(m,i){ let s=cabRot.get(m.id); if(!s){ const c=casaDe(i); s=rotulo(m.nome,c.x,3.9,c.z,3.4); cabRot.set(m.id,s); } return s; }
+function rotuloCabana(m,i){ let s=cabRot.get(m.id); if(!s){ const c=casaDe(i); s=rotulo(m.nome,c.x,3.9,c.z,3.4); if(m.discreto){ s.visible=false; s.userData.prioridade=-9; } cabRot.set(m.id,s); } return s; }
 const marcador=cone(0.45,0.9,M.fogo2,0,0,0); marcador.rotation.x=Math.PI; marcador.visible=false; marcador.castShadow=false;
 const CAVEIRAS=[]; (function(){ const c=document.createElement("canvas"); c.width=64; c.height=64; const g=c.getContext("2d"); g.font="700 46px Nunito, sans-serif"; g.textAlign="center"; g.textBaseline="middle"; g.fillStyle="#fff"; g.fillText("\u2620",32,34); const t=new THREE.CanvasTexture(c); for(let k=0;k<12;k++){ const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthTest:false})); sp.scale.set(0.8,0.8,1); sp.visible=false; scene.add(sp); CAVEIRAS.push(sp); } })();
 const CORACOES=[]; (function(){ const c=document.createElement("canvas"); c.width=64; c.height=64; const g=c.getContext("2d"); g.font="700 52px Nunito, sans-serif"; g.textAlign="center"; g.textBaseline="middle"; g.fillStyle="#ff5c8a"; g.fillText("\u2665",32,34); const t=new THREE.CanvasTexture(c);
@@ -1283,7 +1283,7 @@ function anima(){
     const novo=new Set(arr.slice(0,MAX_VISIVEIS).map(o=>o.m.id)); if(selecionado) novo.add(selecionado); if(MODO_SEGREDO) BATALHA.lutadores.forEach(id=>novo.add(id)); bonecos.forEach((b,id)=>{ if(!novo.has(id)){ scene.remove(b); bonecos.delete(id); } }); cabRot.forEach((s,id)=>{ if(!novo.has(id)){ scene.remove(s); cabRot.delete(id); } }); visiveis=novo; }
   posSel=null; let selDentro=null; let arvoreBalanca=null; let nomesMostrados=0;
   lista.forEach((m,i)=>{ if(!visiveis.has(m.id)) return; rotuloCabana(m,i); const b=garanteBoneco(m); const e=estado(m,i,w); const u=b.userData; const sel=m.id===selecionado;
-    const c0=casaDe(i); const perto=(orb.r<36 && (e.x-orb.target.x)**2+(e.z-orb.target.z)**2<340 && nomesMostrados<(MOBILE?8:14)) || sel; u.nome.visible=perto&&!e.dentro; if(u.nome.visible) nomesMostrados++; const rc=cabRot.get(m.id); if(rc) rc.visible=orb.r<24 && (c0.x-orb.target.x)**2+(c0.z-orb.target.z)**2<400;
+    const c0=casaDe(i); const perto=(orb.r<36 && (e.x-orb.target.x)**2+(e.z-orb.target.z)**2<340 && nomesMostrados<(MOBILE?8:14)) || sel; u.nome.visible=perto&&!e.dentro&&!m.discreto; if(u.nome.visible) nomesMostrados++; const rc=cabRot.get(m.id); if(rc) rc.visible=!m.discreto&&orb.r<24 && (c0.x-orb.target.x)**2+(c0.z-orb.target.z)**2<400;
     u.vis.visible=!!e.visita&&!e.dentro; if(u.vis.visible) u.vis.position.y=2.95+Math.sin(tsec*5)*0.1;
     if(u.magia){ const on=e.modo==="magia"; u.magia.visible=on; if(on){ u.magia.children.forEach(o=>{ const t=(tsec*0.6+o.userData.k/7)%1; o.position.set(Math.cos(o.userData.k*0.9+tsec*2)*0.45, 1.9+t*1.6, Math.sin(o.userData.k*0.9+tsec*2)*0.45); o.scale.setScalar(1-t*0.8); o.rotation.y=tsec*3; }); } }
     if(!e.dentro&&(e.chave==="lazer"||e.chave==="fogueira"||e.chave==="visita")) acordados.push({x:e.x,z:e.z,vi:e.vila.i,visita:!!e.visita});
