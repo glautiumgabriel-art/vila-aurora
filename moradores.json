@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T02:13",
+ "atualizadoEm": "2026-11-04T03:52",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -87,6 +87,15 @@
    "faltas": 0,
    "motivoProfissao": "vila sem produtor de comida",
    "discreto": true
+  },
+  {
+   "id": "ig-tataicintra",
+   "nome": "@tataicintra",
+   "nomeCompleto": "Thais Cintra",
+   "sexo": "f",
+   "profissao": "comerciante",
+   "joinedAt": 1793775136034,
+   "faltas": 0
   }
  ]
 }
