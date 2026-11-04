@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T05:59",
+ "atualizadoEm": "2026-11-04T06:10",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -104,6 +104,15 @@
    "sexo": "?",
    "profissao": "explorador",
    "joinedAt": 1793779692956,
+   "faltas": 0
+  },
+  {
+   "id": "ig-isaac.jmy",
+   "nome": "@isaac.jmy",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "cavaleiro",
+   "joinedAt": 1793783412333,
    "faltas": 0
   }
  ]

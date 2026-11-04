@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-04T05:59",
+ "geradoEm": "2026-11-04T06:10",
  "relogioVila": {
   "dia": 2,
-  "hora": 5
+  "hora": 6
  },
- "moradores": 10,
+ "moradores": 11,
  "novosDoDia": [
   "@adriana.g.santana",
   "@dudabrisolaa_",
@@ -14,38 +14,39 @@
   "@laryssapsouza",
   "@_williamg10",
   "@tataicintra",
-  "@menor.k01_de_itz"
+  "@menor.k01_de_itz",
+  "@isaac.jmy"
  ],
  "nivelMaisAlto": 9,
  "maisAltos": [
   {
+   "nome": "@dudabsl_",
+   "nivel": 9,
+   "xp": 4051,
+   "titulo": "Lenda"
+  },
+  {
    "nome": "@iamvictoriamenezes",
    "nivel": 9,
-   "xp": 3912,
+   "xp": 3956,
    "titulo": "Mestre"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 9,
-   "xp": 3902,
-   "titulo": "Mestre"
-  },
-  {
-   "nome": "@dudabsl_",
-   "nivel": 9,
-   "xp": 3887,
+   "xp": 3946,
    "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 9,
-   "xp": 3877,
+   "xp": 3921,
    "titulo": "Mestre"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 9,
-   "xp": 3457,
+   "xp": 3502,
    "titulo": "Mestre"
   }
  ],
@@ -131,8 +132,8 @@
  ],
  "porProfissao": {
   "bardo": 2,
+  "cavaleiro": 2,
   "explorador": 2,
-  "cavaleiro": 1,
   "curandeiro": 1,
   "mineiro": 1,
   "ferreiro": 1,
@@ -141,12 +142,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@menor.k01_de_itz",
+  "nome": "@isaac.jmy",
   "nomeCompleto": "",
-  "profissao": "explorador",
-  "sexo": "?",
-  "chegouEm": "2026-11-04T05:08",
-  "chegouEmMs": 1793779692956
+  "profissao": "cavaleiro",
+  "sexo": "m",
+  "chegouEm": "2026-11-04T06:10",
+  "chegouEmMs": 1793783412333
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -160,11 +161,11 @@
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 25,
-   "def": 12,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 27,
+   "def": 13,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -316,9 +317,37 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
+  },
+  "@isaac.jmy": {
+   "nome": "@isaac.jmy",
+   "profissao": "cavaleiro",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 8,
+   "def": 1,
+   "bArma": 0,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793782873112,
+   "quem": "@dudabsl_",
+   "tipo": "vitoria",
+   "texto": "@dudabsl_ venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1793782456642,
+   "quem": "@_williamg10",
+   "tipo": "vitoria",
+   "texto": "@_williamg10 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
   {
    "quando": 1793781435112,
    "quem": "@iamvictoriamenezes",
@@ -486,18 +515,6 @@
    "quem": "@dudabrisolaa_",
    "tipo": "vitoria",
    "texto": "@dudabrisolaa_ e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793768142967,
-   "quem": "@dr.glautiumgabriel",
-   "tipo": "queda",
-   "texto": "@dr.glautiumgabriel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793768056642,
-   "quem": "@_williamg10",
-   "tipo": "queda",
-   "texto": "@_williamg10 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
