@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-03T22:01",
+ "atualizadoEm": "2026-11-03T22:25",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -76,6 +76,16 @@
    "profissao": "bardo",
    "joinedAt": 1793739616642,
    "faltas": 0
+  },
+  {
+   "id": "ig-dr.glautiumgabriel",
+   "nome": "@dr.glautiumgabriel",
+   "nomeCompleto": "Dr Glautium Gabriel | Esp. em Harmonização Facial / Bucomaxilo 👑",
+   "sexo": "m",
+   "profissao": "cozinheiro",
+   "joinedAt": 1793755542967,
+   "faltas": 0,
+   "motivoProfissao": "vila sem produtor de comida"
   }
  ]
 }

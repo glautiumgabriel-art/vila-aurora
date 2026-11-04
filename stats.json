@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-03T22:01",
+ "geradoEm": "2026-11-03T22:25",
  "relogioVila": {
-  "dia": 28,
+  "dia": 29,
   "hora": 12
  },
- "moradores": 7,
+ "moradores": 8,
  "novosDoDia": [
   "@adriana.g.santana",
   "@dudabrisolaa_",
@@ -12,38 +12,39 @@
   "@glautiumgabriel",
   "@iamvictoriamenezes",
   "@laryssapsouza",
-  "@_williamg10"
+  "@_williamg10",
+  "@dr.glautiumgabriel"
  ],
  "nivelMaisAlto": 7,
  "maisAltos": [
   {
-   "nome": "@dudabrisolaa_",
+   "nome": "@laryssapsouza",
    "nivel": 7,
-   "xp": 2137,
+   "xp": 2296,
    "titulo": "Mestre"
   },
   {
-   "nome": "@laryssapsouza",
+   "nome": "@dudabrisolaa_",
    "nivel": 7,
-   "xp": 2036,
+   "xp": 2237,
+   "titulo": "Mestre"
+  },
+  {
+   "nome": "@adriana.g.santana",
+   "nivel": 7,
+   "xp": 1887,
+   "titulo": "Mestre"
+  },
+  {
+   "nome": "@glautiumgabriel",
+   "nivel": 7,
+   "xp": 1886,
    "titulo": "Mestre"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 7,
-   "xp": 1956,
-   "titulo": "Mestre"
-  },
-  {
-   "nome": "@adriana.g.santana",
-   "nivel": 6,
-   "xp": 1787,
-   "titulo": "Mestre"
-  },
-  {
-   "nome": "@glautiumgabriel",
-   "nivel": 6,
-   "xp": 1787,
+   "xp": 1881,
    "titulo": "Mestre"
   }
  ],
@@ -131,7 +132,8 @@
   "curandeiro": 1,
   "mineiro": 1,
   "explorador": 1,
-  "ferreiro": 1
+  "ferreiro": 1,
+  "cozinheiro": 1
  },
  "vilas": 2,
  "quemMaisTrouxe": [],
@@ -146,11 +148,11 @@
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 21,
-   "def": 10,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 23,
+   "def": 11,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -211,7 +213,7 @@
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
    "nivel": 7,
-   "hp": 110,
+   "hp": 106,
    "hpMax": 110,
    "atq": 22,
    "def": 11,
@@ -227,7 +229,7 @@
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
    "nivel": 7,
-   "hp": 110,
+   "hp": 106,
    "hpMax": 110,
    "atq": 22,
    "def": 11,
@@ -254,9 +256,43 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
+  },
+  "@dr.glautiumgabriel": {
+   "nome": "@dr.glautiumgabriel",
+   "profissao": "cozinheiro",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 10,
+   "def": 1,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793754076112,
+   "quem": "@laryssapsouza",
+   "tipo": "vitoria",
+   "texto": "@laryssapsouza venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1793754075112,
+   "quem": "@iamvictoriamenezes",
+   "tipo": "queda",
+   "texto": "@iamvictoriamenezes escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793754073112,
+   "quem": "@dudabsl_",
+   "tipo": "briga_derrota",
+   "texto": "@dudabsl_ foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
   {
    "quando": 1793753656642,
    "quem": "@_williamg10",
@@ -418,18 +454,6 @@
    "quem": "@laryssapsouza",
    "tipo": "doma",
    "texto": "@laryssapsouza e os amigos cercaram um cavalo selvagem e domaram! Agora @laryssapsouza anda montado."
-  },
-  {
-   "quando": 1793729595112,
-   "quem": "@iamvictoriamenezes",
-   "tipo": "vitoria",
-   "texto": "@iamvictoriamenezes e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793729592112,
-   "quem": "@dudabrisolaa_",
-   "tipo": "vitoria",
-   "texto": "@dudabrisolaa_ venceram um javali teimoso e ganharam uma presa de javali."
   }
  ]
 }
