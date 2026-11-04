@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T06:59",
+ "atualizadoEm": "2026-11-04T07:22",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -122,6 +122,15 @@
    "sexo": "m",
    "profissao": "comerciante",
    "joinedAt": 1793786001440,
+   "faltas": 0
+  },
+  {
+   "id": "ig-thayl_ermatheus",
+   "nome": "@thayl_ermatheus",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "explorador",
+   "joinedAt": 1793787777813,
    "faltas": 0
   }
  ]

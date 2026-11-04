@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-04T06:59",
+ "geradoEm": "2026-11-04T07:22",
  "relogioVila": {
   "dia": 2,
-  "hora": 6
+  "hora": 7
  },
- "moradores": 12,
+ "moradores": 13,
  "novosDoDia": [
   "@adriana.g.santana",
   "@dudabrisolaa_",
@@ -16,38 +16,39 @@
   "@tataicintra",
   "@menor.k01_de_itz",
   "@isaac.jmy",
-  "@gabrielcamuzzatonegretti"
+  "@gabrielcamuzzatonegretti",
+  "@thayl_ermatheus"
  ],
- "nivelMaisAlto": 9,
+ "nivelMaisAlto": 10,
  "maisAltos": [
+  {
+   "nome": "@dudabrisolaa_",
+   "nivel": 10,
+   "xp": 3659,
+   "titulo": "Mestre"
+  },
   {
    "nome": "@dudabsl_",
    "nivel": 9,
-   "xp": 4257,
+   "xp": 4354,
    "titulo": "Lenda"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 9,
-   "xp": 4162,
+   "xp": 4259,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 9,
-   "xp": 4152,
+   "xp": 4249,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 9,
-   "xp": 3902,
-   "titulo": "Mestre"
-  },
-  {
-   "nome": "@dudabrisolaa_",
-   "nivel": 9,
-   "xp": 3562,
+   "xp": 3999,
    "titulo": "Mestre"
   }
  ],
@@ -132,9 +133,9 @@
   "@laryssapsouza"
  ],
  "porProfissao": {
+  "explorador": 3,
   "bardo": 2,
   "cavaleiro": 2,
-  "explorador": 2,
   "comerciante": 2,
   "curandeiro": 1,
   "mineiro": 1,
@@ -143,12 +144,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@gabrielcamuzzatonegretti",
+  "nome": "@thayl_ermatheus",
   "nomeCompleto": "",
-  "profissao": "comerciante",
-  "sexo": "m",
-  "chegouEm": "2026-11-04T06:53",
-  "chegouEmMs": 1793786001440
+  "profissao": "explorador",
+  "sexo": "f",
+  "chegouEm": "2026-11-04T07:22",
+  "chegouEmMs": 1793787777813
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -178,11 +179,11 @@
   "@dudabrisolaa_": {
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "nivel": 9,
-   "hp": 130,
-   "hpMax": 130,
-   "atq": 26,
-   "def": 14,
+   "nivel": 10,
+   "hp": 140,
+   "hpMax": 140,
+   "atq": 28,
+   "def": 15,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -338,21 +339,28 @@
   "@gabrielcamuzzatonegretti": {
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "comerciante",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 8,
-   "def": 1,
-   "bArma": 0,
+   "nivel": 2,
+   "hp": 60,
+   "hpMax": 60,
+   "atq": 17,
+   "def": 2,
+   "bArma": 7,
    "bSec": 0,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
    "guerreiro": false,
    "mana": null
-  }
+  },
+  "@thayl_ermatheus": null
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793787372333,
+   "quem": "@isaac.jmy",
+   "tipo": "vitoria",
+   "texto": "@isaac.jmy e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
   {
    "quando": 1793785752112,
    "quem": "@dudabrisolaa_",
@@ -526,12 +534,6 @@
    "quem": "@dr.glautiumgabriel",
    "tipo": "briga_derrota",
    "texto": "@dr.glautiumgabriel foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793769914112,
-   "quem": "@glautiumgabriel",
-   "tipo": "vitoria",
-   "texto": "@glautiumgabriel venceram um urso da floresta e ganharam uma garra de urso."
   }
  ]
 }
