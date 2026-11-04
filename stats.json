@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-03T21:37",
+ "geradoEm": "2026-11-03T22:01",
  "relogioVila": {
-  "dia": 27,
-  "hora": 11
+  "dia": 28,
+  "hora": 12
  },
  "moradores": 7,
  "novosDoDia": [
@@ -19,31 +19,31 @@
   {
    "nome": "@dudabrisolaa_",
    "nivel": 7,
-   "xp": 2033,
+   "xp": 2137,
    "titulo": "Mestre"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 7,
-   "xp": 1933,
+   "xp": 2036,
    "titulo": "Mestre"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 7,
-   "xp": 1853,
-   "titulo": "Mestre"
-  },
-  {
-   "nome": "@glautiumgabriel",
-   "nivel": 6,
-   "xp": 1683,
+   "xp": 1956,
    "titulo": "Mestre"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 6,
-   "xp": 1643,
+   "xp": 1787,
+   "titulo": "Mestre"
+  },
+  {
+   "nome": "@glautiumgabriel",
+   "nivel": 6,
+   "xp": 1787,
    "titulo": "Mestre"
   }
  ],
@@ -94,6 +94,20 @@
   },
   {
    "entre": [
+    "@_williamg10",
+    "Seu Abel"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
+    "@adriana.g.santana",
+    "Mestre Olavo"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
     "@adriana.g.santana",
     "Velho Bento"
    ],
@@ -103,20 +117,6 @@
    "entre": [
     "@dudabsl_",
     "Capitão Rufo"
-   ],
-   "forca": 1
-  },
-  {
-   "entre": [
-    "@glautiumgabriel",
-    "Seu Abel"
-   ],
-   "forca": 1
-  },
-  {
-   "entre": [
-    "@glautiumgabriel",
-    "Velho Bento"
    ],
    "forca": 1
   }
@@ -136,7 +136,12 @@
  "vilas": 2,
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
- "fundadores": [],
+ "fundadores": [
+  {
+   "nome": "@adriana.g.santana",
+   "vila": "Pinheiral"
+  }
+ ],
  "combate": {
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
@@ -189,11 +194,11 @@
   "@glautiumgabriel": {
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 23,
-   "def": 8,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 25,
+   "def": 9,
    "bArma": 2,
    "bSec": 3,
    "bEsc": 0,
@@ -237,11 +242,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 4,
-   "hp": 80,
-   "hpMax": 80,
-   "atq": 16,
-   "def": 4,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 18,
+   "def": 5,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -252,6 +257,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793753656642,
+   "quem": "@_williamg10",
+   "tipo": "briga_derrota",
+   "texto": "@_williamg10 foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793752633112,
+   "quem": "@dudabsl_",
+   "tipo": "briga_vitoria",
+   "texto": "@dudabsl_ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793752631112,
+   "quem": "@adriana.g.santana",
+   "tipo": "briga_vitoria",
+   "texto": "@adriana.g.santana encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1793749336642,
    "quem": "@_williamg10",

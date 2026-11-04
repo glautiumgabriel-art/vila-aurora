@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-03T21:09",
+ "atualizadoEm": "2026-11-03T22:01",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -10,7 +10,9 @@
    "sexo": "m",
    "profissao": "bardo",
    "joinedAt": 1793728511112,
-   "faltas": 0
+   "faltas": 0,
+   "fundadorVila": true,
+   "vilaFundada": "Pinheiral"
   },
   {
    "id": "ig-dudabrisolaa_",
@@ -24,8 +26,8 @@
   {
    "id": "ig-dudabsl_",
    "nome": "@dudabsl_",
-   "nomeCompleto": "",
-   "sexo": "?",
+   "nomeCompleto": "Maria Eduarda Brisola",
+   "sexo": "f",
    "profissao": "curandeiro",
    "joinedAt": 1793728513112,
    "faltas": 0
@@ -51,7 +53,7 @@
   {
    "id": "ig-laryssapsouza",
    "nome": "@laryssapsouza",
-   "nomeCompleto": "",
+   "nomeCompleto": "Laryssa p. Souza",
    "sexo": "f",
    "profissao": "ferreiro",
    "joinedAt": 1793728516112,
@@ -60,8 +62,8 @@
   {
    "id": "ig-_williamg10",
    "nome": "@_williamg10",
-   "nomeCompleto": "",
-   "sexo": "?",
+   "nomeCompleto": "William Gomes",
+   "sexo": "m",
    "profissao": "bardo",
    "joinedAt": 1793739616642,
    "faltas": 0
