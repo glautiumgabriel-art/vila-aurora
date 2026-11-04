@@ -101,6 +101,7 @@ h2{font-size:19px;color:var(--accent)}
 .top .stat{font-family:var(--display);font-size:16px;color:var(--muted)}
 .top .stat b{color:var(--fg);font-variant-numeric:tabular-nums}
 .top .spacer{flex:1}
+.top .chegou{font-family:var(--body);font-weight:700;font-size:13px;color:var(--accent2);border-color:var(--accent2);background:transparent;padding:4px 10px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;padding-block:14px 24px}
 #lugarBox .row h2{flex:1} #lugarBox #lugarFechar{flex:0 0 auto;min-height:32px;padding:2px 10px;font-size:14px}
 @media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr);gap:12px;padding-block:8px 20px}
@@ -183,6 +184,7 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
   <span class="stat">Dia <b id="dia">1</b> · <b id="hora">07h</b></span>
   <span class="stat">Moradores: <b id="pop">0</b></span>
   <span class="stat">Vilas: <b id="nvilas">1</b></span>
+  <button class="ghost chegou" id="faixaChegou" type="button" hidden></button>
   <span class="spacer"></span>
   <span class="hint">A vila anda sozinha. Você só assiste.</span>
   <button class="ghost" id="btnMusica" type="button" title="Música medieval">🎵 Música</button>
@@ -558,7 +560,7 @@ function cronica(w){
     let texto, vil=false;
     if(h>=6&&h<=22 && r()<.18){ const v=pick(r,VILOES); texto=v.texto; vil=true; }
     else if(h<6){ texto=pick(r,["A vila dorme. Só a fogueira estala.","Corujas na Floresta Velha.","O rio corre em silêncio."]); }
-    else if(h===7&&lista.some(m=>!m.npc)){ const reais=lista.filter(m=>!m.npc); const m=pick(r,reais); texto="Morador do dia: "+m.nome+". Hoje a vila inteira fica de olho nele."; }
+    else if(h===7&&lista.some(m=>!m.npc)){ const reais=lista.filter(m=>!m.npc&&!m.discreto); const m=pick(r,reais.length?reais:lista.filter(z=>!z.npc)); texto=generoTxt(m,"Morador","Moradora")+" do dia: "+m.nome+". Hoje a vila inteira fica de olho nele."; }
     else if(nVilas()>1 && r()<.3){ const ia=Math.floor(r()*lista.length), a=lista[ia]; const va=vilaDe(ia); let ib=Math.floor(r()*lista.length); if(vilaDe(ib).i===va.i) ib=(ib+VILA_CAP)%lista.length; const b=lista[ib]; const vb=vilaDe(ib); const en=pick(r,ENCONTROS); texto=en.t.replace(/{a}/g,a.nome).replace(/{b}/g,b.nome).replace(/{va}/g,va.nome).replace(/{vb}/g,vb.nome); vil=!!en.briga; }
     else { const m=pick(r,lista); const p=PROF[m.profissao]||PROF.bardo; const eq=equipamentoDe(m); texto=m.nome+" "+pick(r,p.feitos)+(r()<.3&&eq.principal?" empunhando "+eq.principal.nome.toLowerCase()+".":"."); }
     out.push({d,h,texto,vil});
@@ -1063,7 +1065,10 @@ function atualizaMixers(now){ const dt=Math.min(0.1,Math.max(0,(now-relogioAnim)
 let casasInst=null, casasN=0, casasNiveis=""; const cabRot=new Map();
 const CASA_RY=Math.PI; // porta virada para +z (a frente da casa, onde o morador toma café)
 const PREMIOS=[[1,"título de Recrutador(a) + capa dourada"],[3,"arma lendária forjada pelo ferreiro do Rei"],[5,"estátua com o seu @ na praça"]];
-function premiosDe(m){ const n=(m&&Array.isArray(m.convidou))?m.convidou.length:0; const prox=PREMIOS.find(p=>n<p[0])||null; return {n,recrutador:n>=1,lendaria:n>=3,estatua:n>=5,prox,faltam:prox?prox[0]-n:0}; }
+function faixaChegou(){ const el=$("faixaChegou"); if(!el) return; const l=todos().filter(m=>!m.npc&&!m.discreto&&m.joinedAt<=Date.now()); if(!l.length){ el.hidden=true; return; } const m=l.reduce((a,b)=>b.joinedAt>a.joinedAt?b:a);
+  const dt=new Date(m.joinedAt); const hh=String(dt.getHours()).padStart(2,"0")+":"+String(dt.getMinutes()).padStart(2,"0"); const recente=Date.now()-m.joinedAt<6*3600000;
+  el.hidden=false; el.textContent="🏕️ "+(recente?"Chegou agora":"Último a chegar")+": "+m.nome+", "+nomeProf(m)+" · "+hh; if(!el.dataset.ok){ el.dataset.ok="1"; el.addEventListener("click",()=>{ const k=el.dataset.id; if(k) selecionar(k,true); }); } el.dataset.id=m.id; }
+function premiosDe(m){ let n=(m&&Array.isArray(m.convidou))?m.convidou.length:0; const pk=(m&&m.premios)||[]; if(pk.includes("estatua")) n=Math.max(n,5); else if(pk.includes("arma_lendaria")) n=Math.max(n,3); else if(pk.includes("recrutador")) n=Math.max(n,1); const prox=PREMIOS.find(p=>n<p[0])||null; return {n,recrutador:n>=1,lendaria:n>=3,estatua:n>=5,prox,faltam:prox?prox[0]-n:0}; }
 function rotRecrutador(m){ return generoTxt(m,"Recrutador","Recrutadora"); }
 // 5 amigos: estátua de pedra do morador na praça da vila dele (uma por morador, em arco atrás dos bancos)
 const ESTATUAS=new Map();
@@ -1203,7 +1208,7 @@ function anima(){
   else if(!selDentro) marcador.visible=false;
   const vilaoAtivo = hash("vil"+Math.floor(w.t))%5===0 && w.hora>=6 && w.hora<=22; goblin.visible=vilaoAtivo;
   if(vilaoAtivo){ const F=LUG.floresta; { const dv=desvia(vila(0),F.x+F.w/2+1.5+Math.sin(tsec*1.2)*1.5, F.z+Math.cos(tsec*0.8)*2); goblin.position.set(dv.x, 0, dv.z); } goblin.rotation.y=tsec*0.8; }
-  if(document.body.classList.contains("cinema")&&!MODO_SEGREDO){ if(!arrastando&&!camFixa) orb.theta+=0.0015; if(!fixado&&now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); orb.r=16; } } }
+  if(document.body.classList.contains("cinema")&&!MODO_SEGREDO){ if(!arrastando&&!camFixa) orb.theta+=0.0015; if(!fixado&&now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.discreto) return false; if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); orb.r=16; } } }
   if(ROTULOS) aplicaRotulos(); animaIntroCam(); if(realce&&realce.visible){ realce.material.opacity=0.5+Math.sin(now/150)*0.35; if(now>realceAte) realce.visible=false; } atualizaMixers(now); posicionaCamera(); camera.updateMatrixWorld(); desempilhaRotulos(selecionado); renderer.render(scene,camera);
 }
 
@@ -1281,7 +1286,7 @@ function renderCronica(){
     .concat(c.chegadas.map(ch=>({k:(ch.ts-EPOCH)/HORA_MS+7.5, t:"D"+(Math.floor(((ch.ts-EPOCH)/HORA_MS+7)/24)+1), texto:ch.texto, vil:!!ch.vil})))
     .sort((a,b)=>b.k-a.k).slice(0,16);
   itens.forEach(it=>{ const li=document.createElement("li"); if(it.vil) li.className="vil"; li.innerHTML="<time>"+it.t+"</time><span></span>"; li.lastChild.textContent=it.texto; ul.appendChild(li); });
-  $("dia").textContent=w.dia; $("hora").textContent=String(w.hora).padStart(2,"0")+"h"; $("pop").textContent=todos().filter(m=>!m.npc).length; $("nvilas").textContent=nVilas();
+  faixaChegou(); $("dia").textContent=w.dia; $("hora").textContent=String(w.hora).padStart(2,"0")+"h"; $("pop").textContent=todos().filter(m=>!m.npc).length; $("nvilas").textContent=nVilas();
 }
 
 // ---------- lista de moradores: arquivo estático (CDN), atualizado pelo robô de seguidores ----------
@@ -1297,11 +1302,11 @@ function aplicaCamURL(){ if(!PARAM_CAM) return; const v=PARAM_CAM.split(",").map
 const ROTEIRO_ABERTURA=[[0,"Esta é a <b>Vila Aurora</b>.<small>Um mundo que anda sozinho.</small>"],[5,"Cada @ que segue a página<small>vira um morador.</small>"],[10,"Ninguém controla nada.<small>Eles trabalham, brigam, dormem… sozinhos.</small>"],[16,"Seu boneco já pode estar aqui.<small>Procure seu @ no link da bio.</small>"],[22,"Siga e entre na vila.<small>@vilaauroraoficial</small>"]];
 function iniciaAbertura(){ document.body.classList.add("abertura"); redimensiona(); orb.phi=1.05; orb.r=34; orb.alvo.set(0,0,2); orb.target.copy(orb.alvo); seguindo=false; const t0=performance.now(); const el=$("aberturaTxt"); let atual=-1;
   (function passo(){ const t=(performance.now()-t0)/1000; orb.theta=0.4+t*0.09; orb.r=34-Math.min(14,t*0.8); let k=-1; ROTEIRO_ABERTURA.forEach((r,i)=>{ if(t>=r[0]) k=i; }); if(k!==atual){ atual=k; el.classList.remove("on"); setTimeout(()=>{ el.innerHTML=k>=0?ROTEIRO_ABERTURA[k][1]:""; el.classList.add("on"); },300); }
-    if(t>=12&&t<16){ const V=vila(1); orb.alvo.set(V.cx,0,V.cz+2); } if(t>=16&&t<22){ const l=todos().filter(m=>!m.npc); if(l.length){ const i=todos().findIndex(m=>m.id===l[Math.floor(t/2)%l.length].id); const e=estado(todos()[i],i,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.r=12; } } } if(t>=22){ orb.alvo.set(0,0,2); orb.r=30; }
+    if(t>=12&&t<16){ const V=vila(1); orb.alvo.set(V.cx,0,V.cz+2); } if(t>=16&&t<22){ const l=todos().filter(m=>!m.npc&&!m.discreto); if(l.length){ const i=todos().findIndex(m=>m.id===l[Math.floor(t/2)%l.length].id); const e=estado(todos()[i],i,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.r=12; } } } if(t>=22){ orb.alvo.set(0,0,2); orb.r=30; }
     requestAnimationFrame(passo); })(); }
 async function carregaMoradores(){ try{ const r=await fetch(MODO_TESTE?"moradores-teste.json":"moradores.json",{cache:"no-cache"}); if(!r.ok) throw 0; const j=await r.json();
-    MORADORES=j.moradores.filter(m=>!m.npc).map(m=>({id:m.id, nome:m.nome, nomeCompleto:m.nomeCompleto||"", sexo:m.sexo||"?", profissao:m.profissao, joinedAt:m.joinedAt||D(m.dia||1,m.hora), exemplo:!!m.exemplo, convidou:Array.isArray(m.convidou)?m.convidou.slice():[], convidadoPor:m.convidadoPor||"", fundadorVila:!!(m.fundador||m.fundadorVila), vilaFundada:m.vilaFundada||""})); }catch(e){ MORADORES=[]; } todosCache=null; ecoCache.clear(); xpCache.clear(); equipCache.clear();
-  reconstroiCasas(); renderLista(); renderCronica(); const sel=todos().filter(m=>!m.npc); if(sel.length&&!selecionado){ selecionado=sel[sel.length-1].id; const li=todos(); const ii=li.findIndex(m=>m.id===selecionado); if(ii>=0){ const c=casaDe(ii); iniciaIntroCam(c.vila); } atualizaCard(true); } }
+    MORADORES=j.moradores.filter(m=>!m.npc).map(m=>({id:m.id, nome:m.nome, nomeCompleto:m.nomeCompleto||"", sexo:m.sexo||"?", profissao:m.profissao, joinedAt:m.joinedAt||D(m.dia||1,m.hora), exemplo:!!m.exemplo, convidou:Array.isArray(m.convidou)?m.convidou.slice():[], convidadoPor:m.convidadoPor||"", fundadorVila:!!(m.fundador||m.fundadorVila), vilaFundada:m.vilaFundada||"", discreto:!!m.discreto, premios:Array.isArray(m.premios)?m.premios.map(x=>x&&x.k).filter(Boolean):[]})); }catch(e){ MORADORES=[]; } todosCache=null; ecoCache.clear(); xpCache.clear(); equipCache.clear();
+  reconstroiCasas(); renderLista(); renderCronica(); const sel=todos().filter(m=>!m.npc&&!m.discreto); if(sel.length&&!selecionado){ selecionado=sel[sel.length-1].id; const li=todos(); const ii=li.findIndex(m=>m.id===selecionado); if(ii>=0){ const c=casaDe(ii); iniciaIntroCam(c.vila); } atualizaCard(true); } }
 function iniciar(){ anima(); renderCronica(); if(MODO_CINEMA){ document.body.classList.add("cinema","abertura"); $("meuBox").hidden=true; setTimeout(redimensiona,100); } if(MODO_ABERTURA) setTimeout(iniciaAbertura,800); if(MODO_SEGREDO){ document.body.classList.add("cinema","abertura","segredo"); seguindo=false; setTimeout(redimensiona,100); } carregaMoradores().then(()=>{ const h=decodeURIComponent(location.hash||"").replace(/^#/,"").replace(/^@/,"").toLowerCase(); if(h){ const m=todos().find(x=>x.nome.toLowerCase().replace(/^@/,"")===h); if(m){ selecionar(m.id,true); } } }).then(()=>{ if(MODO_SEGREDO){ selecionado=null; seguindo=false; $("meuBox").hidden=true; } setTimeout(aplicaCamURL,250); }); setInterval(()=>{renderCronica(); renderLista(); atualizaCard();},5000); setInterval(carregaMoradores,10*60000); }
 iniciar();
 });
