@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T12:59",
+ "atualizadoEm": "2026-11-04T13:54",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -167,6 +167,15 @@
    "sexo": "?",
    "profissao": "fazendeiro",
    "joinedAt": 1793806850045,
+   "faltas": 0
+  },
+  {
+   "id": "ig-saviob._santos",
+   "nome": "@saviob._santos",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "comerciante",
+   "joinedAt": 1793811271505,
    "faltas": 0
   }
  ]
