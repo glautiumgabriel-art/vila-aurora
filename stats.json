@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-03T21:09",
+ "geradoEm": "2026-11-03T21:37",
  "relogioVila": {
-  "dia": 26,
-  "hora": 8
+  "dia": 27,
+  "hora": 11
  },
  "moradores": 7,
  "novosDoDia": [
@@ -19,31 +19,31 @@
   {
    "nome": "@dudabrisolaa_",
    "nivel": 7,
-   "xp": 1918,
+   "xp": 2033,
    "titulo": "Mestre"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 7,
-   "xp": 1818,
+   "xp": 1933,
    "titulo": "Mestre"
   },
   {
    "nome": "@iamvictoriamenezes",
-   "nivel": 6,
-   "xp": 1738,
+   "nivel": 7,
+   "xp": 1853,
    "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 6,
-   "xp": 1568,
+   "xp": 1683,
    "titulo": "Mestre"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 6,
-   "xp": 1528,
+   "xp": 1643,
    "titulo": "Mestre"
   }
  ],
@@ -134,6 +134,123 @@
   "ferreiro": 1
  },
  "vilas": 2,
+ "quemMaisTrouxe": [],
+ "moradoresPorConvite": 0,
+ "fundadores": [],
+ "combate": {
+  "@adriana.g.santana": {
+   "nome": "@adriana.g.santana",
+   "profissao": "bardo",
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 21,
+   "def": 10,
+   "bArma": 2,
+   "bSec": 1,
+   "bEsc": 2,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@dudabrisolaa_": {
+   "nome": "@dudabrisolaa_",
+   "profissao": "cavaleiro",
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 12,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 2,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
+  },
+  "@dudabsl_": {
+   "nome": "@dudabsl_",
+   "profissao": "curandeiro",
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 20,
+   "def": 8,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@glautiumgabriel": {
+   "nome": "@glautiumgabriel",
+   "profissao": "mineiro",
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 23,
+   "def": 8,
+   "bArma": 2,
+   "bSec": 3,
+   "bEsc": 0,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@iamvictoriamenezes": {
+   "nome": "@iamvictoriamenezes",
+   "profissao": "explorador",
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 11,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 2,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@laryssapsouza": {
+   "nome": "@laryssapsouza",
+   "profissao": "ferreiro",
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 11,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 2,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@_williamg10": {
+   "nome": "@_williamg10",
+   "profissao": "bardo",
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 16,
+   "def": 4,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  }
+ },
  "eventosUltimas24h": [
   {
    "quando": 1793749336642,
