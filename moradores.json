@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T09:59",
+ "atualizadoEm": "2026-11-04T10:26",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -140,6 +140,15 @@
    "sexo": "?",
    "profissao": "soldado",
    "joinedAt": 1793790547129,
+   "faltas": 0
+  },
+  {
+   "id": "ig-adailtton_santos",
+   "nome": "@adailtton_santos",
+   "nomeCompleto": "Adailton",
+   "sexo": "?",
+   "profissao": "bardo",
+   "joinedAt": 1793798803390,
    "faltas": 0
   }
  ]
