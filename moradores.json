@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T10:59",
+ "atualizadoEm": "2026-11-04T11:54",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -149,6 +149,15 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1793798803390,
+   "faltas": 0
+  },
+  {
+   "id": "ig-gbx.ws",
+   "nome": "@gbx.ws",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "fazendeiro",
+   "joinedAt": 1793804099328,
    "faltas": 0
   }
  ]
