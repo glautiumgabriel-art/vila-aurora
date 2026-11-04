@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T12:00",
+ "atualizadoEm": "2026-11-04T12:40",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -158,6 +158,15 @@
    "sexo": "?",
    "profissao": "fazendeiro",
    "joinedAt": 1793804099328,
+   "faltas": 0
+  },
+  {
+   "id": "ig-sampaiojaiane",
+   "nome": "@sampaiojaiane",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "fazendeiro",
+   "joinedAt": 1793806850045,
    "faltas": 0
   }
  ]
