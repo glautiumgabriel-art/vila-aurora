@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-03T23:02",
+ "geradoEm": "2026-11-04T00:00",
  "relogioVila": {
-  "dia": 31,
-  "hora": 1
+  "dia": 33,
+  "hora": 10
  },
  "moradores": 8,
  "novosDoDia": [
@@ -19,31 +19,31 @@
   {
    "nome": "@laryssapsouza",
    "nivel": 8,
-   "xp": 2450,
+   "xp": 2728,
    "titulo": "Mestre"
   },
   {
    "nome": "@dudabrisolaa_",
-   "nivel": 7,
-   "xp": 2390,
-   "titulo": "Mestre"
-  },
-  {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 7,
-   "xp": 2115,
+   "nivel": 8,
+   "xp": 2629,
    "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 7,
-   "xp": 2080,
+   "xp": 2438,
    "titulo": "Mestre"
   },
   {
-   "nome": "@dudabsl_",
+   "nome": "@iamvictoriamenezes",
    "nivel": 7,
-   "xp": 1950,
+   "xp": 2353,
+   "titulo": "Mestre"
+  },
+  {
+   "nome": "@adriana.g.santana",
+   "nivel": 7,
+   "xp": 2224,
    "titulo": "Mestre"
   }
  ],
@@ -122,7 +122,9 @@
   }
  ],
  "montados": [
+  "@adriana.g.santana",
   "@dudabrisolaa_",
+  "@glautiumgabriel",
   "@laryssapsouza"
  ],
  "porProfissao": {
@@ -151,8 +153,173 @@
    "vila": "Pinheiral"
   }
  ],
- "combate": {},
+ "combate": {
+  "@adriana.g.santana": {
+   "nome": "@adriana.g.santana",
+   "profissao": "bardo",
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 23,
+   "def": 11,
+   "bArma": 2,
+   "bSec": 1,
+   "bEsc": 2,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@dudabrisolaa_": {
+   "nome": "@dudabrisolaa_",
+   "profissao": "cavaleiro",
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 24,
+   "def": 13,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 2,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
+  },
+  "@dudabsl_": {
+   "nome": "@dudabsl_",
+   "profissao": "curandeiro",
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 9,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@glautiumgabriel": {
+   "nome": "@glautiumgabriel",
+   "profissao": "mineiro",
+   "nivel": 7,
+   "hp": 101,
+   "hpMax": 110,
+   "atq": 25,
+   "def": 9,
+   "bArma": 2,
+   "bSec": 3,
+   "bEsc": 0,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@iamvictoriamenezes": {
+   "nome": "@iamvictoriamenezes",
+   "profissao": "explorador",
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 11,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 2,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@laryssapsouza": {
+   "nome": "@laryssapsouza",
+   "profissao": "ferreiro",
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 11,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 2,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@_williamg10": {
+   "nome": "@_williamg10",
+   "profissao": "bardo",
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 20,
+   "def": 8,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@dr.glautiumgabriel": {
+   "nome": "@dr.glautiumgabriel",
+   "profissao": "cozinheiro",
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 3,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  }
+ },
  "eventosUltimas24h": [
+  {
+   "quando": 1793759834112,
+   "quem": "@glautiumgabriel",
+   "tipo": "doma",
+   "texto": "@glautiumgabriel cercaram um cavalo selvagem e domaram! Agora @glautiumgabriel anda montado."
+  },
+  {
+   "quando": 1793759831112,
+   "quem": "@adriana.g.santana",
+   "tipo": "vitoria",
+   "texto": "@adriana.g.santana venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1793758396112,
+   "quem": "@laryssapsouza",
+   "tipo": "briga_vitoria",
+   "texto": "@laryssapsouza encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793758394112,
+   "quem": "@glautiumgabriel",
+   "tipo": "vitoria",
+   "texto": "@glautiumgabriel e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1793758391112,
+   "quem": "@adriana.g.santana",
+   "tipo": "doma",
+   "texto": "@adriana.g.santana cercaram um cavalo selvagem e domaram! Agora @adriana.g.santana anda montado."
+  },
+  {
+   "quando": 1793757976642,
+   "quem": "@_williamg10",
+   "tipo": "vitoria",
+   "texto": "@_williamg10 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
   {
    "quando": 1793756954112,
    "quem": "@glautiumgabriel",
@@ -296,42 +463,6 @@
    "quem": "@glautiumgabriel",
    "tipo": "briga_vitoria",
    "texto": "@glautiumgabriel encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793736795112,
-   "quem": "@iamvictoriamenezes",
-   "tipo": "briga_derrota",
-   "texto": "@iamvictoriamenezes foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793736793112,
-   "quem": "@dudabsl_",
-   "tipo": "queda",
-   "texto": "@dudabsl_ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793736792112,
-   "quem": "@dudabrisolaa_",
-   "tipo": "vitoria",
-   "texto": "@dudabrisolaa_ venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1793735356112,
-   "quem": "@laryssapsouza",
-   "tipo": "vitoria",
-   "texto": "@laryssapsouza e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793735352112,
-   "quem": "@dudabrisolaa_",
-   "tipo": "vitoria",
-   "texto": "@dudabrisolaa_ e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793733916112,
-   "quem": "@laryssapsouza",
-   "tipo": "vitoria",
-   "texto": "@laryssapsouza e os amigos venceram um cavalo selvagem."
   }
  ]
 }
