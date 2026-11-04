@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-04T06:10",
+ "geradoEm": "2026-11-04T06:53",
  "relogioVila": {
   "dia": 2,
   "hora": 6
  },
- "moradores": 11,
+ "moradores": 12,
  "novosDoDia": [
   "@adriana.g.santana",
   "@dudabrisolaa_",
@@ -15,38 +15,39 @@
   "@_williamg10",
   "@tataicintra",
   "@menor.k01_de_itz",
-  "@isaac.jmy"
+  "@isaac.jmy",
+  "@gabrielcamuzzatonegretti"
  ],
  "nivelMaisAlto": 9,
  "maisAltos": [
   {
    "nome": "@dudabsl_",
    "nivel": 9,
-   "xp": 4051,
+   "xp": 4231,
    "titulo": "Lenda"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 9,
-   "xp": 3956,
-   "titulo": "Mestre"
+   "xp": 4136,
+   "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 9,
-   "xp": 3946,
-   "titulo": "Mestre"
+   "xp": 4126,
+   "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 9,
-   "xp": 3921,
+   "xp": 3876,
    "titulo": "Mestre"
   },
   {
-   "nome": "@dudabrisolaa_",
+   "nome": "@adriana.g.santana",
    "nivel": 9,
-   "xp": 3502,
+   "xp": 3522,
    "titulo": "Mestre"
   }
  ],
@@ -54,7 +55,21 @@
   {
    "entre": [
     "@_williamg10",
-    "@dudabsl_"
+    "@glautiumgabriel"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@_williamg10",
+    "@iamvictoriamenezes"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@_williamg10",
+    "@isaac.jmy"
    ],
    "forca": 2
   },
@@ -68,23 +83,9 @@
   {
    "entre": [
     "@dr.glautiumgabriel",
-    "@dudabrisolaa_"
+    "@isaac.jmy"
    ],
    "forca": 2
-  },
-  {
-   "entre": [
-    "@dudabrisolaa_",
-    "@glautiumgabriel"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@_williamg10",
-    "@adriana.g.santana"
-   ],
-   "forca": 1
   }
  ],
  "maioresDesafetos": [
@@ -134,20 +135,20 @@
   "bardo": 2,
   "cavaleiro": 2,
   "explorador": 2,
+  "comerciante": 2,
   "curandeiro": 1,
   "mineiro": 1,
   "ferreiro": 1,
-  "cozinheiro": 1,
-  "comerciante": 1
+  "cozinheiro": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@isaac.jmy",
+  "nome": "@gabrielcamuzzatonegretti",
   "nomeCompleto": "",
-  "profissao": "cavaleiro",
+  "profissao": "comerciante",
   "sexo": "m",
-  "chegouEm": "2026-11-04T06:10",
-  "chegouEmMs": 1793783412333
+  "chegouEm": "2026-11-04T06:53",
+  "chegouEmMs": 1793786001440
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -257,11 +258,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 24,
-   "def": 10,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 26,
+   "def": 11,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -273,11 +274,11 @@
   "@dr.glautiumgabriel": {
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 21,
-   "def": 8,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 23,
+   "def": 9,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -305,11 +306,11 @@
   "@menor.k01_de_itz": {
    "nome": "@menor.k01_de_itz",
    "profissao": "explorador",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 19,
-   "def": 3,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 21,
+   "def": 4,
    "bArma": 7,
    "bSec": 0,
    "bEsc": 0,
@@ -321,6 +322,22 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
+   "nivel": 2,
+   "hp": 60,
+   "hpMax": 60,
+   "atq": 12,
+   "def": 2,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
+  },
+  "@gabrielcamuzzatonegretti": {
+   "nome": "@gabrielcamuzzatonegretti",
+   "profissao": "comerciante",
    "nivel": 1,
    "hp": 50,
    "hpMax": 50,
@@ -331,11 +348,41 @@
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
-   "guerreiro": true,
+   "guerreiro": false,
    "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793784314112,
+   "quem": "@glautiumgabriel",
+   "tipo": "queda",
+   "texto": "@glautiumgabriel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793784312112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "queda",
+   "texto": "@dudabrisolaa_ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793783896642,
+   "quem": "@_williamg10",
+   "tipo": "vitoria",
+   "texto": "@_williamg10 venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1793783652956,
+   "quem": "@menor.k01_de_itz",
+   "tipo": "derrota",
+   "texto": "@menor.k01_de_itz encostou sozinho em um goblin da estrada e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793783416034,
+   "quem": "@tataicintra",
+   "tipo": "queda",
+   "texto": "@tataicintra escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1793782873112,
    "quem": "@dudabsl_",
@@ -485,36 +532,6 @@
    "quem": "@dudabsl_",
    "tipo": "vitoria",
    "texto": "@dudabsl_ venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1793769912112,
-   "quem": "@dudabrisolaa_",
-   "tipo": "queda",
-   "texto": "@dudabrisolaa_ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793769911112,
-   "quem": "@adriana.g.santana",
-   "tipo": "queda",
-   "texto": "@adriana.g.santana escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793769582967,
-   "quem": "@dr.glautiumgabriel",
-   "tipo": "briga_derrota",
-   "texto": "@dr.glautiumgabriel foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793768473112,
-   "quem": "@dudabsl_",
-   "tipo": "briga_vitoria",
-   "texto": "@dudabsl_ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793768472112,
-   "quem": "@dudabrisolaa_",
-   "tipo": "vitoria",
-   "texto": "@dudabrisolaa_ e os amigos venceram um javali teimoso e ganharam uma presa de javali."
   }
  ]
 }

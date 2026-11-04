@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T06:10",
+ "atualizadoEm": "2026-11-04T06:53",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -113,6 +113,15 @@
    "sexo": "m",
    "profissao": "cavaleiro",
    "joinedAt": 1793783412333,
+   "faltas": 0
+  },
+  {
+   "id": "ig-gabrielcamuzzatonegretti",
+   "nome": "@gabrielcamuzzatonegretti",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "comerciante",
+   "joinedAt": 1793786001440,
    "faltas": 0
   }
  ]
