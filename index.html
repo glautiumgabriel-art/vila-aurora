@@ -492,6 +492,9 @@ function estado(m, idx, w){
     if(natural||eco.construido(pl)){ ps=passoCiclo(m,V,idx,m.profissao,CICLOS[m.profissao]||CICLO_PRACA,eco.proxima?V.L[eco.proxima[0]]:null); }
     else { const sit=eco.proxima?V.L[eco.proxima[0]]:null; const tipo=(m.profissao==="mineiro"||m.profissao==="ferreiro")?"pedra":(m.profissao==="construtor"||hash(m.id+"ajuda"+w.dia)%3===0)?"obra":"coleta"; ps=passoCiclo(m,V,idx,tipo,tipo==="pedra"?CICLO_PEDRA:tipo==="obra"?CICLO_OBRA:CICLO_COLETA,sit?{x:sit.x,z:sit.z+sit.h/2+2}:null); }
     x=ps.x; z=ps.z; y=ps.y; ang=ps.ang; andando=ps.andando; modo=ps.s.modo; acao=ps.s.acao; if(modo==="dentro"){ dentro={tipo:ps.s.dentro,spot:ps.s.spot,modo:"trabalhar"}; } }
+  else if(x==null&&lugar===LUG.praca&&(chave==="fogueira"||chave==="lazer"||chave==="almoco"||chave==="visita")){ // assentos em arco ao redor da fogueira: lugar fixo por morador, virado para o fogo
+    const nSeat=14, k=hash(m.id+"assento")%(nSeat*2); const anel=k<nSeat?0:1; const a=(k%nSeat)/nSeat*Math.PI*2+anel*(Math.PI/nSeat); const R=anel?4.3:3.0; const bal=Math.sin(Date.now()/2600+hash(m.id)%7)*0.06;
+    x=lugar.x+Math.cos(a)*(R+bal); z=lugar.z+Math.sin(a)*(R+bal); ang=Math.atan2(lugar.x-x,lugar.z-z); andando=false; modo="parado"; }
   else if(x==null){ const s2=Math.floor(Date.now()/6000), f=(Date.now()%6000)/6000; const lw=lugar===LUG.muralha?Math.max(2.5,lugar.w+2):7, lh=lugar===LUG.muralha?Math.max(2.5,lugar.h+2):7;
     const front=lugar===LUG.muralha; function off(k){ const r=rnd(m.id+"p"+k); return {x:(r()-.5)*lw, z: front ? lugar.h/2+1+r()*2.5 : (r()-.5)*lh}; }
     const a=off(s2), b=off(s2+1), e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; x=lugar.x+a.x+(b.x-a.x)*e; z=lugar.z+a.z+(b.z-a.z)*e; { const dv=desvia(V,x,z); x=dv.x; z=dv.z; } const dx=b.x-a.x, dz=b.z-a.z; andando=Math.abs(dx)+Math.abs(dz)>0.8; ang=Math.atan2(dx,dz); modo=andando?"andar":"parado"; }
