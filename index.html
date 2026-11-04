@@ -22,7 +22,7 @@
 // Tudo carrega antes da vila nascer; a simulação (relógio, moradores, economia) não muda.
 const KAYKIT=(function(){
   // v32: modelos comprimidos (meshopt) em az/, servidos pelo jsDelivr (VILA_CDN, preenchido pelo publicar.py) com o próprio site de reserva
-  const VILA_CDN="https://cdn.jsdelivr.net/gh/glautiumgabriel-art/vila-aurora@bfbcaea8204c65e5dfd95613a2cb4c419517f87a/";
+  const VILA_CDN="https://cdn.jsdelivr.net/gh/glautiumgabriel-art/vila-aurora@7a2213e86966abc9c2de03c8454b4b5c2203a90b/";
   const zpath=rel=>rel.replace(/^assets\//,"az/").replace(/\.gltf$/,".glb");
   const H="assets/hex/", P="assets/personagens/", I="assets/personagens_itens/";
   const lista={
@@ -42,7 +42,7 @@ const KAYKIT=(function(){
     weaponrack:H+"decoration_props/weaponrack.gltf", wheelbarrow:H+"decoration_props/wheelbarrow.gltf", lumber:H+"decoration_props/resource_lumber.gltf", stone:H+"decoration_props/resource_stone.gltf",
     bucket:H+"decoration_props/bucket_water.gltf", target:H+"decoration_props/target.gltf", flag_red:H+"decoration_props/flag_red.gltf", flag_blue:H+"decoration_props/flag_blue.gltf", flag_green:H+"decoration_props/flag_green.gltf", flag_yellow:H+"decoration_props/flag_yellow.gltf",
     Knight:P+"Knight.glb", Barbarian:P+"Barbarian.glb", Mage:P+"Mage.glb", Rogue:P+"Rogue.glb", Rogue_Hooded:P+"Rogue_Hooded.glb",
-    dragao:"assets/monstros/dragao_quaternius.glb", lobo:"assets/monstros/lobo_quaternius.glb", javali:"assets/monstros/javali_quaternius.glb", fantasma:"assets/monstros/fantasma_quaternius.glb", esqueleto:"assets/monstros/Skeleton_Minion.glb",
+    dragao:"assets/monstros/dragao_quaternius.glb", lobo:"assets/monstros/lobo_quaternius.glb", javali:"assets/monstros/javali_quaternius.glb", fantasma:"assets/monstros/fantasma_quaternius.glb", golem:"assets/monstros/golem_quaternius.glb", esqueleto:"assets/monstros/Skeleton_Minion.glb",
     it_sword:I+"sword_1handed.gltf", it_sword2:I+"sword_2handed_color.gltf", it_dagger:I+"dagger.gltf", it_axe:I+"axe_1handed.gltf", it_axe2:I+"axe_2handed.gltf",
     it_staff:I+"staff.gltf", it_wand:I+"wand.gltf", it_book:I+"spellbook_open.gltf", it_crossbow:I+"crossbow_2handed.gltf", it_mug:I+"mug_full.gltf",
     it_shield_round:I+"shield_round_color.gltf", it_shield_badge:I+"shield_badge_color.gltf", it_shield_square:I+"shield_square_color.gltf", it_shield_spikes:I+"shield_spikes_color.gltf", it_quiver:I+"quiver.gltf",
@@ -112,6 +112,8 @@ h2{font-size:19px;color:var(--accent)}
 .top .stat{font-family:var(--display);font-size:16px;color:var(--muted)}
 .top .stat b{color:var(--fg);font-variant-numeric:tabular-nums}
 .top .spacer{flex:1}
+.top .invasao{font-family:var(--body);font-weight:800;font-size:13px;color:#ffd0c8;background:#7a1f16;border-color:#ff7a6a;padding:4px 10px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:pulsaBusca 1.4s ease-out infinite}
+.top .prox-inv{font-size:13px;color:var(--muted)}
 .busca-dica{font-family:var(--display);font-weight:700;font-size:16px;color:var(--fg);margin:2px 0 8px}
 .busca-box.destaque{border-color:var(--accent);animation:pulsaBusca 1.8s ease-out infinite}
 .busca-box.destaque input{border-color:var(--accent)}
@@ -204,6 +206,8 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
   <span class="stat">Moradores: <b id="pop">0</b></span>
   <span class="stat">Vilas: <b id="nvilas">1</b></span>
   <button class="ghost chegou" id="faixaChegou" type="button" hidden></button>
+  <button class="ghost invasao" id="faixaInvasao" type="button" hidden></button>
+  <span class="stat prox-inv" id="proxInv"></span>
   <span class="spacer"></span>
   <span class="hint">A vila anda sozinha. Você só assiste.</span>
   <button class="ghost" id="btnMusica" type="button" title="Música medieval">🎵 Música</button>
@@ -537,6 +541,13 @@ function estado(m, idx, w){
   else if(x==null){ const s2=Math.floor(Date.now()/6000), f=(Date.now()%6000)/6000; const lw=lugar===LUG.muralha?Math.max(2.5,lugar.w+2):7, lh=lugar===LUG.muralha?Math.max(2.5,lugar.h+2):7;
     const front=lugar===LUG.muralha; function off(k){ const r=rnd(m.id+"p"+k); return {x:(r()-.5)*lw, z: front ? lugar.h/2+1+r()*2.5 : (r()-.5)*lh}; }
     const a=off(s2), b=off(s2+1), e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; x=lugar.x+a.x+(b.x-a.x)*e; z=lugar.z+a.z+(b.z-a.z)*e; { const dv=desvia(V,x,z); x=dv.x; z=dv.z; } const dx=b.x-a.x, dz=b.z-a.z; andando=Math.abs(dx)+Math.abs(dz)>0.8; ang=Math.atan2(dx,dz); modo=andando?"andar":"parado"; }
+  { const tsW=REAL_EPOCH+((w.dia-1)*24+w.hora+(w.frac||0))*HORA_REAL; const IV=invasaoEm(tsW); const k=IV?IV.ids.indexOf(m.id):-1;
+    if(IV&&IV.vi===V.i&&k>=0){ const p=(tsW-IV.ts)/(IV.fim-IV.ts); if(p>=0.05&&p<0.95){ const T=INV_TIPOS[IV.tipo]; const P=V.L.praca; const C={x:P.x+Math.cos(IV.dir)*4.5,z:P.z+Math.sin(IV.dir)*4.5};
+      const cura=m.profissao==="curandeiro", longe=["arqueiro","mago","alquimista","cacador"].includes(m.profissao); const R=cura?4.8:longe?6.4:2.7; const n=Math.max(1,IV.ids.length);
+      const a=k/n*Math.PI*2+(longe?0.3:cura?0.6:0)+Math.sin(Date.now()/1400+k)*0.05; const dv=desvia(V,C.x+Math.cos(a)*R,C.z+Math.sin(a)*R);
+      x=dv.x; z=dv.z; y=0; ang=Math.atan2(C.x-x,C.z-z); andando=false; dentro=null; visita=null; lugar=P; chave="luta";
+      modo=cura||m.profissao==="mago"||m.profissao==="alquimista"?"magia":longe?"mirar":"cortar";
+      acao=cura?"curando os feridos na luta contra "+T.pl:longe?"atacando "+T.pl+" de longe":"na linha de frente contra "+T.pl; } } }
   return {x,z,y,acao,lugar,chave,visita,dentro,modo,andando,ang,vila:V};
 }
 const CLASSE={soldado:{forca:3,alc:"perto"},cavaleiro:{forca:4,alc:"perto"},arqueiro:{forca:2,alc:"longe"},mago:{forca:2,alc:"longe"},alquimista:{forca:1,alc:"longe"},cacador:{forca:2,alc:"longe"},lenhador:{forca:2,alc:"perto"},ferreiro:{forca:2,alc:"perto"},mineiro:{forca:2,alc:"perto"},explorador:{forca:1,alc:"perto"}};
@@ -588,6 +599,38 @@ const SELO_RAR={comum:"⚪",incomum:"🟢",raro:"🔵","épico":"🟣","lendári
 function eventoDoDia(dia){ const r=rnd("evento-dia:"+dia); let v=r(), acc=0; let cat=EVENTOS_DIA[0]; for(const c of EVENTOS_DIA){ acc+=c.p; if(v<acc){ cat=c; break; } }
   let lst=cat.lista; if(dia%7===0&&cat.r==="comum") lst=[cat.lista[0]]; const ev=pick(r,lst); return Object.assign({raridade:cat.r,selo:SELO_RAR[cat.r],dia},ev); }
 function ehFeira(dia){ return dia%7===0||eventoDoDia(dia).k==="feira"; }
+// ---------- invasões (v36) ----------
+const INV_TIPOS={
+  lobos:{n:"Lobos",pl:"os lobos",need:6,drop:"peles de lobo para o inverno",qtd:4},
+  goblins:{n:"Goblins",pl:"os goblins",need:10,drop:"a bolsa de moedas que os goblins tinham roubado",qtd:4},
+  golem:{n:"Monstro de pedra",pl:"o monstro de pedra",need:22,drop:"um núcleo de pedra brilhante",qtd:1},
+  bruxa:{n:"Bruxa",pl:"a bruxa",need:28,drop:"o caldeirão da bruxa",qtd:1},
+  gigante:{n:"Gigante",pl:"o gigante",need:36,drop:"o machado do gigante",qtd:1},
+  dragao:{n:"Dragão",pl:"o dragão",need:60,drop:"uma escama de dragão",qtd:1}};
+const INV_URL=(location.search.match(/[?&]invasao=([a-z]+)/)||[])[1];
+const invCache=new Map();
+function nivelEm(m,ts){ if(m.npc) return 5; const horas=Math.max(0,(ts-m.joinedAt)/HORA_MS); return Math.floor(Math.sqrt(Math.floor(horas*10/24*10)/50))+1; }
+function montaInvasao(tipo,ts,durMin,vi,seed){ const T=INV_TIPOS[tipo]; const lista=todos(); const def=lista.filter(m=>m.vi===vi&&m.joinedAt<=ts);
+  const poder=def.reduce((a,m)=>a+nivelEm(m,ts),0); const venceu=poder+hash(seed+"sorte")%15>=T.need;
+  const nomes=def.filter(m=>!m.npc&&!m.discreto).map(m=>m.nome).concat(def.filter(m=>m.npc).map(m=>m.nome));
+  return {tipo,ts,fim:ts+durMin*60000,durMin,vi,vila:vila(vi).nome,venceu,ids:def.map(m=>m.id),nomes,n:def.length,drop:venceu?T.drop:"",dir:(hash(seed+"dir")%360)/180*Math.PI,seed}; }
+function invasoesDoDia(dia){ const k=dia+":"+todos().length; let c=invCache.get(k); if(c) return c; const brutos=[];
+  const NOITE=[19,20,21,22,23,0,1,2,3,4], QUALQUER=[6,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,0,2];
+  const add=(tipo,j,horas)=>{ const seed="inv:"+dia+":"+tipo+":"+j; const r=rnd(seed); const hora=horas[Math.floor(r()*horas.length)], min=Math.floor(r()*50), dur=10+Math.floor(r()*11), vi=Math.floor(r()*Math.max(1,nVilas())); brutos.push({tipo,seed,dur,vi,ts:REAL_EPOCH+((dia-1)*24+hora)*HORA_REAL+min*60000}); };
+  const nL=2+hash("nl"+dia)%2; for(let j=0;j<nL;j++) add("lobos",j,(j===0||hash("lh"+dia+j)%3)?NOITE:QUALQUER);
+  const nG=1+hash("ng"+dia)%2; for(let j=0;j<nG;j++) add("goblins",j,QUALQUER);
+  if(hash("golem"+dia)%5<2) add("golem",0,QUALQUER);
+  if(hash("bruxa"+dia)%7===0) add("bruxa",0,NOITE);
+  if(hash("gigante"+dia)%7===3) add("gigante",0,QUALQUER);
+  if(hash("dragao"+dia)%30===7) add("dragao",0,[11,12,13,14,15,16,17,18]);
+  brutos.sort((a,b)=>a.ts-b.ts); let fimAnt=0; c=brutos.map(b=>{ const ts=Math.max(b.ts,fimAnt+5*60000); const iv=montaInvasao(b.tipo,ts,b.dur,b.vi,b.seed); fimAnt=iv.fim; return iv; });
+  invCache.set(k,c); if(invCache.size>20) invCache.delete(invCache.keys().next().value); return c; }
+let invForcada=null;
+function invasaoEm(ts){ if(INV_URL&&INV_TIPOS[INV_URL]){ if(!invForcada||ts>=invForcada.fim||invForcada.nTodos!==todos().length){ const t0=Math.floor(Date.now()/1200000)*1200000; invForcada=montaInvasao(INV_URL,t0,20,nVilas()>1?1:0,"forcada:"+INV_URL+t0); invForcada.venceu=true; invForcada.drop=INV_TIPOS[INV_URL].drop; invForcada.nTodos=todos().length; } if(ts>=invForcada.ts&&ts<invForcada.fim) return invForcada; }
+  const dia=Math.floor((ts-REAL_EPOCH)/86400000)+1; for(const d of [dia,dia-1]){ if(d<1) continue; for(const iv of invasoesDoDia(d)) if(ts>=iv.ts&&ts<iv.fim) return iv; } return null; }
+function proximaInvasao(){ const now=Date.now(); const dia=Math.floor((now-REAL_EPOCH)/86400000)+1; for(const d of [dia,dia+1]){ for(const iv of invasoesDoDia(d)) if(iv.ts>now) return {iv,amanha:d>dia}; } return null; }
+function hhmm(ts){ const t=new Date(ts-3*HORA_REAL); return String(t.getUTCHours()).padStart(2,"0")+":"+String(t.getUTCMinutes()).padStart(2,"0"); }
+function resultadoInv(iv){ const T=INV_TIPOS[iv.tipo]; const Q=T.pl.charAt(0).toUpperCase()+T.pl.slice(1); const pl=T.qtd>1; return iv.venceu?"Vitória! "+Q+(pl?" fugiram":" fugiu")+" e a vila ganhou "+iv.drop+".":Q+(pl?" levaram":" levou")+" duas sacas de comida, mas ninguém se feriu de verdade."; }
 function cronica(w){
   const out=[]; const lista=todos();
   for(let k=0;k<14;k++){
@@ -602,7 +645,8 @@ function cronica(w){
     out.push({d,h,texto,vil});
   }
   for(const d of [w.dia,w.dia-1]){ if(d<1) continue; const ev=eventoDoDia(d); if((d-1)*24+7<=Math.floor(w.t)) out.push({d,h:7,texto:ev.selo+" "+ev.raridade.toUpperCase()+" · "+ev.t,vil:ev.raridade==="lendário"}); }
-  const chegadas=lista.map((m,i)=>({m,i})).filter(o=>!o.m.npc&&!o.m.discreto).map(o=>({ts:o.m.joinedAt,texto:o.m.nome+" chegou a "+vilaDe(o.i).nome+" e armou uma tenda perto da fogueira. Profissão: "+nomeProf(o.m)+". Ainda sem equipamento."}));
+  const invLinhas=[]; for(const d of [w.dia,w.dia-1]){ if(d<1) continue; invasoesDoDia(d).forEach(iv=>{ const now=Date.now(); if(iv.ts>now) return; const T=INV_TIPOS[iv.tipo]; const quem=iv.nomes.slice(0,3).join(", ")+(iv.n>3?" e mais "+(iv.n-Math.min(3,iv.nomes.length))+" moradores":""); invLinhas.push({ts:iv.ts,texto:"⚔️ INVASÃO! "+T.n+" atacaram "+iv.vila+" às "+hhmm(iv.ts)+". "+(quem?quem+" correram para defender a vila.":"A vila inteira correu para a praça."),vil:true}); if(iv.fim<=now) invLinhas.push({ts:iv.fim,texto:"🛡️ "+iv.vila+": "+resultadoInv(iv),vil:!iv.venceu}); }); }
+  const chegadas=invLinhas.concat(lista.map((m,i)=>({m,i})).filter(o=>!o.m.npc&&!o.m.discreto).map(o=>({ts:o.m.joinedAt,texto:o.m.nome+" chegou a "+vilaDe(o.i).nome+" e armou uma tenda perto da fogueira. Profissão: "+nomeProf(o.m)+". Ainda sem equipamento."})));
   lista.forEach((m,i)=>{ if(m.npc||m.discreto) return; const PG=peregrinacaoDe(m,i); if(PG&&PG.ts<=Date.now()) chegadas.push({ts:PG.ts,texto:m.nome+" foi à Vila Aurora forjar o equipamento do nível "+PG.marco+" na ferraria ("+vilaDe(i).nome+" ainda não tem ferreiro)."}); { const conv=(m.convidou||[]).map(nm=>lista.find(z=>String(z.nome).replace(/^@/,"").toLowerCase()===String(nm).replace(/^@/,"").toLowerCase())).filter(Boolean).sort((a,b)=>a.joinedAt-b.joinedAt);
       [[1,"virou "+rotRecrutador(m)+" e ganhou a capa dourada"],[3,"ganhou uma arma lendária forjada pelo ferreiro do Rei"],[5,"ganhou uma estátua na praça de "+vilaDe(i).nome]].forEach(([n,t])=>{ if(conv.length>=n) chegadas.push({ts:conv[n-1].joinedAt+2,texto:"🏆 "+m.nome+" trouxe "+n+(n>1?" amigos":" amigo")+" para a vila e "+t+"."}); }); }
     (m.convidou||[]).forEach(nm=>{ const novo=lista.find(z=>String(z.nome).replace(/^@/,"").toLowerCase()===String(nm).replace(/^@/,"").toLowerCase()); if(novo&&!novo.discreto) chegadas.push({ts:novo.joinedAt+1,texto:m.nome+" trouxe "+novo.nome+" para "+vilaDe(lista.indexOf(novo)).nome+"."}); }); eventosDe(m).lista.forEach(ev=>{ if(ev.ts<=Date.now()&&Date.now()-ev.ts<30*24*HORA_MS) chegadas.push({ts:ev.ts,texto:ev.texto,vil:!!ev.ruim}); }); });
@@ -862,8 +906,8 @@ function vela(g,x,y,z){ cyl(0.06,0.06,0.3,M.branco,x,y+0.15,z,g,6); const l=new 
 // ---------- bichos e clima ----------
 const BICHOS=[];
 // bicho com modelo CC0 animado: escala pela altura, frente virada para +Z (a cabeça define a frente), pé no chão
-const ALTURA_BICHO={lobo:0.95,javali:0.9,fantasma:1.5,esqueleto:1.75};
-const CLIPES_BICHO={lobo:{anda:"Walk",ataca:"Attack",parado:"Idle"},javali:{anda:"Walk",ataca:"Attack_Headbutt",parado:"Idle"},fantasma:{anda:"Flying_Idle",ataca:"Headbutt",parado:"Flying_Idle"},esqueleto:{anda:"Walking_A",ataca:"Unarmed_Melee_Attack_Punch_A",parado:"Idle"}};
+const ALTURA_BICHO={lobo:0.95,javali:0.9,fantasma:1.5,esqueleto:1.75,golem:2.8};
+const CLIPES_BICHO={lobo:{anda:"Walk",ataca:"Attack",parado:"Idle"},javali:{anda:"Walk",ataca:"Attack_Headbutt",parado:"Idle"},fantasma:{anda:"Flying_Idle",ataca:"Headbutt",parado:"Flying_Idle"},esqueleto:{anda:"Walking_A",ataca:"Unarmed_Melee_Attack_Punch_A",parado:"Idle"},golem:{anda:"Flying_Idle",ataca:"Punch",parado:"Flying_Idle"}};
 function modeloBicho(tipo){ const alt=ALTURA_BICHO[tipo]; if(!alt) return null; const obj=KAYKIT.cloneAnimado(tipo); if(!obj) return null; obj.updateMatrixWorld(true); const bb=new THREE.Box3().setFromObject(obj); const sz=new THREE.Vector3(); bb.getSize(sz); const k=alt/Math.max(sz.y,1e-4); obj.scale.multiplyScalar(k); obj.updateMatrixWorld(true);
   const bb2=new THREE.Box3().setFromObject(obj); const c=new THREE.Vector3(); bb2.getCenter(c); const cab=obj.getObjectByName("Head"); let ry=0; if(cab){ const h=new THREE.Vector3(); cab.getWorldPosition(h); const dx=h.x-c.x, dz=h.z-c.z; if(Math.abs(dx)>0.15*sz.x*k||Math.abs(dz)>0.15*sz.z*k) ry=Math.atan2(dx,dz); }
   const wrap=new THREE.Group(); wrap.add(obj); obj.position.set(-c.x,-bb2.min.y,-c.z); wrap.rotation.y=-ry;
@@ -957,6 +1001,28 @@ function batalha(tsec,w){ if(!MODO_SEGREDO) return; const V=vila(0); const cx=V.
 }
 // chuva (determinística por dia e hora), pássaros, fumaça
 const CHUVA=(function(){ const g=new THREE.InstancedMesh(geo("Box",[0.03,0.9,0.03]),new THREE.MeshBasicMaterial({color:0xbfd8ff,transparent:true,opacity:0.55}),700); g.frustumCulled=false; g.visible=false; scene.add(g); const r=rnd("chuva"); g.userData.seeds=[]; for(let i=0;i<700;i++) g.userData.seeds.push({x:(r()-.5)*90,z:(r()-.5)*70,f:r()*20}); return g; })();
+const INVG={chave:null,mons:[],ultimo:0};
+function tingeTudo(obj,cor,extra){ obj.traverse(o=>{ if(o.isMesh&&o.material){ o.material=o.material.clone(); o.material.color=new THREE.Color(cor); if(extra) Object.assign(o.material,extra); o.castShadow=true; o.frustumCulled=false; } }); }
+function kaykitAnimado(modelo,escala,cor){ const c=KAYKIT.cloneAnimado(modelo); if(!c) return null; c.scale.setScalar(escala); if(cor!=null) tingeTudo(c,cor); const mixer=new THREE.AnimationMixer(c); const acoes={}; KAYKIT.clipes(modelo).forEach(cl=>{ acoes[cl.name.replace(/^.*\|/,"")]=mixer.clipAction(cl); }); let atual=null;
+  const play=(nome)=>{ const a=acoes[nome]||acoes.Idle; if(!a||atual===a) return; if(atual) atual.fadeOut(0.2); a.reset().fadeIn(0.2).play(); atual=a; }; const g=new THREE.Group(); g.add(c); return {g,mixer,play,anda:"Walking_A",ataca:"1H_Melee_Attack_Chop"}; }
+function criaMonstro(tipo){
+  if(tipo==="lobos"||tipo==="goblins"||tipo==="golem"){ const nb=tipo==="lobos"?"lobo":tipo==="goblins"?"esqueleto":"golem"; const md=modeloBicho(nb); if(!md) return null; const g=new THREE.Group(); g.add(md.obj); if(tipo==="goblins"){ md.obj.scale.multiplyScalar(0.72); tingeTudo(md.obj,0x6fa83e); } if(tipo==="golem") tingeTudo(md.obj,0x8c8478,{roughness:0.95}); const C=CLIPES_BICHO[nb]; return {g,mixer:md.mixer,play:md.play,anda:C.anda,ataca:C.ataca,voa:tipo==="golem"}; }
+  if(tipo==="bruxa"){ const k=kaykitAnimado("Mage",1.05,0x3d6b35); if(!k) return null; const chapeu=new THREE.Mesh(new THREE.ConeGeometry(0.42,1.1,10),new THREE.MeshStandardMaterial({color:0x1d1426,roughness:0.8})); chapeu.position.y=2.75; const aba=new THREE.Mesh(new THREE.CylinderGeometry(0.62,0.62,0.06,14),chapeu.material); aba.position.y=2.25; const cabo=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,2.2,6),new THREE.MeshStandardMaterial({color:0x6b4423})); cabo.rotation.z=Math.PI/2.3; cabo.position.set(0,0.75,-0.35); const palha=new THREE.Mesh(new THREE.ConeGeometry(0.25,0.6,8),new THREE.MeshStandardMaterial({color:0xc9a24a})); palha.rotation.z=-Math.PI/2; palha.position.set(-1.1,0.3,-0.35); k.g.add(chapeu,aba,cabo,palha); k.ataca="Spellcasting"; k.voa=true; return k; }
+  if(tipo==="gigante"){ const k=kaykitAnimado("Barbarian",3.0,0x9a8a74); if(!k) return null; k.ataca="2H_Melee_Attack_Chop"; return k; }
+  return null; }
+function limpaInvasao(){ INVG.mons.forEach(o=>scene.remove(o.g)); INVG.mons=[]; INVG.chave=null; }
+function animaInvasao(tsec,w){ const now=Date.now(); const IV=invasaoEm(now); const agoraP=performance.now(); const dt=Math.min(0.1,Math.max(0,(agoraP-(INVG.ultimo||agoraP))/1000)); INVG.ultimo=agoraP;
+  if(!IV||MODO_SEGREDO){ if(INVG.chave) limpaInvasao(); return; }
+  const T=INV_TIPOS[IV.tipo], V=vila(IV.vi), P=V.L.praca; const C={x:P.x+Math.cos(IV.dir)*4.5,z:P.z+Math.sin(IV.dir)*4.5}; const E={x:C.x+Math.cos(IV.dir)*34,z:C.z+Math.sin(IV.dir)*34};
+  const p=(now-IV.ts)/(IV.fim-IV.ts); const chave=IV.seed+":"+KAYKIT.estado.versao;
+  if(IV.tipo==="dragao"){ if(INVG.chave!==chave){ limpaInvasao(); INVG.chave=chave; } const raio=p<0.08?9+(0.08-p)*300:p>0.94?9+(p-0.94)*400:9; DRAGAO.visible=true; sombraDragao.visible=true; const a=tsec*0.45; const x=C.x+Math.cos(a)*raio, z=C.z+Math.sin(a)*raio; DRAGAO.position.set(x,7+Math.sin(tsec*1.3)*0.6,z); DRAGAO.rotation.y=-a; sombraDragao.position.set(x,0.08,z); if(DRAGAO.userData.play) DRAGAO.userData.play(p>0.08&&p<0.94&&Math.floor(tsec/3)%2?"Dragon_Attack":"Dragon_Flying",1); return; }
+  if(INVG.chave!==chave){ limpaInvasao(); INVG.chave=chave; for(let i=0;i<T.qtd;i++){ const mo=criaMonstro(IV.tipo); if(!mo) break; mo.i=i; mo.g.traverse(o=>{ if(o.isMesh){ o.frustumCulled=false; o.castShadow=true; } }); scene.add(mo.g); if(mo.mixer) mo.mixer.update(i*0.37); INVG.mons.push(mo); } }
+  const q=INVG.mons.length; INVG.mons.forEach((mo,i)=>{ const oa=q>1?i/q*Math.PI*2:0, orad=q>1?1.4:0; const ox=Math.cos(oa)*orad, oz=Math.sin(oa)*orad; let x,z,face,clip;
+    if(p<0.06){ const f=p/0.06; x=E.x+(C.x-E.x)*f+ox; z=E.z+(C.z-E.z)*f+oz; face=Math.atan2(C.x-E.x,C.z-E.z); clip=mo.anda; }
+    else if(p<0.94){ const j=Math.sin(tsec*2.1+i)*0.35; x=C.x+ox+j; z=C.z+oz+Math.cos(tsec*1.7+i)*0.35; face=q>1?Math.atan2(ox,oz):tsec*0.7; clip=mo.ataca; }
+    else { const f=Math.min(1,(p-0.94)/0.06); x=C.x+(E.x-C.x)*f+ox; z=C.z+(E.z-C.z)*f+oz; face=Math.atan2(E.x-C.x,E.z-C.z); clip=mo.anda; }
+    mo.g.position.set(x,mo.voa?0.6+Math.sin(tsec*2+i)*0.15:0,z); mo.g.rotation.y=face; mo.play(clip,1); if(mo.mixer) mo.mixer.update(dt); }); }
+function vidaInvasao(iv){ const p=(Date.now()-iv.ts)/(iv.fim-iv.ts); const f=Math.min(1,Math.max(0,(p-0.06)/0.86)); return Math.round(iv.venceu?100*(1-f):100-70*f); }
 function chovendo(w){ const c=climaAgora(w); return c==="chuva"||c==="tempestade"; }
 const NEVE=(function(){ const g=new THREE.InstancedMesh(geo("Sphere",[0.07,5,4]),new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:0.9}),600); g.frustumCulled=false; g.visible=false; scene.add(g); const r=rnd("neve"); g.userData.seeds=[]; for(let i=0;i<600;i++) g.userData.seeds.push({x:(r()-.5)*90,z:(r()-.5)*70,f:r()*20,o:r()*6.28}); return g; })();
 function animaNeve(tsec,w){ const on=climaAgora(w)==="neve"&&!dentroAtual; NEVE.visible=on; if(!on) return; const d=new THREE.Object3D(); const t=orb.target; NEVE.userData.seeds.forEach((s2,i)=>{ d.scale.setScalar(Math.max(1,orb.r/18)); d.position.set(t.x+s2.x+Math.sin(tsec*0.8+s2.o)*0.6, 1+((s2.f-tsec*1.6)%20+20)%20, t.z+s2.z+Math.cos(tsec*0.7+s2.o)*0.6); d.updateMatrix(); NEVE.setMatrixAt(i,d.matrix); }); NEVE.instanceMatrix.needsUpdate=true; }
@@ -1104,6 +1170,9 @@ function atualizaMixers(now){ const dt=Math.min(0.1,Math.max(0,(now-relogioAnim)
 let casasInst=null, casasN=0, casasNiveis=""; const cabRot=new Map();
 const CASA_RY=Math.PI; // porta virada para +z (a frente da casa, onde o morador toma café)
 const PREMIOS=[[1,"título de Recrutador(a) + capa dourada"],[3,"arma lendária forjada pelo ferreiro do Rei"],[5,"estátua com o seu @ na praça"]];
+let invUISeg=-1; function atualizaInvasaoUI(){ const s=Math.floor(Date.now()/1000); if(s===invUISeg) return; invUISeg=s; const el=$("faixaInvasao"), px=$("proxInv"); if(!el||!px) return; const iv=invasaoEm(Date.now());
+  if(iv){ el.hidden=false; el.textContent="⚔️ INVASÃO! "+INV_TIPOS[iv.tipo].n+" atacando "+iv.vila+" · vida "+vidaInvasao(iv)+"% · Ver agora"; el.dataset.vi=iv.vi; el.dataset.dir=iv.dir; } else el.hidden=true;
+  const pr=proximaInvasao(); px.textContent=pr?"Próxima invasão: "+(pr.amanha?"amanhã":"hoje")+" às "+hhmm(pr.iv.ts):""; if(!el.dataset.ok){ el.dataset.ok="1"; el.addEventListener("click",()=>{ const V=vila(+el.dataset.vi), P=V.L.praca, d=+el.dataset.dir; seguindo=false; GIRA=false; orb.alvo.set(P.x+Math.cos(d)*4.5,0,P.z+Math.sin(d)*4.5); orb.r=20; orb.phi=0.95; }); } }
 function faixaChegou(){ const el=$("faixaChegou"); if(!el) return; const l=todos().filter(m=>!m.npc&&!m.discreto&&m.joinedAt<=Date.now()); if(!l.length){ el.hidden=true; return; } const m=l.reduce((a,b)=>b.joinedAt>a.joinedAt?b:a);
   const dt=new Date(m.joinedAt); const hh=String(dt.getHours()).padStart(2,"0")+":"+String(dt.getMinutes()).padStart(2,"0"); const recente=Date.now()-m.joinedAt<6*3600000;
   el.hidden=false; el.textContent="🏕️ "+(recente?"Chegou agora":"Último a chegar")+": "+m.nome+", "+nomeProf(m)+" · "+hh; if(!el.dataset.ok){ el.dataset.ok="1"; el.addEventListener("click",()=>{ const k=el.dataset.id; if(k) selecionar(k,true); }); } el.dataset.id=m.id; }
@@ -1197,7 +1266,7 @@ function anima(){
   if(alt>0.35) corCeu.copy(corDia); else if(alt>0){ corCeu.copy(corTarde).lerp(corDia,alt/0.35); } else { corCeu.copy(corNoite).lerp(corTarde,Math.max(0,1+alt*4)); }
   scene.background.copy(corCeu); scene.fog.color.copy(corCeu).lerp(new THREE.Color(ESTILO_LUZ==="meio-dia"?0xbfd0e0:0xc9b79a),luz*(ESTILO_LUZ==="meio-dia"?0.2:0.4)); scene.fog.density=FOG_BASE*(luz>0.3?1:1.35-luz*1.1);
   M.janela.emissiveIntensity=luz<0.3?1.4*(1-luz/0.3):0; JANELAS.forEach(j=>{ j.emissiveIntensity=M.janela.emissiveIntensity; });
-  animaTochas(tsec,luz<0.25); animaVagalumes(tsec,luz<0.15); if(!MODO_SEGREDO) animaBichos(tsec,w); animaChuva(tsec,w); animaPassaros(tsec); animaFumaca(tsec); if(dentroAtual){ const nI=luz<0.2; sol.intensity=nI?0.01:0.05; hemi.intensity=nI?0.03:0.15; amb.intensity=nI?0.05:0.2; renderer.toneMappingExposure=nI?0.5:0.7; if(dentroAtual.luzes) dentroAtual.luzes.forEach((l,i)=>{ l.intensity=nI?[0.28,0.08,0.06][i]:[1.8,0.8,0.7][i]; }); } animaNeve(tsec,w); if(!dentroAtual){ const CL=climaAgora(w), kc=0.15+0.85*luz;
+  animaTochas(tsec,luz<0.25); animaVagalumes(tsec,luz<0.15); if(!MODO_SEGREDO) animaBichos(tsec,w); animaInvasao(tsec,w); animaChuva(tsec,w); animaPassaros(tsec); animaFumaca(tsec); if(dentroAtual){ const nI=luz<0.2; sol.intensity=nI?0.01:0.05; hemi.intensity=nI?0.03:0.15; amb.intensity=nI?0.05:0.2; renderer.toneMappingExposure=nI?0.5:0.7; if(dentroAtual.luzes) dentroAtual.luzes.forEach((l,i)=>{ l.intensity=nI?[0.28,0.08,0.06][i]:[1.8,0.8,0.7][i]; }); } animaNeve(tsec,w); if(!dentroAtual){ const CL=climaAgora(w), kc=0.15+0.85*luz;
     if(CL==="nublado"){ scene.background.lerp(new THREE.Color(0x8a9196),0.45*kc); scene.fog.color.copy(scene.background); sol.intensity*=0.55; scene.fog.density*=1.25; }
     else if(CL==="chuva"||CL==="tempestade"){ const T=CL==="tempestade"; scene.background.multiplyScalar(T?0.45:0.6); scene.fog.color.copy(scene.background); sol.intensity*=T?0.3:0.5; scene.fog.density*=T?1.9:1.5; renderer.toneMappingExposure*=T?0.72:0.85; if(T&&hash("raio"+Math.floor(tsec*4))%37===0){ amb.intensity+=1.4; hemi.intensity+=0.8; scene.background.setRGB(0.78,0.8,0.9); } }
     else if(CL==="neblina"){ scene.background.lerp(new THREE.Color(0xd5d9d6),0.6*kc); scene.fog.color.copy(scene.background); scene.fog.density*=3.2; sol.intensity*=0.7; }
@@ -1254,7 +1323,7 @@ function anima(){
   const vilaoAtivo = hash("vil"+Math.floor(w.t))%5===0 && w.hora>=6 && w.hora<=22; goblin.visible=vilaoAtivo;
   if(vilaoAtivo){ const F=LUG.floresta; { const dv=desvia(vila(0),F.x+F.w/2+1.5+Math.sin(tsec*1.2)*1.5, F.z+Math.cos(tsec*0.8)*2); goblin.position.set(dv.x, 0, dv.z); } goblin.rotation.y=tsec*0.8; }
   if(document.body.classList.contains("cinema")&&!MODO_SEGREDO){ if(!arrastando&&!camFixa) orb.theta+=0.0015; if(!fixado&&now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.discreto) return false; if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); orb.r=16; } } }
-  if(ROTULOS) aplicaRotulos(); animaIntroCam(); if(GIRA){ if(arrastando||seguindo||camFixa) GIRA=false; else orb.theta+=0.0007; } if(MODO_FRENTE&&selecionado){ const bf=bonecos.get(selecionado); if(bf) bf.rotation.y=Math.atan2(camera.position.x-bf.position.x,camera.position.z-bf.position.z); } if(MODO_FRENTE||ROTULOS==="0") bonecos.forEach(b=>{ if(b.userData.vis) b.userData.vis.visible=false; }); if(realce&&realce.visible){ realce.material.opacity=0.5+Math.sin(now/150)*0.35; if(now>realceAte) realce.visible=false; } atualizaMixers(now); posicionaCamera(); camera.updateMatrixWorld(); desempilhaRotulos(selecionado); renderer.render(scene,camera);
+  atualizaInvasaoUI(); if(ROTULOS) aplicaRotulos(); animaIntroCam(); if(GIRA){ if(arrastando||seguindo||camFixa) GIRA=false; else orb.theta+=0.0007; } if(MODO_FRENTE&&selecionado){ const bf=bonecos.get(selecionado); if(bf) bf.rotation.y=Math.atan2(camera.position.x-bf.position.x,camera.position.z-bf.position.z); } if(MODO_FRENTE||ROTULOS==="0") bonecos.forEach(b=>{ if(b.userData.vis) b.userData.vis.visible=false; }); if(realce&&realce.visible){ realce.material.opacity=0.5+Math.sin(now/150)*0.35; if(now>realceAte) realce.visible=false; } atualizaMixers(now); posicionaCamera(); camera.updateMatrixWorld(); desempilhaRotulos(selecionado); renderer.render(scene,camera);
 }
 
 // ---------- retrato (câmera própria, só quando muda) ----------
@@ -1288,6 +1357,7 @@ function tsVila(ts){ return rotuloReal(ts); }
 function atualizaHistoria(m,x){
   const box=$("histBox"); if(!m){ box.hidden=true; return; } box.hidden=false; $("histTitulo").textContent="História de "+m.nome;
   const now=Date.now(); const itens=[];
+  if(!m.npc){ const dH=Math.floor((now-REAL_EPOCH)/86400000)+1; for(const d of [dH,dH-1,dH-2]){ if(d<1) continue; invasoesDoDia(d).forEach(iv=>{ if(iv.fim>now||!iv.ids.includes(m.id)) return; itens.push({ts:iv.fim,texto:"⚔️ "+m.nome+" ajudou a defender "+iv.vila+" contra "+INV_TIPOS[iv.tipo].pl+". "+resultadoInv(iv),ruim:!iv.venceu,bom:iv.venceu}); }); } }
   if(!m.npc){ eventosDe(m).lista.filter(e=>e.ts<=now).forEach(e=>itens.push({ts:e.ts,texto:e.texto,ruim:!!e.ruim,bom:!e.ruim})); itens.push({ts:m.joinedAt,texto:m.nome+" começou a seguir @vilaauroraoficial e virou "+generoTxt(m,"morador","moradora")+" da Vila Aurora.",bom:true}); }
   itens.sort((a,b)=>b.ts-a.ts);
   const sig=m.id+":"+itens.length+":"+x.nivel; if(sig===histSig) return; histSig=sig;
@@ -1348,7 +1418,7 @@ function renderCronica(){
 const MODO_TESTE=/[?&]teste=1/.test(location.search); const MODO_LUZ=(function(){ const m=/[?&]luz=([0-9.]+)/.exec(location.search); return m?parseFloat(m[1]):null; })(); const MODO_CINEMA=/[?&]cinema=1/.test(location.search); const ROTULOS=(location.search.match(/[?&]rotulos=([^&]+)/)||[])[1]||""; const PARAM_CAM=(location.search.match(/[?&]cam=([^&]+)/)||[])[1]; let camFixa=false;
 // câmera por URL/script (gravação de vídeo): ?cam=20,0.85,1.2 → r, phi, theta; window.vilaCam.set(r,phi,theta) / .seguir("@nome"|id) / .solta()
 function aplicaCam(r,phi,theta){ if(isFinite(r)) orb.r=Math.min(110,Math.max(4,r)); if(isFinite(phi)) orb.phi=Math.min(1.5,Math.max(0.2,phi)); if(isFinite(theta)) orb.theta=theta; camFixa=true; }
-window.vilaCam={ lutas(id){ const k=String(id).replace(/^@/,"").toLowerCase(); const m=todos().find(x=>String(x.nome||"").replace(/^@/,"").toLowerCase()===k||x.id===id); return m?eventosDe(m).lutas:null; }, eventoDoDia(d){ return eventoDoDia(d||mundo().dia); }, clima(d){ const dia=d||mundo().dia; return [0,3,6,9,12,15,18,21].map(h=>({hora:h,clima:climaDe(dia,h)})); }, relogio(){ return mundo(); }, rotina(h){ const w0=mundo(); const w={t:w0.t,hora:h==null?w0.hora:h,dia:w0.dia,frac:0.5}; return todos().map((m,i)=>{ const e=estado(m,i,w); return {nome:m.nome,profissao:m.profissao,chave:e.chave,acao:e.acao}; }); }, peregrinacao(id){ const l=todos(); const i=l.findIndex(x=>x.id===id||String(x.nome||"").replace(/^@/,"").toLowerCase()===String(id).replace(/^@/,"").toLowerCase()); return i>=0?peregrinacaoDe(l[i],i):null; }, fichaBicho(tipo){ const b=BICHOS.find(x=>x.userData.tipo===tipo&&x.visible)||BICHOS.find(x=>x.userData.tipo===tipo); if(b){ fichaBicho(b); orb.alvo.set(b.position.x,0.5,b.position.z); orb.target.copy(orb.alvo); orb.r=Math.min(orb.r,14); } return !!b; }, stats(id){ const k=String(id).replace(/^@/,"").toLowerCase(); const m=todos().find(x=>String(x.nome||"").replace(/^@/,"").toLowerCase()===k||x.id===id); return m?Object.assign({nome:m.nome,profissao:m.profissao},statsDe(m)):null; }, testeItens(n){ const l=todos().filter(m=>!m.npc).slice(-(n||30)); return l.map(m=>{ const eq=equipamentoDe(m); const cores=it=>{ if(!it) return null; const cs=new Set(); it.g.traverse(o=>{ if(o.isMesh&&o.material&&o.material.color) cs.add('#'+o.material.color.getHexString()); }); return [...cs].slice(0,6); }; return {nome:m.nome,prof:m.profissao,nivel:xpDe(m).nivel,principal:eq.principal&&eq.principal.nome,coresPrincipal:cores(eq.principal),escudo:eq.escudo&&eq.escudo.nome,coresEscudo:cores(eq.escudo),capa:eq.capa&&eq.capa.n}; }); }, testeColisoes(){ const det={}; const l=todos(); let pessoas=0, amostras=0; const w0=mundo(); for(let h=0;h<24;h++){ for(let q=0;q<4;q++){ const w={t:w0.t,hora:h,dia:w0.dia,frac:q/4}; l.forEach((m,i)=>{ const e=estado(m,i,w); if(e.dentro||e.x==null||(e.y||0)>0.5) return; amostras++; const oc=ocupado(e.vila,e.x,e.z); if(oc){ pessoas++; const k=m.profissao+'/'+e.chave+'/'+e.modo+'/'+(oc.w<2?'cabana':'predio'); det[k]=(det[k]||0)+1; } }); } }
+window.vilaCam={ lutas(id){ const k=String(id).replace(/^@/,"").toLowerCase(); const m=todos().find(x=>String(x.nome||"").replace(/^@/,"").toLowerCase()===k||x.id===id); return m?eventosDe(m).lutas:null; }, eventoDoDia(d){ return eventoDoDia(d||mundo().dia); }, clima(d){ const dia=d||mundo().dia; return [0,3,6,9,12,15,18,21].map(h=>({hora:h,clima:climaDe(dia,h)})); }, relogio(){ return mundo(); }, invasoes(d){ const dia=d||mundo().dia; return invasoesDoDia(dia).map(iv=>({inicio:hhmm(iv.ts),fim:hhmm(iv.fim),ts:iv.ts,minutos:iv.durMin,tipo:iv.tipo,monstro:INV_TIPOS[iv.tipo].n,vila:iv.vila,resultado:iv.venceu?"vitória":"derrota",drop:iv.drop,defensores:iv.nomes,nDefensores:iv.n})); }, invasaoAgora(){ const iv=invasaoEm(Date.now()); return iv?{tipo:iv.tipo,vila:iv.vila,inicio:hhmm(iv.ts),fim:hhmm(iv.fim),vida:vidaInvasao(iv)}:null; }, rotina(h){ const w0=mundo(); const w={t:w0.t,hora:h==null?w0.hora:h,dia:w0.dia,frac:0.5}; return todos().map((m,i)=>{ const e=estado(m,i,w); return {nome:m.nome,profissao:m.profissao,chave:e.chave,acao:e.acao}; }); }, peregrinacao(id){ const l=todos(); const i=l.findIndex(x=>x.id===id||String(x.nome||"").replace(/^@/,"").toLowerCase()===String(id).replace(/^@/,"").toLowerCase()); return i>=0?peregrinacaoDe(l[i],i):null; }, fichaBicho(tipo){ const b=BICHOS.find(x=>x.userData.tipo===tipo&&x.visible)||BICHOS.find(x=>x.userData.tipo===tipo); if(b){ fichaBicho(b); orb.alvo.set(b.position.x,0.5,b.position.z); orb.target.copy(orb.alvo); orb.r=Math.min(orb.r,14); } return !!b; }, stats(id){ const k=String(id).replace(/^@/,"").toLowerCase(); const m=todos().find(x=>String(x.nome||"").replace(/^@/,"").toLowerCase()===k||x.id===id); return m?Object.assign({nome:m.nome,profissao:m.profissao},statsDe(m)):null; }, testeItens(n){ const l=todos().filter(m=>!m.npc).slice(-(n||30)); return l.map(m=>{ const eq=equipamentoDe(m); const cores=it=>{ if(!it) return null; const cs=new Set(); it.g.traverse(o=>{ if(o.isMesh&&o.material&&o.material.color) cs.add('#'+o.material.color.getHexString()); }); return [...cs].slice(0,6); }; return {nome:m.nome,prof:m.profissao,nivel:xpDe(m).nivel,principal:eq.principal&&eq.principal.nome,coresPrincipal:cores(eq.principal),escudo:eq.escudo&&eq.escudo.nome,coresEscudo:cores(eq.escudo),capa:eq.capa&&eq.capa.n}; }); }, testeColisoes(){ const det={}; const l=todos(); let pessoas=0, amostras=0; const w0=mundo(); for(let h=0;h<24;h++){ for(let q=0;q<4;q++){ const w={t:w0.t,hora:h,dia:w0.dia,frac:q/4}; l.forEach((m,i)=>{ const e=estado(m,i,w); if(e.dentro||e.x==null||(e.y||0)>0.5) return; amostras++; const oc=ocupado(e.vila,e.x,e.z); if(oc){ pessoas++; const k=m.profissao+'/'+e.chave+'/'+e.modo+'/'+(oc.w<2?'cabana':'predio'); det[k]=(det[k]||0)+1; } }); } }
     let bichos=0, amostrasB=0; const w1=mundo(); for(let k=0;k<12;k++){ animaBichos(k*37.3,w1); BICHOS.forEach(b=>{ if(!b.visible||b.userData.tipo==='morcego'||b.userData.tipo==='dragao'||b.userData.tipo==='fantasma') return; amostrasB++; const oc=ocupado(b.userData.V,b.position.x,b.position.z); if(oc){ bichos++; const k='bicho:'+b.userData.tipo+'/'+(oc.w<2?'cabana':'predio'); det[k]=(det[k]||0)+1; } }); } return {pessoasEmCima:pessoas,amostrasPessoas:amostras,bichosEmCima:bichos,amostrasBichos:amostrasB,detalhe:det}; }, set:aplicaCam, seguir(id){ const k=String(id).replace(/^@/,"").replace(/^ig-/,"").toLowerCase(); const m=todos().find(x=>String(x.id).replace(/^ig-/,"").toLowerCase()===k||String(x.nome||"").replace(/^@/,"").toLowerCase()===k); if(m) selecionar(m.id,true); return !!m; }, lista(){ return todos().map(x=>({id:x.id,nome:x.nome,npc:!!x.npc})); }, solta(){ camFixa=false; }, get orb(){ return orb; } };
 // abertura da câmera (Reforma A, etapa 1): mostra a Vila Aurora central (castelo) e desce até a vila do morador mais novo
 let INTRO=null, GIRA=false; function iniciaIntroCam(V){ orb.alvo.set(V.cx,0,V.cz+2); orb.target.copy(orb.alvo); if(location.hash||PARAM_CAM||MODO_ABERTURA||MODO_SEGREDO||MODO_CINEMA) return; orb.r=matchMedia("(max-width:860px)").matches?82:66; orb.phi=0.6; orb.theta=0.75; GIRA=true; }
