@@ -22,7 +22,7 @@
 // Tudo carrega antes da vila nascer; a simulação (relógio, moradores, economia) não muda.
 const KAYKIT=(function(){
   // v32: modelos comprimidos (meshopt) em az/, servidos pelo jsDelivr (VILA_CDN, preenchido pelo publicar.py) com o próprio site de reserva
-  const VILA_CDN="https://cdn.jsdelivr.net/gh/glautiumgabriel-art/vila-aurora@e42f4baa5af58b3e782b0c46076c7aa555e72c37/";
+  const VILA_CDN="https://cdn.jsdelivr.net/gh/glautiumgabriel-art/vila-aurora@887a1ed6e97739e330b63f39a8536d48910aa834/";
   const zpath=rel=>rel.replace(/^assets\//,"az/").replace(/\.gltf$/,".glb");
   const H="assets/hex/", P="assets/personagens/", I="assets/personagens_itens/";
   const lista={
@@ -61,11 +61,7 @@ const KAYKIT=(function(){
     base.parent.add(m); m.bind(base.skeleton,base.bindMatrix); corpo.forEach(o=>o.parent.remove(o)); }
   const estado={versao:0}; function progresso(){ const el=document.getElementById("carregando"); if(el) el.textContent="Construindo a vila… "+Math.min(100,Math.round(feitos/(total-PERSONAGENS.size)*100))+"%"; }
   function carregar(){ const loader=new THREE.GLTFLoader(); if(window.MeshoptDecoder) loader.setMeshoptDecoder(MeshoptDecoder); const t0=performance.now(); const umModelo=k=>new Promise(res=>{ (window.VILA_T0=window.VILA_T0||{})[k]=Math.round(performance.now()); const ok=g=>{ g.scene.traverse(o=>{ if(o.isMesh){ o.castShadow=true; o.receiveShadow=true; if(o.material&&o.material.map){ o.material.map.anisotropy=4; } } }); g.scene.updateMatrixWorld(true); if(PERSONAGENS.has(k)){ try{ prepararPersonagem(k,g); }catch(e){ console.warn("prepararPersonagem",k,e); } } modelos[k]=g; (window.VILA_T=window.VILA_T||{})[k]=Math.round(performance.now()); feitos++; progresso(); res(); }; const falhou=err=>{ console.warn("asset falhou",k,err); feitos++; progresso(); res(); }; const rel=zpath(lista[k]); if(VILA_CDN) loader.load(VILA_CDN+rel,ok,undefined,()=>loader.load(rel,ok,undefined,falhou)); else loader.load(rel,ok,undefined,falhou); });
-    // v33.1: prédios, chão, natureza e itens vêm num pacote só (az/pacote_vila.glb, uma cena por modelo, textura compartilhada); se falhar, um por um
-    const NO_PACOTE=k=>/^assets\/(hex|personagens_itens)\//.test(lista[k]);
-    const pacote=new Promise(res=>{ const P="az/pacote_vila.glb"; const ok=g=>{ let n=0; g.scenes.forEach(sc=>{ const k=sc.name; if(!lista[k]||!NO_PACOTE(k)) return; sc.traverse(o=>{ if(o.isMesh){ o.castShadow=true; o.receiveShadow=true; if(o.material&&o.material.map){ o.material.map.anisotropy=4; } } }); sc.position.set(0,0,0); sc.updateMatrixWorld(true); modelos[k]={scene:sc,animations:[]}; n++; feitos++; }); progresso(); res(n>0); }; const falhou=()=>res(false); if(VILA_CDN) loader.load(VILA_CDN+P,ok,undefined,()=>loader.load(P,ok,undefined,falhou)); else loader.load(P,ok,undefined,falhou); });
-    const depois=Object.keys(lista).filter(k=>PERSONAGENS.has(k)); const soltos=Object.keys(lista).filter(k=>!PERSONAGENS.has(k)&&!NO_PACOTE(k));
-    const ps=[pacote.then(okP=>Promise.all(Object.keys(lista).filter(k=>NO_PACOTE(k)&&!modelos[k]).map(umModelo)))].concat(soltos.map(umModelo));
+    const primeiro=Object.keys(lista).filter(k=>!PERSONAGENS.has(k)), depois=Object.keys(lista).filter(k=>PERSONAGENS.has(k)); const ps=primeiro.map(umModelo);
     Promise.all(ps).then(()=>Promise.all(depois.map(umModelo))).then(()=>{ estado.versao=1; window.VILA_PERSONAGENS_MS=Math.round(performance.now()); window.dispatchEvent(new Event("kaykit-personagens")); });
     return Promise.all(ps).then(()=>{ window.VILA_CARGA_MS=Math.round(performance.now()); const el=document.getElementById("carregando"); if(el) el.remove(); return modelos; }); }
   function modelo(k){ return modelos[k]; }
