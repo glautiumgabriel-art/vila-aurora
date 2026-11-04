@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T07:59",
+ "atualizadoEm": "2026-11-04T08:08",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -131,6 +131,15 @@
    "sexo": "f",
    "profissao": "explorador",
    "joinedAt": 1793787777813,
+   "faltas": 0
+  },
+  {
+   "id": "ig-joelma_alvarez",
+   "nome": "@joelma_alvarez",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "soldado",
+   "joinedAt": 1793790547129,
    "faltas": 0
   }
  ]

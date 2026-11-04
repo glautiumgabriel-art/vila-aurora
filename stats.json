@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-04T07:59",
+ "geradoEm": "2026-11-04T08:09",
  "relogioVila": {
   "dia": 2,
-  "hora": 7
+  "hora": 8
  },
- "moradores": 13,
+ "moradores": 14,
  "novosDoDia": [
   "@adriana.g.santana",
   "@dudabrisolaa_",
@@ -17,39 +17,40 @@
   "@menor.k01_de_itz",
   "@isaac.jmy",
   "@gabrielcamuzzatonegretti",
-  "@thayl_ermatheus"
+  "@thayl_ermatheus",
+  "@joelma_alvarez"
  ],
  "nivelMaisAlto": 10,
  "maisAltos": [
   {
-   "nome": "@iamvictoriamenezes",
+   "nome": "@dudabsl_",
    "nivel": 10,
-   "xp": 4412,
+   "xp": 4547,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabsl_",
-   "nivel": 9,
-   "xp": 4507,
+   "nome": "@iamvictoriamenezes",
+   "nivel": 10,
+   "xp": 4452,
    "titulo": "Lenda"
+  },
+  {
+   "nome": "@dudabrisolaa_",
+   "nivel": 10,
+   "xp": 3627,
+   "titulo": "Mestre"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 9,
-   "xp": 4442,
+   "xp": 4482,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 9,
-   "xp": 4152,
+   "xp": 4192,
    "titulo": "Lenda"
-  },
-  {
-   "nome": "@adriana.g.santana",
-   "nivel": 9,
-   "xp": 3797,
-   "titulo": "Mestre"
   }
  ],
  "maioresAfinidades": [
@@ -140,16 +141,17 @@
   "curandeiro": 1,
   "mineiro": 1,
   "ferreiro": 1,
-  "cozinheiro": 1
+  "cozinheiro": 1,
+  "soldado": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@thayl_ermatheus",
+  "nome": "@joelma_alvarez",
   "nomeCompleto": "",
-  "profissao": "explorador",
-  "sexo": "f",
-  "chegouEm": "2026-11-04T07:22",
-  "chegouEmMs": 1793787777813
+  "profissao": "soldado",
+  "sexo": "?",
+  "chegouEm": "2026-11-04T08:09",
+  "chegouEmMs": 1793790547129
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -179,11 +181,11 @@
   "@dudabrisolaa_": {
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "nivel": 9,
-   "hp": 118,
-   "hpMax": 130,
-   "atq": 26,
-   "def": 14,
+   "nivel": 10,
+   "hp": 140,
+   "hpMax": 140,
+   "atq": 28,
+   "def": 15,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -195,11 +197,11 @@
   "@dudabsl_": {
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "nivel": 9,
-   "hp": 130,
-   "hpMax": 130,
-   "atq": 26,
-   "def": 11,
+   "nivel": 10,
+   "hp": 140,
+   "hpMax": 140,
+   "atq": 28,
+   "def": 12,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -355,11 +357,11 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "explorador",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 17,
-   "def": 2,
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 19,
+   "def": 3,
    "bArma": 7,
    "bSec": 0,
    "bEsc": 0,
@@ -367,9 +369,16 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
-  }
+  },
+  "@joelma_alvarez": null
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793789656642,
+   "quem": "@_williamg10",
+   "tipo": "vitoria",
+   "texto": "@_williamg10 e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
   {
    "quando": 1793788857813,
    "quem": "@thayl_ermatheus",
@@ -543,12 +552,6 @@
    "quem": "@iamvictoriamenezes",
    "tipo": "queda",
    "texto": "@iamvictoriamenezes escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793774232112,
-   "quem": "@dudabrisolaa_",
-   "tipo": "queda",
-   "texto": "@dudabrisolaa_ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
