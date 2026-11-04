@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-04T03:52",
+ "geradoEm": "2026-11-04T03:59",
  "relogioVila": {
   "dia": 2,
   "hora": 3
@@ -15,36 +15,36 @@
   "@_williamg10",
   "@tataicintra"
  ],
- "nivelMaisAlto": 8,
+ "nivelMaisAlto": 9,
  "maisAltos": [
+  {
+   "nome": "@iamvictoriamenezes",
+   "nivel": 9,
+   "xp": 3192,
+   "titulo": "Mestre"
+  },
   {
    "nome": "@laryssapsouza",
    "nivel": 8,
-   "xp": 3371,
+   "xp": 3402,
    "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 8,
-   "xp": 3347,
+   "xp": 3377,
    "titulo": "Mestre"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 8,
-   "xp": 3277,
-   "titulo": "Mestre"
-  },
-  {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 8,
-   "xp": 3162,
+   "xp": 3307,
    "titulo": "Mestre"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 8,
-   "xp": 3092,
+   "xp": 3122,
    "titulo": "Mestre"
   }
  ],
@@ -59,7 +59,7 @@
   {
    "entre": [
     "@_williamg10",
-    "@dudabsl_"
+    "@glautiumgabriel"
    ],
    "forca": 2
   },
@@ -73,14 +73,14 @@
   {
    "entre": [
     "@adriana.g.santana",
-    "@dudabrisolaa_"
+    "@tataicintra"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@dr.glautiumgabriel",
-    "@laryssapsouza"
+    "@dudabrisolaa_",
+    "@glautiumgabriel"
    ],
    "forca": 2
   }
@@ -176,7 +176,7 @@
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
    "nivel": 8,
-   "hp": 88,
+   "hp": 109,
    "hpMax": 120,
    "atq": 24,
    "def": 13,
@@ -223,11 +223,11 @@
   "@iamvictoriamenezes": {
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
-   "nivel": 8,
-   "hp": 88,
-   "hpMax": 120,
-   "atq": 24,
-   "def": 12,
+   "nivel": 9,
+   "hp": 118,
+   "hpMax": 130,
+   "atq": 26,
+   "def": 13,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -255,11 +255,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 22,
-   "def": 9,
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 24,
+   "def": 10,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -284,7 +284,22 @@
    "guerreiro": false,
    "mana": null
   },
-  "@tataicintra": null
+  "@tataicintra": {
+   "nome": "@tataicintra",
+   "profissao": "comerciante",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 8,
+   "def": 1,
+   "bArma": 0,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  }
  },
  "eventosUltimas24h": [
   {
