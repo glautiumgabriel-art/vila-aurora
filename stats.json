@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-04T11:55",
+ "geradoEm": "2026-11-04T12:00",
  "relogioVila": {
   "dia": 2,
-  "hora": 11
+  "hora": 12
  },
  "moradores": 16,
  "novosDoDia": [
@@ -27,42 +27,35 @@
   {
    "nome": "@dudabsl_",
    "nivel": 11,
-   "xp": 5668,
+   "xp": 5690,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 11,
-   "xp": 4668,
+   "xp": 4690,
    "titulo": "Lenda"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 10,
-   "xp": 5543,
+   "xp": 5565,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 10,
-   "xp": 5473,
+   "xp": 5495,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 10,
-   "xp": 5278,
+   "xp": 5300,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
-  {
-   "entre": [
-    "@dudabsl_",
-    "@iamvictoriamenezes"
-   ],
-   "forca": 2
-  },
   {
    "entre": [
     "@dudabsl_",
@@ -73,23 +66,30 @@
   {
    "entre": [
     "@gabrielcamuzzatonegretti",
-    "@isaac.jmy"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@gabrielcamuzzatonegretti",
-    "@joelma_alvarez"
+    "@thayl_ermatheus"
    ],
    "forca": 2
   },
   {
    "entre": [
     "@iamvictoriamenezes",
-    "@tataicintra"
+    "@laryssapsouza"
    ],
    "forca": 2
+  },
+  {
+   "entre": [
+    "@_williamg10",
+    "@dr.glautiumgabriel"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
+    "@_williamg10",
+    "@gabrielcamuzzatonegretti"
+   ],
+   "forca": 1
   }
  ],
  "maioresDesafetos": [
@@ -251,7 +251,7 @@
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
    "nivel": 10,
-   "hp": 112,
+   "hp": 130,
    "hpMax": 140,
    "atq": 28,
    "def": 14,
@@ -267,7 +267,7 @@
    "nome": "@_williamg10",
    "profissao": "bardo",
    "nivel": 10,
-   "hp": 136,
+   "hp": 140,
    "hpMax": 140,
    "atq": 28,
    "def": 12,
