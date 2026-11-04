@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-04T02:00",
+ "atualizadoEm": "2026-11-04T02:13",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -10,7 +10,7 @@
    "sexo": "f",
    "profissao": "bardo",
    "joinedAt": 1793728511112,
-   "faltas": 1,
+   "faltas": 0,
    "fundadorVila": true,
    "vilaFundada": "Pinheiral",
    "correcoes": [
@@ -30,7 +30,7 @@
    "sexo": "f",
    "profissao": "cavaleiro",
    "joinedAt": 1793728512112,
-   "faltas": 1
+   "faltas": 0
   },
   {
    "id": "ig-dudabsl_",
@@ -39,7 +39,7 @@
    "sexo": "f",
    "profissao": "curandeiro",
    "joinedAt": 1793728513112,
-   "faltas": 1
+   "faltas": 0
   },
   {
    "id": "ig-glautiumgabriel",
@@ -48,7 +48,7 @@
    "sexo": "m",
    "profissao": "mineiro",
    "joinedAt": 1793728514112,
-   "faltas": 1
+   "faltas": 0
   },
   {
    "id": "ig-iamvictoriamenezes",
@@ -57,7 +57,7 @@
    "sexo": "f",
    "profissao": "explorador",
    "joinedAt": 1793728515112,
-   "faltas": 1
+   "faltas": 0
   },
   {
    "id": "ig-laryssapsouza",
@@ -66,7 +66,7 @@
    "sexo": "f",
    "profissao": "ferreiro",
    "joinedAt": 1793728516112,
-   "faltas": 1
+   "faltas": 0
   },
   {
    "id": "ig-_williamg10",
@@ -75,7 +75,7 @@
    "sexo": "m",
    "profissao": "bardo",
    "joinedAt": 1793739616642,
-   "faltas": 1
+   "faltas": 0
   },
   {
    "id": "ig-dr.glautiumgabriel",
@@ -84,7 +84,7 @@
    "sexo": "m",
    "profissao": "cozinheiro",
    "joinedAt": 1793755542967,
-   "faltas": 1,
+   "faltas": 0,
    "motivoProfissao": "vila sem produtor de comida",
    "discreto": true
   }

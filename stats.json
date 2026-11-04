@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-04T02:00",
+ "geradoEm": "2026-11-04T02:14",
  "relogioVila": {
   "dia": 2,
   "hora": 2
@@ -19,31 +19,31 @@
   {
    "nome": "@dudabrisolaa_",
    "nivel": 8,
-   "xp": 3132,
+   "xp": 3246,
    "titulo": "Mestre"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 8,
-   "xp": 3131,
+   "xp": 3186,
+   "titulo": "Mestre"
+  },
+  {
+   "nome": "@adriana.g.santana",
+   "nivel": 8,
+   "xp": 2881,
    "titulo": "Mestre"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 8,
-   "xp": 2801,
+   "xp": 2856,
    "titulo": "Mestre"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 8,
-   "xp": 2722,
-   "titulo": "Mestre"
-  },
-  {
-   "nome": "@adriana.g.santana",
-   "nivel": 7,
-   "xp": 2827,
+   "xp": 2776,
    "titulo": "Mestre"
   }
  ],
@@ -157,11 +157,11 @@
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 23,
-   "def": 11,
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 25,
+   "def": 12,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -189,11 +189,11 @@
   "@dudabsl_": {
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "nivel": 7,
-   "hp": 103,
-   "hpMax": 110,
-   "atq": 22,
-   "def": 9,
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 24,
+   "def": 10,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -254,7 +254,7 @@
    "nome": "@_williamg10",
    "profissao": "bardo",
    "nivel": 7,
-   "hp": 56,
+   "hp": 95,
    "hpMax": 110,
    "atq": 22,
    "def": 9,
@@ -270,7 +270,7 @@
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
    "nivel": 5,
-   "hp": 90,
+   "hp": 74,
    "hpMax": 90,
    "atq": 19,
    "def": 5,
@@ -284,6 +284,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793768473112,
+   "quem": "@dudabsl_",
+   "tipo": "briga_vitoria",
+   "texto": "@dudabsl_ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793768472112,
+   "quem": "@dudabrisolaa_",
+   "tipo": "vitoria",
+   "texto": "@dudabrisolaa_ e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793768142967,
+   "quem": "@dr.glautiumgabriel",
+   "tipo": "queda",
+   "texto": "@dr.glautiumgabriel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1793768056642,
    "quem": "@_williamg10",
@@ -445,24 +463,6 @@
    "quem": "@dudabsl_",
    "tipo": "briga_derrota",
    "texto": "@dudabsl_ foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793753656642,
-   "quem": "@_williamg10",
-   "tipo": "briga_derrota",
-   "texto": "@_williamg10 foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793752633112,
-   "quem": "@dudabsl_",
-   "tipo": "briga_vitoria",
-   "texto": "@dudabsl_ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793752631112,
-   "quem": "@adriana.g.santana",
-   "tipo": "briga_vitoria",
-   "texto": "@adriana.g.santana encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   }
  ]
 }
