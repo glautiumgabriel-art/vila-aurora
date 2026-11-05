@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-05T17:00",
+ "geradoEm": "2026-11-05T17:59",
  "relogioVila": {
   "dia": 3,
-  "hora": 16
+  "hora": 17
  },
  "moradores": 18,
  "novosDoDia": [],
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 16,
-   "xp": 13112,
+   "xp": 13362,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 16,
-   "xp": 12912,
+   "xp": 13162,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 16,
-   "xp": 12327,
+   "xp": 12577,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 16,
-   "xp": 12156,
+   "xp": 12406,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 16,
-   "xp": 12148,
+   "xp": 12397,
    "titulo": "Lenda"
   }
  ],
@@ -343,7 +343,7 @@
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "comerciante",
    "nivel": 13,
-   "hp": 170,
+   "hp": 163,
    "hpMax": 170,
    "atq": 34,
    "def": 15,
@@ -375,7 +375,7 @@
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
    "nivel": 12,
-   "hp": 160,
+   "hp": 138,
    "hpMax": 160,
    "atq": 37,
    "def": 18,
@@ -453,6 +453,42 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793911711505,
+   "quem": "@saviob._santos",
+   "tipo": "vitoria",
+   "texto": "@saviob._santos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793911147129,
+   "quem": "@joelma_alvarez",
+   "tipo": "briga_derrota",
+   "texto": "@joelma_alvarez foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793910921440,
+   "quem": "@gabrielcamuzzatonegretti",
+   "tipo": "briga_derrota",
+   "texto": "@gabrielcamuzzatonegretti foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793910271505,
+   "quem": "@saviob._santos",
+   "tipo": "vitoria",
+   "texto": "@saviob._santos venceram um cavalo selvagem."
+  },
+  {
+   "quando": 1793909817813,
+   "quem": "@thayl_ermatheus",
+   "tipo": "vitoria",
+   "texto": "@thayl_ermatheus e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1793908859328,
+   "quem": "@gbx.ws",
+   "tipo": "vitoria",
+   "texto": "@gbx.ws e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
   {
    "quando": 1793908332333,
    "quem": "@isaac.jmy",
@@ -596,42 +632,6 @@
    "quem": "@gabrielcamuzzatonegretti",
    "tipo": "vitoria",
    "texto": "@gabrielcamuzzatonegretti venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1793896363390,
-   "quem": "@adailtton_santos",
-   "tipo": "vitoria",
-   "texto": "@adailtton_santos e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1793895736034,
-   "quem": "@tataicintra",
-   "tipo": "doma",
-   "texto": "@tataicintra e os amigos cercaram um cavalo selvagem e domaram! Agora @tataicintra anda montado."
-  },
-  {
-   "quando": 1793895417813,
-   "quem": "@thayl_ermatheus",
-   "tipo": "queda",
-   "texto": "@thayl_ermatheus escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793895372333,
-   "quem": "@isaac.jmy",
-   "tipo": "vitoria",
-   "texto": "@isaac.jmy e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793894923390,
-   "quem": "@adailtton_santos",
-   "tipo": "queda",
-   "texto": "@adailtton_santos escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793894532956,
-   "quem": "@menor.k01_de_itz",
-   "tipo": "briga_vitoria",
-   "texto": "@menor.k01_de_itz encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   }
  ]
 }
