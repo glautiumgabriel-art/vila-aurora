@@ -1,12 +1,11 @@
 {
- "geradoEm": "2026-11-05T11:59",
+ "geradoEm": "2026-11-05T12:59",
  "relogioVila": {
   "dia": 3,
-  "hora": 11
+  "hora": 12
  },
  "moradores": 18,
  "novosDoDia": [
-  "@sampaiojaiane",
   "@saviob._santos"
  ],
  "nivelMaisAlto": 15,
@@ -14,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 15,
-   "xp": 11862,
+   "xp": 12112,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 15,
-   "xp": 11662,
+   "xp": 11912,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 15,
-   "xp": 11077,
+   "xp": 11327,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 15,
-   "xp": 10906,
+   "xp": 11156,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 15,
-   "xp": 10897,
+   "xp": 11147,
    "titulo": "Lenda"
   }
  ],
@@ -297,7 +296,7 @@
    "nome": "@tataicintra",
    "profissao": "comerciante",
    "nivel": 13,
-   "hp": 116,
+   "hp": 170,
    "hpMax": 170,
    "atq": 34,
    "def": 15,
@@ -456,6 +455,48 @@
  },
  "eventosUltimas24h": [
   {
+   "quando": 1793893019328,
+   "quem": "@gbx.ws",
+   "tipo": "queda",
+   "texto": "@gbx.ws escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793892537813,
+   "quem": "@thayl_ermatheus",
+   "tipo": "vitoria",
+   "texto": "@thayl_ermatheus e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793892427129,
+   "quem": "@joelma_alvarez",
+   "tipo": "briga_derrota",
+   "texto": "@joelma_alvarez foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793892201440,
+   "quem": "@gabrielcamuzzatonegretti",
+   "tipo": "briga_derrota",
+   "texto": "@gabrielcamuzzatonegretti foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793891551505,
+   "quem": "@saviob._santos",
+   "tipo": "queda",
+   "texto": "@saviob._santos escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793890761440,
+   "quem": "@gabrielcamuzzatonegretti",
+   "tipo": "queda",
+   "texto": "@gabrielcamuzzatonegretti escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793890603390,
+   "quem": "@adailtton_santos",
+   "tipo": "queda",
+   "texto": "@adailtton_santos escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
    "quando": 1793890212956,
    "quem": "@menor.k01_de_itz",
    "tipo": "vitoria",
@@ -592,48 +633,6 @@
    "quem": "@adailtton_santos",
    "tipo": "vitoria",
    "texto": "@adailtton_santos e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793879896034,
-   "quem": "@tataicintra",
-   "tipo": "briga_derrota",
-   "texto": "@tataicintra foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793879241440,
-   "quem": "@gabrielcamuzzatonegretti",
-   "tipo": "briga_derrota",
-   "texto": "@gabrielcamuzzatonegretti foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793878692956,
-   "quem": "@menor.k01_de_itz",
-   "tipo": "briga_vitoria",
-   "texto": "@menor.k01_de_itz encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793878619328,
-   "quem": "@gbx.ws",
-   "tipo": "queda",
-   "texto": "@gbx.ws escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793878092333,
-   "quem": "@isaac.jmy",
-   "tipo": "vitoria",
-   "texto": "@isaac.jmy e os amigos venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1793878027129,
-   "quem": "@joelma_alvarez",
-   "tipo": "queda",
-   "texto": "@joelma_alvarez escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793877179328,
-   "quem": "@gbx.ws",
-   "tipo": "vitoria",
-   "texto": "@gbx.ws e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }
