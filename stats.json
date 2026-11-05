@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-05T14:59",
+ "geradoEm": "2026-11-05T15:59",
  "relogioVila": {
   "dia": 3,
-  "hora": 14
+  "hora": 15
  },
  "moradores": 18,
  "novosDoDia": [],
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 16,
-   "xp": 12612,
+   "xp": 12862,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 16,
-   "xp": 12412,
+   "xp": 12662,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 16,
-   "xp": 11656,
+   "xp": 11906,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 16,
-   "xp": 11322,
+   "xp": 11572,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 16,
-   "xp": 11302,
+   "xp": 11552,
    "titulo": "Lenda"
   }
  ],
@@ -294,11 +294,11 @@
   "@tataicintra": {
    "nome": "@tataicintra",
    "profissao": "comerciante",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 34,
-   "def": 15,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 36,
+   "def": 16,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -327,7 +327,7 @@
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
    "nivel": 12,
-   "hp": 160,
+   "hp": 133,
    "hpMax": 160,
    "atq": 32,
    "def": 18,
@@ -390,11 +390,11 @@
   "@adailtton_santos": {
    "nome": "@adailtton_santos",
    "profissao": "bardo",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 32,
-   "def": 16,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 34,
+   "def": 17,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -453,6 +453,42 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793904057813,
+   "quem": "@thayl_ermatheus",
+   "tipo": "vitoria",
+   "texto": "@thayl_ermatheus venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1793904012333,
+   "quem": "@isaac.jmy",
+   "tipo": "queda",
+   "texto": "@isaac.jmy escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793903172956,
+   "quem": "@menor.k01_de_itz",
+   "tipo": "briga_vitoria",
+   "texto": "@menor.k01_de_itz encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793902123390,
+   "quem": "@adailtton_santos",
+   "tipo": "briga_vitoria",
+   "texto": "@adailtton_santos encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793901631505,
+   "quem": "@saviob._santos",
+   "tipo": "briga_derrota",
+   "texto": "@saviob._santos foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793901530045,
+   "quem": "@sampaiojaiane",
+   "tipo": "queda",
+   "texto": "@sampaiojaiane escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1793901067129,
    "quem": "@joelma_alvarez",
@@ -596,42 +632,6 @@
    "quem": "@gabrielcamuzzatonegretti",
    "tipo": "vitoria",
    "texto": "@gabrielcamuzzatonegretti venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793889163390,
-   "quem": "@adailtton_santos",
-   "tipo": "vitoria",
-   "texto": "@adailtton_santos e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1793888772956,
-   "quem": "@menor.k01_de_itz",
-   "tipo": "briga_derrota",
-   "texto": "@menor.k01_de_itz foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793887259328,
-   "quem": "@gbx.ws",
-   "tipo": "queda",
-   "texto": "@gbx.ws escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793887130045,
-   "quem": "@sampaiojaiane",
-   "tipo": "doma",
-   "texto": "@sampaiojaiane cercaram um cavalo selvagem e domaram! Agora @sampaiojaiane anda montado."
-  },
-  {
-   "quando": 1793886283390,
-   "quem": "@adailtton_santos",
-   "tipo": "vitoria",
-   "texto": "@adailtton_santos e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1793885892956,
-   "quem": "@menor.k01_de_itz",
-   "tipo": "briga_vitoria",
-   "texto": "@menor.k01_de_itz encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   }
  ]
 }
