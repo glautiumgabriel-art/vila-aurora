@@ -1,12 +1,11 @@
 {
- "geradoEm": "2026-11-05T10:59",
+ "geradoEm": "2026-11-05T11:59",
  "relogioVila": {
   "dia": 3,
-  "hora": 10
+  "hora": 11
  },
  "moradores": 18,
  "novosDoDia": [
-  "@gbx.ws",
   "@sampaiojaiane",
   "@saviob._santos"
  ],
@@ -15,31 +14,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 15,
-   "xp": 11612,
+   "xp": 11862,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 15,
-   "xp": 11412,
+   "xp": 11662,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 15,
-   "xp": 10827,
+   "xp": 11077,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 15,
-   "xp": 10656,
+   "xp": 10906,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 15,
-   "xp": 10647,
+   "xp": 10897,
    "titulo": "Lenda"
   }
  ],
@@ -133,6 +132,7 @@
   "@joelma_alvarez",
   "@adailtton_santos",
   "@gbx.ws",
+  "@sampaiojaiane",
   "@saviob._santos"
  ],
  "porProfissao": {
@@ -297,7 +297,7 @@
    "nome": "@tataicintra",
    "profissao": "comerciante",
    "nivel": 13,
-   "hp": 170,
+   "hp": 116,
    "hpMax": 170,
    "atq": 34,
    "def": 15,
@@ -344,11 +344,11 @@
   "@gabrielcamuzzatonegretti": {
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "comerciante",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 30,
-   "def": 13,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 32,
+   "def": 14,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -455,6 +455,48 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793890212956,
+   "quem": "@menor.k01_de_itz",
+   "tipo": "vitoria",
+   "texto": "@menor.k01_de_itz venceram um cavalo selvagem."
+  },
+  {
+   "quando": 1793889976034,
+   "quem": "@tataicintra",
+   "tipo": "vitoria",
+   "texto": "@tataicintra e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1793889321440,
+   "quem": "@gabrielcamuzzatonegretti",
+   "tipo": "vitoria",
+   "texto": "@gabrielcamuzzatonegretti venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793889163390,
+   "quem": "@adailtton_santos",
+   "tipo": "vitoria",
+   "texto": "@adailtton_santos e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1793888772956,
+   "quem": "@menor.k01_de_itz",
+   "tipo": "briga_derrota",
+   "texto": "@menor.k01_de_itz foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793887259328,
+   "quem": "@gbx.ws",
+   "tipo": "queda",
+   "texto": "@gbx.ws escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793887130045,
+   "quem": "@sampaiojaiane",
+   "tipo": "doma",
+   "texto": "@sampaiojaiane cercaram um cavalo selvagem e domaram! Agora @sampaiojaiane anda montado."
+  },
   {
    "quando": 1793886283390,
    "quem": "@adailtton_santos",
@@ -592,48 +634,6 @@
    "quem": "@gbx.ws",
    "tipo": "vitoria",
    "texto": "@gbx.ws e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1793876652333,
-   "quem": "@isaac.jmy",
-   "tipo": "vitoria",
-   "texto": "@isaac.jmy e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793876587129,
-   "quem": "@joelma_alvarez",
-   "tipo": "queda",
-   "texto": "@joelma_alvarez escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793876361440,
-   "quem": "@gabrielcamuzzatonegretti",
-   "tipo": "vitoria",
-   "texto": "@gabrielcamuzzatonegretti e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1793875257813,
-   "quem": "@thayl_ermatheus",
-   "tipo": "briga_vitoria",
-   "texto": "@thayl_ermatheus encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793875147129,
-   "quem": "@joelma_alvarez",
-   "tipo": "briga_derrota",
-   "texto": "@joelma_alvarez foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793874921440,
-   "quem": "@gabrielcamuzzatonegretti",
-   "tipo": "doma",
-   "texto": "@gabrielcamuzzatonegretti cercaram um cavalo selvagem e domaram! Agora @gabrielcamuzzatonegretti anda montado."
-  },
-  {
-   "quando": 1793874299328,
-   "quem": "@gbx.ws",
-   "tipo": "doma",
-   "texto": "@gbx.ws cercaram um cavalo selvagem e domaram! Agora @gbx.ws anda montado."
   }
  ]
 }
