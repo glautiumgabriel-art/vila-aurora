@@ -1,41 +1,41 @@
 {
- "geradoEm": "2026-11-05T19:59",
+ "geradoEm": "2026-11-05T20:59",
  "relogioVila": {
   "dia": 3,
-  "hora": 19
+  "hora": 20
  },
  "moradores": 18,
  "novosDoDia": [],
  "nivelMaisAlto": 17,
  "maisAltos": [
   {
+   "nome": "@iamvictoriamenezes",
+   "nivel": 17,
+   "xp": 14112,
+   "titulo": "Lenda"
+  },
+  {
    "nome": "@dudabsl_",
    "nivel": 17,
-   "xp": 13662,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 16,
-   "xp": 13862,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@laryssapsouza",
-   "nivel": 16,
-   "xp": 13077,
+   "xp": 13912,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
-   "nivel": 16,
-   "xp": 12906,
+   "nivel": 17,
+   "xp": 13156,
    "titulo": "Lenda"
   },
   {
-   "nome": "@adriana.g.santana",
-   "nivel": 16,
-   "xp": 12897,
+   "nome": "@dudabrisolaa_",
+   "nivel": 17,
+   "xp": 12822,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@glautiumgabriel",
+   "nivel": 17,
+   "xp": 12802,
    "titulo": "Lenda"
   }
  ],
@@ -182,11 +182,11 @@
   "@dudabrisolaa_": {
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 22,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -214,11 +214,11 @@
   "@glautiumgabriel": {
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 43,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 45,
+   "def": 19,
    "bArma": 2,
    "bSec": 3,
    "bEsc": 0,
@@ -230,11 +230,11 @@
   "@iamvictoriamenezes": {
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 20,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 21,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -262,11 +262,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 19,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -326,11 +326,11 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 34,
-   "def": 19,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 36,
+   "def": 20,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -374,11 +374,11 @@
   "@joelma_alvarez": {
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 37,
-   "def": 18,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 39,
+   "def": 19,
    "bArma": 7,
    "bSec": 0,
    "bEsc": 2,
@@ -390,11 +390,11 @@
   "@adailtton_santos": {
    "nome": "@adailtton_santos",
    "profissao": "bardo",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 34,
-   "def": 17,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 36,
+   "def": 18,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -422,11 +422,11 @@
   "@sampaiojaiane": {
    "nome": "@sampaiojaiane",
    "profissao": "fazendeiro",
-   "nivel": 12,
-   "hp": 107,
-   "hpMax": 160,
-   "atq": 32,
-   "def": 14,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 34,
+   "def": 15,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -453,6 +453,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793920843390,
+   "quem": "@adailtton_santos",
+   "tipo": "vitoria",
+   "texto": "@adailtton_santos e os amigos venceram um cavalo selvagem."
+  },
+  {
+   "quando": 1793920250045,
+   "quem": "@sampaiojaiane",
+   "tipo": "briga_derrota",
+   "texto": "@sampaiojaiane foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
   {
    "quando": 1793918810045,
    "quem": "@sampaiojaiane",
@@ -620,18 +632,6 @@
    "quem": "@menor.k01_de_itz",
    "tipo": "briga_vitoria",
    "texto": "@menor.k01_de_itz encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793902123390,
-   "quem": "@adailtton_santos",
-   "tipo": "briga_vitoria",
-   "texto": "@adailtton_santos encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793901631505,
-   "quem": "@saviob._santos",
-   "tipo": "briga_derrota",
-   "texto": "@saviob._santos foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
   }
  ]
 }
