@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-06T00:39",
+ "atualizadoEm": "2026-11-06T11:57",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -185,6 +185,69 @@
    "sexo": "?",
    "profissao": "cacador",
    "joinedAt": 1793936392455,
+   "faltas": 0
+  },
+  {
+   "id": "ig-danielaugustobiesso",
+   "nome": "@danielaugustobiesso",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "cozinheiro",
+   "joinedAt": 1793977003305,
+   "faltas": 0
+  },
+  {
+   "id": "ig-gods.samuka",
+   "nome": "@gods.samuka",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "padeiro",
+   "joinedAt": 1793977011305,
+   "faltas": 0
+  },
+  {
+   "id": "ig-kalebdecote",
+   "nome": "@kalebdecote",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "bardo",
+   "joinedAt": 1793977015305,
+   "faltas": 0
+  },
+  {
+   "id": "ig-livia.maria31",
+   "nome": "@livia.maria31",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "comerciante",
+   "joinedAt": 1793977017305,
+   "faltas": 0
+  },
+  {
+   "id": "ig-ozi_calderon",
+   "nome": "@ozi_calderon",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "bardo",
+   "joinedAt": 1793977019305,
+   "faltas": 0
+  },
+  {
+   "id": "ig-salomaojr31",
+   "nome": "@salomaojr31",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "comerciante",
+   "joinedAt": 1793977020305,
+   "faltas": 0
+  },
+  {
+   "id": "ig-samuel_teles_01",
+   "nome": "@samuel_teles_01",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "pastor",
+   "joinedAt": 1793977022305,
    "faltas": 0
   }
  ]
