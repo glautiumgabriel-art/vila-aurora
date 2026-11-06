@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-06T12:50",
+ "atualizadoEm": "2026-11-06T14:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -174,6 +174,65 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-06T12:50",
    "respostaId": "17977804446150381"
+  },
+  {
+   "id": "api:18171983449498510",
+   "usuario": "@diegokallel",
+   "comentario": "o guardião chegou🔥🔥",
+   "em": "2026-11-06T13:18",
+   "tipo": "profissao",
+   "profissao": "cavaleiro",
+   "confianca": "claro",
+   "status": "aplicado_ao_seguir",
+   "resposta": "Anotado! Falta só seguir a página pra entrar na vila como cavaleiro 🌲",
+   "post": "https://www.instagram.com/reel/DfZ4yuMu_al/",
+   "via": "api",
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T13:19",
+   "respostaId": "17918887800463303"
+  },
+  {
+   "id": "api:18499033750098724",
+   "usuario": "@diegokallel",
+   "comentario": "estou seguindo🔥",
+   "em": "2026-11-06T14:17",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Que bom que gostou! ⚔️ 🎁 Você ganhou um Mapa Rasgado na vila!",
+   "presente": {
+    "item": "Mapa Rasgado",
+    "tipo": "pista",
+    "raridade": "comum",
+    "post": "DfZ_W9zhWaU",
+    "em": "2026-11-06T14:17"
+   },
+   "post": "https://www.instagram.com/reel/DfZ_W9zhWaU/",
+   "via": "api",
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T14:18",
+   "respostaId": "18572966158079784"
+  },
+  {
+   "id": "api:18111472382258394",
+   "usuario": "@salomaojr31",
+   "comentario": "Tou seguindo 🙌",
+   "em": "2026-11-06T14:17",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "A vila agradece 🏡 🎁 Você ganhou um Pão de Mel da Lia na vila!",
+   "presente": {
+    "item": "Pão de Mel da Lia",
+    "tipo": "comida",
+    "raridade": "comum",
+    "post": "DfZ_W9zhWaU",
+    "em": "2026-11-06T14:17"
+   },
+   "mudouMoradores": true,
+   "post": "https://www.instagram.com/reel/DfZ_W9zhWaU/",
+   "via": "api",
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T14:18",
+   "respostaId": "18107813255134007"
   }
  ]
 }

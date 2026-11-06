@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-06T12:42",
+ "atualizadoEm": "2026-11-06T14:59",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -334,7 +334,16 @@
    "sexo": "?",
    "profissao": "comerciante",
    "joinedAt": 1793977020305,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Pão de Mel da Lia",
+     "tipo": "comida",
+     "raridade": "comum",
+     "post": "DfZ_W9zhWaU",
+     "em": "2026-11-06T14:17"
+    }
+   ]
   },
   {
    "id": "ig-samuel_teles_01",
@@ -361,6 +370,34 @@
      "em": "2026-11-06T12:48"
     }
    ]
+  },
+  {
+   "id": "ig-diegokallel",
+   "nome": "@diegokallel",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "cavaleiro",
+   "joinedAt": 1793982450497,
+   "faltas": 0,
+   "motivoProfissao": "pedido no comentário",
+   "presentes": [
+    {
+     "item": "Mapa Rasgado",
+     "tipo": "pista",
+     "raridade": "comum",
+     "post": "DfZ_W9zhWaU",
+     "em": "2026-11-06T14:17"
+    }
+   ]
+  },
+  {
+   "id": "ig-samuel.v02",
+   "nome": "@samuel.v02",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "soldado",
+   "joinedAt": 1793982469497,
+   "faltas": 0
   }
  ]
 }

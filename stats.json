@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-06T11:58",
+ "geradoEm": "2026-11-06T15:00",
  "relogioVila": {
   "dia": 4,
-  "hora": 11
+  "hora": 14
  },
- "moradores": 26,
+ "moradores": 28,
  "novosDoDia": [
   "@eu.brandao__",
   "@danielaugustobiesso",
@@ -13,38 +13,40 @@
   "@livia.maria31",
   "@ozi_calderon",
   "@salomaojr31",
-  "@samuel_teles_01"
+  "@samuel_teles_01",
+  "@diegokallel",
+  "@samuel.v02"
  ],
  "nivelMaisAlto": 19,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 19,
-   "xp": 17855,
+   "xp": 18614,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 19,
-   "xp": 17655,
+   "xp": 18414,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@laryssapsouza",
+   "nivel": 19,
+   "xp": 17829,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 19,
-   "xp": 16899,
+   "xp": 17658,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabrisolaa_",
+   "nome": "@adriana.g.santana",
    "nivel": 19,
-   "xp": 16565,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@glautiumgabriel",
-   "nivel": 19,
-   "xp": 16545,
+   "xp": 17649,
    "titulo": "Lenda"
   }
  ],
@@ -52,28 +54,21 @@
   {
    "entre": [
     "@adriana.g.santana",
+    "@danielaugustobiesso"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@eu.brandao__",
+    "@glautiumgabriel"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@iamvictoriamenezes",
     "@kalebdecote"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@danielaugustobiesso",
-    "@livia.maria31"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@dudabrisolaa_",
-    "@tataicintra"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@dudabsl_",
-    "@gods.samuka"
    ],
    "forca": 2
   },
@@ -81,6 +76,13 @@
    "entre": [
     "@_williamg10",
     "@adriana.g.santana"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
+    "@_williamg10",
+    "@diegokallel"
    ],
    "forca": 1
   }
@@ -141,31 +143,31 @@
   "@gbx.ws",
   "@sampaiojaiane",
   "@saviob._santos",
-  "@eu.brandao__"
+  "@eu.brandao__",
+  "@danielaugustobiesso"
  ],
  "porProfissao": {
   "bardo": 5,
-  "comerciante": 5,
-  "explorador": 3,
-  "cavaleiro": 2,
-  "cozinheiro": 2,
-  "fazendeiro": 2,
+  "cavaleiro": 4,
+  "comerciante": 4,
+  "ferreiro": 3,
+  "fazendeiro": 3,
+  "explorador": 2,
+  "soldado": 2,
   "curandeiro": 1,
   "mineiro": 1,
-  "ferreiro": 1,
-  "soldado": 1,
+  "cozinheiro": 1,
   "cacador": 1,
-  "padeiro": 1,
-  "pastor": 1
+  "padeiro": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@samuel_teles_01",
+  "nome": "@samuel.v02",
   "nomeCompleto": "",
-  "profissao": "pastor",
+  "profissao": "soldado",
   "sexo": "m",
-  "chegouEm": "2026-11-06T11:57",
-  "chegouEmMs": 1793977022305
+  "chegouEm": "2026-11-06T13:27",
+  "chegouEmMs": 1793982469497
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -179,11 +181,11 @@
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 45,
-   "def": 22,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 47,
+   "def": 23,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -259,11 +261,11 @@
   "@laryssapsouza": {
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 44,
-   "def": 22,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 46,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -291,11 +293,11 @@
   "@dr.glautiumgabriel": {
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
-   "nivel": 17,
-   "hp": 210,
-   "hpMax": 210,
-   "atq": 43,
-   "def": 19,
+   "nivel": 18,
+   "hp": 220,
+   "hpMax": 220,
+   "atq": 45,
+   "def": 20,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -323,11 +325,11 @@
   "@menor.k01_de_itz": {
    "nome": "@menor.k01_de_itz",
    "profissao": "explorador",
-   "nivel": 17,
-   "hp": 210,
-   "hpMax": 210,
-   "atq": 42,
-   "def": 21,
+   "nivel": 18,
+   "hp": 220,
+   "hpMax": 220,
+   "atq": 44,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -339,11 +341,11 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 22,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -370,28 +372,28 @@
   },
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
-   "profissao": "explorador",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 41,
-   "def": 20,
+   "profissao": "cavaleiro",
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 23,
    "bArma": 2,
-   "bSec": 1,
+   "bSec": 0,
    "bEsc": 2,
    "bCapa": 2,
    "longe": false,
-   "guerreiro": false,
+   "guerreiro": true,
    "mana": null
   },
   "@joelma_alvarez": {
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 38,
-   "def": 21,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 40,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -403,11 +405,11 @@
   "@adailtton_santos": {
    "nome": "@adailtton_santos",
    "profissao": "bardo",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 20,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 21,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -435,11 +437,11 @@
   "@sampaiojaiane": {
    "nome": "@sampaiojaiane",
    "profissao": "fazendeiro",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 38,
-   "def": 17,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 40,
+   "def": 18,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -450,12 +452,12 @@
   },
   "@saviob._santos": {
    "nome": "@saviob._santos",
-   "profissao": "comerciante",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 39,
-   "def": 19,
+   "profissao": "ferreiro",
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 41,
+   "def": 20,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -482,14 +484,14 @@
   },
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
-   "profissao": "cozinheiro",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 10,
-   "def": 1,
+   "profissao": "fazendeiro",
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 19,
+   "def": 5,
    "bArma": 2,
-   "bSec": 0,
+   "bSec": 1,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
@@ -499,13 +501,13 @@
   "@gods.samuka": {
    "nome": "@gods.samuka",
    "profissao": "padeiro",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 15,
-   "def": 1,
-   "bArma": 7,
-   "bSec": 0,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 19,
+   "def": 4,
+   "bArma": 2,
+   "bSec": 3,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
@@ -515,13 +517,13 @@
   "@kalebdecote": {
    "nome": "@kalebdecote",
    "profissao": "bardo",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 10,
-   "def": 1,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 19,
+   "def": 4,
    "bArma": 2,
-   "bSec": 0,
+   "bSec": 3,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
@@ -531,12 +533,12 @@
   "@livia.maria31": {
    "nome": "@livia.maria31",
    "profissao": "comerciante",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 8,
-   "def": 1,
-   "bArma": 0,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 16,
+   "def": 4,
+   "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
    "bCapa": 0,
@@ -547,14 +549,14 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 10,
-   "def": 1,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 18,
+   "def": 7,
    "bArma": 2,
    "bSec": 0,
-   "bEsc": 0,
+   "bEsc": 2,
    "bCapa": 0,
    "longe": false,
    "guerreiro": false,
@@ -563,13 +565,13 @@
   "@salomaojr31": {
    "nome": "@salomaojr31",
    "profissao": "comerciante",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 8,
-   "def": 1,
-   "bArma": 0,
-   "bSec": 0,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 19,
+   "def": 5,
+   "bArma": 2,
+   "bSec": 1,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
@@ -578,22 +580,144 @@
   },
   "@samuel_teles_01": {
    "nome": "@samuel_teles_01",
-   "profissao": "pastor",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 15,
-   "def": 1,
+   "profissao": "ferreiro",
+   "nivel": 4,
+   "hp": 70,
+   "hpMax": 80,
+   "atq": 24,
+   "def": 4,
    "bArma": 7,
-   "bSec": 0,
+   "bSec": 3,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
    "guerreiro": false,
    "mana": null
+  },
+  "@diegokallel": {
+   "nome": "@diegokallel",
+   "profissao": "cavaleiro",
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 6,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 2,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
+  },
+  "@samuel.v02": {
+   "nome": "@samuel.v02",
+   "profissao": "soldado",
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 6,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 2,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793986742305,
+   "quem": "@samuel_teles_01",
+   "tipo": "vitoria",
+   "texto": "@samuel_teles_01 e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1793986723305,
+   "quem": "@danielaugustobiesso",
+   "tipo": "doma",
+   "texto": "@danielaugustobiesso e os amigos cercaram um cavalo selvagem e domaram! Agora @danielaugustobiesso anda montado."
+  },
+  {
+   "quando": 1793986432455,
+   "quem": "@eu.brandao__",
+   "tipo": "vitoria",
+   "texto": "@eu.brandao__ e os amigos acertaram de longe um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1793986410497,
+   "quem": "@diegokallel",
+   "tipo": "vitoria",
+   "texto": "@diegokallel e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1793985299305,
+   "quem": "@ozi_calderon",
+   "tipo": "vitoria",
+   "texto": "@ozi_calderon e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1793984970497,
+   "quem": "@diegokallel",
+   "tipo": "queda",
+   "texto": "@diegokallel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793982420305,
+   "quem": "@salomaojr31",
+   "tipo": "briga_vitoria",
+   "texto": "@salomaojr31 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1793980980305,
+   "quem": "@salomaojr31",
+   "tipo": "derrota",
+   "texto": "@salomaojr31 encostou sozinho em o Lobo Cinzento e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793980971305,
+   "quem": "@gods.samuka",
+   "tipo": "vitoria",
+   "texto": "@gods.samuka venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793979540305,
+   "quem": "@salomaojr31",
+   "tipo": "queda",
+   "texto": "@salomaojr31 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793979535305,
+   "quem": "@kalebdecote",
+   "tipo": "derrota",
+   "texto": "@kalebdecote encostou sozinho em um goblin da estrada e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793979523305,
+   "quem": "@danielaugustobiesso",
+   "tipo": "queda",
+   "texto": "@danielaugustobiesso escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793979232455,
+   "quem": "@eu.brandao__",
+   "tipo": "vitoria",
+   "texto": "@eu.brandao__ acertaram de longe um cavalo selvagem."
+  },
+  {
+   "quando": 1793978100305,
+   "quem": "@salomaojr31",
+   "tipo": "queda",
+   "texto": "@salomaojr31 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793977792455,
+   "quem": "@eu.brandao__",
+   "tipo": "queda",
+   "texto": "@eu.brandao__ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1793974912455,
    "quem": "@eu.brandao__",
@@ -683,96 +807,6 @@
    "quem": "@gbx.ws",
    "tipo": "vitoria",
    "texto": "@gbx.ws e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793929019328,
-   "quem": "@gbx.ws",
-   "tipo": "briga_derrota",
-   "texto": "@gbx.ws foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793927450045,
-   "quem": "@sampaiojaiane",
-   "tipo": "briga_derrota",
-   "texto": "@sampaiojaiane foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793926603390,
-   "quem": "@adailtton_santos",
-   "tipo": "briga_vitoria",
-   "texto": "@adailtton_santos encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793926139328,
-   "quem": "@gbx.ws",
-   "tipo": "vitoria",
-   "texto": "@gbx.ws venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1793926111505,
-   "quem": "@saviob._santos",
-   "tipo": "briga_derrota",
-   "texto": "@saviob._santos foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793924699328,
-   "quem": "@gbx.ws",
-   "tipo": "vitoria",
-   "texto": "@gbx.ws e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1793920843390,
-   "quem": "@adailtton_santos",
-   "tipo": "vitoria",
-   "texto": "@adailtton_santos e os amigos venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1793920250045,
-   "quem": "@sampaiojaiane",
-   "tipo": "briga_derrota",
-   "texto": "@sampaiojaiane foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793918810045,
-   "quem": "@sampaiojaiane",
-   "tipo": "briga_derrota",
-   "texto": "@sampaiojaiane foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793916907129,
-   "quem": "@joelma_alvarez",
-   "tipo": "queda",
-   "texto": "@joelma_alvarez escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793916523390,
-   "quem": "@adailtton_santos",
-   "tipo": "queda",
-   "texto": "@adailtton_santos escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793916059328,
-   "quem": "@gbx.ws",
-   "tipo": "vitoria",
-   "texto": "@gbx.ws e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1793915930045,
-   "quem": "@sampaiojaiane",
-   "tipo": "vitoria",
-   "texto": "@sampaiojaiane venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1793915083390,
-   "quem": "@adailtton_santos",
-   "tipo": "vitoria",
-   "texto": "@adailtton_santos venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1793913643390,
-   "quem": "@adailtton_santos",
-   "tipo": "vitoria",
-   "texto": "@adailtton_santos e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
   }
  ]
 }
