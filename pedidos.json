@@ -254,7 +254,9 @@
    },
    "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T19:36",
+   "respostaId": "18109631834616941"
   },
   {
    "id": "api:17915677686514963",
@@ -274,7 +276,9 @@
    "mudouMoradores": true,
    "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T19:36",
+   "respostaId": "17927683788205791"
   },
   {
    "id": "api:18106546472357414",
