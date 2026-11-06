@@ -1,0 +1,16 @@
+{
+ "versao": 1,
+ "comandos": [
+  {
+   "tipo": "ir",
+   "arroba": "@glautiumgabriel",
+   "lugar": "floresta",
+   "lugarNome": "Floresta Velha",
+   "post": "dm",
+   "hora": "2026-11-04T16:30",
+   "pista": false
+  }
+ ],
+ "observacao": "tipo ir: a página leva o personagem ao lugar na hora seguinte (pista = achou a pista da novela, 1 em 4); tipo atacar: o personagem vai lutar contra o alvo",
+ "atualizadoEm": "2026-11-04T16:30"
+}

@@ -1079,7 +1079,7 @@ function escudo(r,nivel){ const rar=raridade(r,nivel); const forma=pick(r,[{k:"r
   const emb=pick(r,[{k:"estrela",n:"uma estrela"},{k:"circulo",n:"um círculo"},{k:"cruz",n:"uma cruz"},{k:"lua",n:"uma lua"},{k:"nada",n:""},{k:"raio",n:"um raio"}]); const metal=metalPor(r,rar); const g=new THREE.Group();
   const m1=mat(c1.c), m2=mat(c2.c), mb=mat(metal.c,{roughness:0.4,metalness:0.5});
   if(forma.k==="redondo"){ const d=cyl(0.42,0.42,0.06,m1,0,0,0,g,14); d.rotation.x=Math.PI/2; const b=new THREE.Mesh(geo("Torus",[0.42,0.035,6,14]),mb); add(b,g); }
-  else if(forma.k==="gota"){ const d=cone(0.42,0.95,m1,0,-0.1,0,g,4); d.rotation.x=Math.PI; d.rotation.y=Math.PI/4; d.scale.set(1,1,0.12); const t=cyl(0.42,0.42,0.06,m1,0,0.33,0,g,12); t.rotation.x=Math.PI/2; t.scale.set(1,0.6,1); }
+  else if(forma.k==="gota"){ const d=cone(0.42,0.95,m1,0,-0.1,0,g,4); d.rotation.x=Math.PI; d.rotation.y=Math.PI/4; d.scale.set(1,1,0.12); const t=cyl(0.42,0.42,0.06,m1,0,0.33,0,g,12); t.rotation.x=Math.PI/2; t.scale.set(1,0.6,1); const bd=cone(0.42,0.95,mb,0,-0.1,-0.02,g,4); bd.rotation.x=Math.PI; bd.rotation.y=Math.PI/4; bd.scale.set(1.12,1.06,0.12); const bt=cyl(0.42,0.42,0.06,mb,0,0.33,-0.02,g,12); bt.rotation.x=Math.PI/2; bt.scale.set(1.1,0.66,1.1); }
   else if(forma.k==="quadrado"){ box(0.7,0.7,0.06,m1,0,0,0,g); box(0.78,0.78,0.03,mb,0,0,-0.01,g); }
   else { box(0.6,1.0,0.06,m1,0,0,0,g); box(0.66,0.12,0.07,mb,0,0.5,0,g); box(0.66,0.12,0.07,mb,0,-0.5,0,g); }
   if(emb.k==="estrela"){ for(let i=0;i<5;i++){ const s=box(0.08,0.3,0.03,m2,0,0,0.04,g); s.rotation.z=i*Math.PI*2/5; } } else if(emb.k==="circulo"){ const c=cyl(0.17,0.17,0.03,m2,0,0,0.04,g,12); c.rotation.x=Math.PI/2; }
@@ -1114,8 +1114,8 @@ function alaude(r,nivel){ const rar=raridade(r,nivel); const cabo=pick(r,MADEIRA
 function saco(r,nivel){ const rar=raridade(r,nivel); const cor=pick(r,[{c:0xa9743f,n:"de couro"},{c:0x8a4fd6,n:"de veludo roxo"},{c:0x3b7dd8,n:"de linho azul"}]); const g=new THREE.Group(); const s=esfera(0.16,mat(cor.c),0,0.16,0,g,8,6); s.scale.set(1,1.2,1); cyl(0.07,0.09,0.1,mat(cor.c),0,0.36,0,g,6); esfera(0.05,mat(0xf0c030,{metalness:0.6,roughness:0.3}),0.1,0.05,0.12,g);
   return {g,nome:"Bolsa de moedas "+cor.n,rar,tipo:"saco"}; }
 function arco(r,nivel){ const rar=raridade(r,nivel); const cabo=pick(r,MADEIRAS); const longo=r()<0.4; const R=longo?0.6:0.42; const g=new THREE.Group(); const a=new THREE.Mesh(geo("Torus",[R,0.03,6,14,Math.PI]),mat(cabo.c)); a.rotation.z=-Math.PI/2; a.position.y=0.3; add(a,g);
-  box(0.012,R*2,0.012,mat(0xf7f2e8),-R,0.3,0,g); const mb=mat(metalPor(r,rar).c,{metalness:0.5,roughness:0.4}); box(0.06,0.14,0.06,mb,0,0.3,0,g);
-  return {g,nome:(longo?"Arco longo de ":"Arco curto de ")+cabo.n+(rar.k==="comum"?"":" com empunhadura "+metalPor(r,rar).n),rar,tipo:"arco"}; }
+  box(0.012,R*2,0.012,mat(0xf7f2e8),-R,0.3,0,g); metalPor(r,rar); const mArco=metalPor(r,rar); const mb=mat(mArco.c,{metalness:0.5,roughness:0.4}); box(0.06,0.14,0.06,mb,0,0.3,0,g);
+  return {g,nome:(longo?"Arco longo de ":"Arco curto de ")+cabo.n+(rar.k==="comum"?"":" com empunhadura "+mArco.n),rar,tipo:"arco"}; }
 // v40: efeito visível igual ao texto (material mágico e raridade)
 const GEMAS=[{k:"de rubi",c:0xff2a3a},{k:"de jade",c:0x3fe08a},{k:"de aço azul",c:0x4aa8ff}];
 function animaFaiscas(){ const t=performance.now()/1000; this.rotation.y=t*2.2; this.material.opacity=0.55+0.4*Math.abs(Math.sin(t*5)); this.material.size=0.05+0.035*Math.abs(Math.sin(t*7)); }
