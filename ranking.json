@@ -1,0 +1,56 @@
+{
+ "observacao": "Ranking semanal de quem mais comentou (7 dias). Top 10 ganham o título Voz da Vila.",
+ "semana": [
+  {
+   "pos": 1,
+   "nome": "@danielaugustobiesso",
+   "comentarios": 3
+  },
+  {
+   "pos": 2,
+   "nome": "@diegokallel",
+   "comentarios": 2
+  },
+  {
+   "pos": 3,
+   "nome": "@castelari22o",
+   "comentarios": 1
+  },
+  {
+   "pos": 4,
+   "nome": "@glautiumgabriel",
+   "comentarios": 1
+  },
+  {
+   "pos": 5,
+   "nome": "@gods.samuka",
+   "comentarios": 1
+  },
+  {
+   "pos": 6,
+   "nome": "@isaac.jmy",
+   "comentarios": 1
+  },
+  {
+   "pos": 7,
+   "nome": "@laryssapsouza",
+   "comentarios": 1
+  },
+  {
+   "pos": 8,
+   "nome": "@salomaojr31",
+   "comentarios": 1
+  },
+  {
+   "pos": 9,
+   "nome": "@samuel.v02",
+   "comentarios": 1
+  },
+  {
+   "pos": 10,
+   "nome": "@samuel_teles_01",
+   "comentarios": 1
+  }
+ ],
+ "atualizadoEm": "2026-11-06T15:18"
+}
