@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-06T12:49",
+ "atualizadoEm": "2026-11-06T12:50",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -26,7 +26,9 @@
    "morador": true,
    "post": "https://www.instagram.com/reel/DfYmkO1BR7s/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T12:50",
+   "respostaId": "18017105774755961"
   },
   {
    "id": "api:18053241545604045",
@@ -50,7 +52,9 @@
    "resposta": "Segue a página pra participar e ganhar presente na vila 🎁",
    "post": "https://www.instagram.com/reel/DfYmasBsbqs/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T12:50",
+   "respostaId": "18104855603374609"
   },
   {
    "id": "api:17922282981241596",
@@ -167,7 +171,9 @@
    "resposta": "Combinado: ferreiro! A vila agradece 🌾",
    "post": "https://www.instagram.com/reel/DfTRMc9Bb4E/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T12:50",
+   "respostaId": "17977804446150381"
   }
  ]
 }
