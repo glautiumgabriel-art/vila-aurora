@@ -48,7 +48,16 @@
    "sexo": "m",
    "profissao": "mineiro",
    "joinedAt": 1793728514112,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Pedra de Amolar",
+     "tipo": "ferramenta",
+     "raridade": "comum",
+     "post": "DfYmkO1BR7s",
+     "em": "2026-11-06T12:48"
+    }
+   ]
   },
   {
    "id": "ig-iamvictoriamenezes",
@@ -66,7 +75,16 @@
    "sexo": "f",
    "profissao": "ferreiro",
    "joinedAt": 1793728516112,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "+50 XP",
+     "tipo": "xp",
+     "raridade": "comum",
+     "post": "DfTnr9-hBcG",
+     "em": "2026-11-06T12:48"
+    }
+   ]
   },
   {
    "id": "ig-_williamg10",
@@ -86,7 +104,16 @@
    "joinedAt": 1793755542967,
    "faltas": 0,
    "motivoProfissao": "vila sem produtor de comida",
-   "discreto": true
+   "discreto": true,
+   "presentes": [
+    {
+     "item": "Pedra de Amolar",
+     "tipo": "ferramenta",
+     "raridade": "comum",
+     "post": "DfTtRoxPe_M",
+     "em": "2026-11-06T12:48"
+    }
+   ]
   },
   {
    "id": "ig-tataicintra",
@@ -113,7 +140,16 @@
    "sexo": "m",
    "profissao": "cavaleiro",
    "joinedAt": 1793783412333,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Pão de Mel da Lia",
+     "tipo": "comida",
+     "raridade": "comum",
+     "post": "DfTy-AnhSlw",
+     "em": "2026-11-06T12:48"
+    }
+   ]
   },
   {
    "id": "ig-gabrielcamuzzatonegretti",
@@ -138,6 +174,15 @@
      "para": "cavaleiro",
      "em": "2026-11-06T12:42",
      "motivo": "pediu nos comentários: Thayler, cavaleiro"
+    }
+   ],
+   "presentes": [
+    {
+     "item": "Poção de Cura",
+     "tipo": "poção",
+     "raridade": "comum",
+     "post": "DfTnr9-hBcG",
+     "em": "2026-11-06T12:48"
     }
    ]
   },
@@ -182,9 +227,25 @@
    "nome": "@saviob._santos",
    "nomeCompleto": "",
    "sexo": "?",
-   "profissao": "comerciante",
+   "profissao": "ferreiro",
    "joinedAt": 1793811271505,
-   "faltas": 0
+   "faltas": 0,
+   "historicoProfissao": [
+    {
+     "de": "comerciante",
+     "para": "ferreiro",
+     "em": "2026-11-06T12:48"
+    }
+   ],
+   "presentes": [
+    {
+     "item": "+50 XP",
+     "tipo": "xp",
+     "raridade": "comum",
+     "post": "DfTRMc9Bb4E",
+     "em": "2026-11-06T12:48"
+    }
+   ]
   },
   {
    "id": "ig-eu.brandao__",
@@ -210,6 +271,15 @@
      "em": "2026-11-06T12:42",
      "motivo": "pediu nos comentários: Qr ser o fazendeiro"
     }
+   ],
+   "presentes": [
+    {
+     "item": "+1 Respeito",
+     "tipo": "respeito",
+     "raridade": "comum",
+     "post": "DfYl306B3y0",
+     "em": "2026-11-06T12:48"
+    }
    ]
   },
   {
@@ -219,7 +289,16 @@
    "sexo": "?",
    "profissao": "padeiro",
    "joinedAt": 1793977011305,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Mapa Rasgado",
+     "tipo": "pista",
+     "raridade": "comum",
+     "post": "DfYmkO1BR7s",
+     "em": "2026-11-06T12:48"
+    }
+   ]
   },
   {
    "id": "ig-kalebdecote",
@@ -271,6 +350,15 @@
      "para": "ferreiro",
      "em": "2026-11-06T12:42",
      "motivo": "pediu nos comentários: Eu ferreiro"
+    }
+   ],
+   "presentes": [
+    {
+     "item": "+50 XP",
+     "tipo": "xp",
+     "raridade": "comum",
+     "post": "DfYmkO1BR7s",
+     "em": "2026-11-06T12:48"
     }
    ]
   }
