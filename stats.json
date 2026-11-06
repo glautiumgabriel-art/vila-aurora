@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-06T17:03",
+ "geradoEm": "2026-11-06T17:05",
  "relogioVila": {
   "dia": 4,
   "hora": 17
@@ -23,31 +23,31 @@
   {
    "nome": "@dudabsl_",
    "nivel": 20,
-   "xp": 18927,
+   "xp": 18929,
    "titulo": "Lenda"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 19,
-   "xp": 19127,
+   "xp": 19129,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 19,
-   "xp": 18342,
+   "xp": 18344,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 19,
-   "xp": 18171,
+   "xp": 18173,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 19,
-   "xp": 18162,
+   "xp": 18164,
    "titulo": "Lenda"
   }
  ],
@@ -55,7 +55,7 @@
   {
    "entre": [
     "@adriana.g.santana",
-    "@danielaugustobiesso"
+    "@ozi_calderon"
    ],
    "forca": 2
   },
@@ -68,24 +68,24 @@
   },
   {
    "entre": [
-    "@iamvictoriamenezes",
-    "@kalebdecote"
+    "@gbx.ws",
+    "@glautiumgabriel"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@_williamg10",
-    "@adriana.g.santana"
+    "@iamvictoriamenezes",
+    "@menor.k01_de_itz"
    ],
-   "forca": 1
+   "forca": 2
   },
   {
    "entre": [
-    "@_williamg10",
-    "@diegokallel"
+    "@kalebdecote",
+    "@livia.maria31"
    ],
-   "forca": 1
+   "forca": 2
   }
  ],
  "maioresDesafetos": [
@@ -504,7 +504,7 @@
    "nome": "@gods.samuka",
    "profissao": "padeiro",
    "nivel": 5,
-   "hp": 86,
+   "hp": 88,
    "hpMax": 90,
    "atq": 21,
    "def": 12,
