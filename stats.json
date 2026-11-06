@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-05T20:59",
+ "geradoEm": "2026-11-05T21:59",
  "relogioVila": {
   "dia": 3,
-  "hora": 20
+  "hora": 21
  },
  "moradores": 18,
  "novosDoDia": [],
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 17,
-   "xp": 14112,
+   "xp": 14362,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 17,
-   "xp": 13912,
+   "xp": 14162,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 17,
-   "xp": 13156,
+   "xp": 13406,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 17,
-   "xp": 12822,
+   "xp": 13072,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 17,
-   "xp": 12802,
+   "xp": 13052,
    "titulo": "Lenda"
   }
  ],
@@ -294,11 +294,11 @@
   "@tataicintra": {
    "nome": "@tataicintra",
    "profissao": "comerciante",
-   "nivel": 14,
-   "hp": 180,
-   "hpMax": 180,
-   "atq": 36,
-   "def": 16,
+   "nivel": 15,
+   "hp": 190,
+   "hpMax": 190,
+   "atq": 38,
+   "def": 17,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -358,11 +358,11 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "explorador",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 35,
-   "def": 22,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 37,
+   "def": 23,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 7,
@@ -439,7 +439,7 @@
    "nome": "@saviob._santos",
    "profissao": "comerciante",
    "nivel": 13,
-   "hp": 170,
+   "hp": 107,
    "hpMax": 170,
    "atq": 35,
    "def": 17,
@@ -453,6 +453,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793926139328,
+   "quem": "@gbx.ws",
+   "tipo": "vitoria",
+   "texto": "@gbx.ws venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1793926111505,
+   "quem": "@saviob._santos",
+   "tipo": "briga_derrota",
+   "texto": "@saviob._santos foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793924699328,
+   "quem": "@gbx.ws",
+   "tipo": "vitoria",
+   "texto": "@gbx.ws e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
   {
    "quando": 1793920843390,
    "quem": "@adailtton_santos",
@@ -614,24 +632,6 @@
    "quem": "@adailtton_santos",
    "tipo": "vitoria",
    "texto": "@adailtton_santos e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1793904057813,
-   "quem": "@thayl_ermatheus",
-   "tipo": "vitoria",
-   "texto": "@thayl_ermatheus venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1793904012333,
-   "quem": "@isaac.jmy",
-   "tipo": "queda",
-   "texto": "@isaac.jmy escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793903172956,
-   "quem": "@menor.k01_de_itz",
-   "tipo": "briga_vitoria",
-   "texto": "@menor.k01_de_itz encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   }
  ]
 }
