@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-05T23:59",
+ "atualizadoEm": "2026-11-06T00:39",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -176,6 +176,15 @@
    "sexo": "?",
    "profissao": "comerciante",
    "joinedAt": 1793811271505,
+   "faltas": 0
+  },
+  {
+   "id": "ig-eu.brandao__",
+   "nome": "@eu.brandao__",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "cacador",
+   "joinedAt": 1793936392455,
    "faltas": 0
   }
  ]

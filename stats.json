@@ -1,41 +1,43 @@
 {
- "geradoEm": "2026-11-05T23:59",
+ "geradoEm": "2026-11-06T00:39",
  "relogioVila": {
-  "dia": 3,
-  "hora": 23
+  "dia": 4,
+  "hora": 0
  },
- "moradores": 18,
- "novosDoDia": [],
+ "moradores": 19,
+ "novosDoDia": [
+  "@eu.brandao__"
+ ],
  "nivelMaisAlto": 17,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 17,
-   "xp": 14862,
+   "xp": 15030,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 17,
-   "xp": 14662,
+   "xp": 14830,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 17,
-   "xp": 14077,
+   "xp": 14245,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 17,
-   "xp": 13906,
+   "xp": 14074,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 17,
-   "xp": 13897,
+   "xp": 14065,
    "titulo": "Lenda"
   }
  ],
@@ -143,16 +145,17 @@
   "mineiro": 1,
   "ferreiro": 1,
   "cozinheiro": 1,
-  "soldado": 1
+  "soldado": 1,
+  "cacador": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@saviob._santos",
+  "nome": "@eu.brandao__",
   "nomeCompleto": "",
-  "profissao": "comerciante",
+  "profissao": "cacador",
   "sexo": "?",
-  "chegouEm": "2026-11-04T13:54",
-  "chegouEmMs": 1793811271505
+  "chegouEm": "2026-11-06T00:39",
+  "chegouEmMs": 1793936392455
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -450,9 +453,16 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
-  }
+  },
+  "@eu.brandao__": null
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793934650045,
+   "quem": "@sampaiojaiane",
+   "tipo": "vitoria",
+   "texto": "@sampaiojaiane e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
   {
    "quando": 1793933210045,
    "quem": "@sampaiojaiane",
@@ -626,12 +636,6 @@
    "quem": "@gbx.ws",
    "tipo": "vitoria",
    "texto": "@gbx.ws venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1793906937813,
-   "quem": "@thayl_ermatheus",
-   "tipo": "vitoria",
-   "texto": "@thayl_ermatheus e os amigos venceram um urso da floresta e ganharam uma garra de urso."
   }
  ]
 }
