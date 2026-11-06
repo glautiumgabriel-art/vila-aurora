@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-06T16:03",
+ "atualizadoEm": "2026-11-06T17:03",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -425,6 +425,15 @@
    "titulos": [
     "Voz da Vila"
    ]
+  },
+  {
+   "id": "ig-dragon_soul666",
+   "nome": "@dragon_soul666",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "arqueiro",
+   "joinedAt": 1793995391146,
+   "faltas": 0
   }
  ]
 }

@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-06T16:04",
+ "geradoEm": "2026-11-06T17:03",
  "relogioVila": {
   "dia": 4,
-  "hora": 16
+  "hora": 17
  },
- "moradores": 28,
+ "moradores": 29,
  "novosDoDia": [
   "@eu.brandao__",
   "@danielaugustobiesso",
@@ -15,38 +15,39 @@
   "@salomaojr31",
   "@samuel_teles_01",
   "@diegokallel",
-  "@samuel.v02"
+  "@samuel.v02",
+  "@dragon_soul666"
  ],
- "nivelMaisAlto": 19,
+ "nivelMaisAlto": 20,
  "maisAltos": [
   {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 19,
-   "xp": 18881,
+   "nome": "@dudabsl_",
+   "nivel": 20,
+   "xp": 18927,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabsl_",
+   "nome": "@iamvictoriamenezes",
    "nivel": 19,
-   "xp": 18681,
+   "xp": 19127,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 19,
-   "xp": 18096,
+   "xp": 18342,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 19,
-   "xp": 17925,
+   "xp": 18171,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 19,
-   "xp": 17916,
+   "xp": 18162,
    "titulo": "Lenda"
   }
  ],
@@ -158,16 +159,17 @@
   "mineiro": 1,
   "cozinheiro": 1,
   "cacador": 1,
-  "padeiro": 1
+  "padeiro": 1,
+  "arqueiro": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@samuel.v02",
+  "nome": "@dragon_soul666",
   "nomeCompleto": "",
-  "profissao": "soldado",
-  "sexo": "m",
-  "chegouEm": "2026-11-06T13:27",
-  "chegouEmMs": 1793982469497
+  "profissao": "arqueiro",
+  "sexo": "?",
+  "chegouEm": "2026-11-06T17:03",
+  "chegouEmMs": 1793995391146
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -213,11 +215,11 @@
   "@dudabsl_": {
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 46,
-   "def": 21,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 48,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -485,15 +487,15 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 19,
-   "def": 5,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 21,
+   "def": 8,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
@@ -502,7 +504,7 @@
    "nome": "@gods.samuka",
    "profissao": "padeiro",
    "nivel": 5,
-   "hp": 90,
+   "hp": 86,
    "hpMax": 90,
    "atq": 21,
    "def": 12,
@@ -565,15 +567,15 @@
   "@salomaojr31": {
    "nome": "@salomaojr31",
    "profissao": "comerciante",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 19,
-   "def": 5,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 21,
+   "def": 8,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
@@ -597,11 +599,11 @@
   "@diegokallel": {
    "nome": "@diegokallel",
    "profissao": "cavaleiro",
-   "nivel": 4,
-   "hp": 80,
-   "hpMax": 80,
-   "atq": 16,
-   "def": 7,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 18,
+   "def": 8,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -613,11 +615,11 @@
   "@samuel.v02": {
    "nome": "@samuel.v02",
    "profissao": "soldado",
-   "nivel": 4,
-   "hp": 80,
-   "hpMax": 80,
-   "atq": 16,
-   "def": 7,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 18,
+   "def": 8,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -625,9 +627,55 @@
    "longe": false,
    "guerreiro": true,
    "mana": null
+  },
+  "@dragon_soul666": {
+   "nome": "@dragon_soul666",
+   "profissao": "arqueiro",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 8,
+   "def": 1,
+   "bArma": 0,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": true,
+   "guerreiro": false,
+   "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793993939305,
+   "quem": "@ozi_calderon",
+   "tipo": "vitoria",
+   "texto": "@ozi_calderon e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1793993935305,
+   "quem": "@kalebdecote",
+   "tipo": "briga_derrota",
+   "texto": "@kalebdecote foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
+  {
+   "quando": 1793993931305,
+   "quem": "@gods.samuka",
+   "tipo": "vitoria",
+   "texto": "@gods.samuka e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1793993610497,
+   "quem": "@diegokallel",
+   "tipo": "queda",
+   "texto": "@diegokallel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793992495305,
+   "quem": "@kalebdecote",
+   "tipo": "briga_derrota",
+   "texto": "@kalebdecote foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
   {
    "quando": 1793991062305,
    "quem": "@samuel_teles_01",
@@ -777,36 +825,6 @@
    "quem": "@salomaojr31",
    "tipo": "queda",
    "texto": "@salomaojr31 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793977792455,
-   "quem": "@eu.brandao__",
-   "tipo": "queda",
-   "texto": "@eu.brandao__ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1793974912455,
-   "quem": "@eu.brandao__",
-   "tipo": "briga_vitoria",
-   "texto": "@eu.brandao__ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793972032455,
-   "quem": "@eu.brandao__",
-   "tipo": "briga_derrota",
-   "texto": "@eu.brandao__ foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1793970592455,
-   "quem": "@eu.brandao__",
-   "tipo": "briga_vitoria",
-   "texto": "@eu.brandao__ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793963392455,
-   "quem": "@eu.brandao__",
-   "tipo": "queda",
-   "texto": "@eu.brandao__ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
