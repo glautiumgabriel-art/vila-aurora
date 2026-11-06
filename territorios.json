@@ -1,0 +1,37 @@
+{
+ "observacao": "Guerra por território (Dr. 06/11). Estado inicial real: donos de partida (v47); batalhas entram quando um post de território fecha.",
+ "territorios": [
+  {
+   "k": "mina",
+   "dono": "CASTELO",
+   "desde": "2026-11-06T00:00"
+  },
+  {
+   "k": "floresta",
+   "dono": "FLORESTA",
+   "desde": "2026-11-06T00:00"
+  },
+  {
+   "k": "lagoa",
+   "dono": "Pinheiral",
+   "desde": "2026-11-06T00:00"
+  },
+  {
+   "k": "ponte",
+   "dono": "Vila Aurora",
+   "desde": "2026-11-06T00:00"
+  },
+  {
+   "k": "torre_velha",
+   "dono": "Vila Sombria",
+   "desde": "2026-11-06T00:00"
+  },
+  {
+   "k": "campo_norte",
+   "dono": "CASTELO",
+   "desde": "2026-11-06T00:00"
+  }
+ ],
+ "batalhas": [],
+ "atualizadoEm": "2026-11-06T17:52"
+}
