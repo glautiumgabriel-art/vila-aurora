@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-06T11:57",
+ "geradoEm": "2026-11-06T11:58",
  "relogioVila": {
   "dia": 4,
   "hora": 11
@@ -20,69 +20,69 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 19,
-   "xp": 17850,
+   "xp": 17855,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 19,
-   "xp": 17651,
+   "xp": 17655,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 19,
-   "xp": 16894,
+   "xp": 16899,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 19,
-   "xp": 16561,
+   "xp": 16565,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 19,
-   "xp": 16540,
+   "xp": 16545,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@_williamg10",
-    "@laryssapsouza"
+    "@adriana.g.santana",
+    "@kalebdecote"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@danielaugustobiesso",
+    "@livia.maria31"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@dudabrisolaa_",
+    "@tataicintra"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@dudabsl_",
+    "@gods.samuka"
    ],
    "forca": 2
   },
   {
    "entre": [
     "@_williamg10",
-    "@menor.k01_de_itz"
+    "@adriana.g.santana"
    ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@dr.glautiumgabriel",
-    "@saviob._santos"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@glautiumgabriel",
-    "@iamvictoriamenezes"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@laryssapsouza",
-    "@sampaiojaiane"
-   ],
-   "forca": 2
+   "forca": 1
   }
  ],
  "maioresDesafetos": [
