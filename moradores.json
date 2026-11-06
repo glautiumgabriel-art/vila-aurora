@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-06T11:57",
+ "atualizadoEm": "2026-11-06T12:42",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -129,9 +129,17 @@
    "nome": "@thayl_ermatheus",
    "nomeCompleto": "",
    "sexo": "f",
-   "profissao": "explorador",
+   "profissao": "cavaleiro",
    "joinedAt": 1793787777813,
-   "faltas": 0
+   "faltas": 0,
+   "historicoProfissao": [
+    {
+     "de": "explorador",
+     "para": "cavaleiro",
+     "em": "2026-11-06T12:42",
+     "motivo": "pediu nos comentários: Thayler, cavaleiro"
+    }
+   ]
   },
   {
    "id": "ig-joelma_alvarez",
@@ -192,9 +200,17 @@
    "nome": "@danielaugustobiesso",
    "nomeCompleto": "",
    "sexo": "f",
-   "profissao": "cozinheiro",
+   "profissao": "fazendeiro",
    "joinedAt": 1793977003305,
-   "faltas": 0
+   "faltas": 0,
+   "historicoProfissao": [
+    {
+     "de": "cozinheiro",
+     "para": "fazendeiro",
+     "em": "2026-11-06T12:42",
+     "motivo": "pediu nos comentários: Qr ser o fazendeiro"
+    }
+   ]
   },
   {
    "id": "ig-gods.samuka",
@@ -246,9 +262,17 @@
    "nome": "@samuel_teles_01",
    "nomeCompleto": "",
    "sexo": "m",
-   "profissao": "pastor",
+   "profissao": "ferreiro",
    "joinedAt": 1793977022305,
-   "faltas": 0
+   "faltas": 0,
+   "historicoProfissao": [
+    {
+     "de": "pastor",
+     "para": "ferreiro",
+     "em": "2026-11-06T12:42",
+     "motivo": "pediu nos comentários: Eu ferreiro"
+    }
+   ]
   }
  ]
 }
