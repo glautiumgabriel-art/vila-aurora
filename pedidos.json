@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-06T14:18",
+ "atualizadoEm": "2026-11-06T17:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -233,6 +233,60 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-06T14:18",
    "respostaId": "18107813255134007"
+  },
+  {
+   "id": "api:18191446069363042",
+   "usuario": "@salomaojr31",
+   "comentario": "Sou caçador 🔥🔥",
+   "em": "2026-11-06T17:18",
+   "tipo": "profissao",
+   "profissao": "cacador",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": "comerciante",
+   "resposta": "Anotado! Em breve você aparece na vila de cacador ⚔️ 🎁 Você ganhou uma Maçã Dourada na vila!",
+   "presente": {
+    "item": "Maçã Dourada",
+    "tipo": "comida",
+    "raridade": "comum",
+    "post": "DfaUH3uv1Ny",
+    "em": "2026-11-06T17:18"
+   },
+   "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:17915677686514963",
+   "usuario": "@dragon_soul666",
+   "comentario": "fazer muro",
+   "em": "2026-11-06T17:18",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Tamo junto! 🔥 🎁 Você ganhou uma Capa de Viajante na vila!",
+   "presente": {
+    "item": "Capa de Viajante",
+    "tipo": "roupa",
+    "raridade": "raro",
+    "post": "DfaUH3uv1Ny",
+    "em": "2026-11-06T17:18"
+   },
+   "mudouMoradores": true,
+   "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18106546472357414",
+   "usuario": "@dragon_soul666",
+   "comentario": "sou contrutor",
+   "em": "2026-11-06T17:18",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "A vila agradece 🏡",
+   "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
+   "via": "api",
+   "statusResposta": "sem_resposta_por_regra"
   }
  ]
 }

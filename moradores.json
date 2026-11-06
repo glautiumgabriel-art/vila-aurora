@@ -347,7 +347,7 @@
    "nome": "@salomaojr31",
    "nomeCompleto": "",
    "sexo": "?",
-   "profissao": "comerciante",
+   "profissao": "cacador",
    "joinedAt": 1793977020305,
    "faltas": 0,
    "presentes": [
@@ -357,10 +357,24 @@
      "raridade": "comum",
      "post": "DfZ_W9zhWaU",
      "em": "2026-11-06T14:17"
+    },
+    {
+     "item": "Maçã Dourada",
+     "tipo": "comida",
+     "raridade": "comum",
+     "post": "DfaUH3uv1Ny",
+     "em": "2026-11-06T17:18"
     }
    ],
    "titulos": [
     "Voz da Vila"
+   ],
+   "historicoProfissao": [
+    {
+     "de": "comerciante",
+     "para": "cacador",
+     "em": "2026-11-06T17:18"
+    }
    ]
   },
   {
@@ -433,7 +447,16 @@
    "sexo": "?",
    "profissao": "arqueiro",
    "joinedAt": 1793995391146,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Capa de Viajante",
+     "tipo": "roupa",
+     "raridade": "raro",
+     "post": "DfaUH3uv1Ny",
+     "em": "2026-11-06T17:18"
+    }
+   ]
   }
  ]
 }
