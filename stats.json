@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-05T22:59",
+ "geradoEm": "2026-11-05T23:59",
  "relogioVila": {
   "dia": 3,
-  "hora": 22
+  "hora": 23
  },
  "moradores": 18,
  "novosDoDia": [],
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 17,
-   "xp": 14612,
+   "xp": 14862,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 17,
-   "xp": 14412,
+   "xp": 14662,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 17,
-   "xp": 13827,
+   "xp": 14077,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 17,
-   "xp": 13656,
+   "xp": 13906,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 17,
-   "xp": 13647,
+   "xp": 13897,
    "titulo": "Lenda"
   }
  ],
@@ -406,11 +406,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 13,
-   "hp": 156,
-   "hpMax": 170,
-   "atq": 34,
-   "def": 17,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 36,
+   "def": 18,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -453,6 +453,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1793933210045,
+   "quem": "@sampaiojaiane",
+   "tipo": "vitoria",
+   "texto": "@sampaiojaiane e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1793931770045,
+   "quem": "@sampaiojaiane",
+   "tipo": "queda",
+   "texto": "@sampaiojaiane escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1793930459328,
+   "quem": "@gbx.ws",
+   "tipo": "vitoria",
+   "texto": "@gbx.ws e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
   {
    "quando": 1793929019328,
    "quem": "@gbx.ws",
@@ -614,24 +632,6 @@
    "quem": "@thayl_ermatheus",
    "tipo": "vitoria",
    "texto": "@thayl_ermatheus e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1793906601440,
-   "quem": "@gabrielcamuzzatonegretti",
-   "tipo": "briga_vitoria",
-   "texto": "@gabrielcamuzzatonegretti encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1793905951505,
-   "quem": "@saviob._santos",
-   "tipo": "vitoria",
-   "texto": "@saviob._santos venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1793905850045,
-   "quem": "@sampaiojaiane",
-   "tipo": "briga_vitoria",
-   "texto": "@sampaiojaiane encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   }
  ]
 }
