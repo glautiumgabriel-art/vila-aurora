@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-06T22:59",
+ "atualizadoEm": "2026-11-06T23:59",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -497,6 +497,15 @@
    "titulos": [
     "Voz da Vila"
    ]
+  },
+  {
+   "id": "ig-juliasena497",
+   "nome": "@juliasena497",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "mago",
+   "joinedAt": 1794020394089,
+   "faltas": 0
   }
  ]
 }
