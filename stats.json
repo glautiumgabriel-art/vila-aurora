@@ -1,12 +1,11 @@
 {
- "geradoEm": "2026-11-07T16:59",
+ "geradoEm": "2026-11-07T17:23",
  "relogioVila": {
   "dia": 5,
-  "hora": 16
+  "hora": 17
  },
- "moradores": 45,
+ "moradores": 46,
  "novosDoDia": [
-  "@dragon_soul666",
   "@kaio_a0",
   "@gutvy__",
   "@dassow_djony",
@@ -23,38 +22,39 @@
   "@cf.ayshinha_",
   "@luizin_hz0",
   "@mk._iluminado",
-  "@andrew_deko0.2"
+  "@andrew_deko0.2",
+  "@rafael.strauch"
  ],
  "nivelMaisAlto": 22,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 22,
-   "xp": 25112,
+   "xp": 25213,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 22,
-   "xp": 24912,
+   "xp": 25013,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 22,
-   "xp": 24327,
+   "xp": 24428,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 22,
-   "xp": 24156,
+   "xp": 24257,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 22,
-   "xp": 24148,
+   "xp": 24248,
    "titulo": "Lenda"
   }
  ],
@@ -170,8 +170,8 @@
   "bardo": 6,
   "cavaleiro": 6,
   "soldado": 5,
+  "fazendeiro": 5,
   "explorador": 4,
-  "fazendeiro": 4,
   "cacador": 4,
   "ferreiro": 3,
   "pescador": 3,
@@ -185,12 +185,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@andrew_deko0.2",
+  "nome": "@rafael.strauch",
   "nomeCompleto": "",
-  "profissao": "cavaleiro",
+  "profissao": "fazendeiro",
   "sexo": "m",
-  "chegouEm": "2026-11-07T16:01",
-  "chegouEmMs": 1794078107752
+  "chegouEm": "2026-11-07T17:24",
+  "chegouEmMs": 1794083055301
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -541,7 +541,7 @@
    "nome": "@kalebdecote",
    "profissao": "bardo",
    "nivel": 12,
-   "hp": 139,
+   "hp": 160,
    "hpMax": 160,
    "atq": 35,
    "def": 16,
@@ -668,11 +668,11 @@
   "@gutvy__": {
    "nome": "@gutvy__",
    "profissao": "cacador",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 25,
-   "def": 12,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 27,
+   "def": 13,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -700,11 +700,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 28,
-   "def": 9,
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 30,
+   "def": 10,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 0,
@@ -764,11 +764,11 @@
   "@naoya______zeninn": {
    "nome": "@naoya______zeninn",
    "profissao": "pescador",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 21,
-   "def": 8,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 23,
+   "def": 9,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -781,7 +781,7 @@
    "nome": "@oi56382",
    "profissao": "cozinheiro",
    "nivel": 6,
-   "hp": 52,
+   "hp": 100,
    "hpMax": 100,
    "atq": 20,
    "def": 8,
@@ -812,15 +812,15 @@
   "@_rai.la.ne_": {
    "nome": "@_rai.la.ne_",
    "profissao": "fazendeiro",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 24,
-   "def": 5,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 26,
+   "def": 8,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 0,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
@@ -828,15 +828,15 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 18,
-   "def": 5,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 20,
+   "def": 8,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
@@ -860,11 +860,11 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 4,
-   "hp": 80,
-   "hpMax": 80,
-   "atq": 21,
-   "def": 17,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 23,
+   "def": 18,
    "bArma": 7,
    "bSec": 0,
    "bEsc": 11,
@@ -876,11 +876,11 @@
   "@luizin_hz0": {
    "nome": "@luizin_hz0",
    "profissao": "soldado",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 14,
-   "def": 6,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 16,
+   "def": 7,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -892,13 +892,13 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 14,
-   "def": 3,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 17,
+   "def": 4,
    "bArma": 2,
-   "bSec": 0,
+   "bSec": 1,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
@@ -920,9 +920,28 @@
    "longe": false,
    "guerreiro": true,
    "mana": null
-  }
+  },
+  "@rafael.strauch": null
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794081993420,
+   "quem": "@gutvy__",
+   "tipo": "briga_vitoria",
+   "texto": "@gutvy__ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794081962152,
+   "quem": "@samuul_gx_ofc",
+   "tipo": "briga_vitoria",
+   "texto": "@samuul_gx_ofc encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794081763305,
+   "quem": "@danielaugustobiesso",
+   "tipo": "briga_vitoria",
+   "texto": "@danielaugustobiesso encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1794081184742,
    "quem": "@oi56382",
@@ -1084,24 +1103,6 @@
    "quem": "@kaio_a0",
    "tipo": "queda",
    "texto": "@kaio_a0 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794074579305,
-   "quem": "@ozi_calderon",
-   "tipo": "queda",
-   "texto": "@ozi_calderon escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794074250497,
-   "quem": "@diegokallel",
-   "tipo": "vitoria",
-   "texto": "@diegokallel venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794074248829,
-   "quem": "@dassow_djony",
-   "tipo": "vitoria",
-   "texto": "@dassow_djony venceram um goblin da estrada e ganharam uma bolsa de moedas."
   }
  ]
 }
