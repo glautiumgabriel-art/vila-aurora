@@ -539,7 +539,16 @@
    "sexo": "?",
    "profissao": "pescador",
    "joinedAt": 1794047161395,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "+50 XP",
+     "tipo": "xp",
+     "raridade": "comum",
+     "post": "Dfa2TVGNL9S",
+     "em": "2026-11-07T08:18"
+    }
+   ]
   },
   {
    "id": "ig-samuul_gx_ofc",
