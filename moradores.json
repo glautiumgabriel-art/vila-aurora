@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T18:59",
+ "atualizadoEm": "2026-11-07T19:23",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -510,27 +510,6 @@
    ]
   },
   {
-   "id": "ig-gutvy__",
-   "nome": "@gutvy__",
-   "nomeCompleto": "",
-   "sexo": "?",
-   "profissao": "cacador",
-   "joinedAt": 1794029073420,
-   "faltas": 2,
-   "presentes": [
-    {
-     "item": "+1 Respeito",
-     "tipo": "respeito",
-     "raridade": "comum",
-     "post": "Dfa2TVGNL9S",
-     "em": "2026-11-07T11:31"
-    }
-   ],
-   "titulos": [
-    "Voz da Vila"
-   ]
-  },
-  {
    "id": "ig-dassow_djony",
    "nome": "@dassow_djony",
    "nomeCompleto": "",
@@ -858,6 +837,15 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1794084933308,
+   "faltas": 0
+  },
+  {
+   "id": "ig-eopedrinhonepai",
+   "nome": "@eopedrinhonepai",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "alquimista",
+   "joinedAt": 1794090233667,
    "faltas": 0
   }
  ]
