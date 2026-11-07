@@ -6,7 +6,8 @@
 <meta name="description" content="Vila Aurora: cada @ que segue a página vira um morador. Cada seguidor vira um personagem. Ache o seu.">
 <meta property="og:title" content="Vila Aurora">
 <meta property="og:description" content="Cada @ que segue vira um morador. Cada seguidor vira um personagem. Ache o seu.">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} img{max-width:100%} [hidden]{display:none!important}.insta-item.best{cursor:pointer}.insta-item.best:hover{outline:1px solid #ffd24a55}
+</style>
 </head>
 <body>
 <title>Vila Aurora</title>
@@ -757,7 +758,7 @@ function dueloAtivo(ts){ for(const d of duelosMontados()) if(ts>=d.ini&&ts<d.fim
 function resultadoDuelo(d){ const V=d.venceA?d.A:d.B, P=d.venceA?d.B:d.A; return "⚔️ Duelo na praça: "+d.A.nome+" × "+d.B.nome+". "+V.nome+" venceu! "+P.nome+" lutou bem e volta mais forte."; }
 // ---------- v49: ideias dos jogadores que viraram jogo ----------
 const IDEIAS_JOGO=[{autor:"@glautiumgabriel",ideia:"Eu quero achar um item raro!",virou:"Baú escondido do dia: todo dia um baú aparece num lugar do mapa e alguém acha um item raro",quando:"07/11"}];
-const NOVIDADES=["📖 Bestiário novo: todos os bichos da vila, os 👑 chefões e o placar da semana","🐟 Peixe raro vira notícia: quando um pescador fisga um Épico ou Lendário, sai na Crônica","🎣 Pesca nova: linha e boia nos pescadores, peixes nadando no rio, e Jacaré, Sapo Gigante e Polvo no Rio Claro","💡 A ideia do @glautiumgabriel virou jogo: todo dia um baú escondido aparece no mapa","🗺️ Territórios em disputa: Castelo × Floresta","🎥 A câmera não muda mais o zoom sozinha"];
+const NOVIDADES=["👆 Toque num bicho do Bestiário: se estiver na vila, a câmera vai até ele","📖 Bestiário novo: todos os bichos da vila, os 👑 chefões e o placar da semana","🐟 Peixe raro vira notícia: quando um pescador fisga um Épico ou Lendário, sai na Crônica","🎣 Pesca nova: linha e boia nos pescadores, peixes nadando no rio, e Jacaré, Sapo Gigante e Polvo no Rio Claro","💡 A ideia do @glautiumgabriel virou jogo: todo dia um baú escondido aparece no mapa","🗺️ Territórios em disputa: Castelo × Floresta","🎥 A câmera não muda mais o zoom sozinha"];
 const ACHADOS_ITENS=["Anel de Prata Antiga","Amuleto de Âmbar","Pena de Grifo","Moeda do Rei Antigo","Lanterna Encantada","Mapa Rasgado do Tesouro","Bússola de Cristal","Medalhão da Lua","Adaga de Osso Polido","Cálice de Bronze Velho"];
 const BAU_LUGARES=["floresta","mina","lagoa","ponte","torre_velha","campo_norte"];
 function bauDoDia(dia){ if(dia<4) return null; const r=rnd("bau:"+dia); const k=BAU_LUGARES[Math.floor(r()*BAU_LUGARES.length)]; const T=TERR_BASE.find(t=>t.k===k); const P=posTerr(T); const ang=r()*Math.PI*2; const x=P.x+Math.cos(ang)*5, z=P.z+Math.sin(ang)*5;
@@ -848,13 +849,21 @@ function cartaoAqua(k){ const a=AQUA.find(x=>x.k===k); if(!a) return; const I=AQ
 const BEST_EMO={lobos:"🐺",goblins:"👺",golem:"🗿",bruxa:"🧙",gigante:"🦣",dragao:"🐉"};
 const BEST_ALVO={lobos:"lobo",goblins:"goblin"};
 let bestT=0;
+function quandoHumano(ts){ const dd=Math.floor((ts-3*HORA_REAL)/86400000)-Math.floor((agoraMundo()-3*HORA_REAL)/86400000); const d=dd===0?"hoje":dd===-1?"ontem":dd===1?"amanhã":["dom","seg","ter","qua","qui","sex","sáb"][new Date(ts-3*HORA_REAL).getUTCDay()]; return d+" "+hhmm(ts); }
+function cliqueBestiario(k){ if(AQUA_INFO[k]){ window.vilaCam.irAqua(k); return; } const T=INV_TIPOS[k]; if(!T) return; const now=agoraMundo(); const iv=invasaoEm(now);
+  if(iv&&iv.tipo===k&&INVG.mons&&INVG.mons.length){ seguindo=false; travaEm({obj:INVG.mons[0].g,y:1.2},16,0.95); fichaInvasao(); return; }
+  let prox=null; const dia=mundo().dia; for(const d of [dia,dia+1,dia+2]){ for(const v of invasoesDoDia(d)) if(v.tipo===k&&v.ts>now){ prox=v; break; } if(prox) break; }
+  const no=nomeOficial(BEST_ALVO[k]||k); $("lugarBox").hidden=false; $("lugarTitulo").textContent=(BEST_EMO[k]||"")+" "+T.n+(no?" “"+no.nome+"”":"")+(T.need>=60?" · 👑 Chefão":"");
+  $("lugarDesc").textContent="Ao perder, deixa "+T.drop+". Quanto mais moradores fortes na vila, maior a chance de vencer.";
+  $("lugarAgora").innerHTML="<b>Agora:</b> "+(iv&&iv.tipo===k?"atacando "+escHtml(iv.vila)+"!":"longe da vila.")+(prox?" Próxima visita prevista: <b>"+quandoHumano(prox.ts)+"</b> em "+escHtml(prox.vila)+".":" Nenhuma visita prevista nos próximos dias.");
+  $("lugarLista").innerHTML=""; $("lugarObra").textContent="📖 Bestiário da Vila Aurora"; $("lugarBox").scrollIntoView({block:"nearest",behavior:"smooth"}); }
 function renderBestiario(){ const el=$("bestiarioLista"), box=$("bestiarioBox"); if(!el||!box) return; const now=agoraMundo(); if(now-bestT<20000&&el.childElementCount) return; bestT=now; box.hidden=false;
   const w=mundo(); const st={}; for(let d=Math.max(1,w.dia-6);d<=w.dia;d++) invasoesDoDia(d).forEach(iv=>{ if(iv.fim>now) return; const o=st[iv.tipo]||(st[iv.tipo]={v:0,n:0,ult:0}); o.n++; if(iv.venceu) o.v++; o.ult=Math.max(o.ult,iv.ts); });
   const linhas=Object.keys(INV_TIPOS).sort((a,b)=>INV_TIPOS[a].need-INV_TIPOS[b].need).map(k=>{ const T=INV_TIPOS[k]; const no=nomeOficial(BEST_ALVO[k]||k); const chefe=T.need>=60; const perigo="⭐".repeat(Math.min(5,Math.round(T.need/25)));
-    const o=st[k]; const placar=o?o.n+(o.n===1?" visita":" visitas")+" na semana · a vila venceu "+o.v+(o.v===1?" vez":" vezes")+" · última: "+rotuloReal(o.ult):"não apareceu nesta semana";
-    return "<div class=\"insta-item\">"+(BEST_EMO[k]||"❔")+" <b>"+escHtml(T.n)+(no?" “"+escHtml(no.nome)+"”":"")+"</b>"+(chefe?" · 👑 Chefão":"")+" · perigo "+perigo+"<br>Ao perder, deixa: "+escHtml(T.drop)+"<br><span class=\"small\">"+escHtml(placar)+"</span></div>"; });
-  Object.keys(AQUA_INFO).forEach(k=>{ const I=AQUA_INFO[k]; const no=nomeOficial(k); linhas.push("<div class=\"insta-item\">"+({jacare:"🐊",sapo:"🐸",polvo:"🐙"}[k]||"🌊")+" <b>"+escHtml(I.n)+(no?" “"+escHtml(no.nome)+"”":"")+"</b> · manso<br>"+escHtml(I.d)+"</div>"); });
-  el.innerHTML=linhas.join(""); }
+    const o=st[k]; const placar=o?o.n+(o.n===1?" visita":" visitas")+" na semana · a vila venceu "+o.v+(o.v===1?" vez":" vezes")+" · última: "+quandoHumano(o.ult):"não apareceu nesta semana";
+    return "<div class=\"insta-item best\" data-k=\""+k+"\" role=\"button\" tabindex=\"0\">"+(BEST_EMO[k]||"❔")+" <b>"+escHtml(T.n)+(no?" “"+escHtml(no.nome)+"”":"")+"</b>"+(chefe?" · 👑 Chefão":"")+" · perigo "+perigo+"<br>Ao perder, deixa: "+escHtml(T.drop)+"<br><span class=\"small\">"+escHtml(placar)+"</span></div>"; });
+  Object.keys(AQUA_INFO).forEach(k=>{ const I=AQUA_INFO[k]; const no=nomeOficial(k); linhas.push("<div class=\"insta-item best\" data-k=\""+k+"\" role=\"button\" tabindex=\"0\">"+({jacare:"🐊",sapo:"🐸",polvo:"🐙"}[k]||"🌊")+" <b>"+escHtml(I.n)+(no?" “"+escHtml(no.nome)+"”":"")+"</b> · manso<br>"+escHtml(I.d)+"</div>"); });
+  el.innerHTML=linhas.join(""); if(!el.dataset.ok){ el.dataset.ok=1; el.addEventListener("click",ev=>{ const it=ev.target.closest(".best"); if(it) cliqueBestiario(it.dataset.k); }); } }
 const EFEITOS_DEC=new Map(); let efeitosT=0;
 function efeitosDecisao(){ const now=agoraMundo(); if(now-efeitosT<2000) return; efeitosT=now; const vivos=new Set();
   decisoesMontadas().forEach(d=>{ if(d.inativa||d.vencedora!=="ATACAR"||now<d.fimLuta||now>=d.ate) return; const V=vila(d.vi); const temM0=!!(V.L.mercado&&V.pred&&V.pred.mercado&&V.pred.mercado.visible); const k=d.post+":"+d.vi+":"+d.venceu+":"+temM0; vivos.add(k); if(EFEITOS_DEC.has(k)) return; const g=new THREE.Group(); scene.add(g);
