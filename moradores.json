@@ -518,7 +518,16 @@
    "sexo": "?",
    "profissao": "cacador",
    "joinedAt": 1794029073420,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "+1 Respeito",
+     "tipo": "respeito",
+     "raridade": "comum",
+     "post": "Dfa2TVGNL9S",
+     "em": "2026-11-07T11:31"
+    }
+   ]
   },
   {
    "id": "ig-dassow_djony",
