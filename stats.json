@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-07T02:00",
+ "geradoEm": "2026-11-07T02:24",
  "relogioVila": {
   "dia": 5,
-  "hora": 1
+  "hora": 2
  },
- "moradores": 30,
+ "moradores": 31,
  "novosDoDia": [
   "@danielaugustobiesso",
   "@gods.samuka",
@@ -16,38 +16,39 @@
   "@diegokallel",
   "@dragon_soul666",
   "@kaio_a0",
-  "@juliasena497"
+  "@juliasena497",
+  "@gutvy__"
  ],
  "nivelMaisAlto": 21,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 21,
-   "xp": 21362,
+   "xp": 21466,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 21,
-   "xp": 21162,
+   "xp": 21266,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 21,
-   "xp": 20406,
+   "xp": 20510,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 21,
-   "xp": 20072,
+   "xp": 20176,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 21,
-   "xp": 20052,
+   "xp": 20156,
    "titulo": "Lenda"
   }
  ],
@@ -148,7 +149,9 @@
   "@danielaugustobiesso",
   "@livia.maria31",
   "@ozi_calderon",
-  "@samuel_teles_01"
+  "@salomaojr31",
+  "@samuel_teles_01",
+  "@dragon_soul666"
  ],
  "porProfissao": {
   "bardo": 5,
@@ -156,9 +159,9 @@
   "ferreiro": 3,
   "comerciante": 3,
   "fazendeiro": 3,
+  "cacador": 3,
   "explorador": 2,
   "soldado": 2,
-  "cacador": 2,
   "curandeiro": 1,
   "mineiro": 1,
   "cozinheiro": 1,
@@ -169,12 +172,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@juliasena497",
+  "nome": "@gutvy__",
   "nomeCompleto": "",
-  "profissao": "mago",
-  "sexo": "f",
-  "chegouEm": "2026-11-06T23:59",
-  "chegouEmMs": 1794020394089
+  "profissao": "cacador",
+  "sexo": "?",
+  "chegouEm": "2026-11-07T02:24",
+  "chegouEmMs": 1794029073420
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -476,11 +479,11 @@
   "@eu.brandao__": {
    "nome": "@eu.brandao__",
    "profissao": "cacador",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 33,
-   "def": 20,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 35,
+   "def": 21,
    "bArma": 2,
    "bSec": 3,
    "bEsc": 7,
@@ -589,7 +592,7 @@
    "nome": "@samuel_teles_01",
    "profissao": "ferreiro",
    "nivel": 8,
-   "hp": 68,
+   "hp": 120,
    "hpMax": 120,
    "atq": 27,
    "def": 12,
@@ -663,10 +666,41 @@
    "bCapa": 0,
    "longe": true,
    "guerreiro": false,
-   "mana": 91
-  }
+   "mana": 78
+  },
+  "@gutvy__": null
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794028674089,
+   "quem": "@juliasena497",
+   "tipo": "vitoria",
+   "texto": "@juliasena497 e os amigos acertaram de longe uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1794028500305,
+   "quem": "@salomaojr31",
+   "tipo": "doma",
+   "texto": "@salomaojr31 e os amigos cercaram um cavalo selvagem e domaram! Agora @salomaojr31 anda montado."
+  },
+  {
+   "quando": 1794028495305,
+   "quem": "@kalebdecote",
+   "tipo": "vitoria",
+   "texto": "@kalebdecote e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1794028192455,
+   "quem": "@eu.brandao__",
+   "tipo": "vitoria",
+   "texto": "@eu.brandao__ acertaram de longe o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1794028151146,
+   "quem": "@dragon_soul666",
+   "tipo": "doma",
+   "texto": "@dragon_soul666 cercaram um cavalo selvagem e domaram! Agora @dragon_soul666 anda montado."
+  },
   {
    "quando": 1794027062305,
    "quem": "@samuel_teles_01",
@@ -816,36 +850,6 @@
    "quem": "@samuel_teles_01",
    "tipo": "vitoria",
    "texto": "@samuel_teles_01 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794016977305,
-   "quem": "@livia.maria31",
-   "tipo": "queda",
-   "texto": "@livia.maria31 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794016971305,
-   "quem": "@gods.samuka",
-   "tipo": "vitoria",
-   "texto": "@gods.samuka e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794015741819,
-   "quem": "@kaio_a0",
-   "tipo": "queda",
-   "texto": "@kaio_a0 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794015542305,
-   "quem": "@samuel_teles_01",
-   "tipo": "queda",
-   "texto": "@samuel_teles_01 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794015537305,
-   "quem": "@livia.maria31",
-   "tipo": "vitoria",
-   "texto": "@livia.maria31 e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }

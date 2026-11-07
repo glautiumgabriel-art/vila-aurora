@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T01:59",
+ "atualizadoEm": "2026-11-07T02:24",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -502,6 +502,15 @@
    "sexo": "f",
    "profissao": "mago",
    "joinedAt": 1794020394089,
+   "faltas": 0
+  },
+  {
+   "id": "ig-gutvy__",
+   "nome": "@gutvy__",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "cacador",
+   "joinedAt": 1794029073420,
    "faltas": 0
   }
  ]
