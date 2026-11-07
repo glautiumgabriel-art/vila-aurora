@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-07T10:54",
+ "geradoEm": "2026-11-07T10:59",
  "relogioVila": {
   "dia": 5,
   "hora": 10
@@ -31,35 +31,56 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 22,
-   "xp": 23589,
+   "xp": 23612,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 22,
-   "xp": 23389,
+   "xp": 23412,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 22,
-   "xp": 22633,
+   "xp": 22656,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 22,
-   "xp": 22299,
+   "xp": 22323,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 22,
-   "xp": 22279,
+   "xp": 22302,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
+  {
+   "entre": [
+    "@_williamg10",
+    "@naoya______zeninn"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@dr.glautiumgabriel",
+    "@samuul_gx_ofc"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@glautiumgabriel",
+    "@salomaojr31"
+   ],
+   "forca": 2
+  },
   {
    "entre": [
     "@gods.samuka",
@@ -69,31 +90,10 @@
   },
   {
    "entre": [
-    "@kaio_a0",
-    "@saviob._santos"
+    "@gods.samuka",
+    "@santoslais3277"
    ],
    "forca": 2
-  },
-  {
-   "entre": [
-    "@laryssapsouza",
-    "@moisesdomingosf"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@tataicintra",
-    "@thayl_ermatheus"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@_williamg10",
-    "@josue_rms77"
-   ],
-   "forca": 1
   }
  ],
  "maioresDesafetos": [
@@ -490,7 +490,7 @@
    "nome": "@eu.brandao__",
    "profissao": "cacador",
    "nivel": 13,
-   "hp": 145,
+   "hp": 168,
    "hpMax": 170,
    "atq": 37,
    "def": 22,
@@ -601,11 +601,11 @@
   "@samuel_teles_01": {
    "nome": "@samuel_teles_01",
    "profissao": "ferreiro",
-   "nivel": 10,
-   "hp": 140,
-   "hpMax": 140,
-   "atq": 29,
-   "def": 14,
+   "nivel": 11,
+   "hp": 150,
+   "hpMax": 150,
+   "atq": 31,
+   "def": 15,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -618,7 +618,7 @@
    "nome": "@diegokallel",
    "profissao": "soldado",
    "nivel": 11,
-   "hp": 129,
+   "hp": 150,
    "hpMax": 150,
    "atq": 30,
    "def": 17,
@@ -634,7 +634,7 @@
    "nome": "@dragon_soul666",
    "profissao": "arqueiro",
    "nivel": 10,
-   "hp": 122,
+   "hp": 140,
    "hpMax": 140,
    "atq": 28,
    "def": 11,
@@ -666,7 +666,7 @@
    "nome": "@gutvy__",
    "profissao": "cacador",
    "nivel": 7,
-   "hp": 70,
+   "hp": 86,
    "hpMax": 110,
    "atq": 23,
    "def": 11,
@@ -682,7 +682,7 @@
    "nome": "@dassow_djony",
    "profissao": "soldado",
    "nivel": 5,
-   "hp": 77,
+   "hp": 90,
    "hpMax": 90,
    "atq": 18,
    "def": 8,
@@ -714,7 +714,7 @@
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
    "nivel": 4,
-   "hp": 52,
+   "hp": 63,
    "hpMax": 80,
    "atq": 17,
    "def": 4,
@@ -808,6 +808,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794059584742,
+   "quem": "@oi56382",
+   "tipo": "queda",
+   "texto": "@oi56382 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794059331000,
+   "quem": "@naoya______zeninn",
+   "tipo": "queda",
+   "texto": "@naoya______zeninn escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794058953420,
    "quem": "@gutvy__",
@@ -975,18 +987,6 @@
    "quem": "@gutvy__",
    "tipo": "briga_vitoria",
    "texto": "@gutvy__ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794053162152,
-   "quem": "@samuul_gx_ofc",
-   "tipo": "derrota",
-   "texto": "@samuul_gx_ofc encostou sozinho em um urso da floresta e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794052982305,
-   "quem": "@samuel_teles_01",
-   "tipo": "vitoria",
-   "texto": "@samuel_teles_01 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
   }
  ]
 }
