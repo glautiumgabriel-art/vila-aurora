@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T13:17",
+ "atualizadoEm": "2026-11-07T15:27",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -117,7 +117,9 @@
    "resposta": "Segue a página pra participar e ganhar presente na vila 🎁",
    "post": "https://www.instagram.com/reel/DfTy-AnhSlw/",
    "via": "api",
-   "statusResposta": "sem_resposta_por_regra"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-07T15:21",
+   "respostaId": "18165415708498129"
   },
   {
    "id": "api:18024448124949142",
@@ -129,7 +131,9 @@
    "resposta": "A vila agradece 🏡",
    "post": "https://www.instagram.com/reel/DfTnr9-hBcG/",
    "via": "api",
-   "statusResposta": "sem_resposta_por_regra"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-07T15:21",
+   "respostaId": "18114454225886669"
   },
   {
    "id": "api:17915572536515692",
@@ -290,7 +294,9 @@
    "resposta": "A vila agradece 🏡",
    "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
    "via": "api",
-   "statusResposta": "sem_resposta_por_regra"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-07T15:21",
+   "respostaId": "17983707569913010"
   },
   {
    "id": "api:18132630938309981",
@@ -476,7 +482,9 @@
    "resposta": "A vila agradece 🏡",
    "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
    "via": "api",
-   "statusResposta": "sem_resposta_por_regra"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-07T15:21",
+   "respostaId": "18091146683306247"
   },
   {
    "id": "api:18432738115147219",
