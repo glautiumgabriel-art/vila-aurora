@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-07T06:39",
+ "geradoEm": "2026-11-07T06:54",
  "relogioVila": {
   "dia": 5,
   "hora": 6
@@ -25,46 +25,46 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 21,
-   "xp": 22529,
+   "xp": 22589,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 21,
-   "xp": 22329,
+   "xp": 22389,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 21,
-   "xp": 21743,
+   "xp": 21804,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 21,
-   "xp": 21573,
+   "xp": 21633,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 21,
-   "xp": 21564,
+   "xp": 21624,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@adailtton_santos",
-    "@gabrielcamuzzatonegretti"
+    "@_williamg10",
+    "@gutvy__"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@adriana.g.santana",
-    "@kalebdecote"
+    "@dr.glautiumgabriel",
+    "@glautiumgabriel"
    ],
    "forca": 2
   },
@@ -77,15 +77,15 @@
   },
   {
    "entre": [
-    "@dudabrisolaa_",
-    "@kalebdecote"
+    "@dragon_soul666",
+    "@livia.maria31"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@glautiumgabriel",
-    "@gods.samuka"
+    "@gabrielcamuzzatonegretti",
+    "@juliasena497"
    ],
    "forca": 2
   }
@@ -436,11 +436,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 44,
-   "def": 22,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 46,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -501,7 +501,7 @@
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
    "nivel": 10,
-   "hp": 140,
+   "hp": 104,
    "hpMax": 140,
    "atq": 29,
    "def": 12,
@@ -671,13 +671,13 @@
    "bCapa": 2,
    "longe": true,
    "guerreiro": false,
-   "mana": 62
+   "mana": 71
   },
   "@gutvy__": {
    "nome": "@gutvy__",
    "profissao": "cacador",
    "nivel": 5,
-   "hp": 90,
+   "hp": 58,
    "hpMax": 90,
    "atq": 19,
    "def": 7,
@@ -692,12 +692,12 @@
   "@dassow_djony": {
    "nome": "@dassow_djony",
    "profissao": "arqueiro",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 8,
-   "def": 1,
-   "bArma": 0,
+   "nivel": 2,
+   "hp": 60,
+   "hpMax": 60,
+   "atq": 12,
+   "def": 2,
+   "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
    "bCapa": 0,
@@ -707,6 +707,30 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794044553420,
+   "quem": "@gutvy__",
+   "tipo": "derrota",
+   "texto": "@gutvy__ encostou sozinho em um urso da floresta e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794044514089,
+   "quem": "@juliasena497",
+   "tipo": "vitoria",
+   "texto": "@juliasena497 acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794044331305,
+   "quem": "@gods.samuka",
+   "tipo": "vitoria",
+   "texto": "@gods.samuka venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1794044323305,
+   "quem": "@danielaugustobiesso",
+   "tipo": "briga_derrota",
+   "texto": "@danielaugustobiesso foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
   {
    "quando": 1794042900305,
    "quem": "@salomaojr31",
@@ -862,30 +886,6 @@
    "quem": "@gutvy__",
    "tipo": "doma",
    "texto": "@gutvy__ e os amigos cercaram um cavalo selvagem e domaram! Agora @gutvy__ anda montado."
-  },
-  {
-   "quando": 1794034434089,
-   "quem": "@juliasena497",
-   "tipo": "briga_derrota",
-   "texto": "@juliasena497 foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1794034260305,
-   "quem": "@salomaojr31",
-   "tipo": "vitoria",
-   "texto": "@salomaojr31 e os amigos acertaram de longe o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1794034259305,
-   "quem": "@ozi_calderon",
-   "tipo": "vitoria",
-   "texto": "@ozi_calderon venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794033930497,
-   "quem": "@diegokallel",
-   "tipo": "vitoria",
-   "texto": "@diegokallel e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
   }
  ]
 }
