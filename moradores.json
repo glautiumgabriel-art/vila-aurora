@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T12:10",
+ "atualizadoEm": "2026-11-07T12:24",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -662,6 +662,15 @@
    "titulos": [
     "Voz da Vila"
    ]
+  },
+  {
+   "id": "ig-muryvieira_",
+   "nome": "@muryvieira_",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "pastor",
+   "joinedAt": 1794065090014,
+   "faltas": 0
   }
  ]
 }
