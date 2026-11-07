@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-06T21:02",
+ "atualizadoEm": "2026-11-06T22:00",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -445,6 +445,16 @@
    "titulos": [
     "Voz da Vila"
    ]
+  },
+  {
+   "id": "ig-kaio_a0",
+   "nome": "@kaio_a0",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "pescador",
+   "joinedAt": 1794013221819,
+   "faltas": 0,
+   "motivoProfissao": "cidade sem pescador (pesca do Rio Claro)"
   }
  ]
 }
