@@ -382,9 +382,6 @@
      "em": "2026-11-06T17:18"
     }
    ],
-   "titulos": [
-    "Voz da Vila"
-   ],
    "historicoProfissao": [
     {
      "de": "comerciante",
@@ -622,9 +619,6 @@
      "post": "Dfa9WTVMiVK",
      "em": "2026-11-07T11:31"
     }
-   ],
-   "titulos": [
-    "Voz da Vila"
    ]
   },
   {
@@ -753,6 +747,9 @@
      "pedido": "nome",
      "em": "2026-11-07T15:34"
     }
+   ],
+   "titulos": [
+    "Voz da Vila"
    ]
   },
   {
@@ -795,6 +792,9 @@
      "para": "cavaleiro",
      "em": "2026-11-07T16:08"
     }
+   ],
+   "titulos": [
+    "Voz da Vila"
    ]
   }
  ]
