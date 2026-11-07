@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T17:19",
+ "atualizadoEm": "2026-11-07T18:17",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -808,6 +808,37 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T17:19",
    "respostaId": "17914899882559507"
+  },
+  {
+   "id": "api:18155251003536790",
+   "usuario": "@thayl_ermatheus",
+   "comentario": "EEEEE",
+   "em": "2026-11-07T18:17",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Tamo junto! 🔥 🎁 Você ganhou um Anel do Rei Aurélio na vila!",
+   "presente": {
+    "item": "Anel do Rei Aurélio",
+    "tipo": "joia",
+    "raridade": "epico",
+    "post": "Dfa9WTVMiVK",
+    "em": "2026-11-07T18:17"
+   },
+   "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18182445289427861",
+   "usuario": "@naoya______zeninn",
+   "comentario": "tá bom",
+   "em": "2026-11-07T18:17",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Obrigado! Siga a página e vire morador 📜",
+   "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
