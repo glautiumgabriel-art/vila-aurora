@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T00:18",
+ "atualizadoEm": "2026-11-07T07:17",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -441,6 +441,40 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T00:18",
    "respostaId": "17877827118635288"
+  },
+  {
+   "id": "api:18077943467737362",
+   "usuario": "@dassow_djony",
+   "comentario": "Sou guerreiro",
+   "em": "2026-11-07T07:17",
+   "tipo": "profissao",
+   "profissao": "soldado",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": "arqueiro",
+   "resposta": "Anotado! Em breve você aparece na vila de soldado ⚔️ 🎁 Você ganhou uma Ferradura da Sorte na vila!",
+   "presente": {
+    "item": "Ferradura da Sorte",
+    "tipo": "amuleto",
+    "raridade": "comum",
+    "post": "DfaUH3uv1Ny",
+    "em": "2026-11-07T07:17"
+   },
+   "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:17991449670086513",
+   "usuario": "@dassow_djony",
+   "comentario": "Vou proteger a vila",
+   "em": "2026-11-07T07:17",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "A vila agradece 🏡",
+   "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
+   "via": "api",
+   "statusResposta": "sem_resposta_por_regra"
   }
  ]
 }

@@ -518,9 +518,25 @@
    "nome": "@dassow_djony",
    "nomeCompleto": "",
    "sexo": "?",
-   "profissao": "arqueiro",
+   "profissao": "soldado",
    "joinedAt": 1794044368829,
-   "faltas": 0
+   "faltas": 0,
+   "historicoProfissao": [
+    {
+     "de": "arqueiro",
+     "para": "soldado",
+     "em": "2026-11-07T07:17"
+    }
+   ],
+   "presentes": [
+    {
+     "item": "Ferradura da Sorte",
+     "tipo": "amuleto",
+     "raridade": "comum",
+     "post": "DfaUH3uv1Ny",
+     "em": "2026-11-07T07:17"
+    }
+   ]
   }
  ]
 }
