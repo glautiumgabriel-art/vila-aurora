@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T08:37",
+ "atualizadoEm": "2026-11-07T08:54",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -575,6 +575,15 @@
    "sexo": "?",
    "profissao": "cacador",
    "joinedAt": 1794051476939,
+   "faltas": 0
+  },
+  {
+   "id": "ig-naoya______zeninn",
+   "nome": "@naoya______zeninn",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "alquimista",
+   "joinedAt": 1794052491000,
    "faltas": 0
   }
  ]
