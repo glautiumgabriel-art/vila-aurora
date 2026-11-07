@@ -1679,7 +1679,7 @@ function aplicaRotulos(){ const manter=new Set(); if(BATALHA&&BATALHA.titulo) ma
   if(ROTULOS==="foco"){ bonecos.forEach(b=>{ if(b.userData.nome) b.userData.nome.visible=(b.userData.nome===nomeSel); }); } }
 function selecionar(id,manual){ if(manual){ TRAVA=null; GIRA_OFF(); } if(selecionado!==id) histSig=""; selecionado=id; seguindo=true; if(manual) fixado=true; if(!camFixa){ zoomSeLonge(26); } visiveis.add(id); { const mm=todos().find(z=>z.id===id); if(mm) VILA_ATUAL=mm.vi||0; } const li=todos(); const ii=li.findIndex(m=>m.id===id); if(ii>=0){ const e=estado(li[ii],ii,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.target.copy(orb.alvo); } } atualizaCard(true); }
 let cardId=null, histSig="";
-function tsVila(ts){ return rotuloReal(ts); }
+function tsVila(ts){ return quandoHumano(ts); }
 function atualizaHistoria(m,x){
   const box=$("histBox"); if(!m){ box.hidden=true; return; } box.hidden=false; $("histTitulo").textContent="História de "+m.nome;
   const now=agoraMundo(); const itens=[];
@@ -1742,7 +1742,7 @@ $("btnCinema").addEventListener("click",()=>{ document.body.classList.toggle("ci
 function renderCronica(){
   const w=mundo(); const c=cronica(w); const ul=$("cronica"); ul.innerHTML="";
   const itens=c.horas.map(h=>({k:h.d*24+h.h, t:"D"+h.d+" "+String(h.h).padStart(2,"0")+"h", texto:h.texto, vil:h.vil}))
-    .concat(c.chegadas.map(ch=>({k:(ch.ts-REAL_EPOCH)/HORA_REAL+24, t:rotuloReal(ch.ts), texto:ch.texto, vil:!!ch.vil})))
+    .concat(c.chegadas.map(ch=>({k:(ch.ts-REAL_EPOCH)/HORA_REAL+24, t:quandoHumano(ch.ts), texto:ch.texto, vil:!!ch.vil})))
     .sort((a,b)=>b.k-a.k).slice(0,16);
   itens.forEach(it=>{ const li=document.createElement("li"); if(it.vil) li.className="vil"; li.innerHTML="<time>"+it.t+"</time><span></span>"; li.lastChild.textContent=it.texto; ul.appendChild(li); });
   faixaChegou(); atualizaSeletorVila(); renderPlacarTerr(); $("dia").textContent=w.dia; const clI=climaAgora(w); $("hora").textContent=String(w.hora).padStart(2,"0")+"h "+((clI==="sol"&&(w.hora<6||w.hora>=18))?"🌙":CLIMAS[clI].i); $("hora").title=CLIMAS[climaAgora(w)].n; $("pop").textContent=todos().filter(m=>!m.npc).length; $("nvilas").textContent=nVilas();
