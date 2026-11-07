@@ -1,0 +1,40 @@
+{
+ "versao": 1,
+ "atualizadoEm": "2026-11-07T14:14",
+ "capitulos": [
+  {
+   "n": 1,
+   "texto": "Na novelinha, o Ladrão Mascarado deixou pegadas na estrada.",
+   "quando": "2026-11-07"
+  },
+  {
+   "n": 2,
+   "texto": "A Casa de Cura estava em obra; Rei Aurélio e Rainha Isolda esperam no castelo; 'dizem que um dragão vai despertar'.",
+   "quando": "2026-11-07"
+  },
+  {
+   "n": 3,
+   "texto": "Dia 1: goblins, Lobo Cinzento vencido por @dudabrisolaa_ e amigos (dente de lobo); Bruxa do Pântano rondando.",
+   "quando": "2026-11-07"
+  },
+  {
+   "n": 4,
+   "texto": "Você joga pelos comentários; as melhores ideias viram realidade.",
+   "quando": "2026-11-07"
+  }
+ ],
+ "decisoes": [
+  {
+   "vila": "Pinheiral",
+   "pergunta": "A Vila Sombria está vindo. Vocês atacam ou fogem?",
+   "opcoes": [
+    "ATACAR",
+    "FUGIR"
+   ],
+   "fechaEm": "2026-11-07T21:00",
+   "encerrada": false,
+   "resultado": null,
+   "codigo": null
+  }
+ ]
+}
