@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T09:59",
+ "atualizadoEm": "2026-11-07T10:53",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -593,6 +593,15 @@
    "sexo": "?",
    "profissao": "cozinheiro",
    "joinedAt": 1794054184742,
+   "faltas": 0
+  },
+  {
+   "id": "ig-adriana.lopesl",
+   "nome": "@adriana.lopesl",
+   "nomeCompleto": "",
+   "sexo": "f",
+   "profissao": "explorador",
+   "joinedAt": 1794059635612,
    "faltas": 0
   }
  ]
