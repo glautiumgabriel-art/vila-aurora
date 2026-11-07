@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T17:23",
+ "atualizadoEm": "2026-11-07T17:55",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -804,6 +804,15 @@
    "sexo": "m",
    "profissao": "fazendeiro",
    "joinedAt": 1794083055301,
+   "faltas": 0
+  },
+  {
+   "id": "ig-__niedison",
+   "nome": "@__niedison",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "bardo",
+   "joinedAt": 1794084933308,
    "faltas": 0
   }
  ]
