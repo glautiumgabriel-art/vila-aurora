@@ -359,7 +359,9 @@
    },
    "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T23:19",
+   "respostaId": "18131300722698910"
   },
   {
    "id": "api:17867980266675212",
@@ -382,7 +384,9 @@
    },
    "post": "https://www.instagram.com/reel/DfZ4yuMu_al/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-06T23:19",
+   "respostaId": "18360675844221986"
   },
   {
    "id": "api:18105398387643699",
