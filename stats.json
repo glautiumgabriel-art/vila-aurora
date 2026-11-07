@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-07T14:57",
+ "geradoEm": "2026-11-07T15:00",
  "relogioVila": {
   "dia": 5,
-  "hora": 14
+  "hora": 15
  },
  "moradores": 43,
  "novosDoDia": [
@@ -28,35 +28,42 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 22,
-   "xp": 24597,
+   "xp": 24615,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 22,
-   "xp": 24397,
+   "xp": 24415,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 22,
-   "xp": 23812,
+   "xp": 23830,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 22,
-   "xp": 23641,
+   "xp": 23659,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 22,
-   "xp": 23632,
+   "xp": 23651,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
+  {
+   "entre": [
+    "@adailtton_santos",
+    "@saviob._santos"
+   ],
+   "forca": 2
+  },
   {
    "entre": [
     "@adriana.g.santana",
@@ -66,7 +73,7 @@
   },
   {
    "entre": [
-    "@gods.samuka",
+    "@danielaugustobiesso",
     "@oi56382"
    ],
    "forca": 2
@@ -81,14 +88,7 @@
   {
    "entre": [
     "@_rai.la.ne_",
-    "@gabrielcamuzzatonegretti"
-   ],
-   "forca": 1
-  },
-  {
-   "entre": [
-    "@_rai.la.ne_",
-    "@glautiumgabriel"
+    "@dr.glautiumgabriel"
    ],
    "forca": 1
   }
@@ -523,7 +523,7 @@
    "nome": "@gods.samuka",
    "profissao": "padeiro",
    "nivel": 12,
-   "hp": 126,
+   "hp": 142,
    "hpMax": 160,
    "atq": 33,
    "def": 16,
@@ -555,7 +555,7 @@
    "nome": "@livia.maria31",
    "profissao": "comerciante",
    "nivel": 11,
-   "hp": 119,
+   "hp": 134,
    "hpMax": 150,
    "atq": 30,
    "def": 15,
@@ -651,7 +651,7 @@
    "nome": "@kaio_a0",
    "profissao": "pescador",
    "nivel": 10,
-   "hp": 99,
+   "hp": 113,
    "hpMax": 140,
    "atq": 28,
    "def": 12,
@@ -858,20 +858,35 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 17,
-   "def": 2,
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 19,
+   "def": 15,
    "bArma": 7,
    "bSec": 0,
-   "bEsc": 0,
+   "bEsc": 11,
    "bCapa": 0,
    "longe": false,
    "guerreiro": true,
    "mana": null
   },
-  "@vlg_junin_1903": null
+  "@vlg_junin_1903": {
+   "nome": "@vlg_junin_1903",
+   "profissao": "lenhador",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 8,
+   "def": 1,
+   "bArma": 0,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  }
  },
  "eventosUltimas24h": [
   {
