@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T19:08",
+ "atualizadoEm": "2026-11-07T19:37",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -913,6 +913,29 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T18:27",
    "respostaId": "18110947106232848"
+  },
+  {
+   "id": "api:18070314398685634",
+   "usuario": "@cf.ayshinha_",
+   "comentario": "Floresta",
+   "em": "2026-11-07T19:37",
+   "tipo": "comando",
+   "status": "anotado",
+   "resposta": "Seu personagem já está arrumando as coisas para ir a Floresta Velha 🏕️ 🎁 Você ganhou uma Poção de Cura na vila!",
+   "comando": "ir",
+   "lugar": "floresta",
+   "lugarNome": "Floresta Velha",
+   "pista": false,
+   "presente": {
+    "item": "Poção de Cura",
+    "tipo": "poção",
+    "raridade": "comum",
+    "post": "DfdNjU1J2jS",
+    "em": "2026-11-07T19:37"
+   },
+   "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
