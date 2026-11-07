@@ -826,7 +826,9 @@
    },
    "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-07T18:17",
+   "respostaId": "18641699311065428"
   },
   {
    "id": "api:18182445289427861",
@@ -838,7 +840,9 @@
    "resposta": "Obrigado! Siga a página e vire morador 📜",
    "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-07T18:17",
+   "respostaId": "18123594040946924"
   }
  ]
 }
