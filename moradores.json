@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-06T17:03",
+ "atualizadoEm": "2026-11-06T21:02",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -421,18 +421,6 @@
      "em": "2026-11-06T14:17"
     }
    ],
-   "titulos": [
-    "Voz da Vila"
-   ]
-  },
-  {
-   "id": "ig-samuel.v02",
-   "nome": "@samuel.v02",
-   "nomeCompleto": "",
-   "sexo": "m",
-   "profissao": "soldado",
-   "joinedAt": 1793982469497,
-   "faltas": 0,
    "titulos": [
     "Voz da Vila"
    ]
