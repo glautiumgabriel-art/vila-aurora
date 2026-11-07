@@ -289,6 +289,12 @@ button.ghost{width:auto;padding:6px 12px;font-size:14px}
       <div id="bestiarioLista"></div>
       <div class="small">Todo bicho que já passou pela vila. Ninguém se machuca de verdade: quem perde volta mais forte.</div>
     </section>
+    <section class="box" id="livroBox" hidden>
+      <h2>📚 Livro da Vila</h2>
+      <details open><summary><b>Capítulos</b> · o que já aconteceu</summary><ol id="livroCaps" class="vozes"></ol></details>
+      <details open><summary><b>Decisões</b> · votações e o código de cada uma</summary><div id="livroDecs"></div></details>
+      <div class="small" id="livroLista">Cada decisão encerrada tem um código: ele prova quem ganhou e permite conferir a conta.</div>
+    </section>
     <section class="box" id="ideiasBox" hidden>
       <h2>💡 Ideias que viraram jogo</h2>
       <div id="ideiasLista"></div>
@@ -874,7 +880,17 @@ function efeitosDecisao(){ const now=agoraMundo(); if(now-efeitosT<2000) return;
     EFEITOS_DEC.set(k,g); });
   EFEITOS_DEC.forEach((g,k)=>{ if(!vivos.has(k)){ scene.remove(g); EFEITOS_DEC.delete(k); } }); }
 let placaDragaoTxt=""; function placaDragao(){ const no=nomeOficial("dragao"); const txt=no?"🐉 "+no.nome+" · "+placaNome("dragao"):""; if(txt===placaDragaoTxt) return; placaDragaoTxt=txt; if(DRAGAO.userData.placa){ DRAGAO.remove(DRAGAO.userData.placa); DRAGAO.userData.placa=null; } if(!txt) return; const r=rotulo(txt,0,0,0,7,"#ffd24a"); scene.remove(r); const k=1/Math.max(0.001,DRAGAO.scale.x||1); r.scale.multiplyScalar(k); r.position.set(0,7*k,0); r.userData.prioridade=3; DRAGAO.add(r); DRAGAO.userData.placa=r; }
-function animaSombria(tsec){ efeitosDecisao(); animaTerritorios(); animaBau(); if(agoraMundo()-bestT>20000){ try{ renderBestiario(); }catch(e){ bestT=agoraMundo(); console.warn("bestiario",e); } } if(Math.floor(tsec)%3===0) placaDragao(); if(!SOMBRIA.g) return; const agoraP=performance.now(); const dt=Math.min(0.1,Math.max(0,(agoraP-(SOMBRIA.ult||agoraP))/1000)); SOMBRIA.ult=agoraP; const now=agoraMundo(); const D=decisaoAtiva(now); const t=D?(now-D.ini)/60000:-1;
+let livroT=0, livroJ=null;
+async function renderLivro(){ const box=$("livroBox"); if(!box) return; const now=Date.now(); if(livroJ&&now-livroT<300000) return; livroT=now;
+  try{ const r=await buscaDado("livro.json"); if(!r.ok) return; livroJ=await r.json(); }catch(e){ return; }
+  const caps=livroJ.capitulos||[], decs=livroJ.decisoes||[]; if(!caps.length&&!decs.length) return;
+  const ol=$("livroCaps"); ol.innerHTML=""; caps.forEach(c=>{ const li=document.createElement("li"); li.textContent=c.texto; ol.appendChild(li); });
+  const dv=$("livroDecs"); dv.innerHTML=""; decs.forEach(d=>{ const x=document.createElement("div"); x.className="insta-item";
+    const st=d.encerrada?(d.resultado?"Decidido: "+d.resultado:"Encerrada"):"Em votação até "+String(d.fechaEm||"").replace("T"," às ");
+    const cod=d.codigo?" · código "+d.codigo:(d.encerrada?"":" · o código sai ao encerrar");
+    x.textContent=(d.vila?d.vila+" · ":"")+(d.pergunta||"")+" ("+(d.opcoes||[]).join(" ou ")+") — "+st+cod; dv.appendChild(x); });
+  box.hidden=false; }
+function animaSombria(tsec){ try{ renderLivro(); }catch(e){}  efeitosDecisao(); animaTerritorios(); animaBau(); if(agoraMundo()-bestT>20000){ try{ renderBestiario(); }catch(e){ bestT=agoraMundo(); console.warn("bestiario",e); } } if(Math.floor(tsec)%3===0) placaDragao(); if(!SOMBRIA.g) return; const agoraP=performance.now(); const dt=Math.min(0.1,Math.max(0,(agoraP-(SOMBRIA.ult||agoraP))/1000)); SOMBRIA.ult=agoraP; const now=agoraMundo(); const D=decisaoAtiva(now); const t=D?(now-D.ini)/60000:-1;
   const P=D?vila(D.vi).L.praca:null; const C=CLIPES_BICHO.esqueleto;
   SOMBRIA.guardas.forEach(q=>{ const a=q.i/4*Math.PI*2+0.4; let x=SOMBRIA.x+Math.cos(a)*3, z=SOMBRIA.z+Math.sin(a)*3, clip=C.parado, face=a+Math.PI;
     if(D&&D.vencedora==="ATACAR"&&t>=2&&t<36){ const B=portaoSombria(); const f=t<4?(t-2)/2:t<34?1:1-(t-34)/2; const tx=B.x+Math.cos(a)*1.6, tz=B.z+Math.sin(a)*1.6; x=x+(tx-x)*f; z=z+(tz-z)*f; clip=(t<4||t>=34)?C.anda:C.ataca; face=Math.atan2(P.x-x,P.z-z); }
