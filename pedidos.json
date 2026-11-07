@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T17:07",
+ "atualizadoEm": "2026-11-07T17:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -786,6 +786,26 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T16:08",
    "respostaId": "18236707969323034"
+  },
+  {
+   "id": "api:18116162467844162",
+   "usuario": "@cf.ayshinha_",
+   "comentario": "Quero ter um dragão de estimação",
+   "em": "2026-11-07T17:18",
+   "tipo": "ideia",
+   "status": "nova",
+   "resposta": "📜 Ideia registrada, @cf.ayshinha_! Se o conselho aprovar, ela vira parte do jogo e leva o seu nome. 🎁 Você ganhou +1 Respeito na vila!",
+   "morador": true,
+   "presente": {
+    "item": "+1 Respeito",
+    "tipo": "respeito",
+    "raridade": "comum",
+    "post": "Dfc_yKhsaoo",
+    "em": "2026-11-07T17:18"
+   },
+   "post": "https://www.instagram.com/reel/Dfc_yKhsaoo/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }

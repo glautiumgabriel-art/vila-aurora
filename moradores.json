@@ -685,7 +685,16 @@
    "sexo": "?",
    "profissao": "cavaleiro",
    "joinedAt": 1794071660080,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "+1 Respeito",
+     "tipo": "respeito",
+     "raridade": "comum",
+     "post": "Dfc_yKhsaoo",
+     "em": "2026-11-07T17:18"
+    }
+   ]
   },
   {
    "id": "ig-luizin_hz0",
