@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T05:59",
+ "atualizadoEm": "2026-11-07T06:39",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -511,6 +511,15 @@
    "sexo": "?",
    "profissao": "cacador",
    "joinedAt": 1794029073420,
+   "faltas": 0
+  },
+  {
+   "id": "ig-dassow_djony",
+   "nome": "@dassow_djony",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "arqueiro",
+   "joinedAt": 1794044368829,
    "faltas": 0
   }
  ]
