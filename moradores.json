@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T12:24",
+ "atualizadoEm": "2026-11-07T12:54",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -670,6 +670,15 @@
    "sexo": "?",
    "profissao": "pastor",
    "joinedAt": 1794065090014,
+   "faltas": 0
+  },
+  {
+   "id": "ig-kauedomingues894",
+   "nome": "@kauedomingues894",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "bardo",
+   "joinedAt": 1794066901287,
    "faltas": 0
   }
  ]
