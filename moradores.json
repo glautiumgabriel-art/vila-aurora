@@ -171,9 +171,25 @@
    "nome": "@gabrielcamuzzatonegretti",
    "nomeCompleto": "",
    "sexo": "m",
-   "profissao": "comerciante",
+   "profissao": "cavaleiro",
    "joinedAt": 1793786001440,
-   "faltas": 0
+   "faltas": 0,
+   "historicoProfissao": [
+    {
+     "de": "comerciante",
+     "para": "cavaleiro",
+     "em": "2026-11-07T11:18"
+    }
+   ],
+   "presentes": [
+    {
+     "item": "Mapa Rasgado",
+     "tipo": "pista",
+     "raridade": "comum",
+     "post": "Dfa9WTVMiVK",
+     "em": "2026-11-07T11:18"
+    }
+   ]
   },
   {
    "id": "ig-thayl_ermatheus",

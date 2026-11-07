@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T09:19",
+ "atualizadoEm": "2026-11-07T11:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -525,6 +525,28 @@
    "post": "https://www.instagram.com/reel/DfYl306B3y0/",
    "via": "api",
    "statusResposta": "sem_resposta_por_regra"
+  },
+  {
+   "id": "api:18041532239773531",
+   "usuario": "@gabrielcamuzzatonegretti",
+   "comentario": "Oi queria ser cavaleiro",
+   "em": "2026-11-07T11:18",
+   "tipo": "profissao",
+   "profissao": "cavaleiro",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": "comerciante",
+   "resposta": "Cavaleiro é uma boa escolha. Tá anotado 📜 🎁 Você ganhou um Mapa Rasgado na vila!",
+   "presente": {
+    "item": "Mapa Rasgado",
+    "tipo": "pista",
+    "raridade": "comum",
+    "post": "Dfa9WTVMiVK",
+    "em": "2026-11-07T11:18"
+   },
+   "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
