@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T08:18",
+ "atualizadoEm": "2026-11-07T09:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -498,6 +498,31 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T08:18",
    "respostaId": "17921466720452513"
+  },
+  {
+   "id": "api:18154828825500128",
+   "usuario": "@oi56382",
+   "comentario": "Coloca eu se n ecomodar queria ser cabeleireiro de elite nome Samuel Rios",
+   "em": "2026-11-07T09:18",
+   "tipo": "ideia",
+   "status": "nova",
+   "resposta": "💡 Anotado, @oi56382! Falta só seguir a página: quem mora na vila vê as próprias ideias virarem jogo.",
+   "morador": false,
+   "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:17952567897344047",
+   "usuario": "@danielaugustobiesso",
+   "comentario": "Tmj",
+   "em": "2026-11-07T09:18",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Obrigado! Cada seguidor vira um morador 🏕️",
+   "post": "https://www.instagram.com/reel/DfYl306B3y0/",
+   "via": "api",
+   "statusResposta": "sem_resposta_por_regra"
   }
  ]
 }
