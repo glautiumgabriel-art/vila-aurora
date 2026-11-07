@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-07T18:55",
+ "geradoEm": "2026-11-07T18:59",
  "relogioVila": {
   "dia": 5,
   "hora": 18
@@ -31,31 +31,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 23,
-   "xp": 25594,
+   "xp": 25612,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 23,
-   "xp": 25394,
+   "xp": 25412,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 23,
-   "xp": 24638,
+   "xp": 24656,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 23,
-   "xp": 24304,
+   "xp": 24323,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 23,
-   "xp": 24284,
+   "xp": 24302,
    "titulo": "Lenda"
   }
  ],
@@ -622,7 +622,7 @@
    "nome": "@diegokallel",
    "profissao": "soldado",
    "nivel": 12,
-   "hp": 142,
+   "hp": 160,
    "hpMax": 160,
    "atq": 32,
    "def": 18,
@@ -718,7 +718,7 @@
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
    "nivel": 8,
-   "hp": 82,
+   "hp": 95,
    "hpMax": 120,
    "atq": 25,
    "def": 10,
@@ -734,7 +734,7 @@
    "nome": "@santoslais3277",
    "profissao": "soldado",
    "nivel": 8,
-   "hp": 76,
+   "hp": 89,
    "hpMax": 120,
    "atq": 24,
    "def": 13,
@@ -957,6 +957,12 @@
  },
  "eventosUltimas24h": [
   {
+   "quando": 1794088336594,
+   "quem": "@_rai.la.ne_",
+   "tipo": "vitoria",
+   "texto": "@_rai.la.ne_ venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
    "quando": 1794088131000,
    "quem": "@naoya______zeninn",
    "tipo": "briga_vitoria",
@@ -1129,12 +1135,6 @@
    "quem": "@kalebdecote",
    "tipo": "vitoria",
    "texto": "@kalebdecote e os amigos venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1794083211305,
-   "quem": "@gods.samuka",
-   "tipo": "vitoria",
-   "texto": "@gods.samuka e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
   }
  ]
 }
