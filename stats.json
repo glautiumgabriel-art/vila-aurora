@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-07T17:55",
+ "geradoEm": "2026-11-07T18:00",
  "relogioVila": {
   "dia": 5,
   "hora": 17
@@ -31,31 +31,31 @@
   {
    "nome": "@dudabsl_",
    "nivel": 23,
-   "xp": 25146,
+   "xp": 25162,
    "titulo": "Lenda"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 22,
-   "xp": 25346,
+   "xp": 25362,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 22,
-   "xp": 24561,
+   "xp": 24577,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 22,
-   "xp": 24390,
+   "xp": 24406,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 22,
-   "xp": 24381,
+   "xp": 24398,
    "titulo": "Lenda"
   }
  ],
@@ -542,7 +542,7 @@
    "nome": "@kalebdecote",
    "profissao": "bardo",
    "nivel": 12,
-   "hp": 160,
+   "hp": 91,
    "hpMax": 160,
    "atq": 35,
    "def": 16,
@@ -718,7 +718,7 @@
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
    "nivel": 8,
-   "hp": 119,
+   "hp": 120,
    "hpMax": 120,
    "atq": 25,
    "def": 10,
@@ -782,7 +782,7 @@
    "nome": "@oi56382",
    "profissao": "cozinheiro",
    "nivel": 6,
-   "hp": 72,
+   "hp": 82,
    "hpMax": 100,
    "atq": 20,
    "def": 8,
@@ -798,7 +798,7 @@
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
    "nivel": 6,
-   "hp": 85,
+   "hp": 94,
    "hpMax": 100,
    "atq": 26,
    "def": 15,
@@ -956,6 +956,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794084662305,
+   "quem": "@samuel_teles_01",
+   "tipo": "queda",
+   "texto": "@samuel_teles_01 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794084655305,
+   "quem": "@kalebdecote",
+   "tipo": "briga_derrota",
+   "texto": "@kalebdecote foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
+  },
   {
    "quando": 1794084311146,
    "quem": "@dragon_soul666",
@@ -1123,18 +1135,6 @@
    "quem": "@oi56382",
    "tipo": "derrota",
    "texto": "@oi56382 encostou sozinho em um urso da floresta e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794077769633,
-   "quem": "@santoslais3277",
-   "tipo": "vitoria",
-   "texto": "@santoslais3277 venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794077673420,
-   "quem": "@gutvy__",
-   "tipo": "briga_derrota",
-   "texto": "@gutvy__ foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
   }
  ]
 }
