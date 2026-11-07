@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-06T23:18",
+ "atualizadoEm": "2026-11-07T00:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -411,6 +411,32 @@
    "post": "https://www.instagram.com/reel/DfZ4yuMu_al/",
    "via": "api",
    "statusResposta": "sem_resposta_por_regra"
+  },
+  {
+   "id": "api:18065672549527028",
+   "usuario": "@naoya______zeninn",
+   "comentario": "Coloca eu ai",
+   "em": "2026-11-07T00:18",
+   "tipo": "ideia",
+   "status": "nova",
+   "resposta": "✨ Boa ideia, @naoya______zeninn! Siga @vilaauroraoficial que em até 1 hora seu personagem nasce, e sua ideia vai para o conselho.",
+   "morador": false,
+   "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:17916226098508659",
+   "usuario": "@gutvy__",
+   "comentario": "Tem espadachim?  Se tiver, queria ser",
+   "em": "2026-11-07T00:18",
+   "tipo": "ideia",
+   "status": "nova",
+   "resposta": "✨ Boa ideia, @gutvy__! Siga @vilaauroraoficial que em até 1 hora seu personagem nasce, e sua ideia vai para o conselho.",
+   "morador": false,
+   "post": "https://www.instagram.com/reel/Dfa2TVGNL9S/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
