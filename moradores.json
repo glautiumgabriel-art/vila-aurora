@@ -408,7 +408,7 @@
    "nome": "@diegokallel",
    "nomeCompleto": "",
    "sexo": "m",
-   "profissao": "cavaleiro",
+   "profissao": "soldado",
    "joinedAt": 1793982450497,
    "faltas": 0,
    "motivoProfissao": "pedido no comentário",
@@ -419,10 +419,24 @@
      "raridade": "comum",
      "post": "DfZ_W9zhWaU",
      "em": "2026-11-06T14:17"
+    },
+    {
+     "item": "Pedra de Amolar",
+     "tipo": "ferramenta",
+     "raridade": "comum",
+     "post": "Dfa2TVGNL9S",
+     "em": "2026-11-06T22:18"
     }
    ],
    "titulos": [
     "Voz da Vila"
+   ],
+   "historicoProfissao": [
+    {
+     "de": "cavaleiro",
+     "para": "soldado",
+     "em": "2026-11-06T22:18"
+    }
    ]
   },
   {
@@ -454,7 +468,16 @@
    "profissao": "pescador",
    "joinedAt": 1794013221819,
    "faltas": 0,
-   "motivoProfissao": "cidade sem pescador (pesca do Rio Claro)"
+   "motivoProfissao": "cidade sem pescador (pesca do Rio Claro)",
+   "presentes": [
+    {
+     "item": "Mapa Rasgado",
+     "tipo": "pista",
+     "raridade": "comum",
+     "post": "Dfa2TVGNL9S",
+     "em": "2026-11-06T22:18"
+    }
+   ]
   }
  ]
 }

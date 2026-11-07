@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-06T17:18",
+ "atualizadoEm": "2026-11-06T22:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -291,6 +291,49 @@
    "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
    "via": "api",
    "statusResposta": "sem_resposta_por_regra"
+  },
+  {
+   "id": "api:18132630938309981",
+   "usuario": "@kaio_a0",
+   "comentario": "Eu quero ser um vilão de magia negromante",
+   "em": "2026-11-06T22:18",
+   "tipo": "ideia",
+   "status": "nova",
+   "resposta": "💡 Guardei sua ideia no livro do conselho, @kaio_a0. As melhores viram realidade na vila, com crédito pra você. 🎁 Você ganhou um Mapa Rasgado na vila!",
+   "morador": true,
+   "presente": {
+    "item": "Mapa Rasgado",
+    "tipo": "pista",
+    "raridade": "comum",
+    "post": "Dfa2TVGNL9S",
+    "em": "2026-11-06T22:18"
+   },
+   "post": "https://www.instagram.com/reel/Dfa2TVGNL9S/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18099643508234966",
+   "usuario": "@diegokallel",
+   "comentario": "eu quero ser soldado",
+   "em": "2026-11-06T22:18",
+   "tipo": "profissao",
+   "profissao": "soldado",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": "cavaleiro",
+   "resposta": "Virou soldado! Passa lá na vila pra ver 👀 🎁 Você ganhou uma Pedra de Amolar na vila!",
+   "mudouMoradores": true,
+   "presente": {
+    "item": "Pedra de Amolar",
+    "tipo": "ferramenta",
+    "raridade": "comum",
+    "post": "Dfa2TVGNL9S",
+    "em": "2026-11-06T22:18"
+   },
+   "post": "https://www.instagram.com/reel/Dfa2TVGNL9S/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
