@@ -652,7 +652,16 @@
    "sexo": "?",
    "profissao": "fazendeiro",
    "joinedAt": 1794064216594,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Pena de Grifo",
+     "tipo": "amuleto",
+     "raridade": "epico",
+     "post": "Dfa2TVGNL9S",
+     "em": "2026-11-07T12:18"
+    }
+   ]
   }
  ]
 }
