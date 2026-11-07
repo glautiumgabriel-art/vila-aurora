@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T07:59",
+ "atualizadoEm": "2026-11-07T08:25",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -557,6 +557,15 @@
    "sexo": "?",
    "profissao": "padeiro",
    "joinedAt": 1794049202152,
+   "faltas": 0
+  },
+  {
+   "id": "ig-santoslais3277",
+   "nome": "@santoslais3277",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "soldado",
+   "joinedAt": 1794050769633,
    "faltas": 0
   }
  ]
