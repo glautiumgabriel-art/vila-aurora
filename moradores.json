@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T07:25",
+ "atualizadoEm": "2026-11-07T07:59",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -539,6 +539,15 @@
    "sexo": "?",
    "profissao": "pescador",
    "joinedAt": 1794047161395,
+   "faltas": 0
+  },
+  {
+   "id": "ig-samuul_gx_ofc",
+   "nome": "@samuul_gx_ofc",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "padeiro",
+   "joinedAt": 1794049202152,
    "faltas": 0
   }
  ]
