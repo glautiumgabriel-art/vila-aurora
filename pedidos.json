@@ -624,7 +624,9 @@
    "resposta": "Que bom que gostou! ⚔️",
    "post": "https://www.instagram.com/reel/Dfa2TVGNL9S/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-07T13:17",
+   "respostaId": "18066512222626488"
   }
  ]
 }
