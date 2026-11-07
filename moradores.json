@@ -164,9 +164,6 @@
      "post": "DfTy-AnhSlw",
      "em": "2026-11-06T12:48"
     }
-   ],
-   "titulos": [
-    "Voz da Vila"
    ]
   },
   {
@@ -511,7 +508,10 @@
    "sexo": "?",
    "profissao": "cacador",
    "joinedAt": 1794029073420,
-   "faltas": 0
+   "faltas": 0,
+   "titulos": [
+    "Voz da Vila"
+   ]
   },
   {
    "id": "ig-dassow_djony",
@@ -536,6 +536,9 @@
      "post": "DfaUH3uv1Ny",
      "em": "2026-11-07T07:17"
     }
+   ],
+   "titulos": [
+    "Voz da Vila"
    ]
   }
  ]
