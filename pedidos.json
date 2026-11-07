@@ -568,6 +568,28 @@
    "post": "https://www.instagram.com/reel/Dfa2TVGNL9S/",
    "via": "api",
    "statusResposta": "ja_respondido_pela_pagina"
+  },
+  {
+   "id": "api:18209155252323217",
+   "usuario": "@naoya______zeninn",
+   "comentario": "pescadora",
+   "em": "2026-11-07T11:31",
+   "tipo": "profissao",
+   "profissao": "pescador",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": "alquimista",
+   "resposta": "Virou pescador! Passa lá na vila pra ver 👀 🎁 Você ganhou uma Pedra de Amolar na vila!",
+   "presente": {
+    "item": "Pedra de Amolar",
+    "tipo": "ferramenta",
+    "raridade": "comum",
+    "post": "Dfa9WTVMiVK",
+    "em": "2026-11-07T11:31"
+   },
+   "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }

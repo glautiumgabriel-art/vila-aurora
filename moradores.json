@@ -607,9 +607,25 @@
    "nome": "@naoya______zeninn",
    "nomeCompleto": "",
    "sexo": "?",
-   "profissao": "alquimista",
+   "profissao": "pescador",
    "joinedAt": 1794052491000,
-   "faltas": 0
+   "faltas": 0,
+   "historicoProfissao": [
+    {
+     "de": "alquimista",
+     "para": "pescador",
+     "em": "2026-11-07T11:31"
+    }
+   ],
+   "presentes": [
+    {
+     "item": "Pedra de Amolar",
+     "tipo": "ferramenta",
+     "raridade": "comum",
+     "post": "Dfa9WTVMiVK",
+     "em": "2026-11-07T11:31"
+    }
+   ]
   },
   {
    "id": "ig-oi56382",
