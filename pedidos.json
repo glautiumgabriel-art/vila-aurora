@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T18:17",
+ "atualizadoEm": "2026-11-07T18:27",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -843,6 +843,70 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T18:17",
    "respostaId": "18123594040946924"
+  },
+  {
+   "id": "api:18481380472115910",
+   "usuario": "@andrew_deko0.2",
+   "comentario": "pinheiral",
+   "em": "2026-11-07T18:27",
+   "tipo": "pedido_aposta",
+   "status": "anotado",
+   "resposta": "🎲 Aposta registrada, @andrew_deko0.2: PINHEIRAL! Se acertar, +15 XP e você aparece no vídeo do resultado. +5 XP · Voz da Vila",
+   "presente": {
+    "item": "Capa de Viajante",
+    "tipo": "roupa",
+    "raridade": "raro",
+    "post": "DfdGn5-REkj",
+    "em": "2026-11-07T18:27"
+   },
+   "post": "https://www.instagram.com/reel/DfdGn5-REkj/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18037541840911698",
+   "usuario": "@andrew_deko0.2",
+   "comentario": "Quero achar uma vila rival",
+   "em": "2026-11-07T18:27",
+   "tipo": "ideia",
+   "status": "nova",
+   "resposta": "🏰 O conselho recebeu sua ideia, @andrew_deko0.2! As escolhidas entram no jogo com a placa \"Ideia de @andrew_deko0.2\". 🎁 Você ganhou uma Lanterna Encantada na vila!",
+   "morador": true,
+   "presente": {
+    "item": "Lanterna Encantada",
+    "tipo": "ferramenta",
+    "raridade": "raro",
+    "post": "Dfc_yKhsaoo",
+    "em": "2026-11-07T18:27"
+   },
+   "mudouMoradores": true,
+   "post": "https://www.instagram.com/reel/Dfc_yKhsaoo/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18039936368896992",
+   "usuario": "@andrew_deko0.2",
+   "comentario": "castelo",
+   "em": "2026-11-07T18:27",
+   "tipo": "pedido_territorio",
+   "status": "anotado",
+   "resposta": "⚔️ Bem-vindo ao time! +1 de força para o time CASTELO na batalha pela Mina, @andrew_deko0.2! +5 XP · Voz da Vila",
+   "comando": "ir",
+   "lugar": "castelo",
+   "lugarNome": "Castelo",
+   "pista": true,
+   "presente": {
+    "item": "Pão de Mel da Lia",
+    "tipo": "comida",
+    "raridade": "comum",
+    "post": "Dfc45PhOAQE",
+    "em": "2026-11-07T18:27"
+   },
+   "mudouMoradores": true,
+   "post": "https://www.instagram.com/reel/Dfc45PhOAQE/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }

@@ -781,6 +781,27 @@
      "raridade": "raro",
      "post": "DfaUH3uv1Ny",
      "em": "2026-11-07T16:08"
+    },
+    {
+     "item": "Capa de Viajante",
+     "tipo": "roupa",
+     "raridade": "raro",
+     "post": "DfdGn5-REkj",
+     "em": "2026-11-07T18:27"
+    },
+    {
+     "item": "Lanterna Encantada",
+     "tipo": "ferramenta",
+     "raridade": "raro",
+     "post": "Dfc_yKhsaoo",
+     "em": "2026-11-07T18:27"
+    },
+    {
+     "item": "Pão de Mel da Lia",
+     "tipo": "comida",
+     "raridade": "comum",
+     "post": "Dfc45PhOAQE",
+     "em": "2026-11-07T18:27"
     }
    ],
    "missoes": [
@@ -791,6 +812,22 @@
      "post": "DfcyDLrBTYY",
      "pedido": "nome",
      "em": "2026-11-07T16:08"
+    },
+    {
+     "k": "voz_da_vila",
+     "n": "Voz da Vila",
+     "xp": 5,
+     "post": "DfdGn5-REkj",
+     "pedido": "aposta",
+     "em": "2026-11-07T18:27"
+    },
+    {
+     "k": "voz_da_vila",
+     "n": "Voz da Vila",
+     "xp": 5,
+     "post": "Dfc45PhOAQE",
+     "pedido": "territorio",
+     "em": "2026-11-07T18:27"
     }
    ],
    "historicoProfissao": [
@@ -802,7 +839,8 @@
    ],
    "titulos": [
     "Voz da Vila"
-   ]
+   ],
+   "faccao": "CASTELO"
   },
   {
    "id": "ig-rafael.strauch",
