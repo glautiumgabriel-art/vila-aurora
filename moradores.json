@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T08:25",
+ "atualizadoEm": "2026-11-07T08:37",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -566,6 +566,15 @@
    "sexo": "?",
    "profissao": "soldado",
    "joinedAt": 1794050769633,
+   "faltas": 0
+  },
+  {
+   "id": "ig-josue_rms77",
+   "nome": "@josue_rms77",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "cacador",
+   "joinedAt": 1794051476939,
    "faltas": 0
   }
  ]

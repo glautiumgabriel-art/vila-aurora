@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-07T08:26",
+ "geradoEm": "2026-11-07T08:38",
  "relogioVila": {
   "dia": 5,
   "hora": 8
  },
- "moradores": 34,
+ "moradores": 35,
  "novosDoDia": [
   "@danielaugustobiesso",
   "@gods.samuka",
@@ -20,42 +20,57 @@
   "@dassow_djony",
   "@moisesdomingosf",
   "@samuul_gx_ofc",
-  "@santoslais3277"
+  "@santoslais3277",
+  "@josue_rms77"
  ],
  "nivelMaisAlto": 21,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 21,
-   "xp": 22971,
+   "xp": 23021,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 21,
-   "xp": 22771,
+   "xp": 22821,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 21,
-   "xp": 22186,
+   "xp": 22236,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 21,
-   "xp": 22015,
+   "xp": 22065,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 21,
-   "xp": 22007,
+   "xp": 22056,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
+  {
+   "entre": [
+    "@_williamg10",
+    "@samuul_gx_ofc"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@adriana.g.santana",
+    "@ozi_calderon"
+   ],
+   "forca": 2
+  },
   {
    "entre": [
     "@adriana.g.santana",
@@ -72,24 +87,10 @@
   },
   {
    "entre": [
-    "@isaac.jmy",
-    "@laryssapsouza"
+    "@dragon_soul666",
+    "@gabrielcamuzzatonegretti"
    ],
    "forca": 2
-  },
-  {
-   "entre": [
-    "@kalebdecote",
-    "@samuel_teles_01"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@_williamg10",
-    "@dragon_soul666"
-   ],
-   "forca": 1
   }
  ],
  "maioresDesafetos": [
@@ -162,11 +163,11 @@
  "porProfissao": {
   "bardo": 5,
   "soldado": 4,
+  "cacador": 4,
   "cavaleiro": 3,
   "ferreiro": 3,
   "comerciante": 3,
   "fazendeiro": 3,
-  "cacador": 3,
   "explorador": 2,
   "padeiro": 2,
   "pescador": 2,
@@ -177,12 +178,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@santoslais3277",
+  "nome": "@josue_rms77",
   "nomeCompleto": "",
-  "profissao": "soldado",
+  "profissao": "cacador",
   "sexo": "?",
-  "chegouEm": "2026-11-07T08:26",
-  "chegouEmMs": 1794050769633
+  "chegouEm": "2026-11-07T08:37",
+  "chegouEmMs": 1794051476939
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -468,11 +469,11 @@
   "@saviob._santos": {
    "nome": "@saviob._santos",
    "profissao": "ferreiro",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 45,
-   "def": 22,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 47,
+   "def": 23,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -549,7 +550,7 @@
    "nome": "@livia.maria31",
    "profissao": "comerciante",
    "nivel": 10,
-   "hp": 88,
+   "hp": 129,
    "hpMax": 140,
    "atq": 28,
    "def": 14,
@@ -565,7 +566,7 @@
    "nome": "@ozi_calderon",
    "profissao": "bardo",
    "nivel": 10,
-   "hp": 88,
+   "hp": 129,
    "hpMax": 140,
    "atq": 28,
    "def": 14,
@@ -676,11 +677,11 @@
   "@dassow_djony": {
    "nome": "@dassow_djony",
    "profissao": "soldado",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 14,
-   "def": 6,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 16,
+   "def": 7,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -721,7 +722,23 @@
    "guerreiro": false,
    "mana": null
   },
-  "@santoslais3277": null
+  "@santoslais3277": {
+   "nome": "@santoslais3277",
+   "profissao": "soldado",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 8,
+   "def": 1,
+   "bArma": 0,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
+  },
+  "@josue_rms77": null
  },
  "eventosUltimas24h": [
   {
