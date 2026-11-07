@@ -39,7 +39,16 @@
    "sexo": "f",
    "profissao": "curandeiro",
    "joinedAt": 1793728513112,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Pão de Mel da Lia",
+     "tipo": "comida",
+     "raridade": "comum",
+     "post": "DfZ4yuMu_al",
+     "em": "2026-11-06T23:18"
+    }
+   ]
   },
   {
    "id": "ig-glautiumgabriel",
@@ -426,6 +435,13 @@
      "raridade": "comum",
      "post": "Dfa2TVGNL9S",
      "em": "2026-11-06T22:18"
+    },
+    {
+     "item": "Amuleto Raro",
+     "tipo": "amuleto",
+     "raridade": "raro",
+     "post": "Dfa9WTVMiVK",
+     "em": "2026-11-06T23:18"
     }
    ],
    "titulos": [

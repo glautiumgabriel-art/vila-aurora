@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-06T22:20",
+ "atualizadoEm": "2026-11-06T23:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -338,6 +338,75 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-06T22:20",
    "respostaId": "17987433722892254"
+  },
+  {
+   "id": "api:18121108390959846",
+   "usuario": "@diegokallel",
+   "comentario": "soldado aqui dnv🔥",
+   "em": "2026-11-06T23:18",
+   "tipo": "profissao",
+   "profissao": "soldado",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": null,
+   "resposta": "Boa! Seu personagem entra na próxima leva como soldado 🏡 🎁 Você ganhou um Amuleto Raro na vila!",
+   "presente": {
+    "item": "Amuleto Raro",
+    "tipo": "amuleto",
+    "raridade": "raro",
+    "post": "Dfa9WTVMiVK",
+    "em": "2026-11-06T23:18"
+   },
+   "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:17867980266675212",
+   "usuario": "@dudabsl_",
+   "comentario": "Curandeira é tipo rezadeira? Se for eu quero trocar. Quero ser a princesa",
+   "em": "2026-11-06T23:18",
+   "tipo": "profissao",
+   "profissao": "curandeiro",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": null,
+   "resposta": "Anotado! Em breve você aparece na vila de curandeiro ⚔️ 🎁 Você ganhou um Pão de Mel da Lia na vila!",
+   "mudouMoradores": true,
+   "presente": {
+    "item": "Pão de Mel da Lia",
+    "tipo": "comida",
+    "raridade": "comum",
+    "post": "DfZ4yuMu_al",
+    "em": "2026-11-06T23:18"
+   },
+   "post": "https://www.instagram.com/reel/DfZ4yuMu_al/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18105398387643699",
+   "usuario": "@dudabsl_",
+   "comentario": "E Gabriel tem que ser o bobo da corte",
+   "em": "2026-11-06T23:18",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Valeu demais ✨",
+   "post": "https://www.instagram.com/reel/DfZ4yuMu_al/",
+   "via": "api",
+   "statusResposta": "sem_resposta_por_regra"
+  },
+  {
+   "id": "api:18112765112209179",
+   "usuario": "@dudabsl_",
+   "comentario": "[sem texto: comentário só com mídia/figurinha]",
+   "em": "2026-11-06T23:18",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Obrigado pela visita à vila 🌾",
+   "post": "https://www.instagram.com/reel/DfZ4yuMu_al/",
+   "via": "api",
+   "statusResposta": "sem_resposta_por_regra"
   }
  ]
 }
