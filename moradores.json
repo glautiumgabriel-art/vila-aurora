@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T15:55",
+ "atualizadoEm": "2026-11-07T16:01",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -700,7 +700,7 @@
    "sexo": "?",
    "profissao": "lenhador",
    "joinedAt": 1794074193513,
-   "faltas": 1
+   "faltas": 2
   },
   {
    "id": "ig-luizin_hz0",
@@ -754,6 +754,15 @@
      "em": "2026-11-07T15:34"
     }
    ]
+  },
+  {
+   "id": "ig-andrew_deko0.2",
+   "nome": "@andrew_deko0.2",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "mineiro",
+   "joinedAt": 1794078107752,
+   "faltas": 0
   }
  ]
 }
