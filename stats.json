@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-07T14:00",
+ "geradoEm": "2026-11-07T14:14",
  "relogioVila": {
   "dia": 5,
-  "hora": 13
+  "hora": 14
  },
- "moradores": 41,
+ "moradores": 42,
  "novosDoDia": [
   "@dragon_soul666",
   "@kaio_a0",
@@ -19,38 +19,39 @@
   "@adriana.lopesl",
   "@_rai.la.ne_",
   "@muryvieira_",
-  "@kauedomingues894"
+  "@kauedomingues894",
+  "@cf.ayshinha_"
  ],
  "nivelMaisAlto": 22,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 22,
-   "xp": 24363,
+   "xp": 24424,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 22,
-   "xp": 24163,
+   "xp": 24224,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 22,
-   "xp": 23578,
+   "xp": 23639,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 22,
-   "xp": 23407,
+   "xp": 23468,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 22,
-   "xp": 23398,
+   "xp": 23459,
    "titulo": "Lenda"
   }
  ],
@@ -163,7 +164,7 @@
  ],
  "porProfissao": {
   "bardo": 6,
-  "cavaleiro": 4,
+  "cavaleiro": 5,
   "soldado": 4,
   "fazendeiro": 4,
   "cacador": 4,
@@ -180,12 +181,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@kauedomingues894",
+  "nome": "@cf.ayshinha_",
   "nomeCompleto": "",
-  "profissao": "bardo",
+  "profissao": "cavaleiro",
   "sexo": "?",
-  "chegouEm": "2026-11-07T12:55",
-  "chegouEmMs": 1794066901287
+  "chegouEm": "2026-11-07T14:14",
+  "chegouEmMs": 1794071660080
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -439,11 +440,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 46,
-   "def": 23,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 48,
+   "def": 24,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -504,7 +505,7 @@
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
    "nivel": 11,
-   "hp": 87,
+   "hp": 143,
    "hpMax": 150,
    "atq": 31,
    "def": 13,
@@ -520,7 +521,7 @@
    "nome": "@gods.samuka",
    "profissao": "padeiro",
    "nivel": 12,
-   "hp": 91,
+   "hp": 150,
    "hpMax": 160,
    "atq": 33,
    "def": 16,
@@ -567,11 +568,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 30,
-   "def": 15,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 32,
+   "def": 16,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -744,7 +745,7 @@
    "nome": "@josue_rms77",
    "profissao": "cacador",
    "nivel": 6,
-   "hp": 75,
+   "hp": 100,
    "hpMax": 100,
    "atq": 26,
    "def": 10,
@@ -776,7 +777,7 @@
    "nome": "@oi56382",
    "profissao": "cozinheiro",
    "nivel": 5,
-   "hp": 74,
+   "hp": 90,
    "hpMax": 90,
    "atq": 18,
    "def": 5,
@@ -791,14 +792,14 @@
   "@adriana.lopesl": {
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
-   "nivel": 4,
-   "hp": 80,
-   "hpMax": 80,
-   "atq": 22,
-   "def": 4,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 24,
+   "def": 12,
    "bArma": 7,
    "bSec": 1,
-   "bEsc": 0,
+   "bEsc": 7,
    "bCapa": 0,
    "longe": false,
    "guerreiro": false,
@@ -823,11 +824,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 14,
-   "def": 3,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 16,
+   "def": 4,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -851,9 +852,43 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
+  },
+  "@cf.ayshinha_": {
+   "nome": "@cf.ayshinha_",
+   "profissao": "cavaleiro",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 8,
+   "def": 1,
+   "bArma": 0,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794071276939,
+   "quem": "@josue_rms77",
+   "tipo": "briga_vitoria",
+   "texto": "@josue_rms77 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794070461819,
+   "quem": "@kaio_a0",
+   "tipo": "vitoria",
+   "texto": "@kaio_a0 venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1794070442152,
+   "quem": "@samuul_gx_ofc",
+   "tipo": "briga_vitoria",
+   "texto": "@samuul_gx_ofc encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1794070259305,
    "quem": "@ozi_calderon",
@@ -1015,24 +1050,6 @@
    "quem": "@_rai.la.ne_",
    "tipo": "vitoria",
    "texto": "@_rai.la.ne_ e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1794066475612,
-   "quem": "@adriana.lopesl",
-   "tipo": "briga_vitoria",
-   "texto": "@adriana.lopesl encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794066249633,
-   "quem": "@santoslais3277",
-   "tipo": "briga_derrota",
-   "texto": "@santoslais3277 foi encarar outra vila, perdeu a briga e voltou correndo para casa. Ninguém se machucou de verdade."
-  },
-  {
-   "quando": 1794066153420,
-   "quem": "@gutvy__",
-   "tipo": "vitoria",
-   "texto": "@gutvy__ e os amigos acertaram de longe uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }
