@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T15:27",
+ "atualizadoEm": "2026-11-07T15:34",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -635,6 +635,48 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T13:17",
    "respostaId": "18066512222626488"
+  },
+  {
+   "id": "api:18102480200642797",
+   "usuario": "@mk._iluminado",
+   "comentario": "fúria",
+   "em": "2026-11-07T15:34",
+   "tipo": "pedido_nome",
+   "status": "anotado",
+   "resposta": "📜 Nome anotado, @mk._iluminado: \"Fúria\"! O mais curtido vira oficial no jogo, com o seu nome na placa. +5 XP · Voz da Vila",
+   "presente": {
+    "item": "Ferradura da Sorte",
+    "tipo": "amuleto",
+    "raridade": "comum",
+    "post": "DfcyDLrBTYY",
+    "em": "2026-11-07T15:34"
+   },
+   "post": "https://www.instagram.com/reel/DfcyDLrBTYY/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18348843139254817",
+   "usuario": "@luizin_hz0",
+   "comentario": "Sou soldado",
+   "em": "2026-11-07T15:34",
+   "tipo": "profissao",
+   "profissao": "soldado",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": "pescador",
+   "resposta": "Boa! Seu personagem entra na próxima leva como soldado 🏡 🎁 Você ganhou +150 XP na vila!",
+   "mudouMoradores": true,
+   "presente": {
+    "item": "+150 XP",
+    "tipo": "xp",
+    "raridade": "raro",
+    "post": "DfaUH3uv1Ny",
+    "em": "2026-11-07T15:34"
+   },
+   "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
