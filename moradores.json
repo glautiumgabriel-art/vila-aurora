@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T08:59",
+ "atualizadoEm": "2026-11-07T09:22",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -584,6 +584,15 @@
    "sexo": "?",
    "profissao": "alquimista",
    "joinedAt": 1794052491000,
+   "faltas": 0
+  },
+  {
+   "id": "ig-oi56382",
+   "nome": "@oi56382",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "cozinheiro",
+   "joinedAt": 1794054184742,
    "faltas": 0
   }
  ]

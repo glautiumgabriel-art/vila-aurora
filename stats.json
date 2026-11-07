@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-07T09:00",
+ "geradoEm": "2026-11-07T09:23",
  "relogioVila": {
   "dia": 5,
-  "hora": 8
+  "hora": 9
  },
- "moradores": 36,
+ "moradores": 37,
  "novosDoDia": [
   "@danielaugustobiesso",
   "@gods.samuka",
@@ -22,38 +22,39 @@
   "@samuul_gx_ofc",
   "@santoslais3277",
   "@josue_rms77",
-  "@naoya______zeninn"
+  "@naoya______zeninn",
+  "@oi56382"
  ],
  "nivelMaisAlto": 22,
  "maisAltos": [
   {
    "nome": "@dudabsl_",
    "nivel": 22,
-   "xp": 22913,
+   "xp": 23009,
    "titulo": "Lenda"
   },
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 21,
-   "xp": 23112,
+   "xp": 23209,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 21,
-   "xp": 22327,
+   "xp": 22424,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 21,
-   "xp": 22157,
+   "xp": 22253,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 21,
-   "xp": 22148,
+   "xp": 22244,
    "titulo": "Lenda"
   }
  ],
@@ -170,22 +171,22 @@
   "comerciante": 3,
   "fazendeiro": 3,
   "explorador": 2,
+  "cozinheiro": 2,
   "padeiro": 2,
   "pescador": 2,
   "curandeiro": 1,
   "mineiro": 1,
-  "cozinheiro": 1,
   "arqueiro": 1,
   "alquimista": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@naoya______zeninn",
+  "nome": "@oi56382",
   "nomeCompleto": "",
-  "profissao": "alquimista",
+  "profissao": "cozinheiro",
   "sexo": "?",
-  "chegouEm": "2026-11-07T08:54",
-  "chegouEmMs": 1794052491000
+  "chegouEm": "2026-11-07T09:23",
+  "chegouEmMs": 1794054184742
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -600,7 +601,7 @@
    "nome": "@samuel_teles_01",
    "profissao": "ferreiro",
    "nivel": 10,
-   "hp": 122,
+   "hp": 140,
    "hpMax": 140,
    "atq": 29,
    "def": 14,
@@ -695,13 +696,13 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 19,
-   "def": 3,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 22,
+   "def": 4,
    "bArma": 7,
-   "bSec": 0,
+   "bSec": 1,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
@@ -727,14 +728,14 @@
   "@santoslais3277": {
    "nome": "@santoslais3277",
    "profissao": "soldado",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 12,
-   "def": 2,
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 6,
    "bArma": 2,
    "bSec": 0,
-   "bEsc": 0,
+   "bEsc": 2,
    "bCapa": 0,
    "longe": false,
    "guerreiro": true,
@@ -759,11 +760,11 @@
   "@naoya______zeninn": {
    "nome": "@naoya______zeninn",
    "profissao": "alquimista",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 10,
-   "def": 1,
+   "nivel": 2,
+   "hp": 60,
+   "hpMax": 60,
+   "atq": 12,
+   "def": 2,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -771,9 +772,55 @@
    "longe": true,
    "guerreiro": false,
    "mana": null
+  },
+  "@oi56382": {
+   "nome": "@oi56382",
+   "profissao": "cozinheiro",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 15,
+   "def": 1,
+   "bArma": 7,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794053193420,
+   "quem": "@gutvy__",
+   "tipo": "briga_vitoria",
+   "texto": "@gutvy__ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794053162152,
+   "quem": "@samuul_gx_ofc",
+   "tipo": "derrota",
+   "texto": "@samuul_gx_ofc encostou sozinho em um urso da floresta e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794052982305,
+   "quem": "@samuel_teles_01",
+   "tipo": "vitoria",
+   "texto": "@samuel_teles_01 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1794052975305,
+   "quem": "@kalebdecote",
+   "tipo": "queda",
+   "texto": "@kalebdecote escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794052561395,
+   "quem": "@moisesdomingosf",
+   "tipo": "briga_vitoria",
+   "texto": "@moisesdomingosf encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1794051542305,
    "quem": "@samuel_teles_01",
@@ -923,36 +970,6 @@
    "quem": "@gods.samuka",
    "tipo": "vitoria",
    "texto": "@gods.samuka e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794041443305,
-   "quem": "@danielaugustobiesso",
-   "tipo": "vitoria",
-   "texto": "@danielaugustobiesso venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794041152455,
-   "quem": "@eu.brandao__",
-   "tipo": "queda",
-   "texto": "@eu.brandao__ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794041111146,
-   "quem": "@dragon_soul666",
-   "tipo": "briga_vitoria",
-   "texto": "@dragon_soul666 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794040003305,
-   "quem": "@danielaugustobiesso",
-   "tipo": "vitoria",
-   "texto": "@danielaugustobiesso venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1794039712455,
-   "quem": "@eu.brandao__",
-   "tipo": "vitoria",
-   "texto": "@eu.brandao__ acertaram de longe o Lobo Cinzento e ganharam um dente de lobo."
   }
  ]
 }
