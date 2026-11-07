@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T15:51",
+ "atualizadoEm": "2026-11-07T16:08",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -692,6 +692,90 @@
    "resposta": "💡 Guardei sua ideia no livro do conselho, @kaio_a0. As melhores viram realidade na vila, com crédito pra você.",
    "morador": true,
    "post": "https://www.instagram.com/reel/Dfa2TVGNL9S/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18152558452538760",
+   "usuario": "@andrew_deko0.2",
+   "comentario": "Cinzento",
+   "em": "2026-11-07T16:08",
+   "tipo": "pedido_nome",
+   "status": "anotado",
+   "resposta": "📜 Nome anotado, @andrew_deko0.2: \"Cinzento\"! O mais curtido vira oficial no jogo, com o seu nome na placa. +5 XP · Voz da Vila",
+   "presente": {
+    "item": "Pão de Mel da Lia",
+    "tipo": "comida",
+    "raridade": "comum",
+    "post": "DfcyDLrBTYY",
+    "em": "2026-11-07T16:08"
+   },
+   "post": "https://www.instagram.com/reel/DfcyDLrBTYY/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:17936203917147368",
+   "usuario": "@andrew_deko0.2",
+   "comentario": "Eu quero ser um cavaleiro líder",
+   "em": "2026-11-07T16:08",
+   "tipo": "pedido_nome",
+   "profissao": "cavaleiro",
+   "confianca": "claro",
+   "status": "anotado",
+   "era": "mineiro",
+   "resposta": "📜 Nome anotado, @andrew_deko0.2: \"Eu Quero Ser\"! O mais curtido vira oficial no jogo, com o seu nome na placa. +5 XP · Voz da Vila",
+   "mudouMoradores": true,
+   "post": "https://www.instagram.com/reel/DfcyDLrBTYY/",
+   "via": "api",
+   "statusResposta": "sem_resposta_por_regra"
+  },
+  {
+   "id": "api:18095307632185784",
+   "usuario": "@mk._iluminado",
+   "comentario": "@vilaauroraofici mayk",
+   "em": "2026-11-07T16:08",
+   "tipo": "pedido_nome",
+   "status": "anotado",
+   "resposta": "📜 Nome anotado, @mk._iluminado: \"Mayk\"! O mais curtido vira oficial no jogo, com o seu nome na placa. +5 XP · Voz da Vila",
+   "post": "https://www.instagram.com/reel/DfcyDLrBTYY/",
+   "via": "api",
+   "mudouMoradores": true,
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18645101062004271",
+   "usuario": "@andrew_deko0.2",
+   "comentario": "cinzento",
+   "em": "2026-11-07T16:08",
+   "tipo": "pedido_nome",
+   "status": "anotado",
+   "resposta": "📜 Nome anotado, @andrew_deko0.2: \"Cinzento\"! O mais curtido vira oficial no jogo, com o seu nome na placa. +5 XP · Voz da Vila",
+   "post": "https://www.instagram.com/reel/DfcyDLrBTYY/",
+   "via": "api",
+   "mudouMoradores": true,
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:17961853773254418",
+   "usuario": "@andrew_deko0.2",
+   "comentario": "Eu quero ser um cavaleiro líder",
+   "em": "2026-11-07T16:08",
+   "tipo": "profissao",
+   "profissao": "cavaleiro",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": null,
+   "resposta": "Combinado: cavaleiro! A vila agradece 🌾 🎁 Você ganhou uma Lanterna Encantada na vila!",
+   "mudouMoradores": true,
+   "presente": {
+    "item": "Lanterna Encantada",
+    "tipo": "ferramenta",
+    "raridade": "raro",
+    "post": "DfaUH3uv1Ny",
+    "em": "2026-11-07T16:08"
+   },
+   "post": "https://www.instagram.com/reel/DfaUH3uv1Ny/",
    "via": "api",
    "statusResposta": "na_fila_api"
   }

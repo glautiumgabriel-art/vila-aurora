@@ -760,9 +760,42 @@
    "nome": "@andrew_deko0.2",
    "nomeCompleto": "",
    "sexo": "m",
-   "profissao": "mineiro",
+   "profissao": "cavaleiro",
    "joinedAt": 1794078107752,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Pão de Mel da Lia",
+     "tipo": "comida",
+     "raridade": "comum",
+     "post": "DfcyDLrBTYY",
+     "em": "2026-11-07T16:08"
+    },
+    {
+     "item": "Lanterna Encantada",
+     "tipo": "ferramenta",
+     "raridade": "raro",
+     "post": "DfaUH3uv1Ny",
+     "em": "2026-11-07T16:08"
+    }
+   ],
+   "missoes": [
+    {
+     "k": "voz_da_vila",
+     "n": "Voz da Vila",
+     "xp": 5,
+     "post": "DfcyDLrBTYY",
+     "pedido": "nome",
+     "em": "2026-11-07T16:08"
+    }
+   ],
+   "historicoProfissao": [
+    {
+     "de": "mineiro",
+     "para": "cavaleiro",
+     "em": "2026-11-07T16:08"
+    }
+   ]
   }
  ]
 }
