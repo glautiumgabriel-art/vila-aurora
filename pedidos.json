@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T23:13",
+ "atualizadoEm": "2026-11-07T23:23",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1040,6 +1040,28 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T23:12",
    "respostaId": "18127999261963136"
+  },
+  {
+   "id": "api:18088362377314797",
+   "usuario": "@salomaojr31",
+   "comentario": "Eu quero ser o guarda da princesa",
+   "em": "2026-11-07T23:23",
+   "tipo": "profissao",
+   "profissao": "soldado",
+   "confianca": "claro",
+   "status": "aplicado",
+   "era": "cacador",
+   "resposta": "Troca feita: agora você é soldado da Vila Aurora ✨ 🎁 Você ganhou uma Maçã Dourada na vila!",
+   "presente": {
+    "item": "Maçã Dourada",
+    "tipo": "comida",
+    "raridade": "comum",
+    "post": "DfdUXHkBl2t",
+    "em": "2026-11-07T23:23"
+   },
+   "post": "https://www.instagram.com/reel/DfdUXHkBl2t/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
