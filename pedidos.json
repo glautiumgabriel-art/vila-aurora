@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T20:07",
+ "atualizadoEm": "2026-11-07T21:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -951,6 +951,50 @@
    "era": null,
    "resposta": "Boa! Seu personagem entra na próxima leva como soldado 🏡",
    "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18084650294380225",
+   "usuario": "@dudabsl_",
+   "comentario": "Eu quero ser a princesa",
+   "em": "2026-11-07T21:18",
+   "tipo": "ideia",
+   "status": "nova",
+   "resposta": "🏰 O conselho recebeu sua ideia, @dudabsl_! As escolhidas entram no jogo com a placa \"Ideia de @dudabsl_\". 🎁 Você ganhou um Mapa Rasgado na vila!",
+   "morador": true,
+   "presente": {
+    "item": "Mapa Rasgado",
+    "tipo": "pista",
+    "raridade": "comum",
+    "post": "DfdUXHkBl2t",
+    "em": "2026-11-07T21:18"
+   },
+   "post": "https://www.instagram.com/reel/DfdUXHkBl2t/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:17979191415169260",
+   "usuario": "@andrew_deko0.2",
+   "comentario": "Castelo",
+   "em": "2026-11-07T21:18",
+   "tipo": "comando",
+   "status": "anotado",
+   "resposta": "Seu personagem vai investigar Castelo 🗺️ 🎁 Você ganhou +1 Respeito na vila!",
+   "comando": "ir",
+   "lugar": "castelo",
+   "lugarNome": "Castelo",
+   "pista": false,
+   "presente": {
+    "item": "+1 Respeito",
+    "tipo": "respeito",
+    "raridade": "comum",
+    "post": "DfdNjU1J2jS",
+    "em": "2026-11-07T21:18"
+   },
+   "mudouMoradores": true,
+   "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
    "via": "api",
    "statusResposta": "na_fila_api"
   }

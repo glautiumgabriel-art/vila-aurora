@@ -18,8 +18,17 @@
    "post": "DfdNjU1J2jS",
    "hora": "2026-11-07T19:37",
    "pista": false
+  },
+  {
+   "tipo": "ir",
+   "arroba": "@andrew_deko0.2",
+   "lugar": "castelo",
+   "lugarNome": "Castelo",
+   "post": "DfdNjU1J2jS",
+   "hora": "2026-11-07T21:18",
+   "pista": false
   }
  ],
  "observacao": "tipo ir: a página leva o personagem ao lugar na hora seguinte (pista = achou a pista da novela, 1 em 4); tipo atacar: o personagem vai lutar contra o alvo",
- "atualizadoEm": "2026-11-07T19:37"
+ "atualizadoEm": "2026-11-07T21:18"
 }
