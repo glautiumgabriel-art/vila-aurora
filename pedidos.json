@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T21:18",
+ "atualizadoEm": "2026-11-07T21:22",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1001,6 +1001,18 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T21:18",
    "respostaId": "18127838914924167"
+  },
+  {
+   "id": "api:17998007148024516",
+   "usuario": "@kaiobentopereira",
+   "comentario": "Kaio",
+   "em": "2026-11-07T21:22",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Falta só seguir a página: aí você vira morador e o presente é seu 🎁",
+   "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
