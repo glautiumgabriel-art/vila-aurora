@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-08T11:59",
+ "atualizadoEm": "2026-11-08T12:24",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -927,6 +927,15 @@
    "sexo": "?",
    "profissao": "pescador",
    "joinedAt": 1794097505576,
+   "faltas": 0
+  },
+  {
+   "id": "ig-faixa_gu244",
+   "nome": "@faixa_gu244",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "bardo",
+   "joinedAt": 1794151493836,
    "faltas": 0
   }
  ]
