@@ -48,6 +48,22 @@
     "FLORESTA": [],
     "CASTELO": []
    }
+  },
+  {
+   "k": "mina",
+   "atacante": "FLORESTA",
+   "defensor": "CASTELO",
+   "comentarios": {
+    "FLORESTA": 0,
+    "CASTELO": 0
+   },
+   "post": "Dffdr28tKH5",
+   "fechou": "2026-11-08T18:07-03:00",
+   "participantes": [],
+   "porLado": {
+    "FLORESTA": [],
+    "CASTELO": []
+   }
   }
  ],
  "atualizadoEm": "2026-11-06T17:52"
