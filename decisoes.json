@@ -18,7 +18,25 @@
    "porUsuario": {},
    "abriu": "2026-11-07T14:04",
    "fechou": "2026-11-07T21:00"
+  },
+  {
+   "post": "DffP9FZhSiv",
+   "vila": "Pinheiral",
+   "pergunta": "A Vila Sombria está vindo. Vocês atacam ou fogem?",
+   "opcoes": [
+    "ATACAR",
+    "FUGIR"
+   ],
+   "votos": {
+    "ATACAR": 0,
+    "FUGIR": 0
+   },
+   "vencedora": "sem votos",
+   "participantes": [],
+   "porUsuario": {},
+   "abriu": "2026-11-07T14:04",
+   "fechou": "2026-11-07T21:00"
   }
  ],
- "atualizadoEm": "2026-11-07T21:18"
+ "atualizadoEm": "2026-11-08T16:21"
 }
