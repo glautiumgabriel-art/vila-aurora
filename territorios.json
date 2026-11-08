@@ -1,5 +1,5 @@
 {
- "observacao": "Guerra por território (Dr. 06/11). Estado inicial real: donos de partida (v47); batalhas entram quando um post de território fecha.",
+ "observacao": "Guerra por território (Dr. 06/11). comentarios = força dos comentários (até 3 por @). A página luta de max(fechou, 21:30) até 23:00 e troca o dono; o robô não muda 'dono'.",
  "territorios": [
   {
    "k": "mina",
@@ -32,6 +32,23 @@
    "desde": "2026-11-06T00:00"
   }
  ],
- "batalhas": [],
+ "batalhas": [
+  {
+   "k": "mina",
+   "atacante": "FLORESTA",
+   "defensor": "CASTELO",
+   "comentarios": {
+    "FLORESTA": 0,
+    "CASTELO": 0
+   },
+   "post": "Dfc45PhOAQE",
+   "fechou": "2026-11-07T21:18-03:00",
+   "participantes": [],
+   "porLado": {
+    "FLORESTA": [],
+    "CASTELO": []
+   }
+  }
+ ],
  "atualizadoEm": "2026-11-06T17:52"
 }

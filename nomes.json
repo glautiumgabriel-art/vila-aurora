@@ -1,0 +1,31 @@
+{
+ "observacao": "Batize (Dr. 06/11): o nome mais curtido vira oficial, com o autor na placa.",
+ "nomes": [
+  {
+   "post": "DfcyDLrBTYY",
+   "alvo": "Dragão das Cinzas",
+   "pergunta": "Qual o nome desse dragão?",
+   "vencedor": "Eu Quero Ser",
+   "autor": "@andrew_deko0.2",
+   "curtidas": 1,
+   "candidatos": [
+    {
+     "nome": "Eu Quero Ser",
+     "autor": "@andrew_deko0.2",
+     "curtidas": 1
+    }
+   ],
+   "fechou": "2026-11-07T21:18"
+  },
+  {
+   "post": "DfcxXtkCcNd",
+   "alvo": "Dragão das Cinzas",
+   "pergunta": "Qual o nome desse dragão?",
+   "vencedor": null,
+   "autor": null,
+   "curtidas": 0,
+   "candidatos": [],
+   "fechou": "2026-11-07T21:18"
+  }
+ ]
+}
