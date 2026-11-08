@@ -1,13 +1,11 @@
 {
- "geradoEm": "2026-11-08T16:59",
+ "geradoEm": "2026-11-08T18:00",
  "relogioVila": {
   "dia": 6,
-  "hora": 16
+  "hora": 17
  },
  "moradores": 49,
  "novosDoDia": [
-  "@rafael.strauch",
-  "@__niedison",
   "@eopedrinhonepai",
   "@kaiobentopereira",
   "@faixa_gu244"
@@ -17,31 +15,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 25,
-   "xp": 31112,
+   "xp": 31362,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 25,
-   "xp": 30913,
+   "xp": 31163,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 25,
-   "xp": 30327,
+   "xp": 30577,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 25,
-   "xp": 30157,
+   "xp": 30407,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 25,
-   "xp": 30148,
+   "xp": 30398,
    "titulo": "Lenda"
   }
  ],
@@ -161,7 +159,8 @@
   "@mk._iluminado",
   "@rafael.strauch",
   "@__niedison",
-  "@eopedrinhonepai"
+  "@eopedrinhonepai",
+  "@kaiobentopereira"
  ],
  "porProfissao": {
   "bardo": 8,
@@ -666,11 +665,11 @@
   "@dassow_djony": {
    "nome": "@dassow_djony",
    "profissao": "soldado",
-   "nivel": 14,
-   "hp": 180,
-   "hpMax": 180,
-   "atq": 36,
-   "def": 20,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 34,
+   "def": 19,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -731,7 +730,7 @@
    "nome": "@josue_rms77",
    "profissao": "cacador",
    "nivel": 13,
-   "hp": 170,
+   "hp": 126,
    "hpMax": 170,
    "atq": 40,
    "def": 17,
@@ -794,11 +793,11 @@
   "@_rai.la.ne_": {
    "nome": "@_rai.la.ne_",
    "profissao": "fazendeiro",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 38,
-   "def": 14,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 40,
+   "def": 15,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 0,
@@ -810,11 +809,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 32,
-   "def": 14,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 34,
+   "def": 15,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -826,11 +825,11 @@
   "@kauedomingues894": {
    "nome": "@kauedomingues894",
    "profissao": "bardo",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 33,
-   "def": 14,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 35,
+   "def": 15,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -842,11 +841,11 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 30,
-   "def": 22,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 32,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 7,
@@ -906,11 +905,11 @@
   "@rafael.strauch": {
    "nome": "@rafael.strauch",
    "profissao": "fazendeiro",
-   "nivel": 10,
-   "hp": 140,
-   "hpMax": 140,
-   "atq": 29,
-   "def": 14,
+   "nivel": 11,
+   "hp": 150,
+   "hpMax": 150,
+   "atq": 31,
+   "def": 15,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -955,7 +954,7 @@
    "nome": "@kaiobentopereira",
    "profissao": "pescador",
    "nivel": 11,
-   "hp": 150,
+   "hp": 116,
    "hpMax": 150,
    "atq": 31,
    "def": 13,
@@ -970,21 +969,135 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 19,
-   "def": 5,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 21,
+   "def": 8,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794170728829,
+   "quem": "@dassow_djony",
+   "tipo": "vitoria",
+   "texto": "@dassow_djony venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1794170636939,
+   "quem": "@josue_rms77",
+   "tipo": "vitoria",
+   "texto": "@josue_rms77 e os amigos acertaram de longe um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1794170585576,
+   "quem": "@kaiobentopereira",
+   "tipo": "vitoria",
+   "texto": "@kaiobentopereira e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1794170464742,
+   "quem": "@oi56382",
+   "tipo": "vitoria",
+   "texto": "@oi56382 venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794170155612,
+   "quem": "@adriana.lopesl",
+   "tipo": "briga_vitoria",
+   "texto": "@adriana.lopesl encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794169929633,
+   "quem": "@santoslais3277",
+   "tipo": "vitoria",
+   "texto": "@santoslais3277 e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1794169853836,
+   "quem": "@faixa_gu244",
+   "tipo": "briga_vitoria",
+   "texto": "@faixa_gu244 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794169850014,
+   "quem": "@muryvieira_",
+   "tipo": "vitoria",
+   "texto": "@muryvieira_ e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794169533308,
+   "quem": "@__niedison",
+   "tipo": "vitoria",
+   "texto": "@__niedison e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1794169196939,
+   "quem": "@josue_rms77",
+   "tipo": "vitoria",
+   "texto": "@josue_rms77 e os amigos acertaram de longe um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1794169145576,
+   "quem": "@kaiobentopereira",
+   "tipo": "doma",
+   "texto": "@kaiobentopereira e os amigos cercaram um cavalo selvagem e domaram! Agora @kaiobentopereira anda montado."
+  },
+  {
+   "quando": 1794168715612,
+   "quem": "@adriana.lopesl",
+   "tipo": "vitoria",
+   "texto": "@adriana.lopesl venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794168489633,
+   "quem": "@santoslais3277",
+   "tipo": "briga_vitoria",
+   "texto": "@santoslais3277 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794168467752,
+   "quem": "@andrew_deko0.2",
+   "tipo": "vitoria",
+   "texto": "@andrew_deko0.2 venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1794168362152,
+   "quem": "@samuul_gx_ofc",
+   "tipo": "vitoria",
+   "texto": "@samuul_gx_ofc e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1794168187675,
+   "quem": "@luizin_hz0",
+   "tipo": "vitoria",
+   "texto": "@luizin_hz0 venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1794168093308,
+   "quem": "@__niedison",
+   "tipo": "briga_derrota",
+   "texto": "@__niedison foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
+   "quando": 1794167848829,
+   "quem": "@dassow_djony",
+   "tipo": "queda",
+   "texto": "@dassow_djony escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794167633667,
+   "quem": "@eopedrinhonepai",
+   "tipo": "queda",
+   "texto": "@eopedrinhonepai escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794166970014,
    "quem": "@muryvieira_",
@@ -1050,120 +1163,6 @@
    "quem": "@kauedomingues894",
    "tipo": "briga_vitoria",
    "texto": "@kauedomingues894 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794164395612,
-   "quem": "@adriana.lopesl",
-   "tipo": "briga_vitoria",
-   "texto": "@adriana.lopesl encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794164042152,
-   "quem": "@samuul_gx_ofc",
-   "tipo": "queda",
-   "texto": "@samuul_gx_ofc escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794163867675,
-   "quem": "@luizin_hz0",
-   "tipo": "vitoria",
-   "texto": "@luizin_hz0 venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1794163528829,
-   "quem": "@dassow_djony",
-   "tipo": "vitoria",
-   "texto": "@dassow_djony e os amigos venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1794163460080,
-   "quem": "@cf.ayshinha_",
-   "tipo": "vitoria",
-   "texto": "@cf.ayshinha_ venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794163436939,
-   "quem": "@josue_rms77",
-   "tipo": "queda",
-   "texto": "@josue_rms77 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794163335301,
-   "quem": "@rafael.strauch",
-   "tipo": "queda",
-   "texto": "@rafael.strauch escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794162955612,
-   "quem": "@adriana.lopesl",
-   "tipo": "queda",
-   "texto": "@adriana.lopesl escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794162729633,
-   "quem": "@santoslais3277",
-   "tipo": "vitoria",
-   "texto": "@santoslais3277 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794162650014,
-   "quem": "@muryvieira_",
-   "tipo": "vitoria",
-   "texto": "@muryvieira_ e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794162602152,
-   "quem": "@samuul_gx_ofc",
-   "tipo": "queda",
-   "texto": "@samuul_gx_ofc escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794162333308,
-   "quem": "@__niedison",
-   "tipo": "briga_derrota",
-   "texto": "@__niedison foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794161996939,
-   "quem": "@josue_rms77",
-   "tipo": "queda",
-   "texto": "@josue_rms77 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794161945576,
-   "quem": "@kaiobentopereira",
-   "tipo": "vitoria",
-   "texto": "@kaiobentopereira venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794161895301,
-   "quem": "@rafael.strauch",
-   "tipo": "queda",
-   "texto": "@rafael.strauch escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794161571000,
-   "quem": "@naoya______zeninn",
-   "tipo": "vitoria",
-   "texto": "@naoya______zeninn e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794161213836,
-   "quem": "@faixa_gu244",
-   "tipo": "derrota",
-   "texto": "@faixa_gu244 encostou sozinho em um cavalo selvagem e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794160987675,
-   "quem": "@luizin_hz0",
-   "tipo": "briga_vitoria",
-   "texto": "@luizin_hz0 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794160505576,
-   "quem": "@kaiobentopereira",
-   "tipo": "vitoria",
-   "texto": "@kaiobentopereira e os amigos venceram um urso da floresta e ganharam uma garra de urso."
   }
  ]
 }
