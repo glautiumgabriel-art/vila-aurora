@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-08T00:18",
+ "atualizadoEm": "2026-11-08T01:22",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1064,6 +1064,41 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T23:23",
    "respostaId": "18117269276046319"
+  },
+  {
+   "id": "api:18115815032159097",
+   "usuario": "@eu.brandao__",
+   "comentario": "Floresta",
+   "em": "2026-11-08T01:22",
+   "tipo": "comando",
+   "status": "anotado",
+   "resposta": "Anotado! Na próxima hora seu personagem vai até Floresta Velha procurar pistas 🔎 🎁 Você ganhou +50 XP na vila!",
+   "comando": "ir",
+   "lugar": "floresta",
+   "lugarNome": "Floresta Velha",
+   "pista": false,
+   "presente": {
+    "item": "+50 XP",
+    "tipo": "xp",
+    "raridade": "comum",
+    "post": "DfdNjU1J2jS",
+    "em": "2026-11-08T01:22"
+   },
+   "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18117117419109942",
+   "usuario": "@_rai.la.ne_",
+   "comentario": "DESAFIO @layane_guedes__",
+   "em": "2026-11-08T01:22",
+   "tipo": "duelo_invalido",
+   "status": "anotado",
+   "resposta": "",
+   "post": "https://www.instagram.com/reel/Dfa2TVGNL9S/",
+   "via": "api",
+   "statusResposta": "silencio"
   }
  ]
 }

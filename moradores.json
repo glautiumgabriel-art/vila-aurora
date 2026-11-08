@@ -296,7 +296,16 @@
    "sexo": "?",
    "profissao": "cacador",
    "joinedAt": 1793936392455,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "+50 XP",
+     "tipo": "xp",
+     "raridade": "comum",
+     "post": "DfdNjU1J2jS",
+     "em": "2026-11-08T01:22"
+    }
+   ]
   },
   {
    "id": "ig-danielaugustobiesso",

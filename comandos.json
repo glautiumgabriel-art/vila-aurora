@@ -36,8 +36,17 @@
    "post": "DfdNjU1J2jS",
    "hora": "2026-11-07T23:12",
    "pista": false
+  },
+  {
+   "tipo": "ir",
+   "arroba": "@eu.brandao__",
+   "lugar": "floresta",
+   "lugarNome": "Floresta Velha",
+   "post": "DfdNjU1J2jS",
+   "hora": "2026-11-08T01:22",
+   "pista": false
   }
  ],
  "observacao": "tipo ir: a página leva o personagem ao lugar na hora seguinte (pista = achou a pista da novela, 1 em 4); tipo atacar: o personagem vai lutar contra o alvo",
- "atualizadoEm": "2026-11-07T23:12"
+ "atualizadoEm": "2026-11-08T01:22"
 }
