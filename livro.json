@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T21:18",
+ "atualizadoEm": "2026-11-08T16:21",
  "capitulos": [
   {
    "n": 1,
@@ -24,6 +24,18 @@
   }
  ],
  "decisoes": [
+  {
+   "vila": "Pinheiral",
+   "pergunta": "A Vila Sombria está vindo. Vocês atacam ou fogem?",
+   "opcoes": [
+    "ATACAR",
+    "FUGIR"
+   ],
+   "fechaEm": "2026-11-07T21:00",
+   "encerrada": true,
+   "resultado": null,
+   "codigo": null
+  },
   {
    "vila": "Pinheiral",
    "pergunta": "A Vila Sombria está vindo. Vocês atacam ou fogem?",
