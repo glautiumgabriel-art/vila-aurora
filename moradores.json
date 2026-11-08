@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-07T20:59",
+ "atualizadoEm": "2026-11-07T21:24",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -878,6 +878,15 @@
    "sexo": "?",
    "profissao": "alquimista",
    "joinedAt": 1794090233667,
+   "faltas": 0
+  },
+  {
+   "id": "ig-kaiobentopereira",
+   "nome": "@kaiobentopereira",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "pescador",
+   "joinedAt": 1794097505576,
    "faltas": 0
   }
  ]
