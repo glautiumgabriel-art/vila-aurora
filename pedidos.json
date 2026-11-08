@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-07T21:23",
+ "atualizadoEm": "2026-11-07T23:12",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1015,6 +1015,29 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-07T21:24",
    "respostaId": "18114996734150669"
+  },
+  {
+   "id": "api:18093888290675738",
+   "usuario": "@salomaojr31",
+   "comentario": "Castelo",
+   "em": "2026-11-07T23:12",
+   "tipo": "comando",
+   "status": "anotado",
+   "resposta": "Anotado! Na próxima hora seu personagem vai até Castelo procurar pistas 🔎 🎁 Você ganhou +1 Respeito na vila!",
+   "comando": "ir",
+   "lugar": "castelo",
+   "lugarNome": "Castelo",
+   "pista": false,
+   "presente": {
+    "item": "+1 Respeito",
+    "tipo": "respeito",
+    "raridade": "comum",
+    "post": "DfdNjU1J2jS",
+    "em": "2026-11-07T23:12"
+   },
+   "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
