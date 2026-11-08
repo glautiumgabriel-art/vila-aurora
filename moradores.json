@@ -150,7 +150,16 @@
    "sexo": "?",
    "profissao": "explorador",
    "joinedAt": 1793779692956,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "+150 XP",
+     "tipo": "xp",
+     "raridade": "raro",
+     "post": "DfdNjU1J2jS",
+     "em": "2026-11-08T02:33"
+    }
+   ]
   },
   {
    "id": "ig-isaac.jmy",

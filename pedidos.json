@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-08T02:20",
+ "atualizadoEm": "2026-11-08T02:33",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1101,6 +1101,25 @@
    "post": "https://www.instagram.com/reel/Dfa2TVGNL9S/",
    "via": "api",
    "statusResposta": "silencio"
+  },
+  {
+   "id": "api:18123212992942482",
+   "usuario": "@menor.k01_de_itz",
+   "comentario": "😍😍",
+   "em": "2026-11-08T02:33",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Boa! Passa lá em vila.ihfc.com.br pra ver os moradores 👀 🎁 Você ganhou +150 XP na vila!",
+   "presente": {
+    "item": "+150 XP",
+    "tipo": "xp",
+    "raridade": "raro",
+    "post": "DfdNjU1J2jS",
+    "em": "2026-11-08T02:33"
+   },
+   "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
+   "via": "api",
+   "statusResposta": "sem_resposta_por_regra"
   }
  ]
 }
