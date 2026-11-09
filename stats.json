@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-09T16:55",
+ "geradoEm": "2026-11-09T17:00",
  "relogioVila": {
   "dia": 7,
   "hora": 16
@@ -16,31 +16,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 27,
-   "xp": 37092,
+   "xp": 37113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 27,
-   "xp": 36892,
+   "xp": 36913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 27,
-   "xp": 36307,
+   "xp": 36328,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 27,
-   "xp": 36136,
+   "xp": 36157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 27,
-   "xp": 36127,
+   "xp": 36148,
    "titulo": "Lenda"
   }
  ],
@@ -48,21 +48,21 @@
   {
    "entre": [
     "@__niedison",
-    "@gods.samuka"
+    "@andrew_deko0.2"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@adriana.g.santana",
-    "@oi56382"
+    "@__niedison",
+    "@laryssapsouza"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@dr.glautiumgabriel",
-    "@eopedrinhonepai"
+    "@gods.samuka",
+    "@samuul_gx_ofc"
    ],
    "forca": 2
   },
@@ -1022,7 +1022,7 @@
    "nome": "@leolindo6.7",
    "profissao": "explorador",
    "nivel": 9,
-   "hp": 66,
+   "hp": 83,
    "hpMax": 130,
    "atq": 27,
    "def": 13,
@@ -1034,7 +1034,22 @@
    "guerreiro": false,
    "mana": null
   },
-  "@nankhumwaemmanuel": null
+  "@nankhumwaemmanuel": {
+   "nome": "@nankhumwaemmanuel",
+   "profissao": "arqueiro",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 8,
+   "def": 1,
+   "bArma": 0,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": true,
+   "guerreiro": false,
+   "mana": null
+  }
  },
  "eventosUltimas24h": [
   {
