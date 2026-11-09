@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-08T23:00",
+ "geradoEm": "2026-11-09T00:00",
  "relogioVila": {
-  "dia": 6,
-  "hora": 22
+  "dia": 7,
+  "hora": 0
  },
  "moradores": 51,
  "novosDoDia": [
@@ -15,31 +15,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 26,
-   "xp": 32612,
+   "xp": 32865,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 26,
-   "xp": 32413,
+   "xp": 32665,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 26,
-   "xp": 31657,
+   "xp": 31909,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 26,
-   "xp": 31323,
+   "xp": 31575,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 26,
-   "xp": 31303,
+   "xp": 31555,
    "titulo": "Lenda"
   }
  ],
@@ -314,11 +314,11 @@
   "@dr.glautiumgabriel": {
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 57,
-   "def": 26,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 59,
+   "def": 27,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -346,11 +346,11 @@
   "@menor.k01_de_itz": {
    "nome": "@menor.k01_de_itz",
    "profissao": "explorador",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 56,
-   "def": 28,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 58,
+   "def": 29,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -442,11 +442,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 23,
-   "hp": 270,
-   "hpMax": 270,
-   "atq": 54,
-   "def": 27,
+   "nivel": 24,
+   "hp": 280,
+   "hpMax": 280,
+   "atq": 56,
+   "def": 28,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -666,11 +666,11 @@
   "@dassow_djony": {
    "nome": "@dassow_djony",
    "profissao": "soldado",
-   "nivel": 14,
-   "hp": 180,
-   "hpMax": 180,
-   "atq": 36,
-   "def": 20,
+   "nivel": 15,
+   "hp": 190,
+   "hpMax": 190,
+   "atq": 38,
+   "def": 21,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -874,11 +874,11 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 33,
-   "def": 21,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 35,
+   "def": 22,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 7,
@@ -954,11 +954,11 @@
   "@kaiobentopereira": {
    "nome": "@kaiobentopereira",
    "profissao": "pescador",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 33,
-   "def": 14,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 35,
+   "def": 15,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -970,11 +970,11 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 7,
-   "hp": 85,
-   "hpMax": 110,
-   "atq": 23,
-   "def": 9,
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 25,
+   "def": 10,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1002,11 +1002,11 @@
   "@arthur594938": {
    "nome": "@arthur594938",
    "profissao": "cavaleiro",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 14,
-   "def": 11,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 16,
+   "def": 12,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 7,
@@ -1017,6 +1017,48 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794192573308,
+   "quem": "@__niedison",
+   "tipo": "vitoria",
+   "texto": "@__niedison e os amigos venceram um cavalo selvagem."
+  },
+  {
+   "quando": 1794192185576,
+   "quem": "@kaiobentopereira",
+   "tipo": "vitoria",
+   "texto": "@kaiobentopereira e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794190745576,
+   "quem": "@kaiobentopereira",
+   "tipo": "vitoria",
+   "texto": "@kaiobentopereira e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1794190010014,
+   "quem": "@muryvieira_",
+   "tipo": "briga_derrota",
+   "texto": "@muryvieira_ foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
+   "quando": 1794189693308,
+   "quem": "@__niedison",
+   "tipo": "briga_derrota",
+   "texto": "@__niedison foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
+   "quando": 1794189380080,
+   "quem": "@cf.ayshinha_",
+   "tipo": "vitoria",
+   "texto": "@cf.ayshinha_ e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794189255301,
+   "quem": "@rafael.strauch",
+   "tipo": "queda",
+   "texto": "@rafael.strauch escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794188875612,
    "quem": "@adriana.lopesl",
@@ -1154,48 +1196,6 @@
    "quem": "@__niedison",
    "tipo": "queda",
    "texto": "@__niedison escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794179613308,
-   "quem": "@__niedison",
-   "tipo": "queda",
-   "texto": "@__niedison escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794179175301,
-   "quem": "@rafael.strauch",
-   "tipo": "vitoria",
-   "texto": "@rafael.strauch e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794178493836,
-   "quem": "@faixa_gu244",
-   "tipo": "vitoria",
-   "texto": "@faixa_gu244 venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794178490014,
-   "quem": "@muryvieira_",
-   "tipo": "vitoria",
-   "texto": "@muryvieira_ e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794178269675,
-   "quem": "@mk._iluminado",
-   "tipo": "briga_vitoria",
-   "texto": "@mk._iluminado encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794177735301,
-   "quem": "@rafael.strauch",
-   "tipo": "vitoria",
-   "texto": "@rafael.strauch e os amigos venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1794177664742,
-   "quem": "@oi56382",
-   "tipo": "briga_derrota",
-   "texto": "@oi56382 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }
