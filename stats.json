@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-09T11:00",
+ "geradoEm": "2026-11-09T12:00",
  "relogioVila": {
   "dia": 7,
-  "hora": 10
+  "hora": 11
  },
  "moradores": 52,
  "novosDoDia": [
@@ -16,31 +16,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 27,
-   "xp": 35612,
+   "xp": 35864,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 27,
-   "xp": 35413,
+   "xp": 35664,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 27,
-   "xp": 34827,
+   "xp": 35079,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 27,
-   "xp": 34656,
+   "xp": 34908,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 27,
-   "xp": 34648,
+   "xp": 34899,
    "titulo": "Lenda"
   }
  ],
@@ -163,6 +163,7 @@
   "@__niedison",
   "@eopedrinhonepai",
   "@kaiobentopereira",
+  "@faixa_gu244",
   "@arthur594938"
  ],
  "porProfissao": {
@@ -412,11 +413,11 @@
   "@joelma_alvarez": {
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 56,
-   "def": 31,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 58,
+   "def": 32,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -460,11 +461,11 @@
   "@sampaiojaiane": {
    "nome": "@sampaiojaiane",
    "profissao": "fazendeiro",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 56,
-   "def": 26,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 58,
+   "def": 27,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -540,11 +541,11 @@
   "@kalebdecote": {
    "nome": "@kalebdecote",
    "profissao": "bardo",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 45,
-   "def": 22,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 47,
+   "def": 23,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -556,11 +557,11 @@
   "@livia.maria31": {
    "nome": "@livia.maria31",
    "profissao": "comerciante",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 44,
-   "def": 22,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 46,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -668,11 +669,11 @@
   "@dassow_djony": {
    "nome": "@dassow_djony",
    "profissao": "soldado",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 22,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -748,11 +749,11 @@
   "@naoya______zeninn": {
    "nome": "@naoya______zeninn",
    "profissao": "pescador",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 39,
-   "def": 17,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 41,
+   "def": 18,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -876,11 +877,11 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 14,
-   "hp": 180,
-   "hpMax": 180,
-   "atq": 37,
-   "def": 23,
+   "nivel": 15,
+   "hp": 190,
+   "hpMax": 190,
+   "atq": 39,
+   "def": 24,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 7,
@@ -988,11 +989,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 24,
-   "def": 10,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 26,
+   "def": 11,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1020,11 +1021,11 @@
   "@leolindo6.7": {
    "nome": "@leolindo6.7",
    "profissao": "explorador",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 23,
-   "def": 11,
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 25,
+   "def": 12,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1035,6 +1036,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794234653836,
+   "quem": "@faixa_gu244",
+   "tipo": "doma",
+   "texto": "@faixa_gu244 cercaram um cavalo selvagem e domaram! Agora @faixa_gu244 anda montado."
+  },
+  {
+   "quando": 1794234406682,
+   "quem": "@jose_zzw07",
+   "tipo": "briga_vitoria",
+   "texto": "@jose_zzw07 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794232966682,
+   "quem": "@jose_zzw07",
+   "tipo": "briga_derrota",
+   "texto": "@jose_zzw07 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
   {
    "quando": 1794230919369,
    "quem": "@arthur594938",
@@ -1196,24 +1215,6 @@
    "quem": "@faixa_gu244",
    "tipo": "vitoria",
    "texto": "@faixa_gu244 venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1794205629675,
-   "quem": "@mk._iluminado",
-   "tipo": "vitoria",
-   "texto": "@mk._iluminado venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794205095301,
-   "quem": "@rafael.strauch",
-   "tipo": "briga_vitoria",
-   "texto": "@rafael.strauch encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794204999369,
-   "quem": "@arthur594938",
-   "tipo": "doma",
-   "texto": "@arthur594938 cercaram um cavalo selvagem e domaram! Agora @arthur594938 anda montado."
   }
  ]
 }
