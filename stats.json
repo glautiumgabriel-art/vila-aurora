@@ -1,45 +1,46 @@
 {
- "geradoEm": "2026-11-09T16:00",
+ "geradoEm": "2026-11-09T16:55",
  "relogioVila": {
   "dia": 7,
-  "hora": 15
+  "hora": 16
  },
- "moradores": 52,
+ "moradores": 53,
  "novosDoDia": [
   "@jose_zzw07",
   "@arthur594938",
-  "@leolindo6.7"
+  "@leolindo6.7",
+  "@nankhumwaemmanuel"
  ],
  "nivelMaisAlto": 27,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 27,
-   "xp": 36862,
+   "xp": 37092,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 27,
-   "xp": 36663,
+   "xp": 36892,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 27,
-   "xp": 36077,
+   "xp": 36307,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 27,
-   "xp": 35907,
+   "xp": 36136,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 27,
-   "xp": 35898,
+   "xp": 36127,
    "titulo": "Lenda"
   }
  ],
@@ -177,20 +178,20 @@
   "comerciante": 2,
   "cacador": 2,
   "padeiro": 2,
+  "arqueiro": 2,
   "pastor": 2,
   "curandeiro": 1,
   "mineiro": 1,
-  "arqueiro": 1,
   "alquimista": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@leolindo6.7",
+  "nome": "@nankhumwaemmanuel",
   "nomeCompleto": "",
-  "profissao": "explorador",
+  "profissao": "arqueiro",
   "sexo": "?",
-  "chegouEm": "2026-11-09T00:54",
-  "chegouEmMs": 1794196457444
+  "chegouEm": "2026-11-09T16:55",
+  "chegouEmMs": 1794254117533
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -364,11 +365,11 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 58,
-   "def": 32,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 60,
+   "def": 33,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -396,11 +397,11 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "cavaleiro",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 58,
-   "def": 32,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 60,
+   "def": 33,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -508,11 +509,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 21,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 22,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -764,11 +765,11 @@
   "@oi56382": {
    "nome": "@oi56382",
    "profissao": "cabeleireiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 19,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -796,11 +797,11 @@
   "@_rai.la.ne_": {
    "nome": "@_rai.la.ne_",
    "profissao": "fazendeiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 46,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 48,
+   "def": 19,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 0,
@@ -812,11 +813,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 19,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -828,11 +829,11 @@
   "@kauedomingues894": {
    "nome": "@kauedomingues894",
    "profissao": "bardo",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 41,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 43,
+   "def": 19,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -860,11 +861,11 @@
   "@luizin_hz0": {
    "nome": "@luizin_hz0",
    "profissao": "soldado",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 38,
-   "def": 21,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 40,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -924,11 +925,11 @@
   "@__niedison": {
    "nome": "@__niedison",
    "profissao": "bardo",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 39,
-   "def": 19,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 41,
+   "def": 20,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -956,11 +957,11 @@
   "@kaiobentopereira": {
    "nome": "@kaiobentopereira",
    "profissao": "pescador",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 39,
-   "def": 17,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 41,
+   "def": 18,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -972,11 +973,11 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 31,
-   "def": 13,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 33,
+   "def": 14,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -988,11 +989,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 9,
-   "hp": 74,
-   "hpMax": 130,
-   "atq": 26,
-   "def": 11,
+   "nivel": 10,
+   "hp": 140,
+   "hpMax": 140,
+   "atq": 28,
+   "def": 12,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1021,7 +1022,7 @@
    "nome": "@leolindo6.7",
    "profissao": "explorador",
    "nivel": 9,
-   "hp": 130,
+   "hp": 66,
    "hpMax": 130,
    "atq": 27,
    "def": 13,
@@ -1032,9 +1033,22 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
-  }
+  },
+  "@nankhumwaemmanuel": null
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794253697444,
+   "quem": "@leolindo6.7",
+   "tipo": "vitoria",
+   "texto": "@leolindo6.7 venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1794251079369,
+   "quem": "@arthur594938",
+   "tipo": "vitoria",
+   "texto": "@arthur594938 venceram um cavalo selvagem."
+  },
   {
    "quando": 1794250246682,
    "quem": "@jose_zzw07",
@@ -1202,18 +1216,6 @@
    "quem": "@faixa_gu244",
    "tipo": "vitoria",
    "texto": "@faixa_gu244 e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794213639369,
-   "quem": "@arthur594938",
-   "tipo": "vitoria",
-   "texto": "@arthur594938 venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1794212273667,
-   "quem": "@eopedrinhonepai",
-   "tipo": "briga_vitoria",
-   "texto": "@eopedrinhonepai encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   }
  ]
 }
