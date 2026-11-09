@@ -54,8 +54,17 @@
    "post": "DfdNjU1J2jS",
    "hora": "2026-11-08T21:07",
    "pista": false
+  },
+  {
+   "tipo": "ir",
+   "arroba": "@leolindo6.7",
+   "lugar": "floresta",
+   "lugarNome": "Floresta Velha",
+   "post": "DffySRRvo0_",
+   "hora": "2026-11-09T07:18",
+   "pista": true
   }
  ],
  "observacao": "tipo ir: a página leva o personagem ao lugar na hora seguinte (pista = achou a pista da novela, 1 em 4); tipo atacar: o personagem vai lutar contra o alvo",
- "atualizadoEm": "2026-11-08T21:07"
+ "atualizadoEm": "2026-11-09T07:18"
 }

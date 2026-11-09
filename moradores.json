@@ -987,7 +987,16 @@
    "sexo": "?",
    "profissao": "explorador",
    "joinedAt": 1794196457444,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Pão de Mel da Lia",
+     "tipo": "comida",
+     "raridade": "comum",
+     "post": "DffySRRvo0_",
+     "em": "2026-11-09T07:18"
+    }
+   ]
   }
  ]
 }

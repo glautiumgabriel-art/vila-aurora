@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-08T22:38",
+ "atualizadoEm": "2026-11-09T07:18",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1226,6 +1226,29 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-08T22:38",
    "respostaId": "17967858582206616"
+  },
+  {
+   "id": "api:18110672647905794",
+   "usuario": "@leolindo6.7",
+   "comentario": "Floresta, Leo-assasino",
+   "em": "2026-11-09T07:18",
+   "tipo": "comando",
+   "status": "anotado",
+   "resposta": "Floresta Velha anotada no mapa do seu personagem 📜 🎁 Você ganhou um Pão de Mel da Lia na vila!",
+   "comando": "ir",
+   "lugar": "floresta",
+   "lugarNome": "Floresta Velha",
+   "pista": true,
+   "presente": {
+    "item": "Pão de Mel da Lia",
+    "tipo": "comida",
+    "raridade": "comum",
+    "post": "DffySRRvo0_",
+    "em": "2026-11-09T07:18"
+   },
+   "post": "https://www.instagram.com/reel/DffySRRvo0_/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
