@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-09T14:00",
+ "geradoEm": "2026-11-09T15:00",
  "relogioVila": {
   "dia": 7,
-  "hora": 13
+  "hora": 14
  },
  "moradores": 52,
  "novosDoDia": [
@@ -15,31 +15,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 27,
-   "xp": 36362,
+   "xp": 36613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 27,
-   "xp": 36163,
+   "xp": 36413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 27,
-   "xp": 35577,
+   "xp": 35828,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 27,
-   "xp": 35406,
+   "xp": 35657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 27,
-   "xp": 35398,
+   "xp": 35648,
    "titulo": "Lenda"
   }
  ],
@@ -700,11 +700,11 @@
   "@samuul_gx_ofc": {
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 39,
-   "def": 17,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 41,
+   "def": 18,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -716,11 +716,11 @@
   "@santoslais3277": {
    "nome": "@santoslais3277",
    "profissao": "soldado",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 22,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -989,7 +989,7 @@
    "nome": "@jose_zzw07",
    "profissao": "pastor",
    "nivel": 9,
-   "hp": 75,
+   "hp": 130,
    "hpMax": 130,
    "atq": 26,
    "def": 11,
@@ -1020,11 +1020,11 @@
   "@leolindo6.7": {
    "nome": "@leolindo6.7",
    "profissao": "explorador",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 25,
-   "def": 12,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 27,
+   "def": 13,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1035,6 +1035,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794244486682,
+   "quem": "@jose_zzw07",
+   "tipo": "vitoria",
+   "texto": "@jose_zzw07 e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1794243617444,
+   "quem": "@leolindo6.7",
+   "tipo": "vitoria",
+   "texto": "@leolindo6.7 e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1794243293836,
+   "quem": "@faixa_gu244",
+   "tipo": "briga_derrota",
+   "texto": "@faixa_gu244 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
   {
    "quando": 1794243046682,
    "quem": "@jose_zzw07",
@@ -1196,24 +1214,6 @@
    "quem": "@kaiobentopereira",
    "tipo": "vitoria",
    "texto": "@kaiobentopereira venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1794209393667,
-   "quem": "@eopedrinhonepai",
-   "tipo": "vitoria",
-   "texto": "@eopedrinhonepai e os amigos acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794209319369,
-   "quem": "@arthur594938",
-   "tipo": "queda",
-   "texto": "@arthur594938 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794208413308,
-   "quem": "@__niedison",
-   "tipo": "vitoria",
-   "texto": "@__niedison venceram um cavalo selvagem."
   }
  ]
 }
