@@ -1,83 +1,84 @@
 {
- "geradoEm": "2026-11-08T21:08",
+ "geradoEm": "2026-11-08T21:23",
  "relogioVila": {
   "dia": 6,
   "hora": 21
  },
- "moradores": 50,
+ "moradores": 51,
  "novosDoDia": [
   "@kaiobentopereira",
   "@faixa_gu244",
-  "@jose_zzw07"
+  "@jose_zzw07",
+  "@arthur594938"
  ],
  "nivelMaisAlto": 25,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 25,
-   "xp": 32149,
+   "xp": 32208,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 25,
-   "xp": 31949,
+   "xp": 32008,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 25,
-   "xp": 31364,
+   "xp": 31423,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 25,
-   "xp": 31193,
+   "xp": 31252,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 25,
-   "xp": 31184,
+   "xp": 31243,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@_rai.la.ne_",
+    "@danielaugustobiesso",
+    "@mk._iluminado"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@dragon_soul666",
+    "@josue_rms77"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@iamvictoriamenezes",
+    "@muryvieira_"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@__niedison",
+    "@danielaugustobiesso"
+   ],
+   "forca": 1
+  },
+  {
+   "entre": [
+    "@__niedison",
     "@iamvictoriamenezes"
    ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@_williamg10",
-    "@eopedrinhonepai"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@adriana.lopesl",
-    "@isaac.jmy"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@laryssapsouza",
-    "@luizin_hz0"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@muryvieira_",
-    "@santoslais3277"
-   ],
-   "forca": 2
+   "forca": 1
   }
  ],
  "maioresDesafetos": [
@@ -165,7 +166,7 @@
  ],
  "porProfissao": {
   "bardo": 8,
-  "cavaleiro": 6,
+  "cavaleiro": 7,
   "soldado": 6,
   "fazendeiro": 5,
   "explorador": 4,
@@ -183,12 +184,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@jose_zzw07",
+  "nome": "@arthur594938",
   "nomeCompleto": "",
-  "profissao": "pastor",
+  "profissao": "cavaleiro",
   "sexo": "m",
-  "chegouEm": "2026-11-08T21:08",
-  "chegouEmMs": 1794182926682
+  "chegouEm": "2026-11-08T21:22",
+  "chegouEmMs": 1794183759369
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -394,11 +395,11 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "cavaleiro",
-   "nivel": 23,
-   "hp": 270,
-   "hpMax": 270,
-   "atq": 54,
-   "def": 30,
+   "nivel": 24,
+   "hp": 280,
+   "hpMax": 280,
+   "atq": 56,
+   "def": 31,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -618,11 +619,11 @@
   "@diegokallel": {
    "nome": "@diegokallel",
    "profissao": "soldado",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 22,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -634,11 +635,11 @@
   "@dragon_soul666": {
    "nome": "@dragon_soul666",
    "profissao": "arqueiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 16,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 17,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -714,11 +715,11 @@
   "@santoslais3277": {
    "nome": "@santoslais3277",
    "profissao": "soldado",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 34,
-   "def": 19,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 36,
+   "def": 20,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -890,11 +891,11 @@
   "@andrew_deko0.2": {
    "nome": "@andrew_deko0.2",
    "profissao": "cavaleiro",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 32,
-   "def": 18,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 34,
+   "def": 19,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -983,9 +984,46 @@
    "guerreiro": false,
    "mana": null
   },
-  "@jose_zzw07": null
+  "@jose_zzw07": {
+   "nome": "@jose_zzw07",
+   "profissao": "pastor",
+   "nivel": 2,
+   "hp": 60,
+   "hpMax": 60,
+   "atq": 12,
+   "def": 2,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@arthur594938": {
+   "nome": "@arthur594938",
+   "profissao": "cavaleiro",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 8,
+   "def": 1,
+   "bArma": 0,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
+  }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794182867752,
+   "quem": "@andrew_deko0.2",
+   "tipo": "briga_vitoria",
+   "texto": "@andrew_deko0.2 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1794182180080,
    "quem": "@cf.ayshinha_",
@@ -1159,12 +1197,6 @@
    "quem": "@oi56382",
    "tipo": "vitoria",
    "texto": "@oi56382 venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1794172787752,
-   "quem": "@andrew_deko0.2",
-   "tipo": "queda",
-   "texto": "@andrew_deko0.2 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
