@@ -30,15 +30,17 @@
   "Dff5MLdufr9": {
    "post": "https://www.instagram.com/reel/Dff5MLdufr9/",
    "pergunta": "O Rufo conta ao Rei?",
-   "sim": 0,
+   "sim": 1,
    "nao": 0,
-   "total": 0,
-   "porUsuario": {},
+   "total": 1,
+   "porUsuario": {
+    "jose_zzw07": "sim"
+   },
    "postadoEm": "2026-11-08T20:04-03:00",
    "fechaEm": "2026-11-09T16:04-03:00",
-   "atualizadoEm": "2026-11-08T20:19-03:00",
+   "atualizadoEm": "2026-11-08T21:18-03:00",
    "encerradoEm": null
   }
  },
- "atualizadoEm": "2026-11-08T20:19-03:00"
+ "atualizadoEm": "2026-11-08T21:18-03:00"
 }
