@@ -36,6 +36,22 @@
    "curtidas": 0,
    "candidatos": [],
    "fechou": "2026-11-08T21:07"
+  },
+  {
+   "post": "DffcyDLrBTYY",
+   "alvo": "Dragão das Cinzas",
+   "pergunta": "Qual o nome desse dragão?",
+   "vencedor": "Eu Quero Ser",
+   "autor": "@andrew_deko0.2",
+   "curtidas": 1,
+   "candidatos": [
+    {
+     "nome": "Eu Quero Ser",
+     "autor": "@andrew_deko0.2",
+     "curtidas": 1
+    }
+   ],
+   "fechou": "2026-11-08T23:19"
   }
  ]
 }
