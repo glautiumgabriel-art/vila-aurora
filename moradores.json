@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-08T20:59",
+ "atualizadoEm": "2026-11-08T21:08",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -943,6 +943,15 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1794151493836,
+   "faltas": 0
+  },
+  {
+   "id": "ig-jose_zzw07",
+   "nome": "@jose_zzw07",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "pastor",
+   "joinedAt": 1794182926682,
    "faltas": 0
   }
  ]

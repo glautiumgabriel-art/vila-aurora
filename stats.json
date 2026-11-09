@@ -1,44 +1,45 @@
 {
- "geradoEm": "2026-11-08T21:00",
+ "geradoEm": "2026-11-08T21:08",
  "relogioVila": {
   "dia": 6,
-  "hora": 20
+  "hora": 21
  },
- "moradores": 49,
+ "moradores": 50,
  "novosDoDia": [
   "@kaiobentopereira",
-  "@faixa_gu244"
+  "@faixa_gu244",
+  "@jose_zzw07"
  ],
  "nivelMaisAlto": 25,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 25,
-   "xp": 32112,
+   "xp": 32149,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 25,
-   "xp": 31913,
+   "xp": 31949,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 25,
-   "xp": 31327,
+   "xp": 31364,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 25,
-   "xp": 31157,
+   "xp": 31193,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 25,
-   "xp": 31148,
+   "xp": 31184,
    "titulo": "Lenda"
   }
  ],
@@ -174,20 +175,20 @@
   "comerciante": 2,
   "cacador": 2,
   "padeiro": 2,
+  "pastor": 2,
   "curandeiro": 1,
   "mineiro": 1,
   "arqueiro": 1,
-  "pastor": 1,
   "alquimista": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@faixa_gu244",
+  "nome": "@jose_zzw07",
   "nomeCompleto": "",
-  "profissao": "bardo",
-  "sexo": "?",
-  "chegouEm": "2026-11-08T12:24",
-  "chegouEmMs": 1794151493836
+  "profissao": "pastor",
+  "sexo": "m",
+  "chegouEm": "2026-11-08T21:08",
+  "chegouEmMs": 1794182926682
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -905,11 +906,11 @@
   "@rafael.strauch": {
    "nome": "@rafael.strauch",
    "profissao": "fazendeiro",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 31,
-   "def": 15,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 33,
+   "def": 16,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -922,7 +923,7 @@
    "nome": "@__niedison",
    "profissao": "bardo",
    "nivel": 12,
-   "hp": 146,
+   "hp": 160,
    "hpMax": 160,
    "atq": 38,
    "def": 16,
@@ -981,9 +982,22 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
-  }
+  },
+  "@jose_zzw07": null
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794182180080,
+   "quem": "@cf.ayshinha_",
+   "tipo": "queda",
+   "texto": "@cf.ayshinha_ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794182105576,
+   "quem": "@kaiobentopereira",
+   "tipo": "briga_vitoria",
+   "texto": "@kaiobentopereira encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1794181984742,
    "quem": "@oi56382",
@@ -1151,18 +1165,6 @@
    "quem": "@andrew_deko0.2",
    "tipo": "queda",
    "texto": "@andrew_deko0.2 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794172730014,
-   "quem": "@muryvieira_",
-   "tipo": "doma",
-   "texto": "@muryvieira_ e os amigos cercaram um cavalo selvagem e domaram! Agora @muryvieira_ anda montado."
-  },
-  {
-   "quando": 1794172682152,
-   "quem": "@samuul_gx_ofc",
-   "tipo": "vitoria",
-   "texto": "@samuul_gx_ofc e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }
