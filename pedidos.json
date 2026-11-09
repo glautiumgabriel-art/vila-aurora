@@ -693,7 +693,10 @@
    "morador": true,
    "post": "https://www.instagram.com/reel/Dfa2TVGNL9S/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "ja_respondido_pelo_id_certo",
+   "idComentarioCerto": "18132630938309981",
+   "respostaId": "18108382289239812",
+   "respondidoEm": "2026-11-07"
   },
   {
    "id": "api:18152558452538760",
@@ -952,7 +955,10 @@
    "resposta": "Boa! Seu personagem entra na próxima leva como soldado 🏡",
    "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "ja_respondido_pelo_id_certo",
+   "idComentarioCerto": "18121108390959846",
+   "respostaId": "18131300722698910",
+   "respondidoEm": "2026-11-07"
   },
   {
    "id": "api:18084650294380225",
@@ -1173,7 +1179,10 @@
    "pista": false,
    "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "ja_respondido_pelo_id_certo",
+   "idComentarioCerto": "18070314398685634",
+   "respostaId": "18201164224382325",
+   "respondidoEm": "2026-11-07"
   },
   {
    "id": "api:18036228662890143",
