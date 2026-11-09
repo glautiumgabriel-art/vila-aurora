@@ -960,7 +960,16 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1794151493836,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Anel do Rei Aurélio",
+     "tipo": "joia",
+     "raridade": "epico",
+     "post": "DffkjVaxel9",
+     "em": "2026-11-09T15:19"
+    }
+   ]
   },
   {
    "id": "ig-jose_zzw07",

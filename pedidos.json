@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-09T09:20",
+ "atualizadoEm": "2026-11-09T15:19",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1251,6 +1251,25 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-09T07:19",
    "respostaId": "18038851286853295"
+  },
+  {
+   "id": "api:17978241648160805",
+   "usuario": "@faixa_gu244",
+   "comentario": "Profissão",
+   "em": "2026-11-09T15:19",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Boa! Passa lá em vila.ihfc.com.br pra ver os moradores 👀 🎁 Você ganhou um Anel do Rei Aurélio na vila!",
+   "presente": {
+    "item": "Anel do Rei Aurélio",
+    "tipo": "joia",
+    "raridade": "epico",
+    "post": "DffkjVaxel9",
+    "em": "2026-11-09T15:19"
+   },
+   "post": "https://www.instagram.com/reel/DffkjVaxel9/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
