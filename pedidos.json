@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-08T16:27",
+ "atualizadoEm": "2026-11-08T21:07",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1143,6 +1143,35 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-08T16:28",
    "respostaId": "18097403861655079"
+  },
+  {
+   "id": "api:18068044697787026",
+   "usuario": "@jose_zzw07",
+   "comentario": "Sim",
+   "em": "2026-11-08T21:07",
+   "tipo": "pedido_enquete",
+   "voto": "sim",
+   "status": "anotado",
+   "resposta": "🔎 Voto anotado, @jose_zzw07! A vila vai procurar onde a maioria mandar. Parte 2 amanhã às 20h.",
+   "post": "https://www.instagram.com/reel/Dff5MLdufr9/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:1719375052940535",
+   "usuario": "@cf.ayshinha_",
+   "comentario": "Floresta",
+   "em": "2026-11-08T21:07",
+   "tipo": "comando",
+   "status": "anotado",
+   "resposta": "Seu personagem já está arrumando as coisas para ir a Floresta Velha 🏕️",
+   "comando": "ir",
+   "lugar": "floresta",
+   "lugarNome": "Floresta Velha",
+   "pista": false,
+   "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
