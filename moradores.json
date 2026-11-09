@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-08T21:08",
+ "atualizadoEm": "2026-11-08T21:22",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -969,6 +969,15 @@
    "sexo": "m",
    "profissao": "pastor",
    "joinedAt": 1794182926682,
+   "faltas": 0
+  },
+  {
+   "id": "ig-arthur594938",
+   "nome": "@arthur594938",
+   "nomeCompleto": "",
+   "sexo": "m",
+   "profissao": "cavaleiro",
+   "joinedAt": 1794183759369,
    "faltas": 0
   }
  ]

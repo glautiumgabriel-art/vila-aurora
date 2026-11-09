@@ -1193,7 +1193,9 @@
    },
    "post": "https://www.instagram.com/reel/Dff5MLdufr9/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-08T21:22",
+   "respostaId": "17954054997337922"
   }
  ]
 }
