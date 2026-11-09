@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-09T15:20",
+ "atualizadoEm": "2026-11-09T19:39",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1281,6 +1281,25 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-09T15:19",
    "respostaId": "18127747079315501"
+  },
+  {
+   "id": "api:18034253483910245",
+   "usuario": "@oi56382",
+   "comentario": "cadê eu pô kkkkkkate agora nd KKKKKKKK",
+   "em": "2026-11-09T19:39",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Valeu demais ✨ 🎁 Você ganhou um Mapa Rasgado na vila!",
+   "presente": {
+    "item": "Mapa Rasgado",
+    "tipo": "pista",
+    "raridade": "comum",
+    "post": "Dfa9WTVMiVK",
+    "em": "2026-11-09T19:39"
+   },
+   "post": "https://www.instagram.com/reel/Dfa9WTVMiVK/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }

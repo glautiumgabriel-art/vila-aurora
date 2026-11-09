@@ -674,7 +674,16 @@
    "sexo": "?",
    "profissao": "cozinheiro",
    "joinedAt": 1794054184742,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Mapa Rasgado",
+     "tipo": "pista",
+     "raridade": "comum",
+     "post": "Dfa9WTVMiVK",
+     "em": "2026-11-09T19:39"
+    }
+   ]
   },
   {
    "id": "ig-adriana.lopesl",
