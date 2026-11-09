@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-08T21:18",
+ "atualizadoEm": "2026-11-08T21:22",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1172,6 +1172,26 @@
    "lugarNome": "Floresta Velha",
    "pista": false,
    "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:18036228662890143",
+   "usuario": "@_rai.la.ne_",
+   "comentario": "sim",
+   "em": "2026-11-08T21:22",
+   "tipo": "pedido_enquete",
+   "voto": "sim",
+   "status": "anotado",
+   "resposta": "🔎 Voto anotado, @_rai.la.ne_! A vila vai procurar onde a maioria mandar. Parte 2 amanhã às 20h. +5 XP · Voz da Vila",
+   "presente": {
+    "item": "+1 Respeito",
+    "tipo": "respeito",
+    "raridade": "comum",
+    "post": "Dff5MLdufr9",
+    "em": "2026-11-08T21:22"
+   },
+   "post": "https://www.instagram.com/reel/Dff5MLdufr9/",
    "via": "api",
    "statusResposta": "na_fila_api"
   }
