@@ -14,6 +14,29 @@
    "porUsuario": {},
    "abriu": "2026-11-07T20:04",
    "fechou": "2026-11-08T10:19"
+  },
+  {
+   "post": "Dff5MLdufr9",
+   "pergunta": "O Rufo conta ao Rei?",
+   "votos": {
+    "SIM": 3,
+    "NAO": 1
+   },
+   "vencedora": "SIM",
+   "votantes": [
+    "@jose_zzw07",
+    "@_rai.la.ne_",
+    "@hugo.znv",
+    "@_renato_ny"
+   ],
+   "porUsuario": {
+    "@jose_zzw07": "SIM",
+    "@_rai.la.ne_": "SIM",
+    "@hugo.znv": "NAO",
+    "@_renato_ny": "SIM"
+   },
+   "abriu": "2026-11-08T20:04",
+   "fechou": "2026-11-09T11:19"
   }
  ]
 }
