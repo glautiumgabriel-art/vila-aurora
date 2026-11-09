@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-08T21:22",
+ "atualizadoEm": "2026-11-08T22:22",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1196,6 +1196,19 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-08T21:22",
    "respostaId": "17954054997337922"
+  },
+  {
+   "id": "api:18249767314313865",
+   "usuario": "@hugo.znv",
+   "comentario": "Não",
+   "em": "2026-11-08T22:22",
+   "tipo": "pedido_enquete",
+   "voto": "nao",
+   "status": "anotado",
+   "resposta": "🔎 Voto anotado, @hugo.znv! A vila vai procurar onde a maioria mandar. Parte 2 amanhã às 20h.",
+   "post": "https://www.instagram.com/reel/Dff5MLdufr9/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
