@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-10T10:00",
+ "geradoEm": "2026-11-10T10:59",
  "relogioVila": {
   "dia": 8,
-  "hora": 9
+  "hora": 10
  },
  "moradores": 53,
  "novosDoDia": [
@@ -14,31 +14,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 29,
-   "xp": 41362,
+   "xp": 41612,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 29,
-   "xp": 41163,
+   "xp": 41413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 29,
-   "xp": 40577,
+   "xp": 40827,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 29,
-   "xp": 40406,
+   "xp": 40657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 29,
-   "xp": 40398,
+   "xp": 40648,
    "titulo": "Lenda"
   }
  ],
@@ -541,11 +541,11 @@
   "@kalebdecote": {
    "nome": "@kalebdecote",
    "profissao": "bardo",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 51,
-   "def": 25,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 53,
+   "def": 26,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -589,11 +589,11 @@
   "@salomaojr31": {
    "nome": "@salomaojr31",
    "profissao": "soldado",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 52,
-   "def": 29,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 54,
+   "def": 30,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -621,11 +621,11 @@
   "@diegokallel": {
    "nome": "@diegokallel",
    "profissao": "soldado",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 50,
-   "def": 28,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 52,
+   "def": 29,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -669,11 +669,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 21,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 22,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -685,11 +685,11 @@
   "@samuul_gx_ofc": {
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 45,
-   "def": 20,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 47,
+   "def": 21,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -765,11 +765,11 @@
   "@adriana.lopesl": {
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 23,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 24,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -877,11 +877,11 @@
   "@andrew_deko0.2": {
    "nome": "@andrew_deko0.2",
    "profissao": "cavaleiro",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 44,
-   "def": 24,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 46,
+   "def": 25,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1005,11 +1005,11 @@
   "@leolindo6.7": {
    "nome": "@leolindo6.7",
    "profissao": "explorador",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 35,
-   "def": 17,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 37,
+   "def": 18,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1052,6 +1052,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794315677533,
+   "quem": "@nankhumwaemmanuel",
+   "tipo": "vitoria",
+   "texto": "@nankhumwaemmanuel acertaram de longe um urso da floresta e ganharam uma garra de urso."
+  },
   {
    "quando": 1794314177444,
    "quem": "@leolindo6.7",
@@ -1225,12 +1231,6 @@
    "quem": "@faixa_gu244",
    "tipo": "vitoria",
    "texto": "@faixa_gu244 venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794280286461,
-   "quem": "@its_janaina13",
-   "tipo": "vitoria",
-   "texto": "@its_janaina13 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
   }
  ]
 }
