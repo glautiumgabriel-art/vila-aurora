@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-10T12:59",
+ "geradoEm": "2026-11-10T13:59",
  "relogioVila": {
   "dia": 8,
-  "hora": 12
+  "hora": 13
  },
  "moradores": 53,
  "novosDoDia": [
@@ -14,31 +14,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 29,
-   "xp": 42112,
+   "xp": 42363,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 29,
-   "xp": 41913,
+   "xp": 42163,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 29,
-   "xp": 41327,
+   "xp": 41577,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 29,
-   "xp": 41157,
+   "xp": 41407,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 29,
-   "xp": 41148,
+   "xp": 41398,
    "titulo": "Lenda"
   }
  ],
@@ -397,11 +397,11 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "cavaleiro",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 62,
-   "def": 34,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 64,
+   "def": 35,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -749,11 +749,11 @@
   "@oi56382": {
    "nome": "@oi56382",
    "profissao": "cabeleireiro",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 46,
-   "def": 21,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 48,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -781,11 +781,11 @@
   "@_rai.la.ne_": {
    "nome": "@_rai.la.ne_",
    "profissao": "fazendeiro",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 21,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 22,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -797,11 +797,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 46,
-   "def": 21,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 48,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -813,11 +813,11 @@
   "@kauedomingues894": {
    "nome": "@kauedomingues894",
    "profissao": "bardo",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 21,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 22,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -861,11 +861,11 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 45,
-   "def": 22,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 47,
+   "def": 23,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -957,11 +957,11 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 39,
-   "def": 17,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 41,
+   "def": 18,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1052,6 +1052,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794326366461,
+   "quem": "@its_janaina13",
+   "tipo": "vitoria",
+   "texto": "@its_janaina13 e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
   {
    "quando": 1794322877533,
    "quem": "@nankhumwaemmanuel",
@@ -1225,12 +1231,6 @@
    "quem": "@its_janaina13",
    "tipo": "vitoria",
    "texto": "@its_janaina13 e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794286877533,
-   "quem": "@nankhumwaemmanuel",
-   "tipo": "briga_derrota",
-   "texto": "@nankhumwaemmanuel foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }
