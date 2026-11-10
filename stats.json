@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-10T09:00",
+ "geradoEm": "2026-11-10T10:00",
  "relogioVila": {
   "dia": 8,
-  "hora": 8
+  "hora": 9
  },
  "moradores": 53,
  "novosDoDia": [
@@ -14,31 +14,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 29,
-   "xp": 41112,
+   "xp": 41362,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 29,
-   "xp": 40913,
+   "xp": 41163,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 29,
-   "xp": 40327,
+   "xp": 40577,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 29,
-   "xp": 40156,
+   "xp": 40406,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 29,
-   "xp": 40148,
+   "xp": 40398,
    "titulo": "Lenda"
   }
  ],
@@ -573,11 +573,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 50,
-   "def": 25,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 52,
+   "def": 26,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -637,11 +637,11 @@
   "@kaio_a0": {
    "nome": "@kaio_a0",
    "profissao": "pescador",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 48,
-   "def": 22,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 50,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -925,11 +925,11 @@
   "@eopedrinhonepai": {
    "nome": "@eopedrinhonepai",
    "profissao": "alquimista",
-   "nivel": 17,
-   "hp": 210,
-   "hpMax": 210,
-   "atq": 43,
-   "def": 15,
+   "nivel": 18,
+   "hp": 220,
+   "hpMax": 220,
+   "atq": 45,
+   "def": 16,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1037,11 +1037,11 @@
   "@its_janaina13": {
    "nome": "@its_janaina13",
    "profissao": "soldado",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 24,
-   "def": 13,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 26,
+   "def": 14,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1052,6 +1052,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794314177444,
+   "quem": "@leolindo6.7",
+   "tipo": "vitoria",
+   "texto": "@leolindo6.7 e os amigos venceram um cavalo selvagem."
+  },
   {
    "quando": 1794309857444,
    "quem": "@leolindo6.7",
@@ -1225,12 +1231,6 @@
    "quem": "@its_janaina13",
    "tipo": "vitoria",
    "texto": "@its_janaina13 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794279677533,
-   "quem": "@nankhumwaemmanuel",
-   "tipo": "vitoria",
-   "texto": "@nankhumwaemmanuel e os amigos acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
   }
  ]
 }
