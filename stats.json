@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-09T20:00",
+ "geradoEm": "2026-11-09T21:00",
  "relogioVila": {
   "dia": 7,
-  "hora": 19
+  "hora": 20
  },
  "moradores": 53,
  "novosDoDia": [
@@ -16,31 +16,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 28,
-   "xp": 37863,
+   "xp": 38113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 28,
-   "xp": 37663,
+   "xp": 37913,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 28,
-   "xp": 36907,
+   "xp": 37157,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 28,
-   "xp": 36573,
+   "xp": 36823,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 28,
-   "xp": 36553,
+   "xp": 36803,
    "titulo": "Lenda"
   }
  ],
@@ -164,7 +164,8 @@
   "@eopedrinhonepai",
   "@kaiobentopereira",
   "@faixa_gu244",
-  "@arthur594938"
+  "@arthur594938",
+  "@leolindo6.7"
  ],
  "porProfissao": {
   "bardo": 8,
@@ -413,11 +414,11 @@
   "@joelma_alvarez": {
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 58,
-   "def": 32,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 60,
+   "def": 33,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -477,11 +478,11 @@
   "@saviob._santos": {
    "nome": "@saviob._santos",
    "profissao": "ferreiro",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 59,
-   "def": 29,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 61,
+   "def": 30,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -525,11 +526,11 @@
   "@gods.samuka": {
    "nome": "@gods.samuka",
    "profissao": "padeiro",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 49,
-   "def": 24,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 51,
+   "def": 25,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -701,11 +702,11 @@
   "@samuul_gx_ofc": {
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 41,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 43,
+   "def": 19,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -781,11 +782,11 @@
   "@adriana.lopesl": {
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
-   "nivel": 17,
-   "hp": 210,
-   "hpMax": 210,
-   "atq": 43,
-   "def": 21,
+   "nivel": 18,
+   "hp": 220,
+   "hpMax": 220,
+   "atq": 45,
+   "def": 22,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -973,11 +974,11 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 33,
-   "def": 14,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 35,
+   "def": 15,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1037,11 +1038,11 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 4,
-   "hp": 80,
-   "hpMax": 80,
-   "atq": 16,
-   "def": 3,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 18,
+   "def": 4,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1052,6 +1053,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794268097444,
+   "quem": "@leolindo6.7",
+   "tipo": "doma",
+   "texto": "@leolindo6.7 cercaram um cavalo selvagem e domaram! Agora @leolindo6.7 anda montado."
+  },
+  {
+   "quando": 1794266086682,
+   "quem": "@jose_zzw07",
+   "tipo": "queda",
+   "texto": "@jose_zzw07 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794264039369,
    "quem": "@arthur594938",
@@ -1219,18 +1232,6 @@
    "quem": "@arthur594938",
    "tipo": "vitoria",
    "texto": "@arthur594938 e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794230086682,
-   "quem": "@jose_zzw07",
-   "tipo": "briga_derrota",
-   "texto": "@jose_zzw07 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794227777444,
-   "quem": "@leolindo6.7",
-   "tipo": "vitoria",
-   "texto": "@leolindo6.7 e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }
