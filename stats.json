@@ -1,44 +1,45 @@
 {
- "geradoEm": "2026-11-10T15:01",
+ "geradoEm": "2026-11-10T15:55",
  "relogioVila": {
   "dia": 8,
-  "hora": 14
+  "hora": 15
  },
- "moradores": 53,
+ "moradores": 54,
  "novosDoDia": [
   "@nankhumwaemmanuel",
-  "@its_janaina13"
+  "@its_janaina13",
+  "@novelinha.biblia"
  ],
  "nivelMaisAlto": 29,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 29,
-   "xp": 42614,
+   "xp": 42841,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 29,
-   "xp": 42414,
+   "xp": 42641,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 29,
-   "xp": 41829,
+   "xp": 42056,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 29,
-   "xp": 41658,
+   "xp": 41885,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 29,
-   "xp": 41649,
+   "xp": 41876,
    "titulo": "Lenda"
   }
  ],
@@ -168,7 +169,7 @@
  ],
  "porProfissao": {
   "bardo": 8,
-  "cavaleiro": 7,
+  "cavaleiro": 8,
   "soldado": 7,
   "explorador": 5,
   "fazendeiro": 5,
@@ -186,12 +187,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@its_janaina13",
+  "nome": "@novelinha.biblia",
   "nomeCompleto": "",
-  "profissao": "soldado",
+  "profissao": "cavaleiro",
   "sexo": "?",
-  "chegouEm": "2026-11-09T21:53",
-  "chegouEmMs": 1794272006461
+  "chegouEm": "2026-11-10T15:55",
+  "chegouEmMs": 1794336903063
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -445,11 +446,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 62,
-   "def": 31,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 64,
+   "def": 32,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -493,11 +494,11 @@
   "@eu.brandao__": {
    "nome": "@eu.brandao__",
    "profissao": "cacador",
-   "nivel": 23,
-   "hp": 270,
-   "hpMax": 270,
-   "atq": 55,
-   "def": 27,
+   "nivel": 24,
+   "hp": 280,
+   "hpMax": 280,
+   "atq": 57,
+   "def": 28,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1005,11 +1006,11 @@
   "@leolindo6.7": {
    "nome": "@leolindo6.7",
    "profissao": "explorador",
-   "nivel": 14,
-   "hp": 180,
-   "hpMax": 180,
-   "atq": 37,
-   "def": 18,
+   "nivel": 15,
+   "hp": 190,
+   "hpMax": 190,
+   "atq": 39,
+   "def": 19,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1022,7 +1023,7 @@
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
    "nivel": 11,
-   "hp": 96,
+   "hp": 150,
    "hpMax": 150,
    "atq": 30,
    "def": 10,
@@ -1049,9 +1050,16 @@
    "longe": false,
    "guerreiro": true,
    "mana": null
-  }
+  },
+  "@novelinha.biblia": null
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794334397533,
+   "quem": "@nankhumwaemmanuel",
+   "tipo": "vitoria",
+   "texto": "@nankhumwaemmanuel acertaram de longe um cavalo selvagem."
+  },
   {
    "quando": 1794332957533,
    "quem": "@nankhumwaemmanuel",
@@ -1225,12 +1233,6 @@
    "quem": "@jose_zzw07",
    "tipo": "vitoria",
    "texto": "@jose_zzw07 venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794289959369,
-   "quem": "@arthur594938",
-   "tipo": "briga_derrota",
-   "texto": "@arthur594938 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }

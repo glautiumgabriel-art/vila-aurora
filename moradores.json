@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-10T14:59",
+ "atualizadoEm": "2026-11-10T15:54",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -1011,6 +1011,15 @@
    "sexo": "?",
    "profissao": "soldado",
    "joinedAt": 1794272006461,
+   "faltas": 0
+  },
+  {
+   "id": "ig-novelinha.biblia",
+   "nome": "@novelinha.biblia",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "cavaleiro",
+   "joinedAt": 1794336903063,
    "faltas": 0
   }
  ]
