@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-10T13:59",
+ "geradoEm": "2026-11-10T15:01",
  "relogioVila": {
   "dia": 8,
-  "hora": 13
+  "hora": 14
  },
  "moradores": 53,
  "novosDoDia": [
@@ -14,31 +14,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 29,
-   "xp": 42363,
+   "xp": 42614,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 29,
-   "xp": 42163,
+   "xp": 42414,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 29,
-   "xp": 41577,
+   "xp": 41829,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 29,
-   "xp": 41407,
+   "xp": 41658,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 29,
-   "xp": 41398,
+   "xp": 41649,
    "titulo": "Lenda"
   }
  ],
@@ -381,11 +381,11 @@
   "@gabrielcamuzzatonegretti": {
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "cavaleiro",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 62,
-   "def": 34,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 64,
+   "def": 35,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -733,11 +733,11 @@
   "@naoya______zeninn": {
    "nome": "@naoya______zeninn",
    "profissao": "pescador",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 21,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 22,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1022,7 +1022,7 @@
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
    "nivel": 11,
-   "hp": 150,
+   "hp": 96,
    "hpMax": 150,
    "atq": 30,
    "def": 10,
@@ -1037,11 +1037,11 @@
   "@its_janaina13": {
    "nome": "@its_janaina13",
    "profissao": "soldado",
-   "nivel": 9,
-   "hp": 130,
-   "hpMax": 130,
-   "atq": 26,
-   "def": 14,
+   "nivel": 10,
+   "hp": 140,
+   "hpMax": 140,
+   "atq": 28,
+   "def": 15,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1052,6 +1052,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794332957533,
+   "quem": "@nankhumwaemmanuel",
+   "tipo": "queda",
+   "texto": "@nankhumwaemmanuel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794332126461,
+   "quem": "@its_janaina13",
+   "tipo": "briga_vitoria",
+   "texto": "@its_janaina13 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794330686461,
+   "quem": "@its_janaina13",
+   "tipo": "queda",
+   "texto": "@its_janaina13 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794326366461,
    "quem": "@its_janaina13",
@@ -1213,24 +1231,6 @@
    "quem": "@arthur594938",
    "tipo": "briga_derrota",
    "texto": "@arthur594938 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794289697444,
-   "quem": "@leolindo6.7",
-   "tipo": "queda",
-   "texto": "@leolindo6.7 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794288926461,
-   "quem": "@its_janaina13",
-   "tipo": "queda",
-   "texto": "@its_janaina13 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794287486461,
-   "quem": "@its_janaina13",
-   "tipo": "vitoria",
-   "texto": "@its_janaina13 e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
   }
  ]
 }
