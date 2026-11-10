@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-09T21:53",
+ "geradoEm": "2026-11-09T22:00",
  "relogioVila": {
   "dia": 7,
   "hora": 21
@@ -15,67 +15,67 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 28,
-   "xp": 38335,
+   "xp": 38363,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 28,
-   "xp": 38135,
+   "xp": 38163,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 28,
-   "xp": 37550,
+   "xp": 37578,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 28,
-   "xp": 37379,
+   "xp": 37407,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 28,
-   "xp": 37371,
+   "xp": 37398,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@__niedison",
-    "@andrew_deko0.2"
+    "@adriana.g.santana",
+    "@eopedrinhonepai"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@__niedison",
-    "@laryssapsouza"
+    "@adriana.lopesl",
+    "@kauedomingues894"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@gods.samuka",
-    "@samuul_gx_ofc"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@iamvictoriamenezes",
-    "@kaio_a0"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@oi56382",
+    "@danielaugustobiesso",
     "@samuel_teles_01"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@dassow_djony",
+    "@iamvictoriamenezes"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@dr.glautiumgabriel",
+    "@eopedrinhonepai"
    ],
    "forca": 2
   }
@@ -1037,22 +1037,43 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 18,
-   "def": 4,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 20,
+   "def": 6,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": true,
    "guerreiro": false,
    "mana": null
   },
-  "@its_janaina13": null
+  "@its_janaina13": {
+   "nome": "@its_janaina13",
+   "profissao": "soldado",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 8,
+   "def": 1,
+   "bArma": 0,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": true,
+   "mana": null
+  }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794271846682,
+   "quem": "@jose_zzw07",
+   "tipo": "vitoria",
+   "texto": "@jose_zzw07 e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
   {
    "quando": 1794271037533,
    "quem": "@nankhumwaemmanuel",
@@ -1226,12 +1247,6 @@
    "quem": "@jose_zzw07",
    "tipo": "briga_derrota",
    "texto": "@jose_zzw07 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794234653836,
-   "quem": "@faixa_gu244",
-   "tipo": "doma",
-   "texto": "@faixa_gu244 cercaram um cavalo selvagem e domaram! Agora @faixa_gu244 anda montado."
   }
  ]
 }
