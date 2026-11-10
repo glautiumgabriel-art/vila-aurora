@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-09T20:59",
+ "atualizadoEm": "2026-11-09T21:53",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -1023,6 +1023,15 @@
    "sexo": "?",
    "profissao": "arqueiro",
    "joinedAt": 1794254117533,
+   "faltas": 0
+  },
+  {
+   "id": "ig-its_janaina13",
+   "nome": "@its_janaina13",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "soldado",
+   "joinedAt": 1794272006461,
    "faltas": 0
   }
  ]
