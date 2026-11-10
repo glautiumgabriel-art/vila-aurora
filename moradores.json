@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-09T23:59",
+ "atualizadoEm": "2026-11-10T01:00",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -518,27 +518,6 @@
      "para": "soldado",
      "em": "2026-11-06T22:18"
     }
-   ]
-  },
-  {
-   "id": "ig-dragon_soul666",
-   "nome": "@dragon_soul666",
-   "nomeCompleto": "",
-   "sexo": "?",
-   "profissao": "arqueiro",
-   "joinedAt": 1793995391146,
-   "faltas": 2,
-   "presentes": [
-    {
-     "item": "Capa de Viajante",
-     "tipo": "roupa",
-     "raridade": "raro",
-     "post": "DfaUH3uv1Ny",
-     "em": "2026-11-06T17:18"
-    }
-   ],
-   "titulos": [
-    "Voz da Vila"
    ]
   },
   {
