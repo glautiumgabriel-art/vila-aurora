@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-09T23:00",
+ "geradoEm": "2026-11-09T23:38",
  "relogioVila": {
   "dia": 7,
-  "hora": 22
+  "hora": 23
  },
  "moradores": 54,
  "novosDoDia": [
@@ -15,31 +15,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 28,
-   "xp": 38612,
+   "xp": 38772,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 28,
-   "xp": 38413,
+   "xp": 38572,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 28,
-   "xp": 37827,
+   "xp": 37987,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 28,
-   "xp": 37657,
+   "xp": 37816,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 28,
-   "xp": 37648,
+   "xp": 37807,
    "titulo": "Lenda"
   }
  ],
@@ -606,11 +606,11 @@
   "@samuel_teles_01": {
    "nome": "@samuel_teles_01",
    "profissao": "ferreiro",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 49,
-   "def": 24,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 51,
+   "def": 25,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -814,11 +814,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 17,
-   "hp": 210,
-   "hpMax": 210,
-   "atq": 42,
-   "def": 19,
+   "nivel": 18,
+   "hp": 220,
+   "hpMax": 220,
+   "atq": 44,
+   "def": 20,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -975,7 +975,7 @@
    "nome": "@faixa_gu244",
    "profissao": "bardo",
    "nivel": 13,
-   "hp": 131,
+   "hp": 170,
    "hpMax": 170,
    "atq": 35,
    "def": 15,
@@ -991,7 +991,7 @@
    "nome": "@jose_zzw07",
    "profissao": "pastor",
    "nivel": 11,
-   "hp": 131,
+   "hp": 150,
    "hpMax": 150,
    "atq": 30,
    "def": 13,
@@ -1038,11 +1038,11 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 20,
-   "def": 6,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 7,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1054,11 +1054,11 @@
   "@its_janaina13": {
    "nome": "@its_janaina13",
    "profissao": "soldado",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 19,
-   "def": 6,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 21,
+   "def": 7,
    "bArma": 7,
    "bSec": 0,
    "bEsc": 2,
@@ -1069,6 +1069,30 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794277853836,
+   "quem": "@faixa_gu244",
+   "tipo": "vitoria",
+   "texto": "@faixa_gu244 venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794277606682,
+   "quem": "@jose_zzw07",
+   "tipo": "briga_vitoria",
+   "texto": "@jose_zzw07 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794276797533,
+   "quem": "@nankhumwaemmanuel",
+   "tipo": "vitoria",
+   "texto": "@nankhumwaemmanuel e os amigos acertaram de longe um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1794275966461,
+   "quem": "@its_janaina13",
+   "tipo": "vitoria",
+   "texto": "@its_janaina13 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
   {
    "quando": 1794274973836,
    "quem": "@faixa_gu244",
@@ -1224,30 +1248,6 @@
    "quem": "@arthur594938",
    "tipo": "vitoria",
    "texto": "@arthur594938 venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1794250246682,
-   "quem": "@jose_zzw07",
-   "tipo": "queda",
-   "texto": "@jose_zzw07 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794244486682,
-   "quem": "@jose_zzw07",
-   "tipo": "vitoria",
-   "texto": "@jose_zzw07 e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794243617444,
-   "quem": "@leolindo6.7",
-   "tipo": "vitoria",
-   "texto": "@leolindo6.7 e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794243293836,
-   "quem": "@faixa_gu244",
-   "tipo": "briga_derrota",
-   "texto": "@faixa_gu244 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }

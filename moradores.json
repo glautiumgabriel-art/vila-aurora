@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-09T22:59",
+ "atualizadoEm": "2026-11-09T23:37",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -527,7 +527,7 @@
    "sexo": "?",
    "profissao": "arqueiro",
    "joinedAt": 1793995391146,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Capa de Viajante",
