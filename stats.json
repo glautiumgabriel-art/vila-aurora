@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-10T12:00",
+ "geradoEm": "2026-11-10T12:59",
  "relogioVila": {
   "dia": 8,
-  "hora": 11
+  "hora": 12
  },
  "moradores": 53,
  "novosDoDia": [
@@ -14,31 +14,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 29,
-   "xp": 41862,
+   "xp": 42112,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 29,
-   "xp": 41663,
+   "xp": 41913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 29,
-   "xp": 41077,
+   "xp": 41327,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 29,
-   "xp": 40907,
+   "xp": 41157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 29,
-   "xp": 40898,
+   "xp": 41148,
    "titulo": "Lenda"
   }
  ],
@@ -365,11 +365,11 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 62,
-   "def": 34,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 64,
+   "def": 35,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -429,11 +429,11 @@
   "@adailtton_santos": {
    "nome": "@adailtton_santos",
    "profissao": "bardo",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 62,
-   "def": 31,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 64,
+   "def": 32,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -525,11 +525,11 @@
   "@gods.samuka": {
    "nome": "@gods.samuka",
    "profissao": "padeiro",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 53,
-   "def": 26,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 55,
+   "def": 27,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -717,11 +717,11 @@
   "@josue_rms77": {
    "nome": "@josue_rms77",
    "profissao": "cacador",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 23,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 24,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -845,11 +845,11 @@
   "@luizin_hz0": {
    "nome": "@luizin_hz0",
    "profissao": "soldado",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 44,
-   "def": 24,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 46,
+   "def": 25,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -893,11 +893,11 @@
   "@rafael.strauch": {
    "nome": "@rafael.strauch",
    "profissao": "fazendeiro",
-   "nivel": 17,
-   "hp": 210,
-   "hpMax": 210,
-   "atq": 43,
-   "def": 21,
+   "nivel": 18,
+   "hp": 220,
+   "hpMax": 220,
+   "atq": 45,
+   "def": 22,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -909,11 +909,11 @@
   "@__niedison": {
    "nome": "@__niedison",
    "profissao": "bardo",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 45,
-   "def": 22,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 47,
+   "def": 23,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -941,11 +941,11 @@
   "@kaiobentopereira": {
    "nome": "@kaiobentopereira",
    "profissao": "pescador",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 45,
-   "def": 20,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 47,
+   "def": 21,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -973,11 +973,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 34,
-   "def": 15,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 36,
+   "def": 16,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -989,11 +989,11 @@
   "@arthur594938": {
    "nome": "@arthur594938",
    "profissao": "cavaleiro",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 34,
-   "def": 19,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 36,
+   "def": 20,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1021,10 +1021,10 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 10,
-   "hp": 140,
-   "hpMax": 140,
-   "atq": 28,
+   "nivel": 11,
+   "hp": 150,
+   "hpMax": 150,
+   "atq": 30,
    "def": 10,
    "bArma": 2,
    "bSec": 0,
@@ -1052,6 +1052,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794322877533,
+   "quem": "@nankhumwaemmanuel",
+   "tipo": "vitoria",
+   "texto": "@nankhumwaemmanuel e os amigos acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794322817444,
+   "quem": "@leolindo6.7",
+   "tipo": "vitoria",
+   "texto": "@leolindo6.7 venceram um cavalo selvagem."
+  },
   {
    "quando": 1794320606461,
    "quem": "@its_janaina13",
@@ -1219,18 +1231,6 @@
    "quem": "@nankhumwaemmanuel",
    "tipo": "briga_derrota",
    "texto": "@nankhumwaemmanuel foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794286246682,
-   "quem": "@jose_zzw07",
-   "tipo": "briga_vitoria",
-   "texto": "@jose_zzw07 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794285639369,
-   "quem": "@arthur594938",
-   "tipo": "vitoria",
-   "texto": "@arthur594938 venceram o Lobo Cinzento e ganharam um dente de lobo."
   }
  ]
 }
