@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T02:00",
+ "geradoEm": "2026-11-11T02:59",
  "relogioVila": {
   "dia": 9,
-  "hora": 1
+  "hora": 2
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 30,
-   "xp": 45363,
+   "xp": 45613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 30,
-   "xp": 45163,
+   "xp": 45413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 30,
-   "xp": 44577,
+   "xp": 44827,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 30,
-   "xp": 44407,
+   "xp": 44657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 30,
-   "xp": 44398,
+   "xp": 44648,
    "titulo": "Lenda"
   }
  ],
@@ -163,7 +163,9 @@
   "@jose_zzw07",
   "@arthur594938",
   "@leolindo6.7",
-  "@nankhumwaemmanuel"
+  "@nankhumwaemmanuel",
+  "@its_janaina13",
+  "@novelinha.biblia"
  ],
  "porProfissao": {
   "bardo": 8,
@@ -444,11 +446,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 64,
-   "def": 32,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 66,
+   "def": 33,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -508,11 +510,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 23,
-   "hp": 270,
-   "hpMax": 270,
-   "atq": 55,
-   "def": 25,
+   "nivel": 24,
+   "hp": 280,
+   "hpMax": 280,
+   "atq": 57,
+   "def": 26,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -668,11 +670,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 51,
-   "def": 23,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 53,
+   "def": 24,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -764,11 +766,11 @@
   "@adriana.lopesl": {
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 51,
-   "def": 25,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 53,
+   "def": 26,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -828,11 +830,11 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 48,
-   "def": 26,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 50,
+   "def": 28,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -876,11 +878,11 @@
   "@andrew_deko0.2": {
    "nome": "@andrew_deko0.2",
    "profissao": "cavaleiro",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 48,
-   "def": 26,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 50,
+   "def": 28,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -892,11 +894,11 @@
   "@rafael.strauch": {
    "nome": "@rafael.strauch",
    "profissao": "fazendeiro",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 23,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 24,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -956,11 +958,11 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 17,
-   "hp": 210,
-   "hpMax": 210,
-   "atq": 43,
-   "def": 19,
+   "nivel": 18,
+   "hp": 220,
+   "hpMax": 220,
+   "atq": 45,
+   "def": 20,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1053,7 +1055,7 @@
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
    "nivel": 8,
-   "hp": 74,
+   "hp": 120,
    "hpMax": 120,
    "atq": 24,
    "def": 19,
@@ -1067,6 +1069,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794375423063,
+   "quem": "@novelinha.biblia",
+   "tipo": "doma",
+   "texto": "@novelinha.biblia cercaram um cavalo selvagem e domaram! Agora @novelinha.biblia anda montado."
+  },
+  {
+   "quando": 1794373983063,
+   "quem": "@novelinha.biblia",
+   "tipo": "vitoria",
+   "texto": "@novelinha.biblia venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794373886461,
+   "quem": "@its_janaina13",
+   "tipo": "doma",
+   "texto": "@its_janaina13 e os amigos cercaram um cavalo selvagem e domaram! Agora @its_janaina13 anda montado."
+  },
   {
    "quando": 1794372543063,
    "quem": "@novelinha.biblia",
@@ -1228,24 +1248,6 @@
    "quem": "@leolindo6.7",
    "tipo": "vitoria",
    "texto": "@leolindo6.7 venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1794320606461,
-   "quem": "@its_janaina13",
-   "tipo": "queda",
-   "texto": "@its_janaina13 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794319997533,
-   "quem": "@nankhumwaemmanuel",
-   "tipo": "briga_vitoria",
-   "texto": "@nankhumwaemmanuel encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794319166461,
-   "quem": "@its_janaina13",
-   "tipo": "briga_derrota",
-   "texto": "@its_janaina13 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }
