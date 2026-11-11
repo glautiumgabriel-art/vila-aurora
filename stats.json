@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T10:59",
+ "geradoEm": "2026-11-11T12:00",
  "relogioVila": {
   "dia": 9,
-  "hora": 10
+  "hora": 11
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 31,
-   "xp": 47612,
+   "xp": 47863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 31,
-   "xp": 47413,
+   "xp": 47663,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 31,
-   "xp": 46827,
+   "xp": 47078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 31,
-   "xp": 46656,
+   "xp": 46907,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 31,
-   "xp": 46648,
+   "xp": 46898,
    "titulo": "Lenda"
   }
  ],
@@ -366,11 +366,11 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 36,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 37,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -398,11 +398,11 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "cavaleiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 36,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 37,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -510,11 +510,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 57,
-   "def": 26,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 59,
+   "def": 27,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -766,11 +766,11 @@
   "@adriana.lopesl": {
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 53,
-   "def": 26,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 55,
+   "def": 27,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -846,11 +846,11 @@
   "@luizin_hz0": {
    "nome": "@luizin_hz0",
    "profissao": "soldado",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 50,
-   "def": 28,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 52,
+   "def": 29,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -910,11 +910,11 @@
   "@__niedison": {
    "nome": "@__niedison",
    "profissao": "bardo",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 51,
-   "def": 25,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 53,
+   "def": 26,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -942,11 +942,11 @@
   "@kaiobentopereira": {
    "nome": "@kaiobentopereira",
    "profissao": "pescador",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 51,
-   "def": 23,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 53,
+   "def": 24,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1022,11 +1022,11 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 14,
-   "hp": 180,
-   "hpMax": 180,
-   "atq": 36,
-   "def": 13,
+   "nivel": 15,
+   "hp": 190,
+   "hpMax": 190,
+   "atq": 38,
+   "def": 14,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1055,7 +1055,7 @@
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
    "nivel": 10,
-   "hp": 129,
+   "hp": 140,
    "hpMax": 140,
    "atq": 28,
    "def": 21,
@@ -1069,6 +1069,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794408543063,
+   "quem": "@novelinha.biblia",
+   "tipo": "vitoria",
+   "texto": "@novelinha.biblia venceram um cavalo selvagem."
+  },
+  {
+   "quando": 1794407103063,
+   "quem": "@novelinha.biblia",
+   "tipo": "briga_derrota",
+   "texto": "@novelinha.biblia foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
   {
    "quando": 1794404223063,
    "quem": "@novelinha.biblia",
@@ -1236,18 +1248,6 @@
    "quem": "@its_janaina13",
    "tipo": "vitoria",
    "texto": "@its_janaina13 venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794354557533,
-   "quem": "@nankhumwaemmanuel",
-   "tipo": "queda",
-   "texto": "@nankhumwaemmanuel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794353823063,
-   "quem": "@novelinha.biblia",
-   "tipo": "vitoria",
-   "texto": "@novelinha.biblia venceram uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }
