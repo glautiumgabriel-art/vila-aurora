@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T08:59",
+ "geradoEm": "2026-11-11T10:00",
  "relogioVila": {
   "dia": 9,
-  "hora": 8
+  "hora": 9
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 31,
-   "xp": 47112,
+   "xp": 47363,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 31,
-   "xp": 46913,
+   "xp": 47163,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 31,
-   "xp": 46327,
+   "xp": 46577,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 31,
-   "xp": 46157,
+   "xp": 46407,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 31,
-   "xp": 46148,
+   "xp": 46398,
    "titulo": "Lenda"
   }
  ],
@@ -654,11 +654,11 @@
   "@dassow_djony": {
    "nome": "@dassow_djony",
    "profissao": "soldado",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 52,
-   "def": 29,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 54,
+   "def": 30,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -686,11 +686,11 @@
   "@samuul_gx_ofc": {
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 51,
-   "def": 23,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 53,
+   "def": 24,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -958,11 +958,11 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 45,
-   "def": 20,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 47,
+   "def": 21,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1054,11 +1054,11 @@
   "@novelinha.biblia": {
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
-   "nivel": 9,
-   "hp": 130,
-   "hpMax": 130,
-   "atq": 26,
-   "def": 20,
+   "nivel": 10,
+   "hp": 140,
+   "hpMax": 140,
+   "atq": 28,
+   "def": 21,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 7,
@@ -1069,6 +1069,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794399806461,
+   "quem": "@its_janaina13",
+   "tipo": "vitoria",
+   "texto": "@its_janaina13 e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
+   "quando": 1794398463063,
+   "quem": "@novelinha.biblia",
+   "tipo": "queda",
+   "texto": "@novelinha.biblia escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794394046461,
    "quem": "@its_janaina13",
@@ -1236,18 +1248,6 @@
    "quem": "@novelinha.biblia",
    "tipo": "vitoria",
    "texto": "@novelinha.biblia e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1794343646461,
-   "quem": "@its_janaina13",
-   "tipo": "briga_derrota",
-   "texto": "@its_janaina13 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794340863063,
-   "quem": "@novelinha.biblia",
-   "tipo": "vitoria",
-   "texto": "@novelinha.biblia e os amigos venceram um javali teimoso e ganharam uma presa de javali."
   }
  ]
 }
