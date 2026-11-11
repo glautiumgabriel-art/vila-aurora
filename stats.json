@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T12:00",
+ "geradoEm": "2026-11-11T13:00",
  "relogioVila": {
   "dia": 9,
-  "hora": 11
+  "hora": 12
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 31,
-   "xp": 47863,
+   "xp": 48113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 31,
-   "xp": 47663,
+   "xp": 47913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 31,
-   "xp": 47078,
+   "xp": 47328,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 31,
-   "xp": 46907,
+   "xp": 47157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 31,
-   "xp": 46898,
+   "xp": 47148,
    "titulo": "Lenda"
   }
  ],
@@ -382,11 +382,11 @@
   "@gabrielcamuzzatonegretti": {
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "cavaleiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 36,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 37,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -574,11 +574,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 56,
-   "def": 28,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 58,
+   "def": 29,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -702,11 +702,11 @@
   "@santoslais3277": {
    "nome": "@santoslais3277",
    "profissao": "soldado",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 52,
-   "def": 29,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 54,
+   "def": 30,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -862,11 +862,11 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 51,
-   "def": 25,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 53,
+   "def": 26,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -974,11 +974,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 17,
-   "hp": 210,
-   "hpMax": 210,
-   "atq": 42,
-   "def": 19,
+   "nivel": 18,
+   "hp": 220,
+   "hpMax": 220,
+   "atq": 44,
+   "def": 20,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -990,11 +990,11 @@
   "@arthur594938": {
    "nome": "@arthur594938",
    "profissao": "cavaleiro",
-   "nivel": 17,
-   "hp": 210,
-   "hpMax": 210,
-   "atq": 42,
-   "def": 23,
+   "nivel": 18,
+   "hp": 220,
+   "hpMax": 220,
+   "atq": 44,
+   "def": 24,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
