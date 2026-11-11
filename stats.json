@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T00:00",
+ "geradoEm": "2026-11-11T01:00",
  "relogioVila": {
-  "dia": 8,
-  "hora": 23
+  "dia": 9,
+  "hora": 0
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 30,
-   "xp": 44863,
+   "xp": 45113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 30,
-   "xp": 44663,
+   "xp": 44913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 30,
-   "xp": 44078,
+   "xp": 44328,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 30,
-   "xp": 43907,
+   "xp": 44157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 30,
-   "xp": 43898,
+   "xp": 44148,
    "titulo": "Lenda"
   }
  ],
@@ -396,11 +396,11 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "cavaleiro",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 64,
-   "def": 35,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 66,
+   "def": 36,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -492,11 +492,11 @@
   "@eu.brandao__": {
    "nome": "@eu.brandao__",
    "profissao": "cacador",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 57,
-   "def": 28,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 59,
+   "def": 29,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -652,11 +652,11 @@
   "@dassow_djony": {
    "nome": "@dassow_djony",
    "profissao": "soldado",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 50,
-   "def": 28,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 52,
+   "def": 29,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -924,11 +924,11 @@
   "@eopedrinhonepai": {
    "nome": "@eopedrinhonepai",
    "profissao": "alquimista",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 17,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 18,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -988,11 +988,11 @@
   "@arthur594938": {
    "nome": "@arthur594938",
    "profissao": "cavaleiro",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 38,
-   "def": 21,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 40,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1021,7 +1021,7 @@
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
    "nivel": 12,
-   "hp": 147,
+   "hp": 160,
    "hpMax": 160,
    "atq": 32,
    "def": 11,
@@ -1067,6 +1067,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794368223063,
+   "quem": "@novelinha.biblia",
+   "tipo": "vitoria",
+   "texto": "@novelinha.biblia venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1794368126461,
+   "quem": "@its_janaina13",
+   "tipo": "briga_vitoria",
+   "texto": "@its_janaina13 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1794367517533,
+   "quem": "@nankhumwaemmanuel",
+   "tipo": "queda",
+   "texto": "@nankhumwaemmanuel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794364637533,
    "quem": "@nankhumwaemmanuel",
@@ -1228,24 +1246,6 @@
    "quem": "@leolindo6.7",
    "tipo": "vitoria",
    "texto": "@leolindo6.7 e os amigos venceram um cavalo selvagem."
-  },
-  {
-   "quando": 1794309857444,
-   "quem": "@leolindo6.7",
-   "tipo": "vitoria",
-   "texto": "@leolindo6.7 venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794309286682,
-   "quem": "@jose_zzw07",
-   "tipo": "vitoria",
-   "texto": "@jose_zzw07 e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794308417444,
-   "quem": "@leolindo6.7",
-   "tipo": "briga_vitoria",
-   "texto": "@leolindo6.7 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   }
  ]
 }
