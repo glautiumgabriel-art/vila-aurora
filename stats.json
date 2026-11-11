@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-10T20:00",
+ "geradoEm": "2026-11-10T21:00",
  "relogioVila": {
   "dia": 8,
-  "hora": 19
+  "hora": 20
  },
  "moradores": 54,
  "novosDoDia": [
@@ -14,31 +14,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 30,
-   "xp": 43862,
+   "xp": 44113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 30,
-   "xp": 43663,
+   "xp": 43913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 30,
-   "xp": 43077,
+   "xp": 43327,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 30,
-   "xp": 42906,
+   "xp": 43157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 30,
-   "xp": 42898,
+   "xp": 43148,
    "titulo": "Lenda"
   }
  ],
@@ -717,11 +717,11 @@
   "@josue_rms77": {
    "nome": "@josue_rms77",
    "profissao": "cacador",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 49,
-   "def": 24,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 51,
+   "def": 25,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -749,11 +749,11 @@
   "@oi56382": {
    "nome": "@oi56382",
    "profissao": "cabeleireiro",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 48,
-   "def": 22,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 50,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -861,11 +861,11 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 47,
-   "def": 23,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 49,
+   "def": 24,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -957,11 +957,11 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 41,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 43,
+   "def": 19,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1053,21 +1053,33 @@
   "@novelinha.biblia": {
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 18,
-   "def": 18,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 20,
+   "def": 21,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 11,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": true,
    "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794354557533,
+   "quem": "@nankhumwaemmanuel",
+   "tipo": "queda",
+   "texto": "@nankhumwaemmanuel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794353823063,
+   "quem": "@novelinha.biblia",
+   "tipo": "vitoria",
+   "texto": "@novelinha.biblia venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
   {
    "quando": 1794345183063,
    "quem": "@novelinha.biblia",
@@ -1235,18 +1247,6 @@
    "quem": "@nankhumwaemmanuel",
    "tipo": "vitoria",
    "texto": "@nankhumwaemmanuel acertaram de longe um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794298599369,
-   "quem": "@arthur594938",
-   "tipo": "vitoria",
-   "texto": "@arthur594938 venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794298397533,
-   "quem": "@nankhumwaemmanuel",
-   "tipo": "vitoria",
-   "texto": "@nankhumwaemmanuel acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
   }
  ]
 }
