@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T19:00",
+ "geradoEm": "2026-11-11T20:00",
  "relogioVila": {
   "dia": 9,
-  "hora": 18
+  "hora": 19
  },
  "moradores": 54,
  "novosDoDia": [],
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 32,
-   "xp": 49613,
+   "xp": 49863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 32,
-   "xp": 49413,
+   "xp": 49663,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@laryssapsouza",
+   "nivel": 32,
+   "xp": 49078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 32,
-   "xp": 48657,
+   "xp": 48907,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabrisolaa_",
+   "nome": "@adriana.g.santana",
    "nivel": 32,
-   "xp": 48323,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@glautiumgabriel",
-   "nivel": 32,
-   "xp": 48303,
+   "xp": 48898,
    "titulo": "Lenda"
   }
  ],
@@ -204,11 +204,11 @@
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 35,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 36,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -284,11 +284,11 @@
   "@laryssapsouza": {
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 70,
-   "def": 35,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 72,
+   "def": 36,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -668,11 +668,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 23,
-   "hp": 270,
-   "hpMax": 270,
-   "atq": 55,
-   "def": 25,
+   "nivel": 24,
+   "hp": 280,
+   "hpMax": 280,
+   "atq": 57,
+   "def": 26,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -828,11 +828,11 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 52,
-   "def": 29,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 54,
+   "def": 30,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -972,11 +972,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 44,
-   "def": 20,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 46,
+   "def": 21,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -988,11 +988,11 @@
   "@arthur594938": {
    "nome": "@arthur594938",
    "profissao": "cavaleiro",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 44,
-   "def": 24,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 46,
+   "def": 25,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1052,11 +1052,11 @@
   "@novelinha.biblia": {
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 32,
-   "def": 23,
+   "nivel": 11,
+   "hp": 93,
+   "hpMax": 150,
+   "atq": 30,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 7,
@@ -1067,6 +1067,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794437343063,
+   "quem": "@novelinha.biblia",
+   "tipo": "queda",
+   "texto": "@novelinha.biblia escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794425823063,
    "quem": "@novelinha.biblia",
@@ -1240,12 +1246,6 @@
    "quem": "@novelinha.biblia",
    "tipo": "vitoria",
    "texto": "@novelinha.biblia e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1794360926461,
-   "quem": "@its_janaina13",
-   "tipo": "vitoria",
-   "texto": "@its_janaina13 venceram um javali teimoso e ganharam uma presa de javali."
   }
  ]
 }
