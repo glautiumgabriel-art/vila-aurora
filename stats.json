@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T05:59",
+ "geradoEm": "2026-11-11T06:59",
  "relogioVila": {
   "dia": 9,
-  "hora": 5
+  "hora": 6
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 31,
-   "xp": 46363,
+   "xp": 46613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 31,
-   "xp": 46163,
+   "xp": 46413,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 31,
-   "xp": 45407,
+   "xp": 45657,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 31,
-   "xp": 45073,
+   "xp": 45323,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 31,
-   "xp": 45053,
+   "xp": 45303,
    "titulo": "Lenda"
   }
  ],
@@ -334,11 +334,11 @@
   "@tataicintra": {
    "nome": "@tataicintra",
    "profissao": "comerciante",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 31,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 32,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -734,11 +734,11 @@
   "@naoya______zeninn": {
    "nome": "@naoya______zeninn",
    "profissao": "pescador",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 51,
-   "def": 23,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 53,
+   "def": 24,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -990,11 +990,11 @@
   "@arthur594938": {
    "nome": "@arthur594938",
    "profissao": "cavaleiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 22,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 23,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1022,11 +1022,11 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 34,
-   "def": 12,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 36,
+   "def": 13,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1055,7 +1055,7 @@
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
    "nivel": 9,
-   "hp": 130,
+   "hp": 120,
    "hpMax": 130,
    "atq": 26,
    "def": 20,
@@ -1069,6 +1069,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794389823063,
+   "quem": "@novelinha.biblia",
+   "tipo": "briga_derrota",
+   "texto": "@novelinha.biblia foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
+   "quando": 1794388383063,
+   "quem": "@novelinha.biblia",
+   "tipo": "vitoria",
+   "texto": "@novelinha.biblia venceram um urso da floresta e ganharam uma garra de urso."
+  },
   {
    "quando": 1794386943063,
    "quem": "@novelinha.biblia",
@@ -1236,18 +1248,6 @@
    "quem": "@its_janaina13",
    "tipo": "vitoria",
    "texto": "@its_janaina13 e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1794337277533,
-   "quem": "@nankhumwaemmanuel",
-   "tipo": "queda",
-   "texto": "@nankhumwaemmanuel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794334397533,
-   "quem": "@nankhumwaemmanuel",
-   "tipo": "vitoria",
-   "texto": "@nankhumwaemmanuel acertaram de longe um cavalo selvagem."
   }
  ]
 }
