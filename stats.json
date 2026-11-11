@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-10T23:00",
+ "geradoEm": "2026-11-11T00:00",
  "relogioVila": {
   "dia": 8,
-  "hora": 22
+  "hora": 23
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 30,
-   "xp": 44613,
+   "xp": 44863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 30,
-   "xp": 44413,
+   "xp": 44663,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 30,
-   "xp": 43827,
+   "xp": 44078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 30,
-   "xp": 43657,
+   "xp": 43907,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 30,
-   "xp": 43648,
+   "xp": 43898,
    "titulo": "Lenda"
   }
  ],
@@ -364,11 +364,11 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 64,
-   "def": 35,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 66,
+   "def": 36,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -428,11 +428,11 @@
   "@adailtton_santos": {
    "nome": "@adailtton_santos",
    "profissao": "bardo",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 64,
-   "def": 32,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 66,
+   "def": 33,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -972,11 +972,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 38,
-   "def": 17,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 40,
+   "def": 18,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1021,7 +1021,7 @@
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
    "nivel": 12,
-   "hp": 160,
+   "hp": 147,
    "hpMax": 160,
    "atq": 32,
    "def": 11,
@@ -1067,6 +1067,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794364637533,
+   "quem": "@nankhumwaemmanuel",
+   "tipo": "queda",
+   "texto": "@nankhumwaemmanuel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794362463063,
+   "quem": "@novelinha.biblia",
+   "tipo": "vitoria",
+   "texto": "@novelinha.biblia e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
   {
    "quando": 1794360926461,
    "quem": "@its_janaina13",
@@ -1234,18 +1246,6 @@
    "quem": "@leolindo6.7",
    "tipo": "briga_vitoria",
    "texto": "@leolindo6.7 encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794307646461,
-   "quem": "@its_janaina13",
-   "tipo": "vitoria",
-   "texto": "@its_janaina13 venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794306406682,
-   "quem": "@jose_zzw07",
-   "tipo": "queda",
-   "texto": "@jose_zzw07 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
