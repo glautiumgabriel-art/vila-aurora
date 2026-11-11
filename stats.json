@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-10T22:00",
+ "geradoEm": "2026-11-10T23:00",
  "relogioVila": {
   "dia": 8,
-  "hora": 21
+  "hora": 22
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 30,
-   "xp": 44362,
+   "xp": 44613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 30,
-   "xp": 44163,
+   "xp": 44413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 30,
-   "xp": 43577,
+   "xp": 43827,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 30,
-   "xp": 43407,
+   "xp": 43657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 30,
-   "xp": 43398,
+   "xp": 43648,
    "titulo": "Lenda"
   }
  ],
@@ -732,11 +732,11 @@
   "@naoya______zeninn": {
    "nome": "@naoya______zeninn",
    "profissao": "pescador",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 49,
-   "def": 22,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 51,
+   "def": 23,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1036,11 +1036,11 @@
   "@its_janaina13": {
    "nome": "@its_janaina13",
    "profissao": "soldado",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 30,
-   "def": 17,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 32,
+   "def": 18,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1052,11 +1052,11 @@
   "@novelinha.biblia": {
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 20,
-   "def": 21,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 11,
@@ -1067,6 +1067,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794360926461,
+   "quem": "@its_janaina13",
+   "tipo": "vitoria",
+   "texto": "@its_janaina13 venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1794358877533,
+   "quem": "@nankhumwaemmanuel",
+   "tipo": "vitoria",
+   "texto": "@nankhumwaemmanuel acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
+  },
   {
    "quando": 1794355997533,
    "quem": "@nankhumwaemmanuel",
@@ -1234,18 +1246,6 @@
    "quem": "@jose_zzw07",
    "tipo": "queda",
    "texto": "@jose_zzw07 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794305799369,
-   "quem": "@arthur594938",
-   "tipo": "queda",
-   "texto": "@arthur594938 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794301479369,
-   "quem": "@arthur594938",
-   "tipo": "vitoria",
-   "texto": "@arthur594938 e os amigos venceram um javali teimoso e ganharam uma presa de javali."
   }
  ]
 }
