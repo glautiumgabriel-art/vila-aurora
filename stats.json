@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T07:59",
+ "geradoEm": "2026-11-11T08:59",
  "relogioVila": {
   "dia": 9,
-  "hora": 7
+  "hora": 8
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 31,
-   "xp": 46863,
+   "xp": 47112,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 31,
-   "xp": 46663,
+   "xp": 46913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 31,
-   "xp": 46077,
+   "xp": 46327,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 31,
-   "xp": 45907,
+   "xp": 46157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 31,
-   "xp": 45898,
+   "xp": 46148,
    "titulo": "Lenda"
   }
  ],
@@ -926,10 +926,10 @@
   "@eopedrinhonepai": {
    "nome": "@eopedrinhonepai",
    "profissao": "alquimista",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 49,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 51,
    "def": 18,
    "bArma": 2,
    "bSec": 1,
