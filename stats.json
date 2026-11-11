@@ -1,41 +1,41 @@
 {
- "geradoEm": "2026-11-11T16:00",
+ "geradoEm": "2026-11-11T17:00",
  "relogioVila": {
   "dia": 9,
-  "hora": 15
+  "hora": 16
  },
  "moradores": 54,
  "novosDoDia": [],
- "nivelMaisAlto": 31,
+ "nivelMaisAlto": 32,
  "maisAltos": [
   {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 31,
-   "xp": 48863,
+   "nome": "@dudabsl_",
+   "nivel": 32,
+   "xp": 48913,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabsl_",
+   "nome": "@iamvictoriamenezes",
    "nivel": 31,
-   "xp": 48663,
+   "xp": 49113,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 31,
-   "xp": 48078,
+   "xp": 48327,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 31,
-   "xp": 47907,
+   "xp": 48157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 31,
-   "xp": 47898,
+   "xp": 48148,
    "titulo": "Lenda"
   }
  ],
@@ -236,11 +236,11 @@
   "@dudabsl_": {
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 70,
-   "def": 33,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 72,
+   "def": 34,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -316,11 +316,11 @@
   "@dr.glautiumgabriel": {
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 32,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 33,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -348,11 +348,11 @@
   "@menor.k01_de_itz": {
    "nome": "@menor.k01_de_itz",
    "profissao": "explorador",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 34,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 35,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -412,11 +412,11 @@
   "@joelma_alvarez": {
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 36,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 37,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -460,11 +460,11 @@
   "@sampaiojaiane": {
    "nome": "@sampaiojaiane",
    "profissao": "fazendeiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 31,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 32,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -924,11 +924,11 @@
   "@eopedrinhonepai": {
    "nome": "@eopedrinhonepai",
    "profissao": "alquimista",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 51,
-   "def": 18,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 53,
+   "def": 19,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1067,6 +1067,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794425823063,
+   "quem": "@novelinha.biblia",
+   "tipo": "vitoria",
+   "texto": "@novelinha.biblia venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
   {
    "quando": 1794417183063,
    "quem": "@novelinha.biblia",
@@ -1240,12 +1246,6 @@
    "quem": "@its_janaina13",
    "tipo": "vitoria",
    "texto": "@its_janaina13 venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794358877533,
-   "quem": "@nankhumwaemmanuel",
-   "tipo": "vitoria",
-   "texto": "@nankhumwaemmanuel acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
   }
  ]
 }
