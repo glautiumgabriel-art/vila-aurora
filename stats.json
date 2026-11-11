@@ -1,43 +1,41 @@
 {
- "geradoEm": "2026-11-11T15:00",
+ "geradoEm": "2026-11-11T16:00",
  "relogioVila": {
   "dia": 9,
-  "hora": 14
+  "hora": 15
  },
  "moradores": 54,
- "novosDoDia": [
-  "@novelinha.biblia"
- ],
+ "novosDoDia": [],
  "nivelMaisAlto": 31,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 31,
-   "xp": 48613,
+   "xp": 48863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 31,
-   "xp": 48413,
+   "xp": 48663,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 31,
-   "xp": 47827,
+   "xp": 48078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 31,
-   "xp": 47657,
+   "xp": 47907,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 31,
-   "xp": 47648,
+   "xp": 47898,
    "titulo": "Lenda"
   }
  ],
@@ -478,11 +476,11 @@
   "@saviob._santos": {
    "nome": "@saviob._santos",
    "profissao": "ferreiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 67,
-   "def": 33,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 69,
+   "def": 34,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -734,11 +732,11 @@
   "@naoya______zeninn": {
    "nome": "@naoya______zeninn",
    "profissao": "pescador",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 53,
-   "def": 24,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 55,
+   "def": 25,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1038,11 +1036,11 @@
   "@its_janaina13": {
    "nome": "@its_janaina13",
    "profissao": "soldado",
-   "nivel": 14,
-   "hp": 180,
-   "hpMax": 180,
-   "atq": 36,
-   "def": 20,
+   "nivel": 15,
+   "hp": 190,
+   "hpMax": 190,
+   "atq": 38,
+   "def": 21,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
