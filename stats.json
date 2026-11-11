@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T14:00",
+ "geradoEm": "2026-11-11T15:00",
  "relogioVila": {
   "dia": 9,
-  "hora": 13
+  "hora": 14
  },
  "moradores": 54,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 31,
-   "xp": 48363,
+   "xp": 48613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 31,
-   "xp": 48163,
+   "xp": 48413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 31,
-   "xp": 47578,
+   "xp": 47827,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 31,
-   "xp": 47407,
+   "xp": 47657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 31,
-   "xp": 47398,
+   "xp": 47648,
    "titulo": "Lenda"
   }
  ],
@@ -446,11 +446,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 33,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 34,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -558,11 +558,11 @@
   "@livia.maria31": {
    "nome": "@livia.maria31",
    "profissao": "comerciante",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 56,
-   "def": 28,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 58,
+   "def": 29,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -590,11 +590,11 @@
   "@salomaojr31": {
    "nome": "@salomaojr31",
    "profissao": "soldado",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 58,
-   "def": 32,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 60,
+   "def": 33,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -798,11 +798,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 52,
-   "def": 24,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 54,
+   "def": 25,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1054,11 +1054,11 @@
   "@novelinha.biblia": {
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
-   "nivel": 10,
-   "hp": 88,
-   "hpMax": 140,
-   "atq": 28,
-   "def": 21,
+   "nivel": 11,
+   "hp": 150,
+   "hpMax": 150,
+   "atq": 30,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 7,
@@ -1069,6 +1069,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794417183063,
+   "quem": "@novelinha.biblia",
+   "tipo": "vitoria",
+   "texto": "@novelinha.biblia e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
   {
    "quando": 1794415743063,
    "quem": "@novelinha.biblia",
@@ -1242,12 +1248,6 @@
    "quem": "@nankhumwaemmanuel",
    "tipo": "vitoria",
    "texto": "@nankhumwaemmanuel acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794355997533,
-   "quem": "@nankhumwaemmanuel",
-   "tipo": "queda",
-   "texto": "@nankhumwaemmanuel escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
