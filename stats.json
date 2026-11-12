@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-11T20:59",
+ "geradoEm": "2026-11-11T21:59",
  "relogioVila": {
   "dia": 9,
-  "hora": 20
+  "hora": 21
  },
  "moradores": 54,
  "novosDoDia": [],
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 32,
-   "xp": 50113,
+   "xp": 50363,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 32,
-   "xp": 49913,
+   "xp": 50163,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 32,
-   "xp": 49327,
+   "xp": 49578,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 32,
-   "xp": 49157,
+   "xp": 49407,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 32,
-   "xp": 49148,
+   "xp": 49398,
    "titulo": "Lenda"
   }
  ],
@@ -508,11 +508,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 59,
-   "def": 27,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 61,
+   "def": 28,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -700,11 +700,11 @@
   "@santoslais3277": {
    "nome": "@santoslais3277",
    "profissao": "soldado",
-   "nivel": 23,
-   "hp": 270,
-   "hpMax": 270,
-   "atq": 54,
-   "def": 30,
+   "nivel": 24,
+   "hp": 280,
+   "hpMax": 280,
+   "atq": 56,
+   "def": 31,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -860,11 +860,11 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 53,
-   "def": 26,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 55,
+   "def": 27,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1036,11 +1036,11 @@
   "@its_janaina13": {
    "nome": "@its_janaina13",
    "profissao": "soldado",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 38,
-   "def": 21,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 40,
+   "def": 22,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
