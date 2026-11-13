@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-13T18:00",
+ "geradoEm": "2026-11-13T19:01",
  "relogioVila": {
   "dia": 11,
-  "hora": 17
+  "hora": 19
  },
  "moradores": 53,
  "novosDoDia": [],
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 35,
-   "xp": 61363,
+   "xp": 61618,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 35,
-   "xp": 61164,
+   "xp": 61418,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 35,
-   "xp": 60578,
+   "xp": 60833,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 35,
-   "xp": 60407,
+   "xp": 60662,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 35,
-   "xp": 60399,
+   "xp": 60653,
    "titulo": "Lenda"
   }
  ],
@@ -539,11 +539,11 @@
   "@kalebdecote": {
    "nome": "@kalebdecote",
    "profissao": "bardo",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 67,
-   "def": 33,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 69,
+   "def": 34,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -619,11 +619,11 @@
   "@diegokallel": {
    "nome": "@diegokallel",
    "profissao": "soldado",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 36,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 37,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
