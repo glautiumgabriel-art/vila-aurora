@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-13T13:03",
+ "geradoEm": "2026-11-13T13:59",
  "relogioVila": {
   "dia": 11,
   "hora": 13
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 35,
-   "xp": 60122,
+   "xp": 60363,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 35,
-   "xp": 59922,
+   "xp": 60163,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 35,
-   "xp": 59337,
+   "xp": 59578,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 35,
-   "xp": 59166,
+   "xp": 59407,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 35,
-   "xp": 59157,
+   "xp": 59398,
    "titulo": "Lenda"
   }
  ],
@@ -395,11 +395,11 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "cavaleiro",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 74,
-   "def": 41,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 76,
+   "def": 42,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -635,11 +635,11 @@
   "@kaio_a0": {
    "nome": "@kaio_a0",
    "profissao": "pescador",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 64,
-   "def": 30,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 66,
+   "def": 31,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -699,11 +699,11 @@
   "@santoslais3277": {
    "nome": "@santoslais3277",
    "profissao": "soldado",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 62,
-   "def": 34,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 64,
+   "def": 35,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
