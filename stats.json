@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-13T16:01",
+ "geradoEm": "2026-11-13T17:00",
  "relogioVila": {
   "dia": 11,
   "hora": 16
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 35,
-   "xp": 60868,
+   "xp": 61113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 35,
-   "xp": 60668,
+   "xp": 60913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 35,
-   "xp": 60082,
+   "xp": 60328,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 35,
-   "xp": 59912,
+   "xp": 60157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 35,
-   "xp": 59903,
+   "xp": 60149,
    "titulo": "Lenda"
   }
  ],
@@ -507,11 +507,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 67,
-   "def": 31,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 69,
+   "def": 32,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -715,11 +715,11 @@
   "@naoya______zeninn": {
    "nome": "@naoya______zeninn",
    "profissao": "pescador",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 63,
-   "def": 29,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 65,
+   "def": 30,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1019,11 +1019,11 @@
   "@its_janaina13": {
    "nome": "@its_janaina13",
    "profissao": "soldado",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 50,
-   "def": 28,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 52,
+   "def": 29,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
