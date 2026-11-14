@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-14T13:01",
+ "geradoEm": "2026-11-14T14:00",
  "relogioVila": {
   "dia": 12,
   "hora": 13
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 37,
-   "xp": 66117,
+   "xp": 66363,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 37,
-   "xp": 65917,
+   "xp": 66163,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 37,
-   "xp": 65161,
+   "xp": 65407,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 37,
-   "xp": 64828,
+   "xp": 65073,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 37,
-   "xp": 64807,
+   "xp": 65053,
    "titulo": "Lenda"
   }
  ],
@@ -163,7 +163,8 @@
   "@leolindo6.7",
   "@nankhumwaemmanuel",
   "@its_janaina13",
-  "@novelinha.biblia"
+  "@novelinha.biblia",
+  "@kirara_and_hakari"
  ],
  "porProfissao": {
   "cavaleiro": 8,
@@ -700,11 +701,11 @@
   "@oi56382": {
    "nome": "@oi56382",
    "profissao": "cabeleireiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 31,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 32,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -732,11 +733,11 @@
   "@_rai.la.ne_": {
    "nome": "@_rai.la.ne_",
    "profissao": "fazendeiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 67,
-   "def": 31,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 69,
+   "def": 32,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -748,11 +749,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 31,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 32,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -764,11 +765,11 @@
   "@kauedomingues894": {
    "nome": "@kauedomingues894",
    "profissao": "bardo",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 67,
-   "def": 31,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 69,
+   "def": 32,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1021,7 +1022,7 @@
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
    "nivel": 9,
-   "hp": 130,
+   "hp": 103,
    "hpMax": 130,
    "atq": 32,
    "def": 13,
@@ -1035,6 +1036,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794674528001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "doma",
+   "texto": "@kirara_and_hakari cercaram um cavalo selvagem e domaram! Agora @kirara_and_hakari anda montado."
+  },
   {
    "quando": 1794670208001,
    "quem": "@kirara_and_hakari",
