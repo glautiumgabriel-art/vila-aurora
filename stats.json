@@ -1,41 +1,43 @@
 {
- "geradoEm": "2026-11-13T20:01",
+ "geradoEm": "2026-11-13T20:59",
  "relogioVila": {
   "dia": 11,
-  "hora": 19
+  "hora": 20
  },
- "moradores": 53,
- "novosDoDia": [],
+ "moradores": 54,
+ "novosDoDia": [
+  "@kirara_and_hakari"
+ ],
  "nivelMaisAlto": 35,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 35,
-   "xp": 61863,
+   "xp": 62113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 35,
-   "xp": 61663,
+   "xp": 61913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 35,
-   "xp": 61078,
+   "xp": 61328,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 35,
-   "xp": 60907,
+   "xp": 61157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 35,
-   "xp": 60898,
+   "xp": 61148,
    "titulo": "Lenda"
   }
  ],
@@ -174,22 +176,22 @@
   "ferreiro": 3,
   "cozinheiro": 2,
   "comerciante": 2,
+  "cacador": 2,
   "padeiro": 2,
   "pastor": 2,
   "curandeiro": 1,
   "mineiro": 1,
-  "cacador": 1,
   "alquimista": 1,
   "arqueiro": 1
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@novelinha.biblia",
+  "nome": "@kirara_and_hakari",
   "nomeCompleto": "",
-  "profissao": "cavaleiro",
+  "profissao": "cacador",
   "sexo": "?",
-  "chegouEm": "2026-11-10T15:55",
-  "chegouEmMs": 1794336903063
+  "chegouEm": "2026-11-13T21:00",
+  "chegouEmMs": 1794614408001
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -811,11 +813,11 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 62,
-   "def": 34,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 64,
+   "def": 35,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1047,7 +1049,8 @@
    "longe": false,
    "guerreiro": true,
    "mana": null
-  }
+  },
+  "@kirara_and_hakari": null
  },
  "eventosUltimas24h": []
 }

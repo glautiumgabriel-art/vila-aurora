@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-13T19:59",
+ "atualizadoEm": "2026-11-13T20:59",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -623,7 +623,7 @@
    "sexo": "?",
    "profissao": "pescador",
    "joinedAt": 1794052491000,
-   "faltas": 0,
+   "faltas": 1,
    "historicoProfissao": [
     {
      "de": "alquimista",
@@ -1018,6 +1018,15 @@
    "sexo": "?",
    "profissao": "cavaleiro",
    "joinedAt": 1794336903063,
+   "faltas": 0
+  },
+  {
+   "id": "ig-kirara_and_hakari",
+   "nome": "@kirara_and_hakari",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "cacador",
+   "joinedAt": 1794614408001,
    "faltas": 0
   }
  ]
