@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-14T10:01",
+ "geradoEm": "2026-11-14T10:59",
  "relogioVila": {
   "dia": 12,
   "hora": 10
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 36,
-   "xp": 65368,
+   "xp": 65613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 36,
-   "xp": 65168,
+   "xp": 65413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 36,
-   "xp": 64583,
+   "xp": 64828,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 36,
-   "xp": 64412,
+   "xp": 64657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 36,
-   "xp": 64403,
+   "xp": 64648,
    "titulo": "Lenda"
   }
  ],
@@ -332,11 +332,11 @@
   "@tataicintra": {
    "nome": "@tataicintra",
    "profissao": "comerciante",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 78,
-   "def": 37,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 80,
+   "def": 38,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -652,11 +652,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 67,
-   "def": 31,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 69,
+   "def": 32,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -716,11 +716,11 @@
   "@adriana.lopesl": {
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 67,
-   "def": 33,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 69,
+   "def": 34,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -988,11 +988,11 @@
   "@its_janaina13": {
    "nome": "@its_janaina13",
    "profissao": "soldado",
-   "nivel": 23,
-   "hp": 270,
-   "hpMax": 270,
-   "atq": 54,
-   "def": 30,
+   "nivel": 24,
+   "hp": 280,
+   "hpMax": 280,
+   "atq": 56,
+   "def": 31,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1020,11 +1020,11 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 30,
-   "def": 12,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 32,
+   "def": 13,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 2,
