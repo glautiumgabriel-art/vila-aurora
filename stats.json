@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-14T11:59",
+ "geradoEm": "2026-11-14T13:01",
  "relogioVila": {
   "dia": 12,
-  "hora": 11
+  "hora": 13
  },
  "moradores": 52,
  "novosDoDia": [
@@ -11,33 +11,33 @@
  "nivelMaisAlto": 37,
  "maisAltos": [
   {
+   "nome": "@iamvictoriamenezes",
+   "nivel": 37,
+   "xp": 66117,
+   "titulo": "Lenda"
+  },
+  {
    "nome": "@dudabsl_",
    "nivel": 37,
-   "xp": 65663,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 36,
-   "xp": 65863,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@laryssapsouza",
-   "nivel": 36,
-   "xp": 65078,
+   "xp": 65917,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
-   "nivel": 36,
-   "xp": 64907,
+   "nivel": 37,
+   "xp": 65161,
    "titulo": "Lenda"
   },
   {
-   "nome": "@adriana.g.santana",
-   "nivel": 36,
-   "xp": 64898,
+   "nome": "@dudabrisolaa_",
+   "nivel": 37,
+   "xp": 64828,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@glautiumgabriel",
+   "nivel": 37,
+   "xp": 64807,
    "titulo": "Lenda"
   }
  ],
@@ -220,11 +220,11 @@
   "@dudabrisolaa_": {
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 44,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 45,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -252,11 +252,11 @@
   "@glautiumgabriel": {
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 81,
-   "def": 38,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 83,
+   "def": 39,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -268,11 +268,11 @@
   "@iamvictoriamenezes": {
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 40,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 41,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -300,11 +300,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 38,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -508,11 +508,11 @@
   "@gods.samuka": {
    "nome": "@gods.samuka",
    "profissao": "padeiro",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 35,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 36,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -620,11 +620,11 @@
   "@kaio_a0": {
    "nome": "@kaio_a0",
    "profissao": "pescador",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 32,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 33,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -876,11 +876,11 @@
   "@eopedrinhonepai": {
    "nome": "@eopedrinhonepai",
    "profissao": "alquimista",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 65,
-   "def": 24,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 67,
+   "def": 25,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794670208001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "briga_derrota",
+   "texto": "@kirara_and_hakari foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
   {
    "quando": 1794667328001,
    "quem": "@kirara_and_hakari",
