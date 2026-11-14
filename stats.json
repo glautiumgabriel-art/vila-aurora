@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-14T03:01",
+ "geradoEm": "2026-11-14T04:01",
  "relogioVila": {
   "dia": 12,
-  "hora": 3
+  "hora": 4
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 36,
-   "xp": 63617,
+   "xp": 63868,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 36,
-   "xp": 63418,
+   "xp": 63668,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 36,
-   "xp": 62832,
+   "xp": 63083,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 36,
-   "xp": 62662,
+   "xp": 62912,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 36,
-   "xp": 62653,
+   "xp": 62903,
    "titulo": "Lenda"
   }
  ],
@@ -380,11 +380,11 @@
   "@gabrielcamuzzatonegretti": {
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "cavaleiro",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 76,
-   "def": 42,
+   "nivel": 35,
+   "hp": 390,
+   "hpMax": 390,
+   "atq": 78,
+   "def": 43,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -588,11 +588,11 @@
   "@samuel_teles_01": {
    "nome": "@samuel_teles_01",
    "profissao": "ferreiro",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 34,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 35,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1020,11 +1020,11 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 26,
-   "def": 10,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 28,
+   "def": 11,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 2,
@@ -1035,6 +1035,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794638528001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "vitoria",
+   "texto": "@kirara_and_hakari acertaram de longe uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1794637088001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "vitoria",
+   "texto": "@kirara_and_hakari e os amigos acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
+  },
   {
    "quando": 1794627008001,
    "quem": "@kirara_and_hakari",
