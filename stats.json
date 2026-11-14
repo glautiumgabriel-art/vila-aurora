@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-14T14:00",
+ "geradoEm": "2026-11-14T15:00",
  "relogioVila": {
   "dia": 12,
-  "hora": 13
+  "hora": 14
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 37,
-   "xp": 66363,
+   "xp": 66613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 37,
-   "xp": 66163,
+   "xp": 66413,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@laryssapsouza",
+   "nivel": 37,
+   "xp": 65828,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 37,
-   "xp": 65407,
+   "xp": 65657,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabrisolaa_",
+   "nome": "@adriana.g.santana",
    "nivel": 37,
-   "xp": 65073,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@glautiumgabriel",
-   "nivel": 37,
-   "xp": 65053,
+   "xp": 65648,
    "titulo": "Lenda"
   }
  ],
@@ -205,11 +205,11 @@
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 81,
-   "def": 40,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 83,
+   "def": 41,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -285,11 +285,11 @@
   "@laryssapsouza": {
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 40,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 41,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1005,11 +1005,11 @@
   "@novelinha.biblia": {
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
-   "nivel": 21,
-   "hp": 250,
-   "hpMax": 250,
-   "atq": 50,
-   "def": 28,
+   "nivel": 22,
+   "hp": 260,
+   "hpMax": 260,
+   "atq": 52,
+   "def": 29,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1021,11 +1021,11 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 9,
-   "hp": 103,
-   "hpMax": 130,
-   "atq": 32,
-   "def": 13,
+   "nivel": 10,
+   "hp": 140,
+   "hpMax": 140,
+   "atq": 34,
+   "def": 14,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 2,
