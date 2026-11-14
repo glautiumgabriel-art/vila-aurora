@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-14T07:01",
+ "geradoEm": "2026-11-14T07:59",
  "relogioVila": {
   "dia": 12,
   "hora": 7
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 36,
-   "xp": 64617,
+   "xp": 64863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 36,
-   "xp": 64418,
+   "xp": 64663,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 36,
-   "xp": 63832,
+   "xp": 64078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 36,
-   "xp": 63662,
+   "xp": 63907,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 36,
-   "xp": 63653,
+   "xp": 63898,
    "titulo": "Lenda"
   }
  ],
@@ -412,11 +412,11 @@
   "@joelma_alvarez": {
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 76,
-   "def": 42,
+   "nivel": 35,
+   "hp": 390,
+   "hpMax": 390,
+   "atq": 78,
+   "def": 43,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -444,11 +444,11 @@
   "@sampaiojaiane": {
    "nome": "@sampaiojaiane",
    "profissao": "fazendeiro",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 76,
-   "def": 36,
+   "nivel": 35,
+   "hp": 390,
+   "hpMax": 390,
+   "atq": 78,
+   "def": 37,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -540,11 +540,11 @@
   "@livia.maria31": {
    "nome": "@livia.maria31",
    "profissao": "comerciante",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 34,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 35,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -780,11 +780,11 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 64,
-   "def": 35,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 66,
+   "def": 36,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -924,11 +924,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 58,
-   "def": 27,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 60,
+   "def": 28,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794651488001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "queda",
+   "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794648608001,
    "quem": "@kirara_and_hakari",
