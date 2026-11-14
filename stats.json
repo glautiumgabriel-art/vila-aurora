@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-13T23:00",
+ "geradoEm": "2026-11-14T00:00",
  "relogioVila": {
   "dia": 11,
-  "hora": 22
+  "hora": 23
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 36,
-   "xp": 62613,
+   "xp": 62863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 36,
-   "xp": 62413,
+   "xp": 62663,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 36,
-   "xp": 61657,
+   "xp": 61907,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 36,
-   "xp": 61323,
+   "xp": 61573,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 36,
-   "xp": 61303,
+   "xp": 61553,
    "titulo": "Lenda"
   }
  ],
@@ -716,11 +716,11 @@
   "@adriana.lopesl": {
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 65,
-   "def": 32,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 67,
+   "def": 33,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794621248001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "briga_derrota",
+   "texto": "@kirara_and_hakari foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
   {
    "quando": 1794615488001,
    "quem": "@kirara_and_hakari",
