@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-14T04:01",
+ "geradoEm": "2026-11-14T05:01",
  "relogioVila": {
   "dia": 12,
-  "hora": 4
+  "hora": 5
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 36,
-   "xp": 63868,
+   "xp": 64118,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 36,
-   "xp": 63668,
+   "xp": 63918,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 36,
-   "xp": 63083,
+   "xp": 63333,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 36,
-   "xp": 62912,
+   "xp": 63162,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 36,
-   "xp": 62903,
+   "xp": 63153,
    "titulo": "Lenda"
   }
  ],
@@ -492,11 +492,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 32,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 33,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -844,11 +844,11 @@
   "@rafael.strauch": {
    "nome": "@rafael.strauch",
    "profissao": "fazendeiro",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 63,
-   "def": 31,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 65,
+   "def": 32,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
