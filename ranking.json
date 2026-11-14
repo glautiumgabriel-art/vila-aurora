@@ -3,32 +3,32 @@
  "semana": [
   {
    "pos": 1,
-   "nome": "@andrew_deko0.2",
-   "comentarios": 4
-  },
-  {
-   "pos": 2,
-   "nome": "@cf.ayshinha_",
-   "comentarios": 3
-  },
-  {
-   "pos": 3,
    "nome": "@_rai.la.ne_",
    "comentarios": 2
   },
   {
-   "pos": 4,
+   "pos": 2,
+   "nome": "@cf.ayshinha_",
+   "comentarios": 2
+  },
+  {
+   "pos": 3,
    "nome": "@menor.k01_de_itz",
    "comentarios": 2
   },
   {
-   "pos": 5,
+   "pos": 4,
    "nome": "@salomaojr31",
    "comentarios": 2
   },
   {
-   "pos": 6,
+   "pos": 5,
    "nome": "@_renato_ny",
+   "comentarios": 1
+  },
+  {
+   "pos": 6,
+   "nome": "@andrew_deko0.2",
    "comentarios": 1
   },
   {
@@ -52,5 +52,5 @@
    "comentarios": 1
   }
  ],
- "atualizadoEm": "2026-11-14T16:20"
+ "atualizadoEm": "2026-11-14T19:20"
 }
