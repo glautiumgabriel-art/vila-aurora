@@ -1,43 +1,43 @@
 {
- "geradoEm": "2026-11-14T10:59",
+ "geradoEm": "2026-11-14T11:59",
  "relogioVila": {
   "dia": 12,
-  "hora": 10
+  "hora": 11
  },
  "moradores": 52,
  "novosDoDia": [
   "@kirara_and_hakari"
  ],
- "nivelMaisAlto": 36,
+ "nivelMaisAlto": 37,
  "maisAltos": [
   {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 36,
-   "xp": 65613,
+   "nome": "@dudabsl_",
+   "nivel": 37,
+   "xp": 65663,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabsl_",
+   "nome": "@iamvictoriamenezes",
    "nivel": 36,
-   "xp": 65413,
+   "xp": 65863,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 36,
-   "xp": 64828,
+   "xp": 65078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 36,
-   "xp": 64657,
+   "xp": 64907,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 36,
-   "xp": 64648,
+   "xp": 64898,
    "titulo": "Lenda"
   }
  ],
@@ -236,11 +236,11 @@
   "@dudabsl_": {
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 38,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -684,11 +684,11 @@
   "@santoslais3277": {
    "nome": "@santoslais3277",
    "profissao": "soldado",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 66,
-   "def": 36,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 68,
+   "def": 37,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1035,6 +1035,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794667328001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "vitoria",
+   "texto": "@kirara_and_hakari e os amigos acertaram de longe uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1794664448001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "briga_derrota",
+   "texto": "@kirara_and_hakari foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
   {
    "quando": 1794657248001,
    "quem": "@kirara_and_hakari",
