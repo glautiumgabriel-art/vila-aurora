@@ -23,27 +23,27 @@
   },
   {
    "pos": 5,
-   "nome": "@diegokallel",
-   "comentarios": 3
-  },
-  {
-   "pos": 6,
-   "nome": "@kaio_a0",
-   "comentarios": 3
-  },
-  {
-   "pos": 7,
    "nome": "@naoya______zeninn",
    "comentarios": 3
   },
   {
-   "pos": 8,
+   "pos": 6,
    "nome": "@dassow_djony",
    "comentarios": 2
   },
   {
-   "pos": 9,
+   "pos": 7,
+   "nome": "@diegokallel",
+   "comentarios": 2
+  },
+  {
+   "pos": 8,
    "nome": "@gutvy__",
+   "comentarios": 2
+  },
+  {
+   "pos": 9,
+   "nome": "@kaio_a0",
    "comentarios": 2
   },
   {
@@ -52,5 +52,5 @@
    "comentarios": 2
   }
  ],
- "atualizadoEm": "2026-11-13T19:20"
+ "atualizadoEm": "2026-11-13T22:21"
 }
