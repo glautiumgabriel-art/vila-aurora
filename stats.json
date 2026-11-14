@@ -1,81 +1,81 @@
 {
- "geradoEm": "2026-11-13T22:01",
+ "geradoEm": "2026-11-13T23:00",
  "relogioVila": {
   "dia": 11,
   "hora": 22
  },
- "moradores": 53,
+ "moradores": 52,
  "novosDoDia": [
   "@kirara_and_hakari"
  ],
  "nivelMaisAlto": 36,
  "maisAltos": [
   {
+   "nome": "@iamvictoriamenezes",
+   "nivel": 36,
+   "xp": 62613,
+   "titulo": "Lenda"
+  },
+  {
    "nome": "@dudabsl_",
    "nivel": 36,
-   "xp": 62168,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 35,
-   "xp": 62368,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@laryssapsouza",
-   "nivel": 35,
-   "xp": 61583,
+   "xp": 62413,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
-   "nivel": 35,
-   "xp": 61412,
+   "nivel": 36,
+   "xp": 61657,
    "titulo": "Lenda"
   },
   {
-   "nome": "@adriana.g.santana",
-   "nivel": 35,
-   "xp": 61403,
+   "nome": "@dudabrisolaa_",
+   "nivel": 36,
+   "xp": 61323,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@glautiumgabriel",
+   "nivel": 36,
+   "xp": 61303,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@dassow_djony",
-    "@iamvictoriamenezes"
+    "@_williamg10",
+    "@eu.brandao__"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@__niedison",
-    "@adriana.g.santana"
+    "@adriana.g.santana",
+    "@eopedrinhonepai"
    ],
-   "forca": 1
+   "forca": 2
   },
   {
    "entre": [
-    "@__niedison",
-    "@faixa_gu244"
+    "@danielaugustobiesso",
+    "@samuel_teles_01"
    ],
-   "forca": 1
+   "forca": 2
   },
   {
    "entre": [
-    "@__niedison",
-    "@gabrielcamuzzatonegretti"
+    "@diegokallel",
+    "@nankhumwaemmanuel"
    ],
-   "forca": 1
+   "forca": 2
   },
   {
    "entre": [
-    "@__niedison",
-    "@gods.samuka"
+    "@gods.samuka",
+    "@sampaiojaiane"
    ],
-   "forca": 1
+   "forca": 2
   }
  ],
  "maioresDesafetos": [
@@ -130,7 +130,6 @@
   "@gabrielcamuzzatonegretti",
   "@thayl_ermatheus",
   "@joelma_alvarez",
-  "@adailtton_santos",
   "@gbx.ws",
   "@sampaiojaiane",
   "@saviob._santos",
@@ -167,8 +166,8 @@
   "@novelinha.biblia"
  ],
  "porProfissao": {
-  "bardo": 8,
   "cavaleiro": 8,
+  "bardo": 7,
   "soldado": 7,
   "explorador": 5,
   "fazendeiro": 5,
@@ -221,11 +220,11 @@
   "@dudabrisolaa_": {
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 78,
-   "def": 43,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 80,
+   "def": 44,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -253,11 +252,11 @@
   "@glautiumgabriel": {
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 79,
-   "def": 37,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 81,
+   "def": 38,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -269,11 +268,11 @@
   "@iamvictoriamenezes": {
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 78,
-   "def": 39,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 80,
+   "def": 40,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -301,11 +300,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 78,
-   "def": 37,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 80,
+   "def": 38,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -424,22 +423,6 @@
    "bCapa": 2,
    "longe": false,
    "guerreiro": true,
-   "mana": null
-  },
-  "@adailtton_santos": {
-   "nome": "@adailtton_santos",
-   "profissao": "bardo",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 76,
-   "def": 38,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 2,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
    "mana": null
   },
   "@gbx.ws": {
@@ -669,11 +652,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 65,
-   "def": 30,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 67,
+   "def": 31,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -829,11 +812,11 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 63,
-   "def": 31,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 65,
+   "def": 32,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -957,11 +940,11 @@
   "@arthur594938": {
    "nome": "@arthur594938",
    "profissao": "cavaleiro",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 56,
-   "def": 31,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 58,
+   "def": 32,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1021,14 +1004,14 @@
   "@novelinha.biblia": {
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
-   "nivel": 19,
-   "hp": 230,
-   "hpMax": 230,
-   "atq": 46,
-   "def": 31,
+   "nivel": 20,
+   "hp": 240,
+   "hpMax": 240,
+   "atq": 48,
+   "def": 26,
    "bArma": 2,
    "bSec": 0,
-   "bEsc": 7,
+   "bEsc": 2,
    "bCapa": 2,
    "longe": false,
    "guerreiro": true,
@@ -1037,13 +1020,13 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 19,
-   "def": 3,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 22,
+   "def": 4,
    "bArma": 7,
-   "bSec": 0,
+   "bSec": 1,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
