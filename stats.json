@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-14T08:59",
+ "geradoEm": "2026-11-14T10:01",
  "relogioVila": {
   "dia": 12,
-  "hora": 8
+  "hora": 10
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 36,
-   "xp": 65113,
+   "xp": 65368,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 36,
-   "xp": 64913,
+   "xp": 65168,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 36,
-   "xp": 64328,
+   "xp": 64583,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 36,
-   "xp": 64157,
+   "xp": 64412,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 36,
-   "xp": 64148,
+   "xp": 64403,
    "titulo": "Lenda"
   }
  ],
@@ -316,11 +316,11 @@
   "@dr.glautiumgabriel": {
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 79,
-   "def": 37,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 81,
+   "def": 38,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -348,11 +348,11 @@
   "@menor.k01_de_itz": {
    "nome": "@menor.k01_de_itz",
    "profissao": "explorador",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 78,
-   "def": 39,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 80,
+   "def": 40,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -572,11 +572,11 @@
   "@salomaojr31": {
    "nome": "@salomaojr31",
    "profissao": "soldado",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 70,
-   "def": 39,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 72,
+   "def": 40,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -812,11 +812,11 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 65,
-   "def": 32,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 67,
+   "def": 33,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794657248001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "briga_vitoria",
+   "texto": "@kirara_and_hakari encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1794651488001,
    "quem": "@kirara_and_hakari",
