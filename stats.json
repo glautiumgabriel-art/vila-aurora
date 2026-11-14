@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-14T16:59",
+ "geradoEm": "2026-11-14T17:59",
  "relogioVila": {
   "dia": 12,
-  "hora": 16
+  "hora": 17
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 37,
-   "xp": 67113,
+   "xp": 67363,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 37,
-   "xp": 66913,
+   "xp": 67163,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 37,
-   "xp": 66328,
+   "xp": 66578,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 37,
-   "xp": 66157,
+   "xp": 66407,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 37,
-   "xp": 66148,
+   "xp": 66398,
    "titulo": "Lenda"
   }
  ],
@@ -381,11 +381,11 @@
   "@gabrielcamuzzatonegretti": {
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "cavaleiro",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 78,
-   "def": 43,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 80,
+   "def": 44,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -557,11 +557,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 70,
-   "def": 35,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 72,
+   "def": 36,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -669,11 +669,11 @@
   "@samuul_gx_ofc": {
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 67,
-   "def": 31,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 69,
+   "def": 32,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -925,11 +925,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 26,
-   "hp": 300,
-   "hpMax": 300,
-   "atq": 60,
-   "def": 28,
+   "nivel": 27,
+   "hp": 310,
+   "hpMax": 310,
+   "atq": 62,
+   "def": 29,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
