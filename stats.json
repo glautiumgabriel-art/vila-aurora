@@ -1,81 +1,81 @@
 {
- "geradoEm": "2026-11-13T21:23",
+ "geradoEm": "2026-11-13T22:01",
  "relogioVila": {
   "dia": 11,
-  "hora": 21
+  "hora": 22
  },
- "moradores": 54,
+ "moradores": 53,
  "novosDoDia": [
   "@kirara_and_hakari"
  ],
- "nivelMaisAlto": 35,
+ "nivelMaisAlto": 36,
  "maisAltos": [
   {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 35,
-   "xp": 62212,
+   "nome": "@dudabsl_",
+   "nivel": 36,
+   "xp": 62168,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabsl_",
+   "nome": "@iamvictoriamenezes",
    "nivel": 35,
-   "xp": 62012,
+   "xp": 62368,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 35,
-   "xp": 61427,
+   "xp": 61583,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 35,
-   "xp": 61256,
+   "xp": 61412,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 35,
-   "xp": 61247,
+   "xp": 61403,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@danielaugustobiesso",
-    "@samuel_teles_01"
+    "@dassow_djony",
+    "@iamvictoriamenezes"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@diegokallel",
-    "@nankhumwaemmanuel"
+    "@__niedison",
+    "@adriana.g.santana"
    ],
-   "forca": 2
+   "forca": 1
   },
   {
    "entre": [
-    "@gods.samuka",
-    "@sampaiojaiane"
+    "@__niedison",
+    "@faixa_gu244"
    ],
-   "forca": 2
+   "forca": 1
   },
   {
    "entre": [
-    "@isaac.jmy",
-    "@muryvieira_"
+    "@__niedison",
+    "@gabrielcamuzzatonegretti"
    ],
-   "forca": 2
+   "forca": 1
   },
   {
    "entre": [
-    "@kaiobentopereira",
-    "@livia.maria31"
+    "@__niedison",
+    "@gods.samuka"
    ],
-   "forca": 2
+   "forca": 1
   }
  ],
  "maioresDesafetos": [
@@ -172,8 +172,8 @@
   "soldado": 7,
   "explorador": 5,
   "fazendeiro": 5,
-  "pescador": 4,
   "ferreiro": 3,
+  "pescador": 3,
   "cozinheiro": 2,
   "comerciante": 2,
   "cacador": 2,
@@ -237,11 +237,11 @@
   "@dudabsl_": {
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 78,
-   "def": 37,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 80,
+   "def": 38,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -589,11 +589,11 @@
   "@salomaojr31": {
    "nome": "@salomaojr31",
    "profissao": "soldado",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 37,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -712,22 +712,6 @@
    "bCapa": 2,
    "longe": false,
    "guerreiro": true,
-   "mana": null
-  },
-  "@naoya______zeninn": {
-   "nome": "@naoya______zeninn",
-   "profissao": "pescador",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 65,
-   "def": 30,
-   "bArma": 2,
-   "bSec": 1,
-   "bEsc": 0,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
    "mana": null
   },
   "@oi56382": {
@@ -925,11 +909,11 @@
   "@kaiobentopereira": {
    "nome": "@kaiobentopereira",
    "profissao": "pescador",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 63,
-   "def": 29,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 65,
+   "def": 30,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -941,11 +925,11 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 59,
-   "def": 27,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 61,
+   "def": 28,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -957,11 +941,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 24,
-   "hp": 280,
-   "hpMax": 280,
-   "atq": 56,
-   "def": 26,
+   "nivel": 25,
+   "hp": 290,
+   "hpMax": 290,
+   "atq": 58,
+   "def": 27,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1005,11 +989,11 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 52,
-   "def": 19,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 54,
+   "def": 20,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1053,11 +1037,11 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 17,
-   "def": 2,
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 19,
+   "def": 3,
    "bArma": 7,
    "bSec": 0,
    "bEsc": 0,
@@ -1067,5 +1051,12 @@
    "mana": null
   }
  },
- "eventosUltimas24h": []
+ "eventosUltimas24h": [
+  {
+   "quando": 1794615488001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "derrota",
+   "texto": "@kirara_and_hakari encostou sozinho em o Lobo Cinzento e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  }
+ ]
 }

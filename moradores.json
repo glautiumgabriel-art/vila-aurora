@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-13T21:23",
+ "atualizadoEm": "2026-11-13T22:00",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -263,7 +263,7 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1793798803390,
-   "faltas": 1
+   "faltas": 2
   },
   {
    "id": "ig-gbx.ws",
@@ -615,34 +615,6 @@
    "profissao": "soldado",
    "joinedAt": 1794050769633,
    "faltas": 0
-  },
-  {
-   "id": "ig-naoya______zeninn",
-   "nome": "@naoya______zeninn",
-   "nomeCompleto": "",
-   "sexo": "?",
-   "profissao": "pescador",
-   "joinedAt": 1794052491000,
-   "faltas": 2,
-   "historicoProfissao": [
-    {
-     "de": "alquimista",
-     "para": "pescador",
-     "em": "2026-11-07T11:31"
-    }
-   ],
-   "presentes": [
-    {
-     "item": "Pedra de Amolar",
-     "tipo": "ferramenta",
-     "raridade": "comum",
-     "post": "Dfa9WTVMiVK",
-     "em": "2026-11-07T11:31"
-    }
-   ],
-   "titulos": [
-    "Voz da Vila"
-   ]
   },
   {
    "id": "ig-oi56382",
