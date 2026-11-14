@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-14T06:01",
+ "geradoEm": "2026-11-14T07:01",
  "relogioVila": {
   "dia": 12,
-  "hora": 6
+  "hora": 7
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 36,
-   "xp": 64368,
+   "xp": 64617,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 36,
-   "xp": 64168,
+   "xp": 64418,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 36,
-   "xp": 63582,
+   "xp": 63832,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 36,
-   "xp": 63412,
+   "xp": 63662,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 36,
-   "xp": 63403,
+   "xp": 63653,
    "titulo": "Lenda"
   }
  ],
@@ -460,11 +460,11 @@
   "@saviob._santos": {
    "nome": "@saviob._santos",
    "profissao": "ferreiro",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 77,
-   "def": 38,
+   "nivel": 35,
+   "hp": 390,
+   "hpMax": 390,
+   "atq": 79,
+   "def": 39,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -524,11 +524,11 @@
   "@kalebdecote": {
    "nome": "@kalebdecote",
    "profissao": "bardo",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 34,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 35,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -668,11 +668,11 @@
   "@samuul_gx_ofc": {
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 65,
-   "def": 30,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 67,
+   "def": 31,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -828,11 +828,11 @@
   "@andrew_deko0.2": {
    "nome": "@andrew_deko0.2",
    "profissao": "cavaleiro",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 64,
-   "def": 35,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 66,
+   "def": 36,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -972,11 +972,11 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 23,
-   "hp": 270,
-   "hpMax": 270,
-   "atq": 54,
-   "def": 20,
+   "nivel": 24,
+   "hp": 280,
+   "hpMax": 280,
+   "atq": 56,
+   "def": 21,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1004,11 +1004,11 @@
   "@novelinha.biblia": {
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
-   "nivel": 20,
-   "hp": 240,
-   "hpMax": 240,
-   "atq": 48,
-   "def": 26,
+   "nivel": 21,
+   "hp": 250,
+   "hpMax": 250,
+   "atq": 50,
+   "def": 28,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1020,11 +1020,11 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 28,
-   "def": 11,
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 30,
+   "def": 12,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 2,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794648608001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "briga_vitoria",
+   "texto": "@kirara_and_hakari encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1794645728001,
    "quem": "@kirara_and_hakari",
