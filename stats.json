@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-14T05:01",
+ "geradoEm": "2026-11-14T06:01",
  "relogioVila": {
   "dia": 12,
-  "hora": 5
+  "hora": 6
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 36,
-   "xp": 64118,
+   "xp": 64368,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 36,
-   "xp": 63918,
+   "xp": 64168,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 36,
-   "xp": 63333,
+   "xp": 63582,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 36,
-   "xp": 63162,
+   "xp": 63412,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 36,
-   "xp": 63153,
+   "xp": 63403,
    "titulo": "Lenda"
   }
  ],
@@ -428,11 +428,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 76,
-   "def": 38,
+   "nivel": 35,
+   "hp": 390,
+   "hpMax": 390,
+   "atq": 78,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -476,11 +476,11 @@
   "@eu.brandao__": {
    "nome": "@eu.brandao__",
    "profissao": "cacador",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 35,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 36,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -556,11 +556,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 34,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 35,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -604,11 +604,11 @@
   "@diegokallel": {
    "nome": "@diegokallel",
    "profissao": "soldado",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 37,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -956,11 +956,11 @@
   "@leolindo6.7": {
    "nome": "@leolindo6.7",
    "profissao": "explorador",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 59,
-   "def": 29,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 61,
+   "def": 30,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1035,6 +1035,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794645728001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "queda",
+   "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1794644288001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "queda",
+   "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794638528001,
    "quem": "@kirara_and_hakari",
