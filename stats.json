@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-15T06:01",
+ "geradoEm": "2026-11-15T07:01",
  "relogioVila": {
   "dia": 13,
-  "hora": 6
+  "hora": 7
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 38,
-   "xp": 70367,
+   "xp": 70619,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 38,
-   "xp": 70168,
+   "xp": 70419,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 38,
-   "xp": 69582,
+   "xp": 69833,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 38,
-   "xp": 69412,
+   "xp": 69663,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 38,
-   "xp": 69403,
+   "xp": 69654,
    "titulo": "Lenda"
   }
  ],
@@ -364,11 +364,11 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 44,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 45,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -396,11 +396,11 @@
   "@thayl_ermatheus": {
    "nome": "@thayl_ermatheus",
    "profissao": "cavaleiro",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 44,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 45,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -556,11 +556,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 72,
-   "def": 36,
+   "nivel": 33,
+   "hp": 370,
+   "hpMax": 370,
+   "atq": 74,
+   "def": 37,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -604,11 +604,11 @@
   "@diegokallel": {
    "nome": "@diegokallel",
    "profissao": "soldado",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 72,
-   "def": 40,
+   "nivel": 33,
+   "hp": 370,
+   "hpMax": 370,
+   "atq": 74,
+   "def": 41,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -764,11 +764,11 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 37,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -812,11 +812,11 @@
   "@andrew_deko0.2": {
    "nome": "@andrew_deko0.2",
    "profissao": "cavaleiro",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 37,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1036,6 +1036,18 @@
  },
  "eventosUltimas24h": [
   {
+   "quando": 1794734347722,
+   "quem": "@dz.pzz",
+   "tipo": "briga_derrota",
+   "texto": "@dz.pzz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
+   "quando": 1794732907722,
+   "quem": "@dz.pzz",
+   "tipo": "vitoria",
+   "texto": "@dz.pzz e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
    "quando": 1794730027722,
    "quem": "@dz.pzz",
    "tipo": "briga_derrota",
@@ -1124,12 +1136,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "queda",
    "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794648608001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "briga_vitoria",
-   "texto": "@kirara_and_hakari encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   }
  ]
 }
