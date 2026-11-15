@@ -1,43 +1,43 @@
 {
- "geradoEm": "2026-11-15T02:01",
+ "geradoEm": "2026-11-15T03:01",
  "relogioVila": {
   "dia": 13,
-  "hora": 2
+  "hora": 3
  },
  "moradores": 53,
  "novosDoDia": [
   "@dz.pzz"
  ],
- "nivelMaisAlto": 37,
+ "nivelMaisAlto": 38,
  "maisAltos": [
   {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 37,
-   "xp": 69368,
+   "nome": "@dudabsl_",
+   "nivel": 38,
+   "xp": 69418,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabsl_",
+   "nome": "@iamvictoriamenezes",
    "nivel": 37,
-   "xp": 69168,
+   "xp": 69618,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 37,
-   "xp": 68583,
+   "xp": 68832,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 37,
-   "xp": 68412,
+   "xp": 68662,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 37,
-   "xp": 68403,
+   "xp": 68653,
    "titulo": "Lenda"
   }
  ],
@@ -65,17 +65,17 @@
   },
   {
    "entre": [
-    "@diegokallel",
-    "@nankhumwaemmanuel"
+    "@its_janaina13",
+    "@luizin_hz0"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@gods.samuka",
-    "@sampaiojaiane"
+    "@__niedison",
+    "@dudabsl_"
    ],
-   "forca": 2
+   "forca": 1
   }
  ],
  "maioresDesafetos": [
@@ -237,11 +237,11 @@
   "@dudabsl_": {
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 82,
-   "def": 39,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 84,
+   "def": 40,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -845,11 +845,11 @@
   "@rafael.strauch": {
    "nome": "@rafael.strauch",
    "profissao": "fazendeiro",
-   "nivel": 29,
-   "hp": 330,
-   "hpMax": 330,
-   "atq": 67,
-   "def": 33,
+   "nivel": 30,
+   "hp": 340,
+   "hpMax": 340,
+   "atq": 69,
+   "def": 34,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -957,11 +957,11 @@
   "@leolindo6.7": {
    "nome": "@leolindo6.7",
    "profissao": "explorador",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 63,
-   "def": 31,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 65,
+   "def": 32,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1037,11 +1037,11 @@
   "@dz.pzz": {
    "nome": "@dz.pzz",
    "profissao": "pescador",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 10,
-   "def": 1,
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 3,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
