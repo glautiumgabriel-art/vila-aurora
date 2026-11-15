@@ -55,9 +55,6 @@
      "post": "DfdUXHkBl2t",
      "em": "2026-11-07T21:18"
     }
-   ],
-   "titulos": [
-    "Voz da Vila"
    ]
   },
   {
@@ -509,9 +506,6 @@
      "para": "soldado",
      "em": "2026-11-06T22:18"
     }
-   ],
-   "titulos": [
-    "Voz da Vila"
    ]
   },
   {
@@ -544,7 +538,10 @@
    "viraVilaoEm": "2026-11-07T20:14-03:00",
    "pedidoVilao": "Eu quero ser um vilão de magia negromante",
    "postVilao": "Dfa2TVGNL9S",
-   "obsVilao": "pedido público dele em 06/11 (Dfa2TVGNL9S); liberado direto pela ordem do Dr. 07/11 ~20h; sem nova resposta (já respondido em 06/11)"
+   "obsVilao": "pedido público dele em 06/11 (Dfa2TVGNL9S); liberado direto pela ordem do Dr. 07/11 ~20h; sem nova resposta (já respondido em 06/11)",
+   "titulos": [
+    "Voz da Vila"
+   ]
   },
   {
    "id": "ig-dassow_djony",
@@ -861,9 +858,6 @@
      "em": "2026-11-07T16:08"
     }
    ],
-   "titulos": [
-    "Voz da Vila"
-   ],
    "faccao": "CASTELO"
   },
   {
@@ -930,7 +924,10 @@
    "sexo": "m",
    "profissao": "pastor",
    "joinedAt": 1794182926682,
-   "faltas": 0
+   "faltas": 0,
+   "titulos": [
+    "Voz da Vila"
+   ]
   },
   {
    "id": "ig-arthur594938",
