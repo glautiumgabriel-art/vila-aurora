@@ -1,58 +1,58 @@
 {
- "geradoEm": "2026-11-15T03:01",
+ "geradoEm": "2026-11-15T04:01",
  "relogioVila": {
   "dia": 13,
-  "hora": 3
+  "hora": 4
  },
- "moradores": 53,
+ "moradores": 52,
  "novosDoDia": [
   "@dz.pzz"
  ],
  "nivelMaisAlto": 38,
  "maisAltos": [
   {
+   "nome": "@iamvictoriamenezes",
+   "nivel": 38,
+   "xp": 69868,
+   "titulo": "Lenda"
+  },
+  {
    "nome": "@dudabsl_",
    "nivel": 38,
-   "xp": 69418,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 37,
-   "xp": 69618,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@laryssapsouza",
-   "nivel": 37,
-   "xp": 68832,
+   "xp": 69668,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
-   "nivel": 37,
-   "xp": 68662,
+   "nivel": 38,
+   "xp": 68912,
    "titulo": "Lenda"
   },
   {
-   "nome": "@adriana.g.santana",
-   "nivel": 37,
-   "xp": 68653,
+   "nome": "@dudabrisolaa_",
+   "nivel": 38,
+   "xp": 68578,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@glautiumgabriel",
+   "nivel": 38,
+   "xp": 68558,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@_williamg10",
-    "@eu.brandao__"
+    "@__niedison",
+    "@kalebdecote"
    ],
    "forca": 2
   },
   {
    "entre": [
-    "@adriana.g.santana",
-    "@eopedrinhonepai"
+    "@_williamg10",
+    "@eu.brandao__"
    ],
    "forca": 2
   },
@@ -65,8 +65,8 @@
   },
   {
    "entre": [
-    "@its_janaina13",
-    "@luizin_hz0"
+    "@gods.samuka",
+    "@sampaiojaiane"
    ],
    "forca": 2
   },
@@ -141,7 +141,6 @@
   "@ozi_calderon",
   "@salomaojr31",
   "@samuel_teles_01",
-  "@kaio_a0",
   "@dassow_djony",
   "@moisesdomingosf",
   "@samuul_gx_ofc",
@@ -172,8 +171,8 @@
   "soldado": 7,
   "explorador": 5,
   "fazendeiro": 5,
-  "pescador": 4,
   "ferreiro": 3,
+  "pescador": 3,
   "cozinheiro": 2,
   "comerciante": 2,
   "cacador": 2,
@@ -221,11 +220,11 @@
   "@dudabrisolaa_": {
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 82,
-   "def": 45,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 84,
+   "def": 46,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -253,11 +252,11 @@
   "@glautiumgabriel": {
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 83,
-   "def": 39,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 85,
+   "def": 40,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -269,11 +268,11 @@
   "@iamvictoriamenezes": {
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 82,
-   "def": 41,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 84,
+   "def": 42,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -301,11 +300,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 82,
-   "def": 39,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 84,
+   "def": 40,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -616,22 +615,6 @@
    "bCapa": 2,
    "longe": false,
    "guerreiro": true,
-   "mana": null
-  },
-  "@kaio_a0": {
-   "nome": "@kaio_a0",
-   "profissao": "pescador",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 72,
-   "def": 34,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
    "mana": null
   },
   "@dassow_djony": {
@@ -1021,11 +1004,11 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 38,
-   "def": 16,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 40,
+   "def": 17,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 2,
@@ -1037,13 +1020,13 @@
   "@dz.pzz": {
    "nome": "@dz.pzz",
    "profissao": "pescador",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 14,
-   "def": 3,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 17,
+   "def": 4,
    "bArma": 2,
-   "bSec": 0,
+   "bSec": 1,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
@@ -1135,18 +1118,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "queda",
    "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794638528001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "vitoria",
-   "texto": "@kirara_and_hakari acertaram de longe uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1794637088001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "vitoria",
-   "texto": "@kirara_and_hakari e os amigos acertaram de longe um goblin da estrada e ganharam uma bolsa de moedas."
   }
  ]
 }

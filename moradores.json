@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-15T03:00",
+ "atualizadoEm": "2026-11-15T04:00",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -506,41 +506,6 @@
      "para": "soldado",
      "em": "2026-11-06T22:18"
     }
-   ]
-  },
-  {
-   "id": "ig-kaio_a0",
-   "nome": "@kaio_a0",
-   "nomeCompleto": "",
-   "sexo": "?",
-   "profissao": "pescador",
-   "joinedAt": 1794013221819,
-   "faltas": 2,
-   "motivoProfissao": "cidade sem pescador (pesca do Rio Claro)",
-   "presentes": [
-    {
-     "item": "Mapa Rasgado",
-     "tipo": "pista",
-     "raridade": "comum",
-     "post": "Dfa2TVGNL9S",
-     "em": "2026-11-06T22:18"
-    },
-    {
-     "item": "Amuleto Raro",
-     "tipo": "amuleto",
-     "raridade": "raro",
-     "post": "DfoO1wGRaYT",
-     "em": "2026-11-12T18:22"
-    }
-   ],
-   "lado": "vilao",
-   "papelVilao": "Necromante",
-   "viraVilaoEm": "2026-11-07T20:14-03:00",
-   "pedidoVilao": "Eu quero ser um vilão de magia negromante",
-   "postVilao": "Dfa2TVGNL9S",
-   "obsVilao": "pedido público dele em 06/11 (Dfa2TVGNL9S); liberado direto pela ordem do Dr. 07/11 ~20h; sem nova resposta (já respondido em 06/11)",
-   "titulos": [
-    "Voz da Vila"
    ]
   },
   {
