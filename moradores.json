@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-15T01:00",
+ "atualizadoEm": "2026-11-15T02:00",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -515,7 +515,7 @@
    "sexo": "?",
    "profissao": "pescador",
    "joinedAt": 1794013221819,
-   "faltas": 0,
+   "faltas": 1,
    "motivoProfissao": "cidade sem pescador (pesca do Rio Claro)",
    "presentes": [
     {
@@ -990,6 +990,15 @@
    "sexo": "?",
    "profissao": "cacador",
    "joinedAt": 1794614408001,
+   "faltas": 0
+  },
+  {
+   "id": "ig-dz.pzz",
+   "nome": "@dz.pzz",
+   "nomeCompleto": "",
+   "sexo": "?",
+   "profissao": "pescador",
+   "joinedAt": 1794718867722,
    "faltas": 0
   }
  ]

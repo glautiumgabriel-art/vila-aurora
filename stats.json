@@ -1,41 +1,43 @@
 {
- "geradoEm": "2026-11-15T01:01",
+ "geradoEm": "2026-11-15T02:01",
  "relogioVila": {
   "dia": 13,
-  "hora": 1
+  "hora": 2
  },
- "moradores": 52,
- "novosDoDia": [],
+ "moradores": 53,
+ "novosDoDia": [
+  "@dz.pzz"
+ ],
  "nivelMaisAlto": 37,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 37,
-   "xp": 69118,
+   "xp": 69368,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 37,
-   "xp": 68918,
+   "xp": 69168,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 37,
-   "xp": 68333,
+   "xp": 68583,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 37,
-   "xp": 68162,
+   "xp": 68412,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 37,
-   "xp": 68154,
+   "xp": 68403,
    "titulo": "Lenda"
   }
  ],
@@ -170,8 +172,8 @@
   "soldado": 7,
   "explorador": 5,
   "fazendeiro": 5,
+  "pescador": 4,
   "ferreiro": 3,
-  "pescador": 3,
   "cozinheiro": 2,
   "comerciante": 2,
   "cacador": 2,
@@ -184,12 +186,12 @@
  },
  "vilas": 2,
  "ultimoMorador": {
-  "nome": "@kirara_and_hakari",
+  "nome": "@dz.pzz",
   "nomeCompleto": "",
-  "profissao": "cacador",
+  "profissao": "pescador",
   "sexo": "?",
-  "chegouEm": "2026-11-13T21:00",
-  "chegouEmMs": 1794614408001
+  "chegouEm": "2026-11-15T02:01",
+  "chegouEmMs": 1794718867722
  },
  "quemMaisTrouxe": [],
  "moradoresPorConvite": 0,
@@ -331,11 +333,11 @@
   "@tataicintra": {
    "nome": "@tataicintra",
    "profissao": "comerciante",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 38,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -619,11 +621,11 @@
   "@kaio_a0": {
    "nome": "@kaio_a0",
    "profissao": "pescador",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 70,
-   "def": 33,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 72,
+   "def": 34,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -731,11 +733,11 @@
   "@_rai.la.ne_": {
    "nome": "@_rai.la.ne_",
    "profissao": "fazendeiro",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 32,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 33,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -747,11 +749,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 32,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 33,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -763,11 +765,11 @@
   "@kauedomingues894": {
    "nome": "@kauedomingues894",
    "profissao": "bardo",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 32,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 33,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -971,10 +973,10 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 58,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 60,
    "def": 22,
    "bArma": 2,
    "bSec": 0,
@@ -1028,6 +1030,22 @@
    "bSec": 1,
    "bEsc": 2,
    "bCapa": 2,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@dz.pzz": {
+   "nome": "@dz.pzz",
+   "profissao": "pescador",
+   "nivel": 1,
+   "hp": 50,
+   "hpMax": 50,
+   "atq": 10,
+   "def": 1,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
    "longe": false,
    "guerreiro": false,
    "mana": null
