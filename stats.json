@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-15T14:02",
+ "geradoEm": "2026-11-15T15:00",
  "relogioVila": {
   "dia": 13,
-  "hora": 13
+  "hora": 14
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 38,
-   "xp": 72363,
+   "xp": 72613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 38,
-   "xp": 72163,
+   "xp": 72413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 38,
-   "xp": 71578,
+   "xp": 71828,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 38,
-   "xp": 71407,
+   "xp": 71657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 38,
-   "xp": 71399,
+   "xp": 71648,
    "titulo": "Lenda"
   }
  ],
@@ -348,11 +348,11 @@
   "@menor.k01_de_itz": {
    "nome": "@menor.k01_de_itz",
    "profissao": "explorador",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 82,
-   "def": 41,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 84,
+   "def": 42,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -828,11 +828,11 @@
   "@rafael.strauch": {
    "nome": "@rafael.strauch",
    "profissao": "fazendeiro",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 34,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 35,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1021,7 +1021,7 @@
    "nome": "@dz.pzz",
    "profissao": "pescador",
    "nivel": 8,
-   "hp": 120,
+   "hp": 92,
    "hpMax": 120,
    "atq": 25,
    "def": 10,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794764587722,
+   "quem": "@dz.pzz",
+   "tipo": "queda",
+   "texto": "@dz.pzz escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794753067722,
    "quem": "@dz.pzz",
