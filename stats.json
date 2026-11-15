@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-15T13:01",
+ "geradoEm": "2026-11-15T14:02",
  "relogioVila": {
   "dia": 13,
   "hora": 13
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 38,
-   "xp": 72118,
+   "xp": 72363,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 38,
-   "xp": 71918,
+   "xp": 72163,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 38,
-   "xp": 71333,
+   "xp": 71578,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 38,
-   "xp": 71162,
+   "xp": 71407,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 38,
-   "xp": 71153,
+   "xp": 71399,
    "titulo": "Lenda"
   }
  ],
@@ -316,11 +316,11 @@
   "@dr.glautiumgabriel": {
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 83,
-   "def": 39,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 85,
+   "def": 40,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -508,11 +508,11 @@
   "@gods.samuka": {
    "nome": "@gods.samuka",
    "profissao": "padeiro",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 75,
-   "def": 37,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 77,
+   "def": 38,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -684,11 +684,11 @@
   "@oi56382": {
    "nome": "@oi56382",
    "profissao": "cabeleireiro",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 70,
-   "def": 33,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 72,
+   "def": 34,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -716,11 +716,11 @@
   "@_rai.la.ne_": {
    "nome": "@_rai.la.ne_",
    "profissao": "fazendeiro",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 33,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 34,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -732,11 +732,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 70,
-   "def": 33,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 72,
+   "def": 34,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -748,11 +748,11 @@
   "@kauedomingues894": {
    "nome": "@kauedomingues894",
    "profissao": "bardo",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 33,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 34,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -940,11 +940,11 @@
   "@leolindo6.7": {
    "nome": "@leolindo6.7",
    "profissao": "explorador",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 65,
-   "def": 32,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 67,
+   "def": 33,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1154,12 +1154,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "vitoria",
    "texto": "@kirara_and_hakari e os amigos acertaram de longe uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1794674528001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "doma",
-   "texto": "@kirara_and_hakari cercaram um cavalo selvagem e domaram! Agora @kirara_and_hakari anda montado."
   }
  ]
 }
