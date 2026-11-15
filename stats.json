@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-14T22:01",
+ "geradoEm": "2026-11-14T23:00",
  "relogioVila": {
   "dia": 12,
   "hora": 22
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 37,
-   "xp": 68368,
+   "xp": 68613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 37,
-   "xp": 68168,
+   "xp": 68413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 37,
-   "xp": 67582,
+   "xp": 67828,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 37,
-   "xp": 67412,
+   "xp": 67657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 37,
-   "xp": 67403,
+   "xp": 67648,
    "titulo": "Lenda"
   }
  ],
@@ -571,11 +571,11 @@
   "@salomaojr31": {
    "nome": "@salomaojr31",
    "profissao": "soldado",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 72,
-   "def": 40,
+   "nivel": 33,
+   "hp": 370,
+   "hpMax": 370,
+   "atq": 74,
+   "def": 41,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -651,11 +651,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 32,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 33,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -715,11 +715,11 @@
   "@adriana.lopesl": {
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 34,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 35,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1019,11 +1019,11 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 11,
-   "hp": 150,
-   "hpMax": 150,
-   "atq": 36,
-   "def": 15,
+   "nivel": 12,
+   "hp": 160,
+   "hpMax": 160,
+   "atq": 38,
+   "def": 16,
    "bArma": 7,
    "bSec": 1,
    "bEsc": 2,
@@ -1034,6 +1034,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794706208001,
+   "quem": "@kirara_and_hakari",
+   "tipo": "vitoria",
+   "texto": "@kirara_and_hakari e os amigos acertaram de longe um javali teimoso e ganharam uma presa de javali."
+  },
   {
    "quando": 1794697568001,
    "quem": "@kirara_and_hakari",
@@ -1126,12 +1132,6 @@
   },
   {
    "quando": 1794627008001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "briga_derrota",
-   "texto": "@kirara_and_hakari foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794621248001,
    "quem": "@kirara_and_hakari",
    "tipo": "briga_derrota",
    "texto": "@kirara_and_hakari foi encarar outra vila, perdeu a briga e voltou correndo para casa."
