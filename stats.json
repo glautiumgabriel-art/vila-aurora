@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-15T19:01",
+ "geradoEm": "2026-11-15T20:00",
  "relogioVila": {
   "dia": 13,
   "hora": 19
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 39,
-   "xp": 73618,
+   "xp": 73864,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 39,
-   "xp": 73418,
+   "xp": 73664,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 39,
-   "xp": 72662,
+   "xp": 72908,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 39,
-   "xp": 72328,
+   "xp": 72574,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 39,
-   "xp": 72308,
+   "xp": 72554,
    "titulo": "Lenda"
   }
  ],
@@ -556,11 +556,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 74,
-   "def": 37,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 76,
+   "def": 38,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -604,11 +604,11 @@
   "@diegokallel": {
    "nome": "@diegokallel",
    "profissao": "soldado",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 74,
-   "def": 41,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 76,
+   "def": 42,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -780,11 +780,11 @@
   "@luizin_hz0": {
    "nome": "@luizin_hz0",
    "profissao": "soldado",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 70,
-   "def": 39,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 72,
+   "def": 40,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -844,11 +844,11 @@
   "@__niedison": {
    "nome": "@__niedison",
    "profissao": "bardo",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 35,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 36,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -876,11 +876,11 @@
   "@kaiobentopereira": {
    "nome": "@kaiobentopereira",
    "profissao": "pescador",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 33,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 34,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794780427722,
+   "quem": "@dz.pzz",
+   "tipo": "vitoria",
+   "texto": "@dz.pzz venceram um urso da floresta e ganharam uma garra de urso."
+  },
   {
    "quando": 1794774667722,
    "quem": "@dz.pzz",
