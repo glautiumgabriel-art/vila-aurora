@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-14T23:00",
+ "geradoEm": "2026-11-15T00:00",
  "relogioVila": {
   "dia": 12,
-  "hora": 22
+  "hora": 23
  },
  "moradores": 52,
  "novosDoDia": [],
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 37,
-   "xp": 68613,
+   "xp": 68863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 37,
-   "xp": 68413,
+   "xp": 68663,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 37,
-   "xp": 67828,
+   "xp": 68078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 37,
-   "xp": 67657,
+   "xp": 67907,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 37,
-   "xp": 67648,
+   "xp": 67898,
    "titulo": "Lenda"
   }
  ],
@@ -315,11 +315,11 @@
   "@dr.glautiumgabriel": {
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 81,
-   "def": 38,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 83,
+   "def": 39,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -347,11 +347,11 @@
   "@menor.k01_de_itz": {
    "nome": "@menor.k01_de_itz",
    "profissao": "explorador",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 40,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 41,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -683,11 +683,11 @@
   "@santoslais3277": {
    "nome": "@santoslais3277",
    "profissao": "soldado",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 68,
-   "def": 37,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 70,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1003,11 +1003,11 @@
   "@novelinha.biblia": {
    "nome": "@novelinha.biblia",
    "profissao": "cavaleiro",
-   "nivel": 22,
-   "hp": 260,
-   "hpMax": 260,
-   "atq": 52,
-   "def": 29,
+   "nivel": 23,
+   "hp": 270,
+   "hpMax": 270,
+   "atq": 54,
+   "def": 30,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
