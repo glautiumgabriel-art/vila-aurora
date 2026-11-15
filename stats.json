@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-15T05:01",
+ "geradoEm": "2026-11-15T06:01",
  "relogioVila": {
   "dia": 13,
-  "hora": 5
+  "hora": 6
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 38,
-   "xp": 70118,
+   "xp": 70367,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 38,
-   "xp": 69918,
+   "xp": 70168,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@laryssapsouza",
+   "nivel": 38,
+   "xp": 69582,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 38,
-   "xp": 69162,
+   "xp": 69412,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabrisolaa_",
+   "nome": "@adriana.g.santana",
    "nivel": 38,
-   "xp": 68828,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@glautiumgabriel",
-   "nivel": 38,
-   "xp": 68808,
+   "xp": 69403,
    "titulo": "Lenda"
   }
  ],
@@ -204,11 +204,11 @@
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 83,
-   "def": 41,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 85,
+   "def": 42,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -284,11 +284,11 @@
   "@laryssapsouza": {
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 82,
-   "def": 41,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 84,
+   "def": 42,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -492,11 +492,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 73,
-   "def": 34,
+   "nivel": 33,
+   "hp": 370,
+   "hpMax": 370,
+   "atq": 75,
+   "def": 35,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -652,11 +652,11 @@
   "@samuul_gx_ofc": {
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
-   "nivel": 30,
-   "hp": 340,
-   "hpMax": 340,
-   "atq": 69,
-   "def": 32,
+   "nivel": 31,
+   "hp": 350,
+   "hpMax": 350,
+   "atq": 71,
+   "def": 33,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -892,11 +892,11 @@
   "@faixa_gu244": {
    "nome": "@faixa_gu244",
    "profissao": "bardo",
-   "nivel": 28,
-   "hp": 320,
-   "hpMax": 320,
-   "atq": 65,
-   "def": 30,
+   "nivel": 29,
+   "hp": 330,
+   "hpMax": 330,
+   "atq": 67,
+   "def": 31,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -972,11 +972,11 @@
   "@its_janaina13": {
    "nome": "@its_janaina13",
    "profissao": "soldado",
-   "nivel": 25,
-   "hp": 290,
-   "hpMax": 290,
-   "atq": 58,
-   "def": 32,
+   "nivel": 26,
+   "hp": 300,
+   "hpMax": 300,
+   "atq": 60,
+   "def": 33,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1005,7 +1005,7 @@
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
    "nivel": 13,
-   "hp": 90,
+   "hp": 170,
    "hpMax": 170,
    "atq": 40,
    "def": 17,
@@ -1020,11 +1020,11 @@
   "@dz.pzz": {
    "nome": "@dz.pzz",
    "profissao": "pescador",
-   "nivel": 4,
-   "hp": 80,
-   "hpMax": 80,
-   "atq": 17,
-   "def": 4,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 19,
+   "def": 5,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794730027722,
+   "quem": "@dz.pzz",
+   "tipo": "briga_derrota",
+   "texto": "@dz.pzz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
   {
    "quando": 1794729248001,
    "quem": "@kirara_and_hakari",
@@ -1124,18 +1130,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "briga_vitoria",
    "texto": "@kirara_and_hakari encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794645728001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "queda",
-   "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794644288001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "queda",
-   "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
