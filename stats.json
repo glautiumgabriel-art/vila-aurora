@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-15T16:01",
+ "geradoEm": "2026-11-15T16:59",
  "relogioVila": {
   "dia": 13,
   "hora": 16
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 38,
-   "xp": 72867,
+   "xp": 73113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 38,
-   "xp": 72668,
+   "xp": 72913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 38,
-   "xp": 72082,
+   "xp": 72328,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 38,
-   "xp": 71912,
+   "xp": 72157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 38,
-   "xp": 71903,
+   "xp": 72148,
    "titulo": "Lenda"
   }
  ],
@@ -1154,12 +1154,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "queda",
    "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794684608001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "vitoria",
-   "texto": "@kirara_and_hakari e os amigos acertaram de longe um cavalo selvagem."
   }
  ]
 }
