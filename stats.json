@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-15T10:01",
+ "geradoEm": "2026-11-15T11:00",
  "relogioVila": {
   "dia": 13,
   "hora": 10
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 38,
-   "xp": 71368,
+   "xp": 71613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 38,
-   "xp": 71168,
+   "xp": 71413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 38,
-   "xp": 70583,
+   "xp": 70828,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 38,
-   "xp": 70412,
+   "xp": 70657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 38,
-   "xp": 70403,
+   "xp": 70648,
    "titulo": "Lenda"
   }
  ],
@@ -460,11 +460,11 @@
   "@saviob._santos": {
    "nome": "@saviob._santos",
    "profissao": "ferreiro",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 81,
-   "def": 40,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 83,
+   "def": 41,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -636,11 +636,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 33,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 34,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -700,11 +700,11 @@
   "@adriana.lopesl": {
    "nome": "@adriana.lopesl",
    "profissao": "explorador",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 35,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 36,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1160,12 +1160,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "vitoria",
    "texto": "@kirara_and_hakari e os amigos acertaram de longe uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1794664448001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "briga_derrota",
-   "texto": "@kirara_and_hakari foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }
