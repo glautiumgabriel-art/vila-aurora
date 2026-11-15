@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-15T09:00",
+ "geradoEm": "2026-11-15T10:01",
  "relogioVila": {
   "dia": 13,
-  "hora": 8
+  "hora": 10
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 38,
-   "xp": 71113,
+   "xp": 71368,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 38,
-   "xp": 70913,
+   "xp": 71168,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 38,
-   "xp": 70328,
+   "xp": 70583,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 38,
-   "xp": 70157,
+   "xp": 70412,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 38,
-   "xp": 70148,
+   "xp": 70403,
    "titulo": "Lenda"
   }
  ],
@@ -428,11 +428,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 36,
-   "hp": 400,
-   "hpMax": 400,
-   "atq": 80,
-   "def": 40,
+   "nivel": 37,
+   "hp": 410,
+   "hpMax": 410,
+   "atq": 82,
+   "def": 41,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1004,12 +1004,12 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 13,
-   "hp": 170,
-   "hpMax": 170,
-   "atq": 40,
-   "def": 17,
-   "bArma": 7,
+   "nivel": 14,
+   "hp": 180,
+   "hpMax": 180,
+   "atq": 37,
+   "def": 18,
+   "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
    "bCapa": 2,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794744427722,
+   "quem": "@dz.pzz",
+   "tipo": "queda",
+   "texto": "@dz.pzz escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794742987722,
    "quem": "@dz.pzz",
