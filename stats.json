@@ -1,43 +1,41 @@
 {
- "geradoEm": "2026-11-14T20:59",
+ "geradoEm": "2026-11-14T22:01",
  "relogioVila": {
   "dia": 12,
-  "hora": 20
+  "hora": 22
  },
  "moradores": 52,
- "novosDoDia": [
-  "@kirara_and_hakari"
- ],
+ "novosDoDia": [],
  "nivelMaisAlto": 37,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 37,
-   "xp": 68113,
+   "xp": 68368,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 37,
-   "xp": 67913,
+   "xp": 68168,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 37,
-   "xp": 67328,
+   "xp": 67582,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 37,
-   "xp": 67157,
+   "xp": 67412,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 37,
-   "xp": 67148,
+   "xp": 67403,
    "titulo": "Lenda"
   }
  ],
@@ -445,11 +443,11 @@
   "@sampaiojaiane": {
    "nome": "@sampaiojaiane",
    "profissao": "fazendeiro",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 78,
-   "def": 37,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 80,
+   "def": 38,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1137,12 +1135,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "briga_derrota",
    "texto": "@kirara_and_hakari foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794615488001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "derrota",
-   "texto": "@kirara_and_hakari encostou sozinho em o Lobo Cinzento e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
