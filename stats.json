@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-16T16:01",
+ "geradoEm": "2026-11-16T17:00",
  "relogioVila": {
   "dia": 14,
   "hora": 16
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 40,
-   "xp": 78868,
+   "xp": 79113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 40,
-   "xp": 78668,
+   "xp": 78913,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 40,
-   "xp": 78083,
+   "xp": 78328,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 40,
-   "xp": 77912,
+   "xp": 78157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 40,
-   "xp": 77903,
+   "xp": 78148,
    "titulo": "Lenda"
   }
  ],
@@ -410,11 +410,11 @@
   "@joelma_alvarez": {
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
-   "nivel": 38,
-   "hp": 420,
-   "hpMax": 420,
-   "atq": 84,
-   "def": 46,
+   "nivel": 39,
+   "hp": 430,
+   "hpMax": 430,
+   "atq": 86,
+   "def": 47,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -442,11 +442,11 @@
   "@sampaiojaiane": {
    "nome": "@sampaiojaiane",
    "profissao": "fazendeiro",
-   "nivel": 38,
-   "hp": 420,
-   "hpMax": 420,
-   "atq": 84,
-   "def": 40,
+   "nivel": 39,
+   "hp": 430,
+   "hpMax": 430,
+   "atq": 86,
+   "def": 41,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -458,11 +458,11 @@
   "@saviob._santos": {
    "nome": "@saviob._santos",
    "profissao": "ferreiro",
-   "nivel": 38,
-   "hp": 420,
-   "hpMax": 420,
-   "atq": 85,
-   "def": 42,
+   "nivel": 39,
+   "hp": 430,
+   "hpMax": 430,
+   "atq": 87,
+   "def": 43,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1002,11 +1002,11 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 18,
-   "hp": 220,
-   "hpMax": 220,
-   "atq": 45,
-   "def": 22,
+   "nivel": 19,
+   "hp": 230,
+   "hpMax": 230,
+   "atq": 47,
+   "def": 23,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
