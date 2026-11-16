@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-16T11:00",
+ "geradoEm": "2026-11-16T12:00",
  "relogioVila": {
   "dia": 14,
-  "hora": 10
+  "hora": 11
  },
  "moradores": 52,
  "novosDoDia": [],
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 40,
-   "xp": 77613,
+   "xp": 77863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 40,
-   "xp": 77413,
+   "xp": 77663,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@laryssapsouza",
+   "nivel": 40,
+   "xp": 77078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 40,
-   "xp": 76657,
+   "xp": 76907,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabrisolaa_",
+   "nome": "@adriana.g.santana",
    "nivel": 40,
-   "xp": 76323,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@glautiumgabriel",
-   "nivel": 40,
-   "xp": 76303,
+   "xp": 76898,
    "titulo": "Lenda"
   }
  ],
@@ -202,11 +202,11 @@
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "nivel": 39,
-   "hp": 430,
-   "hpMax": 430,
-   "atq": 87,
-   "def": 43,
+   "nivel": 40,
+   "hp": 440,
+   "hpMax": 440,
+   "atq": 89,
+   "def": 44,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -282,11 +282,11 @@
   "@laryssapsouza": {
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
-   "nivel": 39,
-   "hp": 430,
-   "hpMax": 430,
-   "atq": 86,
-   "def": 43,
+   "nivel": 40,
+   "hp": 440,
+   "hpMax": 440,
+   "atq": 88,
+   "def": 44,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -362,11 +362,11 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 38,
-   "hp": 420,
-   "hpMax": 420,
-   "atq": 84,
-   "def": 46,
+   "nivel": 39,
+   "hp": 430,
+   "hpMax": 430,
+   "atq": 86,
+   "def": 47,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -634,11 +634,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 75,
-   "def": 35,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 77,
+   "def": 36,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1018,11 +1018,11 @@
   "@dz.pzz": {
    "nome": "@dz.pzz",
    "profissao": "pescador",
-   "nivel": 12,
-   "hp": 160,
-   "hpMax": 160,
-   "atq": 33,
-   "def": 14,
+   "nivel": 13,
+   "hp": 170,
+   "hpMax": 170,
+   "atq": 35,
+   "def": 15,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1137,18 +1137,6 @@
   },
   {
    "quando": 1794764587722,
-   "quem": "@dz.pzz",
-   "tipo": "queda",
-   "texto": "@dz.pzz escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794753067722,
-   "quem": "@dz.pzz",
-   "tipo": "vitoria",
-   "texto": "@dz.pzz e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794751627722,
    "quem": "@dz.pzz",
    "tipo": "queda",
    "texto": "@dz.pzz escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
