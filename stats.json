@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-15T22:02",
+ "geradoEm": "2026-11-15T23:00",
  "relogioVila": {
   "dia": 13,
   "hora": 22
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 39,
-   "xp": 74372,
+   "xp": 74613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 39,
-   "xp": 74172,
+   "xp": 74413,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 39,
-   "xp": 73587,
+   "xp": 73828,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 39,
-   "xp": 73416,
+   "xp": 73657,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 39,
-   "xp": 73408,
+   "xp": 73648,
    "titulo": "Lenda"
   }
  ],
@@ -380,11 +380,11 @@
   "@gabrielcamuzzatonegretti": {
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "cavaleiro",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 82,
-   "def": 45,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 84,
+   "def": 46,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -636,11 +636,11 @@
   "@moisesdomingosf": {
    "nome": "@moisesdomingosf",
    "profissao": "pescador",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 73,
-   "def": 34,
+   "nivel": 33,
+   "hp": 370,
+   "hpMax": 370,
+   "atq": 75,
+   "def": 35,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -956,11 +956,11 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 27,
-   "hp": 310,
-   "hpMax": 310,
-   "atq": 62,
-   "def": 23,
+   "nivel": 28,
+   "hp": 320,
+   "hpMax": 320,
+   "atq": 64,
+   "def": 24,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1021,7 +1021,7 @@
    "nome": "@dz.pzz",
    "profissao": "pescador",
    "nivel": 10,
-   "hp": 140,
+   "hp": 108,
    "hpMax": 140,
    "atq": 29,
    "def": 12,
@@ -1035,6 +1035,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1794793387722,
+   "quem": "@dz.pzz",
+   "tipo": "queda",
+   "texto": "@dz.pzz escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1794787627722,
    "quem": "@dz.pzz",
@@ -1160,12 +1166,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "vitoria",
    "texto": "@kirara_and_hakari e os amigos acertaram de longe um cavalo selvagem."
-  },
-  {
-   "quando": 1794706208001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "vitoria",
-   "texto": "@kirara_and_hakari e os amigos acertaram de longe um javali teimoso e ganharam uma presa de javali."
   }
  ]
 }
