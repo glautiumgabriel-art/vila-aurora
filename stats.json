@@ -1,41 +1,41 @@
 {
- "geradoEm": "2026-11-16T07:59",
+ "geradoEm": "2026-11-16T09:00",
  "relogioVila": {
   "dia": 14,
-  "hora": 7
+  "hora": 8
  },
  "moradores": 52,
  "novosDoDia": [],
- "nivelMaisAlto": 39,
+ "nivelMaisAlto": 40,
  "maisAltos": [
   {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 39,
-   "xp": 76863,
+   "nome": "@dudabsl_",
+   "nivel": 40,
+   "xp": 76913,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabsl_",
+   "nome": "@iamvictoriamenezes",
    "nivel": 39,
-   "xp": 76663,
+   "xp": 77113,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 39,
-   "xp": 76078,
+   "xp": 76328,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 39,
-   "xp": 75907,
+   "xp": 76157,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 39,
-   "xp": 75898,
+   "xp": 76148,
    "titulo": "Lenda"
   }
  ],
@@ -234,11 +234,11 @@
   "@dudabsl_": {
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "nivel": 39,
-   "hp": 430,
-   "hpMax": 430,
-   "atq": 86,
-   "def": 41,
+   "nivel": 40,
+   "hp": 440,
+   "hpMax": 440,
+   "atq": 88,
+   "def": 42,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -554,11 +554,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 76,
-   "def": 38,
+   "nivel": 35,
+   "hp": 390,
+   "hpMax": 390,
+   "atq": 78,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -778,11 +778,11 @@
   "@luizin_hz0": {
    "nome": "@luizin_hz0",
    "profissao": "soldado",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 72,
-   "def": 40,
+   "nivel": 33,
+   "hp": 370,
+   "hpMax": 370,
+   "atq": 74,
+   "def": 41,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -842,11 +842,11 @@
   "@__niedison": {
    "nome": "@__niedison",
    "profissao": "bardo",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 73,
-   "def": 36,
+   "nivel": 33,
+   "hp": 370,
+   "hpMax": 370,
+   "atq": 75,
+   "def": 37,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -874,11 +874,11 @@
   "@kaiobentopereira": {
    "nome": "@kaiobentopereira",
    "profissao": "pescador",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 73,
-   "def": 34,
+   "nivel": 33,
+   "hp": 370,
+   "hpMax": 370,
+   "atq": 75,
+   "def": 35,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1034,6 +1034,12 @@
  },
  "eventosUltimas24h": [
   {
+   "quando": 1794827947722,
+   "quem": "@dz.pzz",
+   "tipo": "vitoria",
+   "texto": "@dz.pzz venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
    "quando": 1794825067722,
    "quem": "@dz.pzz",
    "tipo": "briga_derrota",
@@ -1152,24 +1158,6 @@
    "quem": "@dz.pzz",
    "tipo": "queda",
    "texto": "@dz.pzz escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794742987722,
-   "quem": "@dz.pzz",
-   "tipo": "vitoria",
-   "texto": "@dz.pzz venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1794741547722,
-   "quem": "@dz.pzz",
-   "tipo": "briga_derrota",
-   "texto": "@dz.pzz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794740768001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "queda",
-   "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
