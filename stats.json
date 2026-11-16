@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-15T20:00",
+ "geradoEm": "2026-11-15T21:00",
  "relogioVila": {
   "dia": 13,
-  "hora": 19
+  "hora": 20
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 39,
-   "xp": 73864,
+   "xp": 74113,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 39,
-   "xp": 73664,
+   "xp": 73913,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@laryssapsouza",
+   "nivel": 39,
+   "xp": 73328,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 39,
-   "xp": 72908,
+   "xp": 73157,
    "titulo": "Lenda"
   },
   {
-   "nome": "@dudabrisolaa_",
+   "nome": "@adriana.g.santana",
    "nivel": 39,
-   "xp": 72574,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@glautiumgabriel",
-   "nivel": 39,
-   "xp": 72554,
+   "xp": 73148,
    "titulo": "Lenda"
   }
  ],
@@ -204,11 +204,11 @@
   "@adriana.g.santana": {
    "nome": "@adriana.g.santana",
    "profissao": "bardo",
-   "nivel": 38,
-   "hp": 420,
-   "hpMax": 420,
-   "atq": 85,
-   "def": 42,
+   "nivel": 39,
+   "hp": 430,
+   "hpMax": 430,
+   "atq": 87,
+   "def": 43,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -284,11 +284,11 @@
   "@laryssapsouza": {
    "nome": "@laryssapsouza",
    "profissao": "ferreiro",
-   "nivel": 38,
-   "hp": 420,
-   "hpMax": 420,
-   "atq": 84,
-   "def": 42,
+   "nivel": 39,
+   "hp": 430,
+   "hpMax": 430,
+   "atq": 86,
+   "def": 43,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -364,11 +364,11 @@
   "@isaac.jmy": {
    "nome": "@isaac.jmy",
    "profissao": "cavaleiro",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 82,
-   "def": 45,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 84,
+   "def": 46,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -476,11 +476,11 @@
   "@eu.brandao__": {
    "nome": "@eu.brandao__",
    "profissao": "cacador",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 77,
-   "def": 38,
+   "nivel": 35,
+   "hp": 390,
+   "hpMax": 390,
+   "atq": 79,
+   "def": 39,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -524,11 +524,11 @@
   "@kalebdecote": {
    "nome": "@kalebdecote",
    "profissao": "bardo",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 75,
-   "def": 37,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 77,
+   "def": 38,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -540,11 +540,11 @@
   "@livia.maria31": {
    "nome": "@livia.maria31",
    "profissao": "comerciante",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 74,
-   "def": 37,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 76,
+   "def": 38,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -796,11 +796,11 @@
   "@mk._iluminado": {
    "nome": "@mk._iluminado",
    "profissao": "explorador",
-   "nivel": 31,
-   "hp": 350,
-   "hpMax": 350,
-   "atq": 71,
-   "def": 35,
+   "nivel": 32,
+   "hp": 360,
+   "hpMax": 360,
+   "atq": 73,
+   "def": 36,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1036,6 +1036,12 @@
  },
  "eventosUltimas24h": [
   {
+   "quando": 1794784747722,
+   "quem": "@dz.pzz",
+   "tipo": "briga_derrota",
+   "texto": "@dz.pzz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
    "quando": 1794780427722,
    "quem": "@dz.pzz",
    "tipo": "vitoria",
@@ -1154,12 +1160,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "vitoria",
    "texto": "@kirara_and_hakari e os amigos acertaram de longe um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1794697568001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "briga_vitoria",
-   "texto": "@kirara_and_hakari encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   }
  ]
 }
