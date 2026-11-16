@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-16T07:00",
+ "geradoEm": "2026-11-16T07:59",
  "relogioVila": {
   "dia": 14,
   "hora": 7
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 39,
-   "xp": 76617,
+   "xp": 76863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 39,
-   "xp": 76418,
+   "xp": 76663,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 39,
-   "xp": 75832,
+   "xp": 76078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 39,
-   "xp": 75661,
+   "xp": 75907,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 39,
-   "xp": 75653,
+   "xp": 75898,
    "titulo": "Lenda"
   }
  ],
@@ -490,11 +490,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 77,
-   "def": 36,
+   "nivel": 35,
+   "hp": 390,
+   "hpMax": 390,
+   "atq": 79,
+   "def": 37,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -762,11 +762,11 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 32,
-   "hp": 360,
-   "hpMax": 360,
-   "atq": 72,
-   "def": 40,
+   "nivel": 33,
+   "hp": 370,
+   "hpMax": 370,
+   "atq": 74,
+   "def": 41,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1034,6 +1034,12 @@
  },
  "eventosUltimas24h": [
   {
+   "quando": 1794825067722,
+   "quem": "@dz.pzz",
+   "tipo": "briga_derrota",
+   "texto": "@dz.pzz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
    "quando": 1794822187722,
    "quem": "@dz.pzz",
    "tipo": "vitoria",
@@ -1164,24 +1170,6 @@
    "quem": "@kirara_and_hakari",
    "tipo": "queda",
    "texto": "@kirara_and_hakari escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1794740107722,
-   "quem": "@dz.pzz",
-   "tipo": "vitoria",
-   "texto": "@dz.pzz venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1794739328001,
-   "quem": "@kirara_and_hakari",
-   "tipo": "briga_vitoria",
-   "texto": "@kirara_and_hakari encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
-  },
-  {
-   "quando": 1794738667722,
-   "quem": "@dz.pzz",
-   "tipo": "vitoria",
-   "texto": "@dz.pzz e os amigos venceram um javali teimoso e ganharam uma presa de javali."
   }
  ]
 }
