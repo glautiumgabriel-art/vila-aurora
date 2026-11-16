@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-16T10:01",
+ "geradoEm": "2026-11-16T11:00",
  "relogioVila": {
   "dia": 14,
   "hora": 10
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 40,
-   "xp": 77367,
+   "xp": 77613,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 40,
-   "xp": 77168,
+   "xp": 77413,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 40,
-   "xp": 76412,
+   "xp": 76657,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 40,
-   "xp": 76078,
+   "xp": 76323,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 40,
-   "xp": 76058,
+   "xp": 76303,
    "titulo": "Lenda"
   }
  ],
@@ -474,11 +474,11 @@
   "@eu.brandao__": {
    "nome": "@eu.brandao__",
    "profissao": "cacador",
-   "nivel": 35,
-   "hp": 390,
-   "hpMax": 390,
-   "atq": 79,
-   "def": 39,
+   "nivel": 36,
+   "hp": 400,
+   "hpMax": 400,
+   "atq": 81,
+   "def": 40,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -538,11 +538,11 @@
   "@livia.maria31": {
    "nome": "@livia.maria31",
    "profissao": "comerciante",
-   "nivel": 34,
-   "hp": 380,
-   "hpMax": 380,
-   "atq": 76,
-   "def": 38,
+   "nivel": 35,
+   "hp": 390,
+   "hpMax": 390,
+   "atq": 78,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -618,11 +618,11 @@
   "@dassow_djony": {
    "nome": "@dassow_djony",
    "profissao": "soldado",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 74,
-   "def": 41,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 76,
+   "def": 42,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
