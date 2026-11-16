@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-16T19:01",
+ "geradoEm": "2026-11-16T20:00",
  "relogioVila": {
   "dia": 14,
   "hora": 19
@@ -11,31 +11,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 40,
-   "xp": 79618,
+   "xp": 79863,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 40,
-   "xp": 79418,
+   "xp": 79663,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 40,
-   "xp": 78833,
+   "xp": 79078,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 40,
-   "xp": 78662,
+   "xp": 78907,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 40,
-   "xp": 78653,
+   "xp": 78898,
    "titulo": "Lenda"
   }
  ],
@@ -650,11 +650,11 @@
   "@samuul_gx_ofc": {
    "nome": "@samuul_gx_ofc",
    "profissao": "padeiro",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 75,
-   "def": 35,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 77,
+   "def": 36,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -810,11 +810,11 @@
   "@andrew_deko0.2": {
    "nome": "@andrew_deko0.2",
    "profissao": "cavaleiro",
-   "nivel": 33,
-   "hp": 370,
-   "hpMax": 370,
-   "atq": 74,
-   "def": 41,
+   "nivel": 34,
+   "hp": 380,
+   "hpMax": 380,
+   "atq": 76,
+   "def": 42,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1140,12 +1140,6 @@
    "quem": "@dz.pzz",
    "tipo": "briga_derrota",
    "texto": "@dz.pzz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1794780427722,
-   "quem": "@dz.pzz",
-   "tipo": "vitoria",
-   "texto": "@dz.pzz venceram um urso da floresta e ganharam uma garra de urso."
   }
  ]
 }
