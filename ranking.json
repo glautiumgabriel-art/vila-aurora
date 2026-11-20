@@ -1,5 +1,11 @@
 {
  "observacao": "Ranking semanal de quem mais comentou (7 dias). Top 10 ganham o título Voz da Vila.",
- "semana": [],
- "atualizadoEm": "2026-11-20T13:21"
+ "semana": [
+  {
+   "pos": 1,
+   "nome": "@dz.pzz",
+   "comentarios": 1
+  }
+ ],
+ "atualizadoEm": "2026-11-20T16:19"
 }
