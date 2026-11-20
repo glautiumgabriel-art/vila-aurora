@@ -943,7 +943,16 @@
    "sexo": "?",
    "profissao": "pescador",
    "joinedAt": 1794718867722,
-   "faltas": 0
+   "faltas": 0,
+   "presentes": [
+    {
+     "item": "Anel do Rei Aurélio",
+     "tipo": "joia",
+     "raridade": "epico",
+     "post": "Df5t2d5BMWg",
+     "em": "2026-11-20T16:19"
+    }
+   ]
   }
  ]
 }
