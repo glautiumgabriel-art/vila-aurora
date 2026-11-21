@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-21T16:20",
+ "atualizadoEm": "2026-11-21T16:22",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1489,7 +1489,9 @@
    },
    "post": "https://www.instagram.com/reel/DgA1QJ2RQle/",
    "via": "api",
-   "statusResposta": "na_fila_api"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-21T16:22",
+   "respostaId": "18017624819970180"
   }
  ]
 }
