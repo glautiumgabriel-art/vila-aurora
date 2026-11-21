@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-21T13:21",
+ "atualizadoEm": "2026-11-21T16:20",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1471,6 +1471,25 @@
    "statusResposta": "respondido",
    "respondidoEm": "2026-11-21T10:24",
    "respostaId": "18133182976772323"
+  },
+  {
+   "id": "api:17890943553690145",
+   "usuario": "@menor.k01_de_itz",
+   "comentario": "Salve 😍😍",
+   "em": "2026-11-21T16:20",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Boa! Passa lá em vila.ihfc.com.br pra ver os moradores 👀 🎁 Você ganhou um Amuleto Raro na vila!",
+   "presente": {
+    "item": "Amuleto Raro",
+    "tipo": "amuleto",
+    "raridade": "raro",
+    "post": "DgA1QJ2RQle",
+    "em": "2026-11-21T16:20"
+   },
+   "post": "https://www.instagram.com/reel/DgA1QJ2RQle/",
+   "via": "api",
+   "statusResposta": "na_fila_api"
   }
  ]
 }
