@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-17T02:00",
+ "atualizadoEm": "2026-11-21T10:24",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -10,7 +10,7 @@
    "sexo": "f",
    "profissao": "bardo",
    "joinedAt": 1793728511112,
-   "faltas": 0,
+   "faltas": 1,
    "fundadorVila": true,
    "vilaFundada": "Pinheiral",
    "correcoes": [
@@ -30,7 +30,7 @@
    "sexo": "f",
    "profissao": "cavaleiro",
    "joinedAt": 1793728512112,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-dudabsl_",
@@ -39,7 +39,7 @@
    "sexo": "f",
    "profissao": "curandeiro",
    "joinedAt": 1793728513112,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Pão de Mel da Lia",
@@ -64,7 +64,7 @@
    "sexo": "m",
    "profissao": "mineiro",
    "joinedAt": 1793728514112,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Pedra de Amolar",
@@ -82,7 +82,7 @@
    "sexo": "f",
    "profissao": "explorador",
    "joinedAt": 1793728515112,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-laryssapsouza",
@@ -91,7 +91,7 @@
    "sexo": "f",
    "profissao": "ferreiro",
    "joinedAt": 1793728516112,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "+50 XP",
@@ -109,7 +109,7 @@
    "sexo": "m",
    "profissao": "bardo",
    "joinedAt": 1793739616642,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-dr.glautiumgabriel",
@@ -118,7 +118,7 @@
    "sexo": "m",
    "profissao": "cozinheiro",
    "joinedAt": 1793755542967,
-   "faltas": 0,
+   "faltas": 1,
    "motivoProfissao": "vila sem produtor de comida",
    "discreto": true,
    "presentes": [
@@ -138,7 +138,7 @@
    "sexo": "f",
    "profissao": "comerciante",
    "joinedAt": 1793775136034,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-menor.k01_de_itz",
@@ -147,7 +147,7 @@
    "sexo": "?",
    "profissao": "explorador",
    "joinedAt": 1793779692956,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "+150 XP",
@@ -172,7 +172,7 @@
    "sexo": "m",
    "profissao": "cavaleiro",
    "joinedAt": 1793783412333,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Pão de Mel da Lia",
@@ -190,7 +190,7 @@
    "sexo": "m",
    "profissao": "cavaleiro",
    "joinedAt": 1793786001440,
-   "faltas": 0,
+   "faltas": 1,
    "historicoProfissao": [
     {
      "de": "comerciante",
@@ -215,7 +215,7 @@
    "sexo": "f",
    "profissao": "cavaleiro",
    "joinedAt": 1793787777813,
-   "faltas": 0,
+   "faltas": 1,
    "historicoProfissao": [
     {
      "de": "explorador",
@@ -248,7 +248,7 @@
    "sexo": "?",
    "profissao": "soldado",
    "joinedAt": 1793790547129,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-gbx.ws",
@@ -257,7 +257,7 @@
    "sexo": "?",
    "profissao": "fazendeiro",
    "joinedAt": 1793804099328,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-sampaiojaiane",
@@ -266,7 +266,7 @@
    "sexo": "?",
    "profissao": "fazendeiro",
    "joinedAt": 1793806850045,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-saviob._santos",
@@ -275,7 +275,7 @@
    "sexo": "?",
    "profissao": "ferreiro",
    "joinedAt": 1793811271505,
-   "faltas": 0,
+   "faltas": 1,
    "historicoProfissao": [
     {
      "de": "comerciante",
@@ -300,7 +300,7 @@
    "sexo": "?",
    "profissao": "cacador",
    "joinedAt": 1793936392455,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "+50 XP",
@@ -318,7 +318,7 @@
    "sexo": "f",
    "profissao": "fazendeiro",
    "joinedAt": 1793977003305,
-   "faltas": 0,
+   "faltas": 1,
    "historicoProfissao": [
     {
      "de": "cozinheiro",
@@ -344,7 +344,7 @@
    "sexo": "?",
    "profissao": "padeiro",
    "joinedAt": 1793977011305,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Mapa Rasgado",
@@ -362,7 +362,7 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1793977015305,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-livia.maria31",
@@ -371,7 +371,7 @@
    "sexo": "f",
    "profissao": "comerciante",
    "joinedAt": 1793977017305,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-ozi_calderon",
@@ -380,7 +380,7 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1793977019305,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-salomaojr31",
@@ -389,7 +389,7 @@
    "sexo": "?",
    "profissao": "soldado",
    "joinedAt": 1793977020305,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Pão de Mel da Lia",
@@ -443,7 +443,7 @@
    "sexo": "m",
    "profissao": "ferreiro",
    "joinedAt": 1793977022305,
-   "faltas": 0,
+   "faltas": 1,
    "historicoProfissao": [
     {
      "de": "pastor",
@@ -469,7 +469,7 @@
    "sexo": "m",
    "profissao": "soldado",
    "joinedAt": 1793982450497,
-   "faltas": 0,
+   "faltas": 1,
    "motivoProfissao": "pedido no comentário",
    "presentes": [
     {
@@ -509,7 +509,7 @@
    "sexo": "?",
    "profissao": "soldado",
    "joinedAt": 1794044368829,
-   "faltas": 0,
+   "faltas": 1,
    "historicoProfissao": [
     {
      "de": "arqueiro",
@@ -534,7 +534,7 @@
    "sexo": "?",
    "profissao": "pescador",
    "joinedAt": 1794047161395,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "+50 XP",
@@ -552,7 +552,7 @@
    "sexo": "?",
    "profissao": "padeiro",
    "joinedAt": 1794049202152,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-santoslais3277",
@@ -561,7 +561,7 @@
    "sexo": "?",
    "profissao": "soldado",
    "joinedAt": 1794050769633,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-oi56382",
@@ -570,7 +570,7 @@
    "sexo": "?",
    "profissao": "cozinheiro",
    "joinedAt": 1794054184742,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Mapa Rasgado",
@@ -588,7 +588,7 @@
    "sexo": "f",
    "profissao": "explorador",
    "joinedAt": 1794059635612,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-_rai.la.ne_",
@@ -597,7 +597,7 @@
    "sexo": "?",
    "profissao": "fazendeiro",
    "joinedAt": 1794064216594,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Pena de Grifo",
@@ -637,7 +637,7 @@
    "sexo": "?",
    "profissao": "pastor",
    "joinedAt": 1794065090014,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-kauedomingues894",
@@ -646,7 +646,7 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1794066901287,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-cf.ayshinha_",
@@ -655,7 +655,7 @@
    "sexo": "?",
    "profissao": "cavaleiro",
    "joinedAt": 1794071660080,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "+1 Respeito",
@@ -680,7 +680,7 @@
    "sexo": "m",
    "profissao": "soldado",
    "joinedAt": 1794076387675,
-   "faltas": 0,
+   "faltas": 1,
    "historicoProfissao": [
     {
      "de": "pescador",
@@ -705,7 +705,7 @@
    "sexo": "?",
    "profissao": "explorador",
    "joinedAt": 1794076389675,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Ferradura da Sorte",
@@ -733,7 +733,7 @@
    "sexo": "m",
    "profissao": "cavaleiro",
    "joinedAt": 1794078107752,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Pão de Mel da Lia",
@@ -820,7 +820,7 @@
    "sexo": "m",
    "profissao": "fazendeiro",
    "joinedAt": 1794083055301,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-__niedison",
@@ -829,7 +829,7 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1794084933308,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-eopedrinhonepai",
@@ -838,7 +838,7 @@
    "sexo": "?",
    "profissao": "alquimista",
    "joinedAt": 1794090233667,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-kaiobentopereira",
@@ -847,7 +847,7 @@
    "sexo": "?",
    "profissao": "pescador",
    "joinedAt": 1794097505576,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-faixa_gu244",
@@ -856,7 +856,7 @@
    "sexo": "?",
    "profissao": "bardo",
    "joinedAt": 1794151493836,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Anel do Rei Aurélio",
@@ -874,7 +874,7 @@
    "sexo": "m",
    "profissao": "pastor",
    "joinedAt": 1794182926682,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-arthur594938",
@@ -883,7 +883,7 @@
    "sexo": "m",
    "profissao": "cavaleiro",
    "joinedAt": 1794183759369,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-leolindo6.7",
@@ -892,7 +892,7 @@
    "sexo": "?",
    "profissao": "explorador",
    "joinedAt": 1794196457444,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Pão de Mel da Lia",
@@ -910,7 +910,7 @@
    "sexo": "?",
    "profissao": "arqueiro",
    "joinedAt": 1794254117533,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-its_janaina13",
@@ -919,7 +919,7 @@
    "sexo": "?",
    "profissao": "soldado",
    "joinedAt": 1794272006461,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-novelinha.biblia",
@@ -928,7 +928,7 @@
    "sexo": "?",
    "profissao": "cavaleiro",
    "joinedAt": 1794336903063,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-kirara_and_hakari",
@@ -937,7 +937,7 @@
    "sexo": "?",
    "profissao": "cacador",
    "joinedAt": 1794614408001,
-   "faltas": 0
+   "faltas": 1
   },
   {
    "id": "ig-dz.pzz",
@@ -946,7 +946,7 @@
    "sexo": "?",
    "profissao": "pescador",
    "joinedAt": 1794718867722,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Anel do Rei Aurélio",
