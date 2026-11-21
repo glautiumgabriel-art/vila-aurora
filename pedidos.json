@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-21T07:21",
+ "atualizadoEm": "2026-11-21T13:21",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1383,7 +1383,9 @@
    "pista": false,
    "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
    "via": "api",
-   "statusResposta": "sem_resposta_limite_usuario_24h"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-21T10:24",
+   "respostaId": "18133182976772323"
   },
   {
    "id": "api:18127032064941667",
@@ -1466,7 +1468,9 @@
    "resposta": "Siga @vilaauroraoficial para virar morador e ganhar o presente 🎁",
    "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
    "via": "api",
-   "statusResposta": "sem_resposta_limite_usuario_24h"
+   "statusResposta": "respondido",
+   "respondidoEm": "2026-11-21T10:24",
+   "respostaId": "18133182976772323"
   }
  ]
 }
