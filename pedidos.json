@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "atualizadoEm": "2026-11-20T19:19",
+ "atualizadoEm": "2026-11-20T22:21",
  "observacao": "Pedidos de profissão feitos nos comentários do @vilaauroraoficial. Gravado pelo robô de comentários; status: aplicado / aguarda_seguir / duvida / respondido.",
  "pedidos": [
   {
@@ -1356,6 +1356,34 @@
    "post": "https://www.instagram.com/reel/DfgS7kDtAwP/",
    "via": "api",
    "statusResposta": "na_fila_api"
+  },
+  {
+   "id": "api:17999383263021398",
+   "usuario": "@ea_millyyxz.1",
+   "comentario": "Euú",
+   "em": "2026-11-20T22:21",
+   "tipo": "comentario",
+   "status": "novo",
+   "resposta": "Só quem mora na vila ganha presente: siga @vilaauroraoficial 🎁",
+   "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
+   "via": "api",
+   "statusResposta": "sem_resposta_por_regra"
+  },
+  {
+   "id": "api:18228853936341593",
+   "usuario": "@ea_millyyxz.1",
+   "comentario": "Euu escolho castelo",
+   "em": "2026-11-20T22:21",
+   "tipo": "comando",
+   "status": "aguarda_seguir",
+   "resposta": "Siga @vilaauroraoficial para virar morador e ganhar o presente 🎁",
+   "comando": "ir",
+   "lugar": "castelo",
+   "lugarNome": "Castelo",
+   "pista": false,
+   "post": "https://www.instagram.com/reel/DfdNjU1J2jS/",
+   "via": "api",
+   "statusResposta": "sem_resposta_limite_usuario_24h"
   }
  ]
 }
