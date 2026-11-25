@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-25T05:52",
+ "geradoEm": "2026-11-25T06:52",
  "relogioVila": {
   "dia": 23,
-  "hora": 5
+  "hora": 6
  },
  "moradores": 52,
  "novosDoDia": [
@@ -17,31 +17,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 51,
-   "xp": 130330,
+   "xp": 130580,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 51,
-   "xp": 130130,
+   "xp": 130380,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 51,
-   "xp": 129545,
+   "xp": 129795,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 51,
-   "xp": 129374,
+   "xp": 129624,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 51,
-   "xp": 129365,
+   "xp": 129615,
    "titulo": "Lenda"
   }
  ],
@@ -863,11 +863,11 @@
   "@arthur594938": {
    "nome": "@arthur594938",
    "profissao": "cavaleiro",
-   "nivel": 44,
-   "hp": 480,
-   "hpMax": 480,
-   "atq": 96,
-   "def": 53,
+   "nivel": 45,
+   "hp": 490,
+   "hpMax": 490,
+   "atq": 98,
+   "def": 54,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -895,11 +895,11 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 43,
-   "hp": 470,
-   "hpMax": 470,
-   "atq": 94,
-   "def": 36,
+   "nivel": 44,
+   "hp": 480,
+   "hpMax": 480,
+   "atq": 96,
+   "def": 37,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1007,15 +1007,15 @@
   "@gta6gamersbr": {
    "nome": "@gta6gamersbr",
    "profissao": "padeiro",
-   "nivel": 5,
-   "hp": 90,
-   "hpMax": 90,
-   "atq": 18,
-   "def": 12,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 20,
+   "def": 15,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 7,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
@@ -1024,7 +1024,7 @@
    "nome": "@manuellax7x",
    "profissao": "lenhador",
    "nivel": 5,
-   "hp": 66,
+   "hp": 90,
    "hpMax": 90,
    "atq": 18,
    "def": 5,
@@ -1038,6 +1038,30 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1795598671772,
+   "quem": "@gta6gamersbr",
+   "tipo": "vitoria",
+   "texto": "@gta6gamersbr e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1795598666772,
+   "quem": "@felipz_xz",
+   "tipo": "vitoria",
+   "texto": "@felipz_xz e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1795597226772,
+   "quem": "@felipz_xz",
+   "tipo": "briga_derrota",
+   "texto": "@felipz_xz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
+   "quando": 1795597214772,
+   "quem": "@cff_llaurss",
+   "tipo": "queda",
+   "texto": "@cff_llaurss escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1795595804772,
    "quem": "@manuellax7x",
