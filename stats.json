@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-25T02:52",
+ "geradoEm": "2026-11-25T03:52",
  "relogioVila": {
   "dia": 23,
-  "hora": 2
+  "hora": 3
  },
  "moradores": 53,
  "novosDoDia": [
@@ -17,31 +17,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 51,
-   "xp": 129580,
+   "xp": 129830,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 51,
-   "xp": 129380,
+   "xp": 129630,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 51,
-   "xp": 128795,
+   "xp": 129045,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 51,
-   "xp": 128624,
+   "xp": 128874,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 51,
-   "xp": 128615,
+   "xp": 128865,
    "titulo": "Lenda"
   }
  ],
@@ -165,7 +165,8 @@
   "@leolindo6.7",
   "@nankhumwaemmanuel",
   "@novelinha.biblia",
-  "@kirara_and_hakari"
+  "@kirara_and_hakari",
+  "@manuellax7x"
  ],
  "porProfissao": {
   "bardo": 7,
@@ -559,11 +560,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 47,
-   "hp": 510,
-   "hpMax": 510,
-   "atq": 102,
-   "def": 51,
+   "nivel": 48,
+   "hp": 520,
+   "hpMax": 520,
+   "atq": 104,
+   "def": 52,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -607,11 +608,11 @@
   "@diegokallel": {
    "nome": "@diegokallel",
    "profissao": "soldado",
-   "nivel": 47,
-   "hp": 510,
-   "hpMax": 510,
-   "atq": 102,
-   "def": 56,
+   "nivel": 48,
+   "hp": 520,
+   "hpMax": 520,
+   "atq": 104,
+   "def": 57,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -975,70 +976,6 @@
   "@cff_llaurss": {
    "nome": "@cff_llaurss",
    "profissao": "lenhador",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 12,
-   "def": 2,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 0,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@ea_millyyxz.1": {
-   "nome": "@ea_millyyxz.1",
-   "profissao": "fazendeiro",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 17,
-   "def": 2,
-   "bArma": 7,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 0,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@felipz_xz": {
-   "nome": "@felipz_xz",
-   "profissao": "ferreiro",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 12,
-   "def": 2,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 0,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@gta6gamersbr": {
-   "nome": "@gta6gamersbr",
-   "profissao": "padeiro",
-   "nivel": 2,
-   "hp": 60,
-   "hpMax": 60,
-   "atq": 12,
-   "def": 2,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 0,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
-  "@manuellax7x": {
-   "nome": "@manuellax7x",
-   "profissao": "lenhador",
    "nivel": 3,
    "hp": 70,
    "hpMax": 70,
@@ -1051,9 +988,91 @@
    "longe": false,
    "guerreiro": false,
    "mana": null
+  },
+  "@ea_millyyxz.1": {
+   "nome": "@ea_millyyxz.1",
+   "profissao": "fazendeiro",
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 26,
+   "def": 4,
+   "bArma": 7,
+   "bSec": 5,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@felipz_xz": {
+   "nome": "@felipz_xz",
+   "profissao": "ferreiro",
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 3,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@gta6gamersbr": {
+   "nome": "@gta6gamersbr",
+   "profissao": "padeiro",
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 16,
+   "def": 4,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@manuellax7x": {
+   "nome": "@manuellax7x",
+   "profissao": "lenhador",
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 16,
+   "def": 4,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1795588591772,
+   "quem": "@gta6gamersbr",
+   "tipo": "vitoria",
+   "texto": "@gta6gamersbr venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
+  {
+   "quando": 1795587142772,
+   "quem": "@ea_millyyxz.1",
+   "tipo": "queda",
+   "texto": "@ea_millyyxz.1 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1795585724772,
+   "quem": "@manuellax7x",
+   "tipo": "doma",
+   "texto": "@manuellax7x e os amigos cercaram um cavalo selvagem e domaram! Agora @manuellax7x anda montado."
+  },
   {
    "quando": 1795584284772,
    "quem": "@manuellax7x",
