@@ -563,9 +563,36 @@ function minutoReal(w){ return ((w.dia-1)*24+w.hora+(w.frac||0))*60; }
 // turno de sono de cada um (determinístico pelo @): começa entre 21h e 05h e dura 6 ou 7 h
 function turnoSono(m){ const ini=(21+hash(m.id+"sono")%9)%24, dur=6+hash(m.id+"durSono")%2; return {ini,dur}; }
 function dormindo(m,h){ const T=turnoSono(m); return ((h-T.ini)%24+24)%24<T.dur; }
+const EXPLORACAO = [
+  {nome:"Mirante", artigo:"no", x:-17, z:-39},
+  {nome:"Pomar", artigo:"no", x:0, z:39},
+  {nome:"Ruína", artigo:"na", x:24, z:-39}
+];
+const INTERVALO_EXPLORACAO = 6;
+let agendaExploracao;
+function vagaExploracao(m, minuto){
+  const bloco=Math.floor(minuto/INTERVALO_EXPLORACAO);
+  const lista=todos();
+  if(!agendaExploracao||agendaExploracao.bloco!==bloco||agendaExploracao.lista!==lista){
+    const vagas=new Map(), lotacao=new Map();
+    for(const morador of lista){
+      if(morador.npc) continue;
+      const sorte=hash(morador.id+":exploracao:"+bloco);
+      if(sorte%6!==0) continue;
+      const ponto=Math.floor(sorte/6)%EXPLORACAO.length;
+      const chave=morador.vi*EXPLORACAO.length+ponto;
+      const vaga=lotacao.get(chave)||0;
+      if(vaga>=6) continue;
+      lotacao.set(chave,vaga+1);
+      vagas.set(morador.id,{ponto,vaga});
+    }
+    agendaExploracao={bloco,lista,vagas};
+  }
+  return agendaExploracao.vagas.get(m.id);
+}
 function estado(m, idx, w){
   const p=PROF[m.profissao]||PROF.bardo, casa=casaDe(idx), V=casa.vila, LUG=V.L, h=w.hora; const eco=economiaDe(V); const comCasa=temCasa(V,casa.slot);
-  let lugar, acao, chave, visita=null, dentro=null, modo="parado", x, z, y=0, ang=0, andando=false;
+  let lugar, acao, chave, visita=null, dentro=null, modo="parado", x, z, y=0, ang=0, andando=false, emEvento=false;
   const frente={x:casa.x,z:casa.z+1.9};
   const GUARDA=["soldado","cavaleiro","arqueiro"].includes(m.profissao), NOITE=h>=22||h<6;
   const EN=energiaDe(m,minutoReal(w)), volta=" (volta em ~"+EN.volta+" min)";
@@ -599,24 +626,42 @@ function estado(m, idx, w){
     const front=lugar===LUG.muralha; function off(k){ const r=rnd(m.id+"p"+k); return {x:(r()-.5)*lw, z: front ? lugar.h/2+1+r()*4.5 : (r()-.5)*lh}; }
     const a=off(s2), b=off(s2+1), e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; x=lugar.x+a.x+(b.x-a.x)*e; z=lugar.z+a.z+(b.z-a.z)*e; { const dv=desvia(V,x,z); x=dv.x; z=dv.z; } const dx=b.x-a.x, dz=b.z-a.z; andando=Math.abs(dx)+Math.abs(dz)>0.8; ang=Math.atan2(dx,dz); modo=andando?"andar":"parado"; }
   { const tsW=REAL_EPOCH+((w.dia-1)*24+w.hora+(w.frac||0))*HORA_REAL; const IV=invasaoEm(tsW); const k=IV?IV.ids.indexOf(m.id):-1;
-    if(IV&&IV.vi===V.i&&k>=0){ const p=(tsW-IV.ts)/(IV.fim-IV.ts); if(p>=0.05&&p<0.95){ const T=INV_TIPOS[IV.tipo]; const P=V.L.praca; const C={x:P.x+Math.cos(IV.dir)*4.5,z:P.z+Math.sin(IV.dir)*4.5};
+    if(IV&&IV.vi===V.i&&k>=0){ emEvento=true; const p=(tsW-IV.ts)/(IV.fim-IV.ts); if(p>=0.05&&p<0.95){ const T=INV_TIPOS[IV.tipo]; const P=V.L.praca; const C={x:P.x+Math.cos(IV.dir)*4.5,z:P.z+Math.sin(IV.dir)*4.5};
       const cura=m.profissao==="curandeiro", longe=["arqueiro","mago","alquimista","cacador"].includes(m.profissao); const R=cura?4.8:longe?6.4:2.7; const n=Math.max(1,IV.ids.length);
       const a=k/n*Math.PI*2+(longe?0.3:cura?0.6:0)+Math.sin(agoraMundo()/1400+k)*0.05; const dv=desvia(V,C.x+Math.cos(a)*R,C.z+Math.sin(a)*R);
       x=dv.x; z=dv.z; y=0; ang=Math.atan2(C.x-x,C.z-z); andando=false; dentro=null; visita=null; lugar=P; chave="luta";
       modo=cura||m.profissao==="mago"||m.profissao==="alquimista"?"magia":longe?"mirar":"cortar";
       acao=cura?"curando os feridos na luta contra "+T.pl:longe?"atacando "+T.pl+" de longe":"na linha de frente contra "+T.pl; } } }
   { const tsD=REAL_EPOCH+((w.dia-1)*24+w.hora+(w.frac||0))*HORA_REAL; const DD=decisaoAtiva(tsD); const kd=DD?DD.ids.indexOf(m.id):-1;
-    if(DD&&DD.vi===V.i&&kd>=0){ const t=(tsD-DD.ini)/60000; const P=V.L.praca; const n=Math.max(1,DD.ids.length); const ax=(t2,A,B)=>({x:A.x+(B.x-A.x)*t2,z:A.z+(B.z-A.z)*t2});
+    if(DD&&DD.vi===V.i&&kd>=0){ emEvento=true; const t=(tsD-DD.ini)/60000; const P=V.L.praca; const n=Math.max(1,DD.ids.length); const ax=(t2,A,B)=>({x:A.x+(B.x-A.x)*t2,z:A.z+(B.z-A.z)*t2});
       if(DD.vencedora==="ATACAR"){ const S=portaoSombria(); if(t<38) lugar={x:S.x,z:S.z,w:6,h:6,nome:"Portão da Vila Sombria"};
         if(t<4||(t>=34&&t<38)){ const ida=t<4; const f=ida?t/4:(t-34)/4; const q=ida?ax(f,P,S):ax(f,S,P); const off=(kd/n-0.5)*3; x=q.x+off; z=q.z+((kd%3)-1)*1.2; ang=ida?Math.atan2(S.x-P.x,S.z-P.z):Math.atan2(P.x-S.x,P.z-S.z); andando=true; modo="andar"; dentro=null; visita=null; chave="decisao"; acao=ida?"marchando para atacar a Vila Sombria (decisão de vocês 🗳️)":"voltando da Vila Sombria"; y=0; }
         else if(t>=4&&t<34){ const cura=m.profissao==="curandeiro", longe=["arqueiro","mago","alquimista","cacador"].includes(m.profissao); const R=cura?8:longe?9.5:6.2; const a=kd/n*Math.PI*2; x=S.x+Math.cos(a)*R; z=S.z+Math.sin(a)*R; ang=Math.atan2(S.x-x,S.z-z); andando=false; dentro=null; visita=null; chave="luta"; y=0; modo=cura||m.profissao==="mago"||m.profissao==="alquimista"?"magia":longe?"mirar":"cortar"; acao=cura?"curando os feridos na batalha da Vila Sombria":"lutando contra a Vila Sombria (decisão de vocês 🗳️)"; } }
       else { const Cs=vila(0).realezaPos||vila(0).L.praca; lugar={x:Cs.x,z:Cs.z,w:6,h:6,nome:"Castelo do Rei"}; if(t<4){ const q=ax(t/4,P,Cs); x=q.x+((kd%4)-1.5); z=q.z+(Math.floor(kd/4)%3-1); ang=Math.atan2(Cs.x-P.x,Cs.z-P.z); andando=true; modo="andar"; acao="fugindo para o castelo do Rei (decisão de vocês 🗳️)"; } else { const a=kd/n*Math.PI*2; x=Cs.x+Math.cos(a)*5; z=Cs.z+3+Math.sin(a)*3; ang=Math.atan2(Cs.x-x,Cs.z-z); andando=false; modo="parado"; acao=generoTxt(m,"abrigado","abrigada")+" no castelo do Rei (decisão de vocês 🗳️)"; } dentro=null; visita=null; chave="decisao"; y=0; } } }
   { const tsT=REAL_EPOCH+((w.dia-1)*24+w.hora+(w.frac||0))*HORA_REAL; const BT=batalhaTerrAtiva(tsT); const ia=BT?BT.A.indexOf(m.id):-1, id2=BT?BT.D.indexOf(m.id):-1;
-    if(BT&&(ia>=0||id2>=0)&&chave!=="decisao"&&chave!=="luta"){ const t=(tsT-BT.ini)/60000; const Tp=posTerr(BT.T); const atq=ia>=0; const lista2=atq?BT.A:BT.D; const k=atq?ia:id2; const n=Math.max(1,lista2.length); const dirA=(hash(BT.k)%360)/180*Math.PI; const side=atq?1:-1;
+    if(BT&&(ia>=0||id2>=0)&&chave!=="decisao"&&chave!=="luta"){ emEvento=true; const t=(tsT-BT.ini)/60000; const Tp=posTerr(BT.T); const atq=ia>=0; const lista2=atq?BT.A:BT.D; const k=atq?ia:id2; const n=Math.max(1,lista2.length); const dirA=(hash(BT.k)%360)/180*Math.PI; const side=atq?1:-1;
       const cols=Math.ceil(n/2), col=Math.floor(k/2), row=k%2; const lat=(col-(cols-1)/2)*1.5, prof=(3.2+row*1.4)*side; const dvT=desvia(vila(BT.T.vi||0),Tp.x+Math.cos(dirA)*prof-Math.sin(dirA)*lat,Tp.z+Math.sin(dirA)*prof+Math.cos(dirA)*lat); const alvoX=dvT.x, alvoZ=dvT.z; const P=V.L.praca;
       if(t<4||(t>=34&&t<38)){ const ida=t<4; const f=ida?t/4:(t-34)/4; const a0=ida?P:{x:alvoX,z:alvoZ}, a1=ida?{x:alvoX,z:alvoZ}:P; { const dvM=desvia(V,a0.x+(a1.x-a0.x)*f,a0.z+(a1.z-a0.z)*f); x=dvM.x; z=dvM.z; } ang=Math.atan2(a1.x-a0.x,a1.z-a0.z); andando=true; modo="andar"; dentro=null; visita=null; chave="territorio"; y=0; acao=ida?"marchando para a batalha por "+BT.T.n+" ("+rotDono(atq?BT.atacante:BT.defensor)+")":"voltando da batalha por "+BT.T.n; lugar={x:Tp.x,z:Tp.z,w:6,h:6,nome:BT.T.n}; }
       else if(t>=4&&t<34){ x=alvoX; z=alvoZ; ang=Math.atan2(Tp.x-x,Tp.z-z); andando=false; dentro=null; visita=null; chave="luta"; y=0; const longe=["arqueiro","mago","alquimista","cacador"].includes(m.profissao); modo=m.profissao==="curandeiro"||m.profissao==="mago"||m.profissao==="alquimista"?"magia":longe?"mirar":"cortar"; acao=(atq?"atacando ":"defendendo ")+BT.T.n+" pelo "+rotDono(atq?BT.atacante:BT.defensor); lugar={x:Tp.x,z:Tp.z,w:6,h:6,nome:BT.T.n}; } } }
   { const tsU=REAL_EPOCH+((w.dia-1)*24+w.hora+(w.frac||0))*HORA_REAL; const DU=dueloAtivo(tsU); if(DU&&(DU.A.id===m.id||DU.B.id===m.id)){ const P=vila(DU.vi).L.praca; const eA=DU.A.id===m.id; x=P.x+(eA?-1.7:1.7); z=P.z+3.6; ang=eA?Math.PI/2:-Math.PI/2; andando=false; dentro=null; visita=null; chave="luta"; y=0; modo=["arqueiro","cacador"].includes(m.profissao)?"mirar":["mago","alquimista","curandeiro"].includes(m.profissao)?"magia":"cortar"; acao="em duelo com "+(eA?DU.B.nome:DU.A.nome)+" na praça (desafio aceito ⚔️)"; lugar=P; } }
+  const passeioPraca=chave==="trab"&&lugar===LUG.praca&&CICLO_PRACA.some(passo=>passo.acao===acao);
+  if(!MODO_SEGREDO&&!emEvento&&!m.npc&&!dentro&&!(NOITE&&GUARDA)&&V.exploracao&&
+      (chave==="lazer"||chave==="fogueira"||passeioPraca)){
+    const minuto=minutoReal(w), reserva=vagaExploracao(m,minuto);
+    const destino=reserva&&V.exploracao[reserva.ponto];
+    if(destino){
+      const alvo=destino.vagas[reserva.vaga];
+      const fase=minuto-Math.floor(minuto/INTERVALO_EXPLORACAO)*INTERVALO_EXPLORACAO;
+      const trecho=Math.min(0.75,Math.max(0.2,Math.hypot(alvo.x-x,alvo.z-z)/VEL/60));
+      const avance=Math.min(1,fase/trecho,(INTERVALO_EXPLORACAO-fase)/trecho);
+      const dir=fase<INTERVALO_EXPLORACAO/2?1:-1;
+      ang=avance<1?Math.atan2(dir*(alvo.x-x),dir*(alvo.z-z)):Math.atan2(destino.x-alvo.x,destino.z-alvo.z);
+      const q=desvia(V,x+(alvo.x-x)*avance,z+(alvo.z-z)*avance);
+      x=q.x; z=q.z; y=0; lugar=destino; chave="passeio";
+      andando=avance<1; modo=andando?"andar":"parado";
+      acao="passeando "+destino.artigo+" "+destino.nome;
+    }
+  }
   return {x,z,y,acao,lugar,chave,visita,dentro,modo,andando,ang,vila:V};
 }
 const CLASSE={soldado:{forca:3,alc:"perto"},cavaleiro:{forca:4,alc:"perto"},arqueiro:{forca:2,alc:"longe"},mago:{forca:2,alc:"longe"},alquimista:{forca:1,alc:"longe"},cacador:{forca:2,alc:"longe"},lenhador:{forca:2,alc:"perto"},ferreiro:{forca:2,alc:"perto"},mineiro:{forca:2,alc:"perto"},explorador:{forca:1,alc:"perto"}};
@@ -1061,8 +1106,42 @@ const fogueiras=[]; let rio=null; const vilasConstruidas=new Set();
 function andaime(x,z,w,d,parent){ const g=new THREE.Group(); g.position.set(x,0,z); (parent||scene).add(g); const a=KAYKIT.clone("scaffold"); a.scale.setScalar(3.2); g.add(a); const l=KAYKIT.clone("lumber"); l.scale.setScalar(3.5); l.position.set(w/2+1.2,0,d/2+0.6); g.add(l); return g; }
 const JANELAS=[]; // luzes quentes nas janelas (acendem à noite)
 function janela(x,y,z,parent){ const lm=new THREE.MeshStandardMaterial({color:0xffd27a,emissive:0xffb347,emissiveIntensity:0}); const b=box(0.26,0.3,0.26,lm,x,y,z,parent); b.castShadow=false; JANELAS.push(lm); return b; }
+function construirExploracao(V, grupo){
+  V.exploracao=EXPLORACAO.map((modelo,i)=>{
+    const {x,z}=desvia(V,V.cx+modelo.x,V.cz+modelo.z);
+    const vagas=Array.from({length:6},(_,k)=>{
+      const a=k*Math.PI/3;
+      return desvia(V,x+3.4*Math.cos(a),z+3.4*Math.sin(a));
+    });
+    const g=new THREE.Group();
+    g.position.set(x,0,z);
+    grupo.add(g);
+    if(i===0){
+      box(3.2,0.4,2.6,M.pedraEsc,0,0.2,0,g);
+      box(3.1,0.22,2.5,M.madeira,0,0.5,0,g);
+      for(const dx of [-1.43,1.43]) box(0.18,1.1,0.18,M.madeiraEsc,dx,1,-1.12,g);
+      box(3.1,0.16,0.2,M.madeiraEsc,0,1.43,-1.12,g);
+    } else if(i===1){
+      for(const dx of [-1.05,1.05]){
+        cyl(0.12,0.2,1.6,M.madeira,dx,0.8,0,g,6);
+        cone(0.95,1.7,mat(0x5e923a),dx,1.9,0,g,7);
+        box(0.25,0.25,0.24,mat(0xc34d35),dx,1.42,0.65,g);
+      }
+    } else {
+      box(0.72,2.6,0.82,M.pedraEsc,-1.05,1.3,0,g);
+      box(0.72,1.45,0.82,M.pedraEsc,1.05,0.73,0,g);
+      box(1.65,0.42,0.8,M.pedraEsc,-0.64,2.42,0,g);
+      box(0.65,0.38,0.62,M.pedraEsc,0.58,0.19,0.72,g).rotation.y=0.4;
+    }
+    for(const mesh of g.children) mesh.castShadow=mesh.receiveShadow=false;
+    rotuloEm(g,modelo.nome,0,3.35,0,5);
+    footprints(V).push({x,z,w:2.05,h:1.35});
+    return {...modelo,x,z,vagas};
+  });
+}
 function construirVila(V){ if(vilasConstruidas.has(V.i)) return; vilasConstruidas.add(V.i); const L=V.L, cx=V.cx, cz=V.cz; const P=V.pred={}; const corVila=[0xd94040,0x3b7dd8,0x3fa34d,0xf0c030,0x8a4fd6,0xf08a2a,0x2fb5b0,0xe35c99][V.i%8];
   function grupo(k){ const g=new THREE.Group(); scene.add(g); P[k]=g; return g; }
+  construirExploracao(V,grupo("exploracao"));
   // ruas em grade (terra batida sobre a grama)
   const ruas=grupo("ruas"); const mRua=mat(0xb49466,{roughness:1}); RUAS.forEach(r0=>{ faixa(72,1.7,cx,cz+r0,mRua,ruas); faixa(1.7,72,cx+r0,cz,mRua,ruas); }); faixa(90,3.2,cx+9,cz,M.terra,ruas); faixa(3.2,88,cx,cz,M.terra,ruas);
   // praça + fogueira (estágio 0: sempre)
@@ -1494,6 +1573,8 @@ function boneco(m){ const p=PROF[m.profissao]||PROF.bardo; const r=rnd("look:"+m
   const vis=cone(0.22,0.4,mat(0xff4040),0,2.95,0,g,5); vis.rotation.x=Math.PI; vis.castShadow=false; vis.visible=false;
   g.userData={pernaE,pernaD,bracoE,bracoD,nome,magia,vis,cavalo:null,fase:r()*6,nivel:x.nivel,mixer,play,modelo,kv:KAYKIT.estado.versao,mao:{prin:gPrin,luta:gLuta,esc:gEsc,sec:gSec,ultimo:""}}; play("Idle"); mixer.update(r()*2); return g; }
 const bonecos=new Map();
+if(window.__V) Object.assign(window.__V,{bonecos,todos,estado,mundo,ocupado,vila,nVilas,
+  avancaMinutos(minutos){ relogioBase+=minutos*60000; todosCacheT=-Infinity; }});
 // ninguém atravessa ninguém: pares a menos de 0,62 m são afastados ao longo da linha entre eles (2 passadas)
 function separaPessoas(){ const arr=[]; bonecos.forEach(b=>{ if(b.visible&&b.position.x<2000) arr.push(b); }); const R=0.95, R2=R*R; /* v44: antes 0.62 e 2 passadas: aglomerava (12 bonecos em 36 m²) */
   for(let it=0;it<(arr.length>40?6:4);it++) for(let i=0;i<arr.length;i++) for(let j=i+1;j<arr.length;j++){ const a=arr[i], b=arr[j]; let dx=b.position.x-a.position.x, dz=b.position.z-a.position.z; let d2=dx*dx+dz*dz; if(d2>=R2) continue; if(d2<1e-6){ const h=(i*31+j*17)%360; dx=Math.cos(h)*0.01; dz=Math.sin(h)*0.01; d2=1e-4; } const d=Math.sqrt(d2); const push=(R-d)/2; dx/=d; dz/=d; a.position.x-=dx*push; a.position.z-=dz*push; b.position.x+=dx*push; b.position.z+=dz*push; } }
