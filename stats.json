@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-25T09:52",
+ "geradoEm": "2026-11-25T10:52",
  "relogioVila": {
   "dia": 23,
-  "hora": 9
+  "hora": 10
  },
  "moradores": 51,
  "novosDoDia": [
@@ -16,31 +16,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 52,
-   "xp": 131330,
+   "xp": 131580,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 52,
-   "xp": 131130,
+   "xp": 131380,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 52,
-   "xp": 130374,
+   "xp": 130624,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 52,
-   "xp": 130040,
+   "xp": 130290,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 52,
-   "xp": 130020,
+   "xp": 130270,
    "titulo": "Lenda"
   }
  ],
@@ -430,11 +430,11 @@
   "@gbx.ws": {
    "nome": "@gbx.ws",
    "profissao": "fazendeiro",
-   "nivel": 50,
-   "hp": 540,
-   "hpMax": 540,
-   "atq": 108,
-   "def": 54,
+   "nivel": 51,
+   "hp": 550,
+   "hpMax": 550,
+   "atq": 110,
+   "def": 55,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -478,11 +478,11 @@
   "@eu.brandao__": {
    "nome": "@eu.brandao__",
    "profissao": "cacador",
-   "nivel": 48,
-   "hp": 520,
-   "hpMax": 520,
-   "atq": 105,
-   "def": 52,
+   "nivel": 49,
+   "hp": 530,
+   "hpMax": 530,
+   "atq": 107,
+   "def": 53,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -750,11 +750,11 @@
   "@luizin_hz0": {
    "nome": "@luizin_hz0",
    "profissao": "soldado",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 100,
-   "def": 55,
+   "nivel": 47,
+   "hp": 510,
+   "hpMax": 510,
+   "atq": 102,
+   "def": 56,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -782,11 +782,11 @@
   "@__niedison": {
    "nome": "@__niedison",
    "profissao": "bardo",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 101,
-   "def": 50,
+   "nivel": 47,
+   "hp": 510,
+   "hpMax": 510,
+   "atq": 103,
+   "def": 51,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -926,11 +926,11 @@
   "@kirara_and_hakari": {
    "nome": "@kirara_and_hakari",
    "profissao": "cacador",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 83,
-   "def": 41,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 85,
+   "def": 42,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1021,6 +1021,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1795613084772,
+   "quem": "@manuellax7x",
+   "tipo": "vitoria",
+   "texto": "@manuellax7x e os amigos venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1795613071772,
+   "quem": "@gta6gamersbr",
+   "tipo": "briga_derrota",
+   "texto": "@gta6gamersbr foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
+   "quando": 1795613066772,
+   "quem": "@felipz_xz",
+   "tipo": "vitoria",
+   "texto": "@felipz_xz venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
   {
    "quando": 1795608751772,
    "quem": "@gta6gamersbr",
