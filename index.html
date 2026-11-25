@@ -986,7 +986,6 @@ const ESTILO_LUZ="entardecer";
 const FOG_BASE=0.0068;
 const scene=new THREE.Scene(); scene.background=new THREE.Color(0xa5b6ac); scene.fog=new THREE.Fog(0xa5b6ac,30,180);
 const camera=new THREE.PerspectiveCamera(35,16/10,0.5,1200);
-if(/[?&]debug=1/.test(location.search)) window.__V={renderer,scene,camera,THREE}; // medição de desempenho (só com ?debug=1)
 const orb={theta:0.6, phi:0.8, r:54, target:new THREE.Vector3(0,0,2), alvo:new THREE.Vector3(0,0,2), rAlvo:null, phiAlvo:null};
 let TRAVA=null, VILA_ATUAL=0; // v39: alvo travado da câmera ({obj} segue; {x,z} parado)
 function travaEm(alvo,r,phi){ TRAVA=alvo; GIRA_OFF(); if(alvo.obj){ const p=new THREE.Vector3(); alvo.obj.getWorldPosition(p); orb.alvo.set(p.x,alvo.y||1,p.z); } else orb.alvo.set(alvo.x,alvo.y||0.5,alvo.z); zoomSeLonge(Math.max(r,24)); orb.phiAlvo=phi; }
@@ -1636,27 +1635,15 @@ function mostraLugar(V,k,m){ const box=$("lugarBox"); box.hidden=false; const w=
 function realcaEm(x,z,r){ if(!realce){ realce=new THREE.Mesh(new THREE.RingGeometry(0.85,1,40),new THREE.MeshBasicMaterial({color:0xffd24a,transparent:true,opacity:0.85,depthTest:false})); realce.rotation.x=-Math.PI/2; realce.renderOrder=5; scene.add(realce); } realce.position.set(x,0.12,z); realce.scale.setScalar(r); realce.visible=true; realceAte=performance.now()+4000; }
 let _ultimoHover=0; canvas.addEventListener("pointermove",e=>{ if(arrastando||MOBILE) return; const now=performance.now(); if(now-_ultimoHover<160) return; _ultimoHover=now; const r=canvas.getBoundingClientRect(); ptr.x=((e.clientX-r.left)/r.width)*2-1; ptr.y=-((e.clientY-r.top)/r.height)*2+1; ray.setFromCamera(ptr,camera); const alvos=[]; bonecos.forEach(b=>{ if(b.visible) alvos.push(b); }); const hit=ray.intersectObjects(alvos.concat(alvosEstruturas()),true)[0]; canvas.style.cursor=hit?"pointer":"grab"; });
 let QA_PR=null, QA_BASE=1, QA_AC=0, QA_N=0, QA_T=0, QA_BOM=0, QA_FPS=0; function qualidadeAuto(dtMs,now,intervalo){ if(dtMs>500) return; QA_AC+=dtMs; QA_N++; if(now-QA_T<3000) return; const med=QA_AC/QA_N; QA_FPS=1000/med; QA_AC=0; QA_N=0; QA_T=now; if(QA_PR==null){ QA_PR=renderer.getPixelRatio(); QA_BASE=QA_PR; }
-  if(med>intervalo*1.35){ QA_BOM=0; if(QA_PR>0.7){ QA_PR=Math.max(0.7,QA_PR-0.15); renderer.setPixelRatio(QA_PR); redimensiona(); } MAX_VISIVEIS=Math.max(14,MAX_VISIVEIS-5); /* v44: gargalo de CPU (esqueletos): menos moradores desenhados */ }
-  else if(med<intervalo*1.08){ QA_BOM++; if(QA_BOM>=4&&(QA_PR<QA_BASE||MAX_VISIVEIS<MAX_BASE)){ if(QA_PR<QA_BASE){ QA_PR=Math.min(QA_BASE,QA_PR+0.1); renderer.setPixelRatio(QA_PR); redimensiona(); } else MAX_VISIVEIS=Math.min(MAX_BASE,MAX_VISIVEIS+3); QA_BOM=0; } } else QA_BOM=0; }
+  if(med>intervalo*1.35&&QA_PR>0.7){ QA_PR=Math.max(0.7,QA_PR-0.15); QA_BOM=0; renderer.setPixelRatio(QA_PR); redimensiona(); }
+  else if(med<intervalo*1.08){ QA_BOM++; if(QA_BOM>=4&&QA_PR<QA_BASE){ QA_PR=Math.min(QA_BASE,QA_PR+0.1); QA_BOM=0; renderer.setPixelRatio(QA_PR); redimensiona(); } } else QA_BOM=0; }
 function redimensiona(){ const w=mapBox.clientWidth, h=mapBox.clientHeight; if(!w||!h) return; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
 window.addEventListener("resize",redimensiona); redimensiona();
 
 // ---------- laço ----------
 const corDia=new THREE.Color(0x9ec4e8), corTarde=new THREE.Color(0xf4a35a), corNoite=new THREE.Color(0x140f26), corCeu=new THREE.Color(); const corSolDia=new THREE.Color(ESTILO_LUZ==="meio-dia"?0xfff1dc:0xffd2a0), corSolTarde=new THREE.Color(0xffaa44), corSol=new THREE.Color();
 const PERF={fps:0,frames:0,inicio:performance.now()}; let sombraAtualizada=0;
-// v44: orçamento de luzes pontuais. Cada luz ativa entra no shader de TODO material; com ~57 luzes o quadro pesa. Mantém só as N mais próximas do foco da câmera (N fixo, para o shader não recompilar). ?luzes=N muda o orçamento.
-const LUZES_N=(function(){ const m=location.search.match(/[?&]luzes=(\d+)/); return m?+m[1]:(MOBILE?6:24); })(); let luzesLista=null, luzesT=0;
-// v44: malhas com esqueleto têm frustumCulled=false (a esfera do bind pose erra); sem isto os ~200 esqueletos da vila eram desenhados mesmo fora da tela (custo de ossos). Esconde o que está fora do campo de visão (esfera generosa) e devolve ao voltar.
-let skinLista=[], skinScanT=0, skinCullT=0; const skinFr=new THREE.Frustum(), skinM=new THREE.Matrix4(), skinP=new THREE.Vector3(), skinS=new THREE.Sphere(skinP,6);
-const CULL_ON=!/[?&]cull=0/.test(location.search);
-function culEsqueletos(now){ if(!CULL_ON||now-skinCullT<180) return; skinCullT=now; if(now-skinScanT>1500){ skinScanT=now; const n=[]; scene.traverse(o=>{ if(o.isSkinnedMesh) n.push(o); }); skinLista=n; }
-  camera.updateMatrixWorld(); skinM.multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse); skinFr.setFromProjectionMatrix(skinM);
-  for(let i=0;i<skinLista.length;i++){ const o=skinLista[i]; if(o.userData.cullR===undefined) o.userData.cullR=/^(Dragon|Eyes)_/.test(o.name)?16:6; skinS.radius=o.userData.cullR; if(o.userData.cullOculto){ o.getWorldPosition(skinP); if(skinFr.intersectsSphere(skinS)){ o.visible=true; o.userData.cullOculto=false; } } else if(o.visible){ o.getWorldPosition(skinP); if(!skinFr.intersectsSphere(skinS)){ o.visible=false; o.userData.cullOculto=true; } } } }
-function orcamentoLuzes(now){ if(now-luzesT<350) return; luzesT=now; if(!luzesLista){ luzesLista=[]; scene.traverse(o=>{ if(o.isPointLight) luzesLista.push({l:o,p:new THREE.Vector3()}); }); }
-  if(luzesLista.length<=LUZES_N||LUZES_N<=0){ return; } const t=orb.target;
-  luzesLista.forEach(e=>{ e.l.getWorldPosition(e.p); const dx=e.p.x-t.x, dy=e.p.y-t.y, dz=e.p.z-t.z, I=e.l.intensity; e.s=(dx*dx+dy*dy+dz*dz)/(0.15+I*I); });
-  const ord=luzesLista.slice().sort((a,b)=>a.s-b.s); ord.forEach((e,i)=>{ e.l.visible=i<LUZES_N; }); }
-const MAX_BASE=MOBILE?36:160; let MAX_VISIVEIS=MAX_BASE; let ultimoMinutoCasas=-1, ultimoSegundoObras=-1, visiveis=new Set(), ultimoCulling=0, ultimoDesenho=0, ultimaTroca=0, posSel=null, dentroAtual=null, rAntes=0, arvoreBalancaAnt=null;
+const MAX_VISIVEIS=MOBILE?45:160; let ultimoMinutoCasas=-1, ultimoSegundoObras=-1, visiveis=new Set(), ultimoCulling=0, ultimoDesenho=0, ultimaTroca=0, posSel=null, dentroAtual=null, rAntes=0, arvoreBalancaAnt=null;
 const peixe=box(0.32,0.14,0.08,mat(0xcfd8e0,{metalness:0.5,roughness:0.3}),0,0,0); peixe.visible=false; peixe.castShadow=false;
 let selecionado=null, seguindo=false;
 // v43: modo leve do celular
@@ -1731,7 +1718,7 @@ function anima(){
   const vilaoAtivo = hash("vil"+Math.floor(w.t))%5===0 && w.hora>=6 && w.hora<=22; goblin.visible=vilaoAtivo;
   if(vilaoAtivo){ const F=LUG.floresta; { const dv=desvia(vila(0),F.x+F.w/2+1.5+Math.sin(tsec*1.2)*1.5, F.z+Math.cos(tsec*0.8)*2); goblin.position.set(dv.x, 0, dv.z); } goblin.rotation.y=tsec*0.8; }
   if(document.body.classList.contains("cinema")&&!MODO_SEGREDO){ if(!arrastando&&!camFixa) orb.theta+=0.0015; if(!fixado&&now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.discreto) return false; if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); } } }
-  atualizaInvasaoUI(); if(Math.floor(now/1000)%2===0) atualizaDecisaoUI(); if(ROTULOS) aplicaRotulos(); animaIntroCam(); if(GIRA){ if(arrastando||seguindo||camFixa) GIRA=false; else orb.theta+=0.0007; } if(MODO_FRENTE&&selecionado){ const bf=bonecos.get(selecionado); if(bf) bf.rotation.y=Math.atan2(camera.position.x-bf.position.x,camera.position.z-bf.position.z); } if(MODO_FRENTE||ROTULOS==="0") bonecos.forEach(b=>{ if(b.userData.vis) b.userData.vis.visible=false; }); if(realce&&realce.visible){ realce.material.opacity=0.5+Math.sin(now/150)*0.35; if(now>realceAte) realce.visible=false; } atualizaMixers(now); posicionaCamera(); camera.updateMatrixWorld(); desempilhaRotulos(selecionado); if(MOBILE||LEVE){ renderer.shadowMap.autoUpdate=false; if(now-sombraAtualizada>=(LEVE?400:100)){ renderer.shadowMap.needsUpdate=true; sombraAtualizada=now; } } orcamentoLuzes(now); culEsqueletos(now); renderer.render(scene,camera); PERF.frames++; if(now-PERF.inicio>=1000){ PERF.fps=Math.round(PERF.frames*10000/(now-PERF.inicio))/10; PERF.frames=0; PERF.inicio=now; }
+  atualizaInvasaoUI(); if(Math.floor(now/1000)%2===0) atualizaDecisaoUI(); if(ROTULOS) aplicaRotulos(); animaIntroCam(); if(GIRA){ if(arrastando||seguindo||camFixa) GIRA=false; else orb.theta+=0.0007; } if(MODO_FRENTE&&selecionado){ const bf=bonecos.get(selecionado); if(bf) bf.rotation.y=Math.atan2(camera.position.x-bf.position.x,camera.position.z-bf.position.z); } if(MODO_FRENTE||ROTULOS==="0") bonecos.forEach(b=>{ if(b.userData.vis) b.userData.vis.visible=false; }); if(realce&&realce.visible){ realce.material.opacity=0.5+Math.sin(now/150)*0.35; if(now>realceAte) realce.visible=false; } atualizaMixers(now); posicionaCamera(); camera.updateMatrixWorld(); desempilhaRotulos(selecionado); if(MOBILE||LEVE){ renderer.shadowMap.autoUpdate=false; if(now-sombraAtualizada>=(LEVE?400:100)){ renderer.shadowMap.needsUpdate=true; sombraAtualizada=now; } } renderer.render(scene,camera); PERF.frames++; if(now-PERF.inicio>=1000){ PERF.fps=Math.round(PERF.frames*10000/(now-PERF.inicio))/10; PERF.frames=0; PERF.inicio=now; }
 }
 
 // ---------- retrato (câmera própria, só quando muda) ----------
