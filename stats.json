@@ -1,12 +1,11 @@
 {
- "geradoEm": "2026-11-25T07:52",
+ "geradoEm": "2026-11-25T08:52",
  "relogioVila": {
   "dia": 23,
-  "hora": 7
+  "hora": 8
  },
- "moradores": 52,
+ "moradores": 51,
  "novosDoDia": [
-  "@cff_llaurss",
   "@ea_millyyxz.1",
   "@felipz_xz",
   "@gta6gamersbr",
@@ -17,31 +16,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 51,
-   "xp": 130830,
+   "xp": 131080,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 51,
-   "xp": 130630,
+   "xp": 130880,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 51,
-   "xp": 130045,
+   "xp": 130295,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 51,
-   "xp": 129874,
+   "xp": 130124,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 51,
-   "xp": 129865,
+   "xp": 130115,
    "titulo": "Lenda"
   }
  ],
@@ -55,20 +54,6 @@
   },
   {
    "entre": [
-    "@danielaugustobiesso",
-    "@samuel_teles_01"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@ea_millyyxz.1",
-    "@novelinha.biblia"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
     "@gods.samuka",
     "@sampaiojaiane"
    ],
@@ -76,8 +61,22 @@
   },
   {
    "entre": [
+    "@kaiobentopereira",
+    "@livia.maria31"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@kauedomingues894",
+    "@rafael.strauch"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
     "@__niedison",
-    "@eu.brandao__"
+    "@adriana.lopesl"
    ],
    "forca": 1
   }
@@ -180,11 +179,11 @@
   "cacador": 2,
   "padeiro": 2,
   "pastor": 2,
-  "lenhador": 2,
   "curandeiro": 1,
   "mineiro": 1,
   "alquimista": 1,
-  "arqueiro": 1
+  "arqueiro": 1,
+  "lenhador": 1
  },
  "vilas": 2,
  "ultimoMorador": {
@@ -383,11 +382,11 @@
   "@gabrielcamuzzatonegretti": {
    "nome": "@gabrielcamuzzatonegretti",
    "profissao": "cavaleiro",
-   "nivel": 50,
-   "hp": 540,
-   "hpMax": 540,
-   "atq": 108,
-   "def": 59,
+   "nivel": 51,
+   "hp": 550,
+   "hpMax": 550,
+   "atq": 110,
+   "def": 61,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -956,22 +955,6 @@
    "guerreiro": false,
    "mana": null
   },
-  "@cff_llaurss": {
-   "nome": "@cff_llaurss",
-   "profissao": "lenhador",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 20,
-   "def": 8,
-   "bArma": 2,
-   "bSec": 0,
-   "bEsc": 0,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
-   "mana": null
-  },
   "@ea_millyyxz.1": {
    "nome": "@ea_millyyxz.1",
    "profissao": "fazendeiro",
@@ -1008,7 +991,7 @@
    "nome": "@gta6gamersbr",
    "profissao": "padeiro",
    "nivel": 6,
-   "hp": 73,
+   "hp": 100,
    "hpMax": 100,
    "atq": 20,
    "def": 15,
@@ -1039,6 +1022,24 @@
  },
  "eventosUltimas24h": [
   {
+   "quando": 1795605866772,
+   "quem": "@felipz_xz",
+   "tipo": "briga_derrota",
+   "texto": "@felipz_xz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
+   "quando": 1795604444772,
+   "quem": "@manuellax7x",
+   "tipo": "vitoria",
+   "texto": "@manuellax7x venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
+  {
+   "quando": 1795604431772,
+   "quem": "@gta6gamersbr",
+   "tipo": "briga_vitoria",
+   "texto": "@gta6gamersbr encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
    "quando": 1795602991772,
    "quem": "@gta6gamersbr",
    "tipo": "queda",
@@ -1049,12 +1050,6 @@
    "quem": "@gta6gamersbr",
    "tipo": "vitoria",
    "texto": "@gta6gamersbr e os amigos venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1795600094772,
-   "quem": "@cff_llaurss",
-   "tipo": "briga_derrota",
-   "texto": "@cff_llaurss foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   },
   {
    "quando": 1795598671772,
@@ -1073,12 +1068,6 @@
    "quem": "@felipz_xz",
    "tipo": "briga_derrota",
    "texto": "@felipz_xz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1795597214772,
-   "quem": "@cff_llaurss",
-   "tipo": "queda",
-   "texto": "@cff_llaurss escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   },
   {
    "quando": 1795595804772,
@@ -1103,12 +1092,6 @@
    "quem": "@ea_millyyxz.1",
    "tipo": "vitoria",
    "texto": "@ea_millyyxz.1 venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1795592894772,
-   "quem": "@cff_llaurss",
-   "tipo": "briga_vitoria",
-   "texto": "@cff_llaurss encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
   },
   {
    "quando": 1795591466772,
