@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-25T08:52",
+ "geradoEm": "2026-11-25T09:52",
  "relogioVila": {
   "dia": 23,
-  "hora": 8
+  "hora": 9
  },
  "moradores": 51,
  "novosDoDia": [
@@ -11,36 +11,36 @@
   "@gta6gamersbr",
   "@manuellax7x"
  ],
- "nivelMaisAlto": 51,
+ "nivelMaisAlto": 52,
  "maisAltos": [
   {
    "nome": "@iamvictoriamenezes",
-   "nivel": 51,
-   "xp": 131080,
+   "nivel": 52,
+   "xp": 131330,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
-   "nivel": 51,
-   "xp": 130880,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@laryssapsouza",
-   "nivel": 51,
-   "xp": 130295,
+   "nivel": 52,
+   "xp": 131130,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
-   "nivel": 51,
-   "xp": 130124,
+   "nivel": 52,
+   "xp": 130374,
    "titulo": "Lenda"
   },
   {
-   "nome": "@adriana.g.santana",
-   "nivel": 51,
-   "xp": 130115,
+   "nome": "@dudabrisolaa_",
+   "nivel": 52,
+   "xp": 130040,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@glautiumgabriel",
+   "nivel": 52,
+   "xp": 130020,
    "titulo": "Lenda"
   }
  ],
@@ -222,11 +222,11 @@
   "@dudabrisolaa_": {
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "nivel": 51,
-   "hp": 550,
-   "hpMax": 550,
-   "atq": 110,
-   "def": 61,
+   "nivel": 52,
+   "hp": 560,
+   "hpMax": 560,
+   "atq": 112,
+   "def": 62,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -238,11 +238,11 @@
   "@dudabsl_": {
    "nome": "@dudabsl_",
    "profissao": "curandeiro",
-   "nivel": 51,
-   "hp": 550,
-   "hpMax": 550,
-   "atq": 110,
-   "def": 53,
+   "nivel": 52,
+   "hp": 560,
+   "hpMax": 560,
+   "atq": 112,
+   "def": 54,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -254,11 +254,11 @@
   "@glautiumgabriel": {
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "nivel": 51,
-   "hp": 550,
-   "hpMax": 550,
-   "atq": 111,
-   "def": 53,
+   "nivel": 52,
+   "hp": 560,
+   "hpMax": 560,
+   "atq": 113,
+   "def": 54,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -270,11 +270,11 @@
   "@iamvictoriamenezes": {
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
-   "nivel": 51,
-   "hp": 550,
-   "hpMax": 550,
-   "atq": 110,
-   "def": 55,
+   "nivel": 52,
+   "hp": 560,
+   "hpMax": 560,
+   "atq": 112,
+   "def": 56,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -302,11 +302,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 51,
-   "hp": 550,
-   "hpMax": 550,
-   "atq": 110,
-   "def": 53,
+   "nivel": 52,
+   "hp": 560,
+   "hpMax": 560,
+   "atq": 112,
+   "def": 54,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -734,11 +734,11 @@
   "@cf.ayshinha_": {
    "nome": "@cf.ayshinha_",
    "profissao": "cavaleiro",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 100,
-   "def": 55,
+   "nivel": 47,
+   "hp": 510,
+   "hpMax": 510,
+   "atq": 102,
+   "def": 56,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -958,13 +958,13 @@
   "@ea_millyyxz.1": {
    "nome": "@ea_millyyxz.1",
    "profissao": "fazendeiro",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
    "atq": 30,
-   "def": 8,
+   "def": 9,
    "bArma": 7,
-   "bSec": 5,
+   "bSec": 3,
    "bEsc": 0,
    "bCapa": 2,
    "longe": false,
@@ -974,11 +974,11 @@
   "@felipz_xz": {
    "nome": "@felipz_xz",
    "profissao": "ferreiro",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 21,
-   "def": 10,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 23,
+   "def": 11,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -990,11 +990,11 @@
   "@gta6gamersbr": {
    "nome": "@gta6gamersbr",
    "profissao": "padeiro",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 20,
-   "def": 15,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 16,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 7,
@@ -1006,11 +1006,11 @@
   "@manuellax7x": {
    "nome": "@manuellax7x",
    "profissao": "lenhador",
-   "nivel": 6,
-   "hp": 100,
-   "hpMax": 100,
-   "atq": 20,
-   "def": 8,
+   "nivel": 7,
+   "hp": 110,
+   "hpMax": 110,
+   "atq": 22,
+   "def": 9,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1021,6 +1021,24 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1795608751772,
+   "quem": "@gta6gamersbr",
+   "tipo": "vitoria",
+   "texto": "@gta6gamersbr e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
+  },
+  {
+   "quando": 1795607306772,
+   "quem": "@felipz_xz",
+   "tipo": "briga_derrota",
+   "texto": "@felipz_xz foi encarar outra vila, perdeu a briga e voltou correndo para casa."
+  },
+  {
+   "quando": 1795607302772,
+   "quem": "@ea_millyyxz.1",
+   "tipo": "vitoria",
+   "texto": "@ea_millyyxz.1 e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
+  },
   {
    "quando": 1795605866772,
    "quem": "@felipz_xz",
