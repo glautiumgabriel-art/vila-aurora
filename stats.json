@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-25T02:06",
+ "geradoEm": "2026-11-25T02:52",
  "relogioVila": {
   "dia": 23,
   "hora": 2
@@ -17,67 +17,67 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 51,
-   "xp": 129390,
+   "xp": 129580,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 51,
-   "xp": 129190,
+   "xp": 129380,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 51,
-   "xp": 128605,
+   "xp": 128795,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 51,
-   "xp": 128434,
+   "xp": 128624,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 51,
-   "xp": 128425,
+   "xp": 128615,
    "titulo": "Lenda"
   }
  ],
  "maioresAfinidades": [
   {
    "entre": [
-    "@adriana.g.santana",
-    "@eopedrinhonepai"
+    "@_williamg10",
+    "@eu.brandao__"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@danielaugustobiesso",
+    "@samuel_teles_01"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@ea_millyyxz.1",
+    "@novelinha.biblia"
    ],
    "forca": 2
   },
   {
    "entre": [
     "@__niedison",
-    "@danielaugustobiesso"
+    "@eu.brandao__"
    ],
    "forca": 1
   },
   {
    "entre": [
     "@__niedison",
-    "@dudabsl_"
-   ],
-   "forca": 1
-  },
-  {
-   "entre": [
-    "@__niedison",
-    "@faixa_gu244"
-   ],
-   "forca": 1
-  },
-  {
-   "entre": [
-    "@__niedison",
-    "@iamvictoriamenezes"
+    "@gta6gamersbr"
    ],
    "forca": 1
   }
@@ -495,11 +495,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 47,
-   "hp": 510,
-   "hpMax": 510,
-   "atq": 103,
-   "def": 49,
+   "nivel": 48,
+   "hp": 520,
+   "hpMax": 520,
+   "atq": 105,
+   "def": 50,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -975,12 +975,12 @@
   "@cff_llaurss": {
    "nome": "@cff_llaurss",
    "profissao": "lenhador",
-   "nivel": 1,
-   "hp": 50,
-   "hpMax": 50,
-   "atq": 8,
-   "def": 1,
-   "bArma": 0,
+   "nivel": 2,
+   "hp": 60,
+   "hpMax": 60,
+   "atq": 12,
+   "def": 2,
+   "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
    "bCapa": 0,
@@ -988,10 +988,77 @@
    "guerreiro": false,
    "mana": null
   },
-  "@ea_millyyxz.1": null,
-  "@felipz_xz": null,
-  "@gta6gamersbr": null,
-  "@manuellax7x": null
+  "@ea_millyyxz.1": {
+   "nome": "@ea_millyyxz.1",
+   "profissao": "fazendeiro",
+   "nivel": 2,
+   "hp": 60,
+   "hpMax": 60,
+   "atq": 17,
+   "def": 2,
+   "bArma": 7,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@felipz_xz": {
+   "nome": "@felipz_xz",
+   "profissao": "ferreiro",
+   "nivel": 2,
+   "hp": 60,
+   "hpMax": 60,
+   "atq": 12,
+   "def": 2,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@gta6gamersbr": {
+   "nome": "@gta6gamersbr",
+   "profissao": "padeiro",
+   "nivel": 2,
+   "hp": 60,
+   "hpMax": 60,
+   "atq": 12,
+   "def": 2,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  },
+  "@manuellax7x": {
+   "nome": "@manuellax7x",
+   "profissao": "lenhador",
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 3,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  }
  },
- "eventosUltimas24h": []
+ "eventosUltimas24h": [
+  {
+   "quando": 1795584284772,
+   "quem": "@manuellax7x",
+   "tipo": "derrota",
+   "texto": "@manuellax7x encostou sozinho em o Lobo Cinzento e levou a pior. Reiniciou no último ponto seguro e perdeu um nível."
+  }
+ ]
 }

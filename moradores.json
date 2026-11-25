@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizadoEm": "2026-11-25T02:06",
+ "atualizadoEm": "2026-11-25T02:51",
  "observacao": "Seguidores reais do @vilaauroraoficial. Atualizado pelo robô de seguidores.",
  "moradores": [
   {
@@ -697,7 +697,7 @@
    "sexo": "?",
    "profissao": "explorador",
    "joinedAt": 1794076389675,
-   "faltas": 0,
+   "faltas": 1,
    "presentes": [
     {
      "item": "Ferradura da Sorte",
