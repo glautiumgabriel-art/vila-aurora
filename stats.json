@@ -1,10 +1,10 @@
 {
- "geradoEm": "2026-11-25T03:52",
+ "geradoEm": "2026-11-25T04:52",
  "relogioVila": {
   "dia": 23,
-  "hora": 3
+  "hora": 4
  },
- "moradores": 53,
+ "moradores": 52,
  "novosDoDia": [
   "@cff_llaurss",
   "@ea_millyyxz.1",
@@ -17,31 +17,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 51,
-   "xp": 129830,
+   "xp": 130080,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 51,
-   "xp": 129630,
+   "xp": 129880,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 51,
-   "xp": 129045,
+   "xp": 129295,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 51,
-   "xp": 128874,
+   "xp": 129124,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 51,
-   "xp": 128865,
+   "xp": 129115,
    "titulo": "Lenda"
   }
  ],
@@ -69,15 +69,15 @@
   },
   {
    "entre": [
-    "@__niedison",
-    "@eu.brandao__"
+    "@gods.samuka",
+    "@sampaiojaiane"
    ],
-   "forca": 1
+   "forca": 2
   },
   {
    "entre": [
     "@__niedison",
-    "@gta6gamersbr"
+    "@eu.brandao__"
    ],
    "forca": 1
   }
@@ -154,7 +154,6 @@
   "@kauedomingues894",
   "@cf.ayshinha_",
   "@luizin_hz0",
-  "@mk._iluminado",
   "@rafael.strauch",
   "@__niedison",
   "@eopedrinhonepai",
@@ -172,8 +171,8 @@
   "bardo": 7,
   "cavaleiro": 7,
   "fazendeiro": 6,
-  "explorador": 5,
   "soldado": 5,
+  "explorador": 4,
   "ferreiro": 4,
   "pescador": 3,
   "cozinheiro": 2,
@@ -528,11 +527,11 @@
   "@kalebdecote": {
    "nome": "@kalebdecote",
    "profissao": "bardo",
-   "nivel": 47,
-   "hp": 510,
-   "hpMax": 510,
-   "atq": 103,
-   "def": 51,
+   "nivel": 48,
+   "hp": 520,
+   "hpMax": 520,
+   "atq": 105,
+   "def": 52,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -656,11 +655,11 @@
   "@oi56382": {
    "nome": "@oi56382",
    "profissao": "cabeleireiro",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 100,
-   "def": 48,
+   "nivel": 47,
+   "hp": 510,
+   "hpMax": 510,
+   "atq": 102,
+   "def": 49,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -688,11 +687,11 @@
   "@_rai.la.ne_": {
    "nome": "@_rai.la.ne_",
    "profissao": "fazendeiro",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 101,
-   "def": 48,
+   "nivel": 47,
+   "hp": 510,
+   "hpMax": 510,
+   "atq": 103,
+   "def": 49,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -704,11 +703,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 100,
-   "def": 48,
+   "nivel": 47,
+   "hp": 510,
+   "hpMax": 510,
+   "atq": 102,
+   "def": 49,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -720,11 +719,11 @@
   "@kauedomingues894": {
    "nome": "@kauedomingues894",
    "profissao": "bardo",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 101,
-   "def": 48,
+   "nivel": 47,
+   "hp": 510,
+   "hpMax": 510,
+   "atq": 103,
+   "def": 49,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -763,22 +762,6 @@
    "bCapa": 2,
    "longe": false,
    "guerreiro": true,
-   "mana": null
-  },
-  "@mk._iluminado": {
-   "nome": "@mk._iluminado",
-   "profissao": "explorador",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 101,
-   "def": 50,
-   "bArma": 2,
-   "bSec": 1,
-   "bEsc": 2,
-   "bCapa": 2,
-   "longe": false,
-   "guerreiro": false,
    "mana": null
   },
   "@rafael.strauch": {
@@ -896,11 +879,11 @@
   "@leolindo6.7": {
    "nome": "@leolindo6.7",
    "profissao": "explorador",
-   "nivel": 44,
-   "hp": 480,
-   "hpMax": 480,
-   "atq": 97,
-   "def": 48,
+   "nivel": 45,
+   "hp": 490,
+   "hpMax": 490,
+   "atq": 99,
+   "def": 49,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -976,11 +959,11 @@
   "@cff_llaurss": {
    "nome": "@cff_llaurss",
    "profissao": "lenhador",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 14,
-   "def": 3,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 16,
+   "def": 4,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1008,13 +991,13 @@
   "@felipz_xz": {
    "nome": "@felipz_xz",
    "profissao": "ferreiro",
-   "nivel": 3,
-   "hp": 70,
-   "hpMax": 70,
-   "atq": 14,
-   "def": 3,
+   "nivel": 4,
+   "hp": 80,
+   "hpMax": 80,
+   "atq": 17,
+   "def": 4,
    "bArma": 2,
-   "bSec": 0,
+   "bSec": 1,
    "bEsc": 0,
    "bCapa": 0,
    "longe": false,
@@ -1055,6 +1038,18 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1795591466772,
+   "quem": "@felipz_xz",
+   "tipo": "vitoria",
+   "texto": "@felipz_xz venceram um javali teimoso e ganharam uma presa de javali."
+  },
+  {
+   "quando": 1795591462772,
+   "quem": "@ea_millyyxz.1",
+   "tipo": "queda",
+   "texto": "@ea_millyyxz.1 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
   {
    "quando": 1795588591772,
    "quem": "@gta6gamersbr",
