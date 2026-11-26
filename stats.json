@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-26T19:52",
+ "geradoEm": "2026-11-26T20:52",
  "relogioVila": {
   "dia": 24,
-  "hora": 19
+  "hora": 20
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 53,
-   "xp": 139830,
+   "xp": 140080,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 53,
-   "xp": 139631,
+   "xp": 139880,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 53,
-   "xp": 139045,
+   "xp": 139295,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 53,
-   "xp": 138874,
+   "xp": 139124,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 53,
-   "xp": 138866,
+   "xp": 139115,
    "titulo": "Lenda"
   }
  ],
@@ -941,11 +941,11 @@
   "@ea_millyyxz.1": {
    "nome": "@ea_millyyxz.1",
    "profissao": "fazendeiro",
-   "nivel": 14,
-   "hp": 180,
-   "hpMax": 180,
-   "atq": 39,
-   "def": 16,
+   "nivel": 15,
+   "hp": 190,
+   "hpMax": 190,
+   "atq": 41,
+   "def": 17,
    "bArma": 2,
    "bSec": 3,
    "bEsc": 0,
@@ -989,11 +989,11 @@
   "@manuellax7x": {
    "nome": "@manuellax7x",
    "profissao": "lenhador",
-   "nivel": 14,
-   "hp": 180,
-   "hpMax": 180,
-   "atq": 36,
-   "def": 16,
+   "nivel": 15,
+   "hp": 190,
+   "hpMax": 190,
+   "atq": 38,
+   "def": 17,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1005,11 +1005,11 @@
   "@itrapped_____": {
    "nome": "@itrapped_____",
    "profissao": "padeiro",
-   "nivel": 4,
-   "hp": 80,
-   "hpMax": 80,
-   "atq": 17,
-   "def": 4,
+   "nivel": 5,
+   "hp": 90,
+   "hpMax": 90,
+   "atq": 19,
+   "def": 5,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
