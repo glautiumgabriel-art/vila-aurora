@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-26T16:52",
+ "geradoEm": "2026-11-26T17:52",
  "relogioVila": {
   "dia": 24,
-  "hora": 16
+  "hora": 17
  },
  "moradores": 52,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 53,
-   "xp": 139080,
+   "xp": 139330,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 53,
-   "xp": 138880,
+   "xp": 139130,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 53,
-   "xp": 138295,
+   "xp": 138545,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 53,
-   "xp": 138124,
+   "xp": 138374,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 53,
-   "xp": 138115,
+   "xp": 138365,
    "titulo": "Lenda"
   }
  ],
@@ -51,6 +51,20 @@
   },
   {
    "entre": [
+    "@danielaugustobiesso",
+    "@samuel_teles_01"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
+    "@diegokallel",
+    "@felipz_xz"
+   ],
+   "forca": 2
+  },
+  {
+   "entre": [
     "@gods.samuka",
     "@sampaiojaiane"
    ],
@@ -58,22 +72,8 @@
   },
   {
    "entre": [
-    "@kaiobentopereira",
-    "@livia.maria31"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
-    "@kauedomingues894",
-    "@rafael.strauch"
-   ],
-   "forca": 2
-  },
-  {
-   "entre": [
     "@__niedison",
-    "@adriana.lopesl"
+    "@eu.brandao__"
    ],
    "forca": 1
   }
@@ -318,11 +318,11 @@
   "@dr.glautiumgabriel": {
    "nome": "@dr.glautiumgabriel",
    "profissao": "cozinheiro",
-   "nivel": 52,
-   "hp": 560,
-   "hpMax": 560,
-   "atq": 113,
-   "def": 54,
+   "nivel": 53,
+   "hp": 570,
+   "hpMax": 570,
+   "atq": 115,
+   "def": 55,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -350,11 +350,11 @@
   "@menor.k01_de_itz": {
    "nome": "@menor.k01_de_itz",
    "profissao": "explorador",
-   "nivel": 52,
-   "hp": 560,
-   "hpMax": 560,
-   "atq": 112,
-   "def": 56,
+   "nivel": 53,
+   "hp": 570,
+   "hpMax": 570,
+   "atq": 114,
+   "def": 57,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -494,11 +494,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 49,
-   "hp": 530,
-   "hpMax": 530,
-   "atq": 107,
-   "def": 51,
+   "nivel": 50,
+   "hp": 540,
+   "hpMax": 540,
+   "atq": 109,
+   "def": 52,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -558,11 +558,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 49,
-   "hp": 530,
-   "hpMax": 530,
-   "atq": 106,
-   "def": 53,
+   "nivel": 50,
+   "hp": 540,
+   "hpMax": 540,
+   "atq": 108,
+   "def": 54,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -654,11 +654,11 @@
   "@oi56382": {
    "nome": "@oi56382",
    "profissao": "cabeleireiro",
-   "nivel": 48,
-   "hp": 520,
-   "hpMax": 520,
-   "atq": 104,
-   "def": 50,
+   "nivel": 49,
+   "hp": 530,
+   "hpMax": 530,
+   "atq": 106,
+   "def": 51,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -846,11 +846,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 100,
-   "def": 48,
+   "nivel": 47,
+   "hp": 510,
+   "hpMax": 510,
+   "atq": 102,
+   "def": 49,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -894,10 +894,10 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 45,
-   "hp": 490,
-   "hpMax": 490,
-   "atq": 98,
+   "nivel": 46,
+   "hp": 500,
+   "hpMax": 500,
+   "atq": 100,
    "def": 38,
    "bArma": 2,
    "bSec": 0,
@@ -942,11 +942,11 @@
   "@dz.pzz": {
    "nome": "@dz.pzz",
    "profissao": "pescador",
-   "nivel": 37,
-   "hp": 410,
-   "hpMax": 410,
-   "atq": 83,
-   "def": 39,
+   "nivel": 38,
+   "hp": 420,
+   "hpMax": 420,
+   "atq": 85,
+   "def": 40,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1019,7 +1019,22 @@
    "guerreiro": false,
    "mana": null
   },
-  "@itrapped_____": null
+  "@itrapped_____": {
+   "nome": "@itrapped_____",
+   "profissao": "padeiro",
+   "nivel": 3,
+   "hp": 70,
+   "hpMax": 70,
+   "atq": 14,
+   "def": 3,
+   "bArma": 2,
+   "bSec": 0,
+   "bEsc": 0,
+   "bCapa": 0,
+   "longe": false,
+   "guerreiro": false,
+   "mana": null
+  }
  },
  "eventosUltimas24h": [
   {
