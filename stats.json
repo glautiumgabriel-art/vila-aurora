@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-27T02:51",
+ "geradoEm": "2026-11-27T03:51",
  "relogioVila": {
   "dia": 25,
-  "hora": 2
+  "hora": 3
  },
  "moradores": 51,
  "novosDoDia": [
@@ -11,33 +11,33 @@
  "nivelMaisAlto": 54,
  "maisAltos": [
   {
+   "nome": "@iamvictoriamenezes",
+   "nivel": 54,
+   "xp": 141830,
+   "titulo": "Lenda"
+  },
+  {
    "nome": "@dudabsl_",
    "nivel": 54,
-   "xp": 141380,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@iamvictoriamenezes",
-   "nivel": 53,
-   "xp": 141580,
-   "titulo": "Lenda"
-  },
-  {
-   "nome": "@laryssapsouza",
-   "nivel": 53,
-   "xp": 140795,
+   "xp": 141630,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
-   "nivel": 53,
-   "xp": 140624,
+   "nivel": 54,
+   "xp": 140874,
    "titulo": "Lenda"
   },
   {
-   "nome": "@adriana.g.santana",
-   "nivel": 53,
-   "xp": 140615,
+   "nome": "@dudabrisolaa_",
+   "nivel": 54,
+   "xp": 140540,
+   "titulo": "Lenda"
+  },
+  {
+   "nome": "@glautiumgabriel",
+   "nivel": 54,
+   "xp": 140520,
    "titulo": "Lenda"
   }
  ],
@@ -221,11 +221,11 @@
   "@dudabrisolaa_": {
    "nome": "@dudabrisolaa_",
    "profissao": "cavaleiro",
-   "nivel": 53,
-   "hp": 570,
-   "hpMax": 570,
-   "atq": 114,
-   "def": 63,
+   "nivel": 54,
+   "hp": 580,
+   "hpMax": 580,
+   "atq": 116,
+   "def": 64,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -253,11 +253,11 @@
   "@glautiumgabriel": {
    "nome": "@glautiumgabriel",
    "profissao": "mineiro",
-   "nivel": 53,
-   "hp": 570,
-   "hpMax": 570,
-   "atq": 115,
-   "def": 55,
+   "nivel": 54,
+   "hp": 580,
+   "hpMax": 580,
+   "atq": 117,
+   "def": 56,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -269,11 +269,11 @@
   "@iamvictoriamenezes": {
    "nome": "@iamvictoriamenezes",
    "profissao": "explorador",
-   "nivel": 53,
-   "hp": 570,
-   "hpMax": 570,
-   "atq": 114,
-   "def": 57,
+   "nivel": 54,
+   "hp": 580,
+   "hpMax": 580,
+   "atq": 116,
+   "def": 58,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -301,11 +301,11 @@
   "@_williamg10": {
    "nome": "@_williamg10",
    "profissao": "bardo",
-   "nivel": 53,
-   "hp": 570,
-   "hpMax": 570,
-   "atq": 114,
-   "def": 55,
+   "nivel": 54,
+   "hp": 580,
+   "hpMax": 580,
+   "atq": 116,
+   "def": 56,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -973,11 +973,11 @@
   "@gta6gamersbr": {
    "nome": "@gta6gamersbr",
    "profissao": "padeiro",
-   "nivel": 15,
-   "hp": 190,
-   "hpMax": 190,
-   "atq": 38,
-   "def": 19,
+   "nivel": 16,
+   "hp": 200,
+   "hpMax": 200,
+   "atq": 40,
+   "def": 20,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1005,11 +1005,11 @@
   "@itrapped_____": {
    "nome": "@itrapped_____",
    "profissao": "padeiro",
-   "nivel": 7,
-   "hp": 110,
-   "hpMax": 110,
-   "atq": 23,
-   "def": 9,
+   "nivel": 8,
+   "hp": 120,
+   "hpMax": 120,
+   "atq": 25,
+   "def": 10,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1020,6 +1020,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1795758366620,
+   "quem": "@itrapped_____",
+   "tipo": "briga_vitoria",
+   "texto": "@itrapped_____ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1795755486620,
    "quem": "@itrapped_____",
@@ -1193,12 +1199,6 @@
    "quem": "@gta6gamersbr",
    "tipo": "vitoria",
    "texto": "@gta6gamersbr venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1795680742772,
-   "quem": "@ea_millyyxz.1",
-   "tipo": "briga_derrota",
-   "texto": "@ea_millyyxz.1 foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }
