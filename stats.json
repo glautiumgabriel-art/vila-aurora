@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-27T10:51",
+ "geradoEm": "2026-11-27T11:51",
  "relogioVila": {
   "dia": 25,
-  "hora": 10
+  "hora": 11
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 54,
-   "xp": 143580,
+   "xp": 143830,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 54,
-   "xp": 143380,
+   "xp": 143630,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 54,
-   "xp": 142795,
+   "xp": 143045,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 54,
-   "xp": 142624,
+   "xp": 142874,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 54,
-   "xp": 142615,
+   "xp": 142865,
    "titulo": "Lenda"
   }
  ],
@@ -589,11 +589,11 @@
   "@samuel_teles_01": {
    "nome": "@samuel_teles_01",
    "profissao": "ferreiro",
-   "nivel": 50,
-   "hp": 540,
-   "hpMax": 540,
-   "atq": 109,
-   "def": 54,
+   "nivel": 51,
+   "hp": 550,
+   "hpMax": 550,
+   "atq": 111,
+   "def": 55,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -957,11 +957,11 @@
   "@felipz_xz": {
    "nome": "@felipz_xz",
    "profissao": "ferreiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 41,
-   "def": 20,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 43,
+   "def": 21,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1133,12 +1133,6 @@
    "quem": "@felipz_xz",
    "tipo": "vitoria",
    "texto": "@felipz_xz e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1795703804772,
-   "quem": "@manuellax7x",
-   "tipo": "briga_derrota",
-   "texto": "@manuellax7x foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }
