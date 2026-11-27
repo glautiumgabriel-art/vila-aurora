@@ -39,7 +39,9 @@ jobs:
       - name: Preparar o teste com o Chrome do runner
         run: |
           google-chrome --version
-          ffprobe -version | head -n 1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends ffmpeg
+          command -v ffmpeg ffprobe
           python3 -m venv "$RUNNER_TEMP/diretor-venv"
           "$RUNNER_TEMP/diretor-venv/bin/pip" install 'playwright==1.60.0'
       - name: Gravar e verificar 2 segundos em 1080 por 1920 a 30 fps
