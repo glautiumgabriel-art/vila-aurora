@@ -1,0 +1,26 @@
+#trilha{margin:12px 0 0;padding:14px 20px;display:flex;gap:16px;align-items:center;background:#203e34;color:#fff3d5;border:1px solid #577566;border-radius:12px;position:relative;overflow:hidden}
+#trilha:after{content:"";position:absolute;bottom:0;left:0;height:3px;width:var(--progresso,0);background:#f0bd68;transition:width .25s}
+.rosa{font:48px/1 Georgia;color:#e6b969}.passo{flex:1;min-width:0}
+.linha-trilha{display:flex;align-items:center;gap:12px;color:#f1cc8c;font-weight:800;font-size:13px}.selos{display:inline-block;font-variant-numeric:tabular-nums}
+#trilha h2{color:#fff4db;font-size:clamp(19px,2vw,25px)}#trilha p{margin:1px 0;color:#e1e9da}
+#trilha button{width:auto;flex:0 0 auto;background:#f2cb82;color:#26342a;border:1px solid #f8d998;padding:8px 15px;min-height:44px}
+#retornoAcao:not(:empty){margin:.5rem 0;color:var(--fg);font-weight:700}#retornoTrilha{display:block;color:#f1cc8c}
+body.cinema #trilha,body.abertura #trilha{display:none}
+@media(max-width:860px){
+  #trilha{margin-top:8px;padding:11px 12px;gap:9px;flex-wrap:wrap}.rosa{display:none}.passo{flex:1 1 190px}
+  #trilha p{font-size:14px}#trilha button{font-size:14px}.map .busca-box:not(.recolhida){background:var(--panel)}
+  .map .busca-box .busca-ideia,.map .busca-box .busca-dica{display:none}
+  body:not(.cinema) .map{height:clamp(260px,45svh,460px);min-height:0}
+  .busca-box #abreBusca,.results button,.row button.ghost,.top button.ghost,.top select{min-height:44px}
+  .results{overscroll-behavior:contain}.map .results{max-height:20svh!important}
+}
+@media(prefers-reduced-motion:reduce){#trilha:after{transition:none}}
+
+#resumoVila{display:none}
+@media(max-width:860px){
+  body:not(.cinema):not(.abertura) #resumoVila{display:inline-flex;align-items:center;min-height:44px;margin-left:auto}
+  body:not(.cinema):not(.abertura) .top:not(.expandido)>:not(h1):not(#resumoVila):not(:has(#dia)){display:none}
+  .top:not(.expandido)>:has(#dia){order:1}
+}
+
+@media(max-width:480px){#trilha button{width:100%}}
