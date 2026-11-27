@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-26T21:52",
+ "geradoEm": "2026-11-26T22:51",
  "relogioVila": {
   "dia": 24,
-  "hora": 21
+  "hora": 22
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 53,
-   "xp": 140330,
+   "xp": 140580,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 53,
-   "xp": 140131,
+   "xp": 140380,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 53,
-   "xp": 139545,
+   "xp": 139795,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 53,
-   "xp": 139375,
+   "xp": 139624,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 53,
-   "xp": 139366,
+   "xp": 139615,
    "titulo": "Lenda"
   }
  ],
@@ -1005,21 +1005,33 @@
   "@itrapped_____": {
    "nome": "@itrapped_____",
    "profissao": "padeiro",
-   "nivel": 5,
-   "hp": 72,
-   "hpMax": 90,
-   "atq": 19,
-   "def": 5,
+   "nivel": 6,
+   "hp": 100,
+   "hpMax": 100,
+   "atq": 21,
+   "def": 8,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
-   "bCapa": 0,
+   "bCapa": 2,
    "longe": false,
    "guerreiro": false,
    "mana": null
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1795742526620,
+   "quem": "@itrapped_____",
+   "tipo": "queda",
+   "texto": "@itrapped_____ escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
+  },
+  {
+   "quando": 1795741086620,
+   "quem": "@itrapped_____",
+   "tipo": "briga_vitoria",
+   "texto": "@itrapped_____ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1795739646620,
    "quem": "@itrapped_____",
@@ -1187,18 +1199,6 @@
    "quem": "@manuellax7x",
    "tipo": "vitoria",
    "texto": "@manuellax7x venceram um javali teimoso e ganharam uma presa de javali."
-  },
-  {
-   "quando": 1795676422772,
-   "quem": "@ea_millyyxz.1",
-   "tipo": "vitoria",
-   "texto": "@ea_millyyxz.1 venceram uma galinha fujona e ganharam uma pena da sorte."
-  },
-  {
-   "quando": 1795675004772,
-   "quem": "@manuellax7x",
-   "tipo": "queda",
-   "texto": "@manuellax7x escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
