@@ -1,0 +1,46 @@
+name: Vila Aurora · piloto na nuvem
+on:
+  push:
+    branches: [main, codex-vila-robo-nuvem]
+    paths: ['.github/vila/**', '.github/workflows/vila-robo-nuvem.yml']
+  schedule:
+    - cron: '51 * * * *'
+  workflow_dispatch:
+concurrency:
+  group: vila-aurora-coleta
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  ensaio:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Testar lote de dados em Git temporário
+        run: python3 -B .github/vila/piloto.py --ensaio
+      - name: Verificar portão do Secret vazio
+        run: python3 -B .github/vila/piloto.py
+      - name: Consultar comentários em modo de observação
+        if: github.ref == 'refs/heads/main' && github.event_name != 'push'
+        env:
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+        run: python3 -B .github/vila/piloto.py
+  diretor:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Preparar o teste com o Chrome do runner
+        run: |
+          google-chrome --version
+          ffprobe -version | head -n 1
+          python3 -m venv "$RUNNER_TEMP/diretor-venv"
+          "$RUNNER_TEMP/diretor-venv/bin/pip" install 'playwright==1.60.0'
+      - name: Gravar e verificar 2 segundos em 1080 por 1920 a 30 fps
+        run: '"$RUNNER_TEMP/diretor-venv/bin/python" .github/vila/provar_diretor.py'
