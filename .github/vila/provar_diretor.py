@@ -22,20 +22,28 @@ class QuietServer(SimpleHTTPRequestHandler):
 
 
 def capture(game, output):
+    # O episódio multiplexa uma faixa AAC pronta, sem depender do encoder de áudio do Chrome.
+    subprocess.run(
+        ["ffmpeg", "-v", "error", "-f", "lavfi", "-i", "sine=frequency=440:sample_rate=48000",
+         "-t", "2", "-ac", "2", "-c:a", "aac", "-b:a", "128k", str(game / "ensaio-audio.m4a")],
+        check=True,
+    )
     source = (ROOT / "diretor.js").read_text(encoding="utf-8")
     begin = source.index("  async function gravar(s)")
     end = source.index("  function sair()", begin)
     recording = source[begin:end].replace("frameRate:60", "frameRate:30").replace("duracao*60", "2*30")
-    recording = recording.replace("som.add(audio(id))", "som.add(audio(id), 0, 2)")
-    # Mediabunny AudioBufferSource.add consumption is determined by the AudioBuffer length.
-    recording = recording.replace("som.add(audio(id), 0, 2)", """som.add((()=>{
-        const original=audio(id), curto=new AudioBuffer({length:original.sampleRate*2,
-          sampleRate:original.sampleRate,numberOfChannels:original.numberOfChannels});
-        for(let c=0;c<curto.numberOfChannels;c++)curto.copyToChannel(original.getChannelData(c).subarray(0,curto.length),c);
-        return curto;
-      })())""")
+    recording = recording.replace('["avc","vp9"]', '["avc"]')
+    recording = re.sub(r"^.*const ac=await m\.getFirstEncodableAudioCodec.*\n", "", recording, flags=re.MULTILINE)
+    recording = recording.replace("if(!vc||!ac)", "if(!vc)")
+    recording = recording.replace("new m.AudioBufferSource({codec:ac,bitrate:128000})", 'new m.EncodedAudioPacketSource("aac")')
+    recording = recording.replace("await som.add(audio(id));som.close();", """const bytes=await (await fetch("./ensaio-audio.m4a")).arrayBuffer();
+      const input=new m.Input({formats:[m.MP4],source:new m.BufferSource(bytes)});
+      const track=await input.getPrimaryAudioTrack();
+      const config=await track.getDecoderConfig();
+      for await(const packet of new m.EncodedPacketSink(track).packets())await som.add(packet,{decoderConfig:config});
+      som.close();input.dispose();""")
     recording = recording.replace("i/60,1/60", "i/30,1/30").replace("desenhar(i/60)", "desenhar(i/30)")
-    if "video.add(i/30,1/30)" not in recording or "frameRate:30" not in recording:
+    if not all(fragment in recording for fragment in ("video.add(i/30,1/30)", "frameRate:30", "EncodedPacketSink")):
         raise RuntimeError("O gravador mudou. Revise o teste de 30 fps.")
     (game / "diretor-ensaio.js").write_text(source[:begin] + recording + source[end:], encoding="utf-8")
 
@@ -96,7 +104,9 @@ def verify(output):
     checksums = [line.rsplit(",", 1)[-1].strip() for line in frames.splitlines() if re.match(r"^\d+,", line)]
     size = (video["width"], video["height"])
     duration = float(info["format"]["duration"])
-    if size != (1080, 1920) or rate != 30 or len(checksums) != 60 or len(set(checksums)) < 30 or not 1.99 <= duration <= 2.10:
+    codecs = (video["codec_name"], audio["codec_name"])
+    if (size != (1080, 1920) or rate != 30 or len(checksums) != 60 or len(set(checksums)) < 30
+            or not 1.99 <= duration <= 2.10 or codecs != ("h264", "aac")):
         raise RuntimeError(f"Exportação divergente: {size}, {rate} fps, {len(checksums)} quadros, {duration:.3f} s")
     print(f"MP4 decodificado: 1080×1920, {rate} fps, 60 quadros ({len(set(checksums))} distintos), "
           f"{duration:.3f} s, vídeo {video['codec_name']}, áudio {audio['codec_name']}.")
