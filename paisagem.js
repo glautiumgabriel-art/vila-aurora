@@ -2,6 +2,10 @@
 function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
   const tempo = {value: 0}, dia = {value: 1};
   const corCeu = {value: new THREE.Color(0x92c8d5)};
+  const dirSol = {value: new THREE.Vector3(.5,.7,.4)}, corNevoa = {value: new THREE.Color(0xc9d5cd)}, faixaNevoa = {value: new THREE.Vector2(60,220)};
+  const RUIDO = `float hash(vec2 a){return fract(sin(dot(a,vec2(127.1,311.7)))*43758.5453);}
+  float ruido(vec2 p){vec2 a=floor(p),u=fract(p);u=u*u*(3.-2.*u);return mix(mix(hash(a),hash(a+vec2(1,0)),u.x),mix(hash(a+vec2(0,1)),hash(a+1.),u.x),u.y);}`;
+  let luzDoSol = null;
   const tinta = hex => new THREE.Color(hex).convertSRGBToLinear();
   const rand = rnd("jardins-do-rio");
   function textura(tipo) {
@@ -38,9 +42,25 @@ function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
     base.attributes.uv.setXY(i,x/11,z/11);
   }
   base.setAttribute("color",new THREE.Float32BufferAttribute(tons,3));
-  const chao=new THREE.Mesh(base,new THREE.MeshLambertMaterial({map:relva,vertexColors:true}));
+  const matChao=new THREE.MeshLambertMaterial({map:relva,vertexColors:true});
+  matChao.onBeforeCompile=s=>{
+    s.vertexShader="varying vec2 vChao;\n"+s.vertexShader.replace("#include <begin_vertex>","#include <begin_vertex>\n vChao=position.xz;");
+    s.fragmentShader="varying vec2 vChao;\n"+RUIDO+"\n"+s.fragmentShader.replace("#include <map_fragment>",`#include <map_fragment>
+      float m1=ruido(vChao*.055),m2=ruido(vChao*.21+7.3),m3=ruido(vChao*1.7+3.1);
+      diffuseColor.rgb*=mix(vec3(.80,.95,.86),vec3(1.12,1.07,.80),smoothstep(.22,.78,m1*.62+m2*.38));
+      diffuseColor.rgb*=.92+.16*m3;`);
+  };
+  const chao=new THREE.Mesh(base,matChao);
   chao.position.y=-.018; chao.receiveShadow=true; scene.add(chao);
-  const terra=new THREE.MeshLambertMaterial({map:trilha,side:THREE.DoubleSide});
+  const terra=new THREE.MeshLambertMaterial({map:trilha,side:THREE.DoubleSide,transparent:true,depthWrite:false});
+  terra.onBeforeCompile=s=>{
+    s.vertexShader="attribute vec2 beira;varying vec2 vBeira;varying vec2 vTrilha;\n"+s.vertexShader.replace("#include <begin_vertex>","#include <begin_vertex>\n vBeira=beira;vTrilha=(modelMatrix*vec4(position,1.)).xz;");
+    s.fragmentShader="varying vec2 vBeira;varying vec2 vTrilha;\n"+RUIDO+"\n"+s.fragmentShader.replace("#include <map_fragment>",`#include <map_fragment>
+      float rb=ruido(vTrilha*2.3)*.6+ruido(vTrilha*6.1)*.4;
+      float lado=abs(vBeira.x)+(rb-.5)*.42;
+      diffuseColor.a*=(1.-smoothstep(.56,.98,lado))*(1.-smoothstep(.25,.95,vBeira.y+(rb-.5)*.3));
+      diffuseColor.rgb*=vec3(.93,.89,.82)*(.90+.16*ruido(vTrilha*.6))*mix(vec3(1.),vec3(.86,.95,.72),smoothstep(.40,.92,lado));`);
+  };
   function geometria(p,uv,idx,colors) {
     const g=new THREE.BufferGeometry();
     g.setAttribute("position",new THREE.Float32BufferAttribute(p,3));
@@ -50,59 +70,88 @@ function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
   }
   function caminho(w,d,x,z,parent) {
     const horiz=w>d, length=Math.max(w,d), width=Math.min(w,d), n=Math.ceil(length/.95);
-    const p=[],uv=[],idx=[];
+    const p=[],uv=[],idx=[],bordas=[],via=[],folga=.24;
     for(let i=0;i<=n;i++){
       const q=i/n*length-length/2;
       for(const side of [-1,1]){
-        const e=side*(width*.5+.19*Math.sin(q*.8+x+z)+.09*Math.sin(q*3.1-side))+.13*Math.sin(q*.34);
+        const miolo=side*(width*.5+.19*Math.sin(q*.8+x+z)+.09*Math.sin(q*3.1-side))+.13*Math.sin(q*.34), e=miolo+side*folga;
         const xx=x+(horiz?q:e), zz=z+(horiz?e:q);
-        p.push(xx,horiz?.027:.031,zz); uv.push(xx/6,zz/6);
+        p.push(xx,horiz?.027:.031,zz); uv.push(xx/6,zz/6); bordas.push(side,i===0||i===n?1:0);
+        via.push(x+(horiz?q:miolo),horiz?.027:.031,z+(horiz?miolo:q));
       }
       if(i){const k=i*2;idx.push(k-2,k-1,k,k,k-1,k+1);}
     }
-    nav?.via(p); const m=new THREE.Mesh(geometria(p,uv,idx),terra); m.receiveShadow=true; parent.add(m); return m;
+    // A navegação dos bichos continua com a largura original; só o desenho ganhou a beira macia.
+    nav?.via(via); const g=geometria(p,uv,idx); g.setAttribute("beira",new THREE.Float32BufferAttribute(bordas,2));
+    const m=new THREE.Mesh(g,terra); m.receiveShadow=true; m.renderOrder=-6; parent.add(m); return m;
   }
   const vertex = 'varying vec3 lugar; varying vec2 coord; void main(){ lugar=(modelMatrix*vec4(position,1.)).xyz; coord=uv; gl_Position=projectionMatrix*viewMatrix*vec4(lugar,1.); }';
   const espelhos=[];
-  const agua=new THREE.ShaderMaterial({side:THREE.DoubleSide,uniforms:{t:tempo,dia,ceu:corCeu,reflexoLocal:{value:null},pronto:{value:0}},vertexShader:vertex,fragmentShader:`
-    uniform samplerCube reflexoLocal; uniform float pronto; uniform float t,dia; uniform vec3 ceu; varying vec3 lugar; varying vec2 coord;
+  const agua=new THREE.ShaderMaterial({side:THREE.DoubleSide,transparent:true,depthWrite:false,
+    uniforms:{t:tempo,dia,ceu:corCeu,sol:dirSol,nevoaCor:corNevoa,nevoa:faixaNevoa,rio:{value:0},foz:{value:new THREE.Vector4(0,0,0,0)}},vertexShader:vertex,fragmentShader:`
+    uniform float t,dia,rio; uniform vec3 ceu,sol,nevoaCor; uniform vec2 nevoa; uniform vec4 foz; varying vec3 lugar; varying vec2 coord;
+    ${RUIDO}
     void main(){
       vec2 p=lugar.xz;
-      float margem=abs(coord.x);
-      float ond=sin(p.y*7.2+p.x*.41+.8*sin(p.x*2.+t*.15)-t*1.75)+.46*sin(p.x*2.7-p.y*.8+t*1.25);
+      // coord.x = distância à linha d'água em unidades do mapa (negativa dentro da água)
+      float d=coord.x;
+      if(foz.w>.5&&p.y>foz.z) d=min(d,abs(p.x-foz.x)-foz.y);
+      d+=.13*(ruido(p*1.15)-.5)+.035*sin(p.x*3.1+p.y*2.3);
+      vec2 corr=vec2(0.,rio>.5?-t*.50:0.);
+      float o1=ruido(p*vec2(1.5,.55)+corr+vec2(t*.05,t*.02));
+      float o2=ruido(p*vec2(3.2,1.3)+corr*1.6-vec2(t*.04,t*.11));
+      float o3=ruido(p*vec2(7.5,3.4)+corr*2.2+vec2(t*.21,0.));
+      float fundo=smoothstep(0.,-2.1,d);
+      vec3 cor=mix(vec3(.50,.82,.73),vec3(.20,.61,.63),smoothstep(0.,.42,fundo));
+      cor=mix(cor,vec3(.085,.375,.455),smoothstep(.34,1.,fundo));
+      cor+=(o1*.62+o2*.38-.5)*.085;
       vec3 vista=normalize(cameraPosition-lugar);
-      float fres=pow(1.-max(0.,vista.y),2.);
-      vec3 fundo=mix(vec3(.028,.29,.30),vec3(.28,.65,.54),smoothstep(.18,.98,margem));
-      float reflexo=smoothstep(.27,.86,margem+.095*ond)*(.45+.22*sin(p.y*1.34+ond*.3));
-      vec3 cor=mix(fundo,vec3(.075,.29,.25),reflexo);
-      cor=mix(cor,ceu,.13+.56*fres);
-      vec3 n=normalize(vec3(.033*ond,1.,.022*cos(p.y*2.7-t)));
-      vec3 refletida=textureCube(reflexoLocal,reflect(-vista,n)).rgb;
-      cor=mix(cor,refletida*.80+vec3(.04,.09,.07),pronto*(.12+.32*fres));
-      float fil=smoothstep(1.21,1.45,ond)*(.45+.55*sin(p.y*1.1+p.x)*sin(p.y*1.1+p.x));
-      float borda=(1.-smoothstep(.012,.07,abs(margem-.93-.019*ond)));
-      cor+=vec3(.63,.78,.63)*(fil*.27+borda*.23);
-      gl_FragColor=vec4(cor*(.30+.70*dia),1.);
+      float fres=pow(1.-max(0.,vista.y),3.);
+      cor=mix(cor,ceu*1.04+.035,.10+.52*fres);
+      vec3 n=normalize(vec3((o1-.5)*.55+(o3-.5)*.25,1.,(o2-.5)*.55));
+      float brilho=pow(max(0.,dot(reflect(-normalize(sol),n),vista)),70.);
+      float cint=smoothstep(.80,.86,o3)*smoothstep(.50,.72,o1)*smoothstep(.12,.6,fundo);
+      cor+=vec3(1.,.95,.80)*(brilho*.75+cint*.16)*dia;
+      cor+=vec3(.70,.92,.88)*smoothstep(.66,.72,o2)*smoothstep(.69,.60,o2+.07)*smoothstep(.2,.9,fundo)*.11;
+      float esp=ruido(p*5.2+vec2(t*.22,-t*.18));
+      float vai=.065*sin(t*1.25+p.x*.85+p.y*.7);
+      float linha=1.-smoothstep(.0,.11+.11*esp,abs(d+.08+vai));
+      float linha2=(1.-smoothstep(.0,.06,abs(d+.40+vai*1.7+.13*esp)))*.42*step(.38,esp);
+      cor=mix(cor,vec3(.95,.99,.97),clamp(linha*.88+linha2,0.,1.));
+      float seco=smoothstep(.02,.40,d);
+      vec3 praia=mix(vec3(.53,.46,.33),vec3(.80,.72,.55),seco)*(.93+.14*ruido(p*7.));
+      float terraFirme=smoothstep(-.03,.05,d-vai*.5);
+      cor=mix(cor,praia,terraFirme*(1.-linha*.85));
+      float alfa=1.-smoothstep(.40,.88,d+.20*(ruido(p*2.1)-.5));
+      alfa*=1.-smoothstep(.972,.998,coord.y);
+      cor*=.44+.56*dia;
+      cor=mix(cor,nevoaCor,smoothstep(nevoa.x,nevoa.y,length(cameraPosition-lugar))*.92);
+      gl_FragColor=vec4(cor,alfa);
     }`});
   function centroRio(z){return 46+(2.7*Math.sin(z*.075)+1.5*Math.sin(z*.18))*Math.min(1,Math.abs(z)/14);}
   function larguraRio(z){return 2.65+.38*Math.sin(z*.134)+.22*Math.sin(z*.32);}
-  const margemMat=new THREE.MeshLambertMaterial({color:0xd0b184,side:THREE.DoubleSide});
-  function camadaAgua(V,borda) {
-    const p=[],uv=[],idx=[],L=V.L.rio,rio=V.i===0,n=rio?154:88;
+  const BEIRA=1.0;
+  function camadaAgua(V) {
+    const p=[],uv=[],idx=[],L=V.L.rio,rio=V.i===0,n=rio?154:96;
     for(let i=0;i<=n;i++){
       const a=i/n*Math.PI*2,z=-97+i/n*195;
       const R=4.7+.54*Math.sin(a*3+.3)+.31*Math.cos(a*5);
       for(let j=0;j<=4;j++){
         const q=j/4,s=q*2-1;
-        const x=rio?centroRio(z)+s*(larguraRio(z)+borda):L.x+Math.cos(a)*(R+borda)*q*1.18;
-        const zz=rio?z:L.z+Math.sin(a)*(R+borda)*q*.91;
-        p.push(x,borda?(rio?.035:.056):(rio?.069:.084),zz); uv.push(rio?s:q,i/n);
+        const x=rio?centroRio(z)+s*(larguraRio(z)+BEIRA):L.x+Math.cos(a)*(R+BEIRA)*q*1.18;
+        const zz=rio?z:L.z+Math.sin(a)*(R+BEIRA)*q*.91;
+        p.push(x,rio?.069:.084,zz);
+        uv.push(rio?Math.abs(s)*(larguraRio(z)+BEIRA)-larguraRio(z):q*(R+BEIRA)-R,rio?i/n:.5);
         if(i&&j){const k=i*5+j;idx.push(k-6,k-5,k,k-6,k,k-1);}
       }
     }
-    const material=borda?margemMat:agua.clone();
-    const m=new THREE.Mesh(geometria(p,uv,idx),material);scene.add(m);
-    if(!borda){Object.assign(material.uniforms,{t:tempo,dia,ceu:corCeu});espelhos.push({m,L});}
+    const material=agua.clone();
+    const m=new THREE.Mesh(geometria(p,uv,idx),material);m.renderOrder=-5;scene.add(m);
+    Object.assign(material.uniforms,{t:tempo,dia,ceu:corCeu,sol:dirSol,nevoaCor:corNevoa,nevoa:faixaNevoa});
+    material.uniforms.rio.value=rio?1:0;
+    // Onde o rio entra na lagoa, a margem da lagoa vira água.
+    if(!rio&&Math.abs(L.x-centroRio(L.z+3))<8&&L.z>-104&&L.z<98) material.uniforms.foz.value.set(centroRio(L.z+3.5),larguraRio(L.z+3.5),L.z-.5,1);
+    espelhos.push({m,L});
     return m;
   }
   function lote(geo,items) {
@@ -118,13 +167,13 @@ function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
   function plantar(V) {
     const r=rnd("margens"+V.i),rio=V.i===0,L=V.L.rio;
     nav.lagos.push({rio,x:L.x,z:L.z,centro:centroRio,largura:larguraRio});
-    camadaAgua(V,.52);camadaAgua(V,0);
+    camadaAgua(V);
     const pedras=[],p=[],cores=[], flores=[], copas=[],troncos=[];
     const green=[0x70945c,0x90aa63,0x537d56,0xb6bf69], petalas=[0xf5c76d,0xfeefc5,0xcb94ac,0xa6a3dc];
     function folha(x,z,h,w,ang,tom,y=0){
       const dx=Math.cos(ang)*w,dz=Math.sin(ang)*w;
       p.push(x-dx,y,z-dz,x+dx,y,z+dz,x+dz*1.7,y+h,z-dx*1.7);
-      const c=tinta(tom);for(let i=0;i<3;i++)cores.push(c.r,c.g,c.b);
+      const c=tinta(tom);cores.push(c.r*.66,c.g*.74,c.b*.70,c.r*.66,c.g*.74,c.b*.70,Math.min(1,c.r*1.22+.03),Math.min(1,c.g*1.16+.03),c.b*.92);
     }
     function flor(x,z,h,tom) {
       folha(x,z,h,.014,0,0x477554);
@@ -147,9 +196,9 @@ function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
       if(!rio&&Math.hypot((x-L.x)/1.2,z-L.z)<5.8)continue;
       if(Math.abs(x-V.cx)<36&&Math.abs(z-V.cz)<36&&(RUAS.some(a=>Math.abs(x-V.cx-a)<1.1||Math.abs(z-V.cz-a)<1.1)||Math.hypot(x-V.cx,z-V.cz)<6))continue;
       const jardim=i%7===0;
-      for(let k=0;k<7;k++) {
-        const xx=x+(r()-.5)*1.2,zz=z+(r()-.5)*1.2;
-        for(let j=0;j<3;j++)folha(xx,zz,.09+r()*.22,.023+r()*.035,r()*6,green[(i+j)%4]);
+      for(let k=0;k<9;k++) {
+        const xx=x+(r()-.5)*1.5,zz=z+(r()-.5)*1.5;
+        for(let j=0;j<4;j++)folha(xx+(r()-.5)*.16,zz+(r()-.5)*.16,.08+r()*.20,.016+r()*.022,r()*6,green[(i+j+k)%4]);
         if(jardim&&k<4)flor(xx,zz,.20+r()*.13,petalas[i%4]);
       }
     }
@@ -165,18 +214,27 @@ function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
     lote(new THREE.IcosahedronGeometry(1,0),pedras); lote(new THREE.IcosahedronGeometry(1,0),flores);
     lote(new THREE.CylinderGeometry(.8,1,1,6),troncos);lote(new THREE.IcosahedronGeometry(1,1),copas);
     const gm=new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.DoubleSide});
-    gm.onBeforeCompile=s=>{s.uniforms.breeze=tempo;s.vertexShader="uniform float breeze;\n"+s.vertexShader.replace("#include <begin_vertex>","#include <begin_vertex>\n transformed.x+=.14*position.y*sin(breeze*1.6+position.x*.47+position.z*.32);");};
+    gm.onBeforeCompile=s=>{s.uniforms.breeze=tempo;s.vertexShader="uniform float breeze;\n"+s.vertexShader.replace("#include <begin_vertex>","#include <begin_vertex>\n float vento=sin(breeze*1.6+position.x*.47+position.z*.32)+.45*sin(breeze*2.9+position.x*1.3-position.z*.9);transformed.x+=.105*position.y*vento;transformed.z+=.05*position.y*cos(breeze*1.15+position.z*.6+position.x*.2);");};
     scene.add(new THREE.Mesh(geometria(p,null,null,cores),gm));
   }
-  const sky=new THREE.Mesh(new THREE.SphereGeometry(750,32,18),new THREE.ShaderMaterial({side:THREE.BackSide,depthWrite:false,uniforms:{t:tempo,dia,ceu:corCeu},vertexShader:vertex,fragmentShader:`
-  varying vec3 lugar; uniform float t,dia; uniform vec3 ceu;
-  float hash(vec2 a){return fract(sin(dot(a,vec2(127.1,311.7)))*43758.5453);}
-  float noise2(vec2 p){vec2 a=floor(p),u=fract(p);u=u*u*(3.-2.*u);return mix(mix(hash(a),hash(a+vec2(1,0)),u.x),mix(hash(a+vec2(0,1)),hash(a+1.),u.x),u.y);}
-  void main(){vec3 v=normalize(lugar-cameraPosition);float h=max(.0,v.y);
-    vec3 c=mix(mix(ceu,vec3(.98,.83,.68),.5*dia),ceu*vec3(.76,.89,.99),smoothstep(-.03,.55,h));
+  const sky=new THREE.Mesh(new THREE.SphereGeometry(750,32,18),new THREE.ShaderMaterial({side:THREE.BackSide,depthWrite:false,uniforms:{t:tempo,dia,ceu:corCeu,sol:dirSol},vertexShader:vertex,fragmentShader:`
+  varying vec3 lugar; uniform float t,dia; uniform vec3 ceu,sol;
+  ${RUIDO}
+  float nuvens(vec2 p){return ruido(p)*.54+ruido(p*2.1+3.7)*.29+ruido(p*4.3+9.1)*.17;}
+  void main(){vec3 v=normalize(lugar-cameraPosition);float h=max(.0,v.y);vec3 s=normalize(sol);
+    float baixo=1.-smoothstep(.10,.55,s.y);
+    vec3 horizonte=mix(ceu,mix(vec3(.98,.86,.72),vec3(1.,.72,.46),baixo),(.42+.22*baixo)*dia);
+    vec3 c=mix(horizonte,ceu*vec3(.74,.87,1.0),smoothstep(-.03,.58,h));
+    float ds=max(0.,dot(v,s));
+    c+=vec3(1.,.74,.42)*(pow(ds,5.)*.22+pow(ds,48.)*.42)*dia*(.45+.55*baixo);
+    c+=vec3(1.,.96,.86)*smoothstep(.9992,.99975,ds)*dia;
     vec2 p=v.xz/max(.09,h+.12)*2.1+vec2(t*.012,0.);
-    float nube=noise2(p)*.56+noise2(p*2.1)*.29+noise2(p*4.2)*.15;
-    c=mix(c,vec3(.99,.94,.81),smoothstep(.58,.74,nube)*smoothstep(.015,.18,h)*dia*.7);
+    float nube=nuvens(p),borda=smoothstep(.56,.72,nube)*smoothstep(.015,.18,h);
+    float topo=smoothstep(.0,.10,nube-nuvens(p+s.xz*.16));
+    vec3 corNuvem=mix(mix(vec3(.80,.82,.88),vec3(.86,.66,.62),baixo),mix(vec3(1.,.97,.90),vec3(1.,.84,.64),baixo),topo);
+    c=mix(c,corNuvem*(.30+.70*dia)+ceu*.12,borda*(.30+.52*dia));
+    float estrela=step(.9975,hash(floor(v.xz/(h+.25)*260.)))*smoothstep(.06,.30,h)*smoothstep(.28,.02,dia)*(1.-borda);
+    c+=vec3(.85,.90,1.)*estrela*(.55+.45*sin(t*2.+v.x*400.));
     gl_FragColor=vec4(c,1.);
   }`}));
   sky.renderOrder=-100;sky.frustumCulled=false;scene.add(sky);
@@ -206,17 +264,13 @@ function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
     const solo=new THREE.Mesh(geometria(p,uv,idx),terraArada);solo.receiveShadow=true;g.add(solo);
     const trigo=new THREE.Mesh(geometria(pEspigas,null,null,cores),new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.DoubleSide}));g.add(trigo);
   }
-  function refletirMargens(){
-    const fila=espelhos.filter(e=>!e.pronto);
-    for(const e of fila){
-      const alvo=new THREE.WebGLCubeRenderTarget(128,{generateMipmaps:false,minFilter:THREE.LinearFilter});
-      const cam=new THREE.CubeCamera(.1,160,alvo);cam.position.set(e.L.x,.45,e.L.z);
-      const esconder=[];scene.traverse(o=>{if(o.visible&&o.isSprite){o.visible=false;esconder.push(o);}});
-      espelhos.forEach(w=>w.m.visible=false);
-      try{cam.update(renderer,scene);e.m.material.uniforms.reflexoLocal.value=alvo.texture;e.m.material.uniforms.pronto.value=1;e.pronto=true;}
-      finally{espelhos.forEach(w=>w.m.visible=true);esconder.forEach(o=>o.visible=true);}
-    }
-  }
-  return {plantar,cultivar,caminho,centroRio,refletirMargens,tempo,atualizar(t,luz,ceu){tempo.value=t;dia.value=Math.max(0,Math.min(1,luz));corCeu.value.copy(ceu);}};
+  // O reflexo por cubo saiu: custava seis desenhos da cena por espelho e borrava em ângulo raso.
+  function refletirMargens(){}
+  return {plantar,cultivar,caminho,centroRio,refletirMargens,tempo,atualizar(t,luz,ceu){
+    tempo.value=t;dia.value=Math.max(0,Math.min(1,luz));corCeu.value.copy(ceu);
+    if(!luzDoSol) scene.traverse(o=>{if(!luzDoSol&&o.isDirectionalLight&&o.castShadow)luzDoSol=o;});
+    if(luzDoSol) dirSol.value.copy(luzDoSol.position).sub(luzDoSol.target.position).normalize();
+    const f=scene.fog; if(f){corNevoa.value.copy(f.color); if(f.near!=null) faixaNevoa.value.set(f.near,f.far); else faixaNevoa.value.set(30,30+1.6/Math.max(1e-4,f.density));}
+  }};
 }
 

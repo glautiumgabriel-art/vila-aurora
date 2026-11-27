@@ -33,7 +33,19 @@ function somDaCena(tipo,segundos) {
   } else if(tipo==="chuva"){
     for(let i=0;i<135;i++)nota(.02+i*.064,.09,500+Math.abs(ru())*620,.037,ru(),1,2.5);
   }
-  for(let i=0;i<L.length;i++){const env=Math.min(1,i/(sr*.07),(L.length-i)/(sr*.38));L[i]*=env;R[i]*=env;}
+  if(tipo!=="chuva"){
+    // Passarinhos em trinados curtos e a marola da lagoa dão ambiente sem brigar com a melodia.
+    for(let i=0;i<(festa?3:9);i++){
+      const q=.4+Math.abs(ru())*(segundos-1.3),f=2300+Math.abs(ru())*1900,pan=ru(),n=2+Math.floor(Math.abs(ru())*3);
+      for(let k=0;k<n;k++)nota(q+k*.085,.07,f*(1+.06*k),.021,pan,.18);
+    }
+    let marola=0;
+    for(let i=0;i<L.length;i++){marola=.94*marola+.06*ru();const t=i/sr,m=.5+.5*Math.sin(t*2.1+1.3*Math.sin(t*.7)),v=marola*.055*m*m;L[i]+=v;R[i]+=v*.8;}
+  }
+  // Mixagem: sobe o conjunto para volume de Reel e arredonda os picos sem estourar.
+  let soma=0;for(let i=0;i<L.length;i++)soma+=L[i]*L[i]+R[i]*R[i];
+  const rms=Math.sqrt(soma/(2*L.length))||1e-6,ganho=Math.min(9,.15/rms);
+  for(let i=0;i<L.length;i++){const env=Math.min(1,i/(sr*.07),(L.length-i)/(sr*.38));L[i]=Math.tanh(L[i]*ganho)*.86*env;R[i]=Math.tanh(R[i]*ganho)*.86*env;}
   return buffer;
 }
 

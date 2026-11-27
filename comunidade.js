@@ -15,9 +15,9 @@ window.criarComunidade = function ({ideia, ideias, ler, verBau}) {
     fila.push(texto);
     if (!exibindo) proximo();
   }
-  function mostrar() {
+  function mostrar(pedido) {
     guia.hidden = false;
-    el("guiaAutor").textContent = ideia.autor + " comentou “" + ideia.ideia + "”";
+    el("guiaAutor").textContent = (pedido?.usuario || ideia.autor) + " comentou “" + (pedido?.comentario || ideia.ideia) + "”";
     el("guiaEfeito").textContent = verBau();
     guia.scrollIntoView({block:"start"});
     el("seguirTutorial").focus({preventScroll:true});
@@ -85,6 +85,13 @@ window.criarComunidade = function ({ideia, ideias, ler, verBau}) {
       const li = document.createElement("li");
       for (const [tag,texto] of [["b",p.usuario],["q",p.comentario],["span",resultado]]) {
         const node = document.createElement(tag); node.textContent = texto; li.append(node);
+      }
+      if (p.tipo === "ideia" && p.usuario === ideia.autor && p.comentario === ideia.ideia) {
+        const abrir = document.createElement("button");
+        abrir.type = "button";
+        abrir.textContent = "Localizar baú no mapa";
+        abrir.addEventListener("click", () => { painel.hidePopover(); mostrar(p); });
+        li.append(abrir);
       }
       lista.append(li);
     }

@@ -237,7 +237,7 @@ if (/[?&](?:cinema=1|abertura=1|segredo=1|cam=[^&]+)/.test(location.search))
 <dialog id="painelDiretor" aria-labelledby="tituloDiretor">
   <header><h2 id="tituloDiretor">Modo diretor</h2><button id="fecharDiretor" type="button" aria-label="Fechar diretor">×</button></header>
   <label for="eventoDiretor">Evento da vila</label>
-  <select id="eventoDiretor"><option value="luta">Lobo e javali</option><option value="festa">Festa das lanternas</option><option value="mutirao">Mutirão do jardim</option><option value="chuva">Chuva no Rio Claro</option><option value="visita">Visita ao pomar</option><option value="aleatorio">Sortear um evento</option></select>
+  <select id="eventoDiretor"><option value="luta">Lobo e javali</option><option value="festa">Festa das lanternas</option><option value="mutirao">Mutirão do jardim</option><option value="chuva">Chuva no Rio Claro</option><option value="visita">Visita ao pomar</option><option value="argola">Forja · Argola fechada</option><option value="suporte">Forja · Suporte de chão</option><option value="aleatorio">Sortear um evento</option></select>
   <p>9 segundos · vertical · 1080 × 1920 · 60 fps com som</p>
   <footer><button type="button" id="previaDiretor">Ver prévia</button><button type="button" id="gravarDiretor">Gravar MP4</button></footer>
   <p id="estadoDiretor" role="status"></p>
@@ -936,7 +936,7 @@ function criaPesca(){ pescaCriada=true; ALVOS.jacare=["jacare","jacare do rio","
     PESCA_POOL.push({g,linha,boia,pe,corpo,cauda,anel,placa:null,placaTxt:""}); }
   // peixes nadando (sombras na água): rio da vila central + lagoas
   const nV=Math.min(nVilas(),9); const lista=[]; for(let i=0;i<12;i++) lista.push({rio:true,z0:-32+i*5.5,ph:i*1.7,sp:0.7+(i%4)*0.18}); for(let v=1;v<nV;v++){ for(let i=0;i<4;i++) lista.push({v,ph:i*1.6+v,sp:0.5+i*0.15,r:1.1+(i%2)*1.3}); }
-  NADO={lista,im:new THREE.InstancedMesh(geo("Box",[0.16,0.02,0.44]),new THREE.MeshBasicMaterial({color:0x163d5a,transparent:true,opacity:0.5,depthWrite:false}),lista.length),d:new THREE.Object3D()}; NADO.im.frustumCulled=false; NADO.im.castShadow=false; scene.add(NADO.im);
+  NADO={lista,im:new THREE.InstancedMesh(new THREE.ConeGeometry(0.085,0.46,6).rotateX(Math.PI/2).scale(1,0.12,1),new THREE.MeshBasicMaterial({color:0x0d3246,transparent:true,opacity:0.34,depthWrite:false}),lista.length),d:new THREE.Object3D()}; NADO.im.frustumCulled=false; NADO.im.castShadow=false; scene.add(NADO.im);
   const R=vila(0).L.rio;
   // jacaré na margem leste
   { const g=new THREE.Group(); g.userData.aquatico="jacare"; const v=mat(0x4d7a35), vE=mat(0x3c5f29), cl=mat(0xb9c98a);
@@ -1240,7 +1240,7 @@ function construirVila(V){ if(vilasConstruidas.has(V.i)) return; vilasConstruida
   // ruas em grade (terra batida sobre a grama)
   const ruas=grupo("ruas"); const mRua=mat(0xb49466,{roughness:1}); RUAS.forEach(r0=>{ faixa(72,1.7,cx,cz+r0,mRua,ruas); faixa(1.7,72,cx+r0,cz,mRua,ruas); }); faixa(90,3.2,cx+9,cz,M.terra,ruas); faixa(3.2,88,cx,cz,M.terra,ruas);
   // praça + fogueira (estágio 0: sempre)
-  caminhos.pracadas.push({x:cx,z:cz}); const pr=grupo("praca"); const praca=new THREE.Mesh(new THREE.CircleGeometry(5.8,28),mat(0xcdb892,{roughness:1})); praca.rotation.x=-Math.PI/2; praca.position.set(cx,0.04,cz); praca.receiveShadow=true; pr.add(praca);
+  caminhos.pracadas.push({x:cx,z:cz}); const pr=grupo("praca"); const praca=new THREE.Mesh(new THREE.CircleGeometry(5.8,40),mat(0x7c6642,{roughness:1})); praca.rotation.x=-Math.PI/2; praca.position.set(cx,0.04,cz); praca.receiveShadow=true; pr.add(praca);
   const fg=new THREE.Group(); fg.position.set(cx,0,cz); pr.add(fg);
   for(let i=0;i<4;i++){ const l=cyl(0.12,0.12,1.4,M.madeiraEsc,0,0.12,0,fg,6); l.rotation.z=Math.PI/2; l.rotation.y=i*Math.PI/4; }
   for(let i=0;i<8;i++){ cyl(0.18,0.18,0.3,M.pedraEsc,Math.cos(i/8*Math.PI*2)*1.1,0.15,Math.sin(i/8*Math.PI*2)*1.1,fg,6); }
@@ -1676,7 +1676,7 @@ function boneco(m){ const p=PROF[m.profissao]||PROF.bardo; const r=rnd("look:"+m
   g.traverse(o=>{ if(o.isMesh){ o.userData.id=m.id; } });
   let magia=null; if(p.magia){ magia=new THREE.Group(); const mg=new THREE.MeshBasicMaterial({color:p.hat,transparent:true,opacity:0.9}); for(let k=0;k<7;k++){ const e=new THREE.Mesh(geo("Octahedron",[0.07,0]),mg); e.castShadow=false; e.userData.k=k; magia.add(e); } g.add(magia); magia.visible=false; }
   const vis=cone(0.22,0.4,mat(0xff4040),0,2.95,0,g,5); vis.rotation.x=Math.PI; vis.castShadow=false; vis.visible=false;
-  g.userData={pernaE,pernaD,bracoE,bracoD,nome,magia,vis,cavalo:null,fase:r()*6,nivel:x.nivel,mixer,play,modelo,kv:KAYKIT.estado.versao,mao:{prin:gPrin,luta:gLuta,esc:gEsc,sec:gSec,ultimo:""}}; play("Idle"); mixer.update(r()*2); return g; }
+  g.userData={provisorio,pernaE,pernaD,bracoE,bracoD,nome,magia,vis,cavalo:null,fase:r()*6,nivel:x.nivel,mixer,play,modelo,kv:KAYKIT.estado.versao,mao:{prin:gPrin,luta:gLuta,esc:gEsc,sec:gSec,ultimo:""}}; play("Idle"); mixer.update(r()*2); return g; }
 const bonecos=new Map();
 if(window.__V) Object.assign(window.__V,{bonecos,todos,estado,mundo,ocupado,vila,nVilas,
   avancaMinutos(minutos){ relogioBase+=minutos*60000; todosCacheT=-Infinity; }});
@@ -1882,7 +1882,7 @@ function redimensiona(){ if(window.vilaDiretor?.dimensionar())return; const w=ma
 window.addEventListener("resize",redimensiona); redimensiona();
 
 // ---------- laço ----------
-const corDia=new THREE.Color(0x9ec4e8), corTarde=new THREE.Color(0xf4a35a), corNoite=new THREE.Color(0x38475b), corCeu=new THREE.Color(); const corSolDia=new THREE.Color(ESTILO_LUZ==="meio-dia"?0xfff1dc:0xffd2a0), corSolTarde=new THREE.Color(0xffaa44), corSol=new THREE.Color();
+const corDia=new THREE.Color(0x9ec4e8), corTarde=new THREE.Color(0xf4a35a), corNoite=new THREE.Color(0x38475b), corCeu=new THREE.Color(); const corSolDia=new THREE.Color(ESTILO_LUZ==="meio-dia"?0xfff1dc:0xffd2a0), corSolTarde=new THREE.Color(0xffaa44), corSol=new THREE.Color(), hemiDia=new THREE.Color(0xbfd4ff), hemiTarde=new THREE.Color(0xffd3ad), hemiNoite=new THREE.Color(0x8ea2e0), chaoDia=new THREE.Color(0x3d6a2a), chaoNoite=new THREE.Color(0x2c3f55);
 const PERF={fps:0,frames:0,inicio:performance.now()}; let sombraAtualizada=0, ultimaDecisaoUI=-2000;
 // v44: orçamento de luzes pontuais. Cada luz ativa entra no shader de TODO material; com ~57 luzes o quadro pesa. Mantém só as N mais próximas do foco da câmera (N fixo, para o shader não recompilar). ?luzes=N muda o orçamento.
 const LUZES_N=(function(){ const m=location.search.match(/[?&]luzes=(\d+)/); return m?+m[1]:(MOBILE?5:12); })(); let luzesLista=null, luzesT=0;
@@ -1909,7 +1909,8 @@ function anima(){
   requestAnimationFrame(anima); if(document.hidden||window.vilaDiretor?.tick(performance.now())) return; const now=performance.now(); const intervalo=1000/LIMITE_FPS, decorrido=now-ultimoDesenho; if(decorrido<intervalo-0.5) return; ultimoDesenho+=Math.max(1,Math.floor((decorrido+0.5)/intervalo))*intervalo; modoLeve(now); if(MOBILE) qualidadeAuto(decorrido,now,intervalo);
   const w=mundo(); const hf=MODO_LUZ!=null?MODO_LUZ:w.hora+w.frac; const tsec=now/1000; const lista=todos();
   const EVD=eventoDoDia(w.dia); const ang=(hf-6)/12*Math.PI; const alt=Math.sin(ang); const luz=Math.max(0,alt)*((EVD.k==="eclipse"&&hf>=11&&hf<=14)?0.3:1);
-  sol.position.set(Math.cos(ang)*60, Math.max(4,alt*60), 25); const luzS=Math.min(1,Math.max(0,(alt+0.04)/0.32)); sol.position.y=Math.max(12,alt*60); sol.position.x+=orb.target.x;sol.position.z+=orb.target.z;sol.target.position.set(orb.target.x,0,orb.target.z);sol.intensity=0.04+luzS*1.2; corSol.copy(corSolTarde).lerp(corSolDia,Math.min(1,alt/0.45)); sol.color.copy(corSol); hemi.intensity=0.29+luz*.52; amb.intensity=0.22+luz*.24; lua.intensity=0.22*(1-luz); lua.position.set(-30,40,-20); renderer.toneMappingExposure=0.80+luz*.21;
+  sol.position.set(Math.cos(ang)*60, Math.max(4,alt*60), 25); const luzS=Math.min(1,Math.max(0,(alt+0.04)/0.32)); sol.position.y=Math.max(12,alt*60); sol.position.x+=orb.target.x;sol.position.z+=orb.target.z;sol.target.position.set(orb.target.x,0,orb.target.z);const dourada=Math.max(0,1-Math.abs(alt-0.14)/0.34), noiteK=Math.min(1,Math.max(0,(0.10-alt)/0.22)); sol.intensity=0.04+luzS*(1.2+0.3*dourada); corSol.copy(corSolTarde).lerp(corSolDia,Math.min(1,alt/0.45)); sol.color.copy(corSol); hemi.color.copy(hemiDia).lerp(hemiTarde,dourada*0.75).lerp(hemiNoite,noiteK); hemi.groundColor.copy(chaoDia).lerp(chaoNoite,noiteK); hemi.intensity=0.36+luz*.45+0.16*noiteK; amb.intensity=0.28+luz*.18; lua.intensity=0.20+0.42*noiteK-0.14*luz; lua.position.set(orb.target.x-30,40,orb.target.z-20); renderer.toneMappingExposure=0.97-0.04*luz+0.05*noiteK;
+  { const meia=Math.min(60,Math.max(18,orb.r*0.62+7)); if(Math.abs(meia-sol.shadow.camera.right)>1.2){ Object.assign(sol.shadow.camera,{left:-meia,right:meia,top:meia,bottom:-meia}); sol.shadow.camera.updateProjectionMatrix(); } }
   if(alt>0.35) corCeu.copy(corDia); else if(alt>0){ corCeu.copy(corTarde).lerp(corDia,alt/0.35); } else { corCeu.copy(corNoite).lerp(corTarde,Math.max(0,1+alt*4)); }
   scene.background.copy(corCeu); scene.fog.color.copy(corCeu).lerp(new THREE.Color(ESTILO_LUZ==="meio-dia"?0xbfd0e0:0xc9b79a),luz*(ESTILO_LUZ==="meio-dia"?0.2:0.4)); scene.fog.density=FOG_BASE*(luz>0.3?1:1.35-luz*1.1);
   M.janela.emissiveIntensity=luz<0.3?1.4*(1-luz/0.3):0; JANELAS.forEach(j=>{ j.emissiveIntensity=M.janela.emissiveIntensity; });
@@ -2184,6 +2185,10 @@ window.vilaDiretor=criarDiretor({scene,camera,renderer,paisagem,canvas,sol,hemi,
     elenco(tipo){
       if(tipo==="luta")return ["lobo","javali"].map(t=>BICHOS.find(b=>b.userData.V.i===0&&b.userData.tipo===t&&b.userData.mixer));
       if(tipo==="chuva")return [BICHOS.find(b=>b.userData.tipo==="javali"&&b.userData.mixer)];
+      if(tipo==="argola" || tipo==="suporte"){
+        const samuel=todos().find(m=>m.nome==="@samuel_teles_01");
+        const ator=samuel && garanteBoneco(samuel); return ator && !ator.userData.provisorio?[ator]:[];
+      }
       const lista=todos().filter(m=>!m.discreto);const profs=tipo==="festa"?["bardo","mago","fazendeiro"]:tipo==="visita"?["explorador","padeiro"]:["lenhador","construtor"];
       const usados=new Set();return profs.map(pr=>{const m=lista.find(m=>m.profissao===pr&&!usados.has(m.id))||lista.find(m=>!usados.has(m.id));if(!m)return null;usados.add(m.id);return garanteBoneco(m);});
     },
