@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-27T12:51",
+ "geradoEm": "2026-11-27T13:51",
  "relogioVila": {
   "dia": 25,
-  "hora": 12
+  "hora": 13
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 54,
-   "xp": 144080,
+   "xp": 144330,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 54,
-   "xp": 143880,
+   "xp": 144130,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 54,
-   "xp": 143295,
+   "xp": 143545,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 54,
-   "xp": 143124,
+   "xp": 143374,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 54,
-   "xp": 143115,
+   "xp": 143365,
    "titulo": "Lenda"
   }
  ],
@@ -557,11 +557,11 @@
   "@ozi_calderon": {
    "nome": "@ozi_calderon",
    "profissao": "bardo",
-   "nivel": 50,
-   "hp": 540,
-   "hpMax": 540,
-   "atq": 108,
-   "def": 54,
+   "nivel": 51,
+   "hp": 550,
+   "hpMax": 550,
+   "atq": 110,
+   "def": 55,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -653,11 +653,11 @@
   "@oi56382": {
    "nome": "@oi56382",
    "profissao": "cabeleireiro",
-   "nivel": 49,
-   "hp": 530,
-   "hpMax": 530,
-   "atq": 106,
-   "def": 51,
+   "nivel": 50,
+   "hp": 540,
+   "hpMax": 540,
+   "atq": 108,
+   "def": 52,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -685,11 +685,11 @@
   "@_rai.la.ne_": {
    "nome": "@_rai.la.ne_",
    "profissao": "fazendeiro",
-   "nivel": 49,
-   "hp": 530,
-   "hpMax": 530,
-   "atq": 107,
-   "def": 51,
+   "nivel": 50,
+   "hp": 540,
+   "hpMax": 540,
+   "atq": 109,
+   "def": 52,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -701,11 +701,11 @@
   "@muryvieira_": {
    "nome": "@muryvieira_",
    "profissao": "pastor",
-   "nivel": 49,
-   "hp": 530,
-   "hpMax": 530,
-   "atq": 106,
-   "def": 51,
+   "nivel": 50,
+   "hp": 540,
+   "hpMax": 540,
+   "atq": 108,
+   "def": 52,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -717,11 +717,11 @@
   "@kauedomingues894": {
    "nome": "@kauedomingues894",
    "profissao": "bardo",
-   "nivel": 49,
-   "hp": 530,
-   "hpMax": 530,
-   "atq": 107,
-   "def": 51,
+   "nivel": 50,
+   "hp": 540,
+   "hpMax": 540,
+   "atq": 109,
+   "def": 52,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -861,11 +861,11 @@
   "@arthur594938": {
    "nome": "@arthur594938",
    "profissao": "cavaleiro",
-   "nivel": 47,
-   "hp": 510,
-   "hpMax": 510,
-   "atq": 102,
-   "def": 56,
+   "nivel": 48,
+   "hp": 520,
+   "hpMax": 520,
+   "atq": 104,
+   "def": 57,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1109,24 +1109,6 @@
    "quem": "@itrapped_____",
    "tipo": "vitoria",
    "texto": "@itrapped_____ e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1795711004772,
-   "quem": "@manuellax7x",
-   "tipo": "briga_derrota",
-   "texto": "@manuellax7x foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1795710991772,
-   "quem": "@gta6gamersbr",
-   "tipo": "vitoria",
-   "texto": "@gta6gamersbr venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1795709542772,
-   "quem": "@ea_millyyxz.1",
-   "tipo": "queda",
-   "texto": "@ea_millyyxz.1 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
   }
  ]
 }
