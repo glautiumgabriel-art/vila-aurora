@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-27T08:51",
+ "geradoEm": "2026-11-27T09:51",
  "relogioVila": {
   "dia": 25,
-  "hora": 8
+  "hora": 9
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 54,
-   "xp": 143080,
+   "xp": 143330,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 54,
-   "xp": 142880,
+   "xp": 143130,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 54,
-   "xp": 142295,
+   "xp": 142545,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 54,
-   "xp": 142124,
+   "xp": 142374,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 54,
-   "xp": 142115,
+   "xp": 142365,
    "titulo": "Lenda"
   }
  ],
@@ -973,11 +973,11 @@
   "@gta6gamersbr": {
    "nome": "@gta6gamersbr",
    "profissao": "padeiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 20,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 21,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -1005,11 +1005,11 @@
   "@itrapped_____": {
    "nome": "@itrapped_____",
    "profissao": "padeiro",
-   "nivel": 9,
-   "hp": 130,
-   "hpMax": 130,
-   "atq": 27,
-   "def": 11,
+   "nivel": 10,
+   "hp": 140,
+   "hpMax": 140,
+   "atq": 29,
+   "def": 12,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1020,6 +1020,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1795779966620,
+   "quem": "@itrapped_____",
+   "tipo": "briga_vitoria",
+   "texto": "@itrapped_____ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
   {
    "quando": 1795771326620,
    "quem": "@itrapped_____",
@@ -1145,30 +1151,6 @@
    "quem": "@gta6gamersbr",
    "tipo": "vitoria",
    "texto": "@gta6gamersbr e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1795696604772,
-   "quem": "@manuellax7x",
-   "tipo": "vitoria",
-   "texto": "@manuellax7x e os amigos venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1795696586772,
-   "quem": "@felipz_xz",
-   "tipo": "queda",
-   "texto": "@felipz_xz escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1795695146772,
-   "quem": "@felipz_xz",
-   "tipo": "queda",
-   "texto": "@felipz_xz escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1795695142772,
-   "quem": "@ea_millyyxz.1",
-   "tipo": "doma",
-   "texto": "@ea_millyyxz.1 cercaram um cavalo selvagem e domaram! Agora @ea_millyyxz.1 anda montado."
   }
  ]
 }
