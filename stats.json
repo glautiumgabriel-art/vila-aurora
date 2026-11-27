@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-27T07:51",
+ "geradoEm": "2026-11-27T08:51",
  "relogioVila": {
   "dia": 25,
-  "hora": 7
+  "hora": 8
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 54,
-   "xp": 142830,
+   "xp": 143080,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 54,
-   "xp": 142630,
+   "xp": 142880,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 54,
-   "xp": 142045,
+   "xp": 142295,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 54,
-   "xp": 141874,
+   "xp": 142124,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 54,
-   "xp": 141865,
+   "xp": 142115,
    "titulo": "Lenda"
   }
  ],
@@ -509,11 +509,11 @@
   "@gods.samuka": {
    "nome": "@gods.samuka",
    "profissao": "padeiro",
-   "nivel": 50,
-   "hp": 540,
-   "hpMax": 540,
-   "atq": 109,
-   "def": 54,
+   "nivel": 51,
+   "hp": 550,
+   "hpMax": 550,
+   "atq": 111,
+   "def": 55,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -621,11 +621,11 @@
   "@dassow_djony": {
    "nome": "@dassow_djony",
    "profissao": "soldado",
-   "nivel": 49,
-   "hp": 530,
-   "hpMax": 530,
-   "atq": 106,
-   "def": 58,
+   "nivel": 50,
+   "hp": 540,
+   "hpMax": 540,
+   "atq": 108,
+   "def": 59,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -925,11 +925,11 @@
   "@dz.pzz": {
    "nome": "@dz.pzz",
    "profissao": "pescador",
-   "nivel": 38,
-   "hp": 420,
-   "hpMax": 420,
-   "atq": 85,
-   "def": 40,
+   "nivel": 39,
+   "hp": 430,
+   "hpMax": 430,
+   "atq": 87,
+   "def": 41,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -941,11 +941,11 @@
   "@ea_millyyxz.1": {
    "nome": "@ea_millyyxz.1",
    "profissao": "fazendeiro",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 43,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 45,
+   "def": 19,
    "bArma": 2,
    "bSec": 3,
    "bEsc": 0,
@@ -989,11 +989,11 @@
   "@manuellax7x": {
    "nome": "@manuellax7x",
    "profissao": "lenhador",
-   "nivel": 16,
-   "hp": 200,
-   "hpMax": 200,
-   "atq": 40,
-   "def": 18,
+   "nivel": 17,
+   "hp": 210,
+   "hpMax": 210,
+   "atq": 42,
+   "def": 19,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1169,18 +1169,6 @@
    "quem": "@ea_millyyxz.1",
    "tipo": "doma",
    "texto": "@ea_millyyxz.1 cercaram um cavalo selvagem e domaram! Agora @ea_millyyxz.1 anda montado."
-  },
-  {
-   "quando": 1795692262772,
-   "quem": "@ea_millyyxz.1",
-   "tipo": "vitoria",
-   "texto": "@ea_millyyxz.1 venceram um goblin da estrada e ganharam uma bolsa de moedas."
-  },
-  {
-   "quando": 1795690844772,
-   "quem": "@manuellax7x",
-   "tipo": "briga_derrota",
-   "texto": "@manuellax7x foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }
