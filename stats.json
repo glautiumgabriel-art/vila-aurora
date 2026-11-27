@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-27T11:51",
+ "geradoEm": "2026-11-27T12:51",
  "relogioVila": {
   "dia": 25,
-  "hora": 11
+  "hora": 12
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 54,
-   "xp": 143830,
+   "xp": 144080,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 54,
-   "xp": 143630,
+   "xp": 143880,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 54,
-   "xp": 143045,
+   "xp": 143295,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 54,
-   "xp": 142874,
+   "xp": 143124,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 54,
-   "xp": 142865,
+   "xp": 143115,
    "titulo": "Lenda"
   }
  ],
@@ -493,11 +493,11 @@
   "@danielaugustobiesso": {
    "nome": "@danielaugustobiesso",
    "profissao": "fazendeiro",
-   "nivel": 50,
-   "hp": 540,
-   "hpMax": 540,
-   "atq": 109,
-   "def": 52,
+   "nivel": 51,
+   "hp": 550,
+   "hpMax": 550,
+   "atq": 111,
+   "def": 53,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -845,11 +845,11 @@
   "@jose_zzw07": {
    "nome": "@jose_zzw07",
    "profissao": "pastor",
-   "nivel": 47,
-   "hp": 510,
-   "hpMax": 510,
-   "atq": 102,
-   "def": 49,
+   "nivel": 48,
+   "hp": 520,
+   "hpMax": 520,
+   "atq": 104,
+   "def": 50,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -893,11 +893,11 @@
   "@nankhumwaemmanuel": {
    "nome": "@nankhumwaemmanuel",
    "profissao": "arqueiro",
-   "nivel": 46,
-   "hp": 500,
-   "hpMax": 500,
-   "atq": 100,
-   "def": 38,
+   "nivel": 47,
+   "hp": 510,
+   "hpMax": 510,
+   "atq": 102,
+   "def": 39,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 0,
@@ -1021,6 +1021,12 @@
  },
  "eventosUltimas24h": [
   {
+   "quando": 1795792926620,
+   "quem": "@itrapped_____",
+   "tipo": "vitoria",
+   "texto": "@itrapped_____ e os amigos venceram um urso da floresta e ganharam uma garra de urso."
+  },
+  {
    "quando": 1795779966620,
    "quem": "@itrapped_____",
    "tipo": "briga_vitoria",
@@ -1121,18 +1127,6 @@
    "quem": "@ea_millyyxz.1",
    "tipo": "queda",
    "texto": "@ea_millyyxz.1 escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1795705244772,
-   "quem": "@manuellax7x",
-   "tipo": "queda",
-   "texto": "@manuellax7x escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1795705226772,
-   "quem": "@felipz_xz",
-   "tipo": "vitoria",
-   "texto": "@felipz_xz e os amigos venceram uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }
