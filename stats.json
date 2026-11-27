@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-27T05:52",
+ "geradoEm": "2026-11-27T06:54",
  "relogioVila": {
   "dia": 25,
-  "hora": 5
+  "hora": 6
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 54,
-   "xp": 142330,
+   "xp": 142584,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 54,
-   "xp": 142130,
+   "xp": 142385,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 54,
-   "xp": 141545,
+   "xp": 141799,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 54,
-   "xp": 141374,
+   "xp": 141628,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 54,
-   "xp": 141365,
+   "xp": 141620,
    "titulo": "Lenda"
   }
  ],
@@ -1005,11 +1005,11 @@
   "@itrapped_____": {
    "nome": "@itrapped_____",
    "profissao": "padeiro",
-   "nivel": 8,
-   "hp": 120,
-   "hpMax": 120,
-   "atq": 25,
-   "def": 10,
+   "nivel": 9,
+   "hp": 130,
+   "hpMax": 130,
+   "atq": 27,
+   "def": 11,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1020,6 +1020,12 @@
   }
  },
  "eventosUltimas24h": [
+  {
+   "quando": 1795771326620,
+   "quem": "@itrapped_____",
+   "tipo": "vitoria",
+   "texto": "@itrapped_____ e os amigos venceram um goblin da estrada e ganharam uma bolsa de moedas."
+  },
   {
    "quando": 1795765566620,
    "quem": "@itrapped_____",
@@ -1193,12 +1199,6 @@
    "quem": "@felipz_xz",
    "tipo": "vitoria",
    "texto": "@felipz_xz e os amigos venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1795683631772,
-   "quem": "@gta6gamersbr",
-   "tipo": "briga_derrota",
-   "texto": "@gta6gamersbr foi encarar outra vila, perdeu a briga e voltou correndo para casa."
   }
  ]
 }
