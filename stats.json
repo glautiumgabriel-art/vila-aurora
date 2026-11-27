@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-27T06:54",
+ "geradoEm": "2026-11-27T07:51",
  "relogioVila": {
   "dia": 25,
-  "hora": 6
+  "hora": 7
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 54,
-   "xp": 142584,
+   "xp": 142830,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 54,
-   "xp": 142385,
+   "xp": 142630,
    "titulo": "Lenda"
   },
   {
    "nome": "@laryssapsouza",
    "nivel": 54,
-   "xp": 141799,
+   "xp": 142045,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 54,
-   "xp": 141628,
+   "xp": 141874,
    "titulo": "Lenda"
   },
   {
    "nome": "@adriana.g.santana",
    "nivel": 54,
-   "xp": 141620,
+   "xp": 141865,
    "titulo": "Lenda"
   }
  ],
@@ -765,11 +765,11 @@
   "@rafael.strauch": {
    "nome": "@rafael.strauch",
    "profissao": "fazendeiro",
-   "nivel": 48,
-   "hp": 520,
-   "hpMax": 520,
-   "atq": 105,
-   "def": 52,
+   "nivel": 49,
+   "hp": 530,
+   "hpMax": 530,
+   "atq": 107,
+   "def": 53,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -1181,24 +1181,6 @@
    "quem": "@manuellax7x",
    "tipo": "briga_derrota",
    "texto": "@manuellax7x foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1795689404772,
-   "quem": "@manuellax7x",
-   "tipo": "vitoria",
-   "texto": "@manuellax7x venceram o Lobo Cinzento e ganharam um dente de lobo."
-  },
-  {
-   "quando": 1795689391772,
-   "quem": "@gta6gamersbr",
-   "tipo": "briga_derrota",
-   "texto": "@gta6gamersbr foi encarar outra vila, perdeu a briga e voltou correndo para casa."
-  },
-  {
-   "quando": 1795687946772,
-   "quem": "@felipz_xz",
-   "tipo": "vitoria",
-   "texto": "@felipz_xz e os amigos venceram um urso da floresta e ganharam uma garra de urso."
   }
  ]
 }
