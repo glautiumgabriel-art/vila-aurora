@@ -1,8 +1,8 @@
 {
- "geradoEm": "2026-11-27T03:51",
+ "geradoEm": "2026-11-27T04:51",
  "relogioVila": {
   "dia": 25,
-  "hora": 3
+  "hora": 4
  },
  "moradores": 51,
  "novosDoDia": [
@@ -13,31 +13,31 @@
   {
    "nome": "@iamvictoriamenezes",
    "nivel": 54,
-   "xp": 141830,
+   "xp": 142080,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabsl_",
    "nivel": 54,
-   "xp": 141630,
+   "xp": 141880,
    "titulo": "Lenda"
   },
   {
    "nome": "@_williamg10",
    "nivel": 54,
-   "xp": 140874,
+   "xp": 141124,
    "titulo": "Lenda"
   },
   {
    "nome": "@dudabrisolaa_",
    "nivel": 54,
-   "xp": 140540,
+   "xp": 140790,
    "titulo": "Lenda"
   },
   {
    "nome": "@glautiumgabriel",
    "nivel": 54,
-   "xp": 140520,
+   "xp": 140770,
    "titulo": "Lenda"
   }
  ],
@@ -413,11 +413,11 @@
   "@joelma_alvarez": {
    "nome": "@joelma_alvarez",
    "profissao": "soldado",
-   "nivel": 52,
-   "hp": 560,
-   "hpMax": 560,
-   "atq": 112,
-   "def": 62,
+   "nivel": 53,
+   "hp": 570,
+   "hpMax": 570,
+   "atq": 114,
+   "def": 63,
    "bArma": 2,
    "bSec": 0,
    "bEsc": 2,
@@ -461,11 +461,11 @@
   "@saviob._santos": {
    "nome": "@saviob._santos",
    "profissao": "ferreiro",
-   "nivel": 52,
-   "hp": 560,
-   "hpMax": 560,
-   "atq": 113,
-   "def": 56,
+   "nivel": 53,
+   "hp": 570,
+   "hpMax": 570,
+   "atq": 115,
+   "def": 57,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 2,
@@ -797,11 +797,11 @@
   "@eopedrinhonepai": {
    "nome": "@eopedrinhonepai",
    "profissao": "alquimista",
-   "nivel": 48,
-   "hp": 520,
-   "hpMax": 520,
-   "atq": 105,
-   "def": 40,
+   "nivel": 49,
+   "hp": 530,
+   "hpMax": 530,
+   "atq": 107,
+   "def": 41,
    "bArma": 2,
    "bSec": 1,
    "bEsc": 0,
@@ -1021,6 +1021,18 @@
  },
  "eventosUltimas24h": [
   {
+   "quando": 1795764126620,
+   "quem": "@itrapped_____",
+   "tipo": "briga_vitoria",
+   "texto": "@itrapped_____ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
+   "quando": 1795762686620,
+   "quem": "@itrapped_____",
+   "tipo": "briga_vitoria",
+   "texto": "@itrapped_____ encarou um morador de outra vila na praça deles e venceu. Ganhou respeito."
+  },
+  {
    "quando": 1795758366620,
    "quem": "@itrapped_____",
    "tipo": "briga_vitoria",
@@ -1187,18 +1199,6 @@
    "quem": "@gta6gamersbr",
    "tipo": "queda",
    "texto": "@gta6gamersbr escorregou na ponte e caiu no rio. Reiniciou no último ponto seguro e perdeu um nível."
-  },
-  {
-   "quando": 1795682186772,
-   "quem": "@felipz_xz",
-   "tipo": "vitoria",
-   "texto": "@felipz_xz venceram um urso da floresta e ganharam uma garra de urso."
-  },
-  {
-   "quando": 1795680751772,
-   "quem": "@gta6gamersbr",
-   "tipo": "vitoria",
-   "texto": "@gta6gamersbr venceram uma galinha fujona e ganharam uma pena da sorte."
   }
  ]
 }
