@@ -157,10 +157,12 @@ body.abertura{padding:0!important} body.abertura .wrap{display:block;padding:0} 
 .abertura-txt{position:absolute;left:0;right:0;top:9%;padding:0 6%;text-align:center;font-family:var(--display);font-weight:700;color:#fff;text-shadow:0 4px 0 #3a2210,0 10px 30px rgba(0,0,0,.7);font-size:clamp(34px,8vw,92px);line-height:1.05;opacity:0;transition:opacity .5s;pointer-events:none;text-wrap:balance}
 .abertura-txt.on{opacity:1} .abertura-txt small{display:block;font-size:.45em;font-weight:600;margin-top:.5em;opacity:.95}
 .abertura-logo{position:absolute;left:0;right:0;bottom:7%;text-align:center;font-family:var(--display);font-weight:700;font-size:clamp(22px,4.5vw,40px);color:#ffe9b0;text-shadow:0 3px 0 #3a2210,0 8px 24px rgba(0,0,0,.6);pointer-events:none;display:none}
-body.abertura .abertura-logo{display:block} body.cinema.abertura #meuBox{display:none!important}
+body.abertura .abertura-logo{display:block} body.cinema.abertura #meuBox:has(#btnSoltarMorador[hidden]){display:none!important}
 body.segredo .map .narr{display:block!important} body.segredo .abertura-logo{display:block}
 body.cinema .map .dica{display:none}
 body.cinema .side,body.cinema .top .stat,body.cinema .top .hint{display:none}
+body.cinema .side:has(#btnSoltarMorador:not([hidden])){display:block;position:fixed;z-index:20;right:16px;bottom:80px;width:min(340px,calc(100vw - 32px));max-height:42svh;overflow:auto}
+body.cinema .side > :not(#meuBox){display:none}
 body.cinema .wrap{grid-template-columns:minmax(0,1fr)}
 .side{display:flex;flex-direction:column;gap:14px;min-width:0}
 .box{background:var(--panel);border:2px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -237,8 +239,8 @@ if (/[?&](?:cinema=1|abertura=1|segredo=1|cam=[^&]+)/.test(location.search))
 <dialog id="painelDiretor" aria-labelledby="tituloDiretor">
   <header><h2 id="tituloDiretor">Modo diretor</h2><button id="fecharDiretor" type="button" aria-label="Fechar diretor">×</button></header>
   <label for="eventoDiretor">Evento da vila</label>
-  <select id="eventoDiretor"><option value="luta">Lobo e javali</option><option value="festa">Festa das lanternas</option><option value="mutirao">Mutirão do jardim</option><option value="chuva">Chuva no Rio Claro</option><option value="visita">Visita ao pomar</option><option value="argola">Forja · Argola fechada</option><option value="suporte">Forja · Suporte de chão</option><option value="aleatorio">Sortear um evento</option></select>
-  <p>9 segundos · vertical · 1080 × 1920 · 60 fps com som</p>
+  <select id="eventoDiretor"><option value="episodio">Episódio · O baú do dia</option><optgroup label="Tomadas avulsas"><option value="luta">Lobo e javali</option><option value="festa">Festa das lanternas</option><option value="mutirao">Mutirão do jardim</option><option value="chuva">Chuva no Rio Claro</option><option value="visita">Visita ao pomar</option><option value="argola">Forja · Argola fechada</option><option value="suporte">Forja · Suporte de chão</option><option value="aleatorio">Sortear um evento</option></optgroup></select>
+  <p id="formatoDiretor">Episódio de 48 s · 1080 × 1920 · 30 fps com voz e legendas</p>
   <footer><button type="button" id="previaDiretor">Ver prévia</button><button type="button" id="gravarDiretor">Gravar MP4</button></footer>
   <p id="estadoDiretor" role="status"></p>
 </dialog>
@@ -315,7 +317,7 @@ if (/[?&](?:cinema=1|abertura=1|segredo=1|cam=[^&]+)/.test(location.search))
       <div class="small" id="selCasa"></div>
       <div id="selConvite"></div>
       <div class="small missoes" id="selMissoes"></div>
-      <div class="row"><button class="ghost" id="btnSeguir" type="button">Câmera nele</button><span class="small" id="selDesde"></span></div>
+      <div class="row"><button class="ghost" id="btnSeguir" type="button">Câmera nele</button><button class="ghost" id="btnSoltarMorador" type="button" hidden>Desmarcar</button><span class="small" id="selDesde"></span></div>
     </section>
 
 
@@ -385,7 +387,9 @@ if (/[?&](?:cinema=1|abertura=1|segredo=1|cam=[^&]+)/.test(location.search))
 <script src="paisagem.js"></script>
 <script src="coreografia.js"></script>
 <script src="luta-na-vila.js"></script>
+<script src="rotina-dos-moradores.js"></script>
 <script src="som-diretor.js"></script>
+<script src="episodio.js"></script>
 <script src="diretor.js"></script>
 <script src="trilha.js"></script>
 <script src="comunidade.js"></script>
@@ -733,8 +737,9 @@ function estado(m, idx, w){
       acao="passeando "+destino.artigo+" "+destino.nome;
     }
   }
-  return {x,z,y,acao,lugar,chave,visita,dentro,modo,andando,ang,vila:V,
+  const base={x,z,y,acao,lugar,chave,visita,dentro,modo,andando,ang,vila:V,emEvento,
     social:!dentro&&!m.discreto&&!emEvento&&(chave==="lazer"||chave==="fogueira"||chave==="passeio"||(chave==="trab"&&passeioPraca))};
+  return MODO_SEGREDO?base:rotinaMoradores.estado(m,base,clockMoradores());
 }
 const CLASSE={soldado:{forca:3,alc:"perto"},cavaleiro:{forca:4,alc:"perto"},arqueiro:{forca:2,alc:"longe"},mago:{forca:2,alc:"longe"},alquimista:{forca:1,alc:"longe"},cacador:{forca:2,alc:"longe"},lenhador:{forca:2,alc:"perto"},ferreiro:{forca:2,alc:"perto"},mineiro:{forca:2,alc:"perto"},explorador:{forca:1,alc:"perto"}};
 const CRIATURAS=[{n:"uma galinha fujona",vida:1,drop:"uma pena da sorte"},{n:"um javali teimoso",vida:3,drop:"uma presa de javali"},{n:"um goblin da estrada",vida:4,drop:"uma bolsa de moedas"},{n:"o Lobo Cinzento",vida:6,drop:"um dente de lobo"},{n:"um cavalo selvagem",vida:5,drop:"",monta:"cavalo"},{n:"um urso da floresta",vida:8,drop:"uma garra de urso"}];
@@ -788,7 +793,7 @@ function xpDe(m){ const horas=Math.max(0,(agoraMundo()-m.joinedAt)/HORA_MS); con
 const EVENTOS_DIA=[
   {r:"comum",p:0.60,lista:[{k:"feira",n:"Dia da feira na Vila Aurora",t:"Feira na Vila Aurora: mercado cheio, bardo na praça e desconto no ferreiro. Moradores de todas as vilas se encontram."},{k:"rino",n:"Rinoceronte na estrada",t:"Um rinoceronte parou na estrada da Vila Aurora. Quem passa dá a volta pelo campo."}]},
   {r:"incomum",p:0.25,lista:[{k:"lobos",n:"Invasão de lobos",t:"Lobos rondam as vilas de dia. Os guardas ficam na paliçada e ninguém sai sozinho."},{k:"meteoros",n:"Chuva de meteoros",t:"Chuva de meteoros à noite: os mineiros acham minério brilhante no morro."}]},
-  {r:"raro",p:0.10,lista:[{k:"cemiterio",n:"Cemitério assombrado",t:"O cemitério da Casa de Cura ficou assombrado o dia inteiro: esqueletos e fantasmas à luz do sol."},{k:"mercador",n:"Mercador itinerante",t:"Um mercador itinerante armou barraca no mercado com itens raros."}]},
+  {r:"raro",p:0.10,lista:[{k:"cemiterio",n:"Cemitério assombrado",t:"A Vila Sombria ficou assombrada o dia inteiro: esqueletos e fantasmas à luz do sol."},{k:"mercador",n:"Mercador itinerante",t:"Um mercador itinerante armou barraca no mercado com itens raros."}]},
   {r:"épico",p:0.049,lista:[{k:"eclipse",n:"Eclipse",t:"Eclipse ao meio-dia: a vila escurece e os fantasmas ficam duas vezes mais fortes."},{k:"torneio",n:"Torneio de guerreiros",t:"Torneio de guerreiros na praça da Vila Aurora: duelos valendo nível, quem perde cai 1."}]},
   {r:"lendário",p:0.001,lista:[{k:"trono",n:"Guerra pelo Trono",t:"GUERRA PELO TRONO: o Rei e a Rainha saem do castelo e os moradores de nível 50+ disputam a coroa."},{k:"dragao",n:"Despertar do dragão",t:"O Dragão das Cinzas despertou e sobrevoa as vilas o dia inteiro."}]}];
 const SELO_RAR={comum:"⚪",incomum:"🟢",raro:"🔵","épico":"🟣","lendário":"🟡"};
@@ -797,6 +802,7 @@ function eventoDoDia(dia){ const r=rnd("evento-dia:"+dia); let v=r(), acc=0; let
 function ehFeira(dia){ return dia%7===0||eventoDoDia(dia).k==="feira"; }
 // ---------- invasões (v36) ----------
 const INV_TIPOS={
+  sombras:{n:"Esqueletos e fantasmas",pl:"as sombras",need:55,drop:"ossos e essência espectral",qtd:2},
   lobos:{n:"Lobos",pl:"os lobos",need:30,drop:"peles de lobo para o inverno",qtd:4},
   goblins:{n:"Goblins",pl:"os goblins",need:40,drop:"a bolsa de moedas que os goblins tinham roubado",qtd:4},
   golem:{n:"Monstro de pedra",pl:"o monstro de pedra",need:60,drop:"um núcleo de pedra brilhante",qtd:1},
@@ -816,6 +822,7 @@ function invasoesDoDia(dia){ const k=dia+":"+todos().length; let c=invCache.get(
   const nL=2+hash("nl"+dia)%2; for(let j=0;j<nL;j++) add("lobos",j,(j===0||hash("lh"+dia+j)%3)?NOITE:QUALQUER);
   const nG=1+hash("ng"+dia)%2; for(let j=0;j<nG;j++) add("goblins",j,QUALQUER);
   if(hash("golem"+dia)%5<2) add("golem",0,QUALQUER);
+  if(hash("sombras"+dia)%8===0) add("sombras",0,NOITE);
   if(hash("bruxa"+dia)%7===0) add("bruxa",0,NOITE);
   if(hash("gigante"+dia)%7===3) add("gigante",0,QUALQUER);
   if(hash("dragao"+dia)%30===7) add("dragao",0,[11,12,13,14,15,16,17,18]);
@@ -826,7 +833,7 @@ function invasaoEm(ts){ if(INV_URL&&INV_TIPOS[INV_URL]){ if(!invForcada||ts>=inv
   const dia=Math.floor((ts-REAL_EPOCH)/86400000)+1; for(const d of [dia,dia-1]){ if(d<1) continue; for(const iv of invasoesDoDia(d)) if(ts>=iv.ts&&ts<iv.fim) return iv; } return null; }
 function proximaInvasao(){ const now=agoraMundo(); const dia=Math.floor((now-REAL_EPOCH)/86400000)+1; for(const d of [dia,dia+1]){ for(const iv of invasoesDoDia(d)) if(iv.ts>now) return {iv,amanha:d>dia}; } return null; }
 function hhmm(ts){ const t=new Date(ts-3*HORA_REAL); return String(t.getUTCHours()).padStart(2,"0")+":"+String(t.getUTCMinutes()).padStart(2,"0"); }
-const INV_PERDA={lobos:"comeram duas ovelhas e derrubaram a cerca do campo",goblins:"roubaram comida do celeiro e fugiram rindo",golem:"derrubou um pedaço da muralha e atrasou a obra",bruxa:"amaldiçoou o poço até o amanhecer",gigante:"pisou no andaime e atrasou a construção",dragao:"queimou o telhado do celeiro"};
+const INV_PERDA={sombras:"assombraram a vila",lobos:"comeram duas ovelhas e derrubaram a cerca do campo",goblins:"roubaram comida do celeiro e fugiram rindo",golem:"derrubou um pedaço da muralha e atrasou a obra",bruxa:"amaldiçoou o poço até o amanhecer",gigante:"pisou no andaime e atrasou a construção",dragao:"queimou o telhado do celeiro"};
 function resultadoInv(iv){ if(!iv.venceu){ const T=INV_TIPOS[iv.tipo]; const Q=T.pl.charAt(0).toUpperCase()+T.pl.slice(1); const ferido=(iv.nomes[hash(iv.seed+"ferido")%Math.max(1,iv.nomes.length)])||"um guarda"; return "Derrota. "+Q+" "+INV_PERDA[iv.tipo]+". "+ferido+" se feriu e voltou ao ponto seguro."; } const T=INV_TIPOS[iv.tipo]; const Q=T.pl.charAt(0).toUpperCase()+T.pl.slice(1); const pl=T.qtd>1; return iv.venceu?"Vitória! "+Q+(pl?" fugiram":" fugiu")+" e a vila ganhou "+iv.drop+".":Q+(pl?" levaram":" levou")+" duas sacas de comida."; }
 // ---------- v44: decisões de grupo e Vila Sombria ----------
 let DECISOES=[]; async function carregaDecisoes(){ try{ const arq=(location.search.match(/[?&]decisoesArq=([\w.-]+)/)||[])[1]||"decisoes.json"; const r=arq==="decisoes.json"?await buscaDado(arq):await fetch(arq,{cache:"no-store"}); if(!r.ok) return; const j=await r.json(); DECISOES=Array.isArray(j.decisoes)?j.decisoes:[]; }catch(e){} }
@@ -851,7 +858,10 @@ function criaSombria(){ if(SOMBRIA.g||!KAYKIT.modelo("home_A")) return; const g=
   [["tower_B",0,-9,3.2,0],["home_A",-10,-2,2.8,0.6],["home_B",10,-3,2.8,-0.5],["barracks",-7,9,2.6,2.4],["home_A",8,9,2.6,3.6]].forEach(([n,dx,dz,sc,ry])=>{ const b=predio(n,X+dx,Z+dz,sc,ry,g); escuro(b); });
   const roxo=mat(0x9a4dff,{emissive:0x7a2dff,emissiveIntensity:1.2}); [[-14,-12],[14,-12],[-14,13],[14,13]].forEach(([dx,dz])=>{ const t=tocha(X+dx,Z+dz,true,g); const T=TOCHAS[TOCHAS.length-1]; if(T){ T.f.material=roxo; T.f2.material=roxo; if(T.luz) T.luz.color.set(0x9a4dff); } });
   const rv=rotuloEm(g,"Vila Sombria",X,13,Z-9,9,"#c9a6ff"); rv.userData.prioridade=1; rv.userData.sombria=true;
-  for(let i=0;i<4;i++){ const md=modeloBicho("esqueleto"); if(!md) break; tingeTudo(md.obj,0x4a3d5c); const w=new THREE.Group(); w.add(md.obj); w.traverse(o=>{ if(o.isMesh){ o.frustumCulled=false; o.castShadow=true; } }); Object.assign(w.userData,{sombria:true,mixer:md.mixer,play:md.play}); g.add(w); SOMBRIA.guardas.push({g:w,mixer:md.mixer,play:md.play,i}); } }
+  for(let i=0;i<4;i++){ const md=modeloBicho("esqueleto"); if(!md) break; tingeTudo(md.obj,0x4a3d5c); const w=new THREE.Group(); w.add(md.obj); w.traverse(o=>{ if(o.isMesh){ o.frustumCulled=false; o.castShadow=true; } }); Object.assign(w.userData,{sombria:true,tipo:"esqueleto",mixer:md.mixer,play:md.play}); g.add(w); SOMBRIA.guardas.push({g:w,mixer:md.mixer,play:md.play,i}); }
+  const fantasma=bicho("fantasma",vila(1));
+  fantasma.userData.sombria=true;
+}
 // ---------- v47: Do Instagram, territórios, duelos ----------
 function renderInsta(){ const box=$("instaBox"), el=$("instaLista"); if(!box||!el) return; const h=[];
   FRASES.slice(-3).reverse().forEach(f=>{ const t=(f.top3||[]).slice(0,3); if(!t.length) return; h.push("<b>"+escHtml(f.pergunta||"Frase")+"</b><br>"+t.map((x,i)=>["🥇","🥈","🥉"][i]+" “"+escHtml(x.frase)+"” — "+escHtml(x.autor||"")+(x.curtidas?" · ❤ "+x.curtidas:"")).join("<br>")); });
@@ -908,10 +918,17 @@ function bauDoDia(dia){ if(dia<4) return null; const r=rnd("bau:"+dia); const k=
 function achadosDe(m){ const out=[]; const d0=mundo().dia; for(let d=Math.max(4,d0-13);d<=d0;d++){ const b=bauDoDia(d); if(b&&b.quem.id===m.id&&agoraMundo()>=b.achado) out.push(b); } return out; }
 const BAU_OBJ={dia:null,g:null,aberto:null}; let bauT=0;
 function bauEmCena(){ const w=mundo(); return bauDoDia(w.hora<6?w.dia-1:w.dia); }
+function modeloBau(aberto){
+  const g=new THREE.Group(), ouro=mat(0xffd24a,{metalness:0.6,roughness:0.35,emissive:0x6a4a00,emissiveIntensity:0.4});
+  box(1.1,.6,.75,mat(0x6b4423),0,.3,0,g);
+  const tampa=box(1.16,.24,.8,ouro,0,aberto?.95:.72,aberto?-.3:0,g);
+  tampa.rotation.x=aberto?-1.1:0;g.userData.tampa=tampa;
+  box(.16,.26,.06,mat(0x2b2b2b),0,.48,.39,g);return g;
+}
 function animaBau(){ const now=agoraMundo(); if(now-bauT<3000) return; bauT=now; const b=bauEmCena(); const aberto=b?now>=b.achado:false; if(BAU_OBJ.dia===(b&&b.dia)&&BAU_OBJ.aberto===aberto) return; if(BAU_OBJ.g){ scene.remove(BAU_OBJ.g); BAU_OBJ.g=null; } BAU_OBJ.dia=b&&b.dia; BAU_OBJ.aberto=aberto; if(!b) return;
-  const g=new THREE.Group(); g.userData.bauDia=b.dia; scene.add(g); const ouro=mat(0xffd24a,{metalness:0.6,roughness:0.35,emissive:0x6a4a00,emissiveIntensity:0.4}); box(1.1,0.6,0.75,mat(0x6b4423),b.x,0.3,b.z,g); const tampa=box(1.16,0.24,0.8,ouro,b.x,aberto?0.95:0.72,b.z+(aberto?-0.3:0),g); if(aberto) tampa.rotation.x=-1.1; box(0.16,0.26,0.06,mat(0x2b2b2b),b.x,0.48,b.z+0.39,g);
-  if(!aberto){ const gb=new THREE.Group(); const ap=box(0.3,0.5,0.3,mat(0xffd24a),0,0.25,0,gb); const br=efeitoItem({g:gb,nome:"de ouro",rar:{k:"lendario"}}); ap.visible=false; br.g.position.set(b.x,0.6,b.z); br.g.scale.setScalar(2.6); g.add(br.g); }
-  const r=rotulo(aberto?"📭 Baú achado por "+b.quem.nome:"🎁 Baú escondido · 💡 Ideia de "+b.ideia.autor,b.x,2.4,b.z,6,"#ffd24a"); scene.remove(r); g.add(r); r.userData.prioridade=2; BAU_OBJ.g=g;
+  const g=modeloBau(aberto);g.position.set(b.x,0,b.z);g.userData.bauDia=b.dia;scene.add(g);
+  if(!aberto){ const gb=new THREE.Group(); const ap=box(0.3,0.5,0.3,mat(0xffd24a),0,0.25,0,gb); const br=efeitoItem({g:gb,nome:"de ouro",rar:{k:"lendario"}}); ap.visible=false; br.g.position.set(0,0.6,0); br.g.scale.setScalar(2.6); g.add(br.g); }
+  const r=rotulo(aberto?"📭 Baú achado por "+b.quem.nome:"🎁 Baú escondido · 💡 Ideia de "+b.ideia.autor,0,2.4,0,6,"#ffd24a"); scene.remove(r); g.add(r); r.userData.prioridade=2; BAU_OBJ.g=g;
   if(comunidade) comunidade.bau(b,aberto); }
 function cartaoBau(){ const b=bauEmCena(); if(!b) return; const now=agoraMundo(); $("lugarBox").hidden=false; $("lugarTitulo").textContent="🎁 Baú escondido do dia"; $("lugarDesc").textContent="💡 Ideia de "+b.ideia.autor+": \""+b.ideia.ideia+"\". Todo dia um baú aparece num lugar do mapa, e alguém da vila acha.";
   $("lugarAgora").innerHTML="<b>Agora:</b> "+(now>=b.achado?b.quem.nome+" achou "+b.item+" ("+b.rar.n+") às "+hhmm(b.achado)+".":"escondido perto de "+b.lugar+". Ninguém achou ainda."); $("lugarLista").innerHTML=""; $("lugarObra").textContent="💬 Comente sua ideia no Instagram: as melhores viram realidade aqui."; }
@@ -988,7 +1005,7 @@ function animaPesca(tsec){ PESCA_TS=tsec; if(!pescaCriada){ if(!bonecos.size) { 
       a.bracos.forEach((segs,i)=>{ const aceno=i===0&&t>=4&&t<21; segs.forEach((sg,k)=>{ sg.rotation.x=aceno?(-0.9+Math.sin(tsec*5)*0.35):(0.25+Math.sin(tsec*2.2+i*1.1+k*0.7)*0.32); }); }); } }); }
 function cartaoAqua(k){ const a=AQUA.find(x=>x.k===k); if(!a) return; const I=AQUA_INFO[k]; const no=nomeOficial(k); $("lugarBox").hidden=false; $("lugarTitulo").textContent=(no?no.nome+" · "+I.n:I.n); $("lugarDesc").textContent=I.d+(no?" · "+placaNome(k):""); $("lugarAgora").innerHTML="<b>Agora:</b> "+estadoAqua(a,PESCA_TS)+". Não ataca ninguém."; $("lugarLista").innerHTML=""; $("lugarObra").textContent=no?"🎣 Criatura da água do Rio Claro.":"💬 Dê um nome para ele nos comentários: o mais curtido vira o nome oficial."; }
 // ---------- v54: bestiário ----------
-const BEST_EMO={lobos:"🐺",goblins:"👺",golem:"🗿",bruxa:"🧙",gigante:"🦣",dragao:"🐉"};
+const BEST_EMO={sombras:"👻",lobos:"🐺",goblins:"👺",golem:"🗿",bruxa:"🧙",gigante:"🦣",dragao:"🐉"};
 const BEST_ALVO={lobos:"lobo",goblins:"goblin"};
 let bestT=0;
 function quandoHumano(ts){ const dd=Math.floor((ts-3*HORA_REAL)/86400000)-Math.floor((agoraMundo()-3*HORA_REAL)/86400000); const d=dd===0?"hoje":dd===-1?"ontem":dd===1?"amanhã":["dom","seg","ter","qua","qui","sex","sáb"][new Date(ts-3*HORA_REAL).getUTCDay()]; return d+" "+hhmm(ts); }
@@ -1058,14 +1075,14 @@ async function renderLivro(){ const box=$("livroBox"); if(!box) return; const no
     x.textContent=(d.vila?d.vila+" · ":"")+(d.pergunta||"")+" ("+(d.opcoes||[]).join(" ou ")+") — "+st+cod; dv.appendChild(x); });
   box.hidden=false; }
 function animaSombria(tsec){ try{ animaPets(tsec); }catch(e){}   efeitosDecisao(); animaTerritorios(); animaBau(); if(agoraMundo()-bestT>20000){ try{ renderBestiario(); }catch(e){ bestT=agoraMundo(); console.warn("bestiario",e); } } if(tsec-ultimaPlaca>=3){ultimaPlaca=tsec;placaDragao();} if(!SOMBRIA.g) return; const agoraP=performance.now(); const dt=Math.min(0.1,Math.max(0,(agoraP-(SOMBRIA.ult||agoraP))/1000)); SOMBRIA.ult=agoraP; const now=agoraMundo(); const D=decisaoAtiva(now); const t=D?(now-D.ini)/60000:-1;
-  moverGuardasSombrios(D,t,dt);
+  moverGuardasSombrios(D,t,dt,tsec);
 }
-function moverGuardasSombrios(D,t,dt){
+function moverGuardasSombrios(D,t,dt,seg=0){
   const P=D?vila(D.vi).L.praca:null; const C=CLIPES_BICHO.esqueleto;
-  SOMBRIA.guardas.forEach(q=>{ const a=q.i/4*Math.PI*2+0.4; let x=SOMBRIA.x+Math.cos(a)*3, z=SOMBRIA.z+Math.sin(a)*3, clip=C.parado, face=a+Math.PI;
+  SOMBRIA.guardas.forEach(q=>{ const a=q.i/4*Math.PI*2+0.4; const volta=a+Math.floor(seg/12+q.i*.25)*.74;
+    let x=SOMBRIA.x+Math.cos(volta)*5.5, z=SOMBRIA.z+Math.sin(volta)*5.5, clip=C.parado, face=volta+Math.PI;
     if(D&&D.vencedora==="ATACAR"&&t>=2&&t<36){ const B=portaoSombria(); const f=t<4?(t-2)/2:t<34?1:1-(t-34)/2; const tx=B.x+Math.cos(a)*1.6, tz=B.z+Math.sin(a)*1.6; x=x+(tx-x)*f; z=z+(tz-z)*f; clip=(t<4||t>=34)?C.anda:C.ataca; face=Math.atan2(P.x-x,P.z-z); }
-    else if(D&&D.vencedora==="FUGIR"&&t>=4&&t<34){ const f=t<8?(t-4)/4:t<30?1:1-(t-30)/4; const tx=P.x+Math.cos(a)*2.5, tz=P.z+Math.sin(a)*2.5; x=x+(tx-x)*f; z=z+(tz-z)*f; clip=(t<8||t>=30)?C.anda:C.parado; face=t<30?Math.atan2(tx-x,tz-z):Math.atan2(SOMBRIA.x-x,SOMBRIA.z-z); }
-    passeio.seguir(q.g,vila(1),"esqueleto",{x:SOMBRIA.x+Math.cos(a)*3,z:SOMBRIA.z+Math.sin(a)*3},{x,z},dt,{face,golpe:clip===C.ataca?clip:null}); }); }
+    passeio.seguir(q.g,vila(1),"esqueleto",{x:SOMBRIA.x+Math.cos(a)*3,z:SOMBRIA.z+Math.sin(a)*3},{x,z},dt,{face,golpe:clip===C.ataca?clip:null,sombrio:true}); }); }
 function cronica(w){
   const out=[]; const lista=todos();
   for(let k=0;k<14;k++){
@@ -1156,6 +1173,7 @@ function instModelo(nome,lista,opts){ opts=opts||{}; const md=KAYKIT.modelo(nome
 
 const caminhos=criarCaminhosDosBichos(), passeio=criarPasseioDosBichos(caminhos,rnd);
 const paisagem=criarPaisagem(scene,renderer,rnd,RUAS,caminhos); const lutaNoMapa=criarLutaNoMapa(scene,camera,passeio);
+const rotinaMoradores=criarRotinaDosMoradores(caminhos,vila,nVilas,casaDe,LUGAR_DE,rotaEntreVilas);
 const rBase=rnd("chao");
 function faixa(w,d,x,z,m,parent){return paisagem.caminho(w,d,x,z,parent||scene);}
 function casa(x,z,w,d,h,m,mTelhado,rot,chamine,parent){ const g=new THREE.Group(); g.position.set(x,0,z); g.rotation.y=rot||0; box(w,h,d,m,0,h/2,0,g); (parent||scene).add(g); return g; }
@@ -1422,7 +1440,7 @@ function bicho(tipo,V){ const g=new THREE.Group(); const r=rnd(tipo+V.i+BICHOS.l
   else if(tipo==="dragao"){ const verde=mat(0x3fa34d), esc=mat(0x2f7a3a); const corpo=box(4,1.4,1.4,verde,0,0,0,g); const pesc=box(1.2,0.8,0.8,verde,2.4,0.9,0,g); pesc.rotation.z=0.7; box(1.6,1,1,verde,3.1,1.7,0,g); box(0.8,0.5,0.7,esc,3.9,1.5,0,g); box(0.08,0.08,0.08,mat(0xff5c5c),3.5,1.95,0.42,g); box(0.08,0.08,0.08,mat(0xff5c5c),3.5,1.95,-0.42,g); for(let i=0;i<3;i++) box(1,0.25,2.2,esc,-1+i*0.9,-0.75,0,g); cone(0.25,1,esc,2.9,2.4,-0.35,g,4); cone(0.25,1,esc,2.9,2.4,0.35,g,4); const cauda=cone(0.6,3,verde,-3.2,0,0,g,5); cauda.rotation.z=Math.PI/2;
     const aE=box(4.4,0.12,3.2,esc,0,0.7,-2.6,g), aD=box(4.4,0.12,3.2,esc,0,0.7,2.6,g); g.userData.asas=[aE,aD]; for(let i=0;i<4;i++) cone(0.2,0.5,esc,-1.5+i*1,0.9,0,g,4); box(0.15,0.15,0.15,mat(0xff5c5c),3.3,0.5,0.35,g); box(0.15,0.15,0.15,mat(0xff5c5c),3.3,0.5,-0.35,g); g.traverse(o=>{ if(o.isMesh) o.castShadow=true; }); }
   g.userData.tipo=tipo; g.userData.V=V; g.userData.fase=r()*6; g.userData.r=r; scene.add(g); BICHOS.push(g); return g; }
-function povoaBichos(V){ for(let k=0;k<2;k++) bicho("esqueleto",V); for(let k=0;k<4;k++) bicho("galinha",V); for(let k=0;k<2;k++) bicho("javali",V); for(let k=0;k<3;k++) bicho("goblin",V); bicho("lobo",V); for(let k=0;k<2;k++) bicho("aranha",V); for(let k=0;k<3;k++) bicho("fantasma",V); for(let k=0;k<5;k++) bicho("morcego",V); }
+function povoaBichos(V){ for(let k=0;k<4;k++) bicho("galinha",V); for(let k=0;k<2;k++) bicho("javali",V); for(let k=0;k<3;k++) bicho("goblin",V); bicho("lobo",V); for(let k=0;k<2;k++) bicho("aranha",V); for(let k=0;k<5;k++) bicho("morcego",V); }
 // dragão real (Quaternius, CC0): voa sobre as vilas a cada 10 minutos e é o chefe da batalha secreta
 const DRAGAO=(function(){ const g=new THREE.Group(); const corpo=KAYKIT.cloneAnimado("dragao"); if(corpo){ corpo.updateMatrixWorld(true); const bb=new THREE.Box3().setFromObject(corpo); const sz=new THREE.Vector3(); bb.getSize(sz); const s=10/Math.max(sz.x,sz.y,sz.z,0.001); corpo.scale.multiplyScalar(s); corpo.updateMatrixWorld(true); const bb2=new THREE.Box3().setFromObject(corpo); corpo.position.y-=bb2.min.y; corpo.rotation.y=Math.PI/2; g.add(corpo);
     // o GLB veio do FBX com as cores quase pretas: pintamos o Dragão das Cinzas (cinza-vinho, barriga dourada, olhos de brasa)
@@ -1440,8 +1458,11 @@ function animaBichos(tsec,w){ dtBichos=Math.min(.08,Math.max(0,tsec-(tempoBichos
     else{
       const ev=eventoDoDia(w.dia).k;
       b.visible=t==="goblin"?w.hora>=6&&w.hora<=23:t==="aranha"?w.hora>=6&&w.hora<=19:
-        t==="esqueleto"||t==="fantasma"?w.hora>=21||w.hora<5||ev==="cemiterio":t==="lobo"?w.hora>=20||w.hora<5||ev==="lobos":true;
-      passeio.passo(b,V,t,dtBichos);
+        t==="fantasma"?w.hora>=21||w.hora<5||ev==="cemiterio":t==="lobo"?w.hora>=20||w.hora<5||ev==="lobos":true;
+      if(t==="fantasma"){
+        const a=b.userData.caminhante||passeio.adicionar(b,V,t,{x:SOMBRIA.x+7,z:SOMBRIA.z-3},{sombrio:true});
+        if(a){passeio.avancar(a,dtBichos);if(a.derrotadoAte)b.visible=false;}
+      }else passeio.passo(b,V,t,dtBichos);
     }
     // barra de HP flutuante (só perto da câmera)
     const mostra=b.visible&&orb.r<26&&(b.position.x-orb.target.x)**2+(b.position.z-orb.target.z)**2<230; if(mostra||b.userData.hpBar){ if(!b.userData.hpBar){ const mk=(c,w2)=>{ const sp=new THREE.Sprite(new THREE.SpriteMaterial({color:c,depthTest:false})); sp.scale.set(w2,0.1,1); scene.add(sp); return sp; }; b.userData.hpBar=[mk(0x2b1b1b,1.1),mk(0xe03030,1.0)]; } const [fu,ba]=b.userData.hpBar; fu.visible=ba.visible=mostra; if(mostra){ const alt=(ALTURA_BICHO[t]||0.8)+0.45; const pct=hpBichoPct(b)/100; fu.position.set(b.position.x,b.position.y+alt,b.position.z); ba.position.set(b.position.x-(1-pct)*0.5,b.position.y+alt,b.position.z); ba.scale.set(Math.max(0.02,pct),0.1,1); } } });
@@ -1497,7 +1518,14 @@ const INVG={chave:null,mons:[],ultimo:0};
 function tingeTudo(obj,cor,extra){ obj.traverse(o=>{ if(o.isMesh&&o.material){ o.material=o.material.clone(); o.material.color=new THREE.Color(cor); if(extra) Object.assign(o.material,extra); o.castShadow=true; o.frustumCulled=false; } }); }
 function kaykitAnimado(modelo,escala,cor){ const c=KAYKIT.cloneAnimado(modelo); if(!c) return null; c.scale.setScalar(escala); if(cor!=null) tingeTudo(c,cor); const mixer=new THREE.AnimationMixer(c); const acoes={}; KAYKIT.clipes(modelo).forEach(cl=>{ acoes[cl.name.replace(/^.*\|/,"")]=mixer.clipAction(cl); }); let atual=null;
   const play=(nome)=>{ const a=acoes[nome]||acoes.Idle; if(!a||atual===a) return; if(atual) atual.fadeOut(0.2); a.reset().fadeIn(0.2).play(); atual=a; }; const g=new THREE.Group(); g.add(c); return {g,mixer,play,anda:"Walking_A",ataca:"1H_Melee_Attack_Chop"}; }
-function criaMonstro(tipo){
+function criaMonstro(tipo,i){
+  if(tipo==="sombras"){
+    const especie=i===0?"esqueleto":"fantasma";
+    const md=modeloBicho(especie); if(!md)return null;
+    const g=new THREE.Group();g.add(md.obj);
+    Object.assign(g.userData,{tipo:especie,play:md.play,mixer:md.mixer,invasao:true});
+    return {g,mixer:md.mixer,play:md.play,anda:CLIPES_BICHO[especie].anda,ataca:CLIPES_BICHO[especie].ataca,especie};
+  }
   if(tipo==="lobos"||tipo==="goblins"||tipo==="golem"){ const nb=tipo==="lobos"?"lobo":tipo==="goblins"?"esqueleto":"golem"; const md=modeloBicho(nb); if(!md) return null; const g=new THREE.Group(); g.add(md.obj); if(tipo==="goblins"){ md.obj.scale.multiplyScalar(0.72); tingeTudo(md.obj,0x6fa83e); } if(tipo==="golem") tingeTudo(md.obj,0x8c8478,{roughness:0.95}); const C=CLIPES_BICHO[nb]; return {g,mixer:md.mixer,play:md.play,anda:C.anda,ataca:C.ataca,voa:tipo==="golem"}; }
   if(tipo==="bruxa"){ const k=kaykitAnimado("Mage",1.05,0x3d6b35); if(!k) return null; const chapeu=new THREE.Mesh(new THREE.ConeGeometry(0.42,1.1,10),new THREE.MeshStandardMaterial({color:0x1d1426,roughness:0.8})); chapeu.position.y=2.75; const aba=new THREE.Mesh(new THREE.CylinderGeometry(0.62,0.62,0.06,14),chapeu.material); aba.position.y=2.25; const cabo=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,2.2,6),new THREE.MeshStandardMaterial({color:0x6b4423})); cabo.rotation.z=Math.PI/2.3; cabo.position.set(0,0.75,-0.35); const palha=new THREE.Mesh(new THREE.ConeGeometry(0.25,0.6,8),new THREE.MeshStandardMaterial({color:0xc9a24a})); palha.rotation.z=-Math.PI/2; palha.position.set(-1.1,0.3,-0.35); k.g.add(chapeu,aba,cabo,palha); k.ataca="Spellcasting"; k.voa=true; return k; }
   if(tipo==="gigante"){ const k=kaykitAnimado("Barbarian",3.0,0x9a8a74); if(!k) return null; k.ataca="2H_Melee_Attack_Chop"; /* manto do gigante */ const M=(c,r)=>new THREE.MeshStandardMaterial({color:c,roughness:r||0.9});
@@ -1511,19 +1539,19 @@ function criaMonstro(tipo){
     for(const dx of[-0.18,0.18]){ const o=new THREE.Mesh(new THREE.SphereGeometry(0.07,6,6),new THREE.MeshBasicMaterial({color:0xff6a1a})); o.position.set(dx,5.35,0.52); k.g.add(o); }
     return k; }
   return null; }
-function limpaInvasao(){ INVG.mons.forEach(o=>{passeio.retirar(o.g);scene.remove(o.g);}); INVG.mons=[]; INVG.chave=null; }
+function limpaInvasao(){ INVG.mons.forEach(o=>{if(o.g.userData.caminhante?.recolhido)return;passeio.retirar(o.g);scene.remove(o.g);}); INVG.mons=[]; INVG.chave=null; }
 function animaInvasao(tsec,w){ const now=agoraMundo(); const IV=invasaoEm(now); const agoraP=performance.now(); const dt=Math.min(0.1,Math.max(0,(agoraP-(INVG.ultimo||agoraP))/1000)); INVG.ultimo=agoraP;
   if(!IV||MODO_SEGREDO){ if(INVG.chave) limpaInvasao(); return; }
   const T=INV_TIPOS[IV.tipo], V=vila(IV.vi), P=V.L.praca; const C={x:P.x+Math.cos(IV.dir)*4.5,z:P.z+Math.sin(IV.dir)*4.5}; const E={x:C.x+Math.cos(IV.dir)*34,z:C.z+Math.sin(IV.dir)*34};
   const p=(now-IV.ts)/(IV.fim-IV.ts); const chave=IV.seed+":"+KAYKIT.estado.versao;
   if(IV.tipo==="dragao"){ if(INVG.chave!==chave){ limpaInvasao(); INVG.chave=chave; } const raio=p<0.08?9+(0.08-p)*300:p>0.94?9+(p-0.94)*400:9; DRAGAO.visible=true; sombraDragao.visible=true; const a=tsec*0.45; const x=C.x+Math.cos(a)*raio, z=C.z+Math.sin(a)*raio; DRAGAO.position.set(x,7+Math.sin(tsec*1.3)*0.6,z); DRAGAO.rotation.y=-a; sombraDragao.position.set(x,0.08,z); if(DRAGAO.userData.play) DRAGAO.userData.play(p>0.08&&p<0.94&&Math.floor(tsec/3)%2?"Dragon_Attack":"Dragon_Flying",1); return; }
-  if(INVG.chave!==chave){ limpaInvasao(); INVG.chave=chave; for(let i=0;i<T.qtd;i++){ const mo=criaMonstro(IV.tipo); if(!mo) break; mo.i=i; mo.g.traverse(o=>{ if(o.isMesh){ o.frustumCulled=false; o.castShadow=true; } }); mo.g.userData.invasao=true; scene.add(mo.g); if(mo.mixer) mo.mixer.update(i*0.37); INVG.mons.push(mo); } }
-  const q=INVG.mons.length; INVG.mons.forEach((mo,i)=>{ const oa=q>1?i/q*Math.PI*2:0, orad=q>1?1.4:0; const ox=Math.cos(oa)*orad, oz=Math.sin(oa)*orad; let x,z,face,clip;
+  if(INVG.chave!==chave){ limpaInvasao(); INVG.chave=chave; for(let i=0;i<T.qtd;i++){ const mo=criaMonstro(IV.tipo,i); if(!mo) break; mo.i=i; mo.g.traverse(o=>{ if(o.isMesh){ o.frustumCulled=false; o.castShadow=true; } }); mo.g.userData.invasao=true; scene.add(mo.g); if(mo.mixer) mo.mixer.update(i*0.37); INVG.mons.push(mo); } }
+  const q=INVG.mons.length; INVG.mons.forEach((mo,i)=>{ if(mo.g.userData.caminhante?.recolhido)return; const oa=q>1?i/q*Math.PI*2:0, orad=q>1?1.4:0; const ox=Math.cos(oa)*orad, oz=Math.sin(oa)*orad; let x,z,face,clip;
     if(p<0.06){ const f=p/0.06; x=E.x+(C.x-E.x)*f+ox; z=E.z+(C.z-E.z)*f+oz; face=Math.atan2(C.x-E.x,C.z-E.z); clip=mo.anda; }
     else if(p<0.94){ const j=Math.sin(tsec*2.1+i)*0.35; x=C.x+ox+j; z=C.z+oz+Math.cos(tsec*1.7+i)*0.35; face=q>1?Math.atan2(ox,oz):tsec*0.7; clip=mo.ataca; }
     else { const f=Math.min(1,(p-0.94)/0.06); x=C.x+(E.x-C.x)*f+ox; z=C.z+(E.z-C.z)*f+oz; face=Math.atan2(E.x-C.x,E.z-C.z); clip=mo.anda; }
-    if(!mo.voa){Object.assign(mo.g.userData,{play:mo.play,mixer:mo.mixer});const tipo=IV.tipo==="lobos"?"lobo":IV.tipo==="gigante"?"gigante":"esqueleto";
-      passeio.seguir(mo.g,V,tipo,{x:E.x+ox,z:E.z+oz},{x,z},dt,{face,golpe:clip===mo.ataca?clip:null});}
+    if(!mo.voa){Object.assign(mo.g.userData,{play:mo.play,mixer:mo.mixer});const tipo=mo.especie||(IV.tipo==="lobos"?"lobo":IV.tipo==="gigante"?"gigante":"goblin");
+      passeio.seguir(mo.g,V,tipo,{x:E.x+ox,z:E.z+oz},{x,z},dt,{face,golpe:clip===mo.ataca?clip:null,sombrio:!!mo.especie,invasaoVi:IV.vi});}
     else {mo.g.position.set(x,.6+Math.sin(tsec*2+i)*.15,z);mo.g.rotation.y=face;mo.play(clip,1);if(mo.mixer&&animaPerto(mo.g))mo.mixer.update(dt);} }); }
 function vidaInvasao(iv){ const p=(agoraMundo()-iv.ts)/(iv.fim-iv.ts); const f=Math.min(1,Math.max(0,(p-0.06)/0.86)); return Math.round(iv.venceu?100*(1-f):100-70*f); }
 function chovendo(w){ const c=climaAgora(w); return c==="chuva"||c==="tempestade"; }
@@ -1730,8 +1758,6 @@ function atualizaEncontros(now, candidatos){
     el.style.top=(1-pontoEncontro.y)*50+"%";
   }
 }
-function separaPessoas(){ const arr=[]; bonecos.forEach(b=>{ if(b.visible&&b.position.x<2000) arr.push(b); }); const R=0.95, R2=R*R; /* v44: antes 0.62 e 2 passadas: aglomerava (12 bonecos em 36 m²) */
-  for(let it=0;it<(arr.length>40?6:4);it++) for(let i=0;i<arr.length;i++) for(let j=i+1;j<arr.length;j++){ const a=arr[i], b=arr[j]; let dx=b.position.x-a.position.x, dz=b.position.z-a.position.z; let d2=dx*dx+dz*dz; if(d2>=R2) continue; if(d2<1e-6){ const h=(i*31+j*17)%360; dx=Math.cos(h)*0.01; dz=Math.sin(h)*0.01; d2=1e-4; } const d=Math.sqrt(d2); const push=(R-d)/2; dx/=d; dz/=d; a.position.x-=dx*push; a.position.z-=dz*push; b.position.x+=dx*push; b.position.z+=dz*push; } }
 const REALEZA=[];
 // v40: o que fica na mão segue a atividade
 function maoDe(e){ const desc=e.chave==="dorme"||e.chave==="abrigo"||e.chave==="almoco"||e.chave==="cafe"||/energia/.test(e.acao||"")||(e.dentro&&e.dentro.modo!=="trabalhar"); return desc?"vazia":e.chave==="luta"?"luta":"trabalho"; }
@@ -1804,6 +1830,7 @@ function fundeVila(V){ if(!V.pred||V.fundida||!THREE.BufferGeometryUtils) return
     porMat.forEach(e=>{ const mg=THREE.BufferGeometryUtils.mergeBufferGeometries(e.geos,false); if(!mg) return; mg.computeBoundingSphere(); const m=new THREE.Mesh(mg,e.mat); m.castShadow=e.cast; m.receiveShadow=e.rec; m.userData.fundida=true; m.raycast=()=>{}; bucket.add(m); FUSAO.antes+=e.objs.length; FUSAO.depois++; e.objs.forEach(o=>{ o.visible=false; }); });
   }catch(e){ console.warn("fusão",V.nome,e); } }
 function reconstroiCasas(){ caminhos.limparCasas(); const lista=todos(); for(let v=0;v<nVilas();v++)vila(v).portasBichos=[]; placasFundador(lista); criaRealeza(); estatuas(lista); if(casasInst){ casasInst.forEach(i=>scene.remove(i)); } casasInst=[]; casasN=lista.length; if(!casasN) return;
+  caminhos.protegerVilas(Array.from({length:nVilas()},(_,i)=>vila(i)));
   criaSombria();
   for(let v=0;v<nVilas();v++){ construirVila(vila(v)); if(!/[?&]semfusao=1/.test(location.search)) fundeVila(vila(v)); }
   if(!/[?&]semfusao=1/.test(location.search)) setTimeout(fundeSoltos,1500); setTimeout(paisagem.refletirMargens,1000);
@@ -1823,17 +1850,76 @@ const goblin=(function(){ const g=new THREE.Group(); const verde=mat(0x6fa34a); 
   const r=rotulo("goblin!",0,1.9,0,3,"#ff6a5a"); scene.remove(r); g.add(r); g.visible=false; scene.add(g); return g; })();
 
 // ---------- câmera ----------
-let arrastando=false, lx=0, ly=0, moveu=0, pinch=0;
-canvas.addEventListener("pointerdown",e=>{ arrastando=true; moveu=0; lx=e.clientX; ly=e.clientY; canvas.setPointerCapture(e.pointerId); });
-canvas.addEventListener("pointermove",e=>{ if(!arrastando) return; const dx=e.clientX-lx, dy=e.clientY-ly; moveu+=Math.abs(dx)+Math.abs(dy); lx=e.clientX; ly=e.clientY; orb.theta-=dx*0.006; orb.phi=Math.min(1.35,Math.max(0.35,orb.phi-dy*0.005)); orb.phiAlvo=null; });
-canvas.addEventListener("pointerup",e=>{ arrastando=false; if(moveu<6) clique(e); });
+let arrastando=false, lx=0, ly=0, inicioX=0, inicioY=0, moveu=0, pinch=0, ponteiroMapa=null;
+canvas.addEventListener("pointerdown",e=>{
+  if(!e.isPrimary||e.button!==0) return;
+  ponteiroMapa=e.pointerId; arrastando=true; moveu=0; inicioX=lx=e.clientX; inicioY=ly=e.clientY;
+  canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener("pointermove",e=>{
+  if(!arrastando||ponteiroMapa!==e.pointerId) return;
+  moveu=Math.max(moveu,Math.hypot(e.clientX-inicioX,e.clientY-inicioY));
+  if(moveu<(e.pointerType==="touch"?10:6)) return;
+  orb.theta-=(e.clientX-lx)*0.006; orb.phi=Math.min(1.35,Math.max(0.35,orb.phi-(e.clientY-ly)*0.005));
+  lx=e.clientX; ly=e.clientY; orb.phiAlvo=null;
+});
+function encerraPonteiroMapa(e){
+  if(ponteiroMapa!==e.pointerId) return false;
+  arrastando=false; ponteiroMapa=null; return true;
+}
+canvas.addEventListener("pointerup",e=>{ if(encerraPonteiroMapa(e)&&moveu<(e.pointerType==="touch"?10:6)) clique(e); });
+canvas.addEventListener("pointercancel",encerraPonteiroMapa);
+canvas.addEventListener("lostpointercapture",encerraPonteiroMapa);
 canvas.addEventListener("wheel",e=>{ e.preventDefault(); orb.rAlvo=null; orb.r=Math.min(110,Math.max(10,orb.r*(1+Math.sign(e.deltaY)*0.08))); },{passive:false});
-canvas.addEventListener("touchstart",e=>{ if(e.touches.length===2){ pinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY); } },{passive:true});
-canvas.addEventListener("touchmove",e=>{ if(e.touches.length===2){ const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY); orb.r=Math.min(110,Math.max(10,orb.r*(pinch/d))); pinch=d; arrastando=false; } },{passive:true});
+canvas.addEventListener("touchstart",e=>{
+  if(e.touches.length===2){ ponteiroMapa=null; arrastando=false; pinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY); }
+},{passive:true});
+canvas.addEventListener("touchmove",e=>{ if(e.touches.length===2){ const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY); if(d&&pinch) orb.r=Math.min(110,Math.max(10,orb.r*(pinch/d))); pinch=d; } },{passive:true});
 const ray=new THREE.Raycaster(), ptr=new THREE.Vector2();
-function clique(e){ const r=canvas.getBoundingClientRect(); ptr.x=((e.clientX-r.left)/r.width)*2-1; ptr.y=-((e.clientY-r.top)/r.height)*2+1; ray.setFromCamera(ptr,camera);
-  const alvos=[]; bonecos.forEach(b=>{ if(b.visible) alvos.push(b); }); const hit=ray.intersectObjects(alvos,true)[0]; if(hit&&hit.object.userData.id){ selecionar(hit.object.userData.id,true); return; }
-  const h2=ray.intersectObjects(alvosEstruturas(),true)[0]; if(h2) cliqueEstrutura(h2); }
+const baseAlvo=new THREE.Vector3(), topoAlvo=new THREE.Vector3(), naTela=new THREE.Vector3();
+function raioMapa(e){
+  const r=canvas.getBoundingClientRect();
+  ptr.set((e.clientX-r.left)*2/r.width-1,1-(e.clientY-r.top)*2/r.height);
+  ray.setFromCamera(ptr,camera);
+  return r;
+}
+function moradorNoMapa(r, toque){
+  let rotulo=null, corpo=null, distante=null;
+  let melhorCorpo=Infinity, melhorPx=(toque?44:28)**2, melhorRotulo=Infinity;
+  for(const [id,b] of bonecos){
+    if(!b.visible) continue;
+    const nome=b.userData.nome;
+    if(nome.visible&&nome.material.visible){
+      naTela.setFromMatrixPosition(nome.matrixWorld).project(camera);
+      const proj=camera.projectionMatrix.elements;
+      const hw=nome.scale.x*nome.userData.rotulo.w*proj[0]*0.5;
+      const hh=nome.scale.y*proj[5]*0.5*(88/128);
+      if(Math.abs(ptr.x-naTela.x)<=hw&&Math.abs(ptr.y-naTela.y)<=hh&&naTela.z>=-1&&naTela.z<=1&&naTela.z<melhorRotulo){
+        rotulo=id; melhorRotulo=naTela.z;
+      }
+    }
+    const p=b.position;
+    baseAlvo.set(p.x,p.y+0.50,p.z); topoAlvo.set(p.x,p.y+1.86,p.z);
+    naTela.copy(baseAlvo).lerp(topoAlvo,0.5).project(camera);
+    if(naTela.z < -1 || naTela.z > 1) continue;
+    const erro=ray.ray.distanceSqToSegment(baseAlvo,topoAlvo);
+    if(erro<=0.66**2&&erro<melhorCorpo){ corpo=id; melhorCorpo=erro; }
+    const dx=(ptr.x-naTela.x)*r.width*0.5, dy=(ptr.y-naTela.y)*r.height*0.5;
+    const px=dx*dx+dy*dy;
+    if(px<=melhorPx){ distante=id; melhorPx=px; }
+  }
+  return rotulo??corpo??distante;
+}
+function clique(e){
+  const id=moradorNoMapa(raioMapa(e),e.pointerType==="touch");
+  if(id!=null){
+    selecionar(id,true);
+    if(e.pointerType==="touch")$("selNome").scrollIntoView({block:"center"});
+    return;
+  }
+  const hit=ray.intersectObjects(alvosEstruturas(),true)[0];
+  if(hit) cliqueEstrutura(hit);
+}
 // ---------- estruturas clicáveis: prédio, casa ou bicho mostra o card "Lugar" ----------
 const LUGAR_INFO={praca:["Praça da Fogueira","Coração da vila: café da manhã, conversa no fim da tarde e histórias na fogueira à noite."],taverna:["Taverna","Almoço de todos ao meio-dia, pão e ensopado; à noite, dados e caneca."],ferraria:["Ferraria","Forja armas, escudos e ferramentas; sem ferreiro a vila não tem armas."],capela:["Casa de Cura","Chá de cura, ervas e camas para quem se machuca."],mercado:["Mercado","Barracas, caixotes e a carroça: compra, venda e novidades de fora."],torre:["Torre do Mago","Grimórios, caldeirão e feitiços de luz."],campo:["Campo de trigo","Lavoura e pasto: alimenta a vila inteira."],muralha:["Posto de Guarda","Paliçada, torre de vigia e ronda noturna."],mina:["Mina do Morro","Ferro e pedra para a muralha e a ferraria."],castelo:["Castelo da Vila Aurora","Muralha de pedra, torres e o estandarte da vila central."],pilha:["Pilha de material","Madeira e pedra que a vila junta para a próxima obra."]};
 const _grupoLugar=new Map(); let realce=null, realceAte=0;
@@ -1841,13 +1927,19 @@ function alvosEstruturas(){ const out=[]; for(let v=0;v<nVilas();v++){ const V=v
 function donoDoHit(o){ while(o){ if(o.userData&&o.userData.realeza) return {real:o}; if(_grupoLugar.has(o)) return _grupoLugar.get(o); if(o.isInstancedMesh&&o.userData.moradores) return {casa:o}; if(o.userData&&o.userData.tipo&&BICHOS.includes(o)) return {bicho:o}; o=o.parent; } return null; }
 // bestiário v1 (MECANICAS-COMBATE-v1.md): HP / ATQ / DEF / drop; nível = HP/10
 const BESTIARIO={galinha:{hp:10,atq:2,def:0,drop:"uma pena da sorte"},javali:{hp:100,atq:22,def:4,drop:"couro de javali"},aranha:{hp:60,atq:16,def:2,drop:"seda"},goblin:{hp:90,atq:25,def:8,drop:"sucata"},morcego:{hp:40,atq:12,def:0,drop:"nada"},lobo:{hp:80,atq:18,def:0,drop:"pele de lobo"},fantasma:{hp:160,atq:38,def:10,drop:"essência"},esqueleto:{hp:130,atq:30,def:15,drop:"osso"},dragao:{hp:1800,atq:180,def:90,drop:"escama de dragão"}};
+const roteiroSombrio={
+  forca(b,id){if(id){const m=todos().find(m=>m.id===id);if(m){const s=statsDe(m);return s.atq*2+s.def+s.hp*.12;}}
+    const s=BESTIARIO[b.userData.tipo];return s?s.atq*2+s.def+s.hp*.12:12;},
+  ataque(tipo){return CLIPES_BICHO[tipo]?.ataca||"Unarmed_Melee_Attack_Punch_A";},
+  casa:{x:SOMBRIA.x,z:SOMBRIA.z},
+};
 function fichaBicho(b){ const t=b.userData.tipo; const B=BESTIARIO[t]||{hp:50,atq:10,def:0,drop:"nada"}; const hpPct=hpBichoPct(b); const hp=Math.round(B.hp*hpPct/100); const nivel=Math.max(1,Math.round(B.hp/10));
   let perto=1e9; bonecos.forEach(bn=>{ if(!bn.visible) return; const d=(bn.position.x-b.position.x)**2+(bn.position.z-b.position.z)**2; if(d<perto) perto=d; }); const humor=t==="fantasma"?"vagando":t==="morcego"?"voando em círculos":perto<36?(B.atq>=16?"bravo: alguém chegou perto":"fugindo de quem chegou perto"):"calmo";
   $("lugarBox").hidden=false; { const no=nomeOficial(t); $("lugarTitulo").textContent=(no?no.nome+" · "+(BICHO_NOME[t]||t):(BICHO_NOME[t]||t))+" · nível "+nivel; } $("lugarDesc").textContent=(b.userData.V&&b.userData.V.nome?"Criatura de "+b.userData.V.nome+". ":"")+(BICHO_DESC[t]||"")+(nomeOficial(t)?" · "+placaNome(t):"");
   $("lugarAgora").innerHTML='<b>Agora:</b> '+humor+'<div class="barra"><span>HP</span><div class="meter"><i class="hp" style="width:'+hpPct+'%"></i></div><span>'+hp+'/'+B.hp+'</span></div><div class="small">⚔ Ataque '+B.atq+' · 🛡 Defesa '+B.def+'</div>';
   $("lugarLista").innerHTML=""; $("lugarObra").textContent="Quem vencer ganha: "+B.drop+". Quem perde volta ao ponto seguro e perde um nível."; realcaEm(b.position.x,b.position.z,1.2); }
 const BICHO_NOME={galinha:"Galinha",javali:"Javali",goblin:"Goblin da estrada",aranha:"Aranha da floresta",fantasma:"Fantasma do cemitério",esqueleto:"Esqueleto do cemitério",morcego:"Morcego",lobo:"Lobo Cinzento",dragao:"Dragão das Cinzas"};
-const BICHO_DESC={galinha:"Cisca perto do campo o dia todo.",javali:"Fuça na beira da floresta; os caçadores vivem atrás dele.",goblin:"Ronda a estrada de dia; os soldados o enxotam.",aranha:"Sai de dia na Floresta Velha.",fantasma:"Aparece à noite perto da Casa de Cura. Não faz mal a ninguém.",esqueleto:"Sai das lápides atrás da Casa de Cura das 21h às 5h. Lento, mas duro na queda.",morcego:"Voa em volta da praça depois do pôr do sol.",lobo:"Uiva perto do campo à noite; a fazendeira bate panela.",dragao:"Sobrevoa as vilas de tempos em tempos."};
+const BICHO_DESC={galinha:"Cisca perto do campo o dia todo.",javali:"Fuça na beira da floresta; os caçadores vivem atrás dele.",goblin:"Ronda a estrada de dia; os soldados o enxotam.",aranha:"Sai de dia na Floresta Velha.",fantasma:"Vaga à noite pela Vila Sombria e pode aparecer em invasões.",esqueleto:"Patrulha a Vila Sombria e pode aparecer em invasões.",morcego:"Voa em volta da praça depois do pôr do sol.",lobo:"Uiva perto do campo à noite; a fazendeira bate panela.",dragao:"Sobrevoa as vilas de tempos em tempos."};
 function fichaRealeza(b){ const R=b.userData.realeza; const w=mundo(); const ev=eventoDoDia(w.dia); $("lugarBox").hidden=false; $("lugarTitulo").textContent="👑 "+R.nome+" · nível "+R.nivel; $("lugarDesc").textContent="Mora no castelo da Vila Aurora. Só sai do portão na Guerra pelo Trono (evento lendário, 0,1% por dia de vila): moradores de nível 50+ disputam a coroa; o último golpe no soberano passa a coroa.";
   $("lugarAgora").innerHTML='<b>Agora:</b> '+(ev.k==="trono"?"GUERRA PELO TRONO em andamento!":"no portão do castelo, vigiando a vila")+'<div class="barra"><span>HP</span><div class="meter"><i class="hp" style="width:100%"></i></div><span>'+R.hp+'/'+R.hp+'</span></div><div class="small">⚔ Ataque '+R.atq+' · 🛡 Defesa '+R.def+'</div>';
   $("lugarLista").innerHTML=""; $("lugarObra").textContent="Nível máximo. Quem perde o duelo volta ao ponto seguro e perde um nível."; realcaEm(b.position.x,b.position.z,1.4); }
@@ -1874,7 +1966,7 @@ function mostraLugar(V,k,m){ const box=$("lugarBox"); box.hidden=false; const w=
   $("lugarObra").textContent=(V.i===0?"Vila central: tudo construído.":(eco.construido(k)||k==="praca"||k==="pilha"?"Construído.":(eco.proxima&&eco.proxima[0]===k?"Em obra: "+Math.round(eco.progresso*100)+"% (madeira "+eco.madeira+").":"Ainda não construído.")))+(k==="campo"?" "+comidaTxt(V,eco).replace(/^comida/,"Comida")+".":"");
   realcaEm(L.x,L.z,Math.max(L.w,L.h)*0.75+1); }
 function realcaEm(x,z,r){ if(!realce){ realce=new THREE.Mesh(new THREE.RingGeometry(0.85,1,40),new THREE.MeshBasicMaterial({color:0xffd24a,transparent:true,opacity:0.85,depthTest:false})); realce.rotation.x=-Math.PI/2; realce.renderOrder=5; scene.add(realce); } realce.position.set(x,0.12,z); realce.scale.setScalar(r); realce.visible=true; realceAte=performance.now()+4000; }
-let _ultimoHover=0; canvas.addEventListener("pointermove",e=>{ if(arrastando||MOBILE) return; const now=performance.now(); if(now-_ultimoHover<160) return; _ultimoHover=now; const r=canvas.getBoundingClientRect(); ptr.x=((e.clientX-r.left)/r.width)*2-1; ptr.y=-((e.clientY-r.top)/r.height)*2+1; ray.setFromCamera(ptr,camera); const alvos=[]; bonecos.forEach(b=>{ if(b.visible) alvos.push(b); }); const hit=ray.intersectObjects(alvos.concat(alvosEstruturas()),true)[0]; canvas.style.cursor=hit?"pointer":"grab"; });
+let _ultimoHover=0; canvas.addEventListener("pointermove",e=>{ if(arrastando||MOBILE) return; const now=performance.now(); if(now-_ultimoHover<160) return; _ultimoHover=now; const r=raioMapa(e); const hit=moradorNoMapa(r,false)!=null||ray.intersectObjects(alvosEstruturas(),true).length>0; canvas.style.cursor=hit?"pointer":"grab"; });
 let QA_PR=null, QA_BASE=1, QA_AC=0, QA_N=0, QA_T=0, QA_BOM=0, QA_FPS=0; function qualidadeAuto(dtMs,now,intervalo){ if(dtMs>500) return; QA_AC+=dtMs; QA_N++; if(now-QA_T<3000) return; const med=QA_AC/QA_N; QA_FPS=1000/med; QA_AC=0; QA_N=0; QA_T=now; if(QA_PR==null){ QA_PR=renderer.getPixelRatio(); QA_BASE=QA_PR; }
   if(med>intervalo*1.35){ QA_BOM=0; if(QA_PR>0.7){ QA_PR=Math.max(0.7,QA_PR-0.15); renderer.setPixelRatio(QA_PR); redimensiona(); } MAX_VISIVEIS=Math.max(14,MAX_VISIVEIS-5); /* v44: gargalo de CPU (esqueletos): menos moradores desenhados */ }
   else if(med<intervalo*1.08){ QA_BOM++; if(QA_BOM>=4&&(QA_PR<QA_BASE||MAX_VISIVEIS<MAX_BASE)){ if(QA_PR<QA_BASE){ QA_PR=Math.min(QA_BASE,QA_PR+0.1); renderer.setPixelRatio(QA_PR); redimensiona(); } else MAX_VISIVEIS=Math.min(MAX_BASE,MAX_VISIVEIS+3); QA_BOM=0; } } else QA_BOM=0; }
@@ -1905,9 +1997,12 @@ function paraLambert(m){ let l=lambertCache.get(m.uuid); if(l) return l; l=new T
 function modoLeve(now){ if(!LEVE||now-leveT<2000) return; leveT=now; const jan=new Set(JANELAS); jan.add(M.janela);
   scene.traverse(o=>{ if(!o.isMesh) return; if(o.material&&o.material.isMeshStandardMaterial&&!jan.has(o.material)) o.material=paraLambert(o.material); if(o.castShadow&&!o.userData.fundida&&!o.isSkinnedMesh&&!o.isInstancedMesh){ const g=o.geometry; if(!g.boundingSphere) g.computeBoundingSphere(); const sc=Math.max(o.scale.x,o.scale.y,o.scale.z); if(g.boundingSphere.radius*sc<0.35) o.castShadow=false; } });
    }
+let tempoMoradores=null;
+function clockMoradores(){return tempoMoradores??performance.now()/1000;}
 function anima(){
   requestAnimationFrame(anima); if(document.hidden||window.vilaDiretor?.tick(performance.now())) return; const now=performance.now(); const intervalo=1000/LIMITE_FPS, decorrido=now-ultimoDesenho; if(decorrido<intervalo-0.5) return; ultimoDesenho+=Math.max(1,Math.floor((decorrido+0.5)/intervalo))*intervalo; modoLeve(now); if(MOBILE) qualidadeAuto(decorrido,now,intervalo);
   const w=mundo(); const hf=MODO_LUZ!=null?MODO_LUZ:w.hora+w.frac; const tsec=now/1000; const lista=todos();
+  if(!MODO_SEGREDO&&vilasConstruidas.size)rotinaMoradores.atualizar(lista,tsec,lutaNoMapa.moradoresEmLuta());
   const EVD=eventoDoDia(w.dia); const ang=(hf-6)/12*Math.PI; const alt=Math.sin(ang); const luz=Math.max(0,alt)*((EVD.k==="eclipse"&&hf>=11&&hf<=14)?0.3:1);
   sol.position.set(Math.cos(ang)*60, Math.max(4,alt*60), 25); const luzS=Math.min(1,Math.max(0,(alt+0.04)/0.32)); sol.position.y=Math.max(12,alt*60); sol.position.x+=orb.target.x;sol.position.z+=orb.target.z;sol.target.position.set(orb.target.x,0,orb.target.z);const dourada=Math.max(0,1-Math.abs(alt-0.14)/0.34), noiteK=Math.min(1,Math.max(0,(0.10-alt)/0.22)); sol.intensity=0.04+luzS*(1.2+0.3*dourada); corSol.copy(corSolTarde).lerp(corSolDia,Math.min(1,alt/0.45)); sol.color.copy(corSol); hemi.color.copy(hemiDia).lerp(hemiTarde,dourada*0.75).lerp(hemiNoite,noiteK); hemi.groundColor.copy(chaoDia).lerp(chaoNoite,noiteK); hemi.intensity=0.36+luz*.45+0.16*noiteK; amb.intensity=0.28+luz*.18; lua.intensity=0.20+0.42*noiteK-0.14*luz; lua.position.set(orb.target.x-30,40,orb.target.z-20); renderer.toneMappingExposure=0.97-0.04*luz+0.05*noiteK;
   { const meia=Math.min(60,Math.max(18,orb.r*0.62+7)); if(Math.abs(meia-sol.shadow.camera.right)>1.2){ Object.assign(sol.shadow.camera,{left:-meia,right:meia,top:meia,bottom:-meia}); sol.shadow.camera.updateProjectionMatrix(); } }
@@ -1929,7 +2024,7 @@ function anima(){
       if(eco.proxima&&eco.progresso>0.08){ const Lx=V.L[eco.proxima[0]]; V.andaime.visible=true; V.andaime.position.set(Lx.x,0,Lx.z); V.andaime.scale.set(Lx.w/4,1,Lx.h/4); } else V.andaime.visible=false;
       const nLogs=Math.min(V.pilhaLogs.length,Math.floor(eco.madeira/4)); V.pilhaLogs.forEach((l,k)=>l.visible=k<nLogs); } }
   if(now-ultimoCulling>1500||visiveis.size===0){ ultimoCulling=now; const t=orb.target; const arr=lista.map((m,i)=>{ const c=casaDe(i); const L=c.vila.L[LUGAR_DE[m.profissao]||"praca"]; const dd=Math.min((c.x-t.x)**2+(c.z-t.z)**2,(L.x-t.x)**2+(L.z-t.z)**2); return {m,i,dd}; }).sort((a,b)=>a.dd-b.dd);
-    const novo=new Set(arr.slice(0,MAX_VISIVEIS).map(o=>o.m.id)); if(selecionado) novo.add(selecionado); if(MODO_SEGREDO) BATALHA.lutadores.forEach(id=>novo.add(id)); { const DDv=decisaoAtiva(agoraMundo()); if(DDv) DDv.ids.forEach(id=>novo.add(id)); const BTv=batalhaTerrAtiva(agoraMundo()); if(BTv) BTv.A.concat(BTv.D).forEach(id=>novo.add(id)); const DUv=dueloAtivo(agoraMundo()); if(DUv){ novo.add(DUv.A.id); novo.add(DUv.B.id); } } bonecos.forEach((b,id)=>{ if(!novo.has(id)){ scene.remove(b); bonecos.delete(id); } }); cabRot.forEach((s,id)=>{ if(!novo.has(id)){ scene.remove(s); cabRot.delete(id); } }); visiveis=novo; }
+    const novo=new Set(arr.slice(0,MAX_VISIVEIS).map(o=>o.m.id)); if(selecionado) novo.add(selecionado); for(const id of lutaNoMapa.moradoresEmLuta())novo.add(id); if(MODO_SEGREDO) BATALHA.lutadores.forEach(id=>novo.add(id)); { const DDv=decisaoAtiva(agoraMundo()); if(DDv) DDv.ids.forEach(id=>novo.add(id)); const BTv=batalhaTerrAtiva(agoraMundo()); if(BTv) BTv.A.concat(BTv.D).forEach(id=>novo.add(id)); const DUv=dueloAtivo(agoraMundo()); if(DUv){ novo.add(DUv.A.id); novo.add(DUv.B.id); } } bonecos.forEach((b,id)=>{ if(!novo.has(id)){ scene.remove(b); bonecos.delete(id); } }); cabRot.forEach((s,id)=>{ if(!novo.has(id)){ scene.remove(s); cabRot.delete(id); } }); visiveis=novo; }
   const candidatos=!MODO_SEGREDO&&now>=proximoEncontro?[]:null;
   if(candidatos) proximoEncontro=now+500;
   posSel=null; let selDentro=null; let arvoreBalanca=null; let nomesMostrados=0;
@@ -1959,7 +2054,7 @@ function anima(){
     if(!(MODO_SEGREDO&&BATALHA.lutadores.includes(m.id))) u.play(clipPara(e));
     if(sel){ posSel=e.dentro?null:{x:e.x,y:3.1+(e.y||0),z:e.z}; if(!(sel&&e.modo==="pescar")) peixe.visible=false; }
   });
-  if(!MODO_SEGREDO) separaPessoas(); animaPesca(tsec);
+  animaPesca(tsec);
   if(!MODO_SEGREDO){
     const d=dueloAtivo(agoraMundo()); let dueloVisual=null;
     if(d){const P=vila(d.vi).L.praca, t=((agoraMundo()-d.ini)/1000)%9;
@@ -1970,7 +2065,8 @@ function anima(){
         ator.userData.play(({golpe:"Unarmed_Melee_Attack_Punch_A",guarda:"Blocking",esquiva:"Walking_Backwards",impacto:"Hit_A",queda:"Death_A",vitoria:"Cheer"})[p.fase]);
       });
     }
-    lutaNoMapa.atualizar(tsec,vila(VILA_ATUAL),BICHOS,dueloVisual,MODO_SEGREDO);
+    const sombras=lutaNoMapa.encontrosSombrios(tsec,caminhos,bonecos,dueloVisual,roteiroSombrio);
+    lutaNoMapa.atualizar(tsec,vila(VILA_ATUAL),BICHOS,dueloVisual||sombras,MODO_SEGREDO);
   }
   if(arvoreBalancaAnt&&arvoreBalancaAnt!==arvoreBalanca) arvoreBalancaAnt.rotation.z=0; if(arvoreBalanca) arvoreBalanca.rotation.z=Math.sin(tsec*6)*0.04; arvoreBalancaAnt=arvoreBalanca;
   ovelhas.forEach(o=>passeio.passo(o,o.userData.V,"ovelha",dtBichos));
@@ -1986,7 +2082,8 @@ function anima(){
   else if(!selDentro) marcador.visible=false;
   const vilaoAtivo = hash("vil"+Math.floor(w.t))%5===0 && w.hora>=6 && w.hora<=22; goblin.visible=vilaoAtivo;
   if(vilaoAtivo)passeio.passo(goblin,vila(0),"goblin",dtBichos);
-  if(document.body.classList.contains("cinema")&&!MODO_SEGREDO){ if(!arrastando&&!camFixa) orb.theta+=0.0015; if(!fixado&&now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.discreto) return false; if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); } } }
+  if(selecaoManualAte&&now>=selecaoManualAte) soltarSelecao();
+  if(document.body.classList.contains("cinema")&&!MODO_SEGREDO&&now>=selecaoManualAte){ if(!arrastando&&!camFixa) orb.theta+=0.0015; if(now-ultimaTroca>9000){ ultimaTroca=now; const ativos=lista.filter((m,i)=>{ if(m.discreto) return false; if(m.npc&&lista.some(z=>!z.npc)) return false; const ch=estado(m,i,w).chave; return ch!=="dorme"||w.hora<6&&hash(m.id+"tour")%4===0; }); if(ativos.length){ selecionar(pick(rnd("tour"+Math.floor(now/9000)),ativos).id); } } }
   atualizaInvasaoUI(); if(now-ultimaDecisaoUI>=2000){ultimaDecisaoUI=now;atualizaDecisaoUI();} if(ROTULOS) aplicaRotulos(); animaIntroCam(); if(GIRA){ if(arrastando||seguindo||camFixa) GIRA=false; else orb.theta+=0.0007; } if(MODO_FRENTE&&selecionado){ const bf=bonecos.get(selecionado); if(bf) bf.rotation.y=Math.atan2(camera.position.x-bf.position.x,camera.position.z-bf.position.z); } if(MODO_FRENTE||ROTULOS==="0") bonecos.forEach(b=>{ if(b.userData.vis) b.userData.vis.visible=false; }); if(realce&&realce.visible){ realce.material.opacity=0.5+Math.sin(now/150)*0.35; if(now>realceAte) realce.visible=false; } atualizaMixers(now); posicionaCamera(); lutaNoMapa.sacudir(tsec); camera.updateMatrixWorld(); if(candidatos||encontrosAtivos.length) atualizaEncontros(now,candidatos); desempilhaRotulos(selecionado); { renderer.shadowMap.autoUpdate=false; if(now-sombraAtualizada>=(LEVE?400:100)){ renderer.shadowMap.needsUpdate=true; sombraAtualizada=now; } } orcamentoLuzes(now); culEsqueletos(now); renderer.render(scene,camera); PERF.frames++; if(now-PERF.inicio>=1000){ PERF.fps=Math.round(PERF.frames*10000/(now-PERF.inicio))/10; PERF.frames=0; PERF.inicio=now; }
 }
 
@@ -2008,14 +2105,24 @@ setInterval(()=>{ if(musicaLigada&&!audio.paused&&faixaCerta()!==faixaAtual) fad
 function atualizaBotaoMusica(){ $("btnMusica").textContent=musicaLigada?"🎵 Música: ligada":"🔇 Música: desligada"; }
 $("btnMusica").addEventListener("click",()=>{ musicaLigada=!musicaLigada; try{ localStorage.setItem("vila.musica",musicaLigada?"on":"off"); }catch(e){} if(musicaLigada) tocaMusica(); else { fadeAlvo=0; setTimeout(()=>{ if(!musicaLigada) audio.pause(); },1500); } atualizaBotaoMusica(); });
 ["pointerdown","keydown","touchstart"].forEach(ev=>window.addEventListener(ev,()=>{ audioAutorizado=true; if(musicaLigada&&audio.paused) tocaMusica(); },{passive:true})); atualizaBotaoMusica();
-let fixado=false;
+let selecaoManualAte=0;
+function fixarSelecao(){
+  selecaoManualAte=performance.now()+60000;
+  $("btnSoltarMorador").hidden=false;
+}
+function soltarSelecao(){
+  selecaoManualAte=0;
+  $("btnSoltarMorador").hidden=true;
+}
+window.addEventListener("pointerdown",()=>{ if(performance.now()<selecaoManualAte) fixarSelecao(); },{passive:true});
+$("btnSoltarMorador").addEventListener("click",()=>{ soltarSelecao(); selecionado=null; seguindo=false; atualizaCard(true); });
 // ?rotulos=0 → esconde rótulos de lugar e de cabana (mantém o @ dos moradores); ?rotulos=foco → só o @ do morador selecionado
 function aplicaRotulos(){ const manter=new Set(); if(BATALHA&&BATALHA.titulo) manter.add(BATALHA.titulo); 
   const selB=selecionado?bonecos.get(selecionado):null; const nomeSel=selB&&selB.userData.nome;
   scene.children.forEach(o=>{ if(o.isSprite&&o.material&&o.material.map&&!manter.has(o)&&(ROTULOS==="0"||ROTULOS==="foco")){ o.visible=false; } });
   if(ROTULOS==="0"||ROTULOS==="foco") ROTULOS_3D.forEach(o=>{ if(!manter.has(o)) o.visible=false; });
   if(ROTULOS==="foco"){ bonecos.forEach(b=>{ if(b.userData.nome) b.userData.nome.visible=(b.userData.nome===nomeSel); }); } }
-function selecionar(id,manual){ if(manual){ TRAVA=null; GIRA_OFF(); } if(selecionado!==id) histSig=""; selecionado=id; seguindo=true; if(manual) fixado=true; if(!camFixa){ zoomSeLonge(26); } visiveis.add(id); { const mm=todos().find(z=>z.id===id); if(mm) VILA_ATUAL=mm.vi||0; } const li=todos(); const ii=li.findIndex(m=>m.id===id); if(ii>=0){ const e=estado(li[ii],ii,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.target.copy(orb.alvo); } } atualizaCard(true); if(manual) registrarTrilha("visita",id); }
+function selecionar(id,manual){ if(manual){ TRAVA=null; GIRA_OFF(); } if(selecionado!==id) histSig=""; selecionado=id; seguindo=true; if(manual) fixarSelecao(); if(!camFixa){ zoomSeLonge(26); } visiveis.add(id); { const mm=todos().find(z=>z.id===id); if(mm) VILA_ATUAL=mm.vi||0; } const li=todos(); const ii=li.findIndex(m=>m.id===id); if(ii>=0){ const e=estado(li[ii],ii,mundo()); if(!e.dentro){ orb.alvo.set(e.x,1,e.z); orb.target.copy(orb.alvo); } } atualizaCard(true); if(manual) registrarTrilha("visita",id); }
 let cardId=null, histSig="";
 function tsVila(ts){ return quandoHumano(ts); }
 const ACOES_LOCAIS={
@@ -2084,7 +2191,7 @@ function atualizaCard(forca){
 }
 (function(){ const d=$("dica"); if(!d) return; if(MOBILE) d.textContent="Arraste para girar · pinça para aproximar · toque num morador ou prédio"; const some=()=>{ d.style.transition="opacity .6s"; d.style.opacity="0"; setTimeout(()=>{ d.hidden=true; },700); }; setTimeout(some,5000); canvas.addEventListener("pointerdown",some,{once:true}); })();
 $("lugarFechar").addEventListener("click",()=>{ $("lugarBox").hidden=true; if(realce) realce.visible=false; irParaVila(VILA_ATUAL); $("lugarBox").hidden=true; });
-$("btnSeguir").addEventListener("click",()=>{ seguindo=true; fixado=true; zoomSeLonge(26); });
+$("btnSeguir").addEventListener("click",()=>{ seguindo=true; fixarSelecao(); zoomSeLonge(26); });
 function botaoMorador(m){ const b=document.createElement("button"); b.type="button"; const p=PROF[m.profissao]||PROF.bardo; const x=xpDe(m); b.innerHTML="<span></span> <span>· "+nomeProf(m)+" · nv "+x.nivel+(m.npc?" · NPC":"")+"</span>"; b.firstChild.textContent=m.nome; b.firstChild.style.color="inherit"; b.addEventListener("click",()=>selecionar(m.id,true)); return b; }
 let assinaturaLista="";
 function renderLista(){ const moradores=todos().filter(m=>!m.npc).slice(-40);
@@ -2163,7 +2270,7 @@ function iniciar(){
   let desenhando=false;
   function primeiroDesenho(){ if(!desenhando){desenhando=true;anima();} }
   const esperaCadastro=setTimeout(primeiroDesenho,180);
- if(VILA_URL) setTimeout(()=>{ for(let i=0;i<nVilas();i++) if(vila(i).nome.toLowerCase()===VILA_URL||vila(i).nome.toLowerCase().replace(/\s+/g,"-")===VILA_URL) irParaVila(i); },2500); try{ const semModo=!(MODO_CINEMA||MODO_ABERTURA||MODO_SEGREDO||PARAM_CAM); if(semModo&&matchMedia("(max-width:860px)").matches) $("mapBox").appendChild($("buscaBox"));  }catch(e){} if(MODO_CINEMA){ document.body.classList.add("cinema","abertura"); $("meuBox").hidden=true; setTimeout(redimensiona,100); } if(MODO_ABERTURA) setTimeout(iniciaAbertura,800); if(MODO_SEGREDO){ document.body.classList.add("cinema","abertura","segredo"); seguindo=false; setTimeout(redimensiona,100); } carregaMoradores().finally(()=>{clearTimeout(esperaCadastro);primeiroDesenho();}).then(()=>{ const h=decodeURIComponent(location.hash||"").replace(/^#/,"").replace(/^@/,"").toLowerCase(); if(h){ const m=todos().find(x=>x.nome.toLowerCase().replace(/^@/,"")===h); if(m){ selecionar(m.id,true); } } }).then(()=>{ if(MODO_SEGREDO){ selecionado=null; seguindo=false; $("meuBox").hidden=true; } setTimeout(aplicaCamURL,250); }); setInterval(()=>{if(!document.hidden){renderCronica(); renderLista(); atualizaCard();}},5000); setInterval(()=>{ const h=mundo().hora; if(h>=21&&h<23) carregaDecisoes(); },120000); setInterval(carregaMoradores,10*60000); }
+ if(VILA_URL) setTimeout(()=>{ if(performance.now()<selecaoManualAte)return; for(let i=0;i<nVilas();i++) if(vila(i).nome.toLowerCase()===VILA_URL||vila(i).nome.toLowerCase().replace(/\s+/g,"-")===VILA_URL) irParaVila(i); },2500); try{ const semModo=!(MODO_CINEMA||MODO_ABERTURA||MODO_SEGREDO||PARAM_CAM); if(semModo&&matchMedia("(max-width:860px)").matches) $("mapBox").appendChild($("buscaBox"));  }catch(e){} if(MODO_CINEMA){ document.body.classList.add("cinema","abertura"); $("meuBox").hidden=true; setTimeout(redimensiona,100); } if(MODO_ABERTURA) setTimeout(iniciaAbertura,800); if(MODO_SEGREDO){ document.body.classList.add("cinema","abertura","segredo"); seguindo=false; setTimeout(redimensiona,100); } carregaMoradores().finally(()=>{clearTimeout(esperaCadastro);primeiroDesenho();}).then(()=>{ const h=decodeURIComponent(location.hash||"").replace(/^#/,"").replace(/^@/,"").toLowerCase(); if(h){ const m=todos().find(x=>x.nome.toLowerCase().replace(/^@/,"")===h); if(m){ selecionar(m.id,true); } } }).then(()=>{ if(MODO_SEGREDO){ selecionado=null; seguindo=false; $("meuBox").hidden=true; } setTimeout(aplicaCamURL,250); }); setInterval(()=>{if(!document.hidden){renderCronica(); renderLista(); atualizaCard();}},5000); setInterval(()=>{ const h=mundo().hora; if(h>=21&&h<23) carregaDecisoes(); },120000); setInterval(carregaMoradores,10*60000); }
 $("resumoVila").addEventListener("click",()=>{
   const aberto=document.querySelector("header.top").classList.toggle("expandido");
   $("resumoVila").setAttribute("aria-expanded", String(aberto));
@@ -2180,8 +2287,15 @@ if(!(MODO_CINEMA||MODO_ABERTURA||MODO_SEGREDO||PARAM_CAM)){
   }});
   registrarTrilha=window.criarTrilha({primeiroPasso:comunidade.mostrar, abrirBusca(){ $("busca").value=""; abreBusca(true); $("buscaBox").scrollIntoView({block:"center"}); },somLigado:()=>musicaLigada});
 }
-if(window.__V)Object.assign(__V,{caminhos,passeio,BICHOS,ovelhas,vila,animaBichos,mundo});
+if(window.__V)Object.assign(__V,{caminhos,passeio,BICHOS,ovelhas,vila,animaBichos,mundo,SOMBRIA,lutaNoMapa,roteiroSombrio,INVG,animaInvasao,invasaoEm,
+  rotasMoradores:rotinaMoradores.diagnostico, passoMoradores(t){tempoMoradores=t;rotinaMoradores.atualizar(todos(),t);}});
 window.vilaDiretor=criarDiretor({scene,camera,renderer,paisagem,canvas,sol,hemi,amb,lua,
+    modeloBau:()=>modeloBau(false),
+    achado(dia){const agora=agoraMundo(), atual=mundo().dia;
+      const n=dia??atual;if(!Number.isInteger(n)||n<4||n>atual)return null;
+      const b=bauDoDia(n);if(b&&b.achado<=agora)return b;
+      return dia==null?bauDoDia(n-1):null;},
+    ator(nome){const m=todos().find(p=>p.nome===nome&&!p.discreto);return m && garanteBoneco(m);},
     elenco(tipo){
       if(tipo==="luta")return ["lobo","javali"].map(t=>BICHOS.find(b=>b.userData.V.i===0&&b.userData.tipo===t&&b.userData.mixer));
       if(tipo==="chuva")return [BICHOS.find(b=>b.userData.tipo==="javali"&&b.userData.mixer)];
@@ -2192,7 +2306,7 @@ window.vilaDiretor=criarDiretor({scene,camera,renderer,paisagem,canvas,sol,hemi,
       const lista=todos().filter(m=>!m.discreto);const profs=tipo==="festa"?["bardo","mago","fazendeiro"]:tipo==="visita"?["explorador","padeiro"]:["lenhador","construtor"];
       const usados=new Set();return profs.map(pr=>{const m=lista.find(m=>m.profissao===pr&&!usados.has(m.id))||lista.find(m=>!usados.has(m.id));if(!m)return null;usados.add(m.id);return garanteBoneco(m);});
     },
-    ocultar:()=>[...PETS.map(e=>e.g),lutaNoMapa.particulas,...bonecos.values(),...BICHOS,...ovelhas,...PESCA_POOL.map(p=>p.g),...AQUA.map(a=>a.g),...CORACOES,...CAVEIRAS,marcador,realce,goblin,DRAGAO,sombraDragao,NEVE,CHUVA],
+    ocultar:()=>[BAU_OBJ.g,...PETS.map(e=>e.g),lutaNoMapa.particulas,...bonecos.values(),...BICHOS,...ovelhas,...PESCA_POOL.map(p=>p.g),...AQUA.map(a=>a.g),...CORACOES,...CAVEIRAS,marcador,realce,goblin,DRAGAO,sombraDragao,NEVE,CHUVA],
     ambiente(t){animaPassaros(t);animaFumaca(t);},
     redimensionar:redimensiona,pararMusica:()=>audio.pause(),voltarMusica:tocaMusica});
 iniciar();

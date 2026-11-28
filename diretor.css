@@ -18,3 +18,6 @@ body.dir-rodando #mapBox{display:block!important;position:absolute!important;lef
 body.dir-rodando #cena{width:100%!important;height:100%!important;pointer-events:none}
 body.dir-rodando #sairDiretor{display:block;position:fixed;z-index:99999;right:12px;bottom:12px;opacity:.78}
 
+
+body.episodio-rodando #mapBox #cena{display:none!important}
+body.episodio-rodando #filmeEpisodio{display:block;width:100%;height:100%}

@@ -72,7 +72,10 @@ function criarCaminhosDosBichos() {
     const u=Math.max(0,Math.min(96,((x-b.x)/b.w+1)*48)),i=Math.floor(u);
     return b.linha[i]+(b.linha[Math.min(96,i+1)]-b.linha[i])*(u-i);
   }
-  function proibida(x,z,r){
+  let vilasProtegidas=[];
+  function protegerVilas(vilas){vilasProtegidas=vilas;cacheArestas.clear();}
+  function proibida(x,z,r,a){
+    if(a?.sombrio&&vilasProtegidas.some(V=>V.i!==a.invasaoVi&&(V.cx-x)**2+(V.cz-z)**2<(45+r)**2))return "raio de vila";
     const bs=setores.get(chave(setor(x),setor(z)));
     if(bs) for(const b of bs){const dx=Math.max(0,Math.abs(x-b.x)-b.w),dz=Math.max(0,Math.abs(z-b.z)-b.h);
       if(dx*dx+dz*dz<r*r)return b.tipo;}
@@ -86,7 +89,7 @@ function criarCaminhosDosBichos() {
       if((b.x-x)**2+(b.z-z)**2<(r+b.r+folga)**2)return true;}
     return false;
   }
-  function livre(a,x,z,trafego=false){return !proibida(x,z,a.r+.025)&&(!trafego||!perto(x,z,a.r,a,.04));}
+  function livre(a,x,z,trafego=false){return !proibida(x,z,a.r+.025,a)&&(!a.desvio||a.desvio(x,z))&&(!trafego||!perto(x,z,a.r,a,.04));}
   function segmento(a,x,z,xx,zz,trafego){
     const n=Math.max(1,Math.ceil(Math.hypot(xx-x,zz-z)/.24));
     for(let i=1;i<=n;i++)if(!livre(a,x+(xx-x)*i/n,z+(zz-z)*i/n,trafego))return false;
@@ -128,12 +131,13 @@ function criarCaminhosDosBichos() {
       }
       for(let dir=0;dir<dirs.length;dir++){const [dx,dz]=dirs[dir];const x=atual.x+dx,z=atual.z+dz,g=atual.g+(dx&&dz?Math.SQRT2:1);
         if((custos.get(chave(x,z))??Infinity)<=g)continue;
-        let cache=cacheArestas.get(a.r);if(!cache){cache=new Map();cacheArestas.set(a.r,cache);}
+        const perfil=a.sombrio?a.r+":sombrio:"+(a.invasaoVi??"fora"):a.r;
+        let cache=cacheArestas.get(perfil);if(!cache){cache=new Map();cacheArestas.set(perfil,cache);}
         const k=chave(atual.x,atual.z)*8+dir;let ok=cache.get(k);
-        if(ok===undefined){ok=segmento(a,atual.x,atual.z,x,z,false);cache.set(k,ok);}
-        if(ok&&(!trafego||(!perto(x,z,a.r,a,.05)&&!perto(x-dx*.5,z-dz*.5,a.r,a,.05))))incluir(x,z,g,atual);}
+        if(ok===undefined){ok=segmento(a.desvio?{...a,desvio:null}:a,atual.x,atual.z,x,z,false);cache.set(k,ok);}
+        if(ok&&(!a.desvio||a.desvio(x,z))&&(!trafego||(!perto(x,z,a.r,a,.05)&&!perto(x-dx*.5,z-dz*.5,a.r,a,.05))))incluir(x,z,g,atual);}
     }
     return [];
   }
-  return {via,pracadas,construirPonte,modelo,instancias,caixa,limparCasas,lagos,pontes,piso,proibida,atores,perto,ponto,rota,segmento};
+  return {via,protegerVilas,pracadas,construirPonte,modelo,instancias,caixa,limparCasas,lagos,pontes,piso,proibida,atores,perto,ponto,rota,segmento};
 }

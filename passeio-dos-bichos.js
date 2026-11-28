@@ -7,8 +7,8 @@ function criarPasseioDosBichos(nav,rnd) {
   function adicionar(g,V,tipo,local,op={}){
     const [r,ritmo]=especies[tipo]||[.60,1.20],id=seq++;
     const a={id,g,V,tipo,r,ritmo,local,rand:rnd("passos"+id),vel:0,yaw:0,espera:id%5*.16,
-      modo:"parado",trilha:[],turno:0,bloqueio:0,rotaExterna:!!op.externa};
-    const livre=!nav.proibida(local.x,local.z,r+.04)&&!nav.perto(local.x,local.z,r,a,.06);
+      modo:"parado",trilha:[],turno:0,bloqueio:0,rotaExterna:!!op.externa,sombrio:!!op.sombrio,invasaoVi:op.invasaoVi};
+    const livre=!nav.proibida(local.x,local.z,r+.04,a)&&!nav.perto(local.x,local.z,r,a,.06);
     const p=livre?local:nav.ponto(a,local.x,local.z,true);
     if(!p)return null;
     a.x=p.x;a.z=p.z;g.position.set(a.x,nav.piso(a.x,a.z),a.z);g.rotation.y=0;
@@ -30,6 +30,12 @@ function criarPasseioDosBichos(nav,rnd) {
   }
   function avancar(a,dt){
     let dist=0,giro=0;
+    if(a.dueloSombrio||a.derrotadoAte){
+      a.vel=0; a.modo="parado";
+      a.rig?.atualizar(a,dt,0,0);
+      if(a.tipo==="fantasma")a.g.userData.play?.(a.golpe||"Flying_Idle");
+      return;
+    }
     if(!a.trilha.length){
       a.espera-=dt;if(a.espera<=0&&!a.rotaExterna)escolher(a);
     }
@@ -56,14 +62,14 @@ function criarPasseioDosBichos(nav,rnd) {
     const L=V.L;
     if(t==="ovelha")return {x:L.campo.x+(f-2)*.82,z:L.campo.z};
     if(t==="galinha"||t==="lobo")return {x:L.campo.x+(t==="lobo"?-10:9),z:L.campo.z+f*.45};
-    if(t==="fantasma"||t==="esqueleto")return {x:L.capela.x-2,z:L.capela.z-6+f*.5};
     return {x:L.floresta.x+3,z:L.floresta.z+3+f*.8};
   }
   function passo(g,V,t,dt){
     const a=g.userData.caminhante||adicionar(g,V,t,habitat(V,t,g.userData.fase||0));if(a)avancar(a,dt);
   }
   function seguir(g,V,tipo,inicio,destino,dt,op={}){
-    const a=g.userData.caminhante||adicionar(g,V,tipo,inicio,{externa:true,semRig:op.semRig});if(!a)return;
+    const a=g.userData.caminhante||adicionar(g,V,tipo,inicio,{externa:true,semRig:op.semRig,sombrio:op.sombrio,invasaoVi:op.invasaoVi});if(!a)return;
+    if(a.dueloSombrio||a.derrotadoAte){avancar(a,dt);return a;}
     a.proximaBusca=(a.proximaBusca||0)-dt;
     const d=Math.hypot(a.x-destino.x,a.z-destino.z);
     if(a.proximaBusca<=0&&d>(op.folga||.45)&&(!a.trilha.length||Math.hypot(a.meta.x-destino.x,a.meta.z-destino.z)>1.4)){

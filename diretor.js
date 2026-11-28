@@ -1,6 +1,7 @@
 /* O diretor empresta atores do jogo e devolve suas transformações ao sair. */
 function criarDiretor(ctx) {
   const {scene,camera,renderer,paisagem,canvas,sol,hemi,amb,lua}=ctx;
+  const episodio=criarEpisodioVila(ctx);
   const forja = s => s === "argola" || s === "suporte";
   const eventos=["luta","festa","mutirao","chuva","visita"], duracao=9;
   const nomes={argola:"argola-da-forja",suporte:"suporte-do-pomar",luta:"lobo-e-javali",festa:"festa-das-lanternas",mutirao:"mutirao-do-jardim",chuva:"chuva-no-rio-claro",visita:"visita-ao-pomar"};
@@ -169,6 +170,7 @@ function criarDiretor(ctx) {
     scene.fog.near=13;scene.fog.far=tipo==="chuva"?57:104;renderer.toneMappingExposure=.95;
   }
   function dimensionar(){
+    if(episodio.ativo)return true;
     if(!tipo)return false;
     const altura=captura?1920:Math.min(1152,Math.max(480,innerHeight)),largura=captura?1080:Math.round(altura*9/16);
     renderer.setSize(largura,altura,false);camera.aspect=9/16;camera.fov=37;camera.updateProjectionMatrix();return true;
@@ -246,13 +248,14 @@ function criarDiretor(ctx) {
   function mostrar(){if(!painel.open)painel.showModal();}
   // Conferência de enquadramento: desenha um instante exato e segura a cena até sair().
   function quadro(s,t){if(tipo!==s)preparar(resolve(s));congelado=true;desenhar(t);return tipo;}
-  function previa(s){if(captura)return;preparar(resolve(s));ouvir(tipo);}
+  function previa(s){if(captura||episodio.ocupado)return;if(!s||s==="episodio")return episodio.previa();preparar(resolve(s));ouvir(tipo);}
   function tick(now){
+    if(episodio.tick())return true;
     if(!tipo)return false;if(captura||congelado)return true;
     const t=(now-inicio)/1000;if(t>=duracao){restaurar();mostrar();}else if(Math.floor(t*60)!==ultimoFrame){ultimoFrame=Math.floor(t*60);desenhar(t);}return true;
   }
   async function gravar(s){
-    if(captura)return;const id=resolve(s);captura=true;abortado=false;let out;
+    if(captura||episodio.ocupado)return;if(!s||s==="episodio")return episodio.gravar();const id=resolve(s);captura=true;abortado=false;let out;
     try{
       if(!window.VideoEncoder)throw Error("Abra o jogo local no Chrome ou Edge para gravar.");
       const m=await import("./lib/mediabunny.min.mjs");
@@ -276,12 +279,13 @@ function criarDiretor(ctx) {
     }catch(e){if(out?.state==="started")await out.cancel();status.textContent=e.message;throw e;}
     finally{captura=false;restaurar();document.querySelector("#sairDiretor").textContent="Encerrar prévia";mostrar();}
   }
-  function sair(){if(captura){abortado=true;return;}restaurar();mostrar();}
+  function sair(){if(episodio.ocupado){episodio.parar();return;}if(captura){abortado=true;return;}restaurar();mostrar();}
   btn.addEventListener("click",mostrar);document.querySelector("#fecharDiretor").onclick=()=>painel.close();
-  document.querySelector("#previaDiretor").onclick=()=>{try{previa(escolha.value);}catch(e){status.textContent=e.message;}};
-  document.querySelector("#gravarDiretor").onclick=()=>gravar(escolha.value).catch(()=>{});
+  escolha.onchange=()=>document.querySelector("#formatoDiretor").textContent=escolha.value==="episodio"?"Episódio de 48 s · 1080 × 1920 · 30 fps com voz e legendas":"Tomada avulsa de 9 s · 1080 × 1920 · 60 fps com som";
+  document.querySelector("#previaDiretor").onclick=async()=>{try{await previa(escolha.value);}catch(e){status.textContent=e.message;}};
+  document.querySelector("#gravarDiretor").onclick=async()=>{try{await gravar(escolha.value);if(escolha.value==="episodio")status.textContent="Episódio salvo nos downloads · 48 s · 30 fps";}catch(e){status.textContent=e.message;}};
   document.querySelector("#sairDiretor").onclick=sair;
-  window.addEventListener("keydown",e=>{if(e.key==="Escape"&&tipo){e.preventDefault();sair();}});
-  return {previa,gravar,sair,dimensionar,tick,quadro,get ativo(){return tipo;},get gravando(){return captura;}};
+  window.addEventListener("keydown",e=>{if(e.key==="Escape"&&(tipo||episodio.ocupado)){e.preventDefault();sair();}});
+  return {episodio,previa,gravar,sair,dimensionar,tick,quadro,get ativo(){return episodio.ativo?"episodio":tipo;},get gravando(){return captura||episodio.ocupado;}};
 }
 
