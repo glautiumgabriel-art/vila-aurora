@@ -385,6 +385,8 @@ if (/[?&](?:cinema=1|abertura=1|segredo=1|cam=[^&]+)/.test(location.search))
 <script src="passadas-dos-bichos.js"></script>
 <script src="passeio-dos-bichos.js"></script>
 <script src="paisagem.js"></script>
+ <script src="ruas-aurora.js"></script>
+ <script src="fogueira-aurora.js"></script>
 <script src="coreografia.js"></script>
 <script src="luta-na-vila.js"></script>
 <script src="rotina-dos-moradores.js"></script>
@@ -1173,7 +1175,8 @@ function instModelo(nome,lista,opts){ opts=opts||{}; const md=KAYKIT.modelo(nome
 
 const caminhos=criarCaminhosDosBichos(), passeio=criarPasseioDosBichos(caminhos,rnd);
 const paisagem=criarPaisagem(scene,renderer,rnd,RUAS,caminhos); const lutaNoMapa=criarLutaNoMapa(scene,camera,passeio);
-const rotinaMoradores=criarRotinaDosMoradores(caminhos,vila,nVilas,casaDe,LUGAR_DE,rotaEntreVilas);
+ const ruasAurora=criarRuasAurora(2,paisagem,caminhos);
+ const rotinaMoradores=criarRotinaDosMoradores(caminhos,vila,nVilas,casaDe,LUGAR_DE,rotaEntreVilas);
 const rBase=rnd("chao");
 function faixa(w,d,x,z,m,parent){return paisagem.caminho(w,d,x,z,parent||scene);}
 function casa(x,z,w,d,h,m,mTelhado,rot,chamine,parent){ const g=new THREE.Group(); g.position.set(x,0,z); g.rotation.y=rot||0; box(w,h,d,m,0,h/2,0,g); (parent||scene).add(g); return g; }
@@ -1256,15 +1259,18 @@ function construirVila(V){ if(vilasConstruidas.has(V.i)) return; vilasConstruida
   function grupo(k){ const g=new THREE.Group(); scene.add(g); P[k]=g; return g; }
   construirExploracao(V,grupo("exploracao"));
   // ruas em grade (terra batida sobre a grama)
-  const ruas=grupo("ruas"); const mRua=mat(0xb49466,{roughness:1}); RUAS.forEach(r0=>{ faixa(72,1.7,cx,cz+r0,mRua,ruas); faixa(1.7,72,cx+r0,cz,mRua,ruas); }); faixa(90,3.2,cx+9,cz,M.terra,ruas); faixa(3.2,88,cx,cz,M.terra,ruas);
+  const ruas=grupo("ruas"); const mRua=mat(0xb49466,{roughness:1}); if(V.i===0) ruasAurora.construir(ruas); else { RUAS.forEach(r0=>{ faixa(72,1.7,cx,cz+r0,mRua,ruas); faixa(1.7,72,cx+r0,cz,mRua,ruas); }); faixa(90,3.2,cx+9,cz,M.terra,ruas); faixa(3.2,88,cx,cz,M.terra,ruas); }
   // praça + fogueira (estágio 0: sempre)
   caminhos.pracadas.push({x:cx,z:cz}); const pr=grupo("praca"); const praca=new THREE.Mesh(new THREE.CircleGeometry(5.8,40),mat(0x7c6642,{roughness:1})); praca.rotation.x=-Math.PI/2; praca.position.set(cx,0.04,cz); praca.receiveShadow=true; pr.add(praca);
   const fg=new THREE.Group(); fg.position.set(cx,0,cz); pr.add(fg);
+  if(V.i===0) fogueiras.push(V.auroraFogueira=criarFogueiraAurora(1,fg,caminhos,{M,box,cyl,cone,esfera,mat,tocha,rnd}));
+  else {
   for(let i=0;i<4;i++){ const l=cyl(0.12,0.12,1.4,M.madeiraEsc,0,0.12,0,fg,6); l.rotation.z=Math.PI/2; l.rotation.y=i*Math.PI/4; }
   for(let i=0;i<8;i++){ cyl(0.18,0.18,0.3,M.pedraEsc,Math.cos(i/8*Math.PI*2)*1.1,0.15,Math.sin(i/8*Math.PI*2)*1.1,fg,6); }
   const chama=cone(0.45,1.3,M.fogo,0,0.8,0,fg,6), chama2=cone(0.25,0.9,M.fogo2,0,0.75,0,fg,6); chama.castShadow=false; chama2.castShadow=false;
   const luz=new THREE.PointLight(0xff9a3a,1.2,34,2); luz.position.set(0,1.8,0); fg.add(luz); fogueiras.push({chama,chama2,luz,fase:V.i});
   for(let i=0;i<5;i++){ const b=box(1.6,0.3,0.5,M.madeira,cx+Math.cos(i/5*Math.PI*2+.3)*3.6,0.35,cz+Math.sin(i/5*Math.PI*2+.3)*3.6,pr); b.rotation.y=-(i/5*Math.PI*2+.3); }
+  }
   { const rv=rotuloEm(pr,V.nome,cx,9,cz-6,9,"#ffe9b0"); rv.userData.prioridade=1; rv.userData.vilaNome=V.i; }
   const r=rnd("decorV"+V.i);
   predio("well",cx+4.4,cz-4.4,3.0,0.4,pr); for(let i=0;i<3;i++) predio("sack",cx-4.6+i*0.5,cz+4.8+(i%2)*0.4,3.5,r()*6,pr);
@@ -1314,7 +1320,15 @@ function construirVila(V){ if(vilasConstruidas.has(V.i)) return; vilasConstruida
       box(1.2,.25,3.5,M.madeira,Lx.x-2.6,.35,-6);rotulo("Rio Claro",Lx.x,3.6,-13,5.5,"#dff3ff");
     }else{box(1.2,.25,2.5,M.madeira,Lx.x-3.2,.35,Lx.z);rotulo("Lagoa",Lx.x,3,Lx.z,5,"#dff3ff");}
   }
-  if(V.i>0){ const ang=Math.atan2(cz,cx); const d=Math.hypot(cx,cz); const f=new THREE.Mesh(new THREE.PlaneGeometry(d,2.4),M.terra); f.rotation.x=-Math.PI/2; f.rotation.z=-ang; f.position.set(cx/2,0.025,cz/2); f.receiveShadow=true; scene.add(f); }
+  if(V.i>0){
+    // A estrada entre vilas começa na muralha de Aurora. Dentro, vale o traçado da opção.
+    const inicio=39.5/Math.max(Math.abs(cx),Math.abs(cz)), n=Math.ceil(Math.hypot(cx,cz)*(1-inicio)/.62);
+    const pontos=Array.from({length:n+1},(_,i)=>{
+      const t=inicio+(1-inicio)*i/n;
+      return {x:cx*t,z:cz*t,r:1.35};
+    });
+    paisagem.trilhaLivre(pontos,scene,{tipo:"estrada"});
+  }
   // floresta desta vila (natureza) + serraria do lenhador + ossos
   const r3=rnd("arv"+V.i); const F=L.floresta; V.arvores=[]; for(let i=0;i<18;i++){
     const x=F.x+(r3()-.5)*F.w;let z=F.z+(r3()-.5)*F.h;
@@ -1807,7 +1821,7 @@ function geoPlana(o,M){ const g=o.geometry; const pos=g.attributes.position; if(
   let out=new THREE.BufferGeometry(); out.setAttribute("position",new THREE.BufferAttribute(P,3)); out.setAttribute("normal",new THREE.BufferAttribute(N,3)); out.setAttribute("uv",new THREE.BufferAttribute(U,2));
   if(g.index){ const I=new Uint32Array(g.index.count); for(let i=0;i<g.index.count;i++) I[i]=g.index.getX(i); out.setIndex(new THREE.BufferAttribute(I,1)); } else { const I=new Uint32Array(n); for(let i=0;i<n;i++) I[i]=i; out.setIndex(new THREE.BufferAttribute(I,1)); }
   out.applyMatrix4(M); if(!nor) out.computeVertexNormals(); return out; }
-function excluidosFusao(){ const ex=new Set(); TOCHAS.forEach(t=>{ ex.add(t.f); ex.add(t.f2); }); fogueiras.forEach(f=>{ ex.add(f.chama); ex.add(f.chama2); }); FUMACAS.forEach(g=>g.traverse(o=>ex.add(o))); return ex; }
+function excluidosFusao(){ const ex=new Set(); TOCHAS.forEach(t=>{ ex.add(t.f); ex.add(t.f2); }); fogueiras.forEach(f=>{ if(f.chamas) f.chamas.forEach(m=>ex.add(m)); else { ex.add(f.chama); ex.add(f.chama2); } }); FUMACAS.forEach(g=>g.traverse(o=>ex.add(o))); return ex; }
 const FUSAO={antes:0,depois:0};
 function fundeGrupo(gr,ex){ gr.updateMatrixWorld(true); const inv=new THREE.Matrix4().copy(gr.matrixWorld).invert(); const porMat=new Map();
   gr.traverse(o=>{ if(!o.isMesh||o.isInstancedMesh||o.isSkinnedMesh||ex.has(o)||Array.isArray(o.material)||!o.visible||o.userData.fundida) return; let p=o.parent, ok=true; while(p&&p!==gr){ if(!p.visible||ex.has(p)){ ok=false; break; } p=p.parent; } if(!ok) return;
@@ -1826,7 +1840,7 @@ function fundeVila(V){ if(!V.pred||V.fundida||!THREE.BufferGeometryUtils) return
   try{ const fixos=[]; for(const k in V.pred){ const g=V.pred[k]; if(!g) continue; if(OB.has(k)||!g.visible) fundeGrupo(g,ex); else fixos.push(g); }
     // prédios que nunca mudam de estado: 1 malha por material para a vila inteira
     const bucket=new THREE.Group(); bucket.userData.fundida=true; scene.add(bucket); const porMat=new Map();
-    fixos.forEach(gr=>{ gr.updateMatrixWorld(true); gr.traverse(o=>{ if(!o.isMesh||o.isInstancedMesh||o.isSkinnedMesh||ex.has(o)||Array.isArray(o.material)||!o.visible||o.userData.fundida) return; let p=o.parent, ok=true; while(p&&p!==gr){ if(!p.visible||ex.has(p)){ ok=false; break; } p=p.parent; } if(!ok) return; const gp=geoPlana(o,o.matrixWorld); if(!gp) return; const k=o.material.uuid+(o.castShadow?"s":"")+(o.receiveShadow?"r":""); if(!porMat.has(k)) porMat.set(k,{mat:o.material,cast:o.castShadow,rec:o.receiveShadow,geos:[],objs:[]}); const e=porMat.get(k); e.geos.push(gp); e.objs.push(o); }); });
+    fixos.forEach(gr=>{ gr.updateMatrixWorld(true); gr.traverse(o=>{ if(o.userData.trilhaAurora||!o.isMesh||o.isInstancedMesh||o.isSkinnedMesh||ex.has(o)||Array.isArray(o.material)||!o.visible||o.userData.fundida) return; let p=o.parent, ok=true; while(p&&p!==gr){ if(!p.visible||ex.has(p)){ ok=false; break; } p=p.parent; } if(!ok) return; const gp=geoPlana(o,o.matrixWorld); if(!gp) return; const k=o.material.uuid+(o.castShadow?"s":"")+(o.receiveShadow?"r":""); if(!porMat.has(k)) porMat.set(k,{mat:o.material,cast:o.castShadow,rec:o.receiveShadow,geos:[],objs:[]}); const e=porMat.get(k); e.geos.push(gp); e.objs.push(o); }); });
     porMat.forEach(e=>{ const mg=THREE.BufferGeometryUtils.mergeBufferGeometries(e.geos,false); if(!mg) return; mg.computeBoundingSphere(); const m=new THREE.Mesh(mg,e.mat); m.castShadow=e.cast; m.receiveShadow=e.rec; m.userData.fundida=true; m.raycast=()=>{}; bucket.add(m); FUSAO.antes+=e.objs.length; FUSAO.depois++; e.objs.forEach(o=>{ o.visible=false; }); });
   }catch(e){ console.warn("fusão",V.nome,e); } }
 function reconstroiCasas(){ caminhos.limparCasas(); const lista=todos(); for(let v=0;v<nVilas();v++)vila(v).portasBichos=[]; placasFundador(lista); criaRealeza(); estatuas(lista); if(casasInst){ casasInst.forEach(i=>scene.remove(i)); } casasInst=[]; casasN=lista.length; if(!casasN) return;
@@ -1839,6 +1853,8 @@ function reconstroiCasas(){ caminhos.limparCasas(); const lista=todos(); for(let
   lista.forEach((m,i)=>{ const c=casaDe(i); const h=(hash(m.nome)%360)/360; if((niveis[i]<2&&!m.fundador)||!temCasa(c.vila,c.slot)){ tendas.push({x:c.x,z:c.z+0.2,ry:0.5,s:4.2,c:col.setHSL(h,0.5,0.75).getHex(),idx:i}); return; }
     const tom=col.setHSL(.04+.12*h,.31,.86+.08*h).getHex(); if(niveis[i]>=6) pedra.push({x:c.x,z:c.z,ry:CASA_RY,s:3.0,c:tom,idx:i}); else madeira.push({x:c.x,z:c.z,ry:CASA_RY,s:3.2,c:tom,idx:i}); });
   [["home_A",madeira],["home_B",pedra],["tent",tendas]].forEach(([nome,lst])=>{ if(nome!=="tent")lst.forEach(p=>casaDe(p.idx).vila.portasBichos.push({x:p.x,z:p.z})); instModelo(nome,lst,{casas:true}).forEach(im=>{ im.userData.moradores=lst.map(p=>lista[p.idx].id); casasInst.push(im); }); });
+  const aurora=vila(0);
+  ruasAurora.ligarPortas(aurora,madeira.concat(pedra).filter(p=>lista[p.idx].vi===0),aurora.pred.ruas);
   cabRot.forEach(s=>scene.remove(s)); cabRot.clear(); }
 function rotuloCabana(m,i){ let s=cabRot.get(m.id); if(!s){ const c=casaDe(i); s=rotulo(m.nome,c.x,3.9,c.z,3.4); if(m.discreto){ s.visible=false; s.userData.prioridade=-9; } cabRot.set(m.id,s); } return s; }
 const marcador=cone(0.45,0.9,M.fogo2,0,0,0); marcador.rotation.x=Math.PI; marcador.visible=false; marcador.castShadow=false;
@@ -2014,8 +2030,11 @@ function anima(){
     else if(CL==="chuva"||CL==="tempestade"){ const T=CL==="tempestade"; scene.background.multiplyScalar(T?0.45:0.6); scene.fog.color.copy(scene.background); sol.intensity*=T?0.3:0.5; scene.fog.density*=T?1.9:1.5; renderer.toneMappingExposure*=T?0.72:0.85; if(T&&hash("raio"+Math.floor(tsec*4))%37===0){ amb.intensity+=1.4; hemi.intensity+=0.8; scene.background.setRGB(0.78,0.8,0.9); } }
     else if(CL==="neblina"){ scene.background.lerp(new THREE.Color(0xd5d9d6),0.6*kc); scene.fog.color.copy(scene.background); scene.fog.density*=0.96; sol.intensity*=0.7; }
     else if(CL==="neve"){ scene.background.lerp(new THREE.Color(0xe6ecf2),0.5*kc); scene.fog.color.copy(scene.background); scene.fog.density*=1.6; sol.intensity*=0.7; } }
+  // O luar da praça deixa a chama iluminar o piso sem ofuscar a cor da lenha.
+  const entornoFogo=noiteK*(1-THREE.MathUtils.smoothstep(Math.hypot(orb.target.x,orb.target.z),7,38));
+  hemi.intensity*=1-.51*entornoFogo; lua.intensity*=1-.66*entornoFogo; amb.intensity*=1-.40*entornoFogo;
   scene.fog.near=Math.max(24,orb.r+10); scene.fog.far=scene.fog.near+1/scene.fog.density;
-  fogueiras.forEach(f=>{ f.luz.intensity=(luz<0.25?2.5:0.9)+Math.sin(tsec*9+f.fase)*0.3+Math.sin(tsec*23)*0.12; f.chama.scale.y=0.9+Math.sin(tsec*11+f.fase)*0.2; f.chama2.scale.y=0.9+Math.cos(tsec*13)*0.25; f.chama.rotation.y=tsec*2; });
+  fogueiras.forEach(f=>{ if(f.animar){f.animar(tsec,luz<0.25);return;} f.luz.intensity=(luz<0.25?2.5:0.9)+Math.sin(tsec*9+f.fase)*0.3+Math.sin(tsec*23)*0.12; f.chama.scale.y=0.9+Math.sin(tsec*11+f.fase)*0.2; f.chama2.scale.y=0.9+Math.cos(tsec*13)*0.25; f.chama.rotation.y=tsec*2; });
   paisagem.atualizar(tsec,luz,scene.background);
     const acordados=[];
   // quem desenhar: os mais perto da câmera (limite fixo, não importa quantos moradores existam)

@@ -60,6 +60,41 @@ function criarCaminhosDosBichos() {
         const k=chave(xx,zz);if(!vias.has(k))vias.set(k,[]);vias.get(k).push(a);}
     }
   }
+  const trilhas=new Map();
+  function trilha(pontos,tipo){
+    for(let i=1;i<pontos.length;i++){
+      const a=pontos[i-1],b=pontos[i],dx=b.x-a.x,dz=b.z-a.z,len2=dx*dx+dz*dz;
+      if(!len2) continue;
+      const r=Math.max(a.r,b.r),s={a,b,dx,dz,len2,tipo};
+      for(let x=setor(Math.min(a.x,b.x)-r);x<=setor(Math.max(a.x,b.x)+r);x++)
+        for(let z=setor(Math.min(a.z,b.z)-r);z<=setor(Math.max(a.z,b.z)+r);z++){
+          const k=chave(x,z); if(!trilhas.has(k)) trilhas.set(k,[]); trilhas.get(k).push(s);
+        }
+    }
+  }
+  function limparTrilhas(tipo){
+    for(const [k,ss] of trilhas){
+      const resto=ss.filter(s=>s.tipo!==tipo);
+      if(resto.length) trilhas.set(k,resto); else trilhas.delete(k);
+    }
+  }
+  function emTrilha(x,z){
+    const ss=trilhas.get(chave(setor(x),setor(z)));
+    if(!ss) return false;
+    for(const s of ss){
+      const {a,b,dx,dz,len2}=s;
+      const t=Math.max(0,Math.min(1,((x-a.x)*dx+(z-a.z)*dz)/len2));
+      if((x-a.x-dx*t)**2+(z-a.z-dz*t)**2<=(a.r+t*(b.r-a.r))**2) return true;
+    }
+    return false;
+  }
+  function custoSolo(x,z){return emTrilha(x,z)||x*x+z*z<5.8**2?.75:1.42;}
+  function custoTrecho(x,z,xx,zz){
+    const d=Math.hypot(xx-x,zz-z), n=Math.max(1,Math.ceil(d/.95));
+    let custo=0;
+    for(let i=0;i<n;i++){const t=(i+.5)/n;custo+=custoSolo(x+(xx-x)*t,z+(zz-z)*t);}
+    return custo*d/n;
+  }
   function piso(x,z){
     const b=ponte(x,z,0);
     if(!b){
@@ -68,7 +103,7 @@ function criarCaminhosDosBichos() {
         const dx=a[6]-a[0],dz=a[8]-a[2],u=dx===0?(z-a[2])/dz:(a[6]===a[9]?(x-a[0])/dx:(z-a[2])/dz);
         if(u>=0&&u<=1){const horizontal=a[0]===a[3],q=horizontal?z:x;
           const j=horizontal?2:0,v1=a[j]+u*(a[6+j]-a[j]),v2=a[3+j]+u*(a[9+j]-a[3+j]);if(q>=Math.min(v1,v2)&&q<=Math.max(v1,v2))y=Math.max(y,a[1]);}
-      }return y;}
+      }return emTrilha(x,z)?Math.max(y,.029):y;}
     const u=Math.max(0,Math.min(96,((x-b.x)/b.w+1)*48)),i=Math.floor(u);
     return b.linha[i]+(b.linha[Math.min(96,i+1)]-b.linha[i])*(u-i);
   }
@@ -104,19 +139,22 @@ function criarCaminhosDosBichos() {
     return null;
   }
   // A* de oito vizinhos com teste das diagonais e simplificação por visada.
-  function rota(a,tx,tz,trafego=false){
+  function rota(a,tx,tz,trafego=false,preferirTrilhas=false){
     const fim=livre(a,tx,tz,trafego)?{x:tx,z:tz}:ponto(a,tx,tz,trafego);if(!fim)return [];
-    if(segmento(a,a.x,a.z,fim.x,fim.z,trafego))return [fim];
+    const d=Math.hypot(a.x-fim.x,a.z-fim.z);
+    const preferir=preferirTrilhas&&d>3.2&&Math.abs(a.x)<43&&Math.abs(a.z)<43&&Math.abs(fim.x)<43&&Math.abs(fim.z)<43;
+    const direto=segmento(a,a.x,a.z,fim.x,fim.z,trafego);
+    if(direto&&(!preferir||custoTrecho(a.x,a.z,fim.x,fim.z)<=d*.86))return [fim];
     let inicio=null;
     for(let n=0;n<=2&&!inicio;n++)for(let i=-n;i<=n&&!inicio;i++)for(let j=-n;j<=n&&!inicio;j++){
       const x=Math.round(a.x)+i,z=Math.round(a.z)+j;
       if(livre(a,x,z,trafego)&&segmento(a,a.x,a.z,x,z,trafego))inicio={x,z};
     }
-    if(!inicio)return [];
+    if(!inicio)return direto?[fim]:[];
     const fila=[],custos=new Map(),dirs=[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]];
     function incluir(x,z,g,p){
       const k=chave(x,z);if((custos.get(k)??Infinity)<=g)return;
-      custos.set(k,g);const v={x,z,g,p,f:g+Math.hypot(fim.x-x,fim.z-z)};
+      custos.set(k,g);const v={x,z,g,p,f:g+(preferir?.75:1)*Math.hypot(fim.x-x,fim.z-z)};
       let i=fila.length;fila.push(v);while(i){const pai=(i-1)>>1;if(fila[pai].f<=v.f)break;fila[i]=fila[pai];i=pai;}fila[i]=v;
     }
     incluir(inicio.x,inicio.z,0,null);
@@ -126,10 +164,16 @@ function criarCaminhosDosBichos() {
       if(atual.g!==custos.get(chave(atual.x,atual.z)))continue;
       if(Math.abs(atual.x-fim.x)<=1&&Math.abs(atual.z-fim.z)<=1&&segmento(a,atual.x,atual.z,fim.x,fim.z,trafego)){
         const passos=[];for(let p=atual;p;p=p.p)passos.push(p);passos.reverse();passos.push(fim);
-        const saida=[];let origem=a,i=0;while(i<passos.length){let j=i;while(j+1<passos.length&&segmento(a,origem.x,origem.z,passos[j+1].x,passos[j+1].z,trafego))j++;
+        const saida=[];let origem=a,i=0;while(i<passos.length){let j=i,custo=custoTrecho(origem.x,origem.z,passos[i].x,passos[i].z);
+          while(j+1<passos.length){
+            const p=passos[j],q=passos[j+1], acrescimo=preferir?custoTrecho(p.x,p.z,q.x,q.z):0;
+            if(preferir&&custoTrecho(origem.x,origem.z,q.x,q.z)>(custo+acrescimo)*1.035+.05)break;
+            if(!segmento(a,origem.x,origem.z,q.x,q.z,trafego))break;
+            custo+=acrescimo;j++;
+          }
           origem=passos[j];saida.push({x:origem.x,z:origem.z});i=j+1;}return saida;
       }
-      for(let dir=0;dir<dirs.length;dir++){const [dx,dz]=dirs[dir];const x=atual.x+dx,z=atual.z+dz,g=atual.g+(dx&&dz?Math.SQRT2:1);
+      for(let dir=0;dir<dirs.length;dir++){const [dx,dz]=dirs[dir];const x=atual.x+dx,z=atual.z+dz,g=atual.g+(dx&&dz?Math.SQRT2:1)*(preferir?custoSolo((x+atual.x)/2,(z+atual.z)/2):1);
         if((custos.get(chave(x,z))??Infinity)<=g)continue;
         const perfil=a.sombrio?a.r+":sombrio:"+(a.invasaoVi??"fora"):a.r;
         let cache=cacheArestas.get(perfil);if(!cache){cache=new Map();cacheArestas.set(perfil,cache);}
@@ -137,7 +181,7 @@ function criarCaminhosDosBichos() {
         if(ok===undefined){ok=segmento(a.desvio?{...a,desvio:null}:a,atual.x,atual.z,x,z,false);cache.set(k,ok);}
         if(ok&&(!a.desvio||a.desvio(x,z))&&(!trafego||(!perto(x,z,a.r,a,.05)&&!perto(x-dx*.5,z-dz*.5,a.r,a,.05))))incluir(x,z,g,atual);}
     }
-    return [];
+    return direto?[fim]:preferir?rota(a,tx,tz,trafego,false):[];
   }
-  return {via,protegerVilas,pracadas,construirPonte,modelo,instancias,caixa,limparCasas,lagos,pontes,piso,proibida,atores,perto,ponto,rota,segmento};
+  return {via,trilha,emTrilha,limparTrilhas,protegerVilas,pracadas,construirPonte,modelo,instancias,caixa,limparCasas,lagos,pontes,piso,proibida,atores,perto,ponto,rota,segmento};
 }

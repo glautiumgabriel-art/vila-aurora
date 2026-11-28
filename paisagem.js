@@ -85,6 +85,24 @@ function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
     nav?.via(via); const g=geometria(p,uv,idx); g.setAttribute("beira",new THREE.Float32BufferAttribute(bordas,2));
     const m=new THREE.Mesh(g,terra); m.receiveShadow=true; m.renderOrder=-6; parent.add(m); return m;
   }
+  function trilhaLivre(pontos,parent,{fechado=false,tipo="eixos"}={}) {
+    const p=[],uv=[],idx=[],beiras=[];
+    for(let i=0;i<pontos.length;i++){
+      const a=pontos[i], antes=pontos[i===0&&fechado?pontos.length-2:Math.max(0,i-1)];
+      const depois=pontos[i===pontos.length-1&&fechado?1:Math.min(pontos.length-1,i+1)];
+      const dx=depois.x-antes.x,dz=depois.z-antes.z,len=Math.hypot(dx,dz)||1;
+      for(const lado of [-1,1]){
+        const e=lado*(a.r+.22),x=a.x-dz/len*e,z=a.z+dx/len*e;
+        p.push(x,.029,z); uv.push(x/6,z/6);
+        beiras.push(lado,fechado?0:Math.max(0,1-i/2,1-(pontos.length-1-i)/2));
+      }
+      if(i){const k=i*2;idx.push(k-2,k-1,k,k,k-1,k+1);}
+    }
+    nav.trilha(pontos,tipo);
+    const g=geometria(p,uv,idx);
+    g.setAttribute("beira",new THREE.Float32BufferAttribute(beiras,2));
+    const m=new THREE.Mesh(g,terra); m.receiveShadow=true; m.renderOrder=-6; m.userData.trilhaAurora=true; parent.add(m);
+  }
   const vertex = 'varying vec3 lugar; varying vec2 coord; void main(){ lugar=(modelMatrix*vec4(position,1.)).xyz; coord=uv; gl_Position=projectionMatrix*viewMatrix*vec4(lugar,1.); }';
   const espelhos=[];
   const agua=new THREE.ShaderMaterial({side:THREE.DoubleSide,transparent:true,depthWrite:false,
@@ -194,7 +212,7 @@ function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
       const x=V.cx+(r()-.5)*107,z=V.cz+(r()-.5)*99;
       if(rio&&Math.abs(x-centroRio(z))<larguraRio(z)+.7)continue;
       if(!rio&&Math.hypot((x-L.x)/1.2,z-L.z)<5.8)continue;
-      if(Math.abs(x-V.cx)<36&&Math.abs(z-V.cz)<36&&(RUAS.some(a=>Math.abs(x-V.cx-a)<1.1||Math.abs(z-V.cz-a)<1.1)||Math.hypot(x-V.cx,z-V.cz)<6))continue;
+      if(V.i===0 ? (nav.emTrilha(x,z)||Math.hypot(x-V.cx,z-V.cz)<6) : Math.abs(x-V.cx)<36&&Math.abs(z-V.cz)<36&&(RUAS.some(a=>Math.abs(x-V.cx-a)<1.1||Math.abs(z-V.cz-a)<1.1)||Math.hypot(x-V.cx,z-V.cz)<6))continue;
       const jardim=i%7===0;
       for(let k=0;k<9;k++) {
         const xx=x+(r()-.5)*1.5,zz=z+(r()-.5)*1.5;
@@ -266,7 +284,7 @@ function criarPaisagem(scene, renderer, rnd, RUAS, nav) {
   }
   // O reflexo por cubo saiu: custava seis desenhos da cena por espelho e borrava em ângulo raso.
   function refletirMargens(){}
-  return {plantar,cultivar,caminho,centroRio,refletirMargens,tempo,atualizar(t,luz,ceu){
+  return {plantar,cultivar,caminho,trilhaLivre,centroRio,refletirMargens,tempo,atualizar(t,luz,ceu){
     tempo.value=t;dia.value=Math.max(0,Math.min(1,luz));corCeu.value.copy(ceu);
     if(!luzDoSol) scene.traverse(o=>{if(!luzDoSol&&o.isDirectionalLight&&o.castShadow)luzDoSol=o;});
     if(luzDoSol) dirSol.value.copy(luzDoSol.position).sub(luzDoSol.target.position).normalize();

@@ -57,7 +57,7 @@ function criarRotinaDosMoradores(nav,vila,nVilas,casaDe,lugarDe,rotaEntreVilas) 
           const pos={...a}, trilha=[];
           for(const alvo of alvos){
             if(distancia(pos,alvo)<.02)continue;
-            const trecho=nav.rota(pos,alvo.x,alvo.z);
+            const trecho=nav.rota(pos,alvo.x,alvo.z,false,true);
             if(!trecho.length)return null;
             trilha.push(...trecho);Object.assign(pos,trecho.at(-1));
           }
@@ -155,7 +155,7 @@ function criarRotinaDosMoradores(nav,vila,nVilas,casaDe,lugarDe,rotaEntreVilas) 
       const dOrig=new Map(vizinhos.map(b=>[b,distancia(a,b)]));
       const desvio=(x,z)=>!vizinhos.some(b=>Math.hypot(b.x-x,b.z-z)<Math.min(espaco+.22,dOrig.get(b)-.05));
       const origem={...a,desvio},ref=a.destino;
-      const rota=nav.rota(origem,ref.x,ref.z);
+      const rota=nav.rota(origem,ref.x,ref.z,false,true);
       if(rota.length&&distancia(rota.at(-1),ref)<.1)a.trilha=rota;
     }
   }
